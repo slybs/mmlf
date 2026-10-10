@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>记录 - MLF 投研报告库</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">MLF 投研报告库</a>
+    <nav>
+      <a href="index.html" data-nav>首页</a>
+      <a href="notes.html" data-nav>记录</a>
+      <a href="about.html" data-nav>关于</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" title="切换主题">🌓</button>
+  </header>
+
+  <main class="container">
+    <section class="block">
+      <div class="block-head">
+        <h2 id="form-title">记一条</h2>
+        <span id="file-status" class="file-status muted"></span>
+        <button id="file-btn" class="btn btn-ghost btn-sm" hidden>保存到 mmlf 文件夹</button>
+        <a id="export-btn" class="more" title="把全部记录下载为 JSON 文件备份">导出备份 ↓</a>
+      </div>
+      <div class="card note-form">
+        <input id="note-title" class="note-input" type="text" placeholder="标题（可留空，默认取正文首行）" maxlength="60">
+        <textarea id="note-content" class="note-input" rows="4" placeholder="想记什么？支持多行。Ctrl + Enter 快速保存。&#10;例：华策回踩 8.0 附近缩量，考虑按计划建首仓 1/3"></textarea>
+        <div class="note-form-row">
+          <select id="note-sector" class="note-input" title="关联板块（可选）"></select>
+          <button id="cancel-btn" class="btn btn-ghost" hidden>取消</button>
+          <button id="save-btn" class="btn">保存</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>全部记录</h2>
+        <input id="search-input" class="note-input note-search" type="search" placeholder="搜索标题 / 正文 / 板块…">
+      </div>
+      <div id="notes-list" class="report-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> MLF · 仅供研究参考，不构成投资建议</footer>
+
+  <script src="data/reports.js"></script>
+  <script src="data/notes.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

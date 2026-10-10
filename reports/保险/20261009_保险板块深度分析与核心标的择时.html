@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保险板块 · 深度分析与核心标的量价择时</title>
+<meta name="description" content="技术性回调而非基本面反转：26H1 六家险企归母净利 3,284 亿（+78%）、NBV +18.5%，但 2026E 动态 PEV 仅 0.45–0.63x、主动权益基金持仓仅 0.58%——盈利与估值/仓位严重背离；量价端六只核心标的中五只量比低于 1.02x，属诱空而非出货。板块评分 71/165「关注等待」，但保险是低波动机构股（ATR% 仅 1.68%），71 分的技术含金量远高于题材板块。评级：增持（基本面）/ 分批建仓（技术面等待确认）；止损 1394.48（1.5×ATR）或 60 日区间下沿 1359.12。">
+<meta name="report-type" content="板块深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b; --flat:#7b8494;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb;
+  --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.75; font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 80px}
+
+/* header */
+.hero{
+  background:linear-gradient(135deg,#152c4e 0%,#1a3a6b 45%,#2c5ba0 100%);
+  color:#fff;padding:44px 0 38px;margin-bottom:28px;
+}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12.5px;letter-spacing:2.5px;opacity:.72;font-weight:500}
+.hero h1{font-size:31px;font-weight:700;margin:10px 0 8px;letter-spacing:.5px}
+.hero .sub{font-size:15px;opacity:.85;font-weight:300}
+.hero .meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.hero .meta span{
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+  padding:5px 13px;border-radius:20px;font-size:12.5px;
+}
+
+/* verdict box */
+.verdict{
+  background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);
+  border-radius:8px;padding:22px 26px;margin-bottom:26px;
+  box-shadow:0 1px 3px rgba(20,40,80,.06);
+}
+.verdict h2{font-size:19px;color:var(--navy);margin-bottom:12px}
+.verdict .rate{display:flex;flex-wrap:wrap;gap:22px;margin:16px 0 14px}
+.verdict .rate div{flex:1;min-width:150px}
+.verdict .rate .k{font-size:11.5px;color:var(--ink3);letter-spacing:.6px}
+.verdict .rate .v{font-size:22px;font-weight:700;color:var(--navy);line-height:1.4}
+.verdict .rate .v.sm{font-size:17px}
+.verdict p{font-size:14.5px;color:var(--ink2)}
+
+/* sections */
+section{margin-bottom:34px}
+h2.sec{
+  font-size:20px;color:var(--navy);padding-bottom:10px;margin-bottom:18px;
+  border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px;
+}
+h2.sec .no{
+  background:var(--navy);color:#fff;font-size:12.5px;padding:2px 9px;border-radius:4px;
+  font-weight:600;letter-spacing:.5px;
+}
+h3{font-size:16.5px;color:var(--navy-l);margin:22px 0 11px;font-weight:600}
+h4{font-size:14.5px;color:var(--ink);margin:16px 0 8px;font-weight:600}
+p{margin-bottom:11px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+
+/* panels / cards */
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(20,40,80,.05);
+}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+
+/* stat tiles */
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:15px 17px}
+.tile .lb{font-size:11.5px;color:var(--ink3);letter-spacing:.5px;margin-bottom:5px}
+.tile .vl{font-size:23px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11.5px;color:var(--ink3);margin-top:3px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 16px;background:var(--panel)}
+th{
+  background:var(--navy);color:#fff;font-weight:600;padding:9px 10px;
+  text-align:left;font-size:12.5px;letter-spacing:.3px;white-space:nowrap;
+}
+td{padding:8px 10px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.flat{color:var(--flat)}
+.bold{font-weight:700;color:var(--ink)}
+
+/* tags */
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+
+/* callouts */
+.note{
+  border-left:4px solid var(--navy-l);background:var(--navy-bg);
+  padding:13px 17px;margin:14px 0;border-radius:0 6px 6px 0;font-size:14px;color:var(--ink2);
+}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:4px;font-size:13.5px}
+
+/* stock card */
+.stk{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:0;margin-bottom:18px;overflow:hidden;box-shadow:0 1px 3px rgba(20,40,80,.05);
+}
+.stk-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:13px 20px;background:linear-gradient(90deg,#f3f6fb,#fbfcfe);border-bottom:1px solid var(--line);
+}
+.stk-head .nm{font-size:17px;font-weight:700;color:var(--navy)}
+.stk-head .cd{font-size:12.5px;color:var(--ink3);margin-left:7px;font-weight:400}
+.stk-head .px{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.stk-body{padding:16px 20px}
+.stk-body p{font-size:14px;margin-bottom:9px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:12px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:8px 11px}
+.kv .i .k{font-size:11px;color:var(--ink3);letter-spacing:.4px}
+.kv .i .v{font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* score bar */
+.bar{height:7px;background:#e8ecf2;border-radius:4px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;border-radius:4px}
+
+ul{margin:8px 0 12px 20px;color:var(--ink2)}
+li{margin-bottom:6px;font-size:14px}
+ol{margin:8px 0 12px 22px;color:var(--ink2)}
+ol li{margin-bottom:6px;font-size:14px}
+
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;margin:14px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+
+.src{font-size:11.5px;color:var(--ink3);margin-top:6px;font-style:italic}
+.foot{
+  margin-top:34px;padding:18px 22px;background:#fffaf0;border:1px solid #f0dfbc;
+  border-radius:8px;font-size:13px;color:#7a5c28;
+}
+.divider{height:1px;background:var(--line);margin:26px 0}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SECTOR DEEP DIVE</div>
+    <h1>保险板块 · 深度分析与核心标的量价择时</h1>
+    <div class="sub">通达信行业（非银金融—保险，881395）· 六只核心标的双维度打分</div>
+    <div class="meta">
+      <span>数据日期：2026-10-09 收盘</span>
+      <span>板块评分 71/165</span>
+      <span>方法：威科夫 12 项梯度 + 量价三重验证</span>
+      <span>辅助：ima 智汇研 + 知识星球</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="s0">
+<h2 class="sec"><span class="no">00</span>核心结论</h2>
+
+<div class="verdict">
+  <h2>板块评级：增持（基本面）／分批建仓（技术面处于确认前的等待窗口）</h2>
+  <div class="rate">
+    <div><div class="k">通达信保险板块 881395</div><div class="v">1430.49 <span style="font-size:14px" class="up">+0.35%</span></div></div>
+    <div><div class="k">12 项梯度择时评分</div><div class="v">71 / 165</div><div class="hint">关注等待</div></div>
+    <div><div class="k">威科夫阶段</div><div class="v sm">上行趋势中的回调（供应枯竭，未见派发）</div></div>
+    <div><div class="k">建议仓位</div><div class="v">4–6%（分批）</div></div>
+  </div>
+  <p style="margin-bottom:8px"><strong>一句话：<em>这是一次由「Q3 业绩高基数 + 权益市场回调」触发的技术性回调，不是基本面趋势反转；而当前的量能枯竭与机构极低配状态共同构成了一个赔率不对称的下注窗口。</em></strong></p>
+  <p>三条独立证据相互印证：① 基本面端，26H1 六家上市险企归母净利润合计 <span class="up">3,284 亿元、同比 +78%</span>，NBV 合计 <span class="up">+18.5%</span>，而 A 股板块 2026E 动态 PEV 仅 <strong>0.45–0.63x</strong>（历史低位），主动权益基金持仓 <strong>2Q26 仅 0.58%（A+H，环比 −0.72pct）</strong>——盈利与估值/仓位严重背离；② 量价端，六只核心标的中 <strong>五只当日量比低于 1.02x</strong>，价格下跌却没有供应跟进，属典型的「虚假下跌／诱空」，而非主力出货；③ 时间轴端，8 月是本轮寿险保费负增长的第四个月（−15.1%），但<strong>9 月起同比基数明显回落</strong>，且 4Q26 本身又是一个低基数季度，压力最大的时点正在过去。</p>
+</div>
+
+<div class="grid3">
+  <div class="tile navy"><div class="lb">60 日区间位置</div><div class="vl">34.2%</div><div class="hint">区间 1359.12 – 1568.08</div></div>
+  <div class="tile down"><div class="lb">近 20 日涨跌</div><div class="vl">−7.11%</div><div class="hint">同期 60 日仍 +0.17%</div></div>
+  <div class="tile gold"><div class="lb">ATR%（低波动）</div><div class="vl">1.68%</div><div class="hint">六只成分 ATR% 均在 1.6–2.5%</div></div>
+</div>
+
+<div class="note good">
+  <div class="hd">与纯题材板块的关键差异</div>
+  保险板块的技术回撤，本质上是<strong>「低波动 × 低振幅」的机构股回调</strong>：板块 ATR% 仅 1.68%，20 日均振幅 1.76%，远低于此前分析的传媒、AI 短剧板块（个股动辄 4–6%）。这意味着同样的 12 项评分，在保险股上会天然压低「ATR 收缩/低波」以外的弹性项分数（如区间位置、Spring 触发频率）。<strong>因此本板块不宜直接套用题材股的评分阈值——71 分对应的技术含义比 AI 短剧板块的 71 分要正面得多。</strong>
+</div>
+
+<h3>为什么现在是窗口，而不是再等等</h3>
+<ul>
+  <li><strong>回调已到位但未破位：</strong>板块从 9/04 的 1568.08 高点回落到 1430.49，回吐了 8.8%，但目前仍在 60 日区间 34.2% 分位，且 ATR 呈现连续收缩（即期 ATR 24.01 vs 20 日前 28.70，<span class="up">−16%</span>），这是吸筹结束前的典型量价特征。</li>
+  <li><strong>但确认信号尚未出现：</strong>板块 MA20 = 1473.02，现价仍在其下方 3.0%；MACD 处于零轴下空头（DIF −8.450 / DEA −1.017）；当日量比 0.80x。<em>按框架，这需要等一根放量站回 MA20 的长阳（SOS/JOC），或一次缩量跌破后快速收回（Spring）来确认。</em></li>
+  <li><strong>催化剂时间明确：</strong>4Q26 核心看两件事——10 月下旬Q3 财报靴子落地、以及各家公司 2027 年开门红预售启动。华西证券明确指出「9 月起基数压力消减，四季度重点转向 2027 年开门红筹备」。</li>
+</ul>
+</section>
+
+<section id="s1">
+<h2 class="sec"><span class="no">01</span>板块量价与择时：12 项评分逐项拆解</h2>
+
+<p>数据取自通达信板块指数 881395，共 100 根日线（2026-05-14 至 2026-10-09），前复权。评分采用 12 项梯度体系（基础 7 项 105 分 + 威科夫 3 项 40 分 + 背离修正 ±30 分，理论上限 165 分）。</p>
+
+<table>
+<thead><tr>
+<th style="width:32px">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测值与判定</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="bold">趋势 1：价 / MA20</td><td class="num">5</td><td class="num">15</td><td>1430.49 / 1473.02 = <span class="bold">0.9711</span>，位于 MA20 下方 2.9%，落入 0.97 档</td></tr>
+<tr><td>2</td><td class="bold">趋势 2：MA20 斜率</td><td class="num">0</td><td class="num">10</td><td><span class="down">−0.370%</span>，均线下弯，趋势项归零</td></tr>
+<tr><td>3</td><td class="bold">MACD</td><td class="num">0</td><td class="num">20</td><td>DIF −8.450 / DEA −1.017，零轴下且已是空头延续状态</td></tr>
+<tr><td>4</td><td class="bold">区间位置（60 日）</td><td class="num up">15</td><td class="num">20</td><td><span class="up">34.2%</span>（区间高 1568.08 / 低 1359.12）——回落充分，是本项主要失而复得的分</td></tr>
+<tr><td>5</td><td class="bold">ATR 收缩 + 稳定</td><td class="num up">12</td><td class="num">15</td><td>ATR 24.01 ← 10 日前 31.61 ← 20 日前 28.70，确认收缩</td></tr>
+<tr><td>6</td><td class="bold">低波动（ATR%）</td><td class="num up">10</td><td class="num">10</td><td><span class="up">1.68%</span>，满分项；波动显著低于题材股</td></tr>
+<tr><td>7</td><td class="bold">涨幅安全性</td><td class="num up">15</td><td class="num">15</td><td>20 日 <span class="down">−7.11%</span>，20 日均振幅 1.76%，比值 −0.20，无透支</td></tr>
+<tr><td>8</td><td class="bold">量价关系（威科夫）</td><td class="num">7</td><td class="num">15</td><td>当日 <span class="up">+0.35%</span>，量比 0.80x——缩量微涨，中性</td></tr>
+<tr><td>9</td><td class="bold">Spring 弹簧</td><td class="num">0</td><td class="num">15</td><td>60 日窗口内未出现「跌破支撑后放量快速收回」的形态</td></tr>
+<tr><td>10</td><td class="bold">回调质量</td><td class="num">5</td><td class="num">10</td><td>回调深度已达 92.5%（几乎回到箱体下沿），阴线均量 0.82x</td></tr>
+<tr><td>11</td><td class="bold">底背离</td><td class="num">0</td><td class="num">20</td><td>无</td></tr>
+<tr><td>12</td><td class="bold">顶背离</td><td class="num">0</td><td class="num">−30</td><td>无（<span class="up">未被一票否决</span>，这是板块层面的关键正面项）</td></tr>
+<tr style="background:#f0f4fa"><td colspan="2" class="bold">合计</td><td class="num bold" style="font-size:15px">71</td><td class="num">165</td><td class="bold">判定：⏸ 关注等待（65–89 档）</td></tr>
+</tbody>
+</table>
+<div class="src">来源：通达信 MCP <code>tdx_kline</code>（881395，setcode=1，日线 100 根，截至 2026-10-09）；评分由本地脚本 <code>bx_score.py</code> 计算。</div>
+
+<h3>三种信号的应对分支</h3>
+<div class="grid3">
+  <div class="card" style="margin:0">
+    <h4 style="color:var(--up);margin-top:0">确认信号（加仓触发）</h4>
+    <p style="font-size:13.5px">放量收复 <strong>MA20 = 1473.02</strong>，且当日量比 &gt; 1.2x。这构成威科夫意义上的 SOS/JOC，可把仓位从 4% 提到 6%。<br>若同时板块 MACD 在零轴下金叉,则加到 8%。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="color:var(--warn);margin-top:0">等待信号（维持不动）</h4>
+    <p style="font-size:13.5px">价格在 <strong>1394 – 1473</strong> 之间反复震荡、量比持续低于 1.0x。这是弹簧压缩阶段，不减不加，等待 Spring 或 SOS 出现。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="color:var(--down);margin-top:0">否决信号（减仓/离场）</h4>
+    <p style="font-size:13.5px">跌破 <strong>1394.48</strong>（1.5×ATR 止损）或 60 日区间下沿 <strong>1359.12</strong>。若两者同破且伴随放量，说明进入 Markdown 阶段，需降至底仓以下。</p>
+  </div>
+</div>
+</section>
+
+<section id="s2">
+<h2 class="sec"><span class="no">02</span>产业基本面：三条主线与一场被误读的分化</h2>
+
+<p>保险行业的分析框架与制造业、题材行业都不同：它同时受<strong>负债端（保费与产品结构）、资产端（投资收益）、政策与资本（偿付能力、会计准则）</strong>三条主线牵引，而这三者在 2026 年恰好走出了不同方向。理解三者的错位，是理解当前板块回调性质的前提。</p>
+
+<h3>主线一：负债端——寿险「换挡买单期」，财险已经企稳</h3>
+
+<p>国家金融监管总局 8 月保费数据是全篇最关键的一手证据，而它揭示的图景远非「保险不行了」这么简单：<strong>寿险与财险正在反向走。 </strong></p>
+
+<table>
+<thead><tr>
+<th>口径（公司口径）</th><th class="num">1–8 月累计</th><th class="num">累计同比</th><th class="num">8 月单月</th><th class="num">单月同比</th><th>状态</th>
+</tr></thead>
+<tbody>
+<tr><td class="bold">人身险公司合计</td><td class="num">3.57 万亿元</td><td class="num down">−0.2%</td><td class="num">4,011 亿元</td><td class="num down">−13.6%</td><td><span class="tag t-wait">承压</span></td></tr>
+<tr><td>　└ 寿险</td><td class="num">2.98 万亿元</td><td class="num flat">持平</td><td class="num">3,382 亿元</td><td class="num down">−15.1%</td><td>年内连续第 <strong>4</strong> 个月负增长</td></tr>
+<tr><td>　└ 健康险</td><td class="num">5,721 亿元</td><td class="num down">−1.1%</td><td class="num">605 亿元</td><td class="num down">−4.6%</td><td>降幅扩大</td></tr>
+<tr><td>　└ 意外险</td><td class="num">241 亿元</td><td class="num down">−10.0%</td><td class="num">24 亿元</td><td class="num down">−7.0%</td><td>保障型需求恢复慢</td></tr>
+<tr><td class="bold">财产险公司合计</td><td class="num">1.25 万亿元</td><td class="num up">+2.2%</td><td class="num">1,291 亿元</td><td class="num up">+1.8%</td><td>连续 4 个月恢复单月正增长</td></tr>
+<tr><td>　└ 车险</td><td class="num">6,006 亿元</td><td class="num flat">持平</td><td class="num">763 亿元</td><td class="num down">−0.1%</td><td>8 月乘用车销量 −6.2%</td></tr>
+<tr><td>　└ 非车险</td><td class="num">6,467 亿元</td><td class="num up">+4.4%</td><td class="num">528 亿元</td><td class="num up">+4.6%</td><td><span class="tag t-core">主要增量来源</span></td></tr>
+<tr><td>　　└ 健康险（非车）</td><td class="num">—</td><td class="num">—</td><td class="num">133 亿元</td><td class="num up">+28.9%</td><td>弹性最强</td></tr>
+<tr><td>　　└ 责任险（非车）</td><td class="num">—</td><td class="num">—</td><td class="num">111 亿元</td><td class="num up">+8.7%</td><td>—</td></tr>
+<tr><td>　　└ 农险（非车）</td><td class="num">—</td><td class="num">—</td><td class="num">94 亿元</td><td class="num down">−2.9%</td><td>唯一下滑次级险种</td></tr>
+<tr><td class="bold">保户投资款新增交费</td><td class="num">4,973 亿元</td><td class="num up">+8.4%</td><td class="num">366 亿元</td><td class="num down">−7.5%</td><td>增速转负</td></tr>
+<tr><td class="bold">投连险独立账户新增交费</td><td class="num">75 亿元</td><td class="num down">−42.1%</td><td class="num">8 亿元</td><td class="num down">−68.5%</td><td>权益敏感业务收缩</td></tr>
+<tr style="background:#f0f4fa"><td class="bold">行业总资产 / 净资产</td><td class="num">44.57 万亿 / 4.21 万亿</td><td class="num up">+7.9% / +14.9%</td><td class="num" colspan="2">（较 2026 年初）</td><td>净资产增速远快于资产</td></tr>
+</tbody>
+</table>
+<div class="src">来源：国家金融监督管理总局 2026 年 8 月保费数据，经华西证券《保险 2026 年 8 月保费点评》（2026-10-09）整理；净资产增速来自同篇。</div>
+
+<div class="svgbox">
+<svg viewBox="0 0 900 452" role="img" aria-label="2026年8月单月保险保费同比分化">
+  <text x="18" y="24" font-size="15" font-weight="700" fill="#1a3a6b">2026 年 8 月单月保费同比分化（%，非股价涨跌）</text>
+  <text x="18" y="42" font-size="11.5" fill="#7b8494">寿险全线负增长 vs 财险非车链全线正增长 —— 同一时点两个方向</text>
+  <!-- grid -->
+  <g stroke="#e2e6ec" stroke-width="1">
+    <line x1="190" y1="52" x2="190" y2="424"/><line x1="320" y1="52" x2="320" y2="424"/>
+    <line x1="450" y1="52" x2="450" y2="424"/><line x1="580" y1="52" x2="580" y2="424"/>
+    <line x1="710" y1="52" x2="710" y2="424"/><line x1="840" y1="52" x2="840" y2="424"/>
+  </g>
+  <line x1="645" y1="52" x2="645" y2="424" stroke="#4a5568" stroke-width="1.6"/>
+  <g font-size="10.5" fill="#9aa5b1" text-anchor="middle">
+    <text x="190" y="440">−70</text><text x="320" y="440">−50</text><text x="450" y="440">−30</text>
+    <text x="580" y="440">−10</text><text x="645" y="440">0</text><text x="710" y="440">+10</text><text x="840" y="440">+30</text>
+  </g>
+  <!-- rows -->
+
+  <g font-size="12" fill="#1c2532" text-anchor="end">
+    <text x="180" y="71">投连险独立账户新增交费</text>
+    <text x="180" y="103">寿险（人身险口径）</text>
+    <text x="180" y="135">人身险公司合计</text>
+    <text x="180" y="167">保户投资款新增交费</text>
+    <text x="180" y="199">意外险（人身险口径）</text>
+    <text x="180" y="231">健康险（人身险口径）</text>
+  </g>
+  <g>
+    <rect x="199.75" y="60" width="445.25" height="18" fill="#6b8cb0" rx="2"/><text x="189" y="74" font-size="11" fill="#6b8cb0" text-anchor="start" font-weight="600">−68.5%</text>
+    <rect x="546.85" y="92" width="98.15" height="18" fill="#2c5ba0" rx="2"/><text x="652" y="106" font-size="11" fill="#2c5ba0" text-anchor="start" font-weight="600">−15.1%</text>
+    <rect x="556.6" y="124" width="88.4" height="18" fill="#2c5ba0" rx="2"/><text x="652" y="138" font-size="11" fill="#2c5ba0" text-anchor="start" font-weight="600">−13.6%</text>
+    <rect x="596.25" y="156" width="48.75" height="18" fill="#6b8cb0" rx="2"/><text x="652" y="170" font-size="11" fill="#6b8cb0" text-anchor="start" font-weight="600">−7.5%</text>
+    <rect x="599.5" y="188" width="45.5" height="18" fill="#6b8cb0" rx="2"/><text x="652" y="202" font-size="11" fill="#6b8cb0" text-anchor="start" font-weight="600">−7.0%</text>
+    <rect x="615.1" y="220" width="29.9" height="18" fill="#6b8cb0" rx="2"/><text x="652" y="234" font-size="11" fill="#6b8cb0" text-anchor="start" font-weight="600">−4.6%</text>
+  </g>
+
+  <line x1="18" y1="250" x2="882" y2="250" stroke="#e2e6ec" stroke-width="1"/>
+  <text x="18" y="266" font-size="11.5" fill="#7b8494" font-weight="600">财产险链 —— 已经走出负增长</text>
+
+  <g font-size="12" fill="#1c2532" text-anchor="end">
+    <text x="180" y="292">非车—责任险</text>
+    <text x="180" y="324">非车—健康险</text>
+    <text x="180" y="356">非车险合计</text>
+    <text x="180" y="388">财产险公司合计</text>
+    <text x="180" y="420">车险</text>
+  </g>
+  <g>
+    <rect x="645" y="281" width="56.55" height="18" fill="#c0392b" rx="2"/><text x="709" y="295" font-size="11" fill="#c0392b" text-anchor="start" font-weight="600">+8.7%</text>
+    <rect x="645" y="313" width="187.85" height="18" fill="#c0392b" rx="2"/><text x="840" y="327" font-size="11" fill="#c0392b" text-anchor="start" font-weight="600">+28.9%</text>
+    <rect x="645" y="345" width="29.9" height="18" fill="#c0392b" rx="2"/><text x="682" y="359" font-size="11" fill="#c0392b" text-anchor="start" font-weight="600">+4.6%</text>
+    <rect x="645" y="377" width="11.7" height="18" fill="#c0392b" rx="2"/><text x="664" y="391" font-size="11" fill="#c0392b" text-anchor="start" font-weight="600">+1.8%</text>
+    <rect x="644.35" y="409" width="0.65" height="18" fill="#6b8cb0" rx="1"/><text x="652" y="423" font-size="11" fill="#6b8cb0" text-anchor="start" font-weight="600">−0.1%</text>
+  </g>
+  <g font-size="11" fill="#7b8494">
+    <rect x="700" y="18" width="10" height="10" fill="#c0392b"/><text x="715" y="27">正增长</text>
+    <rect x="775" y="18" width="10" height="10" fill="#6b8cb0"/><text x="790" y="27">负增长</text>
+  </g>
+</svg>
+</div>
+
+<div class="note">
+  <div class="hd">如何解读这张图</div>
+  <strong>寿险的负增长是有明确归因的、暂时的。</strong>华西证券的判断是「传统淡季叠加去年同期『停售切换』高基数影响，短期节奏承压属预期内波动」——去年同期正是预定利率下调引发停售潮的窗口，形成了极高的保费基数。这意味着 9 月起基数压力会自然消解。<br>
+  <strong>而投连险 −68.5%、保户投资款 −7.5% 的下滑，本质是「权益敏感型业务收缩」</strong>，这恰恰是反向印证：居民资金正在从高波动的产品撤出、转向确定性更强的储蓄型产品（分红险），这个迁移方向对险企的<em>负债成本下降</em>是好事，只是暂时体现为保费口径的难看。
+</div>
+
+<h3>主线二：资产端——利润高增的真相与被误解的「β」</h3>
+
+<p>26H1 各家险企利润之所以出现爆炸式增长，根源在投资端。理解这一点，才能理解为什么<strong>权益市场的波动会如此直接地传导到保险股的股价上</strong>。</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">六家上市险企 26H1 业绩（西部非银综述）</h4>
+    <ul style="margin-bottom:0">
+      <li>归母净利润合计 <strong class="up">3,284 亿元，同比 +78%</strong></li>
+      <li>个体增速区间 <strong>10.4% ~ 228.6%</strong>，差异核心来自投资收益</li>
+      <li>归母净资产较年初增速 <strong>2.8% ~ 11.6%</strong></li>
+      <li>集团 NBV 正增长，增幅 <strong>3.5% ~ 33.7%</strong>（全渠道费用管控下 NBVM 改善）</li>
+      <li>AH 上市险企口径 NBV 合计 <strong class="up">同比 +18.5%</strong>（东吴口径）</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">投资 vs 承保：两类公司两种性格</h4>
+    <p style="font-size:13.5px">同一份中报里藏着一条重要分野——</p>
+    <ul style="margin-bottom:0">
+      <li><strong>投资业绩占比：</strong>国寿 <span class="up">76.6%</span>、人保 71.6%、新华 67.5% → 对资产端高度敏感</li>
+      <li><strong>保险服务业绩占比：</strong>太保 <span class="up">64.2%</span>、太平 58.0% → 负债经营稳健，盈利受投资扰动小</li>
+    </ul>
+    <p style="font-size:13px;margin-top:9px;margin-bottom:0;color:var(--ink3)">这条分野直接决定了：谁的股价是「放大器」，谁是「稳定器」。</p>
+  </div>
+</div>
+
+<div class="note warn">
+  <div class="hd">必须正视的反向证据</div>
+  <strong>资产端的好日子在 Q3 遭遇了逆风。</strong>9 月 A 股走弱拖累险资年内浮盈转亏，模拟总投资收益率降至 <strong>3.14%</strong>；华泰证券在 2026-10-02 的点评中直言「3Q26 险企盈利或阶段性承压」。这是本轮板块 20 日下跌 7.11% 最直接的触发因素——<em>市场在提前 price in 一个已知要发生的利润回落。</em>
+</div>
+
+<h3>主线三：政策与资本——这是市场最少定价的一条线</h3>
+
+<table>
+<thead><tr><th style="width:112px">时间</th><th>政策 / 资本事件</th><th>对板块的含义</th></tr></thead>
+<tbody>
+<tr><td>2026-08</td><td class="bold">保险资产负债管理（资负）新规落地</td><td>核心约束指标 <strong>净投资收益覆盖率 = 净投资收益 ÷ 负债保证成本 ≥ 100%</strong>，设 <strong>3 年过渡期</strong>。倒逼险企压降负债成本、增配高股息／泛红利资产。华创非银测算：<span class="tag t-core">头部公司无压力，腰部公司最需顾及</span></td></tr>
+<tr><td>2026-08</td><td class="bold">险资获准投资港股通 ETF</td><td>打开跨境配置新通道，分流部分 A 股配置需求，但也提升组合收益率上限</td></tr>
+<tr><td>2026-09-06</td><td class="bold">财政部注资金融机构，总量逾 3,500 亿元</td><td>其中<strong>中国人寿集团直接注资 350 亿元</strong>、太平 70 亿元、<strong>人保拟向财政部发行 A 股募资不超 150 亿元</strong>全部补充资本金。国家对保险平台的资本背书非常明确</td></tr>
+<tr><td>2026-10-09</td><td class="bold">保险法修订草案</td><td>拓宽中小保险公司资本补充渠道、放松财险公司资本约束——直接利好财险标的</td></tr>
+<tr><td>持续</td><td class="bold">预定利率动态调整机制</td><td>3Q26 预定利率评估值<strong>或为 1.93%</strong>；演示利率已自 7 月起下调至不高于 3.5%，分红险保底利率降至 1.25–1.5%。负债成本持续下降是利差损风险缓解的核心路径</td></tr>
+</tbody>
+</table>
+
+<div class="note good">
+  <div class="hd">一条被低估的资金面事实</div>
+  据卖方交流，<strong>险资是 2024 年以来 A 股最大的净买入机构，预计 2024–2026 年累计净买入 2.5 万亿元以上，且每年净买入可能维持在 1 万亿元以上</strong>。这意味着：一方面保险板块自身有持续的增量资金支撑；另一方面，资负新规会把这笔钱的相当一部分导向红利资产——<em>保险公司既是最稳定的买方，又是自己重仓风格的受益者。</em>
+</div>
+</section>
+
+<section id="s3">
+<h2 class="sec"><span class="no">03</span>五个变异认知：市场可能错在哪</h2>
+
+<h3>认知 ①：当日涨幅与 ROE 明显负相关——这不是价值发现，是流动性修复</h3>
+
+<p>把 2026-10-09 的当日涨幅和最新 ROE 放在一起做散点，得到的不是正相关，而是一个清晰的<strong>向下倾斜</strong>：ROE 最高的中国人寿（21.07%）只涨 0.58%，新华保险（18.87%）涨 1.39%；而 ROE 最低的中科软（2.79%）反而涨了 4.15%，是全场最强。</p>
+
+<div class="svgbox">
+<svg viewBox="0 0 900 400" role="img" aria-label="ROE与当日涨幅散点">
+  <text x="18" y="24" font-size="15" font-weight="700" fill="#1a3a6b">2026-10-09 保险核心标的：ROE vs 当日涨幅</text>
+  <text x="18" y="42" font-size="11.5" fill="#7b8494">拟合线向右下方倾斜 —— 涨得最好的不是质地最好的，当前由资金面/题材驱动</text>
+  <!-- axes area x:70-860  y:60-340 -->
+  <g stroke="#eef1f5" stroke-width="1">
+    <line x1="70" y1="60" x2="860" y2="60"/><line x1="70" y1="100" x2="860" y2="100"/>
+    <line x1="70" y1="140" x2="860" y2="140"/><line x1="70" y1="180" x2="860" y2="180"/>
+    <line x1="70" y1="220" x2="860" y2="220"/><line x1="70" y1="300" x2="860" y2="300"/>
+  </g>
+  <line x1="70" y1="260" x2="860" y2="260" stroke="#4a5568" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <text x="76" y="256" font-size="10.5" fill="#4a5568">涨跌 0%</text>
+  <g font-size="10.5" fill="#9aa5b1" text-anchor="end">
+    <text x="62" y="64">+5%</text><text x="62" y="104">+4%</text><text x="62" y="144">+3%</text>
+    <text x="62" y="184">+2%</text><text x="62" y="224">+1%</text><text x="62" y="304">−1%</text>
+  </g>
+  <g font-size="10.5" fill="#9aa5b1" text-anchor="middle">
+    <text x="70" y="358">0%</text><text x="249.5" y="358">5%</text><text x="429" y="358">10%</text>
+    <text x="608.5" y="358">15%</text><text x="788" y="358">20%</text>
+  </g>
+  <text x="465" y="382" font-size="12" fill="#4a5568" text-anchor="middle" font-weight="600">最新 ROE（加权，%）</text>
+  <line x1="70" y1="60" x2="70" y2="340" stroke="#4a5568" stroke-width="1.2"/>
+  <!-- trend -->
+  <line x1="70" y1="162" x2="860" y2="264" stroke="#c0392b" stroke-width="1.8" stroke-dasharray="7,4" opacity=".55"/>
+  <text x="600" y="150" font-size="11.5" fill="#c0392b" font-weight="600" transform="rotate(6.6 600 150)">拟合：负相关（斜率 ≈ −0.12）</text>
+  <!-- points -->
+  <g>
+    <circle cx="170" cy="94" r="6" fill="#c0392b"/><text x="182" y="90" font-size="11.5" fill="#1c2532" font-weight="600">中科软 +4.15%</text><text x="182" y="104" font-size="10.5" fill="#7b8494">ROE 2.79%</text>
+    <circle cx="393" cy="248" r="6" fill="#1a3a6b"/><text x="405" y="244" font-size="11.5" fill="#1c2532" font-weight="600">中国平安 +0.30%</text><text x="405" y="258" font-size="10.5" fill="#7b8494">ROE 9.00%</text>
+    <circle cx="418" cy="218" r="6" fill="#1a3a6b"/><text x="430" y="214" font-size="11.5" fill="#1c2532" font-weight="600">中国太保 +1.04%</text><text x="430" y="228" font-size="10.5" fill="#7b8494">ROE 9.70%</text>
+    <circle cx="472" cy="306" r="6" fill="#12864b"/><text x="484" y="302" font-size="11.5" fill="#1c2532" font-weight="600">中国人保 −1.14%</text><text x="484" y="316" font-size="10.5" fill="#7b8494">ROE 11.21%</text>
+    <circle cx="747" cy="204" r="6" fill="#1a3a6b"/><text x="700" y="188" font-size="11.5" fill="#1c2532" font-weight="600" text-anchor="end">新华保险 +1.39%</text><text x="700" y="202" font-size="10.5" fill="#7b8494" text-anchor="end">ROE 18.87%</text>
+    <circle cx="826" cy="237" r="6" fill="#1a3a6b"/><text x="836" y="222" font-size="11.5" fill="#1c2532" font-weight="600" text-anchor="end">中国人寿 +0.58%</text><text x="836" y="236" font-size="10.5" fill="#7b8494" text-anchor="end">ROE 21.07%</text>
+  </g>
+</svg>
+</div>
+
+<div class="note warn">
+  <div class="hd">这条认知对操作的直接含义</div>
+  <strong>不要试图从当日涨幅排行榜里挑标的。</strong>在这个板块，涨得多的往往意味着「题材属性强、基本面弱」（如中科软），而不是「价值被发掘」。真正的机会在另一头——那些<em>质地最好但刚刚经历最深回调</em>的标的。
+</div>
+
+<h3>认知 ②：评分最高的中国人保，是「已经涨过的防守品」，不是「价值洼地」</h3>
+
+<p>12 项评分中，中国人保以 <strong>92 分</strong>居首，是六只中唯一 MA20 斜率为正（+0.83%）的一只，60 日位置 72%，60 日累计涨幅 +12.0%，回调还保持了缩量（阴线均量 0.75x）。纯看技术，它最「顺」。</p>
+
+<p>但把基本面叠进来，结论要打折扣：<em>人保是以财险为主的公司，不享受分红险转型带来的 NBV 弹性，也不具备高权益敞口的 β</em>；同时它的 PB 为 1.0167，在六只中排第二高，PE(LYR) 7.41 也是最高一档。换句话说，<strong>它是靠「确定性」被资金买上去的，而不是靠「低估」。</strong>更要留意的是，它是 10/09 当日唯一收跌的标的（−1.14%），且收盘已跌破 MA20（价/MA20 = 0.988）。</p>
+
+<p class="src">结论：技术评分高 ≠ 当下最佳买点。追人保是在为一个已经走了 12% 的防御仓位接力；同样的钱，赔率不如深度回调的新华、人寿。</p>
+
+<h3>认知 ③：回调最深的，恰恰是 β 最大、ROE 最高的两家</h3>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">新华保险 601336　<span class="tag t-wait">关注等待 80</span></h4>
+    <p style="font-size:13.5px">技术上：<strong>60 日位置仅 12%</strong>（六只中倒数第二），20 日跌 8.1%，当日还只是缩量微涨 0.75x——是典型的「需求枯竭」而非「恐慌抛售」。</p>
+    <p style="font-size:13.5px">基本面上，它恰恰是这一批里进攻性最强的：<br>
+    · 26H 二级权益敞口 <strong>25.5%（行业最高）</strong>，较年初 +4.41pct<br>
+    · 个险 NBV <span class="up">+20.6%</span>、个险新单 +24.0%、人均产能 <span class="up">+31.7%</span><br>
+    · 9 月累计期交同比 <strong class="up">+17%</strong>，是主要同业中最快的<br>
+    · ROE 18.87%，仅次于人寿<br>
+    · TPL 股票增配 233 亿、OCI 股票增配 133 亿，<strong>累计增配占上半年新增保费的 60%</strong></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">中国人寿 601628　<span class="tag t-wait">关注等待 72</span></h4>
+    <p style="font-size:13.5px">技术上：<strong>60 日位置 7%</strong>，是六只中最低；价/MA20 = 0.960 也最弱；10/08 单日跌 2.07% 后当日仅缩量反抽 0.69x。</p>
+    <p style="font-size:13.5px">基本面上，它是资产端弹性天花板：<br>
+    · ROE <strong>21.07%，全组第一</strong><br>
+    · 26H1 投资业绩占税前利润 <strong>76.6%</strong>，对权益市场最敏感<br>
+    · 财政部<strong>直接注资 350 亿元</strong>，资本背书最明确<br>
+    · 9 月银保累计期交 <span class="up">+14%</span>、当月 +195%</p>
+    <p style="font-size:12.5px;color:var(--up);margin-bottom:0"><strong>但有减分项：</strong>华西预测其 2026E EPS 为 4.61 元，低于 2025A 的 5.45 元（<strong>同比 −15.4%</strong>），是六只中唯一盈利预期下滑的标的。</p>
+  </div>
+</div>
+
+<div class="note good">
+  <div class="hd">这条认知为什么重要</div>
+  <strong>回调幅度本质上是对「权益敞口」的重新定价，而不是对「公司质量」的重新定价。</strong>市场在卖出那些 Q3 会因权益市场回调而利润难看的标的——新华、人寿正好是这个名单的前两名。而 Q3 利润下滑本身是<em>已知、已充分预期、且 4Q 面临低基数</em>的短期事件。这是一个典型的「用一次性利空给长期资产打折」的窗口。
+</div>
+
+<h3>认知 ④：全组量能枯竭——这是「虚假下跌」，不是主力出货</h3>
+
+<p>把量价验证框架套到每一只上，得到一个高度一致的结论：</p>
+
+<table>
+<thead><tr><th>标的</th><th class="num">当日涨跌</th><th class="num">当日量比</th><th>量价判定</th><th>按框架的含义</th></tr></thead>
+<tbody>
+<tr><td class="bold">中国人保</td><td class="num down">−1.14%</td><td class="num">0.74x</td><td><span class="tag t-wait">价跌 + 缩量</span></td><td class="up">虚假下跌（诱空）：创新低但供应未跟进，空头乏力</td></tr>
+<tr><td class="bold">中国人寿</td><td class="num up">+0.58%</td><td class="num">0.69x</td><td><span class="tag t-wait">缩量上涨</span></td><td>需求枯竭：抛压释放完毕，但买盘也未见主动进场</td></tr>
+<tr><td class="bold">新华保险</td><td class="num up">+1.39%</td><td class="num">0.75x</td><td><span class="tag t-wait">缩量上涨</span></td><td>同上；配合 60 日位置 12%，接近「下跌末段」特征</td></tr>
+<tr><td class="bold">中国太保</td><td class="num up">+1.04%</td><td class="num">0.91x</td><td><span class="tag t-wait">价涨 + 微缩量</span></td><td>中性偏谨慎（另见认知 ⑤ 的顶背离）</td></tr>
+<tr><td class="bold">中国平安</td><td class="num up">+0.30%</td><td class="num">1.02x</td><td><span class="tag t-core">正常量价</span></td><td>中性；回调过程 20 日均振幅仅 1.65%，无恐慌迹象</td></tr>
+<tr><td class="bold">中科软</td><td class="num up">+4.15%</td><td class="num up">1.99x</td><td><span class="tag t-buy">放量长阳 SOS</span></td><td class="up">有效上涨：唯一符合「价涨 + 量放大 30% 以上」的有效突破信号</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <div class="hd">关键推论</div>
+  六只里有 <strong>五只当日量比低于 1.02x</strong>。按量价规则，<em>价格下跌而成交量萎缩 = 虚假下跌，说明空方力量衰竭，临近反转</em>；同时，全场<strong>没有一只是「放量滞涨」或「供应进场」</strong>的顶部形态。板块层面上，这次回调<strong>缺乏充沛的供应承接的证据</strong>，性质上更像机构股的无量技术调整，而非主力资金撤离。这也解释了为什么 ATR 能一路收缩到 1.68%。
+</div>
+
+<h3>认知 ⑤：中国太保是唯一的「技术 + 基本面」双杀，必须单列</h3>
+
+<p>中国太保以 <strong>59 分</strong>垫底，而且触发的是框架里最严厉的一条：<strong>60 日窗口内出现顶背离（−30 分，优先于任何评分的一票否决）</strong>。它的 Spring +15、回调质量 10/10 都拿到了高分，但被顶背离一票否决。</p>
+
+<p>而这恰好和基本面数据对得上——在 9 月负债端跟踪里，太保是主要同业中<strong>唯一银保累计期交为负（−17%）且个险累计也是负（−1%）的公司</strong>；同期新华个险 +17%、国寿银保 +14%、平安银保 +17%。换句话说：<em>技术结构走弱与渠道数据走弱，指向的是同一件事。</em></p>
+
+<div class="note bad">
+  <div class="hd">行动含义</div>
+  <strong>暂时回避（或者说：在太保身上不适用「捡便宜」的逻辑）。</strong>它是唯一把「顶背离」和「累计期交同比为负」同时集于一身的标的。想要保险板块的仓位，可以配其余五只中的任意组合，但不必承担这一只的双重不确定性。若后续出现「放量站回 MA20 = 32.16 且 MACD 零轴下金叉」的威科夫 SOS 信号，再重新纳入。
+</div>
+
+<h3>认知 ⑥（补充）：A/H 折价 15%–42%，同一家公司被标成两个价格</h3>
+
+<table>
+<thead><tr><th>标的</th><th class="num">A 股 PB</th><th class="num">H 股 PB</th><th class="num">H 股折价</th><th class="num">26E PEV（A）</th><th class="num">26E PEV（H）</th></tr></thead>
+<tbody>
+<tr><td class="bold">中国人保</td><td class="num">1.0167</td><td class="num">0.5936</td><td class="num bold down">41.6%</td><td class="num">PB 1.04x</td><td class="num">PB 0.61x</td></tr>
+<tr><td class="bold">中国人寿</td><td class="num">1.5383</td><td class="num">0.9669</td><td class="num bold down">37.2%</td><td class="num">0.63x</td><td class="num">0.40x</td></tr>
+<tr><td class="bold">新华保险</td><td class="num">1.4364</td><td class="num">0.9831</td><td class="num bold down">31.6%</td><td class="num">0.55x</td><td class="num">0.37x</td></tr>
+<tr><td class="bold">中国太保</td><td class="num">0.9388</td><td class="num">0.7398</td><td class="num bold down">21.2%</td><td class="num">0.43x</td><td class="num">0.33x</td></tr>
+<tr><td class="bold">中国平安</td><td class="num">0.9305</td><td class="num">0.7932</td><td class="num bold down">14.8%</td><td class="num">0.59x</td><td class="num">0.49x</td></tr>
+</tbody>
+</table>
+<div class="src">A 股 PB 为通达信 <code>市净率(PB,MRQ)</code>（交易日 20261009）；H 股 PB 取自通达信 indicator_select 港股口径返回（01336/01339/02318/02601/02628），<strong>其 reported 口径未标注 MRQ，与 A 股口径可能存在差异，折价幅度应作为方向性参考而非精确值 [口径存疑]</strong>；26E PEV 来自知识星球卖方跟踪（2026-10-07）。</div>
+
+<p>折价幅度本身就是一道<strong>选择题</strong>：如果认可「H 股折价是流动性折价而非基本面折价」，那么同样一笔钱在 H 股能买到 40% 以上的额外安全边际；如果不认可，A 股至少提供了一个「H 股已先行定价」的参照系——<em>当 H 股先止跌、先站回均线时，A 股往往会跟随。</em></p>
+</section>
+
+<section id="s4">
+<h2 class="sec"><span class="no">04</span>双维度总表：技术评分 × 估值质地</h2>
+
+<p>下表把两套互相独立的评价体系并排放到一处。<strong>左侧是「什么时候买」（技术/量价），右侧是「值不值得买」（估值/盈利/渠道）</strong>——两者的错位之处，正是决策要处理的地方。</p>
+
+<table>
+<thead><tr>
+<th class="ctr" rowspan="2">#</th><th rowspan="2">标的</th><th rowspan="2">代码</th>
+<th class="num" rowspan="2">收盘</th><th class="num" rowspan="2">10/09</th><th class="num" rowspan="2">量比</th>
+<th class="ctr" rowspan="2">评分 / 判定</th>
+<th class="num" rowspan="2">偏离<br>MA20</th><th class="num" rowspan="2">60 日<br>位置</th><th class="num" rowspan="2">ATR%<br>（止损）</th>
+<th class="num" rowspan="2">PB</th><th class="num" rowspan="2">ROE</th><th class="num" rowspan="2">PE<br>(LYR)</th>
+</tr><tr></tr></thead>
+<tbody>
+<tr>
+  <td class="ctr bold">1</td><td class="bold">中国人保</td><td>601319</td>
+  <td class="num">7.82</td><td class="num down">−1.14%</td><td class="num">0.74x</td>
+  <td class="ctr"><span class="tag t-buy">92 可以买入</span></td>
+  <td class="num down">−1.2%</td><td class="num">72%</td><td class="num">2.48%<br><span style="font-size:11px;color:var(--ink3)">止损 7.53</span></td>
+  <td class="num">1.0167</td><td class="num">11.21%</td><td class="num">7.41</td>
+</tr>
+<tr>
+  <td class="ctr bold">2</td><td class="bold">中科软</td><td>603927</td>
+  <td class="num">14.05</td><td class="num up">+4.15%</td><td class="num up">1.99x</td>
+  <td class="ctr"><span class="tag t-wait">81 关注等待</span></td>
+  <td class="num up">+2.7%</td><td class="num">77%</td><td class="num">2.30%<br><span style="font-size:11px;color:var(--ink3)">止损 13.57</span></td>
+  <td class="num">3.6575</td><td class="num">2.79%</td><td class="num">52.14</td>
+</tr>
+<tr>
+  <td class="ctr bold">3</td><td class="bold">新华保险</td><td>601336</td>
+  <td class="num">56.90</td><td class="num up">+1.39%</td><td class="num">0.75x</td>
+  <td class="ctr"><span class="tag t-wait">80 关注等待</span></td>
+  <td class="num down">−2.2%</td><td class="num up">12%</td><td class="num">1.56%<br><span style="font-size:11px;color:var(--ink3)">止损 55.57</span></td>
+  <td class="num">1.4364</td><td class="num bold">18.87%</td><td class="num">4.89</td>
+</tr>
+<tr>
+  <td class="ctr bold">4</td><td class="bold">中国平安</td><td>601318</td>
+  <td class="num">52.83</td><td class="num up">+0.30%</td><td class="num">1.02x</td>
+  <td class="ctr"><span class="tag t-wait">77 关注等待</span></td>
+  <td class="num down">−2.3%</td><td class="num">51%</td><td class="num">1.65%<br><span style="font-size:11px;color:var(--ink3)">止损 51.53</span></td>
+  <td class="num down">0.9305</td><td class="num">9.00%</td><td class="num">7.10</td>
+</tr>
+<tr>
+  <td class="ctr bold">5</td><td class="bold">中国人寿</td><td>601628</td>
+  <td class="num">36.15</td><td class="num up">+0.58%</td><td class="num">0.69x</td>
+  <td class="ctr"><span class="tag t-wait">72 关注等待</span></td>
+  <td class="num down">−4.0%</td><td class="num up">7%</td><td class="num">2.08%<br><span style="font-size:11px;color:var(--ink3)">止损 35.02</span></td>
+  <td class="num bold">1.5383</td><td class="num bold">21.07%</td><td class="num">6.63</td>
+</tr>
+<tr>
+  <td class="ctr bold">6</td><td class="bold">中国太保</td><td>601601</td>
+  <td class="num">31.15</td><td class="num up">+1.04%</td><td class="num">0.91x</td>
+  <td class="ctr"><span class="tag t-avoid">59 暂时回避</span></td>
+  <td class="num down">−3.1%</td><td class="num">48%</td><td class="num">2.17%<br><span style="font-size:11px;color:var(--ink3)">止损 30.14</span></td>
+  <td class="num">0.9388</td><td class="num">9.70%</td><td class="num">5.60</td>
+</tr>
+</tbody>
+</table>
+<div class="src">技术列：2026-10-09 收盘，腾讯日线接口（前复权，200 根）本地计算，脚本 <code>ins_stocks.py</code>。估值列：通达信 indicator_select，PB 为 <code>市净率(PB,MRQ)</code>、PE 为 <code>市盈率(PE,LYR)</code>、ROE 为<strong>加权口径的最新报告期</strong>（交易日 20261009）；其中<strong>中科软的 PB 返回口径为 LYR 而非 MRQ</strong>[口径存疑]。<strong>重要：保险股不宜用 PE 定价</strong>，PE(LYR) 列仅供参考，主口径请看 PEV/PB。</div>
+
+<div class="note">
+  <div class="hd">为什么保险股不能用 PE 排序</div>
+  寿险公司的利润会被投资收益（尤其是 TPL 类资产的公允价值变动）剧烈放大或缩小，26H1 六家净利润同比 +78%、个体区间却横跨 10.4%–228.6%，正是这个原因。用 PE 排序会得出「最便宜的其实只是今年投资收益最好」的错误结论。<strong>本报告统一以 <span class="bold">PB 和 PEV</span> 为主要估值锚</strong>，PE 仅留作参考列。
+</div>
+</section>
+
+<section id="s5">
+<h2 class="sec"><span class="no">05</span>核心标的逐个拆解</h2>
+
+<!-- 1 中国人保 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">中国人保</span><span class="cd">601319 · 财险为主的综合保险集团</span></div>
+    <div style="text-align:right">
+      <div class="px">7.82 <span style="font-size:13px" class="down">−1.14%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 92 · 可以买入</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">7.91</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v">0.988</div></div>
+      <div class="i"><div class="k">MA20 斜率</div><div class="v up">+0.83%</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v">72%</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">2.48%</div></div>
+      <div class="i"><div class="k">60 日涨跌</div><div class="v up">+12.0%</div></div>
+      <div class="i"><div class="k">PB</div><div class="v">1.0167</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v">11.21%</div></div>
+    </div>
+    <p><strong>评分拆解：</strong>六只中唯一 MA20 斜率转正（+0.83%）的一只，拿到 8/10；Spring 得 15/15（近 20 日跌破后快速收回）；回调质量 10/10（阴线均量 0.75x，缩量健康）；涨幅安全性 15/15（60 日 +12% 对应 20 日均振幅合计 146%，比值仅 0.08，完全没有透支）。拖后腿的是区间位置 5/20（72% 已属偏高）与当日跌破 MA20。</p>
+    <p><strong>基本面：</strong>26H1 投资业绩占税前利润 <strong>71.6%</strong>，属高敏感度阵营；但相比国寿、新华，人保的财险占比更高，利润结构里「保险服务业绩」份量更重，理论上应更稳。8 月财产险公司口径的复苏（连续 4 个月单月正增长、非车 +4.6%、非车健康险 +28.9%）对人保是直接利好。<strong>财政部拟以不超过 150 亿元全额认购其 A 股补充资本金</strong>，是国家队背书最具体的一家。</p>
+    <div class="note warn" style="margin:10px 0 0">
+      <div class="hd">为什么仍不作为首选建仓对象</div>
+      三个理由：① <strong>60 日位置 72%，是全场第二高</strong>，意味着回调不够充分，风险收益比不如新华/人寿；② 当日 −1.14% 且已收在 MA20 下方（0.988），短线本身就是走弱状态；③ 它已经是一段走完 12% 的防守仓位——真正的防御价值应该体现在「市场恐慌时它最抗跌」，但现在它恰恰处在最抗跌的位置上。<strong>结论：把它放进观察名单，等回落到 MA20 下方 3–5%（约 7.5–7.6 元）再评估，而不是现在追。</strong>
+    </div>
+  </div>
+</div>
+
+<!-- 2 中科软 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">中科软</span><span class="cd">603927 · 保险 IT 系统服务商（非保险公司）</span></div>
+    <div style="text-align:right">
+      <div class="px">14.05 <span style="font-size:13px" class="up">+4.15%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 81 · 关注等待</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">13.68</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v up">1.027</div></div>
+      <div class="i"><div class="k">MACD</div><div class="v up">金叉 20/20</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v">77%</div></div>
+      <div class="i"><div class="k">当日量比</div><div class="v up">1.99x</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">2.30%</div></div>
+      <div class="i"><div class="k">PB(LYR)</div><div class="v">3.6575</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v down">2.79%</div></div>
+    </div>
+    <p><strong>评分拆解：</strong>全场唯一 MACD 拿到满分（DIF +0.012 / DEA +0.001，零轴附近金叉）的一只；唯一站上 MA20（1.027）；量价关系 13/15，是全场唯一符合「价涨 + 量放大 30% 以上」的<strong>有效上涨</strong>信号（+4.15%，1.99x）。扣分项集中在 ATR 扩张 0/15（0.29→0.32，波动放大初期）与区间位置 5/20（77% 偏高）。</p>
+    <p><strong>它和其他五只不是一类资产。</strong>中科软是保险公司的 IT 供应商而非保险公司本身，PE 52.14x、ROE 只有 2.79%，<em>估值完全不在同一个体系里</em>。它涨的逻辑是「AI + 软件 + 保险行业 IT 支出」，属于软件股定价，不受 PB/PEV 框架约束，也不享受险资红利。</p>
+    <div class="note warn" style="margin:10px 0 0">
+      <div class="hd">定位建议</div>
+      <strong>作为卫星仓位，不作为保险板块的核心配置。</strong>把它列入标的池的价值在于：它是本轮唯一给出「有效放量突破」的股票，可以充当板块资金的先行指标——<em>若它能延续放量上行，说明有增量资金正在向保险产业链渗透；若它在 2–3 个交易日内缩量回落至 MA20（13.68）下方，则说明 10/09 的长阳只是一次技术性反弹。</em>
+    </div>
+  </div>
+</div>
+
+<!-- 3 新华保险 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">新华保险</span><span class="cd">601336 · 纯寿险 · 权益 β 最高</span></div>
+    <div style="text-align:right">
+      <div class="px">56.90 <span style="font-size:13px" class="up">+1.39%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 80 · 关注等待</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">58.20</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v">0.978</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v up">12%</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">1.56%</div></div>
+      <div class="i"><div class="k">20 日涨跌</div><div class="v down">−8.1%</div></div>
+      <div class="i"><div class="k">60 日涨跌</div><div class="v down">−5.9%</div></div>
+      <div class="i"><div class="k">PB</div><div class="v">1.4364</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v bold">18.87%</div></div>
+    </div>
+    <p><strong>评分拆解：</strong>区间位置拿到满分 20/20（60 日位置仅 12%，回调最充分之一）；ATR 连续收缩 15/15（1.01→0.88）；ATR% 1.56% 为全场最低，满分。拖累项是 MA20 斜率 −1.91%（0/10）、MACD 空头延续（5/20，但 DIF −0.907 / DEA −0.740 已开始收敛）、当日缩量上涨（5/15，需求枯竭）。</p>
+    <p><strong>基本面是全组最强的进攻组合：</strong></p>
+    <ul>
+      <li>26H 二级权益敞口 <strong>25.5%，行业最高</strong>，较年初 +4.41pct；测算 A/H 口径 2026 年 PEV 分别 <strong>0.55x / 0.41x</strong></li>
+      <li>个险 NBV <span class="up">+20.6%</span>、个险新单 <span class="up">+24.0%</span>、人均产能 <span class="up">+31.7%</span></li>
+      <li>分红险新单占比已达 <strong>83.9%</strong>，长期险首年期交占首年保费 85.2%（+20.8pct）——负债成本下行最彻底</li>
+      <li>累计增配 TPL 股票 233 亿 + OCI 股票 133 亿，<strong>合计占上半年新增保费的 60%</strong>；估算二级权益收益率 16%+</li>
+      <li>截至 26/9/30，9 月个险期交累计同比 <span class="up">+17%</span>，为主要同业最快</li>
+    </ul>
+    <div class="note bad" style="margin:10px 0 0">
+      <div class="hd">必须同时说清楚的代价</div>
+      β 是双向的。新华的代理人数量仍同比 <span class="down">−4.0%</span>，净投资收益率 <span class="down">−0.40pct</span>，银保新单同比 −20%（压降趸交 62%）。更重要的是：<strong>25.5% 的权益敞口意味着它对股市的敏感度也是全行业最高</strong>——权益市场每下跌 10%，它的利润表受到的冲击要显著大于同业。这是它 20 日跌 8.1% 的直接原因。<em>买它，本质是在买「权益市场会企稳」这个判断。</em>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section id="s5b">
+<h2 class="sec"><span class="no">05</span>核心标的逐个拆解（续）</h2>
+
+<!-- 4 中国平安 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">中国平安</span><span class="cd">601318 · 综合金融 · 板块压舱石</span></div>
+    <div style="text-align:right">
+      <div class="px">52.83 <span style="font-size:13px" class="up">+0.30%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 77 · 关注等待</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">54.05</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v">0.977</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v">51%</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">1.65%</div></div>
+      <div class="i"><div class="k">20 日涨跌</div><div class="v down">−7.3%</div></div>
+      <div class="i"><div class="k">60 日涨跌</div><div class="v up">+8.9%</div></div>
+      <div class="i"><div class="k">PB</div><div class="v down">0.9305</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v">9.00%</div></div>
+    </div>
+    <p><strong>评分拆解：</strong>Spring 15/15（近 20 日跌破后快速收回）、ATR 收缩 15/15、涨幅安全 15/15、低波 10/10，这几项都拿到了高分；60 日位置 51% 属中性。但它有两个明确的警示：<strong>回调质量 0/10——阴线平均量能达到 20 日均量的 1.21x，属于「放量回调」</strong>，这是六只里唯一出现放量回调的；其次 MACD 0/20，DIF −0.274 / DEA −0.033 仍在零轴下。</p>
+    <p><strong>基本面：最大的优点和最大的缺点都写在同一个中报里。</strong></p>
+    <ul>
+      <li>优点：26H1 集团归母净利润 <span class="up">+36.1%</span>（寿险 +17.9%），营运利润 +8.3%；EV 较年初 +4.2%；<strong>大幅增配 OCI 高股息资产</strong>——OCI 股票较年初 +925 亿元，占比升至 65.8%（+9.3pct），同时 TPL 股票减少 867 亿元，利润稳定性显著提升；中期 DPS 0.98 元（+3.2%）；财险 COR 95.1%（同比 −0.1pct）</li>
+      <li>缺点：<strong>寿险 NBV 增速结构不佳</strong>——Q1 +21% 后，Q2 转为 −1.8%，上半年累计 +11.2%；NBVM 同比 −1.7pct 至 24.4%（分红险转型代价）；<strong>代理人较年初 −7.4% 至 32.5 万人</strong>，是主要同业中降幅最大的；财险利润 −12.4%（主要因税率升至约 32%）；NII/CII 分别降至 1.4%/2.1%</li>
+      <li>9 月渠道：银保当月 +450%、累计 +17% 亮眼，但<strong>个险当月 −50%、累计 −20%</strong>，是四家披露公司中个险压力最大的</li>
+      <li>估值：PB <strong>0.9305，是全场唯一跌破净资产的保险公司</strong>；26E PEV 约 0.59x（A）/ 0.49x（H）；A 股股息率接近 5%</li>
+    </ul>
+    <div class="note good" style="margin:10px 0 0">
+      <div class="hd">它的角色不是弹性，而是锚</div>
+      卖方普遍将平安列为「基本面企稳改善」的首选。PB 跌破 1 倍在历史上是有意义的信号——据卖方交流，平安历史上每次跌破 1 倍 PB 后均能修复，1 倍 PB 被视为可靠的安全底线。<strong>建议把它当作板块底仓而非进攻标的</strong>：不要指望它跑赢，但它可以显著降低组合在权益市场二次探底时的回撤。
+    </div>
+  </div>
+</div>
+
+<!-- 5 中国人寿 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">中国人寿</span><span class="cd">601628 · 纯寿险 · 规模最大 / ROE 最高</span></div>
+    <div style="text-align:right">
+      <div class="px">36.15 <span style="font-size:13px" class="up">+0.58%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 72 · 关注等待</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">37.66</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v down">0.960</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v up">7%</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">2.08%</div></div>
+      <div class="i"><div class="k">20 日涨跌</div><div class="v down">−7.9%</div></div>
+      <div class="i"><div class="k">60 日涨跌</div><div class="v down">−2.8%</div></div>
+      <div class="i"><div class="k">PB</div><div class="v bold">1.5383</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v bold">21.07%</div></div>
+    </div>
+    <p><strong>评分拆解：</strong>全场最极致的一张打分表——<strong>区间位置拿到满分 20/20（60 日位置仅 7%，是六只中最低的）</strong>，同时价/MA20 只有 0.960，也拿到最低档 2/15。这说明它跌得最透，但也说明它还没止住。10/08 单日跌 2.07% 后，10/09 只以 0.69x 的极度缩量反抽 0.58%，<strong>典型的抛压释放后买盘尚未进场。</strong></p>
+    <p><strong>基本面：这一批里最强的「资产端放大器」。</strong></p>
+    <ul>
+      <li>ROE <strong>21.07%</strong>，全场第一；26H1 投资业绩占税前利润 <strong>76.6%</strong>，全场最高——<em>这意味着股市上涨时它弹性最大，下跌时利润压力也最大</em></li>
+      <li><strong>财政部直接注资 350 亿元</strong>，是本轮国家队补充保险资本中金额最大的一笔</li>
+      <li>9 月负债端：银保当月 +195%、累计 +14%，个险当月 +130%、累计 +4%，均已转正</li>
+      <li>估值：PB 1.5383（最高）、26E PEV 0.63x（A）/ 0.40x（H）；H 股股息率超 5%</li>
+    </ul>
+    <div class="note bad" style="margin:10px 0 0">
+      <div class="hd">一个必须计入的减分项</div>
+      华西证券预测，中国人寿 <strong>2026E EPS 为 4.61 元，低于 2025A 的 5.45 元，同比 −15.4%</strong>，对应 2026E PE 反而从 6.63 倍升至 7.84 倍。<strong>这是六只中唯一被预测盈利下滑的标的</strong>，与 +78% 的中报净利润形成尖锐对照——根源正是 2025 年那次投资端的高基数。<br>因此对它应当采用与其他几只不同的标准：<em>它的 60 日位置 7% 是「便宜」的信号，但同时也是市场在为 2026 全年盈利下滑做提前定价的信号。建议仓位小于新华。</em>
+    </div>
+  </div>
+</div>
+
+<!-- 6 中国太保 -->
+<div class="stk">
+  <div class="stk-head">
+    <div><span class="nm">中国太保</span><span class="cd">601601 · 寿财均衡 · 技术 + 渠道双警示</span></div>
+    <div style="text-align:right">
+      <div class="px">31.15 <span style="font-size:13px" class="up">+1.04%</span></div>
+      <div style="font-size:12px;color:var(--ink3)">评分 59 · 暂时回避</div>
+    </div>
+  </div>
+  <div class="stk-body">
+    <div class="kv">
+      <div class="i"><div class="k">MA20</div><div class="v">32.16</div></div>
+      <div class="i"><div class="k">价 / MA20</div><div class="v">0.969</div></div>
+      <div class="i"><div class="k">60 日位置</div><div class="v">48%</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">2.17%</div></div>
+      <div class="i"><div class="k">20 日涨跌</div><div class="v down">−8.5%</div></div>
+      <div class="i"><div class="k">60 日涨跌</div><div class="v up">+10.7%</div></div>
+      <div class="i"><div class="k">PB</div><div class="v">0.9388</div></div>
+      <div class="i"><div class="k">ROE（加权）</div><div class="v">9.70%</div></div>
+    </div>
+    <p><strong>评分拆解：这是一份「原本不错、但被一票否决」的卷子。</strong>Spring 15/15、回调质量 10/10（阴线均量 0.74x，缩量健康）、涨幅安全 15/15、低波 10/10、ATR 收缩 15/15——这些加起来已接近 90 分水准。但最后一项 <strong>顶背离 −30 分</strong> 直接把它拉到 59 分，进入「暂时回避」档。按框架，<em>顶背离的出现优先于任何评分</em>，因为它意味着「价格创新高而动能未创新高」，是努力与结果背离的典型派发信号。</p>
+    <p><strong>基本面：稳健，但渠道端是四家里最弱的。</strong></p>
+    <ul>
+      <li>优点：26H1 <strong>保险服务业绩占税前利润 64.2%</strong>，是已披露公司中最高——意味着利润对投资的依赖度最低，理论上盈利质量最扎实；华西预测 2026E EPS 6.21 元（较 2025A 的 5.56 元 <span class="up">+11.7%</span>），是六只中增速最靠前的；26E PEV 仅 0.43x（A）/ 0.33x（H），是 A 股口径最低；H 股 TTM 股息率 6.0%</li>
+      <li>缺点：截至 26/9/30 的负债端跟踪中，太保<strong>是唯一银保累计期交为负（−17%）的公司</strong>，个险累计也仅 −1%；同期新华个险 +17%、平安银保 +17%、国寿银保 +14%。<em>渠道数据的走弱与顶背离的出现，在时间上是同步的。</em></li>
+    </ul>
+    <div class="note bad" style="margin:10px 0 0">
+      <div class="hd">双重验证下的结论</div>
+      当技术面（顶背离）与基本面（渠道负增长）指向同一个结论时，就不应该再用「估值最便宜」去对冲。太保 26E PEV 0.43x 确实是 A 股最低，<strong>但便宜需要有人去修复，而它恰恰缺少一个近端催化剂。</strong><br>
+      <strong>建议：本轮不配置。</strong>重新纳入的条件（需同时满足两项）：① 出现放量站回 MA20 = 32.16 的长阳且 MACD 在零轴下金叉；② 10 月渠道累计期交数据转正。
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section id="s6">
+<h2 class="sec"><span class="no">06</span>统一操作计划</h2>
+
+<div class="note">
+  <div class="hd">总原则</div>
+  板块评分 71/165 处于「关注等待」档，意味着<strong>现在不是一次性买满的时点，而是建首批 + 备后手的时点</strong>。建议总仓位 <strong>5%</strong>，分三批执行；单票首道止损统一取 1.5×ATR（因全部标的 ATR% 均低于 3%，按框架适用 1.5 倍）。
+</div>
+
+<table>
+<thead><tr>
+<th>标的</th><th class="ctr">建议动作</th><th class="num">目标仓位</th><th>触发买点</th><th class="num">首道止损</th><th>角色</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td class="bold">新华保险<br><span style="font-size:11.5px;color:var(--ink3)">601336</span></td>
+  <td class="ctr"><span class="tag t-buy">分批建仓</span></td><td class="num bold">2.0%</td>
+  <td>① 放量站回 MA20 <strong>58.20</strong>（量比 &gt; 1.2x）；② 或回踩 55.6–56.2 区间缩量企稳</td>
+  <td class="num bold">55.57<br><span style="font-size:11px;color:var(--ink3)">−2.3%</span></td>
+  <td>进攻仓。β 最高，赔率最好，代价是必须与权益市场的判断绑定</td>
+</tr>
+<tr>
+  <td class="bold">中国人寿<br><span style="font-size:11.5px;color:var(--ink3)">601628</span></td>
+  <td class="ctr"><span class="tag t-buy">分批建仓</span></td><td class="num bold">1.5%</td>
+  <td>放量站回 MA20 <strong>37.66</strong>，或回踩 35.7–36.2 缩量企稳</td>
+  <td class="num bold">35.02<br><span style="font-size:11px;color:var(--ink3)">−3.1%</span></td>
+  <td>进攻仓，但仓位刻意低于新华——2026E EPS 预测 −15.4%</td>
+</tr>
+<tr>
+  <td class="bold">中国平安<br><span style="font-size:11.5px;color:var(--ink3)">601318</span></td>
+  <td class="ctr"><span class="tag t-core">底仓</span></td><td class="num bold">1.0%</td>
+  <td>51.5–53.5 区间分批；放量站回 MA20 <strong>54.05</strong> 可加至 1.5%</td>
+  <td class="num bold">51.53<br><span style="font-size:11px;color:var(--ink3)">−2.5%</span></td>
+  <td>压舱石。PB 0.9305 破净 + 股息率近 5% + OCI 大幅增配</td>
+</tr>
+<tr>
+  <td class="bold">中科软<br><span style="font-size:11.5px;color:var(--ink3)">603927</span></td>
+  <td class="ctr"><span class="tag t-wait">卫星仓</span></td><td class="num bold">0.5%</td>
+  <td>回踩 MA20 <strong>13.68</strong> 不破且缩量。<span class="down">当日已放量 1.99x，不追高</span></td>
+  <td class="num bold">13.57<br><span style="font-size:11px;color:var(--ink3)">−3.4%</span></td>
+  <td>资金先行指标 + 卫星弹性。注意 ROE 仅 2.79%、PB 3.66，估值逻辑与其余五只不同</td>
+</tr>
+<tr>
+  <td class="bold">中国人保<br><span style="font-size:11.5px;color:var(--ink3)">601319</span></td>
+  <td class="ctr"><span class="tag t-wait">观察</span></td><td class="num">0%<br><span style="font-size:11px;color:var(--ink3)">保留 1% 额度</span></td>
+  <td>回落至 <strong>7.50–7.60</strong> 且缩量企稳后启用</td>
+  <td class="num">参与则 7.53<br><span style="font-size:11px;color:var(--ink3)">−3.7%</span></td>
+  <td>评分最高但位置最高（72%），且 10/09 已破 MA20。不追</td>
+</tr>
+<tr>
+  <td class="bold">中国太保<br><span style="font-size:11.5px;color:var(--ink3)">601601</span></td>
+  <td class="ctr"><span class="tag t-avoid">回避</span></td><td class="num bold" style="color:var(--down)">0%</td>
+  <td>需<strong>同时</strong>满足三项：① 放量站回 MA20 <strong>32.16</strong>；② MACD 零轴下金叉；③ 10 月渠道累计期交转正</td>
+  <td class="num">—</td>
+  <td>顶背离 −30（一票否决）+ 银保累计 −17%，技术与基本面同步走弱</td>
+</tr>
+<tr style="background:#f0f4fa"><td class="bold">合计</td><td class="ctr">—</td><td class="num bold" style="font-size:14px">5.0%</td><td colspan="3" class="bold">建议不超过 5%，且不超过单一账户权益仓位的合理比例</td></tr>
+</tbody>
+</table>
+
+<h3>分批节奏</h3>
+<ol>
+  <li><strong>第一批 2%（现在）：</strong>新华 1.0%、平安 0.5%、人寿 0.5%。理由是这三只的 60 日位置分别为 12%、51%、7%，回调已足够充分，符合框架「区间位置越低分越高」的逻辑。</li>
+  <li><strong>第二批 2%（触发确认）：</strong>板块指数站回 <strong>MA20 = 1473.02</strong> 且当日量比 &gt; 1.2x。加仓顺序按评分：新华 → 人寿 → 平安 → 中科软。</li>
+  <li><strong>第三批 1%（落后补）：</strong>留给中国人保回落至 7.50–7.60 后的补配，或给已持仓品种在个股自身站回 MA20 后的加码。</li>
+</ol>
+
+<h3>止盈与减仓规则（ATR 梯度收紧）</h3>
+<table>
+<thead><tr><th>持仓浮盈</th><th class="num">止损倍数</th><th>计算方式</th></tr></thead>
+<tbody>
+<tr><td>&lt; 0%（尚未盈利）</td><td class="num">1.5 × ATR</td><td rowspan="5">止盈线 = <strong>持有期间最高收盘价 − (ATR × 对应倍数)</strong>。<br>浮盈越高，允许回吐的幅度越小，保护利润逐步收紧。</td></tr>
+<tr><td>0% ~ +10%</td><td class="num">2.5 × ATR</td></tr>
+<tr><td>+10% ~ +20%</td><td class="num">2.0 × ATR</td></tr>
+<tr><td>+20% ~ +30%</td><td class="num">1.5 × ATR</td></tr>
+<tr><td>&gt; +30%</td><td class="num">1.0 × ATR</td></tr>
+</tbody>
+</table>
+<p><strong>板块层面的硬约束：</strong>若通达信保险板块指数（881395）跌破 <strong>1394.48</strong>（1.5×ATR 止损），总体仓位降至 3%；若进一步跌破 60 日区间下沿 <strong>1359.12</strong>，降至 1% 以下并重新评估。反之，若放量收复 MA20 = 1473.02，可把总仓位上限由 5% 放宽到 7%。</p>
+
+<h3>未来一个季度的催化剂日历</h3>
+<table>
+<thead><tr><th style="width:130px">时间</th><th>事件</th><th>关键观察点</th></tr></thead>
+<tbody>
+<tr><td>2026 年 10 月下旬</td><td class="bold">上市险企 Q3 季报</td><td>Q3 利润回落幅度是否好于当前已极度悲观的预期；OCI 股票占比是否继续提升；NBV 增速能否维持正增长</td></tr>
+<tr><td>2026 年 10–11 月</td><td class="bold">2027 年开门红预售启动</td><td>预售新单同比、演示利率设定水平、分红险占比是否继续提升——这是验证负债端拐点的<strong>最重要前瞻指标</strong></td></tr>
+<tr><td>2026 年 11–12 月</td><td class="bold">预定利率研究值季度发布</td><td>3Q26 评估值约 1.93%，若跌破触发阈值可能引发新一轮定价下调与停售潮（短期冲量、中期压 NBVM）</td></tr>
+<tr><td>持续</td><td class="bold">险资权益配置与重仓比例</td><td>2Q26 保险板块重仓比例仅 0.58%（A+H，环比 −0.72pct），若 3Q/4Q 回升即为最直接的增量资金证据</td></tr>
+<tr><td>持续</td><td class="bold">保险法修订进展</td><td>财险公司资本约束放松的落地力度，直接关系人保、太保等财产险比重较高者</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="s7">
+<h2 class="sec"><span class="no">07</span>风险清单：什么会推翻上述判断</h2>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">高优先级风险</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>Q3 业绩低于已悲观的预期。</strong>10/08 数据显示险资模拟总投资收益率已降至 3.14%、年内浮盈转亏。若 Q3 实际利润降幅超过预期，或出现「 ROE 大幅下滑 + 分红不及预期」的组合，估值修复逻辑会被推迟至少一个季度。</li>
+      <li><strong>权益市场二次探底。</strong>新华二级权益敞口 25.5%、国寿投资业绩占比 76.6%，这意味着本组合的重点持仓正是对股市最敏感的两只。AH 上市险企 26H1 净利润 +78% 的繁荣很大程度上建立在资本市场中枢上行之上。</li>
+      <li><strong>预定利率触发新一轮下调。</strong>3Q26 评估值约 1.93%，若继续下行触发调整，短期虽会因「停售效应」冲量，但中期会压缩 NBVM，损害新业务价值。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">中优先级风险</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>长端利率再下台阶。</strong>整个保险估值修复的中枢建立在「利差损风险缓解」叙事上，利率若重新单边下行，PEV/PB 修复空间会被压缩。</li>
+      <li><strong>渠道政策扰动。</strong>65 号文阶段性约束银保扩张，叠加新版报行合一，可能阶段性压制新单。</li>
+      <li><strong>代理人数量持续下滑。</strong>平安较年初 −7.4% 至 32.5 万人、新华 −4.0%；人均产能的提升能否抵消数量下滑，仍需持续验证。</li>
+      <li><strong>财险 COR 因自然灾害恶化。</strong>对中国人保、中国太保（财产险比重较高）影响更直接。</li>
+    </ol>
+  </div>
+</div>
+
+<div class="note bad">
+  <div class="hd">对本报告方法论自身的三项保留</div>
+  <ol style="margin-bottom:0">
+    <li><strong>估值口径未完全统一。</strong>A 股 PB 为通达信 PB(MRQ)，而对比所用的 H 股 PB 未标注 MRQ，两者可能存在口径差异，A/H 折价的百分比应作为方向性参考。<span class="tag t-src">[口径存疑]</span></li>
+    <li><strong>ROE 为「加权 / 最新报告期」，各公司报告期未必一致。</strong>本表直接横向比较存在可比性瑕疵，用于排序时应谨慎。</li>
+    <li><strong>「截至 26/9/30 个险/银保期交同比」来自卖方渠道调研而非公司正式披露</strong>，不同机构口径可能有出入，仅作为趋势方向参考。<span class="tag t-src">[调研数据]</span></li>
+  </ol>
+</div>
+</section>
+
+<section id="s8">
+<h2 class="sec"><span class="no">08</span>数据来源</h2>
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">行情与量化数据</h4>
+    <ul style="margin-bottom:0;font-size:13.5px">
+      <li>板块指数 K 线：通达信 MCP <code>tdx_kline</code>（881395，setcode=1，日线 100 根，2026-05-14 至 2026-10-09）</li>
+      <li>个股 K 线：腾讯财经日线接口（前复权，200 根），本地脚本 <code>ins_stocks.py</code> / <code>bx_score.py</code></li>
+      <li>估值指标：通达信 MCP <code>tdx_indicator_select</code>（PE(LYR) / PB(MRQ) / ROE 加权，交易日 20261009）</li>
+      <li>成分股与涨跌幅：通达信 MCP <code>tdx_screener</code>（index_code=881395）</li>
+      <li>板块代码检索：通达信 MCP <code>tdx_lookup_stock</code></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">研究与渠道材料</h4>
+    <ul style="margin-bottom:0;font-size:13.5px">
+      <li>ima 知识库（智汇研订阅库）：华西证券《保险 2026 年 8 月保费点评》（2026-10-09）、西部证券 26H1 中报综述（2026-09-10）、华泰证券《3Q26 险企盈利或阶段性承压》（2026-10-02）、东吴证券非银周报（2026-09-28）、《3Q26 预定利率评估值或为 1.93%》（2026-10-08）、《险资运用收益率指数月报·2026 年 9 月》（2026-10-08）</li>
+      <li>知识星球（短评&amp;信息 / 浑水调研Plus）：2026-10-07 负债端渠道数据跟踪与 PEV 分位、2026-10-09 险资传言回应与申万非银观点更新、2026-08-20 平安 1H26 业绩简评、2026-08-27 新华 26H 点评、2026-09-06 财政部注资梳理</li>
+      <li>监管数据：国家金融监督管理总局 2026 年 8 月保费数据（经华西证券整理）</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<div class="foot">
+  <strong>免责声明：</strong>本报告仅供研究参考，不构成个人投资建议。报告中的技术评分基于历史量价数据的统计规则生成，不预示未来走势；所有基本面数据来自公开券商研报、监管统计与卖方渠道调研，本报告未对其做独立的审计核实，标注 [口径存疑] / [调研数据] 的项目尤请注意。市场有风险，投资需谨慎。<br>
+  <span style="font-size:12px">生成时间：2026-10-10　|　数据基准日：2026-10-09 收盘</span>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Muse 专题研究报告 · 基于知识星球调研内容整理</title>
+<meta name="description" content="Muse 的意义不在模型能力跃迁，而在首次把消费级 Agent 部署进持久化云端虚拟机——把 AI 算力需求从 GPU 推理扩散到 CPU/内存/云运行环境，并触发平台流量入口之争。上线约 10 天登顶美区免费榜、10 月初 DAU 250–300 万进入平台期；多方共识短期弹性已部分透支（CPU 板块估值分歧加大），中期看留存率、高频场景、第三方权限博弈三个变量；国内因入口封闭更可能走「平台原生 Agent」，最贴近的映射是腾讯微信「小微」。注意：星球流转的卖方研报与个人观点汇编，非一手来源，需核实原文。">
+<meta name="report-type" content="调研汇编">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root{
+    --ink:#1a2233; --sub:#5a6478; --line:#e4e8f0; --bg:#f7f8fb; --card:#ffffff;
+    --blue:#2b5fd9; --blue-bg:#eef3fe; --red:#c8353e; --green:#1e8a5a;
+    --amber:#b26a00; --amber-bg:#fdf4e5;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.75; font-size:15px;}
+  .wrap{max-width:1060px; margin:0 auto; padding:28px 20px 60px;}
+  header.hero{background:linear-gradient(135deg,#1d3a8f 0%,#2b5fd9 60%,#4a7ae8 100%); color:#fff; border-radius:14px; padding:34px 36px 28px; margin-bottom:22px;}
+  header.hero h1{font-size:27px; letter-spacing:1px; margin-bottom:10px;}
+  header.hero .meta{font-size:13px; opacity:.92; line-height:1.9;}
+  header.hero .tag{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35); border-radius:20px; padding:2px 12px; margin-right:8px; font-size:12px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px 28px; margin-bottom:20px; box-shadow:0 1px 3px rgba(20,30,60,.04);}
+  h2{font-size:19px; margin-bottom:14px; padding-left:10px; border-left:4px solid var(--blue);}
+  h3{font-size:16px; margin:18px 0 8px; color:#1d3a8f;}
+  p{margin-bottom:10px;}
+  ul{padding-left:20px; margin-bottom:10px;}
+  li{margin-bottom:6px;}
+  .src{font-size:12px; color:var(--sub); background:var(--bg); border-radius:6px; padding:6px 10px; margin:8px 0; display:inline-block;}
+  .tldr{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .tldr .kpi{background:var(--blue-bg); border-radius:10px; padding:14px 18px;}
+  .tldr .kpi b{display:block; font-size:22px; color:var(--blue);}
+  .tldr .kpi span{font-size:13px; color:var(--sub);}
+  .concl{background:var(--amber-bg); border:1px solid #ecd9b0; border-radius:10px; padding:16px 20px; margin-bottom:0;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:10px 0 4px;}
+  th{background:#eef1f8; text-align:left; padding:8px 10px; border:1px solid var(--line); font-weight:600; white-space:nowrap;}
+  td{padding:7px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:#fafbfd;}
+  .up{color:var(--red); font-weight:600;}
+  .note{font-size:12.5px; color:var(--sub);}
+  .chart{width:100%; height:340px;}
+  .chart-sm{width:100%; height:300px;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media(max-width:760px){.grid2,.tldr{grid-template-columns:1fr;} header.hero{padding:24px 20px;}}
+  /* 架构图（纯CSS） */
+  .arch{display:flex; flex-direction:column; gap:10px; margin:14px 0;}
+  .arch .layer{display:flex; gap:10px; flex-wrap:wrap; align-items:stretch;}
+  .arch .lab{flex:0 0 92px; font-size:12.5px; color:var(--sub); display:flex; align-items:center; justify-content:flex-end; padding-right:4px;}
+  .arch .boxes{flex:1; display:flex; gap:8px; flex-wrap:wrap;}
+  .arch .bx{flex:1; min-width:110px; border-radius:8px; padding:9px 12px; font-size:13px; text-align:center; border:1px solid var(--line); background:#fbfcfe;}
+  .arch .bx b{display:block; font-size:13.5px;}
+  .arch .bx small{color:var(--sub); font-size:11.5px;}
+  .arch .arrow{text-align:center; color:#9aa5bd; font-size:16px; line-height:1; margin:-4px 0;}
+  .b-blue{background:var(--blue-bg)!important; border-color:#c7d6f7!important;}
+  .b-amber{background:var(--amber-bg)!important; border-color:#ecd9b0!important;}
+  .b-green{background:#eaf6f0!important; border-color:#bfe3d2!important;}
+  .b-red{background:#fdeeee!important; border-color:#f0c9cb!important;}
+  .risk li{margin-bottom:9px;}
+  .disclaim{font-size:12px; color:var(--sub); border-top:1px dashed var(--line); padding-top:12px; margin-top:6px;}
+  .timeline{border-left:3px solid #c7d6f7; margin:10px 0 4px 6px; padding-left:18px;}
+  .timeline .tl{position:relative; margin-bottom:11px;}
+  .timeline .tl::before{content:""; position:absolute; left:-24px; top:7px; width:9px; height:9px; border-radius:50%; background:var(--blue);}
+  .timeline .tl b{color:#1d3a8f;}
+  a{color:var(--blue); text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>Meta Muse 专题研究报告</h1>
+  <div class="meta">
+    <span class="tag">消费级 AI Agent</span><span class="tag">算力产业链</span><span class="tag">平台博弈</span><span class="tag">国内映射</span><br>
+    整理日期：2026-10-10　|　数据来源：知识星球「浑水调研Plus」「短评&信息」（2026-09-10 至 2026-10-09 共 29 条主题）<br>
+    性质说明：本报告为星球内流转的卖方研报、专家纪要与个人观点的汇编整理，均属<b>非一手来源、需核实原文</b>，不构成投资建议
+  </div>
+</header>
+
+<!-- TLDR -->
+<div class="card">
+  <h2>核心结论（TL;DR）</h2>
+  <div class="tldr">
+    <div class="kpi"><b>9月8日</b><span>Muse 公测上线，约10天登顶美国 App Store 免费榜（Sensor Tower 口径）</span></div>
+    <div class="kpi"><b>280 万次</b><span>上线前 12 天全球双平台累计下载，美加 iOS 180 万 vs ChatGPT 同期 130 万</span></div>
+    <div class="kpi"><b>+11.43%</b><span>9/21 Meta 单日涨幅（2025年4月以来最大），ARM/AMD/Intel 单日涨 9%~17%</span></div>
+    <div class="kpi"><b>250~300 万</b><span>10 月初 Muse 日活（DAU）量级，较上线初期陡峭爬坡后进入平台期</span></div>
+    <div class="kpi"><b>$20 / $100 每月</b><span>订阅两档定价；免费层每周 1 亿 token；长期看交易抽成</span></div>
+    <div class="kpi"><b>3~4 GW</b><span>若达 1 亿 DAU 的总算力需求测算；其中沙盒 CPU 层仅约 0.1 GW——推理才是真瓶颈</span></div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="concl">
+    <b>一句话判断（汇编各方观点）：</b>Muse 的意义不在模型能力跃迁，而在首次把消费级 Agent 部署进「持久化云端虚拟机」——每个用户一台带浏览器、CPU、内存的独立 Linux VM，7×24 后台执行任务，把 AI 算力需求从 GPU 推理扩散到 CPU/内存/云运行环境，并触发平台流量入口之争（亚马逊封杀 vs Shopify/沃尔玛接入）。多方共识：短期弹性已部分透支（CPU 板块估值分歧加大），中期观察点是<b>留存率、高频场景、第三方权限博弈</b>三个变量；国内因入口封闭更可能走向「平台原生 Agent」，最贴近的映射是腾讯微信「小微」。
+  </div>
+</div>
+
+<!-- 一、产品全景 -->
+<div class="card">
+  <h2>一、产品全景：Muse 是什么</h2>
+  <p><b>定义：</b>Muse 是 Meta 于 2026 年 9 月推出的个人 AI Agent——用户说出目标，Muse 拆解任务、打开网页、填写表单、调用外部应用，可收发邮件、安排日程、预订旅行、比价购物、电话砍价、出售汽车等，并在用户关闭应用后继续后台执行。底层由 <b>Muse Spark 1.3</b> 模型驱动，已进入 Meta AI、WhatsApp、Instagram、Facebook。</p>
+  <div class="arch">
+    <div class="layer"><div class="lab">用户入口</div><div class="boxes">
+      <div class="bx b-blue"><b>Muse App / 网页</b><small>主入口</small></div>
+      <div class="bx b-blue"><b>WhatsApp / IG / FB</b><small>Meta 生态分发</small></div>
+      <div class="bx b-blue"><b>AI 眼镜</b><small>唤名唤醒 · Connect 宣布接入</small></div>
+      <div class="bx b-blue"><b>Muse Charm</b><small>挂钥匙链终端 · 12月发货</small></div>
+      <div class="bx b-blue"><b>Mac 端</b><small>可操控电脑后台任务</small></div>
+      <div class="bx b-blue"><b>独立邮箱</b><small>自主收发邮件 · 将上线</small></div>
+    </div></div>
+    <div class="arrow">▼</div>
+    <div class="layer"><div class="lab">智能体层</div><div class="boxes">
+      <div class="bx"><b>Muse Spark 1.3</b><small>围绕 Agent 场景设计 · 理解目标与规划 · 长期记忆</small></div>
+      <div class="bx"><b>智能体群</b><small>不同用户智能体彼此交流学习</small></div>
+    </div></div>
+    <div class="arrow">▼</div>
+    <div class="layer"><div class="lab">执行与安全</div><div class="boxes">
+      <div class="bx b-green"><b>Muse Secure VM</b><small>每用户独立 Linux 虚拟机（观测配置：2 vCPU / 8GB RAM / 100GB 存储），无头浏览器 + 高频 API + 多步编排，用户离开后持续运行</small></div>
+      <div class="bx b-amber"><b>Sentinel</b><small>系统级隔离的安全审查代理，敏感操作需用户确认</small></div>
+      <div class="bx b-amber"><b>Stripe Link</b><small>一次性银行卡号 · Muse 看不到密码与支付方式</small></div>
+    </div></div>
+    <div class="arrow">▼</div>
+    <div class="layer"><div class="lab">外部服务</div><div class="boxes">
+      <div class="bx b-red"><b>合作接入</b><small>Shopify(Shop Pay 接口) / 沃尔玛 / 百思买 / 丝芙兰 / Ulta / Gap / Wayfair / Expedia / Instacart / Spotify / PayPal / Plaid</small></div>
+      <div class="bx b-red"><b>Computer Use</b><small>直接操作未开放接口的网页（长尾商户、票务、本地生活）</small></div>
+      <div class="bx b-red"><b>电话能力</b><small>美国限定 · 虚拟号码拨打验证商家 · 自主走完客服菜单与谈判</small></div>
+    </div></div>
+  </div>
+  <p class="note">隐私承诺：可选择交互数据不用于训练 Meta 模型；对话与虚拟机数据不与 Meta 广告系统共享。</p>
+  <div class="src">来源：短评&信息 2026-09-10（中信观点）、2026-09-22（中信互联网）、2026-09-24（华创·Meta Connect 纪要）、2026-09-28（算力测算帖）、2026-09-21（华泰计算机）——转述观点，需核实原文</div>
+
+  <h3>Meta Connect 大会（9/23-24）：「个人超级智能」取代元宇宙成为主线</h3>
+  <ul>
+    <li><b>Muse 战略地位：</b>个人超级智能核心载体，目标服务数十亿用户，优先级高于元宇宙；数周即获数百万用户，连接器平台一周收到超 1500 份开发者申请。</li>
+    <li><b>商业模式：</b>基础免费 + 交易抽成（agent 依托抽成而非订阅变现，规模化后收入弹性或更高）。</li>
+    <li><b>AI 眼镜矩阵：</b>Meta 品牌眼镜组合从 6 月数十种扩至 51 种，起售价降至 249 美元，年底三大品牌超 100 款；新增无摄像头音频眼镜 Ray-Ban Meta Audio（349 美元起）；VR 眼镜仅约 100g、1299.99 美元、2027 年春上市；便携终端 Muse Charm 预计 12 月假期季前发货。</li>
+    <li><b>行业判断（华创）：</b>胜负手只有一个——用户信任能否转化为全天佩戴。</li>
+  </ul>
+  <div class="src">来源：短评&信息 2026-09-24（华创传媒互联网·Connect 要点）</div>
+</div>
+
+<!-- 二、增长数据 -->
+<div class="card">
+  <h2>二、增长数据：早期表现全面超越 ChatGPT 同期</h2>
+  <div class="grid2">
+    <div id="chart1" class="chart-sm"></div>
+    <div id="chart2" class="chart-sm"></div>
+  </div>
+  <table>
+    <tr><th>指标</th><th>Muse</th><th>ChatGPT 同期参照</th><th>口径来源</th></tr>
+    <tr><td>首日美国 iOS 下载</td><td>约 8.3 万</td><td>—</td><td>短评&信息 10-07（东方通信）</td></tr>
+    <tr><td>上线 10 天</td><td>登顶美国 App Store；安装量约 110 万（Appfigures）；美国 DAU 44.8 万（9/18）</td><td>DAU 达 45 万用了 49 天</td><td>短评&信息 09-21（华泰）、09-21（富国转述）</td></tr>
+    <tr><td>单日下载峰值</td><td>26.4 万（9/19，连续 3 天 &gt;20 万；后达 35.8 万）</td><td>上线约一年后美国单日才破 20 万</td><td>短评&信息 09-22、09-25</td></tr>
+    <tr><td>前 12 天累计下载</td><td>全球双平台 280 万；美加 iOS 180 万</td><td>美加 iOS 130 万</td><td>短评&信息 09-22</td></tr>
+    <tr><td>前 14 天累计下载</td><td>283.4 万</td><td>ChatGPT 367.2 万 / Sora 222.6 万 / Claude 25.2 万 / GrokBot 18.0 万（同期窗口）</td><td>短评&信息 09-25</td></tr>
+    <tr><td>9 月底累计</td><td>突破 500 万</td><td>—</td><td>短评&信息 10-07（东方通信）</td></tr>
+    <tr><td>DAU 走势</td><td>9/20 全球 iOS+安卓 74.6 万 → 10 月初 250~300 万徘徊</td><td>—</td><td>短评&信息 09-25、10-07（天风）</td></tr>
+    <tr><td>口碑</td><td>30 天平均评分 4.66 星，五星占比 87%</td><td>同类应用领先</td><td>短评&信息 09-21（富国转述）</td></tr>
+  </table>
+  <p class="note">伯恩斯坦三季度消费者 AI 追踪：ChatGPT 全球 MAU 份额由 2025-08 的 78% 降至 2026-08 的 64%，Gemini/Claude 快速分流；Muse 上线 10 天登顶下载榜，「有望开启下一轮消费级 AI 代理应用浪潮」，但可持续性仍待观察。</p>
+  <div class="src">来源：浑水调研Plus 2026-09-24（伯恩斯坦·消费者 AI 使用追踪）</div>
+</div>
+
+<!-- 三、商业化 -->
+<div class="card">
+  <h2>三、商业化路径：免费获客 → 订阅 → 交易抽成</h2>
+  <ul>
+    <li><b>定价结构：</b>免费层每周 1 亿 token（覆盖绝大多数日常任务）；重度用户订阅 $20/月（5 亿 token）、$100/月（30 亿 token）两档。</li>
+    <li><b>长期变现：</b>交易抽成 + 智能体广告竞价（专家称）。华创转述 Connect 口径：通过从促成交易中收取小额费用实现盈利；现阶段愿意承担亏损换用户。</li>
+    <li><b>战略转向（专家交流要点）：</b>Meta 正由 Llama 开源生态转向闭源模型商业化，MUSE 采用独立于 Llama 的训练体系，聚焦 AI 购物及任务型 Agent。</li>
+    <li><b>转化率证据：</b>整合 IG/FB 授权用户数据做个性化推荐，相关场景转化率较传统算法提升至少约 30%；采用「传统算法初筛 + 大模型二次精排」兼顾效果与成本。</li>
+    <li><b>场景落地难度：</b>机票、酒店等标准化场景易落地；服装等隐性偏好品类难度高。瓶颈在第三方数据接入与复杂任务执行——亚马逊已限制访问，部分航司 API 未开放影响推荐完整性。</li>
+  </ul>
+  <div id="chart5" class="chart-sm" style="margin-top:6px;"></div>
+  <p class="note">token 消耗分层（专家口径）：纯聊天 &lt;1 万；工具调用 1 万~20 万；Computer Use 类最高可达 100 万；<b>95% 以上用户主要使用轻度聊天功能</b>——意味着收入弹性短期靠订阅、长期靠把重度场景做起来。</p>
+  <div class="src">来源：浑水调研Plus 2026-10-09（Meta MUSE 专家交流纪要）、短评&信息 09-10、09-24（华创）、09-25</div>
+
+  <h3>对 Meta 自身：广告平台 → 交易入口</h3>
+  <p>多家观点：Agent 能直接识别「用户正在买什么、预约什么、取消什么」，商业信号从「兴趣」升级为「真实交易意图」，变现模式有望从广告展示延伸至交易佣金、Agent 服务与商业分润。富国银行（转述）因 Muse Spark 表现将 Meta 目标价由 640 美元上调 24.5% 至 796 美元（维持增持；2026-09-18 股价 665.75 美元，上行空间 19.6%）。另有观点测算：Meta 26 年中性预测广告业务利润超 1000 亿美元，给予 20-30×PE，至少看到 2 万亿美元以上市值空间。</p>
+  <div class="src">来源：短评&信息 09-21（富国转述）、09-22（事件点评）；浑水调研Plus 09-21（路演反馈）</div>
+</div>
+
+<!-- 四、算力 -->
+<div class="card">
+  <h2>四、算力重估：从「GPU 推理」到「GPU + CPU + 云执行」</h2>
+  <p><b>产业逻辑：</b>传统大模型算力集中于 GPU 推理；Muse 为每用户配置持久化云端虚拟机（无头浏览器 + 高频 API 调用 + 多步任务编排），单次行程比价最多发起 146 次网页搜索，任务在用户退出后仍持续占用 CPU。卖方普遍引用的判断：AI 服务器 CPU/GPU 配比将由约 1:4~1:8 向 1:1~1:2 演进，CPU 量价齐升——Intel 管理层称只能满足约 50% 的 CPU 需求，Intel/AMD 先后推动涨价（台积电代工价拟上调约 10%，AMD 计划 26Q4 上调约 10%，Intel 传 10 月再上调 PC CPU 约 10%）。</p>
+  <div class="grid2">
+    <div id="chart3" class="chart-sm"></div>
+    <div id="chart4" class="chart-sm"></div>
+  </div>
+  <p class="note">左图：中金科技硬件转述的 9 月下旬（截至 9/27 当周）Muse 反馈催化下单周涨幅——CPU/互联/存储板块领涨，北美对 Muse 的热度显著高于亚洲。右图：星球内流传的 1 亿 DAU 情景测算（取区间中值作图）。</p>
+
+  <h3>反面测算：CPU 需求叙事可能被高估</h3>
+  <ul>
+    <li>1 亿 DAU ≠ 1 亿台并发 VM：假设日均 Agent 工作 2 小时 + 峰值均值比 2.5× + 20% 冗余 ≈ 需预置约 2500 万台活跃 VM（约 25% DAU 同时在线）。</li>
+    <li>VM 大量时间处于等待态、CPU 可激进超配：按每活跃 VM 0.5 物理核估算 ≈ 1250 万物理核 ≈ 5~6.5 万颗 CPU，<b>硬件价值不足 10 亿美元</b>；DRAM 约 75-100PB，约 <b>20 亿美元</b>——「比许多人预期的要小」。</li>
+    <li>沙盒层仅需约 0.1 GW；模型推理才是真瓶颈（每次重度推理事件约 5-10 Wh，人均 50 次/天 → 推理需 1-2 GW），<b>总需求 3-4 GW 完全合理</b>——与传闻 Meta 明年增加 7-10 GW 算力相互印证。</li>
+    <li>结论：消费者 Agent 是 CPU 与传统 DRAM「有意义的新需求驱动」，但把逻辑 VM 分配当专用物理基础设施是根本性错误；推理需求增速可能远快于用户数本身。</li>
+  </ul>
+  <div class="src">来源：短评&信息 09-28（Agent Compute Demand 测算帖）、09-21（华泰/国盛系 CPU 观点）、09-22（东财海外）、09-27 当周（中金转述）——测算帖为个人推演，需核实其引用数据</div>
+
+  <h3>卖方圆桌：涨后的分歧（9/24）</h3>
+  <ul>
+    <li><b>AMD：</b>乐观于 CPU 影响（已预期同比 +70% 以上），但近期涨幅多由估值倍数扩张驱动（买方预期 2028 EPS 30 美元 × 20×PE → 1 万亿美元市值），开始抵触估值。</li>
+    <li><b>Intel：</b>CPU 利好已定价，<b>代工业务（Foundry）才是进一步重估的关键</b>，投资者处于「建设性 vs 观望」分裂状态。</li>
+    <li><b>ARM：</b>更多受益于估值重估与「Muse 赢家组合」纳入，短期非基本面驱动。</li>
+    <li><b>存储双向争论：</b>看多者认为较 CPU 更被低估（2028 年前供给收紧）；看空者质疑 Agent 并非真 24 小时运行、LTA 锁价限制短期上行；MU（9/30 财报）11 月季度 EPS 指引预期 38-40 美元。</li>
+  </ul>
+  <div class="src">来源：浑水调研Plus 2026-09-24（半导体圆桌会议纪要）</div>
+</div>
+
+<!-- 五、平台博弈 -->
+<div class="card">
+  <h2>五、平台博弈与竞争格局：「封杀 vs 接入」的流量战争</h2>
+  <h3>亚马逊封杀（9/20）——四点理由具有行业标杆意义</h3>
+  <p>未提前告知 / Agent 未自我标识 / 捕获并存储客户凭证 / 可触及账户页面与订单历史。实质指向<b>数据安全、身份认证与商业利益分配</b>三大矛盾。</p>
+  <h3>伯恩斯坦（10/8）：稳态不是封杀，而是「选择性展示 + 权限 API + 数据定价」</h3>
+  <ul>
+    <li>消费 AI Agent 的长期成功必须从「拟人浏览」转向「授权 API 接入」；沃尔玛、百思买、丝芙兰、Ulta、Gap、Wayfair 及全量 Shopify 目录已宣布建立连接器——但 OpenAI Instant Checkout 的前车之鉴说明合作推进复杂度被低估。</li>
+    <li>Cloudflare 数据：互联网非人类流量首次过半，其网络 AI Agent 日均请求量一年暴增 1700%；高爬取品类人类流量不到一年暴跌 40%。</li>
+    <li>新增摩擦点：Agent 流量额外验证与「人机协同」检查点；客服系统将 Agent 呼叫路由至独立队列；大型银行（参照摩根大通对数据聚合商收费）可能对 Agent 数据拉取反向收费。</li>
+    <li><b>核心投资结论：支付产业链是确定性赢家</b>——交易频次提升 + 100% 令牌化 + 复杂度溢价，利好 Visa（目标价 450 美元）、万事达（710 美元）、Adyen、PayPal、Affirm；建议超配支付板块。</li>
+    <li>蓝海判断：低渗透品类（健康美容、生鲜杂货、汽车零部件）与服务场景（跨平台活动协调、旅行规划——美国旅客预订前平均浏览 277 页、耗时约 5 小时）价值大于高渗透零售品类。</li>
+  </ul>
+  <h3>竞品动态</h3>
+  <ul>
+    <li><b>OpenAI：</b>9/29 发布个人 Agent「dots」；此前 Instant Checkout 曾集结沃尔玛、Etsy、Instacart 及超百万 Shopify 商户。</li>
+    <li><b>谷歌：</b>Gemini Spark（7×24 个人 Agent，跨 Workspace 主动管理工作流）+ Daily Brief，悄然构建代理生态，分发优势显著。</li>
+    <li><b>Instinct：</b>约 40% 用户 3 周内绑定信用卡，年化交易额已达约 10 亿美元（约 50% 来自旅行），但核心用户偏富裕技术前卫群体。</li>
+  </ul>
+  <div class="src">来源：浑水调研Plus 10-08（伯恩斯坦·消费级 AI Agent）、短评&信息 10-07（天风·假期端侧热点）</div>
+</div>
+
+<!-- 六、风险 -->
+<div class="card">
+  <h2>六、风险与分歧（多方观点汇编）</h2>
+  <ul class="risk">
+    <li><b>留存是最大问号：</b>好评多来自「一次性存量收割」（错误扣款、可议价账单、被遗忘订阅），挖完就没有了；可持续高频场景偏少，需要找到让用户每周回来的理由。</li>
+    <li><b>商家反制：</b>亚马逊已封杀；AI 砍价普及后，保险、宽带商家可能拒接 AI 来电、收紧议价空间；接电话的客服并不知道对面是 AI。</li>
+    <li><b>切换成本低：</b>已有用户几天内把 OpenClaw 配置和 Claude 多智能体工作流迁到 Muse——反向迁移同样容易；真正难复制的只有 Meta 生态里的用户上下文。</li>
+    <li><b>算力叙事高估风险：</b>CPU 沙盒层硬件价值测算显著低于市场直觉（&lt;10 亿美元 CPU / 约 20 亿美元 DRAM @1 亿 DAU）；AMD/Intel 涨幅已含较大估值扩张成分。</li>
+    <li><b>商业化未验证：</b>交易抽佣尚未实质落地；大规模落地数据、平台爬虫权限博弈、隐私与监管仍是核心变量。</li>
+    <li><b>Meta 自身：</b>2026Q3 计提 100 亿美元法律和解相关支出（富国转述），2026 年运营利润预期下调 12%。</li>
+  </ul>
+  <div class="src">来源：短评&信息 09-23（Muse&ConsumerAI 产业更新）、09-28（测算帖）、09-21（富国转述）；浑水调研Plus 09-24（圆桌）</div>
+</div>
+
+<!-- 七、国内映射 -->
+<div class="card">
+  <h2>七、国内映射：入口封闭，更可能走「平台原生 Agent」</h2>
+  <p><b>核心差异：</b>美国线上需求分散在网页端、支付跨商户通用，Muse 可通过云端浏览器统一完成任务；中国超级 App 把数据、交易、权限留在各自生态里——豆包手机跨 App 操作曾被微信、淘宝相继限制，二代仅接入曹操出行等少数第三方。且国内移动基建完善（改套餐、退订阅点几下就完成），<b>本来就没有多少摩擦可以抹平</b>，Muse 模式难以照搬。东方通信观点更直白：「Web 时代欠在 Mobile 的账，变成了 Agent 时代的资产」；Muse 干了 Apple 想干没干成的事；超级 APP 将迭代成或让位于超级 Agent。</p>
+  <table>
+    <tr><th>主体</th><th>进展</th><th>关键数据/逻辑</th></tr>
+    <tr><td><b>腾讯控股（00700.HK）</b><br>微信「小微」</td><td>6/20 灰测，预计年底更大规模放量；重点提升任务执行准度、丰富 AI 小程序生态</td><td>五维壁垒：流量、微信生态、Context、社交图谱、闭环支付；2025 年小程序 GMV 超 9 万亿元（电商 25%/餐饮 17%/出行旅游 12%/本地生活 7%）；模型侧 Hy 冲刺智能上限、WeLM-617B MoE 研发中；商业化参照 Muse「免费引流+订阅+交易抽成」，中信测算 TAM 有望达万亿级（16 万亿元网零口径见 09-10 帖）</td></tr>
+    <tr><td><b>阿里巴巴（09988.HK/BABA）</b><br>千问 Agent</td><td>观察千问驱动的消费级 Agent 落地</td><td>具备大模型、云、商家、商品、支付、本地生活、物流、办公的完整生态；千问已打通淘宝、支付宝、飞猪、高德</td></tr>
+    <tr><td><b>字节豆包手机</b></td><td>二代 9 月发布</td><td>跨 App 操作受限于微信、淘宝生态墙，仅接入曹操出行等少数第三方应用</td></tr>
+  </table>
+  <div class="src">来源：短评&信息 09-25（Muse 更新·国内映射）、09-23（产业更新）、10-07（东方通信）；浑水调研Plus 09-22（东财海外·腾讯映射）</div>
+
+  <h3>星球帖提及的 A 股产业链标的（各家观点，仅供检索线索）</h3>
+  <table>
+    <tr><th>环节</th><th>标的（代码为整理标注，请以交易所为准）</th><th>提出方</th></tr>
+    <tr><td>CPU/算力</td><td>海光信息（688041）、中国长城（000066）、禾盛新材（002290，熠知电子 ARM 架构 CPU）、澜起科技（688008）、通富微电（002156）、兴森科技（002436）、深南电路（002916）、广合科技（001389）</td><td>华泰计算机 09-21、国盛系 09-22</td></tr>
+    <tr><td>存储/设备</td><td>中科飞测（688361）、中微公司（688012）、拓荆科技（688072）、北方华创（002371）、富创精密（688409）、正帆科技（688596）、佰维存储（688525）、聚辰股份（688123）；长鑫科技（上市状态未核实）</td><td>国盛系 09-22、兴证电子 09-24</td></tr>
+    <tr><td>AI 终端/端侧 SOC</td><td>乐鑫科技（688018，Meta 官方支持的 ESP32 开发板）、恒玄科技（688608）、晶晨股份（688099）、瑞芯微（603893）、全志科技（300458）、星宸科技（301536）、龙迅股份（688486）、炬芯科技（688049）、歌尔股份（002241）、立讯精密（002475）、蓝特光学（688127）、水晶光电（002273）、康耐特光学（02276.HK）、天岳先进（688234）、极米科技（688696）、龙旗科技（603341）</td><td>天风电子 09-22/10-07、兴证电子 09-24、端侧热点 09-24</td></tr>
+    <tr><td>应用/营销 Agent</td><td>值得买（300785）、蓝色光标（300058）、易点天下（301171）、利欧股份（002131）、引力传媒（603598）、天龙集团（300063）、壹网壹创（300792）、光云科技（688365）、同花顺（300033）、金山办公（688111）、芒果超媒（300413）、昆仑万维（300418）、心动公司（02400.HK）</td><td>国信传媒 09-22、事件点评 09-22、活跃度点评 09-23</td></tr>
+  </table>
+  <p class="note">以上均为星球内卖方研报观点转述，非一手来源、需核实原文；标的不构成推荐。</p>
+</div>
+
+<!-- 八、时间线 -->
+<div class="card">
+  <h2>八、关键时间线（2026）</h2>
+  <div class="timeline">
+    <div class="tl"><b>9/8</b>　Muse 美国公测上线（首日美国 iOS 下载约 8.3 万）；9/9 扎克伯格发文披露「每用户一台独立 Linux 虚拟机」架构。</div>
+    <div class="tl"><b>9/18</b>　上线 10 天登顶美国 App Store，安装量约 110 万，美国 DAU 44.8 万。</div>
+    <div class="tl"><b>9/20</b>　亚马逊全面封杀 Muse；全球 iOS+安卓 DAU 达 74.6 万。</div>
+    <div class="tl"><b>9/21</b>　美股 CPU 板块暴涨（ARM +15%、Intel +14%、AMD +9%），Meta 周一大涨约 11%、创 2025 年 4 月以来最大单日涨幅；富国银行（转述）上调 Meta 目标价至 796 美元。</div>
+    <div class="tl"><b>9/23-24</b>　Meta Connect：「个人超级智能」主线，Muse 数百万用户、连接器一周 1500+ 开发者申请；AI 眼镜 51 种组合 249 美元起、Muse Charm/独立邮箱/Mac 操控宣布。</div>
+    <div class="tl"><b>9/29</b>　OpenAI DevDay，发布个人 Agent「dots」。</div>
+    <div class="tl"><b>9/30</b>　美光（MU）财报（市场当时焦点之一，11 月季度 EPS 指引预期 38-40 美元）。</div>
+    <div class="tl"><b>10/2</b>　Meta 开源 MuseGadgets 硬件生态（乐鑫 ESP32 为官方支持开发板）。</div>
+    <div class="tl"><b>10 月初</b>　Muse DAU 在 250~300 万徘徊；亚马逊封杀与零售巨头接入并存的平台博弈成为核心叙事。</div>
+    <div class="tl"><b>10/8-9</b>　伯恩斯坦发布消费级 AI Agent 专题（「支付是确定性赢家」）；星球内流出 Meta MUSE 专家交流纪要（闭源转向、转化率 +30%、token 分层）。</div>
+  </div>
+</div>
+
+<!-- 附录 -->
+<div class="card">
+  <h2>附录：信息来源清单（知识星球）</h2>
+  <p class="note">共整理 29 条主题：浑水调研Plus（group 28512858211281）8 条 + 短评&信息（group 15552822254242）21 条。主要帖目（点击可跳转星球原文）：</p>
+  <table>
+    <tr><th>日期</th><th>星球</th><th>主题</th></tr>
+    <tr><td>09-10</td><td>短评&信息</td><td><a href="https://wx.zsxq.com/group/15552822254242/topic/82258815855558282" target="_blank">Meta Muse 上线体验超预期（含腾讯微信小微观点）</a>；<a href="https://wx.zsxq.com/group/15552822254242/topic/22258815518842281" target="_blank">小熊团队：Muse 安全特性与定价</a></td></tr>
+    <tr><td>09-21</td><td>两星球</td><td>Muse 到底是什么（AMD/INTC 逻辑）；华泰计算机 CPU 增量；富国银行 Meta 目标价 796 美元（转述）；浑水调研Plus 路演反馈</td></tr>
+    <tr><td>09-22</td><td>短评&信息</td><td>Muse vs ChatGPT 早期数据；东财海外 CPU 观点；中信互联网·腾讯价值重估；国信传媒；天风电子；Meta Muse 事件点评；Meta 大涨拆解</td></tr>
+    <tr><td>09-23</td><td>短评&信息</td><td>Muse&ConsumerAI 产业更新（200+ 案例梳理）；Muse 活跃度与算力栈重估</td></tr>
+    <tr><td>09-24</td><td>两星球</td><td>华创·Meta Connect 要点；兴证电子端侧芯片；浑水调研Plus：伯恩斯坦消费者 AI 追踪、半导体圆桌纪要</td></tr>
+    <tr><td>09-25/27/28</td><td>两星球</td><td>Muse 更新·用户数据与商业化；中金科技硬件交流反馈；US Equities 周报；Agent Compute Demand 测算帖</td></tr>
+    <tr><td>10-07/08/09</td><td>两星球</td><td>东方通信 Muse&RSI；天风假期端侧热点（MuseGadgets 开源、OAI dots）；伯恩斯坦消费级 AI Agent 专题；Meta MUSE 专家交流纪要</td></tr>
+  </table>
+  <div class="disclaim"><b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。<br>
+  另注：本报告数据均转述自知识星球内流转的卖方研报、专家纪要与个人观点（Sensor Tower / Appfigures / TrendForce / Cloudflare 等为帖内二次引用），属非一手来源，引用前需核实原文；个别上市公司代码为整理标注，请以交易所公告为准。</div>
+</div>
+
+</div>
+
+<script>
+var c1 = echarts.init(document.getElementById('chart1'));
+c1.setOption({
+  title: { text: 'Muse vs ChatGPT：上线早期关键指标', left: 'center', textStyle: { fontSize: 14 } },
+  tooltip: { trigger: 'axis' },
+  legend: { data: ['Muse', 'ChatGPT'], bottom: 0 },
+  xAxis: { type: 'category', data: ['前12天美加iOS下载(万次)', '第12天美国移动端DAU(万)'] },
+  yAxis: { type: 'value', name: '万' },
+  series: [
+    { name: 'Muse', type: 'bar', data: [180, 64.2], itemStyle: { color: '#c8353e' }, label: { show: true, position: 'top' } },
+    { name: 'ChatGPT', type: 'bar', data: [130, 23.1], itemStyle: { color: '#2b5fd9' }, label: { show: true, position: 'top' } }
+  ]
+});
+
+var c2 = echarts.init(document.getElementById('chart2'));
+c2.setOption({
+  title: { text: 'Muse 累计下载爬坡（2026年9月）', left: 'center', textStyle: { fontSize: 14 } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: ['首日(9/8)', '前6天', '前12天', '前14天', '9月底'] },
+  yAxis: { type: 'value', name: '万次' },
+  series: [{
+    name: '累计下载', type: 'line', smooth: true, data: [8.3, 90.2, 280, 283.4, 500],
+    itemStyle: { color: '#c8353e' }, areaStyle: { color: 'rgba(200,53,62,0.08)' },
+    label: { show: true, position: 'top', fontSize: 11 }
+  }]
+});
+
+var c3 = echarts.init(document.getElementById('chart3'));
+c3.setOption({
+  title: { text: 'Muse 催化下单周涨幅（截至9/27当周，%）', left: 'center', textStyle: { fontSize: 14 } },
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  grid: { left: 60, right: 30, bottom: 60 },
+  xAxis: { type: 'category', data: ['CRDO', 'ALAB', 'MXL', 'QCOM', 'INTC', 'AMD', 'ARM', 'MU', 'STX', 'WDC'], axisLabel: { rotate: 40, fontSize: 11 } },
+  yAxis: { type: 'value', name: '%' },
+  series: [{
+    name: '单周涨幅', type: 'bar',
+    data: [20, 20, 16, 14, 13, 13, 13, 7, 7, 4],
+    itemStyle: { color: '#c8353e' }, label: { show: true, position: 'top', fontSize: 11 }
+  }]
+});
+
+var c4 = echarts.init(document.getElementById('chart4'));
+c4.setOption({
+  title: { text: '1亿DAU情景算力测算（GW，区间中值）', left: 'center', textStyle: { fontSize: 14 } },
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  grid: { left: 70, right: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['沙盒/VM-CPU层', '模型推理(1-2)', '总需求(3-4)'] },
+  yAxis: { type: 'value', name: 'GW' },
+  series: [{
+    name: '功率', type: 'bar',
+    data: [0.1, 1.5, 3.5],
+    itemStyle: { color: '#2b5fd9' }, label: { show: true, position: 'top' }
+  }]
+});
+
+var c5 = echarts.init(document.getElementById('chart5'));
+c5.setOption({
+  title: { text: 'Muse 单任务 token 消耗分层（万token，上限口径）', left: 'center', textStyle: { fontSize: 14 } },
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  grid: { left: 70, right: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['纯聊天(<1万)', '工具调用(1-20万)', 'Computer Use(最高100万)'] },
+  yAxis: { type: 'value', name: '万token' },
+  series: [{
+    name: 'token消耗', type: 'bar',
+    data: [1, 20, 100],
+    itemStyle: { color: '#b26a00' }, label: { show: true, position: 'top' }
+  }]
+});
+
+window.addEventListener('resize', function () {
+  c1.resize(); c2.resize(); c3.resize(); c4.resize(); c5.resize();
+});
+</script>
+</body>
+</html>

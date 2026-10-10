@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>端侧SoC产业深度 + 核心标的量价/择时分析 · 2026-10-09</title>
+<meta name="description" content="端侧 SoC 是半导体大板块里唯一「业绩已兑现、股价却没透支」的分支，评分 7.5/10（对比上一轮给整个半导体的 5.5 分）。但 10-09 是大跌后第一天修复：11 只标的中只有晶晨股份 1 只放量突破压力位（唯一首选，止损 91.29 = 2×ATR，MA20 参考 89.74），其余多为缩量反抽或放量滞涨；择时评分全部落在 90 分及以下，无一进入「可以买入」确认档——产业逻辑成立，但技术面尚未给出安全买点。最需警惕博通集成：盘中触涨停后开板回落、全天净流出 7030 万，标准冲高回落诱多。">
+<meta name="report-type" content="产业深度">
+<style>
+:root{
+  --bg:#f7f8fa; --panel:#ffffff; --ink:#1a1d24; --ink2:#4a5160; --ink3:#7b8497;
+  --line:#e4e7ed; --line2:#eef0f4;
+  --up:#d9342b; --down:#0f9b6c; --warn:#e08a00;
+  --accent:#2b5fd9; --accent-soft:#eef3fe;
+  --red-soft:#fdeeee; --green-soft:#eaf7f1; --warn-soft:#fdf5e6;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.78;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 32px 80px}
+header{border-bottom:3px solid var(--ink);padding-bottom:22px;margin-bottom:32px}
+.kicker{font-size:12.5px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:10px}
+h1{font-size:30px;line-height:1.34;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
+.meta{font-size:13px;color:var(--ink3)}
+.meta b{color:var(--ink2)}
+h2{font-size:21px;margin:52px 0 6px;font-weight:800;padding-top:20px;border-top:1px solid var(--line)}
+h2 .n{color:var(--accent);margin-right:10px}
+h3{font-size:16.5px;margin:28px 0 10px;font-weight:700;color:var(--ink)}
+h4{font-size:14.5px;margin:20px 0 8px;font-weight:700;color:var(--ink2)}
+p{margin:12px 0;color:var(--ink2)}
+.hl{background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:18px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th{background:#f2f4f8;text-align:left;padding:11px 12px;font-weight:700;color:var(--ink);
+  border-bottom:1px solid var(--line);white-space:nowrap;font-size:12.5px}
+td{padding:10px 12px;border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+td.k,th.k{color:var(--ink);font-weight:700}
+.up{color:var(--up);font-weight:700}
+.down{color:var(--down);font-weight:700}
+.warn2{color:var(--warn);font-weight:700}
+.mut{color:var(--ink3)}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.tag{display:inline-block;padding:2px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.t-buy{background:var(--red-soft);color:var(--up)}
+.t-wait{background:var(--warn-soft);color:var(--warn)}
+.t-avoid{background:var(--green-soft);color:var(--down)}
+.t-info{background:var(--accent-soft);color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:14px;margin:18px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+.stat .v{font-size:25px;font-weight:800;line-height:1.25;font-variant-numeric:tabular-nums}
+.stat .l{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.stat .s{font-size:11.5px;color:var(--ink3);margin-top:7px;padding-top:7px;border-top:1px dashed var(--line)}
+ul,ol{margin:12px 0;padding-left:22px;color:var(--ink2)}
+li{margin:7px 0}
+.box{border-left:4px solid var(--accent);background:var(--accent-soft);padding:14px 18px;border-radius:0 9px 9px 0;margin:18px 0}
+.box.w{border-color:var(--warn);background:var(--warn-soft)}
+.box.d{border-color:var(--up);background:var(--red-soft)}
+.box.g{border-color:var(--down);background:var(--green-soft)}
+.box p{margin:6px 0;color:var(--ink)}
+.box b{color:var(--ink)}
+.box ul{margin:6px 0;color:var(--ink)}
+code{background:#eef0f4;padding:1.5px 6px;border-radius:4px;font-size:12.5px;
+  font-family:"SF Mono",Menlo,Consolas,monospace;color:var(--ink)}
+pre{background:#f5f6f9;border:1px solid var(--line);border-radius:9px;padding:14px 16px;
+  overflow-x:auto;font-size:12.5px;line-height:1.65;color:var(--ink2);
+  font-family:"SF Mono",Menlo,Consolas,monospace}
+.bar{height:9px;background:#eceff4;border-radius:5px;overflow:hidden;display:inline-block;width:76px;vertical-align:middle}
+.bar i{display:block;height:100%;border-radius:5px}
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3)}
+.small{font-size:12.5px;color:var(--ink3)}
+@media(max-width:640px){
+  .wrap{padding:28px 18px 56px}
+  h1{font-size:23px}
+  table{font-size:12px}
+  th,td{padding:8px 9px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">EDGE AI SoC · DEEP DIVE</div>
+  <h1>端侧 SoC 产业深度 + 核心标的量价 / 择时分析</h1>
+  <div class="meta">分析日 <b>2026-10-10（周六）</b>｜行情基准 <b>2026-10-09 收盘</b>｜数据源：通达信 MCP（资讯/研报/实时行情/K线）+ 知识星球｜
+  分析框架：<b>A股量价关系验证</b>（有效上涨/诱多/涨停缩量/底部反转）+ <b>A股择时分析</b>（12项梯度评分）</div>
+</header>
+
+<div class="box d">
+  <p style="font-size:16px;line-height:1.72"><span class="hl">一句话结论</span>：端侧 SoC 是半导体大板块里<b>唯一「业绩已兑现、股价却没透支」</b>的分支，值得给到 <b class="up">7.5 / 10</b>（对比上一轮给整个半导体板块的 5.5 分）。但 <b>2026-10-09 当天是「10-08 大跌后的第一天修复」</b>，11 只标的中<b>只有晶晨股份 1 只</b>符合「放量突破压力位」的有效上涨信号，其余多为缩量反抽或放量滞涨。<b class="up">产业可以配，单点只认晶晨。</b></p>
+</div>
+
+<h2><span class="n">01</span>为什么端侧 SoC 要单独从半导体里拎出来</h2>
+
+<p>上一轮我把半导体板块（881319）判到 <b>5.5 分</b>，理由是：60 日 <span class="down">-35.27%</span>、PB <b>8.51</b> 全场最高、但行业 ROE 只有 <b>3.16%</b>——<span class="hl">高 PB 配低 ROE</span>，故事正确、价格错误。</p>
+
+<p>但端侧 SoC 是其中的例外，三点硬证据：</p>
+
+<div class="grid">
+  <div class="stat"><div class="v up">+61.7%</div><div class="l">瑞芯微 26H1 归母净利增速</div><div class="s">营收 28.77 亿 <span class="up">+40.60%</span>，净利 8.59 亿</div></div>
+  <div class="stat"><div class="v up">+204.2%</div><div class="l">全志科技 26H1 净利增速</div><div class="s">营收 18.88 亿 <span class="up">+41.2%</span>，净利 4.9 亿</div></div>
+  <div class="stat"><div class="v up">+1419%</div><div class="l">富瀚微 26H1 净利增速</div><div class="s">营收 14.63 亿 <span class="up">+112.66%</span></div></div>
+  <div class="stat"><div class="v">近10家</div><div class="l">中报预喜的端侧芯片公司</div><div class="s">截至 08-26，部分净利预增超 10 倍</div></div>
+</div>
+
+<div class="box">
+  <p><b>关键区别</b>：上面这些不是预测，是<b>已披露的中报数字</b>。半导体大板块的低 ROE 是被存储、模拟、功率里的一堆亏损公司拉低的；端侧 SoC 这批公司恰好落在<span class="hl">「利润已经出来、估值还在半山腰」</span>的位置。</p>
+</div>
+
+<h3>产业空间与价值量（均为真实研报测算）</h3>
+
+<table>
+  <thead><tr><th class="k" style="width:20%">场景</th><th class="k">空间 / 价值量</th><th class="k" style="width:16%">来源</th></tr></thead>
+  <tbody>
+    <tr><td class="k">可穿戴 SoC</td><td>2025 年全球 <b>110.8 亿元</b> → 2030 年 <b>323 亿元</b></td><td>方正证券</td></tr>
+    <tr><td class="k">AI 眼镜</td><td><b>SoC 占 BOM 成本约 34%</b>，为最大单一硬件项；全球出货 2026 年破<b>千万台</b>，2028 年 <b>2600 万台</b></td><td>艾瑞咨询</td></tr>
+    <tr><td class="k">AI PC</td><td>微软 Copilot+ PC 标准将 NPU 门槛提至 <b>40 TOPS 以上</b>，16GB 内存 + 256GB SSD 成配置底线</td><td>国联民生</td></tr>
+    <tr><td class="k">AI 手机</td><td>受存储涨价冲击，2026 全球出货预计 <span class="down">-8.4%</span>；但 400 美元以上机型仍 <span class="up">+5.7%</span>，AI 成高端化抓手</td><td>Omdia / 国联民生</td></tr>
+    <tr><td class="k">IoT 端侧 SoC</td><td>26H1 全球 IoT 与工业设备端侧 SoC 出货同比增幅突破 <b>110%</b></td><td>国海电子</td></tr>
+    <tr><td class="k">车载</td><td>智驾域控制器交付同比 <span class="up">+29.07%</span>，标配 NOA 车型同比 <span class="up">+51.23%</span></td><td>国海电子</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="n">02</span>产业链分层：不是一条线，是五种完全不同的逻辑</h2>
+
+<p>山西证券在 09-01 的框架里把端侧拆成五类，这是本次最有解释力的一张地图——<b>买错了分类，就等于买错了逻辑</b>：</p>
+
+<table>
+  <thead><tr><th class="k" style="width:16%">分类</th><th class="k" style="width:22%">代表标的</th><th class="k">驱动逻辑</th><th class="k" style="width:12%">阶段</th></tr></thead>
+  <tbody>
+    <tr><td class="k">高端 SoC</td><td>瑞芯微、星宸科技、全志科技</td><td>增量场景 + 产品升级。跑的不是大模型，是<b>端侧系统编排、音视频编解码、传感器数据处理</b>，可理解为「端侧的 CPU」；有强生态壁垒，格局向头部集中</td><td><span class="tag t-buy">逻辑刚开始</span></td></tr>
+    <tr><td class="k">低功耗 IoT SoC</td><td>乐鑫科技、炬芯科技、泰凌微、中科蓝讯</td><td>终端产品创新驱动，靠新品放量而不是单价提升</td><td><span class="tag t-info">成长期</span></td></tr>
+    <tr><td class="k">端侧推理协处理器</td><td>瑞芯微 RK182X/1860、各类创业公司</td><td>分流云端算力，配置 3D 键合 DRAM，适合 100B 以内模型；<b>英伟达/高通未来必争之地</b></td><td><span class="tag t-wait">0→1</span></td></tr>
+    <tr><td class="k">视觉 SoC</td><td>富瀚微、君正股份、国科微</td><td><b>存储顺价 + 主动补库</b>，与「AI」关系反而最弱</td><td><span class="tag t-avoid">周期属性</span></td></tr>
+    <tr><td class="k">智能通信模组</td><td>移远通信、美格智能、广和通</td><td>顺价 + 产品升级</td><td><span class="tag t-info">成熟期</span></td></tr>
+  </tbody>
+</table>
+
+<div class="box w">
+  <p><b>这里有个容易踩的坑</b>：视觉 SoC（富瀚微/星宸/君正）这一轮涨的<b>不是 AI 逻辑，是存储顺价逻辑</b>。如果存储价格回落，它们的逻辑会先于 AI 逻辑崩塌。本次这三只确实也是跌幅最大的（10-08 富瀚微 <span class="down">-10.4%</span>、星宸 <span class="down">-8.2%</span>），已经印证了这个分类差异。</p>
+</div>
+
+<h2><span class="n">03</span>近三个月催化事件时间线（全部可溯源）</h2>
+
+<table>
+  <thead><tr><th class="k" style="width:11%">日期</th><th class="k">事件</th><th class="k" style="width:14%">影响</th></tr></thead>
+  <tbody>
+    <tr><td class="k">07-07</td><td>瑞芯微业绩预告：26H1 归母净利 <b>8.50-9.10 亿</b>，同比 <span class="up">+60.03%~+71.33%</span></td><td><span class="up">✅ 全板块</span></td></tr>
+    <tr><td class="k">07-15</td><td>网信办发布 <b>7 款手机端侧生成式 AI 服务</b>备案，含苹果智能、华为小艺、OPPO AndesGPT</td><td><span class="up">✅ 端侧 AI</span></td></tr>
+    <tr><td class="k">07-17~20</td><td>WAIC 2026 举办，联想/荣耀集中展示 AI PC、AI 手机、AI 眼镜</td><td><span class="up">✅ 消费电子链</span></td></tr>
+    <tr><td class="k">07-22</td><td>上海市印发《战略性新兴产业发展"十五五"规划》，<b>明确加快端侧 AI 芯片关键技术突破</b></td><td><span class="up">✅ 政策</span></td></tr>
+    <tr><td class="k">08-17</td><td>阿里通义开源 Qwen3，湘财证券称<b>端侧 AI 产业化迎关键拐点</b></td><td><span class="up">✅ 模型端</span></td></tr>
+    <tr><td class="k">08-27</td><td>Hugging Face 发布<b>开源双足机器人 Microduck（机器鸭）</b>，399 美元，24 小时订单 260 万美元、排期 4-6 个月，<b>主控为瑞芯微 RK3566</b></td><td><span class="up">✅ 瑞芯微</span></td></tr>
+    <tr><td class="k">09-02</td><td>方正证券测算可穿戴 SoC 2025 年 110.8 亿 → 2030 年 323 亿</td><td><span class="up">✅ 空间打开</span></td></tr>
+    <tr><td class="k">09-18</td><td>端侧 AI 产业链异动：乐鑫 <span class="up">+9%</span>、星宸 <span class="up">+9%</span>、美格 <span class="up">+7%</span>、恒玄 <span class="up">+7%</span></td><td><span class="up">✅ 资金扩散</span></td></tr>
+    <tr><td class="k">09-22</td><td><b>Meta Muse</b> 上线一周登顶美国 App Store 免费榜，日活 <b>250-300 万</b>；9-23 Meta Connect 发布 Muse + AI 眼镜闭环</td><td><span class="up">✅ 端侧硬件</span></td></tr>
+    <tr><td class="k">10-02</td><td>Meta 开源 MuseGadgets，<b>乐鑫 ESP32 是官方支持的少数开发板之一</b></td><td><span class="up">✅ 乐鑫</span></td></tr>
+    <tr><td class="k">10-02</td><td>OpenAI 发布个人 Agent「dots」；10 月苹果推 homepad / HomePod mini / Apple TV</td><td><span class="up">✅ 智能家居SoC</span></td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <p><b>最新一条（10-07，天风电子）值得单独拎出来</b>：Muse 首月爆火至少论证了在「减少不必要付费订阅、买票比价」这类<b>替人办事</b>领域，Agent 具备商业化价值。当前日活在 <b>250-300 万</b>徘徊，<span class="hl">场景丰富度与 App 后台权限打通程度，是能否跃迁到下一个用户量级的观测点</span>。</p>
+  <p>结论：<b>个人 Agent 的趋势跑通了，硬件形态还没定型</b>——这对 SoC 是好事（无论哪种硬件胜出都要用 SoC），但对「押注单一硬件形态」是坏事。</p>
+</div>
+
+<h2><span class="n">04</span>核心标的筛选：三方交叉验证后的名单</h2>
+
+<p>筛选门槛：<b>至少 2 家券商研报 + 知识星球卖方纪要同时点名</b>，剔除单方来源噪音。命中频次从高到低：</p>
+
+<table>
+  <thead><tr><th class="k" style="width:16%">标的</th><th class="k">推荐机构（可溯源）</th><th class="k" style="width:9%">频次</th></tr></thead>
+  <tbody>
+    <tr><td class="k">瑞芯微 603893</td><td>申万宏源、中银证券、东吴、国联民生、浙商、国海、西南、中泰、天风、山证</td><td class="up"><b>10</b></td></tr>
+    <tr><td class="k">晶晨股份 688099</td><td>东吴、国联民生、天风、中泰、西南、国海</td><td class="up"><b>6</b></td></tr>
+    <tr><td class="k">恒玄科技 688608</td><td>东吴、国联民生、浙商、国海、中泰、天风</td><td class="up"><b>6</b></td></tr>
+    <tr><td class="k">乐鑫科技 688018</td><td>东吴、国联民生、浙商、国海、中泰、天风</td><td class="up"><b>6</b></td></tr>
+    <tr><td class="k">全志科技 300458</td><td>国联民生、西南、天风、山证、国海</td><td><b>5</b></td></tr>
+    <tr><td class="k">星宸科技 301536</td><td>东吴、西南、天风、中泰、国海、山证</td><td class="up"><b>6</b></td></tr>
+    <tr><td class="k">炬芯科技 688049</td><td>西南、国海</td><td><b>2</b></td></tr>
+    <tr><td class="k">富瀚微 300613</td><td>国海、山证</td><td><b>2</b></td></tr>
+  </tbody>
+</table>
+
+<div class="box w">
+  <p><b>数据缺口（如实披露）</b></p>
+  <ul>
+    <li><b>IMA 个人知识库为空</b>——已连接，但知识总数 <code>size=0</code>，检索返回空列表，<b>本次无一条信息来自 IMA</b>。</li>
+    <li>知识星球 8 个星球中 2 个（影视星球、换新短评星球）未开通 Skill 检索权限；<b>有效来源为 ⭕短评&amp;信息、⭕浑水调研Plus、小牛研报纪要</b>。</li>
+    <li>爱芯元智（未上市）、翱捷科技、泰凌微 688591 未纳入完整量化；翱捷/泰凌微仅做部分测算。</li>
+    <li>未获取历史估值分位，PB / PE 均为横截面比较。</li>
+  </ul>
+</div>
+
+<h2><span class="n">05</span>量价验证：只有 1 只是真的</h2>
+
+<p>先说背景：11 只候选在 <b>10-08 普遍大跌</b>（富瀚微 <span class="down">-10.4%</span>、星宸 <span class="down">-8.2%</span>、瑞芯微 <span class="down">-7.43%</span>、君正 <span class="down">-7.3%</span>、炬芯 <span class="down">-7.3%</span>、全志 <span class="down">-6.22%</span>），10-09 是修复第一天。<b>判断修复真假，只看一条：有没有放量突破压力位。</b></p>
+
+<table>
+  <thead><tr><th class="k">标的</th><th class="k">收盘</th><th class="k">今日%</th><th class="k">今日量能比</th><th class="k">破20日高</th><th class="k">MA20偏离</th><th class="k">量价判定</th></tr></thead>
+  <tbody>
+    <tr style="background:#fff8f8">
+      <td class="k">晶晨股份 688099</td><td class="mono">99.71</td><td class="up">+5.44%</td><td class="up mono"><b>4.59x</b></td><td class="up"><b>是</b></td><td class="up">+11.11%</td>
+      <td><span class="tag t-buy">✅ 有效上涨</span></td></tr>
+    <tr>
+      <td class="k">博通集成 603068</td><td class="mono">43.50</td><td class="up">+2.50%</td><td class="mono">1.76x</td><td class="mut">否</td><td class="up">+6.37%</td>
+      <td><span class="tag t-avoid">❌ 涨停开板</span></td></tr>
+    <tr>
+      <td class="k">炬芯科技 688049</td><td class="mono">42.90</td><td class="up">+1.06%</td><td class="mono">2.07x</td><td class="mut">否</td><td class="up">+1.30%</td>
+      <td><span class="tag t-avoid">❌ 放量滞涨</span></td></tr>
+    <tr>
+      <td class="k">富瀚微 300613</td><td class="mono">75.18</td><td class="up">+3.85%</td><td class="mono">1.64x</td><td class="mut">否</td><td class="down">-0.87%</td>
+      <td><span class="tag t-avoid">❌ 均线下方</span></td></tr>
+    <tr>
+      <td class="k">星宸科技 301536</td><td class="mono">119.25</td><td class="up">+5.27%</td><td class="mono">1.62x</td><td class="mut">否</td><td class="down">-0.86%</td>
+      <td><span class="tag t-avoid">❌ 顶背离</span></td></tr>
+    <tr>
+      <td class="k">乐鑫科技 688018</td><td class="mono">116.90</td><td class="down">-0.64%</td><td class="mono">1.42x</td><td class="mut">否</td><td class="up">+4.45%</td>
+      <td><span class="tag t-avoid">❌ 价跌量增</span></td></tr>
+    <tr>
+      <td class="k">恒玄科技 688608</td><td class="mono">109.64</td><td class="up">+0.25%</td><td class="mono">1.29x</td><td class="mut">否</td><td class="up">+7.34%</td>
+      <td><span class="tag t-wait">⚠️ 价涨量平</span></td></tr>
+    <tr>
+      <td class="k">泰凌微 688591</td><td class="mono">29.71</td><td class="up">+1.68%</td><td class="mono">2.00x</td><td class="mut">否</td><td class="up">+1.25%</td>
+      <td><span class="tag t-wait">⚠️ 放量滞涨</span></td></tr>
+    <tr>
+      <td class="k">全志科技 300458</td><td class="mono">30.61</td><td class="up">+1.42%</td><td class="mono">1.33x</td><td class="mut">否</td><td class="down">-1.97%</td>
+      <td><span class="tag t-avoid">❌ 均线下方反抽</span></td></tr>
+    <tr>
+      <td class="k">瑞芯微 603893</td><td class="mono">202.72</td><td class="up">+1.58%</td><td class="mono">1.06x</td><td class="mut">否</td><td class="up">+3.22%</td>
+      <td><span class="tag t-wait">⚠️ 缩量弱修复</span></td></tr>
+    <tr>
+      <td class="k">君正股份 300223</td><td class="mono">117.54</td><td class="down">-1.84%</td><td class="mono">1.28x</td><td class="mut">否</td><td class="down">-11.85%</td>
+      <td><span class="tag t-avoid">❌ 破位</span></td></tr>
+  </tbody>
+</table>
+
+<div class="box d">
+  <p><b>晶晨股份的量价叙事（近 5 日逐根）：</b></p>
+<pre>09-28  -1.4%  量 1.04x   ← 缩量整理
+09-29  +2.3%  量 0.90x   ← 温和启动
+09-30  +7.2%  量 2.09x   ← 首次显著放量
+10-08  -2.3%  量 1.48x   ← 大盘杀跌，但抗跌（同业普遍 -7%~-10%）
+10-09  +5.4%  量 4.59x   ← 天量突破，创 20 日新高</pre>
+  <p>这条序列完全符合「<b>缩量整理 → 温和启动 → 显著放量 → 抗跌 → 天量突破</b>」的标准形态，而且中途经历了 10-08 的全板块杀跌仍守住。<span class="hl">4.59x 是本次 11 只里最高的量能倍数</span>，且是唯一突破 20 日前高的。</p>
+</div>
+
+<div class="box g">
+  <p><b>最需要警惕的是博通集成</b>：今日最高价 <b>46.68</b> 恰好等于涨停价 <b>46.68</b>——<b>盘中触及涨停后开板回落</b>，收盘只剩 +2.50%，换手率高达 <b>14.70%</b>，全天总资金<b class="down">净流出 7030 万</b>（占市值 1.06%，六只中流出比例最大）。这是标准的<span class="hl">冲高回落诱多</span>形态，尽管择时评分给到 90。</p>
+</div>
+
+<h2><span class="n">06</span>择时评分：全部落在「关注等待」及以下</h2>
+
+<table>
+  <thead><tr><th class="k">标的</th><th class="k">评分</th><th class="k">脚本判定</th><th class="k">核心失分项</th></tr></thead>
+  <tbody>
+    <tr><td class="k">瑞芯微 603893</td><td class="mono"><b>90</b></td><td><span class="tag t-wait">⏸ 关注等待</span></td><td>ATR 未收缩 0/15、20 日位置 56% 仅 10/20</td></tr>
+    <tr><td class="k">博通集成 603068</td><td class="mono"><b>90</b></td><td><span class="tag t-wait">⏸ 关注等待</span></td><td>ATR 未收缩 0/15、ATR% 5.83% 仅 4/10</td></tr>
+    <tr><td class="k">恒玄科技 688608</td><td class="mono">87</td><td><span class="tag t-wait">⏸ 关注等待</span></td><td>20 日位置 84% 仅 5/20、MACD 零轴下金叉 10/20</td></tr>
+    <tr><td class="k">乐鑫科技 688018</td><td class="mono">82</td><td><span class="tag t-wait">⏸ 关注等待</span></td><td>MA20 斜率 <span class="down">-0.82%</span> 得 0/10、供应进场 3/15</td></tr>
+    <tr><td class="k">晶晨股份 688099</td><td class="mono">72</td><td><span class="tag t-wait">⏸ 关注等待</span></td><td>20 日位置 100% 得 0/20、供应进场 3/15</td></tr>
+    <tr><td class="k">全志科技 300458</td><td class="mono">68</td><td><span class="tag t-avoid">❌ 暂时回避</span></td><td>MA20 斜率 <span class="down">-1.36%</span> 0/10、放量滞涨 0/15</td></tr>
+    <tr><td class="k">炬芯科技 688049</td><td class="mono">63</td><td><span class="tag t-avoid">❌ 暂时回避</span></td><td>放量滞涨 0/15、放量回调 0/10</td></tr>
+    <tr><td class="k">君正股份 300223</td><td class="mono">56</td><td><span class="tag t-avoid">❌ 暂时回避</span></td><td>跌破 MA20 11.85%、MACD 死叉</td></tr>
+    <tr><td class="k">富瀚微 300613</td><td class="mono">53</td><td><span class="tag t-avoid">❌ 暂时回避</span></td><td>MACD 死叉 0/20、ATR% 6.04% 仅 2/10</td></tr>
+    <tr><td class="k">中科蓝讯 688332</td><td class="mono">51</td><td><span class="tag t-avoid">❌ 暂时回避</span></td><td>跌破 MA20 14.7%、20 日位置 0%</td></tr>
+    <tr><td class="k">星宸科技 301536</td><td class="mono down"><b>19</b></td><td><span class="tag t-avoid">❌ 观望</span></td><td><b class="down">顶背离 -30（一票否决）</b>、MACD 死叉</td></tr>
+  </tbody>
+</table>
+
+<div class="box w">
+  <p><b>评分本身的解读</b>：按框架表，90-119 分为「可以买入」；但脚本实际把 90 分判为「关注等待」。无论采用哪个口径，<b>没有一只进入 120 分的「强烈建议买入」档</b>，也没有一只达到 100 分以上。<span class="hl">这是一个「产业逻辑成立、但技术面尚未给出安全买点」的典型状态。</span></p>
+  <p>共性失分集中在两项：<b>ATR 未收缩</b>（波动还在扩张，绝大多数得 0/15）和 <b>20 日区间位置偏高</b>——说明这批票刚刚经历了一轮波动放大，尚未收敛成稳定的上涨结构。</p>
+</div>
+
+<h2><span class="n">07</span>估值与盈利：用「隐含 EPS 变动」筛出真改善</h2>
+
+<p>把静态 PE ÷ TTM PE 可以反推出<span class="hl">滚动 12 个月 EPS 相对上一完整年度的变动</span>，这是无需等财报就能验证盈利趋势的一个口径：</p>
+
+<table>
+  <thead><tr><th class="k">标的</th><th class="k">TTM PE</th><th class="k">静态 PE</th><th class="k">隐含EPS变动</th><th class="k">PB</th><th class="k">距历史高</th><th class="k">年初至今</th></tr></thead>
+  <tbody>
+    <tr><td class="k">全志科技 300458</td><td class="mono">51.45</td><td class="mono">116.03</td><td class="up"><b>+125.5%</b></td><td class="mono">8.73</td><td class="down">-30.9%</td><td class="down">-12.19%</td></tr>
+    <tr><td class="k">博通集成 603068</td><td class="mono up">123.40</td><td class="mono up">296.92</td><td class="up">+140.6%</td><td class="mono">3.69</td><td class="down">-13.0%</td><td class="up">+15.97%</td></tr>
+    <tr><td class="k">瑞芯微 603893</td><td class="mono">62.75</td><td class="mono">82.53</td><td class="up">+31.5%</td><td class="mono up">17.42</td><td class="down">-12.9%</td><td class="up">+14.67%</td></tr>
+    <tr><td class="k">乐鑫科技 688018</td><td class="mono">48.00</td><td class="mono">55.04</td><td class="up">+14.7%</td><td class="mono">5.82</td><td class="down">-27.2%</td><td class="down">-3.44%</td></tr>
+    <tr><td class="k">晶晨股份 688099</td><td class="mono down">42.76</td><td class="mono">48.35</td><td class="up">+13.1%</td><td class="mono">5.29</td><td class="down">-18.9%</td><td class="up">+14.57%</td></tr>
+    <tr><td class="k">恒玄科技 688608</td><td class="mono">56.43</td><td class="mono">43.72</td><td class="down"><b>-22.5%</b></td><td class="mono down">3.69</td><td class="down"><b>-50.1%</b></td><td class="down"><b>-31.94%</b></td></tr>
+  </tbody>
+</table>
+
+<div class="box">
+  <p><b>三个反直觉的发现：</b></p>
+  <ul>
+    <li><b>全志科技是最大的「业绩-价格背离」</b>：隐含 EPS 改善 +125.5%（对应中报净利 +204.2%），但股价 60 日 <span class="down">-24.66%</span>、距历史高点 -30.9%。同时今天总资金<b class="down">净流出 7585 万</b>（占市值 0.25%，六只里最大）。<span class="hl">业绩兑现了但资金在走，这是需要三季报验证的信号，不是无脑买点。</span></li>
+    <li><b>恒玄科技是唯一 EPS 负增长的</b>：-22.5%，且年初至今 <span class="down">-31.94%</span>、距历史高点腰斩 -50.1%。天风说它是「低位 SoC 标的」没错，但低位不等于便宜——它的<b>盈利还在下滑</b>，PB 3.69 看似最低，是分母（净资产）大的结果。<span class="hl">左侧标的，必须等三季报确认拐点。</span></li>
+    <li><b>瑞芯微基本面最强但最贵</b>：隐含 EPS +31.5%，10 家券商一致推荐，但 PB <b>17.42</b> 是六只里最高的（比第二名全志 8.73 高一倍）。产业逻辑最硬，价格也最贵。</li>
+  </ul>
+</div>
+
+<h2><span class="n">08</span>结论与操作计划</h2>
+
+<div class="grid" style="grid-template-columns:1fr 1fr">
+  <div class="stat" style="border-left:4px solid var(--up)">
+    <div class="v" style="font-size:20px">晶晨股份 688099</div>
+    <div class="l"><span class="tag t-buy">唯一首选</span> · 量价 4.59x + 破 20 日高</div>
+    <div class="s">
+      TTM PE <b>42.76</b>（六只最低）｜PB 5.29｜60 日仅 <b>-2.63%</b> 未透支<br>
+      主力净流入 <b>1.50 亿</b>（全场第一）｜距历史高 -18.9%<br>
+      <b>止损 91.29</b>（2×ATR，ATR 4.212 / 3.78%）｜<b>MA20 参考 89.74</b><br>
+      首仓 1/3，不追今日高点，等回踩 97-100 区间
+    </div>
+  </div>
+  <div class="stat" style="border-left:4px solid var(--warn)">
+    <div class="v" style="font-size:20px">瑞芯微 603893</div>
+    <div class="l"><span class="tag t-wait">次选·等确认</span> · 择时 90 分（全场并列最高）</div>
+    <div class="s">
+      基本面最硬：10 家券商推荐，隐含 EPS <b>+31.5%</b><br>
+      但今日 <b>1.06x 缩量</b>、未破前高，10-08 刚 <span class="down">-7.43%</span><br>
+      PB <b>17.42</b> 偏贵｜<b>触发条件</b>：放量收复 10-08 阴线高点并站稳
+    </div>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th class="k" style="width:13%">分类</th><th class="k">标的与条件</th></tr></thead>
+  <tbody>
+    <tr><td class="k"><span class="tag t-info">左侧观察</span></td>
+      <td><b>全志科技 300458</b>　触发：站回 MA20 = <b>31.23</b>。业绩改善 +125.5% 但今日总资金净流出 7585 万，需三季报验证后才能排除「见光死」。<br>
+      <b>恒玄科技 688608</b>　触发：三季报确认 EPS 拐点。当前隐含 EPS <span class="down">-22.5%</span>，是六只里唯一负增长，低位不等于便宜。</td></tr>
+    <tr><td class="k"><span class="tag t-wait">等回落</span></td>
+      <td><b>乐鑫科技 688018</b>　Meta Muse 官方支持开发板，逻辑独特；但今日 <span class="down">-0.64%</span> 配 1.42x = 价跌量增（出货嫌疑），MA20 斜率 -0.82%。等缩量回踩 MA20 = 111.92。</td></tr>
+    <tr><td class="k"><span class="tag t-avoid">回避</span></td>
+      <td><b>星宸科技 301536</b>　<span class="down">顶背离一票否决</span>，择时 19 分。<br>
+      <b>博通集成 603068</b>　虽 90 分，但今日涨停开板 + 换手 14.70% + 总资金净流出占市值 <b>1.06%</b>，典型诱多。<br>
+      <b>中科蓝讯 688332 / 君正股份 300223 / 富瀚微 300613</b>　均在 MA20 下方且 MACD 死叉，视觉 SoC 走的是存储顺价逻辑，非 AI 逻辑。</td></tr>
+  </tbody>
+</table>
+
+<h3>未来 1-2 季度催化时间表</h3>
+<table>
+  <thead><tr><th class="k" style="width:14%">时间</th><th class="k">事件</th><th class="k" style="width:11%">确定性</th></tr></thead>
+  <tbody>
+    <tr><td class="k">10 月下旬</td><td><b>三季报密集披露</b>——最关键验证点：端侧 SoC 的高增长能否延续，尤其是全志（改善 +125.5%）与恒玄（-22.5%）能否收敛</td><td><span class="tag t-buy">高</span></td></tr>
+    <tr><td class="k">Q4</td><td>小米/谷歌/Meta 集中发布 AI 手机、AI 眼镜、AI Pin、AI 指环等端侧新品</td><td><span class="tag t-buy">高</span></td></tr>
+    <tr><td class="k">进行中</td><td>苹果 10 月推 homepad / HomePod mini / Apple TV，并开发智能门锁、视频门铃</td><td><span class="tag t-buy">高</span></td></tr>
+    <tr><td class="k">持续</td><td>瑞芯微协处理器 <b>RK1860</b> 年内推出；RK182X 已在十几个行业、数百个项目落地，26H2 开始放量</td><td><span class="tag t-info">中</span></td></tr>
+    <tr><td class="k">滚动</td><td>Meta Muse 日活能否突破 250-300 万平台期跃迁至下一量级</td><td><span class="tag t-wait">中</span></td></tr>
+    <tr><td class="k">不确定</td><td>存储涨价持续——既是 SoC 顺价逻辑的支撑，也是终端需求的压制项</td><td><span class="tag t-avoid">反向风险</span></td></tr>
+  </tbody>
+</table>
+
+<h3>风险提示</h3>
+<div class="box w">
+  <ul>
+    <li><b>评分普遍不高本身就是风险信号</b>：11 只全部落在 90 分及以下，无一进入「可以买入」的确认区间，ATR 普遍未收缩，说明这仍是<b>波动放大的博弈阶段而非趋势阶段</b>。</li>
+    <li><b>存储的双向作用</b>：西南证券明确指出，本轮 SoC 涨价很大程度来自<b>存储涨价顺价</b>。若存储价格回落，「内置存储解决下游需求」的逻辑优势会立刻反转。</li>
+    <li><b>终端需求逆风</b>：2026 全球智能手机出货预计 <span class="down">-8.4%</span>，AI 眼镜 SoC 的增量能否对冲手机大盘下滑，尚未被数据证明。</li>
+    <li><b>硬件形态未定</b>：新品层出不穷但形态未收敛，押注单一品类的公司存在证伪风险。</li>
+  </ul>
+</div>
+
+<footer>
+  本报告为研究与信息整理用途，不构成投资建议。行情数据基准 2026-10-09 收盘，撰写于 2026-10-10（周六，非交易日）。<br>
+  数据来源：通达信 MCP（资讯 / 研报 / 实时行情 / 前复权日K）+ 知识星球（⭕短评&amp;信息、⭕浑水调研Plus、小牛研报纪要）。IMA 个人知识库为空，未贡献数据。
+</footer>
+
+</div>
+</body>
+</html>

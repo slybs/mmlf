@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>传媒板块 · 量价择时与核心标的池 | 通达信 881368</title>
+<meta name="description" content="这是由 AI 影视产业化验证驱动的估值修复行情，不是盈利修复行情：板块 PE 52.2x、头部标的 ROE 普遍 1–2%，涨得最猛的中文在线 ROE −15.4% / PB 67.7x，当日涨幅与 ROE 呈明显负相关。12 项梯度择时评分 88/165「关注等待」上沿，底部 Spring 结构初成。只能做主题仓：缩量回踩 1180–1205 分批建仓（首笔 2%），站上 1244–1250 且量能维持 1.3x 以上追加至 5%，跌破 1144 或 ATR 止损 1174 清仓。">
+<meta name="report-type" content="量价择时">
+<style>
+:root{
+  --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d24; --ink2:#4a5160; --ink3:#8b93a3;
+  --line:#e3e7ee; --line2:#eef1f6;
+  --up:#d9342b; --down:#0f9960; --warn:#e08a00; --info:#2563c9; --purple:#6b4ce6;
+  --accent:#1a4d8f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#1a3a6b 0%,#254b7f 55%,#2f5f96 100%);
+  color:#fff;padding:38px 34px 30px;border-radius:14px;margin:26px 0 24px;
+  box-shadow:0 8px 26px rgba(26,58,107,.18);
+}
+.hero h1{font-size:27px;font-weight:700;letter-spacing:.5px;margin-bottom:8px}
+.hero .sub{font-size:14px;opacity:.86;margin-bottom:20px}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.hbox{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:12px 14px}
+.hbox .k{font-size:11.5px;opacity:.8;letter-spacing:.3px}
+.hbox .v{font-size:21px;font-weight:700;margin-top:3px}
+.hbox .n{font-size:11.5px;opacity:.78;margin-top:2px}
+/* VERDICT */
+.verdict{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:24px;
+}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 2px 8px rgba(20,30,50,.05)}
+.vcard .lbl{font-size:12px;color:var(--ink3);letter-spacing:.5px;margin-bottom:6px}
+.vcard .big{font-size:24px;font-weight:700;line-height:1.3}
+.vcard .desc{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.6}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.b-hold{background:#fff4e0;color:#b36e00;border:1px solid #f0d9a8}
+.b-wait{background:#eaf1fb;color:#1a4d8f;border:1px solid #c5d8f0}
+.b-buy{background:#fdeaea;color:var(--up);border:1px solid #f5c6c2}
+.b-caution{background:#f0f0f3;color:#5a6270;border:1px solid #dcdfe6}
+/* SECTION */
+h2.sec{
+  font-size:19px;font-weight:700;color:var(--ink);margin:38px 0 14px;
+  padding-left:12px;border-left:4px solid var(--accent);
+}
+h3.sub{font-size:15.5px;font-weight:700;color:var(--ink);margin:22px 0 10px}
+p{margin-bottom:11px;color:var(--ink2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 8px rgba(20,30,50,.05)}
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
+th{background:#f2f5f9;color:var(--ink);font-weight:600;text-align:left;padding:9px 10px;border-bottom:2px solid var(--line);font-size:12.5px;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--line2);color:var(--ink2)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.mono{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.5px}
+/* SCORE BAR */
+.sbar{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.sbar .nm{width:120px;flex-shrink:0;color:var(--ink2);font-size:12.5px}
+.sbar .track{flex:1;height:15px;background:#eef1f6;border-radius:8px;overflow:hidden;position:relative}
+.sbar .fill{height:100%;border-radius:8px}
+.sbar .sc{width:60px;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:12.5px}
+.sbar .nt{width:230px;flex-shrink:0;font-size:11.5px;color:var(--ink3)}
+/* KL TABLE */
+.kline{font-size:12.5px;font-family:"SF Mono",Menlo,Consolas,monospace}
+.kline td{padding:5px 8px}
+/* TAG */
+.tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:11.5px;font-weight:600;margin-right:5px}
+.t-red{background:#fdeceb;color:#c0291f}
+.t-green{background:#e6f5ee;color:#0b7a4e}
+.t-blue{background:#e9f0fb;color:#1a4d8f}
+.t-gray{background:#f0f1f4;color:#6a7280}
+.t-purple{background:#f0ecfb;color:#5b3ec4}
+.t-orange{background:#fdf2e2;color:#b3700a}
+/* CALLOUT */
+.call{border-left:4px solid var(--warn);background:#fffaf0;padding:14px 18px;border-radius:0 9px 9px 0;margin:14px 0;font-size:13.5px;color:var(--ink2)}
+.call.blue{border-left-color:var(--info);background:#f0f6fe}
+.call.red{border-left-color:var(--up);background:#fdf3f2}
+.call.green{border-left-color:var(--down);background:#f0f9f5}
+.call b{color:var(--ink)}
+/* COMPANY */
+.co{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.co-h{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line2)}
+.co-n{font-size:16px;font-weight:700;color:var(--ink)}
+.co-c{font-size:12.5px;color:var(--ink3);font-family:"SF Mono",Menlo,monospace}
+.co ul{margin:6px 0 0 18px;font-size:13.5px;color:var(--ink2)}
+.co li{margin-bottom:3px}
+/* GRID2 */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.mini{background:#fafbfd;border:1px solid var(--line2);border-radius:10px;padding:14px 16px}
+.mini .t{font-size:12.5px;color:var(--ink3);margin-bottom:4px}
+.mini .v{font-size:19px;font-weight:700;color:var(--ink)}
+.mini .d{font-size:12px;color:var(--ink2);margin-top:5px;line-height:1.55}
+ul.plain{margin:8px 0 8px 20px;font-size:13.5px;color:var(--ink2)}
+ul.plain li{margin-bottom:5px}
+.src{font-size:11.5px;color:var(--ink3);margin-top:6px;font-style:normal}
+.foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.8}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .verdict,.g2,.g3{grid-template-columns:1fr}
+  .sbar .nt{display:none}
+  .sbar .nm{width:100px}
+  .wrap{padding:0 14px 60px}
+  table{font-size:12.5px}
+  th,td{padding:6px 7px}
+}
+@media print{
+  body{background:#fff}
+  .card,.vcard,.co{box-shadow:none;break-inside:avoid}
+  h2.sec{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <h1>传媒板块 · 量价择时与核心标的池</h1>
+  <div class="sub">通达信行业指数 881368 ｜ 数据截至 2026-10-09 收盘 ｜ 结合 ima 研报库 + 知识星球产业纪要</div>
+  <div class="hero-grid">
+    <div class="hbox"><div class="k">板块指数</div><div class="v">1216.95</div><div class="n">+5.26%　放量 1.26x</div></div>
+    <div class="hbox"><div class="k">择时评分</div><div class="v">88 / 165</div><div class="n">⏸ 关注等待（区间上沿）</div></div>
+    <div class="hbox"><div class="k">板块估值</div><div class="v">PE 52.2x</div><div class="n">PB 2.32x　YTD −14.3%</div></div>
+    <div class="hbox"><div class="k">建议仓位</div><div class="v">3–5%</div><div class="n">主题仓 · 不追高 · 等回踩</div></div>
+  </div>
+</div>
+
+<div class="verdict">
+  <div class="vcard">
+    <div class="lbl">板块投资评级</div>
+    <div class="big" style="color:var(--warn)">阶段性增持</div>
+    <div class="desc">主题驱动成立，但盈利未修复。<span class="badge b-hold" style="margin-left:2px">投机性参与</span><br>建议以 <b>3–5% 主题仓</b> 参与，不配置为核心仓位，回踩 MA20（≈1205）企稳后分批介入。</div>
+  </div>
+  <div class="vcard">
+    <div class="lbl">威科夫阶段</div>
+    <div class="big" style="color:var(--info)">吸筹末期 · JOC 尝试</div>
+    <div class="desc">7/27 恐慌抛售（SC，最低 1068.53）→ 8 月自动反弹（AR，高 1275.53）→ 9 月缩量二次测试（ST，0.70–0.85x）→ <b>10/09 跌破箱体下沿后强势收复 = Spring</b>，量能温和放大。尚未有效突破 1275–1283 阻力带。</div>
+  </div>
+  <div class="vcard">
+    <div class="lbl">量价验证结论</div>
+    <div class="big" style="color:var(--up)">有效突破（待确认）</div>
+    <div class="desc">10/09 收 <b>+5.26%</b>、量 <b>1.26x</b>，上涨 123 家 / 下跌 5 家，主力净流入 <b>32.3 亿</b>。属<b>有效上涨</b>而非诱多；但 1.26x 仅为温和放量（9/04 曾 1.75x），<b>放量不足是主要隐忧</b>，需次日补量确认。</div>
+  </div>
+</div>
+
+<div class="call red">
+  <b>一句话结论：</b>这是一次<b>由 AI 影视产业化验证驱动的估值修复行情</b>，不是盈利修复行情。板块 PE 52.2x、头部标的 ROE 普遍 1–2% 甚至为负，涨得最猛的中文在线 ROE −15.4%、PB 67.7x。技术面刚完成底部 Spring 结构、评分 88 分处于"关注等待"上沿，<b>可以做，但只能做主题仓、只能等回踩、必须设止损</b>。
+</div>
+
+<h2 class="sec">一、板块快照：一个被"杀估值"了 8 个月的板块</h2>
+
+<div class="card">
+<div class="g3">
+  <div class="mini"><div class="t">年初至今</div><div class="v down">−14.32%</div><div class="d">显著跑输算力/半导体主线，补涨动能来自"落后"本身</div></div>
+  <div class="mini"><div class="t">近 60 日</div><div class="v up">+5.03%</div><div class="d">7/27 见底 1068.53 后进入震荡修复</div></div>
+  <div class="mini"><div class="t">距 2 月高点</div><div class="v down">−31.2%</div><div class="d">2/10 高点 1768.59 → 现价 1216.95</div></div>
+  <div class="mini"><div class="t">板块 PE(TTM)</div><div class="v">52.24x</div><div class="d">PB 2.32x；总市值 1.51 万亿</div></div>
+  <div class="mini"><div class="t">10/09 主力净流入</div><div class="v up">+32.3 亿</div><div class="d">全板块资金净流入 45.1 亿</div></div>
+  <div class="mini"><div class="t">涨跌家数</div><div class="v"><span class="up">123</span> / <span class="down">5</span></div><div class="d">换手率 3.85%，普涨格局</div></div>
+</div>
+<div class="src">数据来源：通达信 881368 实时行情（2026-10-09 15:00 收盘快照）</div>
+</div>
+
+<div class="call blue">
+<b>估值与盈利的错配，是本次分析最需要记住的一点。</b>板块 PE 52.24x 看似不便宜，但更刺眼的是盈利端：10/09 涨幅榜前列的标的里，中文在线 ROE(26H1) <b>−15.38%</b>、博纳影业 <b>−4.46%</b>、儒意电影 <b>−2.09%</b>、掌阅科技 <b>−2.18%</b>、中国电影 <b>−1.00%</b>。<b>这不是"便宜的好公司被重新发现"，而是"低配 + 低预期 + 事件催化"三重叠加的风险偏好修复。</b>
+</div>
+
+<h2 class="sec">二、择时分析：12 项梯度评分 = 88 分（关注等待）</h2>
+
+<p>按 A 股择时框架对板块指数 881368 跑完整 12 项梯度评分（基础 7 项 + 威科夫 3 项 + 背离修正）。理论满分 165 分，判定区间：≥120 强烈买入 / 90–119 可以买入 / <b>65–89 关注等待</b> / 40–64 暂时回避 / &lt;40 观望。</p>
+
+<div class="card">
+<h3 class="sub">评分拆解</h3>
+<div class="sbar"><div class="nm">1 价/MA20</div><div class="track"><div class="fill" style="width:53%;background:#0f9960"></div></div><div class="sc">8/15</div><div class="nt">1.0095，刚站上 MA20</div></div>
+<div class="sbar"><div class="nm">2 MA20 斜率</div><div class="track"><div class="fill" style="width:20%;background:#e08a00"></div></div><div class="sc">2/10</div><div class="nt">−0.38%，均线仍走平偏下</div></div>
+<div class="sbar"><div class="nm">3 MACD</div><div class="track"><div class="fill" style="width:25%;background:#e08a00"></div></div><div class="sc">5/20</div><div class="nt">DIF −2.86 / DEA −0.66 水下</div></div>
+<div class="sbar"><div class="nm">4 区间位置</div><div class="track"><div class="fill" style="width:50%;background:#e08a00"></div></div><div class="sc">10/20</div><div class="nt">60 日区间 69.2% 分位，不便宜</div></div>
+<div class="sbar"><div class="nm">5 ATR 收缩</div><div class="track"><div class="fill" style="width:2%;background:#d9342b"></div></div><div class="sc">0/15</div><div class="nt">25.4→28.8 扩张，波动放大</div></div>
+<div class="sbar"><div class="nm">6 低波 ATR%</div><div class="track"><div class="fill" style="width:100%;background:#0f9960"></div></div><div class="sc">10/10</div><div class="nt">2.36%，波动率本身仍低</div></div>
+<div class="sbar"><div class="nm">7 涨幅安全</div><div class="track"><div class="fill" style="width:100%;background:#0f9960"></div></div><div class="sc">15/15</div><div class="nt">60 日仅 +5.0%，无透支</div></div>
+<div class="sbar"><div class="nm">8 量价关系</div><div class="track"><div class="fill" style="width:87%;background:#0f9960"></div></div><div class="sc">13/15</div><div class="nt">放量 +5.26%，量价健康</div></div>
+<div class="sbar"><div class="nm">9 Spring 弹簧</div><div class="track"><div class="fill" style="width:100%;background:#0f9960"></div></div><div class="sc">15/15</div><div class="nt">10/09 破箱体后强势收复</div></div>
+<div class="sbar"><div class="nm">10 回调质量</div><div class="track"><div class="fill" style="width:100%;background:#0f9960"></div></div><div class="sc">10/10</div><div class="nt">10/08 缩量 0.70x，健康</div></div>
+<div class="sbar"><div class="nm">11 底背离</div><div class="track"><div class="fill" style="width:2%;background:#c8cdd6"></div></div><div class="sc">0/20</div><div class="nt">无</div></div>
+<div class="sbar"><div class="nm">12 顶背离</div><div class="track"><div class="fill" style="width:2%;background:#c8cdd6"></div></div><div class="sc">0/−30</div><div class="nt">无（不否决）</div></div>
+<div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline">
+  <span style="font-weight:700;font-size:16px">总分</span>
+  <span><b style="font-size:24px;color:var(--info)">88</b> <span style="color:var(--ink3);font-size:13px">/ 165</span> 　<span class="badge b-wait">⏸ 关注等待（上沿）</span></span>
+</div>
+</div>
+
+<div class="g2">
+<div class="card">
+<h3 class="sub">为什么是 88 分而不是更高</h3>
+<ul class="plain">
+<li><b>趋势指标集体未确认（扣 25 分）</b>：MACD 仍在零轴下方且 DIF &lt; DEA（5/20），MA20 斜率 −0.38%（2/10），价/MA20 仅 1.0095（8/15）。一根大阳线改变了价格，但没改变均线结构。</li>
+<li><b>波动扩张（扣 15 分）</b>：ATR 从 25.4 升至 28.8。威科夫框架下，理想的吸筹结束应伴随 ATR 收缩，扩张说明多空分歧在加大。</li>
+<li><b>位置不够低（扣 10 分）</b>：60 日区间位置 69.2%，已经不在"便宜区"。而 120 日位置仅 37.0%，说明中期仍在低位——这是矛盾但真实的状态。</li>
+<li><b>无底背离（扣 20 分）</b>：7/27 低点时 DIF 未同步走高，缺少最扎实的底部确认信号。</li>
+</ul>
+</div>
+<div class="card">
+<h3 class="sub">为什么能拿到 88 分</h3>
+<ul class="plain">
+<li><b>Spring 结构成立（+15）</b>：10/09 最低 1144.46，跌破 9 月箱体下沿 1163.63 后强势收复并收在 1216.95，全天振幅 6.57%。这是教科书式的终极震仓。</li>
+<li><b>回调全程缩量（+10）</b>：9/09–10/08 的下跌段，量比持续 0.70–0.86x，最低 10/08 仅 0.70x。缩量回调 = 供应枯竭，是吸筹区最健康的特征。</li>
+<li><b>涨幅零透支（+15）</b>：60 日涨幅仅 +5.03%，而同期 60 日累计振幅达 163%。涨得少、震得多，没有追高风险。</li>
+<li><b>波动率绝对值仍低（+10）</b>：ATR% 2.36% 处于 &lt;3% 的最优档，止损容易设。</li>
+</ul>
+</div>
+</div>
+
+<h3 class="sub">ATR 风控参数</h3>
+<div class="card">
+<table>
+<thead><tr><th>项目</th><th class="num">数值</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>ATR(14)</td><td class="num">28.78（2.36%）</td><td>止损倍数取 1.5x（ATR%&lt;3%）</td></tr>
+<tr><td><b>板块止损位</b></td><td class="num"><b>1174</b>（−3.5%）</td><td>1216.95 − 1.5×ATR</td></tr>
+<tr><td><b>结构止损位</b></td><td class="num"><b>1144</b>（−6.0%）</td><td>跌破 10/09 最低点 = Spring 失效，结构破坏</td></tr>
+<tr><td>第一阻力</td><td class="num">1244–1250</td><td>8 月上旬密集成交区</td></tr>
+<tr><td>关键阻力</td><td class="num"><b>1275–1283</b></td><td>8/13 高 1275.53、9/08 高 1283.01，突破与否决定行情级别</td></tr>
+<tr><td>理想买点（LPS）</td><td class="num">1180–1205</td><td>回踩 MA20（1205.55）缩量企稳（量比 &lt;0.8x）</td></tr>
+<tr><td>止盈参考</td><td class="num">动态 1.5–2.5×ATR</td><td>浮盈 +10~20% 后收紧至 2.0×ATR</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="sec">三、量价关系验证：真突破还是诱多？</h2>
+
+<p>按量价关系框架逐条验证 10/09 这根大阳线。核心规则：<b>价创新高 + 量放大 = 有效突破</b>；<b>价创新高 + 量萎缩 = 诱多</b>。</p>
+
+<div class="card">
+<table>
+<thead><tr><th>验证项</th><th>实测</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td>价格是否创新高</td><td>收 1216.95，突破 9 月箱体上沿（1238 未破），但未破 1275/1283</td><td><span class="tag t-orange">部分</span></td></tr>
+<tr><td>成交量是否放大</td><td>58.96M vs 20 日均 46.9M = <b>1.26x</b>，较前日 33.1M 放大 <b>78%</b></td><td><span class="tag t-red">是（&gt;30%）</span></td></tr>
+<tr><td>是否放量突破压力位</td><td>突破了 1200 整数关与 MA20，但未触及 1244 主压力</td><td><span class="tag t-orange">部分</span></td></tr>
+<tr><td>放量是否充分</td><td>1.26x 属"温和放量"档（1.2–1.5x），未达 SOS 的 1.5x 门槛</td><td><span class="tag t-blue">不足</span></td></tr>
+<tr><td>市场宽度</td><td>上涨 123 家 / 下跌 5 家，20CM 涨停 2 家，10CM 涨停 10+ 家</td><td><span class="tag t-red">强</span></td></tr>
+<tr><td>资金验证</td><td>主力净流入 32.3 亿，板块净流入 45.1 亿</td><td><span class="tag t-red">强</span></td></tr>
+<tr><td>前序回调量能</td><td>10/08 缩量 0.70x 下跌 −2.30%</td><td><span class="tag t-green">健康（诱空）</span></td></tr>
+</tbody>
+</table>
+<div class="call green" style="margin-top:14px">
+<b>验证结论：有效上涨，但力度未达"强势突破"标准，属"可以跟、不能追"。</b>10/08 的缩量下跌是典型<b>虚假下跌（诱空）</b>——空头乏力；10/09 的放量长阳是<b>有效上涨</b>。但 1.26x 的量能距离 9/04 的 1.75x 有明显差距，说明增量资金进场但不够坚决。<b>需要 10/10 及之后连续 2–3 日维持 1.3x 以上量能才能确认 JOC 有效，若迅速缩量回落到 0.9x 以下，则视为 UT（上冲回落）处理。</b>
+</div>
+</div>
+
+<h3 class="sub">近 20 个交易日量价明细</h3>
+<div class="card">
+<table class="kline">
+<thead><tr><th>日期</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">成交量(M)</th><th class="num">量比(20日)</th><th>量价性质</th></tr></thead>
+<tbody>
+<tr><td>09-04</td><td class="num">1233.96</td><td class="num up">+3.01%</td><td class="num">82.0</td><td class="num">1.75x</td><td>显著放量上攻（阶段高点量）</td></tr>
+<tr><td>09-07</td><td class="num">1255.05</td><td class="num up">+1.71%</td><td class="num">68.2</td><td class="num">1.45x</td><td>温和高位放量</td></tr>
+<tr><td>09-08</td><td class="num">1266.52</td><td class="num up">+0.91%</td><td class="num">63.2</td><td class="num">1.35x</td><td><b>60 日最高收盘</b>，涨势放缓</td></tr>
+<tr><td>09-09</td><td class="num">1229.84</td><td class="num down">−2.90%</td><td class="num">56.7</td><td class="num">1.21x</td><td>放量下跌，供应出现</td></tr>
+<tr><td>09-10</td><td class="num">1214.81</td><td class="num down">−1.22%</td><td class="num">39.7</td><td class="num">0.85x</td><td>转为缩量，抛压减轻</td></tr>
+<tr><td>09-11</td><td class="num">1203.54</td><td class="num down">−0.93%</td><td class="num">45.1</td><td class="num">0.96x</td><td>正常量</td></tr>
+<tr><td>09-14</td><td class="num">1192.67</td><td class="num down">−0.90%</td><td class="num">35.4</td><td class="num">0.75x</td><td>缩量回调</td></tr>
+<tr><td>09-15</td><td class="num">1178.16</td><td class="num down">−1.22%</td><td class="num">36.6</td><td class="num">0.78x</td><td>缩量回调</td></tr>
+<tr><td>09-16</td><td class="num">1181.59</td><td class="num up">+0.29%</td><td class="num">32.9</td><td class="num">0.70x</td><td><b>极度缩量止跌</b>＝需求枯竭（底部特征）</td></tr>
+<tr><td>09-17</td><td class="num">1188.61</td><td class="num up">+0.59%</td><td class="num">38.1</td><td class="num">0.81x</td><td>缩量企稳</td></tr>
+<tr><td>09-18</td><td class="num">1198.15</td><td class="num up">+0.80%</td><td class="num">39.7</td><td class="num">0.85x</td><td>缩量回升</td></tr>
+<tr><td>09-21</td><td class="num">1213.31</td><td class="num up">+1.27%</td><td class="num">42.5</td><td class="num">0.91x</td><td>缩量上涨（动力一般）</td></tr>
+<tr><td>09-22</td><td class="num">1238.06</td><td class="num up">+2.04%</td><td class="num">60.0</td><td class="num">1.28x</td><td>温和放量反弹</td></tr>
+<tr><td>09-23</td><td class="num">1208.44</td><td class="num down">−2.39%</td><td class="num">50.0</td><td class="num">1.07x</td><td>正常量回落</td></tr>
+<tr><td>09-24</td><td class="num">1196.91</td><td class="num down">−0.95%</td><td class="num">40.5</td><td class="num">0.86x</td><td>缩量回调</td></tr>
+<tr><td>09-28</td><td class="num">1165.81</td><td class="num down">−2.60%</td><td class="num">36.8</td><td class="num">0.78x</td><td>缩量回调</td></tr>
+<tr><td>09-29</td><td class="num">1189.00</td><td class="num up">+1.99%</td><td class="num">42.9</td><td class="num">0.92x</td><td>缩量反弹</td></tr>
+<tr><td>09-30</td><td class="num">1183.37</td><td class="num down">−0.47%</td><td class="num">36.1</td><td class="num">0.77x</td><td>缩量整理</td></tr>
+<tr style="background:#fdf3f2"><td><b>10-08</b></td><td class="num">1156.17</td><td class="num down">−2.30%</td><td class="num">33.1</td><td class="num">0.70x</td><td><b>极度缩量下跌＝诱空，空头乏力</b></td></tr>
+<tr style="background:#fdeceb"><td><b>10-09</b></td><td class="num">1216.95</td><td class="num up">+5.26%</td><td class="num">59.0</td><td class="num">1.26x</td><td><b>放量长阳＝Spring + 有效突破尝试</b></td></tr>
+</tbody>
+</table>
+<div class="src">量比 = 当日成交量 / 前 20 日均量。解读：&lt;0.5x 极度缩量 · 0.5–0.8x 缩量健康 · 0.8–1.2x 正常 · 1.2–1.5x 温和放量 · &gt;1.5x 显著放量 · &gt;2.0x 天量</div>
+</div>
+
+<div class="call">
+<b>量价上最值得警惕的一处：</b>9 月 16 日至 10 月 8 日的整个震荡区间，成交量长期趴在 <b>0.70–0.92x</b>，期间反弹（9/21 +1.27%、9/29 +1.99%）都是<b>缩量上涨</b>——按量价规则，缩量上涨至压力位应警惕回调。这解释了为什么 9 月的两次反弹都失败。10/09 首次出现 1.26x 的放量，是量能层面的实质性改善，但<b>一根 K 线不足以确认趋势，必须看后续能否延续</b>。
+</div>
+
+<h2 class="sec">四、10/09 大涨归因：六重催化同日共振</h2>
+
+<div class="card">
+<table>
+<thead><tr><th>催化事件</th><th>时间</th><th>性质</th><th>对板块的含义</th></tr></thead>
+<tbody>
+<tr><td><b>《参考消息》转载南华早报：AI 微短剧是中国下一波服务出口浪潮</b>；前 7 月中国服务出口 +17.1%，其中<b>个人文化和娱乐服务出口激增 57.8%</b></td><td>10-08</td><td><span class="tag t-red">外需叙事</span></td><td>把短剧从"内卷生意"重新定义为"出海增量"，估值锚改变</td></tr>
+<tr><td><b>爱奇艺秋季悦享会</b>：CEO 龚宇称 AI 推动短剧爆发式增长，正打破影视行业高门槛；发布 2026–2027 年度 350+ 部片单，All in AI 战略</td><td>10-09</td><td><span class="tag t-red">平台定调</span></td><td>长视频平台正式把 AI 纳入主线，采购需求预期抬升</td></tr>
+<tr><td><b>博纳影业《三星堆：未来往事》定档 10/23</b>——国内<b>首部获国家电影局公映许可证的 AI 制作院线电影</b>（片长 100 分钟，120 余万张底图、上百次全片迭代）</td><td>09-27 宣布<br>10-23 上映</td><td><span class="tag t-purple">首个验证点</span></td><td>AI 长片从概念走向票房验证，是 2026Q4 最重要的单一事件</td></tr>
+<tr><td><b>红果短剧 DAU 已超越"爱优腾芒"总和</b>；2026H1 国内 AI 短剧市场规模突破 <b>220 亿元</b>；国庆档票房 11.64 亿（年内累计 307.59 亿）</td><td>10-09</td><td><span class="tag t-blue">数据支撑</span></td><td>产业规模从"故事"变为"数字"</td></tr>
+<tr><td><b>火山引擎平遥影展发布 Seedance 影视合作计划</b>，面向全球影视项目提供 Token 补贴，单项目激励最高百万；快手可灵 AI 传最早 2027 赴港上市、募资 ≥10 亿美元</td><td>09 月内<br>10-06</td><td><span class="tag t-orange">供给侧补贴</span></td><td>大厂用真金白银买创作供给，短期大幅降低内容方成本</td></tr>
+<tr><td><b>资金面切换</b>：10/09 PCB／覆铜板／电子化学品／玻纤<b>领跌</b>（金安国纪跌停），元件链延续调整；资金从 AI 硬件端流向 AI 应用端</td><td>10-09</td><td><span class="tag t-green">资金轮动</span></td><td>本次上涨有一部分是"硬件→应用"的高低切，持续性依赖硬件端继续弱势</td></tr>
+</tbody>
+</table>
+<div class="src">来源：财联社焦点复盘（2026-10-09 17:40）、智通财经 A 股收评（2026-10-09 15:38）、21 世纪经济报道（2026-10-09）、格隆汇（2026-10-09 13:58）</div>
+</div>
+
+<div class="call blue">
+<b>财联社当日复盘给出的冷静提示（必须原样转达）：</b>"板块内人气核心标的仍<b>多以节前领涨的一些抱团品种为主</b>，人气地位仍<b>无法与近期领涨的电池产业链相提并论</b>，且仍需观察<b>一旦硬件端展开回流，整个应用端能否维持强势仍有疑问</b>。" 当日连板结构：新华传媒 9 连板、新华文轩 10 天 7 板、澳弘电子 15 天 9 板——<b>高标已处于游资博弈的末段，不是基本面买点</b>。
+</div>
+
+<h2 class="sec">五、AI+影视产业链图谱与价值分配</h2>
+
+<p>传媒板块当前的投资逻辑已不再是传统的"广告+影视+出版"，而是被重构为一条 AI 内容产业链。理解<b>价值沉淀在哪个环节</b>，比选个股更重要。</p>
+
+<div class="card">
+<svg viewBox="0 0 1000 430" style="width:100%;height:auto">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8b93a3"/>
+    </marker>
+  </defs>
+  <!-- 层1 算力/模型 -->
+  <text x="18" y="24" font-size="12.5" font-weight="700" fill="#1a1d24">① 算力 / 视频生成模型</text>
+  <rect x="18" y="34" width="228" height="76" rx="8" fill="#eef2f8" stroke="#c5d2e4" stroke-width="1"/>
+  <text x="32" y="55" font-size="12" fill="#1a1d24" font-weight="600">Seedance（字节）、可灵（快手）</text>
+  <text x="32" y="72" font-size="11.5" fill="#4a5160">万相 / HappyHorse（阿里）、SkyReels（昆仑）</text>
+  <text x="32" y="89" font-size="11.5" fill="#4a5160">算力成本：2.0 版 ≈1 元/秒，2.5 版 ≈1.8 元/秒</text>
+  <text x="32" y="104" font-size="11.5" fill="#c0291f">趋势：价格持续下行，切换成本极低</text>
+
+  <!-- 层2 工具 -->
+  <text x="276" y="24" font-size="12.5" font-weight="700" fill="#1a1d24">② AI 工具 / 制作</text>
+  <rect x="276" y="34" width="228" height="76" rx="8" fill="#f4f0fc" stroke="#cdbfe8" stroke-width="1"/>
+  <text x="290" y="55" font-size="12" fill="#1a1d24" font-weight="600">参考生视频：减 80% 分镜工作流</text>
+  <text x="290" y="72" font-size="11.5" fill="#4a5160">产能提高 4–5 倍，沉淀可复用角色资产</text>
+  <text x="290" y="89" font-size="11.5" fill="#4a5160">AI 电影 5–8 万元/分钟；精品竖屏 2000–4000 元/分钟</text>
+  <text x="290" y="104" font-size="11.5" fill="#c0291f">趋势：工具趋同，最终或只剩 2–3 家</text>
+
+  <!-- 层3 IP -->
+  <text x="534" y="24" font-size="12.5" font-weight="700" fill="#1a1d24">③ IP 版权 / 语料</text>
+  <rect x="534" y="34" width="228" height="76" rx="8" fill="#eaf5ef" stroke="#b8ddc8" stroke-width="1"/>
+  <text x="548" y="55" font-size="12" fill="#1a1d24" font-weight="600">IP/剧本成本占比升至 ≈30%</text>
+  <text x="548" y="72" font-size="11.5" fill="#4a5160">主要来源：番茄小说、七猫、网文平台</text>
+  <text x="548" y="89" font-size="11.5" fill="#4a5160">新规 2026/9/1 生效：强化版权与可追溯</text>
+  <text x="548" y="104" font-size="11.5" fill="#0b7a4e">趋势：正版 IP 稀缺性上升，最确定环节</text>
+
+  <!-- 层4 出品 -->
+  <text x="792" y="24" font-size="12.5" font-weight="700" fill="#1a1d24">④ 出品 / 承制</text>
+  <rect x="792" y="34" width="190" height="76" rx="8" fill="#fdf4e6" stroke="#ecd5a8" stroke-width="1"/>
+  <text x="804" y="55" font-size="12" fill="#1a1d24" font-weight="600">承制收固定费（弹性小）</text>
+  <text x="804" y="72" font-size="11.5" fill="#4a5160">自制自担成本、版权自有</text>
+  <text x="804" y="89" font-size="11.5" fill="#4a5160">AGSD 爆款率 ≈1%+ vs 真人 10–20%</text>
+  <text x="804" y="104" font-size="11.5" fill="#b3700a">趋势：26 年红海，27 年才到长剧</text>
+
+  <!-- arrows row1 -->
+  <path d="M250,72 L272,72" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M508,72 L530,72" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M766,72 L788,72" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 层5 平台 -->
+  <rect x="300" y="160" width="440" height="72" rx="8" fill="#fdeceb" stroke="#f0c0bc" stroke-width="1"/>
+  <text x="18" y="184" font-size="12.5" font-weight="700" fill="#1a1d24">⑤ 平台 / 分发</text>
+  <text x="318" y="176" font-size="12" fill="#1a1d24" font-weight="600">红果短剧：时长份额 5.91%（全网第 4 大 App），MAU ≈3.7 亿，广告收入 ≈200 亿</text>
+  <text x="318" y="196" font-size="11.5" fill="#4a5160">抖音 / 红果 / 芒果TV / 爱奇艺 / 腾讯视频 / 优酷 —— 掌握定价权与补贴节奏</text>
+  <text x="318" y="215" font-size="11.5" fill="#c0291f">价值最大，但主要标的均不在 A 股（字节未上市、腾讯/快手/B站 在港、爱奇艺在美）</text>
+  <path d="M520,112 L520,156" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 变现密度阶梯 -->
+  <text x="18" y="272" font-size="12.5" font-weight="700" fill="#1a1d24">变现密度阶梯（单位内容价值）— 决定"为什么要往长内容走"</text>
+  <rect x="18" y="284" width="222" height="54" rx="7" fill="#f2f5f9" stroke="#dfe5ee"/>
+  <text x="32" y="304" font-size="11.5" fill="#4a5160">免费短剧 IAA</text>
+  <text x="32" y="324" font-size="16" font-weight="700" fill="#1a1d24">4.5 元/人/月</text>
+  <rect x="256" y="284" width="222" height="54" rx="7" fill="#eaf1fb" stroke="#c5d8f0"/>
+  <text x="270" y="304" font-size="11.5" fill="#4a5160">长视频会员</text>
+  <text x="270" y="324" font-size="16" font-weight="700" fill="#1a4d8f">14–15 元/人/月</text>
+  <rect x="494" y="284" width="222" height="54" rx="7" fill="#f4f0fc" stroke="#cdbfe8"/>
+  <text x="508" y="304" font-size="11.5" fill="#4a5160">电影票款</text>
+  <text x="508" y="324" font-size="16" font-weight="700" fill="#5b3ec4">36.9 元/人次</text>
+  <rect x="732" y="284" width="250" height="54" rx="7" fill="#eaf5ef" stroke="#b8ddc8"/>
+  <text x="746" y="304" font-size="11.5" fill="#4a5160">海外短剧 IAP</text>
+  <text x="746" y="324" font-size="16" font-weight="700" fill="#0b7a4e">3–5 美元/周</text>
+  <path d="M244,311 L252,311" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M482,311 L490,311" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M720,311 L728,311" stroke="#8b93a3" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 市场规模 -->
+  <text x="18" y="372" font-size="12.5" font-weight="700" fill="#1a1d24">市场规模：AI 短剧 2026E 突破 400 亿（2024 年 100 亿 → 2025 年 168 亿）</text>
+  <rect x="18" y="382" width="964" height="34" rx="7" fill="#fafbfd" stroke="#e3e7ee"/>
+  <text x="34" y="404" font-size="11.5" fill="#4a5160">中国网络微短剧整体：2024 年 504 亿 → 2025 年 678 亿 → <tspan font-weight="700" fill="#1a1d24">2026E 793 亿</tspan> → 2030E 1506 亿（CAGR ≈20%）　｜　金元证券测算：AI 电影与 AI 长剧各自对应 <tspan font-weight="700" fill="#1a1d24">两个 500 亿级</tspan> 增量市场</text>
+</svg>
+<div class="src">资料来源：野村《ByteDance dominates China's AI short-drama value chain》(2026-10-04)、金元证券《AI+影视：从漫剧到长剧》(2026-09-30)、知识星球 AI 视频专家学习笔记 (2026-08-31)、DataEye / 艾媒 / QuestMobile</div>
+</div>
+
+<h3 class="sub">各环节的产业趋势与投资判断</h3>
+<div class="card">
+<table>
+<thead><tr><th>环节</th><th>当前状态</th><th>未来 12 个月趋势判断</th><th>投资结论</th></tr></thead>
+<tbody>
+<tr>
+<td><b>① 算力 / 模型</b></td>
+<td>字节 Seedance 占行业工作流 <b>80–90%</b>；但专家明确表示<b>切换成本低</b>，若替代品性能可比会立即转移产量。工作流正走向"多模型编排"</td>
+<td>视频生成模型价格<b>持续下行</b>（阿里万相等已足够覆盖低要求场景）。模型层是买方市场，<b>红利持续向下游转移</b></td>
+<td><span class="tag t-green">利好下游成本</span><br><span class="tag t-red">不利于"卖铲人"估值</span></td>
+</tr>
+<tr>
+<td><b>② AI 工具</b></td>
+<td>参考生视频把产能提高 4–5 倍；AI 电影报价已透明到 5–8 万元/分钟</td>
+<td>星球纪要直言"<b>工具趋同后，核心竞争力回归人才与 IP 储备；工具端最终或只剩 2–3 家</b>"</td>
+<td><span class="tag t-orange">高淘汰率</span><br>只选已有真实调用量与正向现金流的</td>
+</tr>
+<tr>
+<td><b>③ IP 版权</b></td>
+<td>IP/剧本成本占精品 AGSD 总成本 <b>≈30%</b>（算力/制作 20%+，人力占其余）；《微短剧管理办法》2026/9/1 生效，强调版权保护与可追溯</td>
+<td>监管收紧 + 平台提高质量门槛 → <b>侵权/低质产能出清，正版 IP 稀缺性系统性上升</b>。IP 方"收授权费、前置锁定收益"，是商业模式最确定的一环</td>
+<td><span class="tag t-green">最确定</span><br>优先级最高</td>
+</tr>
+<tr>
+<td><b>④ 出品 / 承制</b></td>
+<td>短剧成本降 2–10 倍（真人 40–100 万/部 vs AI 高品质 10–20 万/部）；但 AGSD 爆款率仅 <b>≈1%+</b>（真人带粉丝演员 10–20%）；平台补贴 200–1000 万/项目</td>
+<td>2026 年<b>竖屏短剧已是红海</b>，预计 <b>2027 年</b>才真正迭代到 AI 长剧赛道。补贴必然退坡，行业从"量扩张"转"质竞争"，<b>利润大概率被平台吃掉</b></td>
+<td><span class="tag t-orange">高弹性低确定性</span><br>只能做波段，不能做底仓</td>
+</tr>
+<tr>
+<td><b>⑤ 平台 / 分发</b></td>
+<td>红果时长份额 5.91%（全网第 4）；掌握评级（S/A/B/C）与采购三模式定价权</td>
+<td>平台是 AI 内容繁荣的<b>最大受益者</b>，但 A 股可投的只剩芒果超媒（自有平台+内容一体）</td>
+<td><span class="tag t-green">价值最大</span><br><span class="tag t-red">可选标的极少</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="sec">六、核心标的池：按"确定性—弹性—风险"三层划分</h2>
+
+<div class="call red">
+<b>先看这张图，它比任何选股逻辑都更能说明当前板块的性质。</b>横轴是 26H1 加权 ROE，纵轴是 10/09 当日涨幅——<b>两者呈明显负相关</b>：ROE 最低的中文在线（−15.38%）涨了 20.01%，ROE 最高的新媒股份（8.10%）只涨了 9.86%，昆仑万维（7.92%）只涨 7.27%。这是典型的<b>风险偏好修复 + 题材弹性排序</b>，而非盈利驱动的资金选择。
+</div>
+
+<div class="card">
+<svg viewBox="0 0 1000 400" style="width:100%;height:auto">
+  <rect x="80" y="40" width="880" height="290" fill="#fafbfd" stroke="#e3e7ee"/>
+  <!-- grid -->
+  <line x1="367" y1="40" x2="367" y2="330" stroke="#e8ecf3" stroke-width="1"/>
+  <line x1="654" y1="40" x2="654" y2="330" stroke="#e8ecf3" stroke-width="1"/>
+  <line x1="941" y1="40" x2="941" y2="330" stroke="#e8ecf3" stroke-width="1"/>
+  <line x1="80" y1="112" x2="960" y2="112" stroke="#eef1f6" stroke-width="1"/>
+  <line x1="80" y1="184" x2="960" y2="184" stroke="#eef1f6" stroke-width="1"/>
+  <line x1="80" y1="257" x2="960" y2="257" stroke="#eef1f6" stroke-width="1"/>
+  <!-- 0 line -->
+  <line x1="653" y1="40" x2="653" y2="330" stroke="#9aa3b2" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="656" y="36" font-size="11" fill="#6a7280">ROE = 0</text>
+
+  <!-- axis labels -->
+  <text x="520" y="362" font-size="12.5" font-weight="600" fill="#1a1d24">26H1 加权 ROE（%）→</text>
+  <text x="18" y="190" font-size="12.5" font-weight="600" fill="#1a1d24" transform="rotate(-90,18,190)">10/09 涨幅（%）→</text>
+  <text x="80" y="348" font-size="11" fill="#8b93a3">−20</text>
+  <text x="360" y="348" font-size="11" fill="#8b93a3">−10</text>
+  <text x="651" y="348" font-size="11" fill="#8b93a3">0</text>
+  <text x="938" y="348" font-size="11" fill="#8b93a3">+10</text>
+  <text x="52" y="334" font-size="11" fill="#8b93a3">5</text>
+  <text x="46" y="263" font-size="11" fill="#8b93a3">9</text>
+  <text x="46" y="190" font-size="11" fill="#8b93a3">13</text>
+  <text x="46" y="118" font-size="11" fill="#8b93a3">17</text>
+  <text x="46" y="50" font-size="11" fill="#8b93a3">21</text>
+
+  <!-- points -->
+  <g>
+    <circle cx="212" cy="58" r="7" fill="#d9342b" opacity="0.85"/>
+    <text x="222" y="55" font-size="11.5" font-weight="600" fill="#1a1d24">中文在线 −15.4% / +20.01%</text>
+
+    <circle cx="678" cy="58" r="7" fill="#d9342b" opacity="0.85"/>
+    <text x="640" y="52" font-size="11.5" font-weight="600" fill="#1a1d24">芒果超媒 0.86% / +19.98%</text>
+
+    <circle cx="526" cy="240" r="6.5" fill="#e08a00" opacity="0.85"/>
+    <text x="480" y="262" font-size="11" fill="#4a5160">博纳 −4.5% / +9.94%</text>
+
+    <circle cx="591" cy="240" r="6.5" fill="#e08a00" opacity="0.85"/>
+    <text x="560" y="222" font-size="11" fill="#4a5160">掌阅 −2.2% / +9.99%</text>
+
+    <circle cx="679" cy="239" r="6.5" fill="#e08a00" opacity="0.8"/>
+    <text x="640" y="216" font-size="11" fill="#4a5160">上海电影 0.9% / +10.0%</text>
+
+    <circle cx="708" cy="222" r="6.5" fill="#2563c9" opacity="0.8"/>
+    <text x="716" y="214" font-size="11" fill="#4a5160">捷成 1.9% / +10.98%</text>
+
+    <circle cx="714" cy="254" r="6.5" fill="#2563c9" opacity="0.8"/>
+    <text x="722" y="258" font-size="11" fill="#4a5160">易点天下 2.1% / +9.19%</text>
+
+    <circle cx="719" cy="224" r="6.5" fill="#2563c9" opacity="0.8"/>
+    <text x="600" y="292" font-size="11" fill="#4a5160">华策 2.3% / +10.85%</text>
+
+    <circle cx="775" cy="240" r="6.5" fill="#0f9960" opacity="0.85"/>
+    <text x="783" y="230" font-size="11" font-weight="600" fill="#0b7a4e">新华文轩 4.2% / +9.99%</text>
+
+    <circle cx="886" cy="242" r="7" fill="#0f9960" opacity="0.9"/>
+    <text x="800" y="290" font-size="11" font-weight="600" fill="#0b7a4e">新媒股份 8.1% / +9.86%</text>
+
+    <circle cx="881" cy="289" r="7" fill="#0f9960" opacity="0.9"/>
+    <text x="800" y="312" font-size="11" font-weight="600" fill="#0b7a4e">昆仑万维 7.9% / +7.27%</text>
+  </g>
+  <!-- trend hint -->
+  <line x1="230" y1="70" x2="870" y2="300" stroke="#d9342b" stroke-width="1.6" stroke-dasharray="6,5" opacity="0.5"/>
+  <text x="300" y="130" font-size="12" font-weight="600" fill="#d9342b" opacity="0.75">负相关：ROE 越低，涨得越猛</text>
+</svg>
+<div class="src">ROE 为 2026 年中报加权值，涨幅为 2026-10-09 收盘涨幅；数据来自通达信。仅列示当日涨幅榜中已取得完整财务数据的 11 只标的。</div>
+</div>
+
+<h3 class="sub">A 层｜确定性层：真赚钱 + 受益逻辑成立（可作为板块底仓）</h3>
+
+<div class="co">
+<div class="co-h"><span class="co-n">分众传媒</span><span class="co-c">002027</span>
+<span class="tag t-green">ROE 20.44%</span><span class="tag t-blue">PE 20.8x</span><span class="tag t-gray">PB 5.07x</span><span class="tag t-purple">709 亿市值</span></div>
+<b>核心竞争力：</b>国内电梯广告媒体的绝对龙头，点位网络与刊挂率是难以复制的线下入口资产。<b>ROE 20.44% 是全板块最高，且是唯一一个用高 ROE 而非故事支撑估值的传媒标的。</b>
+<ul>
+<li><b>被市场忽视的 AI 受益路径</b>：AI 内容爆发 → 内容方投流与品牌广告预算增加 → 广告渠道放量。分众不参与内容竞争，不承担爆款风险，是"卖水人中的卖水人"。</li>
+<li>PE 20.8x 对应 20%+ 的 ROE，PEG 视角下是板块内唯一便宜的品种。</li>
+<li><b>风险</b>：与 AI 影视主题的相关性偏间接，本轮主题行情中弹性最小；宏观广告预算若下行则逻辑受损。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">新媒股份</span><span class="co-c">300770</span>
+<span class="tag t-green">ROE 8.10%</span><span class="tag t-blue">PE 13.8x</span><span class="tag t-gray">PB 2.29x</span><span class="tag t-purple">84.8 亿市值</span></div>
+<b>核心竞争力：</b>广东广电体系下 IPTV / OTT 大屏运营商，拥有稀缺的牌照与区域独家运营权，商业模式是"内容采购 + 用户付费分成"，属于<b>内容繁荣的确定性受益方而非风险承担方</b>。
+<ul>
+<li>PE 13.8x 是全板块最低之一，ROE 8.10% 排名第二，估值与盈利匹配度最好。</li>
+<li>AI 内容降低采购成本、丰富片库，直接改善其内容成本端；同时是"大屏运营商"变现路径的承载者。</li>
+<li><b>风险</b>：区域属性强，成长空间受限于广东省内用户天花板；IPTV 用户增长已趋缓。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">南方传媒</span><span class="co-c">601900</span>
+<span class="tag t-green">ROE 5.23%</span><span class="tag t-blue">PE 10.7x</span><span class="tag t-gray">PB 1.29x</span><span class="tag t-purple">113.8 亿市值</span></div>
+<b>核心竞争力：</b>广东省出版集团旗下上市平台，教材教辅业务提供稳定现金流，同时<b>积累了大量正版图书/IP 内容资源</b>——在《微短剧管理办法》强化版权的背景下，这类正版内容库是 AI 短剧 IP 供给的合规来源。
+<ul>
+<li><b>全板块最低估值</b>：PE 10.67x、PB 1.29x，接近净资产定价，下行保护最好。</li>
+<li>出版业"十五五"规划明确转型方向，AI 语料价值重估是潜在催化（研报已点名关注其 AI 应用与 IP 影视改编业务进展）。</li>
+<li><b>风险</b>：国企机制下转化效率偏慢；教材教辅受政策定价约束。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">海看股份</span><span class="co-c">301262</span>
+<span class="tag t-green">ROE 4.18%</span><span class="tag t-blue">PE 26.7x</span><span class="tag t-gray">PB 2.36x</span><span class="tag t-purple">91.2 亿市值</span></div>
+<b>核心竞争力：</b>山东 IPTV 运营商 + AI 内容制作工具双轮。<b>在"AI 工具方"这一高淘汰率环节中，海看是唯一已经实现稳定盈利的标的</b>（对比：昆仑万维 ROE 靠非经常性损益转正、捷成 1.89%、万兴科技 −6.95%）。
+<ul>
+<li>金元证券在 AI 工具方环节明确点名海看股份，跟踪信号为"真实调用量与 ARR"。</li>
+<li>IPTV 主业提供现金流底座，AI 工具业务提供弹性，风险结构优于纯工具公司。</li>
+<li><b>风险</b>：市值仅 91 亿，流动性弱于龙头；AI 工具业务规模尚待验证。</li>
+</ul>
+</div>
+
+<div class="call">
+<b>新华文轩（601811）需单独提示：</b>基本面扎实——PE 18.88x、PB 1.68x、ROE 4.23%，出版 + 正版 IP 逻辑成立。但截至 10/09 已是 <b>10 天 7 板</b>，属于游资高度控盘的高标。<b>基本面认可，当前价位不认可，建议等充分回调后再评估。</b>
+</div>
+
+<h3 class="sub">B 层｜弹性层：逻辑成立但盈利尚未验证（只做波段）</h3>
+
+<div class="co">
+<div class="co-h"><span class="co-n">芒果超媒</span><span class="co-c">300413</span>
+<span class="tag t-orange">ROE 0.86%</span><span class="tag t-red">PE 64.7x</span><span class="tag t-gray">PB 1.86x</span><span class="tag t-purple">430 亿市值</span></div>
+<b>核心竞争力：</b>A 股<b>唯一同时拥有内容自制能力与自有分发平台</b>的传媒公司（芒果 TV），在"平台 + 出品"一体化的意义上无替代标的。
+<ul>
+<li><b>已交付最硬的产业验证</b>：8/31 首部上星 AIGC 长剧《后西游记》登陆湖南卫视黄金档，单集 40 分钟、画面 100% AI 生成（字节 Seedance 2.0/2.5 技术支持），<b>立项到播出仅约 4 个月，单集成本约 90 万元（约为传统动画 1/10）</b>，首播省级卫视同时段第一、66 个热搜、传播 19.6 亿。</li>
+<li>PB 1.86x 在弹性层中最低，ROE 0.86% 虽低但 2025 全年为 5.36%，属季度波动而非趋势恶化。</li>
+<li><b>风险</b>：26H1 ROE 仅 0.86%（中报利润承压），会员与广告收入恢复节奏是核心变量；国企体制下 AI 投入力度不及互联网大厂。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">昆仑万维</span><span class="co-c">300418</span>
+<span class="tag t-orange">ROE 7.92%</span><span class="tag t-red">PE 150.7x</span><span class="tag t-gray">PB 3.57x</span><span class="tag t-purple">529 亿市值</span></div>
+<b>核心竞争力：</b>旗下 <b>SkyReels V4 位列全球图生视频模型能力榜第 8 名</b>（前十名中国厂商占七席），是少数真正拥有自研视频生成模型的 A 股公司；同时自建 AI 短剧平台，形成"模型—工具—内容"闭环。
+<ul>
+<li>26H1 ROE 由 2025 全年的 −11.58% <b>转正至 +7.92%</b>，是弹性层中盈利改善最明确的；中邮、国泰海通均点名"AI 短剧业务高增，26H1 收入增长强劲"。</li>
+<li><b>风险</b>：PE 150.7x 已充分定价；ROE 转正需在中报明细中核实是否含投资收益（<b>研报口径，未经公司披露明细交叉验证，标 [假设]</b>）；同时公司布局具身智能模型，主业聚焦度存疑。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">华策影视</span><span class="co-c">300133</span>
+<span class="tag t-orange">ROE 2.27%</span><span class="tag t-red">PE 65.3x</span><span class="tag t-gray">PB 2.11x</span><span class="tag t-purple">157 亿市值</span></div>
+<b>核心竞争力：</b>国内剧集出品龙头，已把 AI 嵌入长剧全流程——代表作《太平年》用 AI 生成 50 套数字场景、45 套概念设计、300 个三维模型，并借助 AI 完成多语种译制；央视一套黄金档首播，单集最高收视 3.20%，豆瓣 8.3 分。<b>是"AI 用于精品长剧"而非"AI 用于降本短剧"的代表。</b>
+<ul>
+<li>中邮证券给予"精品内容夯实根基，算力扩容打开成长空间"的判断；公司同时布局算力，试图向工具端延伸。</li>
+<li><b>风险</b>：ROE 2.27% 仍低；剧集项目制收入波动大；算力业务投入加重资本开支。</li>
+</ul>
+</div>
+
+<div class="co">
+<div class="co-h"><span class="co-n">捷成股份</span><span class="co-c">300182</span>
+<span class="tag t-orange">ROE 1.89%</span><span class="tag t-red">PE 72.1x</span><span class="tag t-gray">PB 1.73x</span><span class="tag t-purple">148 亿市值</span></div>
+<b>核心竞争力：</b>拥有国内规模领先的<b>影视版权库</b>——这正是 AI 视频模型训练与 AI 短剧改编所需的合规语料来源。在《微短剧管理办法》强化版权后，版权库资产的稀缺性上升。
+<ul>
+<li>PB 1.73x 为弹性层最低，资产端相对扎实；中邮证券点名"上半年净利润同比增长，精品 AI 短剧加速落地"。</li>
+<li><b>风险</b>：PE 72.1x、ROE 1.89%，盈利质量弱；版权库变现路径（授权定价）尚不清晰。</li>
+</ul>
+</div>
+
+<h3 class="sub">C 层｜高风险层：逻辑有但资产负债表不支持（本轮不推荐）</h3>
+
+<div class="card">
+<table>
+<thead><tr><th>标的</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">市值</th><th>主要问题</th></tr></thead>
+<tbody>
+<tr><td><b>中文在线</b> 300364</td><td class="num down">亏损</td><td class="num" style="color:var(--up);font-weight:700">67.67x</td><td class="num down">−15.38%</td><td class="num">178 亿</td><td>IP + 出海叙事最正宗，但 <b>PB 67.67x 意味着市场已按"永续高增长"定价</b>，而公司连续五个报告期 ROE 为负（2025 全年 −104.75%）。本轮涨幅第一（+20.01%），是情绪而非基本面。</td></tr>
+<tr><td>掌阅科技 603533</td><td class="num down">亏损</td><td class="num">4.90x</td><td class="num down">−2.18%</td><td class="num">112 亿</td><td>数字阅读 IP 逻辑成立，但尚未盈利、转化路径未跑通。</td></tr>
+<tr><td>万兴科技 300624</td><td class="num down">亏损</td><td class="num">9.84x</td><td class="num down">−6.95%</td><td class="num">95 亿</td><td>AI 工具方，但持续亏损且 PB 近 10x，在"工具端只剩 2–3 家"的判断下淘汰风险高。</td></tr>
+<tr><td>上海电影 601595</td><td class="num">149.1x</td><td class="num">6.64x</td><td class="num">0.90%</td><td class="num">111 亿</td><td>IP 内容焕新 + 衍生品（上影元单 IP 终端 GMV 破 25 亿）是好逻辑，但 PE 149x / PB 6.64x 已过度定价。</td></tr>
+<tr><td>中国电影 600977</td><td class="num">222.6x</td><td class="num">2.38x</td><td class="num down">−1.00%</td><td class="num">260 亿</td><td>全产业链布局 + AI 译制/AI 导演助手，但盈利未改善。</td></tr>
+<tr><td>博纳影业 001330</td><td class="num down">亏损</td><td class="num">2.59x</td><td class="num down">−4.46%</td><td class="num">96 亿</td><td>《三星堆：未来往事》10/23 上映是最大催化，但 <b>事件驱动的一次性博弈</b>，且公司持续亏损，票房不及预期即双杀。</td></tr>
+<tr><td>儒意电影 002739</td><td class="num down">亏损</td><td class="num">2.44x</td><td class="num down">−2.09%</td><td class="num">175 亿</td><td>26H1 ROE 由 2025 全年 +7.14% 转负，院线端承压明显。</td></tr>
+<tr><td>光线传媒 300251</td><td class="num down">亏损</td><td class="num">3.42x</td><td class="num">0.33%</td><td class="num">326 亿</td><td>25H1 ROE 22.84%（高基数）→ 26H1 仅 0.33%，<b>典型的高基数陷阱，不可线性外推</b>；公司对 AI 定位为"辅助手段"，主题相关性弱。</td></tr>
+<tr><td>易点天下 301171</td><td class="num">225.2x</td><td class="num">5.50x</td><td class="num">2.10%</td><td class="num">209 亿</td><td>出海营销受益于短剧出海，但 PE 225x 且 ROE 仅 2.1%。</td></tr>
+</tbody>
+</table>
+<div class="src">估值数据为 2026-10-09 收盘口径（通达信）；ROE 为 2026 年中报加权值。恺英网络、三七互娱等游戏标的本次未取到完整数据，标 [MISSING]，未纳入池。</div>
+</div>
+
+<div class="call">
+<b>关于光线传媒的额外提示（低基数失真）：</b>25H1 ROE 22.84% → 25 全年 17.90% → 26H1 骤降至 0.33%。若用 26H1 对比 25H1 会得出"业绩崩塌"的错误结论，若用 2025 全年 17.90% 外推则会严重高估。<b>正确做法是查阅中报明细确认高基数来源（研报口径指与《哪吒 2》档期相关，未经公司披露明细核实，标 [假设]），再判断可持续性。</b>
+</div>
+
+<h2 class="sec">七、变异认知：市场可能买错了环节</h2>
+
+<div class="g2">
+<div class="card" style="border-left:4px solid var(--up)">
+<h3 class="sub" style="margin-top:0">① AI 产能不是护城河，IP 和分发才是</h3>
+<p>野村 10/04 报告的两位短剧制片人专家给出关键事实：<b>Seedance 占据行业工作流 80–90%，但主要缺点是价格；两位专家均表示"若更便宜的替代品性能可比，会立即把产量转移过去"——切换成本极低。</b>知识星球 AI 视频专家纪要更直接：<b>"工具趋同后，核心竞争力回归人才（成本控制、画面落地、节奏把控）与 IP 储备；工具端最终或只剩 2–3 家。"</b></p>
+<p><b>推论：</b>市场按"谁有 AI 产能谁受益"排序，但产能本身正在快速商品化。真正稀缺的是<b>正版 IP（合规成本上升后价值系统性抬升）</b>和<b>分发入口（红果/抖音，均不在 A 股）</b>。这解释了为什么本轮配置应优先 IP 层而非产能层。</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--warn)">
+<h3 class="sub" style="margin-top:0">② 降本不等于增收，利润大概率被平台拿走</h3>
+<p>AI 让短剧成本降 <b>2–10 倍</b>（真人 40–100 万/部 vs AI 高品质 10–20 万/部）。但同一时间：平台（红果等）<b>提高质量门槛、打压低质内容</b>；AGSD 爆款率仅 <b>≈1%+</b>（真人带粉丝演员 10–20%）；当前处于<b>竖屏短剧红海</b>，预计 2027 年才迭代到 AI 长剧。</p>
+<p><b>推论：</b>降本的收益会在平台压价 + 同质化竞争中被消耗，很难沉淀到出品方报表。而平台端的补贴（腾讯《火龙漫剧》分成系数 240%、优酷最高 135 万/部、火山引擎最高百万 Token 补贴）<b>是阶段性获客开支，必然退坡</b>。用当前的补贴强度推算未来利润会严重高估。</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--info)">
+<h3 class="sub" style="margin-top:0">③ 涨幅与盈利能力负相关——这是资金属性，不是价值发现</h3>
+<p>前文散点图已证明：ROE 越低的标的涨得越猛。板块 PE 52.24x，而头部标的 ROE 普遍 1–2% 甚至为负，涨得最猛的中文在线 ROE −15.38%、PB 67.67x。</p>
+<p><b>推论：</b>这是"公募低配回补 + 硬件端资金高低切 + 事件催化"三重叠加的<b>风险偏好修复</b>，不是盈利周期反转。<b>这类行情的特征是快、猛、但缺乏基本面支撑位</b>——一旦硬件端（PCB/算力）重新走强，资金会迅速回流，传媒应用端的补涨逻辑就会失效。财联社当日复盘已明确提示这一风险。</p>
+</div>
+
+<div class="card" style="border-left:4px solid var(--down)">
+<h3 class="sub" style="margin-top:0">④ 最稳的 AI 受益者可能不在"AI 概念股"里</h3>
+<p>分众传媒 ROE 20.44%、PE 20.8x——它不生产 AI 内容，但 AI 内容越繁荣、内容方投流与品牌广告预算越多，它的需求越好。<b>它不承担爆款风险、不参与内容竞争、不需要持续资本开支。</b></p>
+<p><b>推论：</b>如果相信 AI 内容产业会做大，那么"卖铲子给所有内容方"的广告渠道，其确定性高于任何一个具体的内容出品方。这是当前市场定价中最明显的错配——分众的 ROE 是全板块最高的，但它在本次主题行情中几乎没有弹性。</p>
+</div>
+</div>
+
+<h2 class="sec">八、操作建议：怎么参与这波行情</h2>
+
+<div class="card">
+<table>
+<thead><tr><th style="width:130px">情景</th><th>触发条件</th><th>建议动作</th></tr></thead>
+<tbody>
+<tr>
+<td><b>基准情景</b><br>（概率最高）</td>
+<td>10/10 起板块<b>缩量回踩</b>至 1180–1205（MA20 = 1205.55），量比回落至 0.8x 以下且不破 1151</td>
+<td><span class="tag t-green">分批建仓</span> 这是威科夫框架下的 <b>LPS（最后支撑点）</b>，最安全进场位。首笔 2%，回踩不破再补 1–3%。</td>
+</tr>
+<tr>
+<td><b>强势情景</b></td>
+<td>10/10 起<b>连续 2–3 日量能维持 1.3x 以上</b>并有效站上 1244–1250</td>
+<td><span class="tag t-blue">追加至 5%</span> 说明 JOC 有效、增量资金持续。但仍不追涨停个股，优先 A 层标的。</td>
+</tr>
+<tr>
+<td><b>假突破情景</b></td>
+<td>冲高至 1244–1283 遇阻后<b>放量滞涨</b>（量大而涨幅收窄），或次日量能迅速回落至 0.9x 以下</td>
+<td><span class="tag t-orange">按 UT 处理</span> 视为上冲回落，不追高；已建仓位在滞涨日减半。</td>
+</tr>
+<tr>
+<td><b>破坏情景</b></td>
+<td>跌破 <b>1144</b>（10/09 最低点）→ Spring 失效；或 ATR 止损位 <b>1174</b> 被有效击穿</td>
+<td><span class="tag t-red">清仓观望</span> 结构破坏，回到"供应主导"判断，等待下一次缩量止跌。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="g2">
+<div class="card">
+<h3 class="sub">仓位与结构建议</h3>
+<ul class="plain">
+<li><b>总仓位 3–5%</b>，定位为"主题卫星仓"，不进入核心持仓。</li>
+<li><b>结构建议 A 层 : B 层 = 7 : 3</b>。A 层（分众、新媒、南方传媒、海看）承担"不亏钱"的职能，B 层（芒果、昆仑、华策、捷成）承担弹性。</li>
+<li><b>明确不参与</b>：新华文轩（10 天 7 板）、新华传媒（9 连板）等游资高标；以及 C 层的中文在线、博纳影业等纯事件博弈标的。</li>
+<li><b>不用杠杆、不用单一标的集中押注。</b></li>
+</ul>
+</div>
+<div class="card">
+<h3 class="sub">必须跟踪的 6 个信号</h3>
+<ul class="plain">
+<li><b>10/23《三星堆：未来往事》票房</b>——首部 AI 院线电影的商业化验证，是最硬的单一事件。</li>
+<li><b>2026Q4–2027H1 AI 长剧备案过审与留存数据</b>——金元证券定义的"密集验证期"。</li>
+<li><b>平台补贴退坡节奏</b>（红果/腾讯/优酷/火山引擎激励政策变化）——直接决定出品方利润。</li>
+<li><b>《微短剧管理办法》执行力度</b>（2026/9/1 生效）——影响低质产能出清速度。</li>
+<li><b>三季报（10 月下旬）</b>AI 业务收入确认——验证"故事是否变成报表"。</li>
+<li><b>板块量能能否连续维持 1.3x 以上</b>——纯技术信号，但最先反映资金真实意图。</li>
+</ul>
+</div>
+</div>
+
+<h2 class="sec">九、风险提示</h2>
+<div class="card">
+<ul class="plain">
+<li><b>盈利不支撑风险（最高优先级）</b>：板块 PE 52.24x，但头部标的 ROE 普遍 1–2% 或为负。若三季报 AI 业务收入确认不及预期，估值缺乏支撑位，回撤幅度可能远超技术止损位。</li>
+<li><b>资金回流硬件风险</b>：本次上涨部分是"PCB/元件 → AI 应用"的高低切。一旦算力硬件端企稳反弹，应用端资金会迅速撤离（财联社已明确提示）。</li>
+<li><b>技术迭代/接受度风险</b>：AI 长内容对画面细节与剧情连贯性要求极高，观众是否愿为 AI 长内容买单尚未验证；"AI 感"可能引发审美疲劳。</li>
+<li><b>监管趋严风险</b>：内容题材、价值观导向、版权规范、AI 工具使用均可能进一步收紧，抬高合规成本。</li>
+<li><b>竞争加剧风险</b>：抖音、快手、爱奇艺、芒果、优酷、腾讯已全部推出扶持政策，行业格局未锁定，新进入者将持续压低利润率。</li>
+<li><b>游资退潮风险</b>：人气核心标的已是节前抱团品种，连板梯队（新华传媒 9 板、新华文轩 10 天 7 板）处于末段，一旦分歧放大将拖累整个板块情绪。</li>
+<li><b>数据口径风险</b>：本报告 ROE 采用 2026 年中报加权值，与全年口径不可直接比较；PE(TTM) 含一次性损益影响；个别标的盈利改善的可持续性<b>未经公司披露明细交叉验证</b>，已在正文中逐处标注 [假设]。</li>
+</ul>
+</div>
+
+<div class="foot">
+<b>数据来源与口径说明</b><br>
+· 板块行情与 K 线：通达信行业指数 881368（传媒），2026-10-09 收盘；技术评分为基于该序列自行计算的 12 项梯度评分结果。<br>
+· 个股估值：通达信 PE(TTM)/PB(MRQ)/ROE(加权 26H1)/总市值，2026-10-09 收盘口径。<br>
+· 研报材料（ima 知识库 · 智汇研）：野村《China Internet &amp; New Media — ByteDance dominates China's AI short-drama value chain》（2026-10-04）；金元证券《AI+影视：从漫剧到长剧，内容生态将如何演变》（2026-09-30）；中邮证券《微短剧新规正式实施》《首部 AI 原生院线电影定档》《昆仑万维/捷成股份/华策影视公司点评》（2026-09-22~09-30）；招商证券《AI 影视产业链走访反馈》（2026-09-20）；华鑫证券《从 Muse 到千问再到豆包》（2026-09-24）；华创/国信/财信传媒周报（2026-09）。<br>
+· 社群材料（知识星球）：AI 视频专家学习笔记（2026-08-31）。<br>
+· 新闻材料（通达信资讯）：财联社焦点复盘（2026-10-09）、智通财经 A 股收评（2026-10-09）、21 世纪经济报道（2026-10-09）、格隆汇（2026-10-09）。<br><br>
+<b>本报告仅供研究参考，不构成个人投资建议。</b>文中评级、目标区间与仓位建议均基于公开信息与既定分析框架推演，未经公司调研核实的部分已标注 [假设]。市场有风险，决策请独立判断。
+</div>
+
+</div>
+</body>
+</html>

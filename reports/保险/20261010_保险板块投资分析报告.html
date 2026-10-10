@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保险板块投资分析报告</title>
+<meta name="description" content="评级 BUY（综合 6.0/10）：五指标冰点赔率——PEV 0.57 历史级低位、公募持仓 0.58%、量能 56 亿、流出强度冰点、评级与持仓剪刀差，叠加 4.9% 股息底，构成真实安全垫。用 15% 底仓 + 0.2% 成本期权保险的结构，任一方胜出都不出局。板块止损 1072 减半 / 1054 清仓，目标区间 1340–1430。核心标的：平安 601318（止损 51.53 / 目标 58.40）、太保 601601（30.14 / 35.50）、国寿 601628（35.02 / 41.50）、新华 601336（55.57 / 64.00）。但择时评分无一只达「可以买入」门槛（国寿 / 太保 74 分「关注等待」上沿），趋势项全线归零 —— 方向由赔率决定，节奏由趋势决定，需轻仓等信号；平安因顶背离被一票否决，仍留底仓配置。">
+<meta name="report-type" content="投资分析">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f7f5;color:#2c2c2a;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:24px 24px 80px}
+.card{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:14px;padding:26px 30px;margin-bottom:22px}
+.decision{border-radius:16px;padding:34px 36px;margin-bottom:24px;color:#fff;background:#993C1D}
+.decision .d1{font-size:13px;letter-spacing:.2em;opacity:.85;margin-bottom:8px}
+.decision h1{font-size:52px;font-weight:600;letter-spacing:.02em;line-height:1.1;margin-bottom:14px}
+.decision p{font-size:15px;opacity:.94;max-width:860px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:22px}
+.dg{background:rgba(255,255,255,.16);border-radius:10px;padding:13px 16px}
+.dg .l{font-size:12px;opacity:.8;margin-bottom:4px}
+.dg .v{font-size:21px;font-weight:500}
+h2{font-size:21px;font-weight:500;margin:40px 0 6px;letter-spacing:-.01em}
+.h2n{font-size:13px;color:#888780;margin-bottom:18px}
+h3{font-size:16px;font-weight:500;margin:24px 0 10px}
+p{margin-bottom:13px;color:#3d3d3a}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid rgba(0,0,0,.08)}
+th{font-size:12px;color:#5f5e5a;font-weight:500;background:#f1efe8;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{color:#a32d2d;font-weight:500}.neg{color:#3b6d11;font-weight:500}
+.up{color:#a32d2d}.dn{color:#3b6d11}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.chartbox{position:relative;width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0 6px;font-size:12px;color:#5f5e5a}
+.legend span{display:flex;align-items:center;gap:4px}
+.dot{width:10px;height:10px;border-radius:2px;display:inline-block}
+.callout{border-left:3px solid #534ab7;background:#f6f5ff;border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;font-size:14px}
+.callout.risk{border-left-color:#a32d2d;background:#fdf4f4}
+.callout.ok{border-left-color:#0f6e56;background:#f0faf6}
+.callout .ct{font-weight:500;margin-bottom:6px}
+ul.clean{list-style:none;padding:0}
+ul.clean li{padding:8px 0 8px 22px;position:relative;border-bottom:1px solid rgba(0,0,0,.06);font-size:14px}
+ul.clean li:last-child{border:0}
+ul.clean li::before{content:"";position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;background:#534ab7}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.step{background:#f1efe8;border-radius:12px;padding:16px 18px}
+.step .sn{font-size:11px;letter-spacing:.15em;color:#534ab7;margin-bottom:5px;font-weight:500}
+.step .st{font-size:15px;font-weight:500;margin-bottom:7px}
+.step p{font-size:12.5px;color:#5f5e5a;margin:0;line-height:1.65}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.m{background:#f1efe8;border-radius:10px;padding:13px 15px}
+.m .l{font-size:12px;color:#5f5e5a;margin-bottom:4px}
+.m .v{font-size:22px;font-weight:500;letter-spacing:-.02em}
+.m .n{font-size:11px;color:#888780;margin-top:2px}
+details{border:1px solid rgba(0,0,0,.1);border-radius:10px;padding:14px 18px;margin:10px 0;background:#fff}
+summary{font-size:14.5px;font-weight:500;cursor:pointer;color:#3c3489}
+details[open]{background:#fdfdff}
+.src{font-size:12px;color:#888780;margin-top:8px}
+.disclaimer{color:#6b7280;font-size:12.5px;padding:18px 4px;border-top:1px solid rgba(0,0,0,.12);margin-top:32px;line-height:1.9}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tag{font-size:12px;padding:3px 11px;border-radius:20px;background:#eeedfe;color:#3c3489}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}.decision h1{font-size:38px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="decision">
+<div class="d1">交易分析团队 · 综合投资分析报告 · 保险Ⅱ板块</div>
+<h1>BUY</h1>
+<p>五指标冰点赔率（估值 PEV 0.57 历史级低位 / 公募持仓 0.58% / 量能 56 亿 / 流出强度冰点 / 评级与持仓剪刀差）+ 4.9% 股息底，构成真实安全垫；用 15% 底仓 + 0.2% 成本期权保险的结构，在任一方胜出时都不出局、活着等到财报证据落地——赔率付入场费，对冲付保险费，纪律付执行费。</p>
+<div class="dgrid">
+<div class="dg"><div class="l">信心水平</div><div class="v">7 / 10</div></div>
+<div class="dg"><div class="l">风险等级</div><div class="v">中高（纪律从严）</div></div>
+<div class="dg"><div class="l">当前仓位</div><div class="v">15% 底仓</div></div>
+<div class="dg"><div class="l">仓位上限</div><div class="v">60%（封顶）</div></div>
+<div class="dg"><div class="l">板块入场区</div><div class="v">1150–1180</div></div>
+<div class="dg"><div class="l">板块止损</div><div class="v">1072 减半 / 1054 清仓</div></div>
+<div class="dg"><div class="l">目标区间</div><div class="v">1340–1430</div></div>
+<div class="dg"><div class="l">预期持有</div><div class="v">8–12 周</div></div>
+</div>
+</div>
+
+<div class="tagrow">
+<span class="tag">数据截至 2026-10-09 收盘</span><span class="tag">板块 1166.34（YTD −22.92%）</span><span class="tag">Q3 财报 10 月底披露</span><span class="tag" style="background:#fcebeb;color:#791f1f">分红指引 = 一票否决项</span>
+</div>
+
+<h2>一、综合评分雷达</h2>
+<p class="h2n">五维评分来自 Phase 1 四位分析师与风险主管产出，综合约 6.0/10，支持 BUY 但仓位纪律从严。</p>
+<div class="card">
+<div class="grid2">
+<div>
+<div class="chartbox" style="height:330px"><canvas id="radar" role="img" aria-label="五维综合评分雷达图：技术面3分、基本面7分、新闻面6分、情绪面7分、风险面7分">技术面3.0、基本面7.0、新闻面6.0、情绪面7.0、风险面7.0</canvas></div>
+</div>
+<div>
+<table>
+<thead><tr><th>维度</th><th class="num">评分</th><th>核心依据</th></tr></thead>
+<tbody>
+<tr><td>技术面</td><td class="num">3.0 / 10</td><td>下跌末段 Phase B 混沌区，四股 MACD 死叉 + OBV 流出，右侧信号零落地</td></tr>
+<tr><td>基本面</td><td class="num">7.0 / 10</td><td>NBV +22% 量缩质升；PEV 0.57 / PB 0.97 / 股息 4.9% 三维底部</td></tr>
+<tr><td>新闻面</td><td class="num">6.0 / 10</td><td>3000 亿注资落地 + 开门红提前 vs Q3 财报利空 + 保费连月负增</td></tr>
+<tr><td>情绪面</td><td class="num">7.0 / 10</td><td>五项冰点指标 = 逆向布局友好区；太保主力 4 日净流入局部反转首证</td></tr>
+<tr><td>风险面（终版）</td><td class="num">7.0 / 10</td><td>三段式止损 + 期权对冲 + 金字塔封顶，原案五个失效模式全部修复</td></tr>
+</tbody>
+</table>
+<p style="font-size:13px;color:#888780">矛盾处理逻辑：低分技术面决定「节奏与仓位」（何时、买多少），高分基本面与情绪面决定「方向与存续」（买不买、拿多久）。</p>
+</div>
+</div>
+</div>
+
+<h2>二、核心标的与价格结构</h2>
+<p class="h2n">基于知识星球调研（浑水调研Plus / 短评星球，10+ 条纪要）+ 公开研报 + 通达信行情交叉验证梳理。IMA 知识库接口持续报错（库为空），已如实标注。标的权重为风险主管终版：平安 45% / 太保 30% / 国寿 15% / 新华 10%。</p>
+<div class="card">
+<table>
+<thead><tr><th>标的</th><th class="num">收盘</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">股息率</th><th class="num">PEV</th><th>核心定位</th><th class="num">择时评分</th></tr></thead>
+<tbody>
+<tr><td><b>中国平安</b> 601318</td><td class="num">52.83</td><td class="num">5.17</td><td class="num">0.93</td><td class="num">5.17%</td><td class="num">0.66</td><td>确定性锚：三榜前列 + JPM 2027E 股息率 8% + 营运利润分红锚</td><td class="num">44/165 <span class="dn">回避</span></td></tr>
+<tr><td><b>中国太保</b> 601601</td><td class="num">31.15</td><td class="num">4.87</td><td class="num">0.94</td><td class="num">5.04%</td><td class="num">0.49</td><td>反转先锋：唯一主力 4 日净流入，PB 破净，PEV 板块最低</td><td class="num">74/165 等待</td></tr>
+<tr><td><b>中国人寿</b> 601628</td><td class="num">36.15</td><td class="num">3.80</td><td class="num">1.54</td><td class="num">2.7%</td><td class="num">0.68</td><td>NBV 弹性引擎：H1 NBV +33.7% 板块最强，注资 350 亿；但 Q3E −89%</td><td class="num">74/165 等待</td></tr>
+<tr><td><b>新华保险</b> 601336</td><td class="num">56.90</td><td class="num">3.89</td><td class="num">1.44</td><td class="num">4.9%</td><td class="num">0.60</td><td>高 β 进攻：纯寿险弹性最大，三榜垫底 + Q3E −70%，仓位纪律最严</td><td class="num">67/165 <span class="dn">回避</span></td></tr>
+</tbody>
+</table>
+<p class="src">估值数据：通达信 10-09 收盘；PEV 为东方证券（9/4）与国泰海通口径交叉；择时评分为「A股择时分析」skill 输出（满分 165：120+ 强烈买入 / 90-119 可买入 / 65-89 关注等待 / 40-64 暂时回避）。人保 601319（7.82 元，注资 150 亿受益）因财险属性本轮未纳入组合。</p>
+</div>
+
+<div class="card">
+<h3>四只标的 120 日走势与买卖点结构</h3>
+<div class="legend">
+<span><span class="dot" style="background:#185FA5"></span>收盘价</span>
+<span><span class="dot" style="background:#534AB7"></span>MA20</span>
+<span><span class="dot" style="background:#1D9E75"></span>MA60</span>
+<span><span class="dot" style="background:#A32D2D"></span>止损线（1×ATR）</span>
+<span><span class="dot" style="background:#3B6D11"></span>第二目标</span>
+</div>
+<div class="grid2">
+<div><p style="font-size:13px;font-weight:500">中国平安 601318 · 止损 51.53 / 目标 58.40</p><div class="chartbox" style="height:215px"><canvas id="k601318" role="img" aria-label="中国平安120日收盘价走势图，附MA20、MA60均线及止损线51.53与目标线58.40">平安120日从55元跌至45.92后反弹至52.83</canvas></div></div>
+<div><p style="font-size:13px;font-weight:500">中国太保 601601 · 止损 30.14 / 目标 35.50</p><div class="chartbox" style="height:215px"><canvas id="k601601" role="img" aria-label="中国太保120日收盘价走势图，附MA20、MA60均线及止损线30.14与目标线35.50">太保120日从36.5元跌至27.06后反弹至31.15</canvas></div></div>
+<div><p style="font-size:13px;font-weight:500">中国人寿 601628 · 止损 35.02 / 目标 41.50</p><div class="chartbox" style="height:215px"><canvas id="k601628" role="img" aria-label="中国人寿120日收盘价走势图，附MA20、MA60均线及止损线35.02与目标线41.50">国寿120日从36.9元跌至31.7后反弹至36.15</canvas></div></div>
+<div><p style="font-size:13px;font-weight:500">新华保险 601336 · 止损 55.57 / 目标 64.00</p><div class="chartbox" style="height:215px"><canvas id="k601336" role="img" aria-label="新华保险120日收盘价走势图，附MA20、MA60均线及止损线55.57与目标线64.00">新华120日从59元跌至52.95后反弹至56.90</canvas></div></div>
+</div>
+<p class="src">数据来源：腾讯财经日 K（前复权，2026-04-13 至 2026-10-09，120 根）。板块关键位：支撑 1100 / 1054.34（年内低点，趋势生命线），压力 1199-1200（23.6% 回撤）/ 1250-1290。</p>
+</div>
+
+<h2>三、核心标的量价与择时诊断（skill 专章）</h2>
+<p class="h2n">按用户指定，对四只核心标的执行「A股量价关系验证」与「A股择时分析」两个 skill 的完整诊断流程，数据均为真实计算。</p>
+<div class="card">
+<h3>3.1 择时评分拆解（A股择时分析 skill · 梯度评分制）</h3>
+<table>
+<thead><tr><th>指标</th><th class="num">平安</th><th class="num">国寿</th><th class="num">新华</th><th class="num">太保</th><th>板块共性解读</th></tr></thead>
+<tbody>
+<tr><td>价/MA20（15分）</td><td class="num">0.977 → 0</td><td class="num">0.960 → 0</td><td class="num">0.978 → 0</td><td class="num">0.969 → 0</td><td>全线跌破 MA20，趋势项零分</td></tr>
+<tr><td>MA20 斜率（10分）</td><td class="num">−1.14% → 0</td><td class="num">−1.26% → 0</td><td class="num">−1.59% → 0</td><td class="num">−1.30% → 0</td><td>均线全线下弯</td></tr>
+<tr><td>MACD（20分）</td><td class="num">死叉 → 5</td><td class="num">死叉 → 5</td><td class="num">死叉 → 5</td><td class="num">死叉 → 5</td><td>DIF 均在零轴下方</td></tr>
+<tr><td>20日区间位置（20分）</td><td class="num">9% → 20</td><td class="num">7% → 20</td><td class="num">16% → 20</td><td class="num">20% → 20</td><td><b>超卖区满分</b>，安全垫主要来源</td></tr>
+<tr><td>低波 ATR%（10分）</td><td class="num">1.74% → 10</td><td class="num">2.14% → 10</td><td class="num">1.63% → 10</td><td class="num">2.27% → 10</td><td>全部低于 3%，波动收敛</td></tr>
+<tr><td>回调质量（10分）</td><td class="num">缩量 → 10</td><td class="num">缩量 → 10</td><td class="num">缩量 → 10</td><td class="num">缩量 → 10</td><td>四股均为缩量回调（&lt;0.8x）</td></tr>
+<tr><td>背离修正</td><td class="num"><span class="dn">顶背离 −30</span></td><td class="num">无</td><td class="num">无</td><td class="num">无</td><td>平安顶背离 = 一票否决</td></tr>
+<tr style="background:#f1efe8"><td><b>总分 / 判定</b></td><td class="num"><b>44 暂时回避</b></td><td class="num"><b>74 关注等待</b></td><td class="num"><b>67 暂时回避</b></td><td class="num"><b>74 关注等待</b></td><td>全部低于 90 分「可买入」线</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="ct">择时结论：无一只达到「可以买入」门槛（≥90 分），但国寿/太保 74 分已处「关注等待」上沿</div>
+<p>四股失分结构高度一致：趋势项（25 分）全线归零、MACD（20 分）仅得 5 分，合计丢了 40 分——这是「左侧未确认」的量化表达；而防守项（区间位置 20 + 低波 10 + 缩量回调 10）全部满分——这是「超卖 + 卖压衰竭」的量化表达。<b>评分结构与团队裁决完全互证：方向由赔率决定（买），节奏由趋势零分决定（等信号、轻仓进）。</b>平安的顶背离使其成为四股中唯一被一票否决的标的，但其股息与基本面权重仍支持底仓配置（45% 权重中含「等背离消化」的时点约束）。</p>
+</div>
+</div>
+
+<div class="card">
+<h3>3.2 量价结构诊断（A股量价关系验证 skill）</h3>
+<table>
+<thead><tr><th>指标</th><th class="num">平安</th><th class="num">国寿</th><th class="num">新华</th><th class="num">太保</th><th>量价规则判定</th></tr></thead>
+<tbody>
+<tr><td>量比 VMA20 / VMA60</td><td class="num">1.02x / 0.79x</td><td class="num">0.69x / 0.47x</td><td class="num">0.75x / 0.51x</td><td class="num">0.91x / 0.65x</td><td>国寿/新华达「极度缩量」级（&lt;0.5x）</td></tr>
+<tr><td>成交量 z 分（20日）</td><td class="num">+0.06</td><td class="num">−0.99</td><td class="num">−0.61</td><td class="num">−0.30</td><td>全部处常态区间，无放量信号</td></tr>
+<tr><td>OBV 20日斜率（手/日）</td><td class="num">−9.7万</td><td class="num">−1.8万</td><td class="num">−3.9万</td><td class="num">−12.8万</td><td>全线净流出（合计 −478 万手）</td></tr>
+<tr><td>20日价量相关</td><td class="num">−0.482</td><td class="num">−0.125</td><td class="num">−0.401</td><td class="num">−0.080</td><td>负相关 = 反弹无量确认</td></tr>
+<tr><td>40日价量相关</td><td class="num">+0.439</td><td class="num">+0.278</td><td class="num">+0.164</td><td class="num">+0.470</td><td>中期看量价配合尚存基底</td></tr>
+<tr><td>近10日形态</td><td class="num">量价平稳为主</td><td class="num">价涨量缩×5</td><td class="num">价涨量缩×5</td><td class="num">量价平稳</td><td>新华/国寿极端缩量阴跌</td></tr>
+</tbody>
+</table>
+<div class="callout risk">
+<div class="ct">量价规则判定：当前反弹不构成「有效上涨」</div>
+<p>按 skill 规则逐条对照：①「有效上涨」要求价格创新高 + 放量 30% 以上——四股价格距 120 日高点 −9.5% 至 −17.3%，量比全部 ≤1.02x，<b>不成立</b>；②「虚假上涨（诱多）」要求价格创新高——同样不成立（未创新高）；③「底部反转」要求连续 3 日温和放量——近 10 日仅太保 10-09 出现 1.16x 的温和放量，<b>未达 3 日确认</b>。真实状态是「缩量止跌 + 卖压衰竭」，与情绪分析师「撤离基本完毕 + 观望，等催化」的判断一致。<b>量能确认信号（量比 ≥1.2x 连续 3 日）是右侧加仓的前置条件，已被写入终版执行参数。</b></p>
+</div>
+</div>
+
+<h2>四、多空论点对比</h2>
+<p class="h2n">权重为研究主管对多空双方自评的采信度修正（1-10 分）。多头总分 33.5 vs 空头 32.0：多头赢得方向，空头赢得节奏与仓位。</p>
+<div class="card">
+<div class="grid2">
+<div>
+<div class="chartbox" style="height:330px"><canvas id="debate" role="img" aria-label="多空论点权重对比条形图：多头五论点8、6、6、7、6.5分，空头五论点6.5、7.5、6.5、7.5、4分">多头五论点8、6、6、7、6.5分，空头五论点6.5、7.5、6.5、7.5、4分</canvas></div>
+</div>
+<div>
+<table>
+<thead><tr><th>裁决焦点</th><th>结果</th></tr></thead>
+<tbody>
+<tr><td>PEV 0.57 黄金坑 or 移动靶</td><td>弱采纳多头：底部真实但安全边际是「统计级」非「数学级」</td></tr>
+<tr><td>Q3 财报买点 or 风险</td><td><b>采纳空头</b>：量级未定价（1096 vs 2002 亿），重仓跨事件不成立</td></tr>
+<tr><td>负债端负增长性质</td><td>各半：质升成立，量缩恶化也成立，开门红数据是裁决点</td></tr>
+<tr><td>左侧 vs 右侧</td><td>空头赢节奏、多头赢方向 → 小仓位左侧 + 双触发加仓</td></tr>
+<tr><td>股息率安全垫</td><td>分化：平安/太保可靠（营运利润锚），国寿/新华存下调风险</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<h2>五、风险评估：三方辩论与终裁</h2>
+<p class="h2n">激进 / 保守 / 中性三方并行论证，风险主管终裁。终版吸收：保守方三段式止损 + 金字塔封顶（全场最高价值论证）、中性方对冲精算与 P2 分级（最可执行）、激进方分红信号门槛与量能区分（删除逆势加仓条款）。</p>
+<div class="card">
+<div class="grid2">
+<div>
+<div class="chartbox" style="height:300px"><canvas id="riskplans" role="img" aria-label="各方案风险等级对比条形图：保守版3.5、中性版5.5、原案6.0、激进版7.0">保守版3.5、中性版5.5、原案6.0、激进版7.0</canvas></div>
+</div>
+<div>
+<table>
+<thead><tr><th>争议项</th><th>终裁</th></tr></thead>
+<tbody>
+<tr><td>底仓 15% / 25% / 40%</td><td><b>立即 15%</b>，10-24 前板块站稳 1100 且平安收复 51.53 → 补至 20%</td></tr>
+<tr><td>止损体系</td><td>保守三段式骨架 + 激进量能区分：盘中破 1072 减半 / 收盘破 1054 清仓 / 放量&gt;100 亿直接清；缩量破位不逆势加仓</td></tr>
+<tr><td>财报对冲</td><td>中性精算方案：15 万名义、虚值 5%、三周期 50ETF 认沽，成本约 0.2%</td></tr>
+<tr><td>Phase 2 门槛</td><td>分红指引为主（书面口径，下调 = 一票否决），浮亏数字降级为分级辅助</td></tr>
+<tr><td>金字塔倒置</td><td>总上限 80%→<b>60% 封顶</b>；1200 上方加仓须回踩确认或 1.5×ATR 当笔收紧</td></tr>
+</tbody>
+</table>
+<p style="font-size:13px;color:#888780;margin-top:6px">以约 1pct 期望收益损失，换取尾部损失削减约 3-5pct；最大可承受回撤红线 −7%。</p>
+</div>
+</div>
+</div>
+
+<h2>六、终版执行方案</h2>
+<div class="card">
+<div class="steps">
+<div class="step"><div class="sn">PHASE 1 · 立即（10-13 起）</div><div class="st">建 15% 底仓 + 买保险</div><p>按平安 45% / 太保 30% / 国寿 15% / 新华 10% 买入；同步买入虚值 5%、11 月中到期的 50ETF 认沽（名义约 15 万，成本 0.15-0.2 万）。10-24 前板块站稳 1100 且平安收复 51.53 → 补至 20%。</p></div>
+<div class="step"><div class="sn">PHASE 2 · 10-24 财报后</div><div class="st">分红指引裁决加仓</div><p>书面维持 + 浮亏≤1100亿 → 加至 40%；指引维持 + 浮亏 1100-1500亿 → 持有不动；浮亏&gt;1500亿 <b>或分红下调 → 减至 10%（一票否决）</b>。</p></div>
+<div class="step"><div class="sn">PHASE 3 · 右侧确认</div><div class="st">技术共振加仓</div><p>放量站稳 1200 + MACD 金叉 + OBV 转正 + 国债回升 1.70% 四条件 → 加至 60% 封顶；三项满足 → 50%。1200 上方须回踩确认。财报验证通过后解除认沽对冲。</p></div>
+<div class="step"><div class="sn">止损三维 · 全程</div><div class="st">写下来，不商量</div><p>板块：盘中破 1072 减半 → 收盘破 1054 清仓（放量&gt;100亿直接清）。个股 ATR 止损：平安 51.53 / 太保 30.14 / 国寿 35.02 / 新华 55.57，开盘低于该位集合竞价直接出。时间：11-28 横盘 ±3% 未触发 → 降至 15%；12 月底未达 1250 → 减回 20%。</p></div>
+</div>
+<div class="callout risk">
+<div class="ct">三条硬红线 + 每周监控</div>
+<p>① 组合回撤 −7% 当日无条件降至 10% 以下；② 十年期国债盘中破 1.60% 当日减 1/3、破 1.50% 全清（不设观察期）；③ 分红指引下调 = 一票否决。每周三看三个数：十年期国债（≥1.70% 绿灯）、板块点位（1100 / 1054 两道线）、平安（51.53）——任两项红灯，仓位降至 15% 以下。</p>
+</div>
+</div>
+
+<h2>七、详细分析（可展开）</h2>
+<details><summary>📊 技术面分析摘要（market-analyst，评分 3/10）</summary>
+<p>板块中期下跌趋势末段 + 筑底尝试期。波浪定位：1 月高点 1669.42 → 6/29 低点 1054.34（−36.8%）→ 当前 1166.34，反弹仅收复 18.2%（不足 23.6% 回撤位 1199），属<b>无量弱势反弹（熊市反弹）</b>。YTD −22.92% 跑输上证 26.5pct，弱势由板块自身资金面主导。威科夫判定：6 月底低点为卖出高潮（SC）候选，随后的反弹为自动反弹（AR）+ 弱势二次测试，当前处 <b>Phase B 混沌区（1054~1200）</b>——吸筹证据缺失（四股量比全面 &lt;1、OBV 合计流出 478 万手、MACD 全线死叉），是"供应休眠 + 买盘缺席"的僵局。个股相对强弱：平安 ≥ 太保 &gt; 新华 &gt; 国寿（按对 MA60 偏离）。右侧确认清单：放量收复 MA20 / MACD 金叉 / OBV 转正 / 板块站稳 1200；Spring（假跌破 1054 快速收复）为最经典底部买点。风控底线：有效跌破 1054，吸筹假设证伪。</p></details>
+<details><summary>💰 基本面分析摘要（fundamentals-analyst，评分 7.0/10）</summary>
+<p><b>负债端"量缩质升"</b>：国寿 H1 NBV 381.67 亿 +33.7%（个险 NBV 率 38.4%，+6.0pct），JPM 预计全年行业 NBV +22%；保费前 8 月仅 +0.4%（人身险 −0.2% 年内首负）但负增长七成源于去年炒停售高基数、三成源于银保 65 号文压费，非需求萎缩；分红险转型把刚性负债变弹性负债，压缩利差损敞口。<b>资产端</b>：Q3 利润塌方剧烈（行业 E −53%、国寿 E −89%、新华 E −70%），但性质是 FVTPL 会计波动而非主业恶化——股市每波动 10% 影响 2026E 净利 46%，敏感度对称，Q4 若权益企稳则反向弹性同等成立。<b>估值三维底部</b>：PEV 0.57（历史 13.7% 分位，隐含长期投资收益率仅 2.2% vs 实际 3%+）、PB 0.97（平安 0.93 / 太保 0.94 破净）、股息率 4.9%（对 1.8% 国债利差 300bp+）。PEV 修复至 0.7 倍 = +23%，至历史中枢 = +40~75%。Q3 利空已 price in 七至八成，但华泰测算区间 1096~2002 亿的量级差尚未定价。个股排序：平安 7.5 ≥ 国寿 7.0 &gt; 太保 6.0 &gt; 新华 5.5。</p></details>
+<details><summary>📰 新闻政策面摘要（news-analyst，评分 6.0/10）</summary>
+<p><b>已落地利好</b>：3000 亿特别国债注资 8 家金融央企（9/6 官宣，国寿集团 350 亿 / 人保 150 亿 / 太平 70 亿 / 中再 30 亿，一期 1500 亿 10/8 发行、利率仅 1.37%，摊薄 &lt;6%）；2027 开门红提前启动（泰康 10/1 首日单省破亿）；险资获准投港股通 ETF；新华 9 月两度举牌 H 股；财险新规 11/1 施行利好头部。<b>已知利空</b>：Q3 财报季（10 月底-11 月，华泰预测单季税前亏损 1096~2002 亿）；人身险保费连续 4 个月单月负增长；10 年国债降至 1.67%。<b>潜在催化</b>：年底养老 / 长期护理税收优惠（JPM 预期类个人养老金节点）；Q3 业绩会股息指引；注资二期与实施细则。<b>机构态度演变</b>：从 2025 年 12 月的"进攻性看多"退化为"防御性看多"——多头逻辑从 β 切换为股息 + 政策托底，这种"退一步的看多"通常对应底部区域但缺乏自发上行动力；险资自身 Q3 逆势加仓权益，产业资本用真金白银投票底部。</p></details>
+<details><summary>⚡ 情绪资金面摘要（sentiment-analyst，评分 7.0/10）</summary>
+<p>板块处于<b>卖压衰竭期</b>（撤离尾声 + 存量博弈），三条证据链：① 流出强度系统性衰减——9 月上旬高峰（平安单日 −8.48 亿）后全面收敛至 ±5%，国寿日均流出仅 ±0.15 亿"心电图"级；② 量能冰点——板块日成交 56 亿，国寿 VMA60 量比 0.47x、新华低至 0.40x 极端地量，缩量阴跌是出清尾声形态而非恐慌出货；③ 右侧未现——除太保外无连续主力净流入，20 日价量负相关仍在。<b>五项冰点指标齐备</b>：估值冰点（PEV 13.7% 分位）、持仓冰点（公募 0.58% 历史级低配，环比 −0.72pct）、量能冰点、流出强度冰点、评级与持仓剪刀差（卖方一致看多 vs 买方已无筹码可卖）。下跌主因是宽基 ETF 两轮赎回的被动抛压 + AI 虹吸，属流动性驱动而非基本面定价。个股情绪排序：太保（20 日净流出最小 −1.6 亿 + 连续 4 日净流入 +2.39 亿，局部反转首证）&gt; 平安 ≈ 国寿 &gt; 新华（16/20 日净流出，出清仍在进行）。情绪 7 分是"逆向布局友好度"高分而非右侧确认。</p></details>
+<details><summary>⚖️ 多空辩论结论（bull 7.5/10 BUY vs bear 6.5/10 SELL 倾向）</summary>
+<p><b>多头最强逻辑</b>："基本面预期底（Q3 利空出尽 + PEV 历史冰点）× 情绪抛压底（公募 0.58% 低配 + 五指标冰点）× 政策资金顶（3000 亿注资 + 开门红提前）"三底共振，当最悲观的人已离场而对手盘是 40 万亿险资蓄水池时，1166 点不是风险，是定价错误。<b>空头最强逻辑</b>：利率下行周期中分母（EV）本身在缩水的价值陷阱——10 年国债 1.67% 且下行、模拟总投资收益率 3.14% 向 2.2% 隐含假设收敛，0.57 倍 PEV 不是市场犯错而是为利差损提前定价；日本寿险 90 年代剧本显示 PEV &lt;0.5 仍可阴跌多年。<b>研究主管裁决</b>：多头总分 33.5 略胜空头 32.0——空头有效驳倒了"数学级安全边际"话术、"利空出尽三条件齐备"与一次性重仓的赔率结构；多头站住了 NBV 质升、三维估值低位、股息垫与催化剂期权组合。方向 BUY、当下轻仓，技术面 3 分决定节奏，基本面 / 情绪面 7 分决定方向。</p></details>
+<details><summary>🛡️ 风险评估结论（三方 + 风险主管终裁）</summary>
+<p><b>激进方</b>（7/10 风险）：25% 底仓浪费冰点赔率，主张 40% 底仓 + 放量破位才清仓 + Phase 3 两条件即可；自认最大隐患在执行概率（破位逆势加仓反人性）。<b>保守方</b>（3.5/10 风险）：压测发现原案四个失效模式——财报跳空击穿 ATR 止损概率上修至 10-15%（实际损失为计划 1.8-2 倍）、1054 清仓线次日滑点 0.5-3% 未计入、"观察 2 日"规则单边行情期望成本 0.75-1 万、金字塔倒置（最安全位置最小仓 / 最追高位置最大仓，尾部敞口 NAV −6.3~9%）；主张底仓 15% + 财报前硬规则 + 三段式止损 + 50% β 对冲。<b>中性方</b>（5.5/10 风险）：指出三处纪律漏洞——Phase 1"立即"属性偏多头、浮亏 1100-1500 亿中间地带无规则（最可能情景 40-45%）、横盘无时间止损出口；主张底仓拆 15%+10% 两笔 + 事件对冲精算 + P2/P3 分级。<b>风险主管终裁（BUY，7/10）</b>：采纳保守方三段式止损 + 金字塔 60% 封顶、中性方认沽对冲与分级、激进方分红信号门槛与量能区分（删除逆势加仓条款）。原案五个失效模式全部修复，以约 1pct 期望收益换 3-5pct 尾部损失削减。</p></details>
+<details><summary>📌 核心标的梳理依据（知识星球 + 研报交叉验证）</summary>
+<p><b>知识星球调研命中</b>（浑水调研Plus / 短评星球）：① 长江非银 9/6《险企注资分析》——特别国债注资保险央企路径、摊薄 &lt;6%、用途为偿二代 + 权益配置（→ 国寿 / 人保受益逻辑）；② 大摩 8/30《保险投资者反馈》——Mark Walter 私人信贷调查属个体事件，审查趋严利于资本雄厚的头部险企；③ 大摩 8/25《监管新框架》——BXHY 制度化扩围，头部寿险财险竞争优势巩固，维持"具吸引力"评级；④ 东吴非银 12/5 与保险 ETF 笔记 12/15——2025 年末看多逻辑（利率企稳 1.85% / NBV 预期 +15% / PEV 0.5-0.7），构成情绪演变基线；⑤ 短评星球 12/6《低持仓 + 低估值 + 基本面改善》与 3/14《利率上行首推新华》——历史推荐脉络。<b>公开研报</b>：摩根大通（Q3 −53% 但已被消化，增持平安 / 国寿，2027E 股息率 8%/4%）、华泰（Q3 税前亏损 1096~2002 亿测算）、中信建投（国寿买入，目标价 48.75 元）、东方证券（PEV 口径）、中泰（模拟总投资收益率 3.14%）。<b>综合筛选结论</b>：平安（三榜前列 + 股息锚）与太保（资金反转首证 + 最低 PEV）构成核心双底仓，国寿（NBV 最强 + 注资受益但 Q3 冲击最大）作弹性配置，新华（高 β + 出清未完成）小仓位进攻。<b>数据缺口声明</b>：IMA 知识库接口持续报错（库为空），本次以知识星球 + 公开研报替代，已如实标注。</p></details>
+<details><summary>🔥 关键催化剂与风险事件日历</summary>
+<table>
+<thead><tr><th>时间窗口</th><th>事件</th><th>方向</th></tr></thead>
+<tbody>
+<tr><td>10-13~10-17</td><td>Phase 1 建仓窗口；特别国债一期上市交易</td><td>执行窗口</td></tr>
+<tr><td>10-20~10-24</td><td>10 月保费月度数据；国债 1.70% 关口监控</td><td>双向</td></tr>
+<tr><td>10-27~10-31</td><td><b>三季报密集披露周</b>（浮亏量级 + 分红指引 = 两大裁决变量）</td><td>已知利空，靴子落地</td></tr>
+<tr><td>11-03~11-07</td><td>开门红首周数据（同比 −10% 以上触发减仓）</td><td>验证负债端叙事</td></tr>
+<tr><td>11-17~11-28</td><td>右侧技术确认观察期；养老税收 / 注资细则若有落地提前执行 Phase 3</td><td>潜在催化</td></tr>
+<tr><td>12-01~12-05</td><td>预定利率研究值季度发布（若触发下调预期 → 炒停售，双向）</td><td>双向</td></tr>
+<tr><td>12 月底</td><td>时间止损检查：板块未达 1250 → 减回 20%</td><td>纪律</td></tr>
+</tbody>
+</table></details>
+
+<div class="disclaimer">
+<b>数据来源</b>：行情与估值——通达信连接器（tdx_quotes / tdx_kline / tdx_api_data，2026-10-09 收盘）；价格序列——腾讯财经日 K（前复权 120 根）；择时评分——「A股择时分析」skill（ATR 梯度评分制，满分 165）；量价指标——「A股量价关系验证」skill（量比 / z 分 / OBV 斜率 / 价量相关，120 日窗口真实计算）；调研内容——知识星球「浑水调研Plus」（group_id 28512858211281）与「短评&信息」（group_id 15552822254242）；行业与机构观点——摩根大通、华泰证券、中信建投、东方证券、中泰证券、东吴证券、大摩、长江非银研报及上海证券报等公开报道（2026 年 8-10 月）。<b>说明</b>：本任务由 12 位专业角色（4 分析师 + 多空研究员 + 研究主管 + 交易员 + 3 风险分析师 + 风险主管）按五阶段工作流协作完成；IMA 知识库接口不可用，已用知识星球 + 公开研报替代并标注。NeoData 数据源未连接，已统一改用通达信 + 公开检索。<br><br>
+<b>⚠️ 免责声明</b>：本报告由 AI 基于公开信息与团队多角色推演整理生成，仅供学习交流参考，不构成任何投资建议或个股推荐。所有买卖点、仓位与止损参数均为分析框架演示，实际投资请结合自身风险承受能力独立决策。股市有风险，投资需谨慎。
+</div>
+
+</div>
+
+<script>
+const D=["04/13","04/14","04/15","04/16","04/17","04/20","04/21","04/22","04/23","04/24","04/27","04/28","04/29","04/30","05/06","05/07","05/08","05/11","05/12","05/13","05/14","05/15","05/18","05/19","05/20","05/21","05/22","05/25","05/26","05/27","05/28","05/29","06/01","06/02","06/03","06/04","06/05","06/08","06/09","06/10","06/11","06/12","06/15","06/16","06/17","06/18","06/22","06/23","06/24","06/25","06/26","06/29","06/30","07/01","07/02","07/03","07/06","07/07","07/08","07/09","07/10","07/13","07/14","07/15","07/16","07/17","07/20","07/21","07/22","07/23","07/24","07/27","07/28","07/29","07/30","07/31","08/03","08/04","08/05","08/06","08/07","08/10","08/11","08/12","08/13","08/14","08/17","08/18","08/19","08/20","08/21","08/24","08/25","08/26","08/27","08/28","08/31","09/01","09/02","09/03","09/04","09/07","09/08","09/09","09/10","09/11","09/14","09/15","09/16","09/17","09/18","09/21","09/22","09/23","09/24","09/28","09/29","09/30","10/08","10/09"];
+const S={
+"601318":{c:[55.02,56.24,55.97,55.79,55.19,55.81,55.3,55.3,55.15,55.05,54.82,54.9,56.7,56.64,56.63,57.31,57.33,57.37,56.67,55.31,54.17,52.77,52.16,51.75,51.38,51.03,50.95,51.49,51.54,50.54,49.74,50.77,51.12,51.35,50.97,50.5,50.75,50.65,51.2,52.24,51.66,53.03,53.25,52.01,51.78,48.4,51.0,49.42,48.14,48.32,46.25,47.62,46.76,48.55,47.94,48.11,49.12,48.31,48.56,48.51,48.5,48.55,48.62,49.97,49.69,49.72,52.25,51.91,52.97,53.32,53.04,52.43,53.22,53.32,54.82,53.92,54.57,52.95,53.04,52.52,52.4,52.34,51.57,51.62,51.82,50.77,50.82,50.34,51.1,51.16,52.37,53.94,54.03,55.15,54.89,54.87,54.84,56.25,55.65,57.02,57.26,55.38,54.72,55.28,55.52,54.83,54.73,53.9,53.51,53.35,53.37,53.98,54.46,53.87,53.25,52.4,52.5,53.29,52.67,52.83],m20:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,55.92,55.88,55.71,55.52,55.32,55.13,54.89,54.67,54.48,54.3,54.07,53.82,53.61,53.33,53.07,52.79,52.45,52.12,51.78,51.51,51.35,51.23,51.24,51.3,51.31,51.33,51.2,51.2,51.1,50.93,50.81,50.64,50.48,50.27,50.12,49.97,49.85,49.77,49.66,49.52,49.34,49.18,48.95,48.72,48.62,48.52,48.58,48.65,48.77,49.01,49.26,49.6,49.84,50.16,50.4,50.75,51.04,51.31,51.54,51.77,51.97,52.16,52.35,52.5,52.58,52.69,52.74,52.67,52.59,52.5,52.39,52.35,52.43,52.47,52.56,52.57,52.61,52.63,52.79,52.92,53.15,53.39,53.54,53.7,53.88,54.07,54.27,54.47,54.64,54.77,54.87,54.92,54.93,54.95,54.88,54.8,54.68,54.56,54.41,54.26,54.05],m60:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,52.21,52.1,51.97,51.85,51.75,51.66,51.56,51.5,51.45,51.41,51.38,51.35,51.31,51.25,51.2,51.17,51.11,51.07,50.99,50.93,50.89,50.86,50.85,50.84,50.84,50.84,50.84,50.84,50.84,50.82,50.81,50.82,50.87,50.92,50.97,51.03,51.1,51.17,51.24,51.33,51.4,51.48,51.58,51.62,51.64,51.7,51.76,51.86,51.93,52.0,52.09,52.17,52.29,52.4,52.53,52.62,52.71,52.78,52.83,52.92,52.98,53.06],stop:51.53,t1:54.05,t2:58.40},
+"601601":{c:[36.51,37.25,36.84,36.72,36.19,36.31,35.9,35.9,35.81,35.47,35.21,35.19,36.47,36.08,35.95,36.16,35.75,36.24,36.07,34.59,34.03,33.39,32.72,32.56,32.27,31.85,31.7,32.14,32.07,31.48,30.87,31.03,30.87,30.55,30.17,29.87,29.9,30.05,30.4,31.36,30.91,31.71,32.1,31.35,31.04,28.83,30.46,29.44,28.67,28.95,27.28,28.2,27.37,28.84,28.48,28.5,28.9,28.36,28.22,28.14,28.47,28.44,28.87,30.21,29.88,29.75,31.63,31.63,32.75,32.81,31.95,31.62,31.7,31.93,32.8,32.36,32.98,31.78,32.02,31.67,31.47,30.94,30.52,30.48,30.43,29.92,30.15,29.98,30.2,30.17,30.42,31.03,31.48,31.98,32.0,31.77,32.0,33.07,32.83,34.04,34.21,33.22,33.56,33.43,33.63,32.97,32.96,32.63,32.02,31.88,32.08,32.0,32.15,31.61,30.88,30.5,30.4,31.06,30.83,31.15],m20:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,36.03,35.91,35.71,35.51,35.3,35.1,34.88,34.67,34.48,34.3,34.1,33.88,33.67,33.39,33.11,32.83,32.51,32.22,31.91,31.63,31.46,31.31,31.22,31.19,31.13,31.07,30.92,30.86,30.72,30.55,30.43,30.25,30.11,29.93,29.84,29.76,29.69,29.64,29.56,29.45,29.29,29.17,29.0,28.84,28.78,28.73,28.77,28.83,28.94,29.14,29.34,29.57,29.74,29.96,30.11,30.33,30.52,30.73,30.9,31.09,31.26,31.41,31.54,31.62,31.63,31.66,31.67,31.6,31.51,31.39,31.25,31.18,31.15,31.14,31.14,31.1,31.07,31.02,31.09,31.13,31.24,31.38,31.49,31.65,31.79,31.95,32.11,32.25,32.38,32.47,32.56,32.64,32.69,32.72,32.7,32.65,32.58,32.5,32.4,32.3,32.16],m60:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,32.26,32.13,31.98,31.85,31.74,31.63,31.52,31.45,31.38,31.33,31.29,31.23,31.17,31.09,31.02,30.97,30.91,30.86,30.79,30.72,30.67,30.63,30.59,30.55,30.52,30.49,30.45,30.43,30.39,30.36,30.34,30.33,30.33,30.34,30.37,30.4,30.43,30.46,30.51,30.55,30.6,30.65,30.68,30.7,30.74,30.78,30.85,30.89,30.94,31.0,31.05,31.13,31.19,31.27,31.32,31.36,31.39,31.42,31.46,31.5,31.55],stop:30.14,t1:32.16,t2:35.50},
+"601628":{c:[36.9,37.15,37.08,37.25,36.9,37.01,36.73,36.46,36.26,36.16,36.05,36.01,36.02,36.05,36.04,36.82,36.69,37.33,36.94,35.86,35.37,34.74,34.13,34.09,33.92,33.43,33.2,33.21,33.18,32.84,32.77,33.21,32.96,32.62,32.26,31.87,32.2,32.38,32.52,34.01,33.71,35.19,35.91,35.44,35.19,33.08,35.82,35.56,35.23,36.27,34.42,35.12,34.73,38.16,37.89,38.04,38.16,36.95,36.89,37.2,37.42,37.73,38.72,40.42,38.92,39.05,40.6,40.17,41.0,41.73,40.31,39.73,40.2,39.38,39.74,39.52,38.51,37.66,38.05,38.15,38.57,37.7,37.15,37.33,37.46,36.84,37.6,36.95,36.84,36.89,37.03,37.64,37.6,38.58,38.61,38.27,38.5,39.07,38.15,39.27,39.17,38.45,38.06,38.15,38.28,37.99,38.28,37.62,37.25,37.15,37.8,38.02,38.69,38.6,37.43,36.77,36.62,36.7,35.94,36.15],m20:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,36.59,36.51,36.39,36.24,36.08,35.93,35.76,35.58,35.42,35.26,35.1,34.93,34.79,34.64,34.47,34.28,34.03,33.81,33.56,33.34,33.25,33.16,33.19,33.27,33.34,33.41,33.39,33.52,33.64,33.74,33.91,33.99,34.09,34.18,34.45,34.73,35.04,35.34,35.57,35.79,35.95,36.13,36.26,36.4,36.65,36.84,37.14,37.37,37.6,37.89,38.17,38.46,38.69,38.96,39.03,39.12,39.19,39.21,39.24,39.3,39.35,39.41,39.41,39.33,39.17,39.1,38.99,38.84,38.68,38.47,38.23,38.06,37.96,37.83,37.79,37.73,37.67,37.67,37.74,37.75,37.8,37.83,37.87,37.92,37.96,38.0,38.05,38.09,38.12,38.14,38.16,38.19,38.21,38.27,38.27,38.21,38.14,38.04,37.92,37.81,37.66],m60:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,35.26,35.27,35.28,35.31,35.36,35.39,35.43,35.49,35.55,35.63,35.72,35.79,35.86,35.93,35.98,36.04,36.09,36.12,36.12,36.14,36.18,36.23,36.28,36.33,36.39,36.45,36.5,36.58,36.64,36.7,36.77,36.84,36.91,36.99,37.09,37.2,37.3,37.41,37.52,37.61,37.7,37.79,37.85,37.88,37.93,37.98,38.06,38.1,38.14,38.17,38.18,38.24,38.29,38.35,38.36,38.35,38.33,38.31,38.3,38.29,38.27],stop:35.02,t1:37.50,t2:41.50},
+"601336":{c:[59.25,60.1,59.6,61.83,62.21,62.42,61.86,61.63,60.79,60.35,60.12,60.25,62.04,62.34,62.62,63.33,62.94,63.8,63.2,61.99,60.32,59.16,58.06,58.37,57.6,57.13,56.45,57.34,58.1,56.66,56.33,57.64,56.69,55.65,55.53,53.97,54.29,53.37,53.81,55.97,57.16,59.4,61.14,59.92,59.69,55.49,61.25,60.26,59.79,61.38,57.54,58.43,57.6,63.32,61.42,61.46,62.42,61.25,61.01,60.46,60.92,59.92,62.45,63.49,62.29,60.74,62.78,62.58,63.27,63.66,61.06,61.24,60.72,60.92,60.65,61.08,60.81,60.23,61.25,60.37,60.66,60.06,58.36,58.83,58.49,57.78,58.55,57.94,57.66,58.08,58.79,59.43,59.36,60.98,60.59,59.8,60.12,61.5,60.55,61.92,62.25,60.68,60.06,59.93,59.72,58.3,58.41,57.63,57.46,57.43,58.18,58.54,58.68,57.88,57.58,55.9,55.94,56.35,56.12,56.9],m20:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,61.63,61.69,61.64,61.56,61.39,61.16,60.9,60.62,60.41,60.28,60.09,59.9,59.77,59.5,59.17,58.81,58.35,57.91,57.39,56.92,56.62,56.46,56.48,56.63,56.71,56.81,56.73,56.97,57.12,57.2,57.44,57.5,57.54,57.58,57.97,58.26,58.63,59.04,59.44,59.8,60.02,60.21,60.23,60.3,60.48,60.61,60.87,60.95,61.06,61.24,61.35,61.53,61.67,61.82,61.7,61.66,61.65,61.56,61.51,61.53,61.52,61.51,61.52,61.31,61.08,60.89,60.74,60.53,60.3,60.02,59.74,59.62,59.53,59.46,59.47,59.46,59.4,59.37,59.43,59.4,59.47,59.55,59.58,59.67,59.72,59.78,59.81,59.8,59.79,59.78,59.75,59.71,59.67,59.64,59.48,59.33,59.14,58.93,58.67,58.45,58.2],m60:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,59.42,59.45,59.45,59.5,59.52,59.53,59.5,59.51,59.53,59.57,59.63,59.64,59.66,59.64,59.61,59.58,59.54,59.51,59.45,59.41,59.39,59.39,59.41,59.41,59.42,59.44,59.45,59.48,59.49,59.48,59.51,59.55,59.58,59.62,59.71,59.8,59.89,59.99,60.13,60.24,60.34,60.42,60.44,60.43,60.43,60.43,60.47,60.43,60.38,60.34,60.28,60.29,60.29,60.31,60.22,60.15,60.06,59.95,59.87,59.79,59.73],stop:55.57,t1:58.20,t2:64.00}};
+const F={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},interaction:{intersect:false,mode:'index'}};
+const GRID={color:'rgba(0,0,0,.06)'},TICK={color:'#888780',font:{size:9}};
+function kchart(id,sd){
+new Chart(document.getElementById(id),{type:'line',data:{labels:D,datasets:[
+{label:'收盘',data:sd.c,borderColor:'#185FA5',borderWidth:1.6,pointRadius:0},
+{label:'MA20',data:sd.m20,borderColor:'#534AB7',borderWidth:1.1,pointRadius:0,borderDash:[4,3]},
+{label:'MA60',data:sd.m60,borderColor:'#1D9E75',borderWidth:1.1,pointRadius:0,borderDash:[2,2]},
+{label:'止损',data:Array(120).fill(sd.stop),borderColor:'#A32D2D',borderWidth:1.2,borderDash:[6,4],pointRadius:0},
+{label:'目标',data:Array(120).fill(sd.t2),borderColor:'#3B6D11',borderWidth:1.2,borderDash:[6,4],pointRadius:0}]},
+options:{...F,scales:{x:{grid:{display:false},ticks:{...TICK,maxRotation:0,autoSkip:true,maxTicksLimit:7}},y:{grid:GRID,ticks:{...TICK}}}}});}
+kchart('k601318',S["601318"]);kchart('k601601',S["601601"]);kchart('k601628',S["601628"]);kchart('k601336',S["601336"]);
+
+new Chart(document.getElementById('radar'),{type:'radar',data:{labels:['技术面','基本面','新闻面','情绪面','风险面(终版)'],datasets:[{label:'评分',data:[3.0,7.0,6.0,7.0,7.0],backgroundColor:'rgba(83,74,183,.18)',borderColor:'#534AB7',borderWidth:2,pointBackgroundColor:'#534AB7',pointRadius:4}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:0,max:10,grid:{color:'rgba(0,0,0,.08)'},angleLines:{color:'rgba(0,0,0,.08)'},pointLabels:{font:{size:12},color:'#5f5e5a'},ticks:{stepSize:2,color:'#888780',backdropColor:'transparent',font:{size:10}}}}}});
+
+new Chart(document.getElementById('debate'),{type:'bar',data:{labels:['估值三维底部','注资+开门红催化','情绪冰点逆向','负债端量缩质升','Q3会计幻象出尽','Q3量级未定价','左侧赔率劣化','价值陷阱EV缩水','负债端量价双弱','冰点≠出清'],
+datasets:[{label:'多头权重',data:[8,7,6.5,6,6,null,null,null,null,null],backgroundColor:'#A32D2D',borderRadius:3},
+{label:'空头权重',data:[null,null,null,null,null,7.5,7.5,6.5,6.5,4],backgroundColor:'#3B6D11',borderRadius:3}]},
+options:{...F,indexAxis:'y',plugins:{legend:{display:false},tooltip:{enabled:true,callbacks:{label:c=>c.dataset.label+': '+c.parsed.x+'分'}}},
+scales:{x:{grid:GRID,ticks:{...TICK,font:{size:10}},min:0,max:10},y:{grid:{display:false},ticks:{color:'#5f5e5a',font:{size:11}}}}}});
+
+new Chart(document.getElementById('riskplans'),{type:'bar',data:{labels:['保守版','中性版','原案','激进版'],datasets:[{label:'风险等级',data:[3.5,5.5,6.0,7.0],backgroundColor:['#5DCAA5','#FAC775','#F0997B','#E24B4A'],borderRadius:4}]},
+options:{...F,indexAxis:'y',plugins:{legend:{display:false},tooltip:{enabled:true,callbacks:{label:c=>'风险等级 '+c.parsed.x+'/10'}}},
+scales:{x:{grid:GRID,ticks:{...TICK,font:{size:10}},min:0,max:10},y:{grid:{display:false},ticks:{color:'#5f5e5a',font:{size:12}}}}}});
+</script>
+</body>
+</html>

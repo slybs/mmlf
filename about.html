@@ -11,6 +11,7 @@
     <a class="logo" href="index.html">MLF 投研报告库</a>
     <nav>
       <a href="index.html" data-nav>首页</a>
+      <a href="notes.html" data-nav>记录</a>
       <a href="about.html" data-nav>关于</a>
     </nav>
     <button id="theme-toggle" class="icon-btn" title="切换主题">🌓</button>
@@ -18,11 +19,14 @@
 
   <main class="container">
     <h1>关于</h1>
-    <p>本地投研报告库，双击 <code>index.html</code> 即可打开，无需服务器。</p>
+    <p>本地投研报告库，双击 <code>index.html</code> 即可打开，无需服务器。要使用「记录」功能，双击 <code>start-server.command</code>（macOS）或 <code>start-server.bat</code>（Windows）启动本地服务，浏览器会自动打开。</p>
 <pre><code>MLF/
 ├── index.html            首页：板块选择
 ├── sector.html           板块页：该板块的报告列表
+├── notes.html            记录页：本地速记（数据存 data/notes.js）
 ├── about.html            关于页
+├── start-server.command  双击启动本地服务（macOS，记录功能推荐）
+├── start-server.bat      双击启动本地服务（Windows）
 ├── update-index.bat      双击更新报告清单（Windows）
 ├── update-index.command  双击更新报告清单（macOS）
 ├── reports/              所有研究报告
@@ -31,9 +35,15 @@
 │   │   ├── _sector.json  板块简介 + group（可选）
 │   │   └── 20261010_行业整体估值水平诊断.html
 │   ├── PCB/
+│   ├── AI短剧/
+│   ├── 端侧SoC/
+│   ├── 传媒/
+│   ├── 保险/              group=sector → 首页「板块」
+│   │   └── 20261010_保险板块投资分析报告.html
 │   ├── 个股/             group=stock  → 首页「个股」
 │   └── 其他/             group=other  → 首页「其他」
 ├── data/reports.js       报告清单（自动生成，勿手改）
+├── data/notes.js         记录数据（记录页自动读写）
 ├── tools/build-index.ps1 生成清单的脚本（Windows）
 ├── tools/build-index.py  生成清单的脚本（macOS / Linux）
 ├── css/style.css
@@ -58,6 +68,16 @@
       <li><code>"group": "other"</code> → <b>其他</b>：未归入以上三类的资料（如 <code>reports/其他/</code>）</li>
     </ul>
     <p>新建板块文件夹若不写 <code>_sector.json</code>，默认归到「板块」。</p>
+
+    <h2>记录功能</h2>
+    <p>导航栏的「记录」是一个本地速记本，用来随手记投资想法、观察和复盘。记录数据保存在 <b><code>data/notes.js</code></b>（项目文件，随报告库目录一起 git 提交 / 备份 / 换机器）。</p>
+    <ul>
+      <li><b>推荐用法（任何浏览器）：</b>双击 <code>start-server.command</code>（macOS）/ <code>start-server.bat</code>（Windows）启动本地服务，浏览器自动打开 <code>http://127.0.0.1:8765/</code>。记录页状态栏显示「✓ 本地服务」，保存即写入 <code>data/notes.js</code>，无需任何连接操作。</li>
+      <li><b>备用用法（不启动服务）：</b>双击 <code>index.html</code> 用 Chrome / Edge 打开，在记录页点「保存到 mmlf 文件夹」连接一次 <code>data/notes.js</code>（File System Access API），之后自动写入；每次打开自动恢复连接，偶尔需重新授权。</li>
+      <li>都不满足时（如 Safari 直接打开静态页）退回 localStorage 存储，记录仍在页面里可见，可用「导出备份」手动留存。</li>
+      <li>打开记录页时，localStorage 与 <code>data/notes.js</code> 的内容会自动合并（同一条取更新的版本），所以换了浏览器或忘开服务也不会丢数据。</li>
+      <li>每条记录可选关联一个板块，标题留空自动取正文首行；支持搜索、编辑、删除、多行（<code>Ctrl + Enter</code> 快速保存）、超过 3 行自动折叠。</li>
+    </ul>
   </main>
 
   <footer class="site-footer">© <span id="year"></span> MLF · 仅供研究参考，不构成投资建议</footer>
