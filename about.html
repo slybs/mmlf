@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 - MLF 投研报告库</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">MLF 投研报告库</a>
+    <nav>
+      <a href="index.html" data-nav>首页</a>
+      <a href="about.html" data-nav>关于</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" title="切换主题">🌓</button>
+  </header>
+
+  <main class="container">
+    <h1>关于</h1>
+    <p>本地投研报告库，双击 <code>index.html</code> 即可打开，无需服务器。</p>
+<pre><code>MLF/
+├── index.html            首页：板块选择
+├── sector.html           板块页：该板块的报告列表
+├── about.html            关于页
+├── update-index.bat      双击更新报告清单（Windows）
+├── update-index.command  双击更新报告清单（macOS）
+├── reports/              所有研究报告
+│   ├── 大盘/             group=market → 首页「趋势」
+│   ├── 半导体材料/       group=sector → 首页「板块」（默认）
+│   │   ├── _sector.json  板块简介 + group（可选）
+│   │   └── 20261010_行业整体估值水平诊断.html
+│   ├── PCB/
+│   ├── 个股/             group=stock  → 首页「个股」
+│   └── 其他/             group=other  → 首页「其他」
+├── data/reports.js       报告清单（自动生成，勿手改）
+├── tools/build-index.ps1 生成清单的脚本（Windows）
+├── tools/build-index.py  生成清单的脚本（macOS / Linux）
+├── css/style.css
+└── js/</code></pre>
+
+    <h2>新增报告</h2>
+    <ol>
+      <li>把报告放进 <code>reports/板块名/</code>，文件名用 <code>日期_主题.html</code>，如 <code>20261011_个股深度_沪电股份.html</code>。</li>
+      <li>双击根目录的 <code>update-index.bat</code>（Windows）或 <code>update-index.command</code>（macOS），刷新首页即可。</li>
+    </ol>
+    <p>可选：在报告 <code>&lt;head&gt;</code> 里加 <code>&lt;meta name="description" content="一句话结论"&gt;</code>，列表中会显示这句结论；加 <code>&lt;meta name="report-type" content="个股深度"&gt;</code> 可指定类型（否则按标题关键词自动识别）。</p>
+
+    <h2>新增板块</h2>
+    <p>在 <code>reports/</code> 下新建一个以板块名命名的文件夹，放入报告后运行 <code>update-index.bat</code>。如需板块简介，在文件夹里放一个 <code>_sector.json</code>：</p>
+<pre><code>{ "desc": "板块简介" }</code></pre>
+    <h2>首页四个区块</h2>
+    <p>首页按板块文件夹里 <code>_sector.json</code> 的 <code>"group"</code> 值，把报告分到四个区块：</p>
+    <ul>
+      <li><code>"group": "market"</code> → <b>趋势</b>：大盘与行业趋势类（如 <code>reports/大盘/</code>），按报告列表展示</li>
+      <li><code>"group": "sector"</code> → <b>板块</b>：默认值，以板块卡片展示，点击进入该板块报告列表</li>
+      <li><code>"group": "stock"</code> → <b>个股</b>：个股首次覆盖 / 深度跟踪（如 <code>reports/个股/</code>）</li>
+      <li><code>"group": "other"</code> → <b>其他</b>：未归入以上三类的资料（如 <code>reports/其他/</code>）</li>
+    </ul>
+    <p>新建板块文件夹若不写 <code>_sector.json</code>，默认归到「板块」。</p>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> MLF · 仅供研究参考，不构成投资建议</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

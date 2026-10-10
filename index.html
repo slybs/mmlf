@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLF 投研报告库</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">MLF 投研报告库</a>
+    <nav>
+      <a href="index.html" data-nav>首页</a>
+      <a href="about.html" data-nav>关于</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" title="切换主题">🌓</button>
+  </header>
+
+  <main class="container">
+    <section class="block">
+      <div class="block-head">
+        <h2>趋势</h2>
+        <a id="trend-more" class="more" hidden>查看全部 →</a>
+      </div>
+      <ul id="trend-list" class="report-list"></ul>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>板块</h2>
+        <span class="muted">点击板块查看该板块下的全部研究报告</span>
+      </div>
+      <div id="sector-grid" class="grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>个股</h2>
+        <a id="stock-more" class="more" hidden>查看全部 →</a>
+      </div>
+      <ul id="stock-list" class="report-list"></ul>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>其他</h2>
+        <a id="other-more" class="more" hidden>查看全部 →</a>
+      </div>
+      <ul id="other-list" class="report-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> MLF · 仅供研究参考，不构成投资建议</footer>
+
+  <script src="data/reports.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

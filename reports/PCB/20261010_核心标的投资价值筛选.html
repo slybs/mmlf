@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="100 只成分股漏斗筛选：AI 算力驱动的高多层板 / HDI / 高速覆铜板是唯一主线，首选生益科技、沪电股份、生益电子。">
+<title>PCB板块 · 核心标的投资价值筛选 | 2026.10.10</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#151922; --ink2:#3d4654; --muted:#7a8394;
+  --line:#e4e7ec; --line2:#eef0f4;
+  --brand:#12457a; --brand2:#1e6bb8; --brandsoft:#eaf2fb;
+  --up:#cf2f26; --down:#0f8a55;
+  --gold:#a8801a; --goldsoft:#fdf6e6;
+  --warn:#b3541e; --warnsoft:#fdf1ea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 80px}
+.hero{background:linear-gradient(135deg,#0f3a66 0%,#12457a 45%,#1e6bb8 100%);color:#fff;padding:46px 0 40px;margin-bottom:30px}
+.hero .wrap{padding-bottom:0}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:2px;background:rgba(255,255,255,.16);
+  padding:5px 12px;border-radius:3px;margin-bottom:14px}
+.hero h1{font-size:34px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px}
+.hero .sub{font-size:15px;color:rgba(255,255,255,.82);max-width:820px}
+.hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:26px;font-size:13px;color:rgba(255,255,255,.7)}
+.hero .meta b{display:block;font-size:17px;color:#fff;font-weight:600;margin-top:2px}
+section{margin-bottom:34px}
+h2{font-size:21px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:4px;height:19px;background:var(--brand);border-radius:2px}
+h2 .en{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:1px}
+.lead{font-size:13px;color:var(--muted);margin-bottom:16px}
+h3{font-size:15px;font-weight:650;color:var(--ink);margin:20px 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px 24px}
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vc{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px;border-left:4px solid var(--brand)}
+.vc.hot{border-left-color:var(--up)}
+.vc.cool{border-left-color:var(--down)}
+.vc.gold{border-left-color:var(--gold)}
+.vc h4{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:7px;letter-spacing:.5px}
+.vc .big{font-size:19px;font-weight:700;line-height:1.45;margin-bottom:6px}
+.vc .desc{font-size:13px;color:var(--ink2)}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#f0f3f7;color:var(--ink2);font-weight:600;text-align:right;padding:11px 10px;
+  white-space:nowrap;border-bottom:1px solid var(--line);font-size:12px}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:#f0f3f7}
+td:first-child{background:var(--card)}
+th:nth-child(2),td:nth-child(2){text-align:left}
+tbody td:nth-child(2){background:var(--card)}
+td{padding:10px;text-align:right;border-bottom:1px solid var(--line2);white-space:nowrap;color:var(--ink2)}
+tbody tr:hover td{background:#f7fafd}
+tbody tr.tier-a td:first-child{box-shadow:inset 3px 0 0 var(--up)}
+tbody tr.tier-b td:first-child{box-shadow:inset 3px 0 0 var(--brand2)}
+tbody tr.tier-c td:first-child{box-shadow:inset 3px 0 0 var(--muted)}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down)}
+.num{font-variant-numeric:tabular-nums}
+.nm{font-weight:600;color:var(--ink)}
+.code{font-size:11px;color:var(--muted);font-weight:400}
+.chip{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:.5px}
+.chip.buy{background:#fdecea;color:var(--up)}
+.chip.hold{background:var(--goldsoft);color:var(--gold)}
+.chip.add{background:var(--brandsoft);color:var(--brand2)}
+.chip.no{background:#eef0f4;color:var(--muted)}
+.sbar{display:flex;align-items:center;gap:7px;justify-content:flex-end}
+.sbar .track{width:46px;height:6px;background:#eceff3;border-radius:3px;overflow:hidden}
+.sbar .fill{height:100%;border-radius:3px}
+.sbar span{font-weight:700;font-variant-numeric:tabular-nums;min-width:22px;text-align:right}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin-bottom:16px}
+.chart-t{font-size:15px;font-weight:650;margin-bottom:3px}
+.chart-s{font-size:12px;color:var(--muted);margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stock{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:0;margin-bottom:16px;overflow:hidden}
+.stock-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;
+  background:linear-gradient(90deg,#f7f9fc,#fff);border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px}
+.stock-hd .l{display:flex;align-items:baseline;gap:10px}
+.stock-hd .rank{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.stock-hd .n{font-size:18px;font-weight:700}
+.stock-hd .c{font-size:12px;color:var(--muted)}
+.stock-hd .r{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--muted)}
+.stock-hd .r b{display:block;font-size:16px;color:var(--ink);font-weight:700;text-align:right}
+.stock-bd{padding:18px 22px}
+.kv{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line2);
+  border:1px solid var(--line2);border-radius:5px;margin-bottom:16px;overflow:hidden}
+.kv div{background:#fbfcfd;padding:9px 11px}
+.kv div span{display:block;font-size:11px;color:var(--muted);margin-bottom:2px}
+.kv div b{font-size:14px;font-weight:650;font-variant-numeric:tabular-nums}
+.thesis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border:1px solid var(--line2);border-radius:6px;padding:13px 15px;background:#fcfdfe}
+.box.risk{background:#fefaf8;border-color:#f4e6df}
+.box h5{font-size:12px;font-weight:650;color:var(--brand);letter-spacing:.5px;margin-bottom:6px}
+.box.risk h5{color:var(--warn)}
+.box ul{list-style:none}
+.box li{font-size:12.5px;color:var(--ink2);padding-left:13px;position:relative;margin-bottom:5px;line-height:1.6}
+.box li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--brand2)}
+.box.risk li::before{background:var(--warn)}
+.chain{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px}
+.note{background:var(--goldsoft);border:1px solid #f0e2c4;border-radius:6px;padding:14px 16px;font-size:12.5px;color:#6b5518}
+.note.blue{background:var(--brandsoft);border-color:#d3e3f5;color:#143a63}
+ul.plain{list-style:none;margin:8px 0}
+ul.plain li{font-size:13.5px;color:var(--ink2);padding-left:16px;position:relative;margin-bottom:7px;line-height:1.65}
+ul.plain li::before{content:"-";position:absolute;left:0;color:var(--brand2);font-weight:600}
+.foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.8}
+@media(max-width:900px){
+  .verdict,.grid2,.thesis{grid-template-columns:1fr}
+  .kv{grid-template-columns:repeat(3,1fr)}
+  .hero h1{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">SECTOR SCREENING - EQUITY RESEARCH</span>
+    <h1>PCB 板块 - 核心标的投资价值筛选</h1>
+    <div class="sub">以「成长确定性 × 盈利质量 × 估值性价比 × 产业卡位」四维模型，对通达信 PCB 印制电路板概念板块 100 只成分股做漏斗式筛选，输出可执行的配置梯队。</div>
+    <div class="meta">
+      <div>数据基准<b>2026-10-09 收盘</b></div>
+      <div>报告日期<b>2026-10-10</b></div>
+      <div>初筛样本<b>100 只</b></div>
+      <div>进入评分<b>18 只</b></div>
+      <div>数据来源<b>通达信行情 / 财报</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2>一、核心结论 <span class="en">EXECUTIVE SUMMARY</span></h2>
+  <div class="lead">一句话概括：AI 算力驱动的高多层板 / HDI / 高速覆铜板是这一轮 PCB 行情唯一的主线，业绩兑现度高，但股价已把 2027 年的乐观预期打进去一半，选股从此「买赛道」转向「买兑现」。</div>
+  <div class="verdict">
+    <div class="vc hot">
+      <h4>首选组合（3 只）</h4>
+      <div class="big">生益科技 - 沪电股份 - 生益电子</div>
+      <div class="desc">上游高速 CCL 与 AI 服务器 PCB 双龙头，26H1 净利增速分别为 +130% / +74% / +109%，且 PEG 均低于 0.6，估值尚未透支。</div>
+    </div>
+    <div class="vc gold">
+      <h4>弹性进攻（3 只）</h4>
+      <div class="big">广合科技 - 鼎泰高科 - 大族数控</div>
+      <div class="desc">细分环节强卡位，业绩弹性最大。但鼎泰 PB 已达 42x、PE 138x，明显透支，需等待回调或业绩二次确认。</div>
+    </div>
+    <div class="vc">
+      <h4>稳健配置（2 只）</h4>
+      <div class="big">深南电路 - 东山精密</div>
+      <div class="desc">综合 PCB 大厂，载板国产化与果链修复提供安全垫，深南业绩加速、东山则需消化高估值。</div>
+    </div>
+    <div class="vc cool">
+      <h4>建议回避（3 只）</h4>
+      <div class="big">鹏鼎控股 - 景旺电子 - 兴森科技</div>
+      <div class="desc">26H1 营收增速个位数或净利负增长，ROE 低于 5%，却在 AI 叙事下享受 45x-300x PE，基本面与估值严重背离。</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>二、筛选漏斗与评分框架 <span class="en">METHODOLOGY</span></h2>
+  <div class="lead">板块概念成分 100 只里混入了大量「沾边」标的（铝、玻纤、铜箔、激光设备、甚至 AI 芯片公司），必须先做纯度清洗。</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>步骤</th><th style="text-align:left">筛选条件</th><th style="text-align:right">剩余</th></tr></thead>
+      <tbody>
+        <tr><td>Step 0</td><td style="text-align:left">通达信「PCB 印制电路板」概念成分</td><td class="num">100</td></tr>
+        <tr><td>Step 1</td><td style="text-align:left">剥离非 PCB 主业：铝 / 玻纤 / 铜箔 / 光纤 / 锂电设备 / AI 芯片等泛化上游标的（中国铝业、中国巨石、铜陵有色、中天科技、先导智能、燧原科技等约 55 只）</td><td class="num">45</td></tr>
+        <tr><td>Step 2</td><td style="text-align:left">保留 PCB 制造、覆铜板 CCL、关键耗材（钻针 / 电子布 / 铜箔）、PCB 专用设备四大环节</td><td class="num">30</td></tr>
+        <tr><td>Step 3</td><td style="text-align:left">总市值 &ge; 350 亿元（保证流动性与机构可参与度）</td><td class="num">18</td></tr>
+        <tr><td>Step 4</td><td style="text-align:left">四维 100 分制打分，按总分分层输出配置建议</td><td class="num">18</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>四维评分模型（各 25 分，合计 100 分）</h3>
+  <div class="card">
+    <ul class="plain">
+      <li><b>成长性（25 分）</b>：以 2026H1 营收 / 归母净利同比增速为主，兼顾趋势是否加速（对比 2025 全年与 2026Q1），惩罚「一次性低基数」造成的失真高增。</li>
+      <li><b>盈利质量（25 分）</b>：ROE（加权）为核心，叠加净利增速是否持续快于营收增速（经营杠杆 / 毛利率扩张），以及四个报告期的稳定性。</li>
+      <li><b>估值性价比（25 分）</b>：PE(TTM) 相对 26H1 净利增速的 PEG 为主，PB 交叉验证，对 PB &gt; 20x 施加惩罚。</li>
+      <li><b>产业卡位（25 分）</b>：定性打分——在 AI 服务器 / 800G 交换机 / 高阶 HDI / 高速 CCL 供应链中的位置、客户结构、技术壁垒与国产替代空间。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>三、产业链利润传导路径 <span class="en">VALUE CHAIN</span></h2>
+  <div class="lead">本轮景气的核心特征是：<b>瓶颈环节先涨价、先扩利润，且利润向上游材料端集中度更高</b>。理解这一点是选股的前提。</div>
+  <div class="chain">
+    <svg viewBox="0 0 1100 330" style="width:100%;height:auto">
+      <defs>
+        <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L7,3 z" fill="#12457a"/>
+        </marker>
+      </defs>
+      <text x="14" y="60" font-size="12" fill="#7a8394" font-weight="600">上游材料</text>
+      <text x="14" y="152" font-size="12" fill="#7a8394" font-weight="600">中游板材</text>
+      <text x="14" y="244" font-size="12" fill="#7a8394" font-weight="600">下游制造</text>
+
+      <rect x="112" y="34" width="196" height="52" rx="6" fill="#eaf2fb" stroke="#c3dbf2"/>
+      <text x="210" y="56" font-size="13.5" fill="#12457a" font-weight="700" text-anchor="middle">电子布 / 玻纤</text>
+      <text x="210" y="74" font-size="11.5" fill="#3d4654" text-anchor="middle">宏和科技 - 中国巨石 - 国际复材</text>
+
+      <rect x="334" y="34" width="196" height="52" rx="6" fill="#eaf2fb" stroke="#c3dbf2"/>
+      <text x="432" y="56" font-size="13.5" fill="#12457a" font-weight="700" text-anchor="middle">铜箔 / 树脂</text>
+      <text x="432" y="74" font-size="11.5" fill="#3d4654" text-anchor="middle">铜冠铜箔 - 德福科技 - 东材科技</text>
+
+      <rect x="556" y="34" width="196" height="52" rx="6" fill="#eaf2fb" stroke="#c3dbf2"/>
+      <text x="654" y="56" font-size="13.5" fill="#12457a" font-weight="700" text-anchor="middle">钻针耗材</text>
+      <text x="654" y="74" font-size="11.5" fill="#3d4654" text-anchor="middle">鼎泰高科（全球龙头）</text>
+
+      <rect x="778" y="34" width="222" height="52" rx="6" fill="#eaf2fb" stroke="#c3dbf2"/>
+      <text x="889" y="56" font-size="13.5" fill="#12457a" font-weight="700" text-anchor="middle">专用设备</text>
+      <text x="889" y="74" font-size="11.5" fill="#3d4654" text-anchor="middle">大族数控 - 芯碁微装</text>
+
+      <path d="M210,86 L210,112" stroke="#12457a" stroke-width="1.4" marker-end="url(#ar)"/>
+      <path d="M432,86 L432,112" stroke="#12457a" stroke-width="1.4" marker-end="url(#ar)"/>
+
+      <rect x="112" y="120" width="418" height="72" rx="6" fill="#fdf6e6" stroke="#e8d5a8"/>
+      <text x="321" y="145" font-size="14" fill="#8a6414" font-weight="700" text-anchor="middle">覆铜板 CCL（本轮最大瓶颈）</text>
+      <text x="321" y="164" font-size="11.5" fill="#3d4654" text-anchor="middle">生益科技 - 南亚新材 - 金安国纪</text>
+      <text x="321" y="181" font-size="11" fill="#a8801a" text-anchor="middle">M8 / Ultra-low loss 高速板材，决定 AI 服务器信号完整性</text>
+
+      <rect x="556" y="120" width="444" height="72" rx="6" fill="#fdf6e6" stroke="#e8d5a8"/>
+      <text x="778" y="145" font-size="14" fill="#8a6414" font-weight="700" text-anchor="middle">半固化片 Prepreg</text>
+      <text x="778" y="164" font-size="11.5" fill="#3d4654" text-anchor="middle">随 CCL 同步涨价，弹性略弱于成品板</text>
+      <text x="778" y="181" font-size="11" fill="#a8801a" text-anchor="middle">涨价传导顺序：电子布 → CCL → PCB</text>
+
+      <path d="M321,192 L321,214" stroke="#12457a" stroke-width="1.4" marker-end="url(#ar)"/>
+      <path d="M778,192 L778,214" stroke="#12457a" stroke-width="1.4" marker-end="url(#ar)"/>
+
+      <rect x="112" y="222" width="300" height="72" rx="6" fill="#fdecea" stroke="#f2cdc7"/>
+      <text x="262" y="246" font-size="14" fill="#a02a20" font-weight="700" text-anchor="middle">高多层板 / 服务器板</text>
+      <text x="262" y="265" font-size="11.5" fill="#3d4654" text-anchor="middle">沪电股份 - 广合科技 - 生益电子</text>
+      <text x="262" y="282" font-size="11" fill="#cf2f26" text-anchor="middle">AI 服务器 / 800G 交换机核心</text>
+
+      <rect x="436" y="222" width="278" height="72" rx="6" fill="#fdecea" stroke="#f2cdc7"/>
+      <text x="575" y="246" font-size="14" fill="#a02a20" font-weight="700" text-anchor="middle">高阶 HDI</text>
+      <text x="575" y="265" font-size="11.5" fill="#3d4654" text-anchor="middle">胜宏科技 - 东山精密 - 红板科技</text>
+      <text x="575" y="282" font-size="11" fill="#cf2f26" text-anchor="middle">GPU 加速卡载板 / SLP</text>
+
+      <rect x="738" y="222" width="262" height="72" rx="6" fill="#fdecea" stroke="#f2cdc7"/>
+      <text x="869" y="246" font-size="14" fill="#a02a20" font-weight="700" text-anchor="middle">封装基板 / 载板</text>
+      <text x="869" y="265" font-size="11.5" fill="#3d4654" text-anchor="middle">深南电路 - 兴森科技</text>
+      <text x="869" y="282" font-size="11" fill="#cf2f26" text-anchor="middle">国产替代空间最大、周期最长</text>
+
+      <path d="M262,294 L262,312" stroke="#12457a" stroke-width="1.4" marker-end="url(#ar)"/>
+      <text x="276" y="316" font-size="12" fill="#12457a" font-weight="600">→ 云厂商 GPU 集群 / AI 服务器整机</text>
+    </svg>
+  </div>
+  <div class="note" style="margin-top:14px">
+    <b>关键传导逻辑：</b>AI 服务器 PCB 层数从 12-16 层跃升至 20-30 层以上，单位面积 CCL 与钻针消耗量成倍增长，而高阶产能扩产周期长达 18-24 个月。
+    供给刚性 + 需求爆发 = 上游材料先涨价、毛利最先修复，因此本轮上游 CCL（生益科技）与耗材（鼎泰高科）的利润弹性显著大于下游 PCB 制造。
+    选股应优先<b>上游瓶颈 + 下游一线 AI 直供</b>，回避无 AI 敞口的消费类 PCB。
+  </div>
+</section>
+
+<section>
+  <h2>四、18 只核心标的评分总表 <span class="en">SCORECARD</span></h2>
+  <div class="lead">按综合得分降序。财务数据取 2026 年中报（2026-06-30），估值与价格为 2026-10-09 收盘口径。红条 = 首选，蓝条 = 可配置，灰条 = 观察或回避。</div>
+  <div class="tblwrap">
+    <table>
+      <thead>
+        <tr>
+          <th>公司</th><th>环节</th>
+          <th>收盘价</th><th>当日</th><th>总市值(亿)</th>
+          <th>PE(TTM)</th><th>PB</th><th>ROE(%)</th>
+          <th>26H1营收YoY</th><th>26H1净利YoY</th>
+          <th>PEG</th><th>总分</th><th>评级</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tier-a"><td><span class="nm">生益科技</span> <span class="code">600183</span></td><td style="text-align:left">CCL 龙头</td>
+          <td class="num">124.14</td><td class="num down">-5.85%</td><td class="num">3,015</td><td class="num">58.0</td><td class="num">16.3</td><td class="num">18.2</td>
+          <td class="num up">+50.0%</td><td class="num up">+130.4%</td><td class="num">0.44</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:97%;background:#cf2f26"></div></div><span style="color:#cf2f26">97</span></div></td><td><span class="chip buy">买入</span></td></tr>
+        <tr class="tier-a"><td><span class="nm">沪电股份</span> <span class="code">002463</span></td><td style="text-align:left">服务器 PCB</td>
+          <td class="num">112.29</td><td class="num down">-3.10%</td><td class="num">2,161</td><td class="num">42.7</td><td class="num">12.0</td><td class="num">17.4</td>
+          <td class="num up">+61.2%</td><td class="num up">+73.7%</td><td class="num">0.58</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:95%;background:#cf2f26"></div></div><span style="color:#cf2f26">95</span></div></td><td><span class="chip buy">买入</span></td></tr>
+        <tr class="tier-a"><td><span class="nm">生益电子</span> <span class="code">688183</span></td><td style="text-align:left">服务器 PCB</td>
+          <td class="num">101.20</td><td class="num down">-3.82%</td><td class="num">871</td><td class="num">42.4</td><td class="num">13.4</td><td class="num">18.0</td>
+          <td class="num up">+53.5%</td><td class="num up">+109.4%</td><td class="num">0.39</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:91%;background:#cf2f26"></div></div><span style="color:#cf2f26">91</span></div></td><td><span class="chip buy">买入</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">广合科技</span> <span class="code">001389</span></td><td style="text-align:left">服务器 PCB</td>
+          <td class="num">154.50</td><td class="num down">-7.49%</td><td class="num">730</td><td class="num">49.4</td><td class="num">9.2</td><td class="num">16.1</td>
+          <td class="num up">+81.0%</td><td class="num up">+94.4%</td><td class="num">0.52</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:88%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">88</span></div></td><td><span class="chip add">增持</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">鼎泰高科</span> <span class="code">301377</span></td><td style="text-align:left">钻针耗材</td>
+          <td class="num">309.50</td><td class="num down">-7.24%</td><td class="num">1,312</td><td class="num">137.7</td><td class="num">42.0</td><td class="num">23.3</td>
+          <td class="num up">+114.9%</td><td class="num up">+325.1%</td><td class="num">0.42</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:88%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">88</span></div></td><td><span class="chip hold">持有</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">深南电路</span> <span class="code">002916</span></td><td style="text-align:left">综合 / 载板</td>
+          <td class="num">347.25</td><td class="num down">-5.64%</td><td class="num">2,365</td><td class="num">56.8</td><td class="num">13.1</td><td class="num">12.4</td>
+          <td class="num up">+46.3%</td><td class="num up">+65.5%</td><td class="num">0.87</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:84%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">84</span></div></td><td><span class="chip add">增持</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">东山精密</span> <span class="code">002384</span></td><td style="text-align:left">HDI / 果链</td>
+          <td class="num">145.49</td><td class="num down">-3.43%</td><td class="num">2,665</td><td class="num">74.3</td><td class="num">10.9</td><td class="num">12.9</td>
+          <td class="num up">+63.9%</td><td class="num up">+290.1%</td><td class="num">0.26</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:81%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">81</span></div></td><td><span class="chip hold">持有</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">大族数控</span> <span class="code">301200</span></td><td style="text-align:left">PCB 设备</td>
+          <td class="num">212.39</td><td class="num down">-2.58%</td><td class="num">1,039</td><td class="num">68.4</td><td class="num">8.6</td><td class="num">9.7</td>
+          <td class="num up">+109.3%</td><td class="num up">+263.5%</td><td class="num">0.26</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:80%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">80</span></div></td><td><span class="chip add">增持</span></td></tr>
+        <tr class="tier-b"><td><span class="nm">南亚新材</span> <span class="code">688519</span></td><td style="text-align:left">CCL 二线</td>
+          <td class="num">257.60</td><td class="num down">-6.96%</td><td class="num">606</td><td class="num">98.6</td><td class="num">18.5</td><td class="num">15.2</td>
+          <td class="num up">+83.2%</td><td class="num up">+428.8%</td><td class="num">0.23</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:78%;background:#1e6bb8"></div></div><span style="color:#1e6bb8">78</span></div></td><td><span class="chip hold">持有</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">胜宏科技</span> <span class="code">300476</span></td><td style="text-align:left">高阶 HDI</td>
+          <td class="num">202.69</td><td class="num down">-1.72%</td><td class="num">1,992</td><td class="num">39.6</td><td class="num">5.3</td><td class="num">11.8</td>
+          <td class="num up">+28.8%</td><td class="num up">+33.3%</td><td class="num">1.19</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:71%;background:#7a8394"></div></div><span style="color:#7a8394">71</span></div></td><td><span class="chip add">增持</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">红板科技</span> <span class="code">603459</span></td><td style="text-align:left">HDI</td>
+          <td class="num">73.51</td><td class="num down">-2.13%</td><td class="num">554</td><td class="num">66.0</td><td class="num">12.3</td><td class="num">17.2</td>
+          <td class="num up">+22.5%</td><td class="num up">+124.7%</td><td class="num">0.53</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:69%;background:#7a8394"></div></div><span style="color:#7a8394">69</span></div></td><td><span class="chip hold">观察</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">宏和科技</span> <span class="code">603256</span></td><td style="text-align:left">电子布</td>
+          <td class="num">117.50</td><td class="num down">-5.73%</td><td class="num">1,063</td><td class="num">215.1</td><td class="num">36.0</td><td class="num">15.3</td>
+          <td class="num up">+90.4%</td><td class="num up">+334.3%</td><td class="num">0.64</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:63%;background:#7a8394"></div></div><span style="color:#7a8394">63</span></div></td><td><span class="chip hold">持有</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">金安国纪</span> <span class="code">002636</span></td><td style="text-align:left">CCL 中低端</td>
+          <td class="num">71.67</td><td class="num down">-10.00%</td><td class="num">522</td><td class="num">52.4</td><td class="num">12.2</td><td class="num">19.4</td>
+          <td class="num up">+65.7%</td><td class="num up">+986.7%</td><td class="num">n.a.</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:62%;background:#7a8394"></div></div><span style="color:#7a8394">62</span></div></td><td><span class="chip no">回避</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">兴森科技</span> <span class="code">002436</span></td><td style="text-align:left">载板 / PCB</td>
+          <td class="num">38.51</td><td class="num down">-4.70%</td><td class="num">655</td><td class="num">302.2</td><td class="num">11.6</td><td class="num">2.0</td>
+          <td class="num up">+17.9%</td><td class="num up">+283.3%</td><td class="num">1.07</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:31%;background:#a8b0bd"></div></div><span style="color:#a8b0bd">31</span></div></td><td><span class="chip no">回避</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">鹏鼎控股</span> <span class="code">002938</span></td><td style="text-align:left">消费 FPC</td>
+          <td class="num">74.65</td><td class="num down">-4.29%</td><td class="num">1,730</td><td class="num">45.7</td><td class="num">5.0</td><td class="num">3.7</td>
+          <td class="num up">+5.1%</td><td class="num up">+4.1%</td><td class="num">11.1</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:28%;background:#a8b0bd"></div></div><span style="color:#a8b0bd">28</span></div></td><td><span class="chip no">回避</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">景旺电子</span> <span class="code">603228</span></td><td style="text-align:left">综合 PCB</td>
+          <td class="num">96.98</td><td class="num down">-0.93%</td><td class="num">1,043</td><td class="num">88.2</td><td class="num">7.9</td><td class="num">4.6</td>
+          <td class="num up">+21.4%</td><td class="num down">-7.4%</td><td class="num">n.m.</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:26%;background:#a8b0bd"></div></div><span style="color:#a8b0bd">26</span></div></td><td><span class="chip no">回避</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">科翔股份</span> <span class="code">300903</span></td><td style="text-align:left">PCB</td>
+          <td class="num">88.14</td><td class="num down">-7.80%</td><td class="num">384</td><td class="num">亏损</td><td class="num">21.2</td><td class="num">-3.4</td>
+          <td class="num up">+17.9%</td><td class="num down">-7.0%</td><td class="num">n.m.</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:10%;background:#c3c9d4"></div></div><span style="color:#c3c9d4">10</span></div></td><td><span class="chip no">回避</span></td></tr>
+        <tr class="tier-c"><td><span class="nm">超颖电子</span> <span class="code">603175</span></td><td style="text-align:left">PCB</td>
+          <td class="num">99.76</td><td class="num down">-2.75%</td><td class="num">436</td><td class="num">亏损</td><td class="num">17.3</td><td class="num">-7.0</td>
+          <td class="num up">+33.3%</td><td class="num down">-220.4%</td><td class="num">n.m.</td>
+          <td><div class="sbar"><div class="track"><div class="fill" style="width:8%;background:#c3c9d4"></div></div><span style="color:#c3c9d4">8</span></div></td><td><span class="chip no">回避</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>五、量化对比 <span class="en">QUANTITATIVE COMPARISON</span></h2>
+
+  <div class="chart">
+    <div class="chart-t">综合评分排行</div>
+    <div class="chart-s">四维 100 分制 - 红 = 90 分以上首选 / 蓝 = 70-89 可配置 / 灰 = 70 分以下观察或回避</div>
+    <svg viewBox="0 0 760 470" style="width:100%;height:auto">
+      <g font-size="12.5" fill="#151922">
+        <text x="0" y="24" font-weight="600">生益科技</text>
+        <rect x="88" y="12" width="504" height="14" rx="3" fill="#cf2f26"/><text x="602" y="24" font-weight="700" fill="#cf2f26">97</text>
+        <text x="0" y="50" font-weight="600">沪电股份</text>
+        <rect x="88" y="38" width="494" height="14" rx="3" fill="#cf2f26"/><text x="602" y="50" font-weight="700" fill="#cf2f26">95</text>
+        <text x="0" y="76" font-weight="600">生益电子</text>
+        <rect x="88" y="64" width="473" height="14" rx="3" fill="#cf2f26"/><text x="602" y="76" font-weight="700" fill="#cf2f26">91</text>
+        <text x="0" y="102" font-weight="600">广合科技</text>
+        <rect x="88" y="90" width="458" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="102" font-weight="700" fill="#1e6bb8">88</text>
+        <text x="0" y="128" font-weight="600">鼎泰高科</text>
+        <rect x="88" y="116" width="458" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="128" font-weight="700" fill="#1e6bb8">88</text>
+        <text x="0" y="154" font-weight="600">深南电路</text>
+        <rect x="88" y="142" width="437" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="154" font-weight="700" fill="#1e6bb8">84</text>
+        <text x="0" y="180" font-weight="600">东山精密</text>
+        <rect x="88" y="168" width="421" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="180" font-weight="700" fill="#1e6bb8">81</text>
+        <text x="0" y="206" font-weight="600">大族数控</text>
+        <rect x="88" y="194" width="416" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="206" font-weight="700" fill="#1e6bb8">80</text>
+        <text x="0" y="232" font-weight="600">南亚新材</text>
+        <rect x="88" y="220" width="406" height="14" rx="3" fill="#1e6bb8"/><text x="602" y="232" font-weight="700" fill="#1e6bb8">78</text>
+        <text x="0" y="258" font-weight="600">胜宏科技</text>
+        <rect x="88" y="246" width="369" height="14" rx="3" fill="#7a8394"/><text x="602" y="258" font-weight="700" fill="#7a8394">71</text>
+        <text x="0" y="284" font-weight="600">红板科技</text>
+        <rect x="88" y="272" width="359" height="14" rx="3" fill="#7a8394"/><text x="602" y="284" font-weight="700" fill="#7a8394">69</text>
+        <text x="0" y="310" font-weight="600">宏和科技</text>
+        <rect x="88" y="298" width="328" height="14" rx="3" fill="#7a8394"/><text x="602" y="310" font-weight="700" fill="#7a8394">63</text>
+        <text x="0" y="336" font-weight="600">金安国纪</text>
+        <rect x="88" y="324" width="322" height="14" rx="3" fill="#7a8394"/><text x="602" y="336" font-weight="700" fill="#7a8394">62</text>
+        <text x="0" y="362" font-weight="600">兴森科技</text>
+        <rect x="88" y="350" width="161" height="14" rx="3" fill="#a8b0bd"/><text x="602" y="362" font-weight="700" fill="#a8b0bd">31</text>
+        <text x="0" y="388" font-weight="600">鹏鼎控股</text>
+        <rect x="88" y="376" width="146" height="14" rx="3" fill="#a8b0bd"/><text x="602" y="388" font-weight="700" fill="#a8b0bd">28</text>
+        <text x="0" y="414" font-weight="600">景旺电子</text>
+        <rect x="88" y="402" width="135" height="14" rx="3" fill="#a8b0bd"/><text x="602" y="414" font-weight="700" fill="#a8b0bd">26</text>
+        <text x="0" y="440" font-weight="600">科翔 / 超颖</text>
+        <rect x="88" y="428" width="52" height="14" rx="3" fill="#c3c9d4"/><text x="602" y="440" font-weight="700" fill="#c3c9d4">10 / 8</text>
+      </g>
+      <line x1="88" y1="6" x2="88" y2="450" stroke="#e4e7ec"/>
+    </svg>
+  </div>
+
+  <div class="grid2">
+    <div class="chart">
+      <div class="chart-t">2026H1 营收 vs 归母净利同比增速</div>
+      <div class="chart-s">净利增速持续快于营收增速 = 毛利率扩张 / 经营杠杆释放</div>
+      <svg viewBox="0 0 660 320" style="width:100%;height:auto">
+        <line x1="30" y1="250" x2="645" y2="250" stroke="#cfd5de"/>
+        <g font-size="10.5" fill="#7a8394">
+          <text x="4" y="253">0</text><text x="2" y="203">112</text><text x="2" y="153">225</text><text x="2" y="103">337</text><text x="2" y="53">450</text>
+        </g>
+        <g stroke="#eef0f4"><line x1="30" y1="200" x2="645" y2="200"/><line x1="30" y1="150" x2="645" y2="150"/><line x1="30" y1="100" x2="645" y2="100"/><line x1="30" y1="50" x2="645" y2="50"/></g>
+        <g>
+          <rect x="42" y="228" width="12" height="22" fill="#12457a" rx="1.5"/><rect x="56" y="224" width="12" height="26" fill="#cf2f26" rx="1.5"/>
+          <text x="55" y="266" font-size="10" fill="#3d4654" text-anchor="middle">沪电</text>
+        </g>
+        <g>
+          <rect x="103" y="232" width="12" height="18" fill="#12457a" rx="1.5"/><rect x="117" y="204" width="12" height="46" fill="#cf2f26" rx="1.5"/>
+          <text x="116" y="266" font-size="10" fill="#3d4654" text-anchor="middle">生益科技</text>
+        </g>
+        <g>
+          <rect x="164" y="233" width="12" height="17" fill="#12457a" rx="1.5"/><rect x="178" y="227" width="12" height="23" fill="#cf2f26" rx="1.5"/>
+          <text x="177" y="266" font-size="10" fill="#3d4654" text-anchor="middle">深南</text>
+        </g>
+        <g>
+          <rect x="225" y="231" width="12" height="19" fill="#12457a" rx="1.5"/><rect x="239" y="211" width="12" height="39" fill="#cf2f26" rx="1.5"/>
+          <text x="238" y="266" font-size="10" fill="#3d4654" text-anchor="middle">生益电子</text>
+        </g>
+        <g>
+          <rect x="286" y="221" width="12" height="29" fill="#12457a" rx="1.5"/><rect x="300" y="216" width="12" height="34" fill="#cf2f26" rx="1.5"/>
+          <text x="299" y="266" font-size="10" fill="#3d4654" text-anchor="middle">广合</text>
+        </g>
+        <g>
+          <rect x="347" y="209" width="12" height="41" fill="#12457a" rx="1.5"/><rect x="361" y="134" width="12" height="116" fill="#cf2f26" rx="1.5"/>
+          <text x="360" y="266" font-size="10" fill="#3d4654" text-anchor="middle">鼎泰</text>
+        </g>
+        <g>
+          <rect x="408" y="211" width="12" height="39" fill="#12457a" rx="1.5"/><rect x="422" y="156" width="12" height="94" fill="#cf2f26" rx="1.5"/>
+          <text x="421" y="266" font-size="10" fill="#3d4654" text-anchor="middle">大族数控</text>
+        </g>
+        <g>
+          <rect x="469" y="240" width="12" height="10" fill="#12457a" rx="1.5"/><rect x="483" y="238" width="12" height="12" fill="#cf2f26" rx="1.5"/>
+          <text x="482" y="266" font-size="10" fill="#3d4654" text-anchor="middle">胜宏</text>
+        </g>
+        <g>
+          <rect x="530" y="227" width="12" height="23" fill="#12457a" rx="1.5"/><rect x="544" y="147" width="12" height="103" fill="#cf2f26" rx="1.5"/>
+          <text x="543" y="266" font-size="10" fill="#3d4654" text-anchor="middle">东山</text>
+        </g>
+        <g>
+          <rect x="591" y="220" width="12" height="30" fill="#12457a" rx="1.5"/><rect x="605" y="98" width="12" height="152" fill="#cf2f26" rx="1.5"/>
+          <text x="604" y="266" font-size="10" fill="#3d4654" text-anchor="middle">南亚</text>
+        </g>
+        <rect x="470" y="292" width="11" height="11" fill="#12457a" rx="2"/><text x="487" y="302" font-size="11.5" fill="#3d4654">营收 YoY</text>
+        <rect x="556" y="292" width="11" height="11" fill="#cf2f26" rx="2"/><text x="573" y="302" font-size="11.5" fill="#3d4654">归母净利 YoY</text>
+      </svg>
+    </div>
+
+    <div class="chart">
+      <div class="chart-t">PE(TTM) 横向对比</div>
+      <div class="chart-s">虚线为 60x 参考线；柱越高静态估值越贵（亏损标的未纳入）</div>
+      <svg viewBox="0 0 660 320" style="width:100%;height:auto">
+        <line x1="30" y1="250" x2="645" y2="250" stroke="#cfd5de"/>
+        <line x1="30" y1="222" x2="645" y2="222" stroke="#b8860b" stroke-dasharray="5 4" stroke-width="1.2"/>
+        <text x="560" y="216" font-size="10.5" fill="#a8801a">PE 60x</text>
+        <g font-size="10.5" fill="#7a8394"><text x="4" y="253">0</text><text x="0" y="203">107</text><text x="0" y="153">213</text><text x="0" y="103">320</text></g>
+        <g stroke="#eef0f4"><line x1="30" y1="200" x2="645" y2="200"/><line x1="30" y1="150" x2="645" y2="150"/><line x1="30" y1="100" x2="645" y2="100"/></g>
+        <g font-size="9.5" fill="#3d4654" text-anchor="middle">
+          <rect x="36" y="230" width="22" height="20" fill="#0f8a55" rx="2"/><text x="47" y="266">沪电</text><text x="47" y="278" fill="#7a8394">42.7</text>
+          <rect x="74" y="237" width="22" height="13" fill="#0f8a55" rx="2"/><text x="85" y="266">广合</text><text x="85" y="278" fill="#7a8394">49.4</text>
+          <rect x="112" y="237" width="22" height="13" fill="#0f8a55" rx="2"/><text x="123" y="266">金安</text><text x="123" y="278" fill="#7a8394">52.4</text>
+          <rect x="150" y="223" width="22" height="27" fill="#a8801a" rx="2"/><text x="161" y="266">深南</text><text x="161" y="278" fill="#7a8394">56.8</text>
+          <rect x="188" y="223" width="22" height="27" fill="#a8801a" rx="2"/><text x="199" y="266">生益科</text><text x="199" y="278" fill="#7a8394">58.0</text>
+          <rect x="226" y="219" width="22" height="31" fill="#a8801a" rx="2"/><text x="237" y="266">红板</text><text x="237" y="278" fill="#7a8394">66.0</text>
+          <rect x="264" y="218" width="22" height="32" fill="#a8801a" rx="2"/><text x="275" y="266">大族</text><text x="275" y="278" fill="#7a8394">68.4</text>
+          <rect x="302" y="215" width="22" height="35" fill="#cf2f26" rx="2"/><text x="313" y="266">东山</text><text x="313" y="278" fill="#7a8394">74.3</text>
+          <rect x="340" y="209" width="22" height="41" fill="#cf2f26" rx="2"/><text x="351" y="266">景旺</text><text x="351" y="278" fill="#7a8394">88.2</text>
+          <rect x="378" y="204" width="22" height="46" fill="#cf2f26" rx="2"/><text x="389" y="266">南亚</text><text x="389" y="278" fill="#7a8394">98.6</text>
+          <rect x="416" y="186" width="22" height="64" fill="#cf2f26" rx="2"/><text x="427" y="266">鼎泰</text><text x="427" y="278" fill="#7a8394">137.7</text>
+          <rect x="454" y="149" width="22" height="101" fill="#cf2f26" rx="2"/><text x="465" y="266">宏和</text><text x="465" y="278" fill="#7a8394">215.1</text>
+          <rect x="492" y="108" width="22" height="142" fill="#cf2f26" rx="2"/><text x="503" y="266">兴森</text><text x="503" y="278" fill="#7a8394">302.2</text>
+        </g>
+        <text x="36" y="300" font-size="10.5" fill="#7a8394">注：胜宏科技 39.6x 为本组最低，但净利增速已降至 +33%，PEG 1.19 反而偏高</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="chart-t">成长 - 估值性价比散点（气泡 = 总市值）</div>
+    <div class="chart-s">横轴为 26H1 归母净利同比增速（对数刻度），纵轴为 PE(TTM)。理想位置 = 右下角：高增长 + 低估值</div>
+    <svg viewBox="0 0 720 380" style="width:100%;height:auto">
+      <line x1="70" y1="330" x2="700" y2="330" stroke="#cfd5de"/>
+      <line x1="70" y1="20" x2="70" y2="330" stroke="#cfd5de"/>
+      <g stroke="#eef0f4"><line x1="256" y1="20" x2="256" y2="330"/><line x1="443" y1="20" x2="443" y2="330"/><line x1="630" y1="20" x2="630" y2="330"/></g>
+      <g font-size="10.5" fill="#7a8394" text-anchor="middle">
+        <text x="70" y="347">1%</text><text x="256" y="347">10%</text><text x="443" y="347">100%</text><text x="630" y="347">1000%</text>
+        <text x="385" y="366" fill="#3d4654">26H1 归母净利同比增速（对数）</text>
+      </g>
+      <g font-size="10.5" fill="#7a8394" text-anchor="end">
+        <text x="62" y="334">0</text><text x="62" y="259">80</text><text x="62" y="184">160</text><text x="62" y="109">240</text><text x="62" y="34">320</text>
+      </g>
+      <text x="24" y="180" font-size="10.5" fill="#3d4654" transform="rotate(-90 24 180)">PE (TTM)</text>
+      <g stroke="#eef0f4"><line x1="70" y1="255" x2="700" y2="255"/><line x1="70" y1="180" x2="700" y2="180"/><line x1="70" y1="105" x2="700" y2="105"/><line x1="70" y1="30" x2="700" y2="30"/></g>
+      <rect x="470" y="255" width="230" height="75" fill="#e8f5ee" stroke="#bfe3d0" stroke-dasharray="4 3"/>
+      <text x="690" y="276" font-size="11" fill="#0f8a55" text-anchor="end" font-weight="600">性价比优选区</text>
+      <text x="690" y="292" font-size="10" fill="#3d8f68" text-anchor="end">高增长 + PE 低于 80x</text>
+      <g font-size="9.5" fill="#3d4654" text-anchor="middle">
+        <circle cx="465" cy="276" r="17" fill="#cf2f26" fill-opacity=".22" stroke="#cf2f26"/><text x="465" y="280" font-weight="600" fill="#a02a20">生益</text>
+        <circle cx="419" cy="290" r="16" fill="#cf2f26" fill-opacity=".22" stroke="#cf2f26"/><text x="419" y="294" font-weight="600" fill="#a02a20">沪电</text>
+        <circle cx="451" cy="290" r="10" fill="#cf2f26" fill-opacity=".22" stroke="#cf2f26"/><text x="451" y="294" font-weight="600" fill="#a02a20">益电</text>
+        <circle cx="439" cy="284" r="9" fill="#1e6bb8" fill-opacity=".2" stroke="#1e6bb8"/><text x="439" y="288" font-weight="600" fill="#12457a">广合</text>
+        <circle cx="409" cy="277" r="13" fill="#1e6bb8" fill-opacity=".2" stroke="#1e6bb8"/><text x="409" y="281" font-weight="600" fill="#12457a">深南</text>
+        <circle cx="354" cy="293" r="16" fill="#7a8394" fill-opacity=".18" stroke="#7a8394"/><text x="354" y="297" font-weight="600" fill="#4c545f">胜宏</text>
+        <circle cx="530" cy="260" r="12" fill="#7a8394" fill-opacity=".18" stroke="#7a8394"/><text x="530" y="264" font-weight="600" fill="#4c545f">东山</text>
+        <circle cx="522" cy="266" r="10" fill="#1e6bb8" fill-opacity=".2" stroke="#1e6bb8"/><text x="522" y="270" font-weight="600" fill="#12457a">大族</text>
+        <circle cx="539" cy="201" r="12" fill="#a8801a" fill-opacity=".2" stroke="#a8801a"/><text x="539" y="205" font-weight="600" fill="#8a6414">鼎泰</text>
+        <circle cx="541" cy="128" r="11" fill="#cf2f26" fill-opacity=".15" stroke="#cf2f26"/><text x="541" y="132" font-weight="600" fill="#a02a20">宏和</text>
+        <circle cx="561" cy="238" r="9" fill="#a8801a" fill-opacity=".2" stroke="#a8801a"/><text x="561" y="242" font-weight="600" fill="#8a6414">南亚</text>
+        <circle cx="461" cy="268" r="8" fill="#1e6bb8" fill-opacity=".2" stroke="#1e6bb8"/><text x="461" y="272" font-weight="600" fill="#12457a">红板</text>
+        <circle cx="629" cy="281" r="8" fill="#c3c9d4" fill-opacity=".3" stroke="#c3c9d4"/><text x="629" y="285" font-weight="600" fill="#7a8394">金安</text>
+        <circle cx="184" cy="287" r="14" fill="#c3c9d4" fill-opacity=".3" stroke="#c3c9d4"/><text x="184" y="291" font-weight="600" fill="#7a8394">鹏鼎</text>
+        <circle cx="70" cy="247" r="11" fill="#c3c9d4" fill-opacity=".3" stroke="#c3c9d4"/><text x="84" y="251" font-weight="600" fill="#7a8394">景旺</text>
+        <circle cx="528" cy="47" r="10" fill="#c3c9d4" fill-opacity=".3" stroke="#c3c9d4"/><text x="528" y="51" font-weight="600" fill="#7a8394">兴森</text>
+      </g>
+    </svg>
+    <div class="note blue" style="margin-top:12px">
+      <b>读图要点：</b>落入右下绿区的生益科技、沪电股份、生益电子、广合科技、红板科技、深南电路属于「高增长 + 估值未透支」组合；
+      左上方的宏和科技、兴森科技属「极高估值 + 低质量」；鼎泰高科虽位于高增长区，但 137.7x PE 与 42x PB 已明显透支，性价比不及同等增速的生益科技。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>六、Top 8 标的深度卡片 <span class="en">STOCK NOTES</span></h2>
+  <div class="lead">目标价为基于「2027E EPS × 目标 PE」的自下而上测算，代表本报告观点而非卖方一致预期。</div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">1</span><span class="n">生益科技</span><span class="c">600183 - 覆铜板全球前三</span></div>
+      <div class="r"><div>评分<b>97</b></div><div>评级<b style="color:#cf2f26">买入</b></div><div>目标价<b>155-172</b></div><div>空间<b style="color:#cf2f26">+31%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>124.14</b></div><div><span>PE(TTM)</span><b>58.0x</b></div><div><span>ROE</span><b>18.2%</b></div>
+        <div><span>26H1 营收</span><b class="up">+50.0%</b></div><div><span>26H1 净利</span><b class="up">+130.4%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>本轮 PCB 景气的最大瓶颈环节。AI 服务器 PCB 层数翻倍推动 M8 级超低损耗 CCL 需求爆发，高端产能供不应求已持续提价。</li>
+          <li>利润弹性最纯粹：26H1 净利增速（+130%）远快于营收（+50%），毛利率逐季扩张，经营杠杆充分释放。</li>
+          <li>增长斜率仍在<b>加速</b>——25FY 净利 +92% → 26Q1 +105% → 26H1 +130%，而非一次性脉冲。</li>
+          <li>ROE 18.2% 在全部 18 只标的中排名第三，PB 16.3x 对应该 ROE 水平尚属合理。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>PB 16.3x 属样本中较高水平，若 CCL 提价节奏放缓，估值回撤空间大。</li>
+          <li>铜价、树脂等原材料波动可能侵蚀提价带来的毛利增量。</li>
+          <li>2027 年行业新增产能集中释放，是本轮周期最需跟踪的变量。</li>
+          <li>估值测算：TTM EPS 2.14 元，假设 26-27 年累计增长 1.9 倍至 2027E EPS 4.06 元，给予 40x 目标 PE 得 162 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">2</span><span class="n">沪电股份</span><span class="c">002463 - AI 服务器 PCB 一线</span></div>
+      <div class="r"><div>评分<b>95</b></div><div>评级<b style="color:#cf2f26">买入</b></div><div>目标价<b>158-178</b></div><div>空间<b style="color:#cf2f26">+48%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>112.29</b></div><div><span>PE(TTM)</span><b>42.7x</b></div><div><span>ROE</span><b>17.4%</b></div>
+        <div><span>26H1 营收</span><b class="up">+61.2%</b></div><div><span>26H1 净利</span><b class="up">+73.7%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>全部高增速标的中<b>质量最稳</b>的一只：25H1 至 26H1 连续五个报告期营收增速维持 49%-61%、净利增速 47%-74%，无低基数失真。</li>
+          <li>全球 AI 服务器与 800G 交换机 PCB 核心供应商，客户结构优质，是算力链确定性最高的标的之一。</li>
+          <li>PEG 0.58，在首选三只里估值最便宜；TTM PE 42.7x 仅略高于胜宏科技（39.6x），但增速是后者两倍。</li>
+          <li>ROE 17.4% 且仍在提升，PB 12.0x 相对盈利能力可接受。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>海外收入占比高，汇率与关税政策变化是尾部风险。</li>
+          <li>作为市场共识度最高的 AI PCB 标的，一旦季度增速跌破 50%，杀估值速度会很快。</li>
+          <li>估值测算：TTM EPS 2.63 元，假设累计增长 2.0 倍至 2027E EPS 5.26 元，给予 30-34x 目标 PE 得 158-179 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">3</span><span class="n">生益电子</span><span class="c">688183 - AI 服务器 PCB</span></div>
+      <div class="r"><div>评分<b>91</b></div><div>评级<b style="color:#cf2f26">买入</b></div><div>目标价<b>143-162</b></div><div>空间<b style="color:#cf2f26">+51%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>101.20</b></div><div><span>PE(TTM)</span><b>42.4x</b></div><div><span>ROE</span><b>18.0%</b></div>
+        <div><span>26H1 营收</span><b class="up">+53.5%</b></div><div><span>26H1 净利</span><b class="up">+109.4%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>全样本中<b>估值性价比最好的组合</b>：PE 42.4x 处于最低档，同时净利仍维持 +109% 同比增长，PEG 仅 0.39。</li>
+          <li>ROE 18.0%，高于沪电股份，盈利质量排进前三。</li>
+          <li>与母公司生益科技形成「CCL + PCB」垂直协同，原材料保供与成本端具备结构性优势。</li>
+          <li>市值 871 亿元，远小于沪电 / 深南，业绩弹性对股价的撬动倍数更高。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>26H1 增速（营收 +53% / 净利 +109%）已从 25Q3 的 +115% 明显回落，需观察是否二次加速。</li>
+          <li>科创板流动性折价，机构持仓集中度偏高。</li>
+          <li>估值测算：TTM EPS 2.39 元，假设累计增长 2.0 倍至 2027E EPS 4.77 元，给予 30-34x 目标 PE 得 143-162 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">4</span><span class="n">广合科技</span><span class="c">001389 - 服务器 PCB 细分强</span></div>
+      <div class="r"><div>评分<b>88</b></div><div>评级<b style="color:#1e6bb8">增持</b></div><div>目标价<b>170-195</b></div><div>空间<b style="color:#cf2f26">+16%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>154.50</b></div><div><span>PE(TTM)</span><b>49.4x</b></div><div><span>ROE</span><b>16.1%</b></div>
+        <div><span>26H1 营收</span><b class="up">+81.0%</b></div><div><span>26H1 净利</span><b class="up">+94.4%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li><b>加速型成长</b>样本：营收增速 25FY +47% → 26Q1 +71% → 26H1 +81%，净利 +50% → +63% → +94%，斜率持续上行。</li>
+          <li>服务器 PCB 细分赛道强卡位，客户订单饱满。</li>
+          <li>ROE 16.1%，PB 9.2x 在同业中偏低，估值未过度透支。</li>
+          <li>PEG 0.52，性价比位于首选区间。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>客户集中度高于沪电，单一大客户订单波动对业绩影响放大。</li>
+          <li>总市值 730 亿元，属中等体量，波动率高于龙头。</li>
+          <li>估值测算：TTM EPS 3.13 元，假设累计增长 2.0 倍至 2027E EPS 6.26 元，给予 27-31x 目标 PE 得 169-194 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">5</span><span class="n">鼎泰高科</span><span class="c">301377 - PCB 钻针全球龙头</span></div>
+      <div class="r"><div>评分<b>88</b></div><div>评级<b style="color:#a8801a">持有</b></div><div>目标价<b>245-290</b></div><div>空间<b style="color:#0f8a55">-12%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>309.50</b></div><div><span>PE(TTM)</span><b>137.7x</b></div><div><span>ROE</span><b>23.3%</b></div>
+        <div><span>26H1 营收</span><b class="up">+114.9%</b></div><div><span>26H1 净利</span><b class="up">+325.1%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li><b>基本面维度是全场最强</b>：ROE 23.3% 排名第一，营收、净利双双三位数增长且加速。</li>
+          <li>PCB 钻针全球龙头，直接受益层数提升——板层数每增加一倍，钻孔数量与钻针消耗非线性增加，是本轮最纯粹的「量增」标的。</li>
+          <li>耗材属性决定收入黏性与现金流质量优于设备商。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值 - 核心矛盾</h5><ul>
+          <li><b>估值已充分透支</b>：PE 137.7x、PB 42.0x，两项均为全样本最高。PB 42x 意味着市场已计入未来三年以上高增长。</li>
+          <li>即便假设累计增长 2.2 倍至 2027E EPS 4.94 元，给 50-59x 乐观目标 PE，合理区间 245-290 元，<b>仍低于现价</b>。</li>
+          <li>PEG 表面仅 0.42，但 +325% 增速建立在低基数与提价初期，不可持续。</li>
+          <li>结论：基本面配「买入」，估值配「回避」，综合给<b>持有</b>——等待回调至 250 元以下或 26 年报二次确认。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">6</span><span class="n">深南电路</span><span class="c">002916 - 综合 PCB + 封装基板</span></div>
+      <div class="r"><div>评分<b>84</b></div><div>评级<b style="color:#1e6bb8">增持</b></div><div>目标价<b>420-465</b></div><div>空间<b style="color:#cf2f26">+27%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>347.25</b></div><div><span>PE(TTM)</span><b>56.8x</b></div><div><span>ROE</span><b>12.4%</b></div>
+        <div><span>26H1 营收</span><b class="up">+46.3%</b></div><div><span>26H1 净利</span><b class="up">+65.5%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>国内 PCB 综合龙头，业务横跨通信 / 服务器 PCB、封装基板与电子装联，抗单一周期能力强。</li>
+          <li>封装基板是国产替代空间最大的环节，长期逻辑独立于 AI 短周期。</li>
+          <li>营收增速自 25FY +32% 加速至 26H1 +46%，趋势向好；净利连续四期维持 56%-74% 高增。</li>
+          <li>2,365 亿元市值提供充足流动性，适合作为板块底仓。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>ROE 12.4% 低于首选三只，资产周转效率偏弱。</li>
+          <li>封装基板业务前期投入大，短期拖累整体利润率。</li>
+          <li>估值测算：TTM EPS 6.12 元，假设累计增长 1.8 倍至 2027E EPS 11.0 元，给予 38-42x 目标 PE 得 418-462 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">7</span><span class="n">东山精密</span><span class="c">002384 - HDI + 果链修复</span></div>
+      <div class="r"><div>评分<b>81</b></div><div>评级<b style="color:#a8801a">持有</b></div><div>目标价<b>125-142</b></div><div>空间<b style="color:#0f8a55">-9%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>145.49</b></div><div><span>PE(TTM)</span><b>74.3x</b></div><div><span>ROE</span><b>12.9%</b></div>
+        <div><span>26H1 营收</span><b class="up">+63.9%</b></div><div><span>26H1 净利</span><b class="up">+290.1%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>营收增速从 25FY +9% 跃升至 26H1 +64%，是样本中增速跃升幅度最大的标的，转型成效显著。</li>
+          <li>消费电子 FPC / HDI 基本盘 + 服务器板新增长极双轮驱动。</li>
+          <li>净利 +290% 主要由极低基数贡献，2027 年基数正常化后增速将大幅回落。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>PE 74.3x 属次高估值，但 ROE 仅 12.9%，盈利质量与估值不匹配。</li>
+          <li>业绩波动性极大（25Q3 +15% → 26Q1 +143% → 26H1 +290%），可预测性差。</li>
+          <li>估值测算：TTM EPS 1.96 元，即便假设累计增长 2.2 倍至 2027E EPS 4.31 元，给 29-33x 得 125-142 元，<b>仍低于现价</b>。</li>
+          <li>结论：等待回调至 125 元以下再介入。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stock">
+    <div class="stock-hd">
+      <div class="l"><span class="rank">8</span><span class="n">大族数控</span><span class="c">301200 - PCB 钻孔设备</span></div>
+      <div class="r"><div>评分<b>80</b></div><div>评级<b style="color:#1e6bb8">增持</b></div><div>目标价<b>235-265</b></div><div>空间<b style="color:#cf2f26">+17%</b></div></div>
+    </div>
+    <div class="stock-bd">
+      <div class="kv">
+        <div><span>收盘价</span><b>212.39</b></div><div><span>PE(TTM)</span><b>68.4x</b></div><div><span>ROE</span><b>9.7%</b></div>
+        <div><span>26H1 营收</span><b class="up">+109.3%</b></div><div><span>26H1 净利</span><b class="up">+263.5%</b></div>
+      </div>
+      <div class="thesis">
+        <div class="box"><h5>投资逻辑</h5><ul>
+          <li>PCB 钻孔设备国内龙头，直接受益全行业扩产周期，是「卖铲人」逻辑。设备订单先行于 PCB 厂产能落地，业绩兑现确定性高。</li>
+          <li>营收增速连续四期超 50% 且在加速（+52% → +73% → +104% → +109%），订单能见度高。</li>
+          <li>PB 8.6x 在高增长标的中较低，估值结构好于鼎泰高科。</li>
+        </ul></div>
+        <div class="box risk"><h5>风险与估值</h5><ul>
+          <li>ROE 仅 9.7%，显著低于 CCL 与服务器 PCB 同业，是本组盈利质量最弱一环。</li>
+          <li>设备收入确认受下游扩产节奏影响，若 2027 年行业扩产放缓，订单可能断档。</li>
+          <li>估值测算：TTM EPS 3.10 元，假设累计增长 2.0 倍至 2027E EPS 6.21 元，给予 38-43x 目标 PE 得 236-267 元。</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>七、配置建议 <span class="en">PORTFOLIO CONSTRUCTION</span></h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>梯队</th><th style="text-align:left">标的</th><th style="text-align:right">建议权重</th><th style="text-align:left">角色定位</th></tr></thead>
+      <tbody>
+        <tr><td>核心底仓</td><td style="text-align:left"><span class="nm">生益科技</span> / <span class="nm">沪电股份</span></td><td class="num">40-50%</td><td style="text-align:left">确定性主线，穿越短期波动，回撤时优先加仓</td></tr>
+        <tr><td>进攻配置</td><td style="text-align:left"><span class="nm">生益电子</span> / <span class="nm">广合科技</span></td><td class="num">25-30%</td><td style="text-align:left">估值便宜 + 增速最快，向上弹性来源</td></tr>
+        <tr><td>卫星仓位</td><td style="text-align:left"><span class="nm">深南电路</span> / <span class="nm">大族数控</span></td><td class="num">15-20%</td><td style="text-align:left">载板国产化与设备先行逻辑，分散单一供应链风险</td></tr>
+        <tr><td>观察等待</td><td style="text-align:left"><span class="nm">鼎泰高科</span> / <span class="nm">东山精密</span> / <span class="nm">南亚新材</span></td><td class="num">0%</td><td style="text-align:left">基本面认可但估值透支，回调后触发建仓</td></tr>
+        <tr><td>明确回避</td><td style="text-align:left"><span class="nm">鹏鼎控股</span> / <span class="nm">景旺电子</span> / <span class="nm">兴森科技</span> / <span class="nm">宏和科技</span> / <span class="nm">金安国纪</span> / <span class="nm">超颖电子</span> / <span class="nm">科翔股份</span></td><td class="num">0%</td><td style="text-align:left">无 AI 敞口或盈利质量为负，估值与基本面背离</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="note blue">
+      <b>建仓触发条件</b><br>
+      生益科技跌破 110 元（对应 2027E PE 约 27x）→ 加至满仓<br>
+      沪电股份跌破 100 元 → 加仓<br>
+      鼎泰高科回调至 250 元以下 → 启动观察仓<br>
+      生益电子 26 年报若营收增速重回 +70% 以上 → 上调至核心梯队
+    </div>
+    <div class="note">
+      <b>减仓触发条件</b><br>
+      任一核心标的季度净利增速跌破 +30% 且毛利率环比下滑 → 减半<br>
+      CCL 环节出现头部厂商主动降价 → 全板块仓位降至 50% 以下<br>
+      云厂商资本开支指引下调 → 全板块清仓至观察位<br>
+      2027 下半年新增产能集中投放 → 提前一个季度减仓
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>八、风险提示 <span class="en">RISKS</span></h2>
+  <div class="card">
+    <ul class="plain">
+      <li><b>估值系统性偏高</b>：样本中 PE 中位数约 60x、PB 中位数约 12x，板块整体已计入较乐观的 2027 年预期。任何低于预期的信号都可能引发估值中枢下移。</li>
+      <li><b>低基数失真</b>：金安国纪（+987%）、宏和科技（+334%）、东山精密（+290%）、兴森科技（+283%）的高增长含大量低基数成分，简单按 PEG 排序会严重误导。本报告已在「盈利质量」维度施加惩罚。</li>
+      <li><b>2027 年供给冲击</b>：CCL 与高阶 PCB 产能自 2026 年起集中扩产，18-24 个月的投产周期意味着 2027 下半年起供给压力显著上升，届时提价逻辑可能逆转。</li>
+      <li><b>AI 资本开支节奏</b>：本轮景气的最终驱动力是海外云厂商 GPU 集群资本开支。若其指引下调，整条产业链的估值锚将同步重置。</li>
+      <li><b>数据口径</b>：财务数据取自通达信 2026 年中报口径（2026-06-30），估值与价格为 2026-10-09 收盘。2026 年三季报尚未披露，存在业绩与本文测算不符的可能。</li>
+      <li><b>目标价方法局限</b>：所有目标价采用「TTM EPS × 累计增长假设 × 目标 PE」的简化框架，增长假设基于中报趋势外推，未做完整三表建模，仅作为相对排序参考，不应视为精确预测。</li>
+    </ul>
+  </div>
+</section>
+
+<div class="foot">
+  <b>PCB 板块核心标的投资价值筛选</b> | 数据基准日 2026-10-09 收盘 | 报告生成 2026-10-10<br>
+  数据来源：通达信行情与财务数据库。评级体系：买入（预期 12 个月超额收益 &gt; 25%）/ 增持（10%-25%）/ 持有（-10% 至 +10%）/ 回避（&lt; -10%）。<br>
+  本报告为基于公开数据的量化筛选与基本面研究，不构成任何投资建议。市场有风险，决策需谨慎。
+</div>
+
+</div>
+</body>
+</html>

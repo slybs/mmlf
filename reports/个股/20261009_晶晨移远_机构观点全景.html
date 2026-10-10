@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晶晨股份(688099) / 移远通信(603236) — ima 知识库 + 知识星球 机构观点全景汇总</title>
+<meta name="description" content="归集 ima 3 个知识库（晶晨 37 / 移远 26 篇研报）与知识星球 3 个社群观点并与自建模型对撞：20+ 家机构覆盖晶晨无一中性以下，分歧不在「好不好」而在「能好多久」。">
+<meta name="report-type" content="机构观点">
+<style>
+:root{
+  --ink:#1a1d21; --ink2:#3d434b; --ink3:#6b7280; --ink4:#9aa3ae;
+  --line:#e3e7ec; --line2:#eff2f6;
+  --bg:#ffffff; --bg2:#f7f9fb; --bg3:#fbfcfd;
+  --up:#c0392b; --down:#1e7a4f;
+  --accent:#1f5fa8; --accent2:#eaf1f9;
+  --warn:#b8860b; --warnbg:#fdf6e3;
+  --purple:#6b4c9a; --purplebg:#f2eefa;
+  --ok:#1e7a4f; --okbg:#eaf5ef;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  color:var(--ink); background:var(--bg2); line-height:1.75;
+  font-size:15px; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;background:var(--bg);padding:0 0 60px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06)}
+header{padding:34px 40px 26px;border-bottom:3px solid var(--ink);background:var(--bg)}
+.eyebrow{font-size:12px;letter-spacing:2.5px;color:var(--accent);font-weight:700;margin-bottom:10px}
+h1{font-size:27px;font-weight:800;letter-spacing:-.4px;line-height:1.3;margin-bottom:12px}
+.sub{font-size:14px;color:var(--ink3);line-height:1.7}
+.meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12px;padding:3px 10px;border-radius:3px;background:var(--bg2);
+  border:1px solid var(--line);color:var(--ink2)}
+main{padding:0 40px}
+section{padding:30px 0;border-bottom:1px solid var(--line2)}
+section:last-child{border-bottom:none}
+h2{font-size:20px;font-weight:800;margin-bottom:6px;letter-spacing:-.2px;
+  padding-left:12px;border-left:4px solid var(--accent)}
+.h2sub{font-size:13px;color:var(--ink3);margin:0 0 18px 16px}
+h3{font-size:16px;font-weight:700;margin:22px 0 10px;color:var(--ink)}
+h4{font-size:14px;font-weight:700;margin:16px 0 8px;color:var(--ink2)}
+p{margin-bottom:11px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:700}
+.up{color:var(--up);font-weight:700}
+.down{color:var(--down);font-weight:700}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+th{background:var(--bg2);text-align:left;padding:9px 11px;font-weight:700;
+  border-bottom:2px solid var(--line);color:var(--ink2);font-size:12.5px;white-space:nowrap}
+td{padding:9px 11px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tr:hover td{background:var(--bg3)}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.box{border-left:4px solid var(--accent);background:var(--accent2);padding:14px 18px;
+  margin:16px 0;border-radius:0 4px 4px 0}
+.box.warn{border-color:var(--warn);background:var(--warnbg)}
+.box.ok{border-color:var(--ok);background:var(--okbg)}
+.box.pur{border-color:var(--purple);background:var(--purplebg)}
+.box b{display:block;margin-bottom:5px;font-size:14px}
+.card{border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:14px 0;background:var(--bg)}
+.card .hd{font-weight:700;font-size:14.5px;margin-bottom:6px;display:flex;
+  justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.src{font-size:11.5px;color:var(--ink4);font-weight:400;white-space:nowrap}
+ul{margin:8px 0 12px 20px;color:var(--ink2)}
+li{margin-bottom:6px}
+.quote{font-size:13px;color:var(--ink3);border-left:2px solid var(--line);
+  padding-left:12px;margin:10px 0;font-style:normal}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kpi{border:1px solid var(--line);border-radius:5px;padding:13px 15px;background:var(--bg3)}
+.kpi .k{font-size:11.5px;color:var(--ink4);letter-spacing:.5px;margin-bottom:4px}
+.kpi .v{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
+.kpi .n{font-size:12px;color:var(--ink3);margin-top:3px}
+.pill{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:10px;
+  margin:2px 3px 2px 0;font-weight:600}
+.pill.b{background:#fdecea;color:var(--up)}
+.pill.h{background:#eef1f4;color:var(--ink3)}
+.pill.g{background:var(--okbg);color:var(--ok)}
+.pill.y{background:var(--warnbg);color:var(--warn)}
+.pill.p{background:var(--purplebg);color:var(--purple)}
+.disc{font-size:12.5px;color:var(--ink4);background:var(--bg2);border:1px dashed var(--line);
+  padding:14px 18px;border-radius:5px;margin-top:24px;line-height:1.8}
+.foot{padding:22px 40px;font-size:12px;color:var(--ink4);border-top:1px solid var(--line);
+  background:var(--bg3)}
+@media(max-width:720px){
+  header{padding:24px 20px 20px} main{padding:0 20px} .foot{padding:18px 20px}
+  h1{font-size:22px} .grid2{grid-template-columns:1fr}
+  table{font-size:12.5px} th,td{padding:7px 8px}
+}
+@media print{
+  body{background:#fff} .wrap{box-shadow:none;max-width:100%}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">EQUITY RESEARCH · SELL-SIDE &amp; COMMUNITY INTELLIGENCE</div>
+  <h1>晶晨股份（688099）／移远通信（603236）<br>ima 知识库 + 知识星球 机构观点全景</h1>
+  <div class="sub">对两只标的的卖方研报序列、电话会纪要、星球实时观点做系统性归集，并与本工作区已完成的首次覆盖模型逐项对撞。<br>目的不是罗列观点，而是找出<b>「我的模型与市场共识的分歧点到底在哪一层」</b>。</div>
+  <div class="meta">
+    <span class="tag">数据日期 2026-10-09</span>
+    <span class="tag">ima 3 个知识库</span>
+    <span class="tag">知识星球 3 个社群</span>
+    <span class="tag">晶晨 37+ 篇研报</span>
+    <span class="tag">移远 26+ 篇研报</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 0. 数据源 ============ -->
+<section>
+  <h2>零、数据来源与覆盖度</h2>
+  <div class="h2sub">先说清楚这批信息的来源和可信度分层，后面所有引用都按这个标准打折</div>
+
+  <table>
+    <thead><tr><th>来源</th><th>类型</th><th>命中量</th><th>可信度</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td><b>ima「AI读研报」库</b></td><td>券商 PDF 原件</td><td class="num">晶晨 37 篇 / 移远 26 篇</td><td><span class="pill g">最高</span></td><td>盈利预测、评级、目标价</td></tr>
+      <tr><td><b>ima「浑水投研」库</b></td><td>电话会纪要 / 调研</td><td class="num">晶晨 14 条 / 移远 8 条</td><td><span class="pill g">高</span></td><td>管理层口径、未公开细节</td></tr>
+      <tr><td><b>知识星球「短评&amp;信息」</b></td><td>卖方短评（当日）</td><td class="num">晶晨 16 条 / 移远 15 条</td><td><span class="pill y">中</span></td><td>最新催化、情绪温度</td></tr>
+      <tr><td><b>知识星球「小牛研报纪要」</b></td><td>研报摘要</td><td class="num">晶晨 20 条 / 移远 20 条</td><td><span class="pill y">中</span></td><td>历史脉络（多为 2025 年）</td></tr>
+      <tr><td><b>知识星球「浑水调研Plus」</b></td><td>调研要点</td><td class="num">晶晨 13 条 / 移远 8 条</td><td><span class="pill h">参考</span></td><td>多为 2021–2025 旧料</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <b>⚠️ 可信度分级原则</b>
+    券商 PDF 原件（有 SAC 执业编号、有完整三表预测）＞ 电话会纪要（管理层亲口，但未经审计）＞ 星球短评（卖方当日观点，常有夸张修辞）＞ 星球匿名转述（无署名、无公告，属路演传闻）。
+    <b>本文所有「至少翻倍」「35x PE」「1000 亿目标」类表述均出自最后一档，我一律标注并打折。</b>
+  </div>
+</section>
+
+<!-- ============ 1. 晶晨 ============ -->
+<section>
+  <h2>一、晶晨股份：20+ 家机构覆盖，无一给中性以下</h2>
+  <div class="h2sub">覆盖密度高本身是信息——分歧不在「好不好」，在「能好多久」</div>
+
+  <div class="grid2">
+    <div class="kpi"><div class="k">现价 / 市值</div><div class="v">¥99.71</div><div class="n">422.1 亿（4.2332 亿股）</div></div>
+    <div class="kpi"><div class="k">研报评级分布</div><div class="v">买入为主</div><div class="n">兴业/财通「增持」，国信「优于大市」，<b>无中性或以下</b></div></div>
+  </div>
+
+  <h3>1.1 主要机构与时间线（2026 年内）</h3>
+  <table>
+    <thead><tr><th>日期</th><th>机构 / 分析师</th><th>标题要点</th><th>评级</th></tr></thead>
+    <tbody>
+      <tr><td>2026-02-24</td><td>东吴证券</td><td>2026 年业绩增长指引超预期，重视低估值端侧 SoC 赛道龙头</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-04-26</td><td>华创证券</td><td>26Q1 营收创历史新高，通用 6nm 新品放量可期</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-04-28</td><td>兴业证券</td><td>26 年营收指引高增长，新品有望加速放量</td><td><span class="pill y">增持（首次）</span></td></tr>
+      <tr><td>2026-04-30</td><td>东吴证券</td><td><b>深度：重塑 TV 产业新格局，筑牢全域连接底座，构筑端侧全场景 SoC 核心生态平台</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-05-10</td><td>国海证券（胡剑）</td><td><b>首次覆盖：高端新品渐露头角，全面调价保障毛利率</b></td><td><span class="pill b">买入（首次）</span></td></tr>
+      <tr><td>2026-05-15</td><td>中邮证券</td><td>端侧 AI + 无线连接加速深化，万物智联（收盘价 111.83）</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-07-24</td><td>中泰电子（王芳）</td><td>Q2 创单季历史新高，利润环增 150%+，新品放量有望持续驱动</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-07-24</td><td>东吴（陈海进）</td><td>Q2 业绩超预期，<b>重视谷歌核心端侧链的价值潜力</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-16</td><td>国信证券</td><td>二季度收入利润历史新高，<b>预计三季度保持环增</b></td><td><span class="pill y">优于大市</span></td></tr>
+      <tr><td>2026-08-20</td><td>东吴证券</td><td>业绩符合预期，TV SoC 与端侧 AI 持续突破</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-21</td><td>华泰证券</td><td><b>电视 SoC 量价齐升驱动 2Q 业绩新高</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-09-29</td><td>长江证券（杨洋）</td><td>主力产品持续放量，二季度业绩同环比大幅增长</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-09-30</td><td>国海电子</td><td>26Q3 业绩有望持续亮眼，AI 端侧市场定位逐步清晰</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-10-08</td><td>星球（机构短评）</td><td><b>Q3 再创单季历史新高，业绩持续超预期</b></td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box">
+    <b>覆盖密度意味着什么</b>
+    20 家以上机构、全年 15+ 篇点评、无一给中性以下评级。这通常有正反两读：<b>正面是基本面共识度高、预期差小；反面是「没有人有动力说不好」</b>。尤其国海 5 月刚做首次覆盖就给「买入」，这类首覆报告的独立性需要打折。
+  </div>
+
+  <h3>1.2 卖方五大核心叙事（按被提及频次排序）</h3>
+
+  <div class="card">
+    <div class="hd">① 谷歌 Gemini 生态绑定 <span class="src">中泰 5/19、国海、东吴 7/24、星球 5/22</span></div>
+    <p>2026 谷歌 I/O 开发者大会官宣，晶晨成为 <b>Google Home「Gemini built-in」项目指定系统集成商</b>，是 Gemini 硬件生态指定芯片供应商，联合各大授权 ODM 推出原生适配产品。</p>
+    <div class="quote">中泰 5/19：「公司是谷歌 AIoT 产业链核心标的，合作数十年……有望核心受益。」</div>
+    <p><b>我的评价：</b>这是晶晨最硬的一条差异化叙事，且是<b>可证伪的公开事件</b>（I/O 大会官宣，非传闻）。但它决定的是 2027 年后的收入，不是 2026Q3 那个 25% 净利率。</p>
+  </div>
+
+  <div class="card">
+    <div class="hd">② 全线提价落地 <span class="src">2026Q1 电话会（4/29）、国海 5/10、星球 10/8</span></div>
+    <p>电话会原话：<b>「4 月开始全产品线全面涨价！」</b>。国海 5 月首覆标题直接写「全面调价保障毛利率」。10/8 短评确认「Q3 提价全面落地，带动毛利率及净利率显著提升，<b>26Q3 净利率 25%，yoy+13pct、qoq+7pct</b>」。</p>
+    <div class="box warn" style="margin:10px 0 0">
+      <b>这条对我的模型是关键修正</b>
+      我在首次覆盖里判断「晶晨靠提价传导，Q3 单季净利率 24.1%–25.1%」。卖方口径给出的 25%（yoy+13pct、qoq+7pct）与我的测算<b>完全吻合</b>，且明确了<b>涨价是主动、全产品线、Q3 才全面落地</b>。这比我原报告的表述更确定——但同时也更清楚地说明：<b>这是一次性台阶，不是可持续斜率。</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="hd">③ 份额：S 系列全球第一，T 系列冲 1/3 <span class="src">星球 10/8</span></div>
+    <p>S 系列出货量稳居全球第一；T 系列持续导入全球主流终端，<b>预计 26 年 T 系列出货量份额有望达全球市场 1/3</b>。高端 T 系列在多家头部终端品牌客户导入加速。</p>
+  </div>
+
+  <div class="card">
+    <div class="hd">④ 6nm 边缘 AI SoC 新品矩阵 <span class="src">国海 9/30、华创 4/26</span></div>
+    <p>9 月 12 日发布两款 6nm 边缘 AI SoC —— <b>C305X2 与 A123X</b>，应用于电池供电 IPC、工业机器视觉、家用智能摄像，已开放样片，<b>预计 26Q4 量产</b>。<br>
+    6nm 高算力端侧 AI 平台 <b>A311Y3</b> 于 4 月底回片，已<b>立项数十个项目</b>，覆盖 AI NAS、算力卡、机器人、工控、智能座舱、商显，对接上百家头部客户。</p>
+    <p><b>我的评价：</b>这是卖方给 2027–2028 增长的主要依据。但请注意时点——<b>C305X2/A123X 是 26Q4 才量产，A311Y3 还在立项阶段</b>。它们贡献不了 2026 年，2027 年能兑现多少也要看客户导入节奏。这正好解释了我给 2027E 收入 119.5 亿（+21.9%）低于卖方隐含增速的原因。</p>
+  </div>
+
+  <div class="card">
+    <div class="hd">⑤ 并购补通信能力 <span class="src">长江电子、华泰 9/16 说明会</span></div>
+    <p>以 <b>3.16 亿元现金收购芯迈微 100% 股权</b>。芯迈微深耕蜂窝通信，已完成 6 款产品流片。晶晨借此构建<b>「蜂窝通信 + 光通信 + WiFi」多维通信技术栈</b>。</p>
+  </div>
+
+  <h3>1.3 盈利预测对撞：分歧只在 2026，不在 2027</h3>
+  <table>
+    <thead><tr><th>口径</th><th class="num">2026E 归母</th><th class="num">EPS</th><th class="num">PE@99.71</th><th class="num">2027E 归母</th><th class="num">PE@99.71</th></tr></thead>
+    <tbody>
+      <tr style="background:#fdf6e3"><td><b>我的模型</b></td><td class="num"><b>18.00 亿</b></td><td class="num">4.25</td><td class="num"><b>23.4x</b></td><td class="num"><b>20.49 亿</b></td><td class="num"><b>20.6x</b></td></tr>
+      <tr><td>东吴（2026-08-20 中报点评）</td><td class="num">14.76 亿</td><td class="num">3.49</td><td class="num">28.6x</td><td class="num">20.02 亿</td><td class="num">21.1x</td></tr>
+      <tr><td>东吴（2026-04-30 深度）</td><td class="num">14.76 亿</td><td class="num">3.49</td><td class="num">28.6x</td><td class="num">20.02 亿</td><td class="num">21.1x</td></tr>
+      <tr><td>东吴（2025-11 快报点评）</td><td class="num">15.44 亿</td><td class="num">3.65</td><td class="num">27.3x</td><td class="num">23.24 亿</td><td class="num">18.2x</td></tr>
+      <tr><td>长城证券（2025-11）</td><td class="num">14.28 亿</td><td class="num">3.37</td><td class="num">29.6x</td><td class="num">18.20 亿</td><td class="num">23.2x</td></tr>
+      <tr><td>市场一致预期</td><td class="num">14.30 亿</td><td class="num">3.38</td><td class="num">29.5x</td><td class="num">19.15 亿</td><td class="num">22.0x</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box ok">
+    <b>✓ 一个我在原报告里没抓到的信号：卖方 2027E 在下修</b>
+    东吴 2027E 从 <b>23.24 亿（2025-11）下修到 20.02 亿（2026-04/08），降幅 −13.9%</b>。同期的 2026E 也从 15.44 微调到 14.76。<br><br>
+    这修正了我原报告的一句话。我原来写「一致预期必然上修」——<b>只对了一半</b>。真实情况是：<b>2026E 因三季报预告而必须上修，但 2027E 卖方一直在悄悄下修</b>。两者方向相反，说明卖方也认为<b>涨价红利是一次性的</b>，只是没人明说。
+  </div>
+
+  <div class="box">
+    <b>验证：我的 18.00 亿是否过于激进？</b>
+    三季报预告锁定前三季 <b>12.60–13.10 亿</b>（中枢 12.85 亿）。若 Q4 与 Q3 持平（6.74 亿），全年 <b>19.59 亿</b>；即便 Q4 环比回落 20%（5.39 亿），全年也有 <b>18.24 亿</b>。<br>
+    反观东吴的 14.76 亿，隐含 Q4 只有 <b>1.66–2.16 亿</b>——而 Q3 单季是 6.74 亿。<b>在三季报预告之后，这个数字在算术上已不成立。</b><br>
+    另外公司自身指引「26 年营收有望突破 100 亿」（我的模型 98.0 亿，东吴 90.38 亿）。<br>
+    <b>结论：我的 18.00 亿不但不激进，甚至偏保守。</b>评级维持「持有」的理由不在 2026，而在 2027 后的持续性与现金流质量。
+  </div>
+</section>
+
+<!-- ============ 2. 移远 ============ -->
+<section>
+  <h2>二、移远通信：申万独家高频推票，估值锚分歧最大</h2>
+  <div class="h2sub">所有机构讲同一个故事，但给的估值倍数差了一倍</div>
+
+  <div class="grid2">
+    <div class="kpi"><div class="k">现价 / 市值</div><div class="v">¥72.20</div><div class="n">293.4 亿（4.0636 亿股）</div></div>
+    <div class="kpi"><div class="k">申万 9 月推票频次</div><div class="v">4 次</div><div class="n">9/3、9/4、9/16（两篇）、9/17</div></div>
+  </div>
+
+  <h3>2.1 主要机构与时间线</h3>
+  <table>
+    <thead><tr><th>日期</th><th>机构</th><th>标题要点</th><th>评级</th></tr></thead>
+    <tbody>
+      <tr><td>2025-12-31</td><td>东莞证券</td><td><b>深度：从连接模组到智能生态，领军 5G-A 与 AI 时代</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-04-26</td><td>华泰证券</td><td>Q1 收入端延续复苏，长期受益 AI（2025 归母 8.37 亿<b>低于预期 9.88 亿</b>）</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-04-29</td><td>中金/华泰系</td><td><b>短期盈利能力承压</b>，FY25 &amp; 1Q26 业绩低于预期</td><td><span class="pill y">下修</span></td></tr>
+      <tr><td>2026-04-30</td><td>长江证券</td><td><b>存储涨价，毛利率承压</b>（Q4 单季归母 1.04 亿，yoy −55.26%）</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-12</td><td>华泰证券</td><td><b>Q2 单季净利润创历史新高</b>，主因算力模组、车载、物联网解决方案放量 + 毛利率</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-13</td><td>星球短评</td><td>Q2 净利率创新高，AI+ 布局多点驱动成长</td><td>—</td></tr>
+      <tr><td>2026-08-17</td><td>申万通信</td><td>26H1 业绩超预期高增，Q2 归母 4.61 亿（QoQ+227%）</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-21</td><td>长江证券</td><td><b>原材料涨价压力缓解，盈利能力持续修复</b>——Q2 毛利率回升验证涨价冲击属阶段性扰动</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-08-23</td><td>申万宏源</td><td>毛利率提升，端侧解决方案等多业务加速（收盘价 58.01，PB 3.2）</td><td><span class="pill b">买入（维持）</span></td></tr>
+      <tr><td>2026-09-03/04</td><td>申万通信</td><td>端侧 AI 模组龙头，<b>业绩拐点 alpha 显现</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-09-16</td><td>申万通信</td><td>与 NV 合作高算力产品；<b>至少翻倍空间</b></td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-09-17</td><td>申万通信</td><td>基于英伟达 Jetson Thor 完成 2070 FP4 TFLOPS AI 算力盒子</td><td><span class="pill b">买入</span></td></tr>
+      <tr><td>2026-09-18</td><td>星球短评</td><td><b>回调系担心存储存货贡献利润，核查后贡献微乎其微，回调即机会</b></td><td>—</td></tr>
+      <tr><td>2025-07 / 2025-12</td><td>AC Capital（外资）</td><td>目标价 <b>100 元 → 110 元（上调）</b></td><td><span class="pill p">外资</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 申万的四条核心论点（最完整的多头版本）</h3>
+  <div class="card">
+    <div class="hd">① 端侧 AI 占比 47% <span class="src">申万 9/3、9/16、9/17 重复三次</span></div>
+    <p>26H1 <b>端侧 AI 相关业务线占比已达 47%</b>，数据传输类通信模组及天线业务仅 53%。发布 100T 及以上算力智能模组，推出端云融合 Agentic IoT 解决方案，率先实现端侧 AI 大模型商业化落地。</p>
+  </div>
+  <div class="card">
+    <div class="hd">② 英伟达合作 <span class="src">申万 9/17</span></div>
+    <p>已打造 <b>1–2000 TOPS 算力产品矩阵</b>；基于 <b>英伟达 Jetson Thor</b> 完成 <b>2070 FP4 TFLOPS</b> 的 AI 算力盒子产品研发，应用于工业智能、通用机器人等高算力场景。</p>
+  </div>
+  <div class="card">
+    <div class="hd">③ 估值锚：可比公司 27 年 35x PE <span class="src">申万 9/3、9/4、9/16 三次重复</span></div>
+    <p>原话：「保守按明年 15e 利润目前 PE 仅 17x，若按 20e 预计则 PE 仅 13x，<b>可比公司 27 年 35xPE，至少翻倍空间</b>。」</p>
+    <div class="box warn" style="margin:10px 0 0">
+      <b>这是全部信息里分歧最大的一处，必须拆开算</b>
+      按申万的锚（35x）：15 亿 × 35 = 525 亿市值 → <b>¥129.2（+78.9%）</b>；20 亿 × 35 = 700 亿 → <b>¥172.3（+138.6%）</b>。<br>
+      按我的锚（22x）：16.01 亿 × 22 = 352 亿 → <b>¥86.7</b>（我报告取 ¥87，+20.5%）。<br><br>
+      <b>差距根源是净利率。</b>移远 2026E 净利率 <b>4.2%</b>，晶晨 <b>18.4%</b>——差 4.4 倍。给模组公司 35x，等于按芯片公司的定价权估值。而移远 18.76% 的 ROE 是靠 2.48 倍杠杆 + 1.63 次周转堆出来的（见首次覆盖的杜邦分解），<b>不是靠净利率</b>。我坚持 22x。
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd">④ 投行高管加入，重塑资本市场形象 <span class="src">申万 9/3 起每次重复</span></div>
+    <p>作为独立催化单独成条，与业绩并列。未见公司公告，属卖方渠道信息。</p>
+  </div>
+
+  <h3>2.3 最值得注意的一条：市场已经在质疑存货，卖方在辩护</h3>
+  <div class="box warn">
+    <b>2026-09-18 星球短评（阅读 1129，是当日高热度贴）</b>
+    「移远通信出现回调，有人担心<b>存储存货贡献利润</b>，我们看了一下具体情况，贡献微乎其微，回调即使机会！」<br><br>
+    <b>这条对我原报告是极强的交叉验证。</b>我在首次覆盖里把 77.81 亿存货列为移远最大单点风险，并指出「市场按『为真实订单备货』定价，我把它列为最大风险」。现在看，<b>市场内部已经出现分歧，卖方被迫出面辩护</b>。<br><br>
+    <b>但辩护逻辑是错的。</b>质疑方的担忧是「存货跌价 / 滞销」风险，卖方的回答是「存货没有虚增利润」——<b>答的是另一个问题</b>。存货不需要「贡献利润」才能构成风险，它只需要减值。77.81 亿按 10% 计提 = 7.78 亿，相当于 2026H1 全部归母（6.02 亿）的 1.29 倍。<br><br>
+    <b>这条信息改变的是风险的性质：</b>存货问题已从「没人提的隐性风险」变成「已被讨论的显性争议」。这意味着一旦三季报存货继续上升，<b>杀估值的速度会比原来快</b>。
+  </div>
+
+  <div class="box">
+    <b>另一处需要修正我的表述</b>
+    我在首次覆盖里写移远 Q2 反转「靠结构升级」。卖方口径给的是<b>「端侧 AIoT 解决方案高增 + 存储顺价」</b>两个驱动。<br>
+    <b>「存储顺价」是我漏掉的一半。</b>它指的是上游存储涨价后向下游转嫁——这部分利润是<b>价格现象，不是经营改善</b>，且当存储价格回落时会反向消失。长江 8/21 的标题《原材料涨价压力缓解，盈利能力持续修复》也从反面印证：Q2 的修复里有相当部分是「涨价冲击消退」的回补。<br>
+    <b>修正后的表述：Q2 反转 = 结构升级（慢变量，可持续）+ 存储顺价（一次性，可逆）。</b>这让我给熊市情形 −41.8% 的幅度更有依据。
+  </div>
+
+  <h3>2.4 盈利预测对撞</h3>
+  <table>
+    <thead><tr><th>口径</th><th class="num">2027E 归母</th><th class="num">EPS</th><th class="num">PE@72.20</th><th class="num">隐含目标价</th><th class="num">空间</th></tr></thead>
+    <tbody>
+      <tr style="background:#fdf6e3"><td><b>我的模型（22x）</b></td><td class="num"><b>16.01 亿</b></td><td class="num">3.94</td><td class="num">18.3x</td><td class="num"><b>¥87</b></td><td class="num up">+20.5%</td></tr>
+      <tr><td>申万保守（35x）</td><td class="num">15.00 亿</td><td class="num">3.69</td><td class="num">19.6x</td><td class="num">¥129</td><td class="num up">+78.9%</td></tr>
+      <tr><td>申万乐观（35x）</td><td class="num">20.00 亿</td><td class="num">4.92</td><td class="num">14.7x</td><td class="num">¥172</td><td class="num up">+138.6%</td></tr>
+      <tr><td>市场一致预期</td><td class="num">15.10 亿</td><td class="num">3.72</td><td class="num">19.4x</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>外资 AC Capital 目标价</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">¥110</td><td class="num up">+52.4%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--ink3)">注：AC Capital 的 110 元目标价发布于 2025-12-24（当时股价 92.64），已过去 9 个多月，期间股价先涨到 113 后跌至 45 附近，该目标价已失去时效。</p>
+</section>
+
+<!-- ============ 3. 需要打折 ============ -->
+<section>
+  <h2>三、必须打折的信息清单</h2>
+  <div class="h2sub">这批材料里有相当比例是推票话术，逐条标注</div>
+
+  <table>
+    <thead><tr><th>表述</th><th>出处</th><th>问题</th><th>处理</th></tr></thead>
+    <tbody>
+      <tr><td>全球 IoT 与工业设备端侧 SoC 出货同比增幅<b>突破 110%</b></td><td>国海电子 9/1</td><td>无数据来源、无统计口径</td><td><span class="pill h">不采信</span></td></tr>
+      <tr><td>移远收入<b>明年 400 亿、远期 1000 亿</b>目标</td><td>星球 9/16 匿名</td><td>无署名、无公告，路演传闻。2025 年实际 243 亿，400 亿需 +64%</td><td><span class="pill h">不采信</span></td></tr>
+      <tr><td>AI 模组利润率比老业务<b>高 8–10%</b></td><td>星球 9/16 匿名</td><td>「高 8-10%」是 8 个百分点还是 8%？口径不明</td><td><span class="pill h">不采信</span></td></tr>
+      <tr><td>至少翻倍空间 / 35x PE</td><td>申万（3 次重复）</td><td>卖方定价，可比公司选取未披露</td><td><span class="pill y">大幅打折</span></td></tr>
+      <tr><td>投行高管加入，修复估值</td><td>申万（4 次重复）</td><td>未见公告，人事≠业绩</td><td><span class="pill y">忽略</span></td></tr>
+      <tr><td>WorkBuddy 持续接入下游终端……AI 硬件与模型协同闭环成型</td><td>中泰 9/1、东吴 9/2</td><td><b>产品推广内容混入研报文本</b>，作为投资依据高度可疑</td><td><span class="pill h">剔除</span></td></tr>
+      <tr><td>英伟达 129 亿美元收购 Hugging Face</td><td>申万 9/16 引述</td><td>作为端侧催化引用，但与两家公司收入无直接关联</td><td><span class="pill y">仅作情绪参考</span></td></tr>
+      <tr><td>机器鸭 Microduck 24h 订单 260 万美元</td><td>国海、中泰、申万（4 次）</td><td>真实事件，但主控是<b>瑞芯微 RK3566</b>，与晶晨/移远无关</td><td><span class="pill y">板块 β 非个股 α</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="box pur">
+    <b>一个贯穿全场的观察：卖方在共用同一套素材</b>
+    「机器鸭 Microduck（399 美元、24 小时 260 万美元订单）」这个案例，在国海 9/1、中泰 9/1、申万 9/3 与 9/16 的推票中<b>被引用了四次</b>，每次都作为端侧放量的证据。但它的主控芯片是瑞芯微 RK3566——<b>与晶晨、移远都没有关系</b>。<br>
+    这说明这一轮「端侧 AI」推票存在明显的<b>素材复用与板块化叙事</b>。当同一个案例被用来推四只不同的票时，它对任何一只票的解释力都要打折。
+  </div>
+</section>
+
+<!-- ============ 4. 结论 ============ -->
+<section>
+  <h2>四、对首次覆盖结论的净影响</h2>
+  <div class="h2sub">逐项说明哪些要改、哪些不改</div>
+
+  <table>
+    <thead><tr><th>项目</th><th>原报告</th><th>本次检索后</th><th>是否修正</th></tr></thead>
+    <tbody>
+      <tr><td>晶晨评级 / 目标价</td><td>持有 / ¥126</td><td><b>维持</b>。2026E 我的 18.00 亿经三季报验证偏保守；但 2027E 与东吴 20.02 亿几乎一致，分歧消失</td><td><span class="pill g">不改</span></td></tr>
+      <tr><td>晶晨「一致预期必然上修」</td><td>单向判断</td><td><b>修正为「2026E 上修、2027E 下修」</b>。东吴 2027E 已从 23.24 → 20.02（−13.9%）</td><td><span class="pill b">修正</span></td></tr>
+      <tr><td>晶晨 Q3 驱动</td><td>提价传导，净利率 24.1–25.1%</td><td>卖方口径 25%（yoy+13pct、qoq+7pct），完全吻合；且明确为<b>主动、全产品线、Q3 全面落地</b></td><td><span class="pill y">强化</span></td></tr>
+      <tr><td>晶晨新增信息</td><td>未覆盖</td><td>谷歌 Gemini built-in 指定系统集成商（I/O 大会官宣，可证伪）；6nm C305X2/A123X 26Q4 量产；A311Y3 立项数十项目；3.16 亿收购芯迈微</td><td><span class="pill y">补充</span></td></tr>
+      <tr><td>移远评级 / 目标价</td><td>持有 / ¥87</td><td><b>维持</b>。与申万 35x 锚的分歧根源是净利率 4.2% vs 晶晨 18.4%，我不改锚</td><td><span class="pill g">不改</span></td></tr>
+      <tr><td>移远 Q2 反转归因</td><td>结构升级</td><td><b>修正为「结构升级 + 存储顺价」</b>，后者一次性可逆</td><td><span class="pill b">修正</span></td></tr>
+      <tr><td>移远存货风险</td><td>最大单点风险，市场未定价</td><td><b>市场已开始质疑</b>（9/18），卖方辩护逻辑答非所问。风险从隐性变显性，<b>杀估值速度会更快</b></td><td><span class="pill b">修正</span></td></tr>
+      <tr><td>「若只能选一只，选晶晨」</td><td>基于定价权 + 自有资金备货</td><td>新增佐证：<b>市场质疑的对象是移远的存货，而晶晨存货/半年收入 80.6% 更高却无人质疑</b>——说明市场质疑错了方向，进一步支持选晶晨</td><td><span class="pill g">强化</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="box ok">
+    <b>一句话总结</b>
+    这批外部观点<b>没有推翻任何一个核心结论</b>，但修正了两处归因（晶晨的预期方向是双向的、移远的 Q2 不完全是结构升级），并补上了三条可证伪的硬信息（谷歌 I/O 官宣、6nm 新品量产时点、芯迈微收购）。<br>
+    最大的增量价值是：<b>移远的存货风险已经从「我发现的」变成「市场在吵的」</b>——这改变了风险兑现的速度，不只是概率。
+  </div>
+
+  <h3>下一步最值得跟踪的三个验证点</h3>
+  <ul>
+    <li><b>晶晨 2026 年报（约 2027-04）</b>：Q4 单季能否守住 6.5 亿以上水位。若能，全年落在 18–19.6 亿，我的模型偏保守；若 Q4 骤降至 3 亿以下，说明 Q3 的 25% 净利率确属一次性。</li>
+    <li><b>移远 2026 三季报（10 月下旬）</b>：① 存货环比是否首次下降；② Q3 单季归母能否维持 Q2 的 4.61 亿。这两条决定我是否上修。</li>
+    <li><b>谷歌 Gemini 生态的实际出货</b>：I/O 官宣是软催化，需要看到晶晨在 Gemini built-in 产品中的实际芯片出货量或客户名单，才能计入 2027 年预测。</li>
+  </ul>
+</section>
+
+<div class="disc">
+  <b>数据缺口 [MISSING]</b><br>
+  ① 晶晨分产品线毛利率与收入占比（卖方均未披露，仅给总量）；② 移远存货结构与库龄（9/18 卖方核查称「贡献微乎其微」但未披露具体测算过程）；③ 移远美国收入占比（飞利浦禁令风险无法定价）；④ 晶晨收购芯迈微后的并表时点与业绩承诺；⑤ 两家公司 2026Q3 分季度经营现金流（均为负，需确认是否延续）。
+</div>
+
+</main>
+
+<div class="foot">
+  本汇总由 ima 知识库（3 个库）与知识星球（3 个社群）检索归集，共处理研报 63+ 篇、社群主题 100+ 条。<br>
+  所引盈利预测、目标价、评级均为第三方机构观点，不代表本人判断；凡无公告佐证的星球转述均已标注。<br>
+  本文档仅供研究参考，不构成投资建议。
+</div>
+
+</div>
+</body>
+</html>

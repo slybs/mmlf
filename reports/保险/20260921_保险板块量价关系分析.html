@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保险板块量价关系分析 · 2026-09-21</title>
+<meta name="description" content="板块评分 29/165「回调末期」：主力净流入 +6.21 亿、量比 1.48 放量止跌，LPS 候选形态初现；个股人保 79 &gt; 国寿 72 &gt; 新华 44 &gt; 平安 34 &gt; 太保 24，宜分批低吸等右侧确认。">
+<meta name="report-type" content="量价分析">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  :root{--primary:#1a3a5c;--accent:#c0392b;--up:#c0392b;--down:#1e8449;--bg:#f7f8fa;--card:#ffffff;--border:#e5e8ec;--text:#2c3e50;--muted:#7f8c9b;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 16px 48px;}
+  header{background:linear-gradient(135deg,#1a3a5c 0%,#2c5f8a 100%);color:#fff;border-radius:12px;padding:28px 32px;margin-bottom:20px;}
+  header h1{font-size:24px;font-weight:700;letter-spacing:1px;}
+  header .sub{margin-top:8px;font-size:13px;opacity:.85;}
+  .badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-top:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 26px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  h2{font-size:18px;color:var(--primary);border-left:4px solid var(--primary);padding-left:12px;margin-bottom:16px;}
+  h3{font-size:15px;color:var(--primary);margin:14px 0 8px;}
+  .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px;}
+  .stat{background:var(--bg);border-radius:10px;padding:14px 16px;border:1px solid var(--border);}
+  .stat .label{font-size:12px;color:var(--muted);}
+  .stat .value{font-size:20px;font-weight:700;margin-top:2px;}
+  .stat .note{font-size:12px;color:var(--muted);margin-top:2px;}
+  .up{color:var(--up);} .down{color:var(--down);}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;}
+  th{background:#eef2f6;color:var(--primary);font-weight:600;padding:9px 10px;text-align:center;white-space:nowrap;}
+  td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;}
+  tr:last-child td{border-bottom:none;}
+  .chart{width:100%;height:380px;}
+  .chart-sm{width:100%;height:340px;}
+  .tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600;}
+  .tag-buy{background:#fdecea;color:#c0392b;}
+  .tag-wait{background:#fff6e5;color:#b7791f;}
+  .tag-avoid{background:#e8f6ef;color:#1e8449;}
+  .tag-watch{background:#eef1f5;color:#5d6d7e;}
+  .strategy-item{border-left:3px solid #d5dbe2;padding:12px 16px;margin:10px 0;background:var(--bg);border-radius:0 8px 8px 0;}
+  .strategy-item.red{border-left-color:var(--up);}
+  .strategy-item.blue{border-left-color:#2c5f8a;}
+  .strategy-item.gray{border-left-color:#95a5a6;}
+  .strategy-item .title{font-weight:700;font-size:15px;}
+  .strategy-item .desc{font-size:13.5px;color:#4a5a6a;margin-top:4px;}
+  .narrative{background:var(--bg);border-radius:10px;padding:16px 20px;margin:12px 0;border:1px dashed #cdd6df;}
+  .narrative .phase{font-weight:700;color:var(--primary);}
+  .obs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px;margin-top:8px;}
+  .obs div{background:var(--bg);border-radius:8px;padding:10px 14px;font-size:13.5px;border:1px solid var(--border);}
+  .foot{text-align:center;font-size:12px;color:var(--muted);margin-top:28px;line-height:1.8;}
+  @media print{body{background:#fff;}.card{box-shadow:none;break-inside:avoid;}header{border-radius:0;}}
+  @media (max-width:640px){header{padding:20px;}header h1{font-size:19px;}.card{padding:16px 14px;}.chart{height:300px;}table{font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>保险板块量价关系分析</h1>
+  <div class="sub">2026-09-21（周一）收盘 · 覆盖：保险Ⅱ板块指数 + 中国平安/国寿/太保/新华/人保 · 量价关系验证 + 择时评分框架</div>
+  <div class="badge">结论：回调末期 · 放量止跌信号初现 —— 不追高，分批左侧低吸 + 等右侧确认</div>
+</header>
+
+<!-- 核心结论 -->
+<div class="card">
+  <h2>一、核心结论（30秒版）</h2>
+  <div class="summary-grid">
+    <div class="stat"><div class="label">保险Ⅱ板块（01801194.PT）</div><div class="value">1195.88 <span class="up">+0.94%</span></div><div class="note">成交 69.2 亿 · 量比 1.48 · PE 5.65 / PB 1.00</div></div>
+    <div class="stat"><div class="label">板块主力资金（当日）</div><div class="value up">+6.21 亿</div><div class="note">超大单主导，散户净卖出 → 健康回流</div></div>
+    <div class="stat"><div class="label">板块20日区间位置</div><div class="value">23%</div><div class="note">自9/4高点2342回调约5%后止跌企稳</div></div>
+    <div class="stat"><div class="label">板块择时评分</div><div class="value">29 / 165</div><div class="note">观望区 —— 右侧未确认，左侧结构健康</div></div>
+  </div>
+  <h3>三句话说清</h3>
+  <p><b>① 板块层面：</b>9/4 见顶 2342 后连续两周回调（缩量为主，回调质量健康），今日低开高走收光头阳线、量比 1.48 放量、主力净流入 +6.21 亿——这是<b>「缩量回调 → 放量止跌」的回调末期特征（LPS 候选）</b>，但价格仍在 MA20（2257）下方、MACD 仍为绿柱，右侧趋势尚未确认。</p>
+  <p><b>② 个股层面：</b>择时评分排序 <b>人保 79 &gt; 国寿 72 &gt; 新华 44 &gt; 平安 34 &gt; 太保 24</b>。人保趋势最强（20日+14.2%）但区间位已达 86% 高位；国寿回调质量最优（缩量回调 10/10）；平安今日主力回流第一（+3.41亿）值得重点跟踪。</p>
+  <p><b>③ 操作层面：</b><b>当前不是重仓买入的时点，是"分批低吸 + 等待确认"的时点。</b>激进者可对回调结构最健康的标的轻仓试探；稳健者等板块站回 MA20 且 MACD 翻红后再加仓。跌破 9/17 低点（板块 2203 / 平安 53.35）则止跌逻辑证伪。</p>
+</div>
+
+<!-- 板块走势 -->
+<div class="card">
+  <h2>二、板块走势与量能全景（近60个交易日）</h2>
+  <div id="chartTrend" class="chart"></div>
+  <div class="narrative">
+    <h3>威科夫量价阶段叙事（从右向左读）</h3>
+    <p><span class="phase">⑤ 当前状态（9/18–9/21）：放量止跌企稳。</span>9/15–9/17 连续缩量下跌（量比 0.74→0.72→0.72），供应逐步枯竭；9/18 缩量十字止跌，9/21 放量（1.48x）长阳收复 2230、直逼 MA20——典型「缩量回调 → 放量反抽支撑」的 LPS（最后支撑点）候选形态。</p>
+    <p><span class="phase">④ 回调期（9/7–9/17）：</span>板块自 2342 回落至 2203（-5.9%），全程缩量（量比多在 0.7–0.9x），无放量杀跌 → 属健康换手式回调，而非 SOW（放量破位），中期上升趋势结构未破坏（仍站于 MA60 上方）。</p>
+    <p><span class="phase">③ 拉升期（8/24–9/4）：</span>中报业绩催化（五大险企净利 +78%）驱动放量上攻 9/1 量比 2.06、9/3 全行业涨幅第一，创 2342 阶段新高。</p>
+    <p><span class="phase">② 9/3 高位预警兑现：</span>上期（9/3）报告提示"区间位 83–92% 偏高、KDJ 超买、短线回调压力加大"——随后 6 个交易日板块回撤 6%，判断兑现。本轮回调把过热的区间位消化至 23%，风险释放较充分。</p>
+  </div>
+</div>
+
+<!-- 评分对比 -->
+<div class="card">
+  <h2>三、五只保险股择时评分对比（梯度评分满分165）</h2>
+  <div id="chartScore" class="chart-sm"></div>
+  <table>
+    <thead><tr><th>个股</th><th>收盘</th><th>今日涨跌</th><th>总分</th><th>判定</th><th>vs MA20</th><th>20日区间位</th><th>量比</th><th>KDJ-J</th><th>MACD</th><th>量价形态</th></tr></thead>
+    <tbody>
+      <tr><td><b>中国人保</b></td><td>8.04</td><td class="up">+2.81%</td><td><b>79</b></td><td><span class="tag-wait">关注等待</span></td><td class="up">上方 +4.3%</td><td><b>86% 高位</b></td><td>1.12x</td><td>71</td><td>绿柱临界收敛</td><td>放量温和上涨</td></tr>
+      <tr><td><b>中国人寿</b></td><td>38.02</td><td class="up">+0.58%</td><td><b>72</b></td><td><span class="tag-wait">关注等待</span></td><td class="down">下方 -0.5%</td><td>37%</td><td>0.72x</td><td>56</td><td>绿柱收窄</td><td><b>缩量回调(健康 13/15)</b></td></tr>
+      <tr><td><b>新华保险</b></td><td>58.54</td><td class="up">+0.62%</td><td><b>44</b></td><td><span class="tag-avoid">暂时回避</span></td><td class="down">下方 -1.9%</td><td>27%</td><td>0.55x</td><td>45</td><td>绿柱</td><td>缩量上涨(压力位警惕)</td></tr>
+      <tr><td><b>中国平安</b></td><td>53.98</td><td class="up">+1.14%</td><td><b>34</b></td><td><span class="tag-watch">观望</span></td><td class="down">下方 -1.7%</td><td>21%</td><td>0.87x</td><td>24</td><td>绿柱</td><td>需求枯竭→今日放量止跌</td></tr>
+      <tr><td><b>中国太保</b></td><td>32.00</td><td class="down">-0.25%</td><td><b>24</b></td><td><span class="tag-watch">观望</span></td><td class="down">下方 -2.1%</td><td>28%</td><td>1.20x</td><td>11</td><td>绿柱</td><td>ATR扩张1.36x + 缩量阴线</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted);margin-top:10px;">注：板块指数（代理 sz399809 保险主题）评分 29/165 → 观望/空仓区。评分构成：趋势(MA20/斜率) + MACD + 区间位置 + ATR波动 + 量价关系(威科夫) + 回调质量 ± 背离修正。</p>
+</div>
+
+<!-- 资金流向 -->
+<div class="card">
+  <h2>四、今日主力资金流向（超大单+大单）</h2>
+  <div id="chartFlow" class="chart-sm"></div>
+  <table>
+    <thead><tr><th>标的</th><th>主力净流入</th><th>其中超大单</th><th>散户方向</th><th>解读</th></tr></thead>
+    <tbody>
+      <tr><td><b>板块合计（保险Ⅱ）</b></td><td class="up"><b>+6.21 亿</b></td><td>—</td><td>净卖出</td><td>主力回流、散户交筹 → 回调末期典型健康信号</td></tr>
+      <tr><td><b>中国平安</b></td><td class="up"><b>+3.41 亿</b></td><td class="up">+1.82 亿</td><td>净卖出</td><td>个股回流第一，超大单主导，机构行为</td></tr>
+      <tr><td><b>中国人保</b></td><td class="up">+1.44 亿</td><td class="up">+1.82 亿</td><td>净卖出</td><td>超大单强买但大单-0.38亿，分歧略大</td></tr>
+      <tr><td><b>中国太保</b></td><td class="up">+1.34 亿</td><td class="up">+0.66 亿</td><td>净卖出</td><td>资金回流但价格收阴，量价背离需观察</td></tr>
+      <tr><td><b>新华保险</b></td><td class="up">+0.20 亿</td><td>+0.02 亿</td><td>净卖出</td><td>流入弱，弹性不足</td></tr>
+      <tr><td><b>中国人寿</b></td><td class="down">-0.17 亿</td><td class="down">-0.13 亿</td><td>小幅净买</td><td>唯一主力流出，跟涨为主</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 操作策略 -->
+<div class="card">
+  <h2>五、操作策略矩阵</h2>
+  <h3>总仓位判断</h3>
+  <p>板块评分 29（观望区）+ 大盘背景（沪指 3949 +0.97%，科技成长与低估值防御轮动）→ <b>保险板块仓位建议控制在总仓位 20%–30% 以内试探性布局，右侧确认前不满仓。</b></p>
+
+  <div class="strategy-item blue">
+    <div class="title">🔵 中国人寿 — 本轮回调质量最优，回踩 MA20 附近可轻仓低吸 <span class="tag tag-wait">次选</span></div>
+    <div class="desc">量价形态「缩量回调」满分 13/15 + 回调质量 10/10，区间位仅 37%，价格紧贴 MA20（38.21）。<b>买点：37.5–38.2 分批建 1/4–1/3 仓；加仓：站稳 38.6 且板块站回 MA20；止损：36.5（约 2×ATR）。</b></div>
+  </div>
+  <div class="strategy-item red">
+    <div class="title">🟢 中国平安 — 今日主力回流第一，等两个信号之一再进 <span class="tag tag-buy">首选跟踪</span></div>
+    <div class="desc">评分 34 偏低仅因趋势暂破位（跌破 MA20），但当日超大单 +1.82 亿、主力 +3.41 亿为五股之最，且回调至 MA60（52.40）上方止跌。<b>买点A（左侧）：52.4–53.2（MA60 支撑）低吸 1/3 仓；买点B（右侧）：放量站回 MA20（≈54.9）后回踩不破再进。止损：51.5。</b></div>
+  </div>
+  <div class="strategy-item gray">
+    <div class="title">🟡 中国人保 — 趋势最强但位置最高，绝不追高，只做回踩 <span class="tag tag-wait">等回踩</span></div>
+    <div class="desc">20日 +14.2%、区间位 86% 高位，今日 +2.81% 再创反弹新高段。优点是 MACD 绿柱收敛至临界（-0.012），若明日翻红则中期趋势再确认。<b>操作：仅回踩 7.70–7.80（MA20 7.71）缩量企稳时轻仓参与，止损 7.45；现价 8.04 追高性价比低。</b></div>
+  </div>
+  <div class="strategy-item gray">
+    <div class="title">🟡 新华保险 — 观望，等 MACD 翻红 + 收复 60 元 <span class="tag tag-avoid">回避</span></div>
+    <div class="desc">主力流入弱、缩量上涨至压力区（量价规则：缩量上涨至压力位→警惕回调），MA20/MA60 双双压顶且下弯。</div>
+  </div>
+  <div class="strategy-item gray">
+    <div class="title">🔴 中国太保 — 五股最弱，暂时回避 <span class="tag tag-avoid">回避</span></div>
+    <div class="desc">ATR 扩张 1.36x（波动失控）+ 今日缩量阴线 + 主力流入但价格不涨（量价背离）。虽然 9/3 曾领涨，但本轮回撤幅度最大（33.6→32.0），修复需要时间。等 MACD 翻红且 ATR 重新收缩再看。</div>
+  </div>
+</div>
+
+<!-- 观察点 -->
+<div class="card">
+  <h2>六、关键观察点与风险</h2>
+  <div class="obs">
+    <div>📈 <b>右侧确认信号</b>：板块收盘站上 MA20（≈2257）+ MACD 绿柱翻红 + 量比维持 1.0 以上 → 三者齐备可加仓至 4–5 成板块仓位。</div>
+    <div>📉 <b>证伪信号</b>：板块跌破 9/17 低点 2203 / 平安跌破 53.35（放量则更危险）→ 止跌逻辑失效，清仓观望等新结构。</div>
+    <div>🔍 <b>人保 MACD</b>：绿柱已收敛至临界（-0.012），1–2 个交易日内选择方向；翻红=趋势再确认，翻绿扩大=高位滞涨确认。</div>
+    <div>🏦 <b>利率环境</b>：10年期国债收益率若继续低位（利差损担忧）压制估值修复空间；若回升则利好保险股。</div>
+    <div>⚖️ <b>风格切换</b>：沪指站上 3950 后科技与防御资金轮动加快，保险上涨持续性依赖「高切低」资金流的延续。</div>
+    <div>⚠️ <b>季报窗口</b>：10 月下旬三季报披露临近，中报高基数（净利+78%）下 Q3 增速回落风险可能压制股价。</div>
+  </div>
+</div>
+
+<div class="foot">
+  数据来源：腾讯行情/资金流接口、公开市场资讯 · 分析框架：A股量价关系验证 + 择时梯度评分（威科夫量价 + MA20 + ATR）<br>
+  本报告为量化规则自动生成，仅供参考，不构成投资建议。市场有风险，投资需谨慎。
+</div>
+
+</div>
+
+<script>
+// ===== 数据 =====
+var trendDates=["2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-03","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10","2026-07-13","2026-07-14","2026-07-15","2026-07-16","2026-07-17","2026-07-20","2026-07-21","2026-07-22","2026-07-23","2026-07-24","2026-07-27","2026-07-28","2026-07-29","2026-07-30","2026-07-31","2026-08-03","2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-10","2026-08-11","2026-08-12","2026-08-13","2026-08-14","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21"];
+var trendClose=[2052.37,2011.16,2114.13,2091.86,2095.28,2125.37,2093.78,2097.37,2087.6,2094.25,2099.49,2125.67,2187.16,2156.33,2135.89,2231,2211.74,2257.88,2273.22,2234.5,2218.39,2239.53,2237.68,2283.57,2255.83,2264.38,2201.09,2208.02,2193.89,2183.32,2165.64,2138.88,2140.15,2144.99,2110.63,2124.66,2113.01,2129.29,2132.22,2155.14,2198.07,2206.89,2246.35,2237.48,2227.96,2249,2307.11,2286.57,2333.3,2342.55,2282.22,2272.76,2280.78,2282.17,2253.07,2258.75,2228.77,2209.78,2203.82,2214.29,2230.97];
+var trendVol=[22956553,23185991,22790701,23281920,18834257,21331183,20940443,22687375,21028774,22515704,27877050,23877287,25398111,20401033,31764775,35494822,34474544,25201497,17663937,21088149,19707974,25727885,25319157,30493439,34565810,25781078,28332308,26492568,24832609,19720634,18118403,17584549,17542911,21200890,17498775,13894987,20540322,25450362,19261949,17678782,22484149,21975477,19714248,21592588,15368140,30053765,28465115,21743519,23966150,19990744,23130614,17799810,13552854,17176370,22817963,17465311,14433813,14431395,14135936,16681082,16766077];
+// MA20
+var ma20=trendClose.map(function(_,i){if(i<19)return null;var s=0;for(var j=i-19;j<=i;j++)s+=trendClose[j];return +(s/20).toFixed(1);});
+
+function mkChart(id,opt){var el=document.getElementById(id);if(!el)return;var c=echarts.init(el);c.setOption(opt);window.addEventListener('resize',function(){c.resize();});}
+function axisStyle(){return{axisLine:{lineStyle:{color:'#c8d0d8'}},axisLabel:{color:'#7f8c9b',fontSize:11},splitLine:{lineStyle:{color:'#eef1f4'}}};}
+
+// 图1：板块走势+量能
+mkChart('chartTrend',{
+  tooltip:{trigger:'axis',axisPointer:{type:'cross'}},
+  legend:{data:['保险主题指数','MA20','成交量'],top:0,textStyle:{color:'#2c3e50'}},
+  grid:[{left:60,right:20,top:36,height:'55%'},{left:60,right:20,top:'76%',height:'16%'}],
+  xAxis:[{type:'category',data:trendDates,gridIndex:0,axisLabel:{show:false},axisLine:{lineStyle:{color:'#c8d0d8'}}},
+         {type:'category',data:trendDates,gridIndex:1,axisLabel:{color:'#7f8c9b',fontSize:10,interval:9}}],
+  yAxis:[{type:'value',gridIndex:0,scale:true,...axisStyle()},{type:'value',gridIndex:1,...axisStyle()}],
+  series:[
+    {name:'保险主题指数',type:'line',data:trendClose,xAxisIndex:0,yAxisIndex:0,showSymbol:false,lineStyle:{width:2,color:'#1a3a5c'},areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'rgba(26,58,92,.18)'},{offset:1,color:'rgba(26,58,92,0)'}]}},markPoint:{data:[{type:'max',name:'阶段高点',symbolSize:46,itemStyle:{color:'#c0392b'},label:{fontSize:10,color:'#fff'}},{type:'min',symbolSize:1,label:{show:false}}]}},
+    {name:'MA20',type:'line',data:ma20,xAxisIndex:0,yAxisIndex:0,showSymbol:false,lineStyle:{width:1.5,color:'#e67e22',type:'dashed'}},
+    {name:'成交量',type:'bar',data:trendVol.map(function(v,i){var up=i===0||trendClose[i]>=trendClose[i-1];return{value:Math.round(v/10000),itemStyle:{color:up?'rgba(192,57,43,.55)':'rgba(30,132,73,.55)'}};}),xAxisIndex:1,yAxisIndex:1,barWidth:'70%'}
+  ]
+});
+
+// 图2：评分对比
+mkChart('chartScore',{
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+  grid:{left:90,right:60,top:10,bottom:20},
+  xAxis:{type:'value',max:165,...axisStyle()},
+  yAxis:{type:'category',data:['中国太保','中国平安','新华保险','板块指数','中国人寿','中国人保'],...axisStyle()},
+  series:[{type:'bar',data:[{value:24,itemStyle:{color:'#95a5a6'}},{value:34,itemStyle:{color:'#5d6d7e'}},{value:44,itemStyle:{color:'#1e8449'}},{value:29,itemStyle:{color:'#b0b8c1'}},{value:72,itemStyle:{color:'#e67e22'}},{value:79,itemStyle:{color:'#c0392b'}}],barWidth:'55%',label:{show:true,position:'right',color:'#2c3e50',fontWeight:600},markLine:{symbol:'none',lineStyle:{color:'#c0392b',type:'dashed'},label:{formatter:'90分=可买入线',color:'#c0392b',fontSize:11},data:[{xAxis:90}]}}]
+});
+
+// 图3：主力资金
+mkChart('chartFlow',{
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:function(v){return v+' 亿元';}},
+  grid:{left:90,right:60,top:16,bottom:24},
+  xAxis:{type:'value',...axisStyle()},
+  yAxis:{type:'category',data:['中国人寿','新华保险','中国太保','中国人保','中国平安','板块合计'],...axisStyle()},
+  series:[{type:'bar',data:[{value:-0.17,itemStyle:{color:'#1e8449'}},{value:0.20,itemStyle:{color:'#c0392b'}},{value:1.34,itemStyle:{color:'#c0392b'}},{value:1.44,itemStyle:{color:'#c0392b'}},{value:3.41,itemStyle:{color:'#c0392b'}},{value:6.21,itemStyle:{color:'#8e2b22'}}],barWidth:'55%',label:{show:true,position:'right',color:'#2c3e50',formatter:function(p){return p.value+'亿';}}}]
+});
+</script>
+</body>
+</html>

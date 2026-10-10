@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCB 全产业链深度图谱 · 各环节趋势与核心标的竞争力 · 2026-10-09</title>
+<meta name="description" content="六环节产业链全景拆解：这不是普通周期涨价，而是 CCL 由 M6→M8/M9 的材料代际跃迁；真瓶颈在设备与窑炉（丰田织布机垄断、2027 年无新线点火），利润正从下游 PCB 向上游材料转移，最大风险是技术路线未定与上游 PB 10–40 倍的估值透支。">
+<meta name="report-type" content="产业图谱">
+<style>
+:root{
+  --bg:#ffffff;--panel:#f6f7f9;--panel2:#fbfcfd;--border:#e4e7ec;--border2:#d3d8e0;
+  --text:#161a20;--text2:#3d4551;--muted:#77808d;
+  --accent:#0b4f7c;--accent2:#0f7a8a;--gold:#9a6b00;
+  --up:#d32b2f;--down:#12855c;--warn:#c0620a;--purple:#5b4b8a;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 90px;}
+.hero{background:linear-gradient(135deg,#0b3a5c 0%,#0b4f7c 45%,#0f6a7d 100%);color:#fff;padding:52px 0 44px;margin-bottom:38px;}
+.hero .wrap{padding-bottom:0;}
+.eyebrow{font-size:12.5px;letter-spacing:2.5px;color:#9ed3e8;font-weight:600;margin-bottom:14px;}
+.hero h1{font-size:34px;line-height:1.35;margin:0 0 14px;font-weight:700;letter-spacing:.5px;}
+.hero .sub{font-size:15.5px;color:#cfe6f2;max-width:840px;line-height:1.8;}
+.hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;}
+.chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:5px 14px;font-size:12.5px;color:#eaf4fa;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;}
+.hstat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:14px 16px;}
+.hstat .v{font-size:22px;font-weight:700;letter-spacing:.5px;}
+.hstat .l{font-size:12px;color:#b9d8e8;margin-top:4px;line-height:1.5;}
+h2.sec{font-size:23px;margin:52px 0 6px;padding-left:13px;border-left:5px solid var(--accent);font-weight:700;letter-spacing:.5px;}
+.sec-sub{color:var(--muted);font-size:13.5px;margin:0 0 22px;padding-left:18px;}
+h3{font-size:18px;margin:32px 0 12px;color:var(--accent);font-weight:700;}
+h4{font-size:15px;margin:20px 0 8px;color:var(--text);font-weight:700;}
+p{margin:0 0 13px;color:var(--text2);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:18px 20px;}
+.card.hl{background:#fff8ee;border-color:#f0d9a8;}
+.card.warn{background:#fdf3f3;border-color:#f3cfcf;}
+.card.ok{background:#f1f8f5;border-color:#c9e6d8;}
+.card h5{margin:0 0 9px;font-size:14.5px;font-weight:700;color:var(--text);}
+.card p{font-size:13.5px;margin:0 0 8px;color:var(--text2);}
+.card ul{margin:6px 0 0;padding-left:19px;font-size:13.5px;color:var(--text2);}
+.card li{margin-bottom:6px;}
+.judge{border-left:4px solid var(--accent2);background:var(--panel2);padding:13px 16px;border-radius:0 9px 9px 0;border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.judge .n{font-size:11.5px;letter-spacing:1.5px;color:var(--accent2);font-weight:700;}
+.judge .t{font-weight:700;font-size:15px;margin:3px 0 5px;color:var(--text);}
+.judge .d{font-size:13.5px;color:var(--text2);margin:0;}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0 20px;background:#fff;}
+th{background:#eef2f6;color:#2b3542;font-weight:700;text-align:left;padding:10px 11px;border:1px solid var(--border2);font-size:12.5px;line-height:1.5;}
+td{padding:9px 11px;border:1px solid var(--border);vertical-align:top;line-height:1.65;color:var(--text2);}
+tbody tr:nth-child(even){background:#fafbfc;}
+td b,th b{color:var(--text);}
+.up{color:var(--up);font-weight:700;}
+.down{color:var(--down);font-weight:700;}
+.num{font-variant-numeric:tabular-nums;text-align:right;}
+.tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:.3px;vertical-align:middle;}
+.t-core{background:#0b4f7c;color:#fff;}
+.t-key{background:#0f7a8a;color:#fff;}
+.t-alt{background:#e8edf2;color:#41505f;}
+.t-risk{background:#fbeaea;color:#a3232b;border:1px solid #e9c0c0;}
+.t-hot{background:#fdeee2;color:#9a5000;border:1px solid #f0cfae;}
+.t-new{background:#efeaf7;color:#4c3d7a;border:1px solid #d6ccee;}
+.t-cheap{background:#e8f4ee;color:#0d6b48;border:1px solid #bcdccb;}
+.note{background:#f0f5f9;border:1px solid #d3e2ee;border-left:4px solid var(--accent);border-radius:0 9px 9px 0;padding:14px 17px;margin:16px 0;font-size:13.5px;color:var(--text2);}
+.note b{color:var(--accent);}
+.danger{background:#fdf2f2;border:1px solid #eecccc;border-left:4px solid var(--up);border-radius:0 9px 9px 0;padding:14px 17px;margin:16px 0;font-size:13.5px;color:#61383a;}
+.danger b{color:var(--up);}
+.danger h4{color:var(--up);}
+.sourcebox{background:var(--panel);border:1px dashed var(--border2);border-radius:9px;padding:14px 17px;font-size:12.5px;color:var(--muted);line-height:1.85;}
+.co{border:1px solid var(--border2);border-radius:12px;padding:0;margin-bottom:20px;overflow:hidden;background:#fff;}
+.co-head{background:linear-gradient(90deg,#0b4f7c,#14768a);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+.co-head .nm{font-size:18px;font-weight:700;}
+.co-head .cd{font-size:12.5px;opacity:.85;margin-left:8px;font-weight:400;}
+.co-head .pos{font-size:12.5px;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:4px;margin-top:6px;display:inline-block;}
+.co-head .rt{text-align:right;font-size:12.5px;line-height:1.7;min-width:240px;}
+.co-head .rt .big{font-size:19px;font-weight:700;}
+.co-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.co-body>div{padding:15px 20px;border-right:1px solid var(--border);}
+.co-body>div:last-child{border-right:none;}
+.co-body .lb{font-size:11.5px;letter-spacing:1.5px;color:var(--accent);font-weight:700;margin-bottom:7px;}
+.co-body ul{margin:0;padding-left:18px;font-size:13.3px;color:var(--text2);}
+.co-body li{margin-bottom:6px;}
+.co-foot{background:#fafbfc;border-top:1px solid var(--border);padding:11px 20px;font-size:13px;color:var(--text2);display:flex;gap:26px;flex-wrap:wrap;}
+.co-foot b{color:var(--text);}
+.fig{background:#fff;border:1px solid var(--border);border-radius:11px;padding:18px 14px 10px;margin:18px 0 22px;overflow-x:auto;}
+.fig svg{display:block;margin:0 auto;max-width:100%;height:auto;}
+.cap{text-align:center;font-size:12px;color:var(--muted);margin-top:6px;}
+ul.plain{padding-left:20px;color:var(--text2);font-size:14px;}
+ul.plain li{margin-bottom:8px;}
+hr.sep{border:none;border-top:1px solid var(--border);margin:40px 0;}
+.sec-nav{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:34px;font-size:13px;color:var(--text2);}
+.sec-nav b{color:var(--text);}
+@media(max-width:900px){
+  .hero-stats,.grid2,.grid3,.grid4{grid-template-columns:1fr 1fr;}
+  .co-body{grid-template-columns:1fr;}
+  .co-body>div{border-right:none;border-bottom:1px solid var(--border);}
+}
+@media(max-width:620px){.hero-stats,.grid2,.grid3,.grid4{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · INDUSTRY CHAIN DEEP DIVE</div>
+    <h1>PCB 全产业链深度图谱<br>——— 六个环节的格局、趋势与核心标的竞争力</h1>
+    <div class="sub">以「材料代际升级 × 供给刚性瓶颈 × 价值量重分配」三条主线，逐环节拆解从电子纱 / 电子布、HVLP 铜箔、高频高速树脂到覆铜板、钻针耗材、PCB 制造的完整链条。辅助材料来自 ima 投研知识库（智汇研）收录的 2026 年 9-10 月卖方深度报告，以及知识星球（浑水调研 Plus、短评 &amp; 信息）的一线产业与专家纪要。</div>
+    <div class="hero-meta">
+      <span class="chip">数据截止 2026-10-09 收盘</span>
+      <span class="chip">估值口径 PE(TTM) / PB(MRQ)</span>
+      <span class="chip">财务口径 2026 中报（26H1）</span>
+      <span class="chip">报告日期 2026-10-09</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="v">7628 布 13.1 → 15</div><div class="l">元/米：26 年 10 月时点价；<br>华泰预计 26 年末或达 15 元以上</div></div>
+      <div class="hstat"><div class="v">CCL 需求 +151% / +110%</div><div class="l">2026E / 2027E 同比增速<br>（源达证券测算口径）</div></div>
+      <div class="hstat"><div class="v">AI 服务器 PCB 62 → 185</div><div class="l">亿美元，2025 → 2030<br>CAGR 24.3%（国金证券）</div></div>
+      <div class="hstat"><div class="v">AI PCB 钻针 CAGR ≈ 138%</div><div class="l">2026-2028 年<br>（浙商证券测算口径）</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="sec-nav">
+  <b>阅读路径：</b>① 六条核心判断 → ② 产业链全景图与终端平台演进 → ③ 六个环节逐一拆解（格局 / 瓶颈 / 趋势判断 / 标的）→ ④ 趋势时间轴汇总表 → ⑤ 核心标的竞争力解剖（12 家）→ ⑥ 关键分歧（含与外资机构的正面分歧）→ ⑦ 配置矩阵与风险。
+</div>
+
+<h2 class="sec">一、六条核心判断</h2>
+<p class="sec-sub">先给结论，再给证据。</p>
+
+<div class="grid2">
+  <div class="judge">
+    <div class="n">JUDGEMENT 01</div>
+    <div class="t">这不是一轮普通的周期涨价，而是一次材料代际跃迁</div>
+    <p class="d">CCL 等级从 M6 → M8 / M9 演进，把三种上游主材同时推进更高的性能台阶：电子布从 E 布升级到 Low-Dk 二代布 / Q 布，铜箔从 HTE 标箔升级到 HVLP4 / 5，树脂从环氧体系切换到 PPO / 碳氢 / BCB / PTFE。价格弹性只是结果，真正驱动的是<b>每一代产品的材料等级提升</b>——单价可以从 8 元/米跳到 200 元/米以上，从 1.8 万元/吨跳到 18 万元/吨。</p>
+  </div>
+  <div class="judge">
+    <div class="n">JUDGEMENT 02</div>
+    <div class="t">本轮真正的瓶颈在「设备 + 窑炉」，不在名义产能</div>
+    <p class="d">织布机端被丰田 JAT910 垄断（年产能约 2,400 台，排期已至 2030 年，交期 18-24 个月），且 low-Dk 布织造效率仅为普通 FR-4 的约 40%；电子纱端 2026-2028 年净新增产能仅 11.6 / 3.6 / 7.8 万吨，其中 <b>2027 年无新产线点火</b>。铜箔端则是良率与品质爬坡约束而非铭牌产能。这就是为什么涨价可以连续落地五个季度而不被新增供给打断。</p>
+  </div>
+  <div class="judge">
+    <div class="n">JUDGEMENT 03</div>
+    <div class="t">利润正从下游 PCB 向上游材料转移，2026H2 会再平衡</div>
+    <p class="d">26H1 出现典型的「增收不增利」剪刀差：PCB 厂收入高增、毛利被原材料涨价挤压。9-10 月电子布、CCL 连续提价后，PCB 端开始向下游传导（江西某 CCL 厂出厂价上调 10%，世运电路年内三度提价）。国金、东吴判断<b>下半年剪刀差随提价落地修复</b>，但修复幅度取决于板厂议价力——这正是选择「板厂」还是「材料厂」的分水岭。</p>
+  </div>
+  <div class="judge">
+    <div class="n">JUDGEMENT 04</div>
+    <div class="t">下一个未被充分定价的卡位在填料与新工艺</div>
+    <p class="d">球形 / 化学法硅微粉已从「通用辅料」跃迁为决定 CTE、介电损耗与导热的关键材料，高端亚微米球硅仍由 Admatechs、Denka、Resonac 垄断六成以上份额；CCL 若向 M10 升级，中空 / 包覆等化学法结构是必由之路。工艺端：mSAP 把线宽线距压到 15-25μm 对标类载板，CoWoP 省掉 ABF 载板让强化 PCB 承接先进封装（单 GPU 价值量约 600 美元，达 GB200 方案的 3 倍）。</p>
+  </div>
+  <div class="judge">
+    <div class="n">JUDGEMENT 05</div>
+    <div class="t">格局确定性：PCB / CCL / 钻针三个环节都指向强者恒强</div>
+    <p class="d">Prismark 专家明确：技术要求抬升（翘曲控制、厚板、工艺革新）拉长了准入门槛与客户认证周期，AI 级产品的交付要求和客户风险偏好把订单集中分配给头部，结构上利好具备成熟落地经验的老牌公司。这在数据上得到验证——钻针 CR5 达 75.7%，全球 CCL CR2 合计 28%、CR5 合计 56%。</p>
+  </div>
+  <div class="judge">
+    <div class="n">JUDGEMENT 06</div>
+    <div class="t">最大的风险不是需求，而是技术路线未定与估值透支</div>
+    <p class="d">PTFE 尚未扫清量产障碍（通过认证 ≠ 可规模化制造）；超高层背板（&gt;100 层）材料选择仍未确定；<b>行业已在探索「无玻璃布覆铜板」方案</b>，一旦落地将催生全新 PCB 工艺并对电子布构成长期路线风险。同时上游材料标的 PB 普遍在 10-40 倍，10/09 单日板块普遍下跌 5-8%——市场自身已在给估值做压力测试。</p>
+  </div>
+</div>
+
+<h2 class="sec">二、产业链全景、价值传导与终端演进</h2>
+<p class="sec-sub">从石英砂到 GPU 集群，六个环节的价值分配与瓶颈位置。</p>
+
+<div class="fig">
+<svg viewBox="0 0 1120 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#0b4f7c"/></marker>
+  </defs>
+  <rect x="14" y="60" width="150" height="118" rx="9" fill="#eef4f9" stroke="#0b4f7c" stroke-width="1.4"/>
+  <text x="89" y="82" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b4f7c">① 原料 / 设备端</text>
+  <text x="89" y="103" text-anchor="middle" font-size="11.5" fill="#3d4551">石英砂 · 玻纤配方</text>
+  <text x="89" y="120" text-anchor="middle" font-size="11.5" fill="#3d4551">铜 · 树脂单体</text>
+  <text x="89" y="137" text-anchor="middle" font-size="11.5" fill="#3d4551">硅微粉 · 球形粉体</text>
+  <text x="89" y="158" text-anchor="middle" font-size="11" fill="#9a5000" font-weight="700">丰田 JAT910 织布机</text>
+
+  <rect x="188" y="40" width="152" height="158" rx="9" fill="#e6f2f4" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="264" y="62" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f7a8a">② 电子纱 / 电子布</text>
+  <text x="264" y="83" text-anchor="middle" font-size="11.5" fill="#3d4551">E 布 ≈ 8 元/米</text>
+  <text x="264" y="100" text-anchor="middle" font-size="11.5" fill="#3d4551">NE 一代 ≈ 26 元/米</text>
+  <text x="264" y="117" text-anchor="middle" font-size="11.5" fill="#3d4551">L 二代 150-160 元/米</text>
+  <text x="264" y="134" text-anchor="middle" font-size="11.5" fill="#3d4551">Q 石英布 &gt; 200 元/米</text>
+  <text x="264" y="156" text-anchor="middle" font-size="11" fill="#d32b2f" font-weight="700">Dk 6.2 → 3.5</text>
+  <text x="264" y="173" text-anchor="middle" font-size="11" fill="#d32b2f" font-weight="700">Df 0.006 → 0.0002</text>
+  <text x="264" y="190" text-anchor="middle" font-size="10.5" fill="#77808d">瓶颈：织布机 + 窑炉</text>
+
+  <rect x="188" y="212" width="152" height="118" rx="9" fill="#e6f2f4" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="264" y="234" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f7a8a">③ HVLP 铜箔</text>
+  <text x="264" y="256" text-anchor="middle" font-size="11.5" fill="#3d4551">HTE 标箔 1.7-1.9 万</text>
+  <text x="264" y="273" text-anchor="middle" font-size="11.5" fill="#3d4551">RTF 2.5-3.7 万</text>
+  <text x="264" y="290" text-anchor="middle" font-size="11.5" fill="#3d4551">HVLP4 ≈ 18 万元/吨</text>
+  <text x="264" y="312" text-anchor="middle" font-size="10.5" fill="#77808d">瓶颈：良率爬坡（非产能）</text>
+  <text x="264" y="326" text-anchor="middle" font-size="10.5" fill="#9a5000">三井高端占比 ≈ 50%</text>
+
+  <rect x="188" y="344" width="152" height="112" rx="9" fill="#f3eef9" stroke="#5b4b8a" stroke-width="1.6"/>
+  <text x="264" y="366" text-anchor="middle" font-size="13.5" font-weight="700" fill="#5b4b8a">④ 树脂 + 填料</text>
+  <text x="264" y="388" text-anchor="middle" font-size="11.5" fill="#3d4551">PPO/OPE · 碳氢 · BCB</text>
+  <text x="264" y="405" text-anchor="middle" font-size="11.5" fill="#3d4551">PTFE（尚未量产）</text>
+  <text x="264" y="422" text-anchor="middle" font-size="11.5" fill="#3d4551">球形 / 化学法硅微粉</text>
+  <text x="264" y="445" text-anchor="middle" font-size="10.5" fill="#77808d">下一个差异化赛道</text>
+
+  <rect x="368" y="120" width="176" height="200" rx="9" fill="#fff4e3" stroke="#c0620a" stroke-width="1.8"/>
+  <text x="456" y="143" text-anchor="middle" font-size="14.5" font-weight="700" fill="#9a5000">⑤ 覆铜板 CCL / Prepreg</text>
+  <text x="456" y="166" text-anchor="middle" font-size="11.5" fill="#3d4551">成本结构：</text>
+  <text x="456" y="184" text-anchor="middle" font-size="11.5" fill="#3d4551">铜箔 42% · 树脂 26%</text>
+  <text x="456" y="201" text-anchor="middle" font-size="11.5" fill="#3d4551">玻纤布 19%</text>
+  <text x="456" y="226" text-anchor="middle" font-size="11.5" fill="#3d4551">占 PCB 成本约 30%</text>
+  <text x="456" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#9a5000">M6 → M8 → M9 → M10</text>
+  <text x="456" y="273" text-anchor="middle" font-size="11" fill="#3d4551">Rubin 用 M8（Switch M9+Q布）</text>
+  <text x="456" y="290" text-anchor="middle" font-size="11" fill="#3d4551">Rubin Ultra 正交背板 78 层 M9</text>
+  <text x="456" y="307" text-anchor="middle" font-size="11" fill="#3d4551">Feynman 预计 144 层</text>
+  <text x="456" y="330" text-anchor="middle" font-size="10.5" fill="#77808d">格局：建滔14% 生益14%</text>
+  <text x="456" y="345" text-anchor="middle" font-size="10.5" fill="#77808d">台光13% 南亚9% 松下6%</text>
+
+  <rect x="574" y="120" width="152" height="200" rx="9" fill="#fdeae9" stroke="#d32b2f" stroke-width="1.6"/>
+  <text x="650" y="143" text-anchor="middle" font-size="13.5" font-weight="700" fill="#a3232b">⑥ 钻针 / 专用设备</text>
+  <text x="650" y="166" text-anchor="middle" font-size="11.5" fill="#3d4551">CR5 = 75.7%</text>
+  <text x="650" y="185" text-anchor="middle" font-size="11.5" fill="#3d4551">鼎泰 销量份额 29.2%</text>
+  <text x="650" y="202" text-anchor="middle" font-size="11.5" fill="#3d4551">金洲（中钨）21.0%</text>
+  <text x="650" y="219" text-anchor="middle" font-size="11.5" fill="#3d4551">佑能 10.4% 尖点 9.9%</text>
+  <text x="650" y="246" text-anchor="middle" font-size="11.5" fill="#d32b2f" font-weight="700">Q 布致寿命骤降</text>
+  <text x="650" y="264" text-anchor="middle" font-size="11.5" fill="#3d4551">12,000 孔 → 200-300 孔</text>
+  <text x="650" y="289" text-anchor="middle" font-size="11" fill="#3d4551">微孔 0.076-0.1mm</text>
+  <text x="650" y="306" text-anchor="middle" font-size="11" fill="#3d4551">深径比 &gt; 100:1</text>
+  <text x="650" y="323" text-anchor="middle" font-size="10.5" fill="#77808d">中国占全球钻针市场 63.0%</text>
+
+  <rect x="754" y="78" width="176" height="284" rx="9" fill="#e8f4ee" stroke="#12855c" stroke-width="1.8"/>
+  <text x="842" y="101" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0d6b48">⑦ PCB 制造</text>
+  <text x="842" y="125" text-anchor="middle" font-size="11.5" fill="#3d4551">AI 服务器 GPU 板</text>
+  <text x="842" y="142" text-anchor="middle" font-size="11.5" fill="#0d6b48" font-weight="700">3,000 - 15,000+ 美元/片</text>
+  <text x="842" y="159" text-anchor="middle" font-size="11" fill="#77808d">vs 普通 6 层显卡板 80-150 美元</text>
+  <text x="842" y="183" text-anchor="middle" font-size="11.5" fill="#3d4551">层数 12-16 → 20-78 层</text>
+  <text x="842" y="200" text-anchor="middle" font-size="11.5" fill="#3d4551">单机 PCB 价值 ≈ 8 倍</text>
+  <text x="842" y="217" text-anchor="middle" font-size="11.5" fill="#3d4551">GB300→VR NVL72 面积 +2.3x</text>
+  <text x="842" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#0d6b48">四条工艺主线</text>
+  <text x="842" y="263" text-anchor="middle" font-size="11.5" fill="#3d4551">① 高多层化（正交背板）</text>
+  <text x="842" y="280" text-anchor="middle" font-size="11.5" fill="#3d4551">② 高阶 HDI / mSAP</text>
+  <text x="842" y="297" text-anchor="middle" font-size="11.5" fill="#3d4551">③ 载板化 CoWoP</text>
+  <text x="842" y="314" text-anchor="middle" font-size="11.5" fill="#3d4551">④ 精细线路 / 嵌埋</text>
+  <text x="842" y="339" text-anchor="middle" font-size="10.5" fill="#77808d">国内 PCB 厂 2025 资本开支 +108.8%</text>
+  <text x="842" y="354" text-anchor="middle" font-size="10.5" fill="#77808d">2026H1 进一步 +158.2%</text>
+
+  <rect x="958" y="130" width="150" height="180" rx="9" fill="#eef2f6" stroke="#2b3542" stroke-width="1.6"/>
+  <text x="1033" y="153" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2b3542">⑧ 终端算力</text>
+  <text x="1033" y="176" text-anchor="middle" font-size="11.5" fill="#3d4551">AI 服务器 / GPU 集群</text>
+  <text x="1033" y="193" text-anchor="middle" font-size="11.5" fill="#3d4551">800G / 1.6T 交换机</text>
+  <text x="1033" y="210" text-anchor="middle" font-size="11.5" fill="#3d4551">正交背板互连</text>
+  <text x="1033" y="237" text-anchor="middle" font-size="11.5" fill="#3d4551">GB200 → GB300</text>
+  <text x="1033" y="254" text-anchor="middle" font-size="11.5" fill="#3d4551">→ Vera Rubin</text>
+  <text x="1033" y="271" text-anchor="middle" font-size="11.5" fill="#3d4551">→ Rubin Ultra</text>
+  <text x="1033" y="288" text-anchor="middle" font-size="11.5" fill="#3d4551">→ Feynman</text>
+  <text x="1033" y="314" text-anchor="middle" font-size="11" fill="#9a5000" font-weight="700">224Gbps</text>
+
+  <line x1="166" y1="100" x2="186" y2="105" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="166" y1="240" x2="186" y2="245" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="166" y1="380" x2="186" y2="385" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="342" y1="118" x2="366" y2="160" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="342" y1="270" x2="366" y2="240" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="342" y1="400" x2="366" y2="290" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="546" y1="230" x2="572" y2="230" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="728" y1="220" x2="752" y2="220" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="932" y1="220" x2="956" y2="220" stroke="#0b4f7c" stroke-width="2" marker-end="url(#ar)"/>
+
+  <text x="14" y="26" font-size="14" font-weight="700" fill="#161a20">PCB 全产业链结构与卡位地图</text>
+  <text x="14" y="46" font-size="11.5" fill="#77808d">橙字 = 当前瓶颈点；红字 = 被 AI 需求改变的关键物理量</text>
+
+  <rect x="958" y="336" width="150" height="54" rx="7" fill="#fdf2f2" stroke="#e9c0c0"/>
+  <text x="1033" y="357" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a3232b">越靠上游</text>
+  <text x="1033" y="375" text-anchor="middle" font-size="10.5" fill="#61383a">供给越刚性 · 估值越贵</text>
+
+  <rect x="14" y="392" width="330" height="62" rx="8" fill="#fff8ee" stroke="#f0d9a8"/>
+  <text x="26" y="412" font-size="11.5" font-weight="700" fill="#9a5000">关键量化：</text>
+  <text x="26" y="430" font-size="11.5" fill="#3d4551">CCL 占 PCB 成本约 30%（直接材料占 PCB 成本约 60%）</text>
+  <text x="26" y="447" font-size="11.5" fill="#3d4551">台系三家 CCL 厂 26 年 9 月收入同比 +169% / +115% / +122%</text>
+</svg>
+<div class="cap">图 1｜PCB 全产业链结构与关键参数（数据来源：Prismark、浙商证券、源达证券、国金证券、东吴证券、ZX 化工，本报告整理）</div>
+</div>
+
+<div class="note">
+  <b>价值传导的一个反直觉细节：</b>本轮涨价的<b>起点在最上游的玻纤，而不是下游的 PCB</b>。原因是 AI 需求先冲击的并不是「板厂产能」，而是能够满足 M8 / M9 规格的三种主材的<b>有效产能</b>。当企业把织机与窑炉转向低介电 / 低 CTE 高端布时，设备并没有消失，但留给普通电子布的有效产出被挤占——于是出现「高端需求增长，同时挤压普通产品供给」的产业现象。这解释了为什么连普通布也能跟着涨 216%。
+</div>
+
+<h3>2.1 终端平台演进：驱动全链条材料代际升级的唯一源动力</h3>
+<table>
+  <thead><tr><th style="width:13%">平台</th><th style="width:18%">CCL 等级</th><th style="width:22%">关键 PCB 结构</th><th style="width:23%">主要材料变化</th><th>影响</th></tr></thead>
+  <tbody>
+    <tr><td><b>GB200</b></td><td>M7 / M8 混合</td><td>高多层 Compute / Switch 板</td><td>Low-Dk 一代布 + HVLP2/3 + 改性 PPO</td><td>确立超低损耗体系</td></tr>
+    <tr><td><b>GB300</b></td><td>M8</td><td>层数升至 20-30 层</td><td>HVLP3 → HVLP4 切换开始</td><td>单机 PCB 面积较传统服务器 ≈ 8 倍</td></tr>
+    <tr><td><b>Vera Rubin</b><br><span class="tag t-hot">2026H2 放量</span></td><td>M8；<b>Switch 板 M9</b></td><td>Switch 板 40+ 层</td><td>Switch 用 <b>M9 + Q 石英布</b>；HVLP4 成为主力</td><td>224Gbps，介电损耗压至 0.0015 以下</td></tr>
+    <tr><td><b>Rubin Ultra</b></td><td><b>全面 M9</b></td><td>Midplane 44 层；<b>正交背板 78 层</b></td><td>M9 + 高填充球形硅微粉</td><td>板厚 1.8-2cm，替代数万根铜缆，PCB 首次成为机架级核心互连载体</td></tr>
+    <tr><td><b>Feynman</b><br><span class="tag t-alt">前瞻</span></td><td>M9 / M10</td><td>正交背板 <b>144 层</b></td><td>化学法硅微粉（中空 / 包覆）、PTFE 或 BCB 型碳氢</td><td>材料尚未定案，是当前最大的技术路线不确定性来源</td></tr>
+  </tbody>
+</table>
+<p style="font-size:12.5px;color:var(--muted)">数据来源：源达证券《AI 驱动 CCL 量价双升》2026-09-28；国金证券 AI PCB 半导体化系列 2026-10-08；BofA《PCB 用 CCL：规格升级正按计划推进》2026-10-05；Prismark 专家电话会纪要（知识星球，2026-09-23）。</p>
+
+<h2 class="sec">三、六个环节逐一拆解</h2>
+<p class="sec-sub">每个环节给出：格局 → 壁垒 / 瓶颈 → 已发生的价格事实 → 趋势判断 → 标的。</p>
+
+<h3>环节① · 电子纱 / 电子布 —— 全链条最紧的一环，也是本轮涨价的源头</h3>
+
+<h4>价格事实（最有说服力的证据）</h4>
+<table>
+  <thead><tr><th style="width:18%">时间</th><th style="width:24%">7628 普通电子布</th><th style="width:26%">G75 电子纱</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>2025 / 9</td><td class="num">4 - 5 元/米</td><td class="num">9,000 - 10,000 元/吨</td><td>周期底部</td></tr>
+    <tr><td>2025 Q3 期末</td><td class="num">4.15 元/米</td><td class="num">—</td><td>涨价起点基准</td></tr>
+    <tr><td>2026 H1 均价</td><td class="num">—</td><td class="num">14,250 元/吨（<span class="up">+80.5%</span>）</td><td>样本玻纤企业整体 ASP 7,021 元/吨，<span class="up">+11.8%</span></td></tr>
+    <tr><td>2026 / 9 / 15</td><td class="num">—</td><td class="num">23,450 元/吨（<span class="up">+167.4%</span>）</td><td>7 / 8 / 9 月初分别涨 2,900 / 3,000 / 3,250 元/吨</td></tr>
+    <tr><td>2026 Q3 均价</td><td class="num">10.1 元/米（同比 <span class="up">+143%</span>、环比 <span class="up">+49%</span>）</td><td class="num">—</td><td>涨价频次与幅度双双超预期</td></tr>
+    <tr><td><b>2026 / 10</b></td><td class="num"><b>13.1 元/米</b></td><td class="num">再加 3,000 元/吨</td><td>10 月新一轮提价落地；薄布 2116 / 1080 另加涨 <b>2.5 元/米</b></td></tr>
+    <tr><td>2026 年末 E</td><td class="num">≥ 15 元/米</td><td class="num">—</td><td>华泰证券预测</td></tr>
+  </tbody>
+</table>
+<p style="font-size:12.5px;color:var(--muted)">累计：25Q4 以来 7628 电子布报价涨幅 <b class="up">216%</b>；9 月玻纤龙头对电子布厚布、薄布分别提价 <b>15% / 20%</b>。（来源：国金证券《中国巨石三季报预告点评》2026-10-09；华泰证券《玻纤 26H1 综述》2026-09-21；东方财富研究中心涨价传导梳理）</p>
+
+<div class="fig">
+<svg viewBox="0 0 1120 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+  <text x="14" y="24" font-size="14" font-weight="700" fill="#161a20">电子布代际价格阶梯 与 7628 现货涨幅</text>
+  <text x="20" y="56" font-size="12" font-weight="700" fill="#0f7a8a">电子布产品等级单价（元/米）</text>
+  <g font-size="12" fill="#3d4551">
+    <text x="20" y="88">E 布（普通）</text><rect x="170" y="76" width="14" height="17" fill="#0f7a8a"/><text x="190" y="90" fill="#0f7a8a" font-weight="700">8</text>
+    <text x="20" y="118">NE 一代低介电</text><rect x="170" y="106" width="45" height="17" fill="#0f7a8a"/><text x="221" y="120" fill="#0f7a8a" font-weight="700">26</text>
+    <text x="20" y="148">L 二代低介电</text><rect x="170" y="136" width="270" height="17" fill="#c0620a"/><text x="446" y="150" fill="#c0620a" font-weight="700">150 - 160</text>
+    <text x="20" y="178">Q 石英布</text><rect x="170" y="166" width="360" height="17" fill="#d32b2f"/><text x="536" y="180" fill="#d32b2f" font-weight="700">&gt; 200</text>
+  </g>
+  <text x="20" y="212" font-size="11.5" fill="#77808d">Dk 由 6.2-6.6 降至 3.5-3.8；Df 由 ≈0.006 降至 ≈0.0002 —— 顶级与入门级单价相差 25 倍以上</text>
+  <line x1="300" y1="308" x2="1090" y2="308" stroke="#c3cad3" stroke-width="1"/>
+  <text x="640" y="60" font-size="12" font-weight="700" fill="#0b4f7c" text-anchor="middle">7628 普通电子布价格走势（元/米）</text>
+  <g>
+    <rect x="330" y="252" width="70" height="56" fill="#b9c6d3"/><text x="365" y="246" text-anchor="middle" font-size="12" fill="#3d4551">4.15</text><text x="365" y="324" text-anchor="middle" font-size="11" fill="#77808d">25Q3 期末</text>
+    <rect x="450" y="152" width="70" height="156" fill="#0b4f7c"/><text x="485" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b4f7c">10.1</text><text x="485" y="324" text-anchor="middle" font-size="11" fill="#77808d">26Q3 均价</text>
+    <rect x="570" y="84" width="70" height="224" fill="#d32b2f"/><text x="605" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#d32b2f">13.1</text><text x="605" y="324" text-anchor="middle" font-size="11" fill="#77808d">26/10 时点</text>
+    <rect x="690" y="42" width="70" height="266" fill="#f3c9c9" stroke="#d32b2f" stroke-dasharray="4 3"/><text x="725" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#a3232b">≥15</text><text x="725" y="324" text-anchor="middle" font-size="11" fill="#77808d">26 年末 E</text>
+  </g>
+  <text x="820" y="120" font-size="11.5" font-weight="700" fill="#3d4551">G75 电子纱同步验证：</text>
+  <text x="820" y="142" font-size="11.5" fill="#3d4551">26H1 均价 14,250 元/吨（同比 +80.5%）</text>
+  <text x="820" y="161" font-size="11.5" fill="#3d4551">2026/9/15 达 23,450 元/吨（同比 +167.4%）</text>
+  <text x="820" y="180" font-size="11.5" fill="#3d4551">2026/10 再加 3,000 元/吨</text>
+  <text x="820" y="210" font-size="11.5" font-weight="700" fill="#9a5000">同期粗纱 2400tex 仅 3,749 元/吨（+5%）</text>
+  <text x="820" y="230" font-size="11" fill="#77808d">—— 这不是玻纤普涨，而是电子用玻纤的独立行情</text>
+</svg>
+<div class="cap">图 2｜电子布代际价格阶梯与 7628 现货涨幅（数据来源：华泰证券、国金证券、卓创资讯，本报告整理）</div>
+</div>
+
+<h4>供给瓶颈：双重门槛，且短期几乎无解</h4>
+<div class="grid2">
+  <div class="card warn">
+    <h5>瓶颈 A · 织布机（显性瓶颈）</h5>
+    <ul>
+      <li>丰田 JAT910 织布机<b>垄断</b>，年产能约 <b>2,400 台</b>，排期已至 <b>2030 年</b>，交期 <b>18-24 个月</b>。</li>
+      <li>low-Dk 布织造效率仅为普通 FR-4 的约 <b>40%</b>（约 60% 效率损失）——等于把本就稀缺的设备资源再打四折。</li>
+      <li>国产织布机存在代差，预计 <b>2027 年后</b>才可能部分进入；华泰判断中低端电子布的织布端瓶颈<b>有望在 2027 年大幅缓解</b>。</li>
+    </ul>
+  </div>
+  <div class="card warn">
+    <h5>瓶颈 B · 电子纱窑炉（真正的硬约束）</h5>
+    <ul>
+      <li>2026-2028 年电子纱净新增产能仅 <b>11.6 / 3.6 / 7.8 万吨</b>，其中 <b>2027 年无新产线点火</b>。</li>
+      <li>26H1 实际新增点火仅 3 条：巨石 10 万吨、建滔 7 万吨电子纱线，以及内蒙古天皓 15 万吨粗纱线。</li>
+      <li>向低 DK / 低 CTE 高端产品的产能转换会<b>提升加工强度、压缩短期有效产出</b>，使紧张程度高于名义产能所显示的水平（Prismark 专家）。</li>
+      <li>华泰结论：供给逻辑正<b>由「织布机」向「窑炉 + 漏板」端转换</b>，应重视<b>纱 + 布一体化</b>企业。</li>
+    </ul>
+  </div>
+</div>
+
+<h4>盈利兑现：26H1 财报已确认，26H2 将加速</h4>
+<table>
+  <thead><tr><th style="width:15%">公司</th><th style="width:19%">26H1 玻纤及制品销量</th><th style="width:13%">26H1 毛利率</th><th style="width:14%">26H1 扣非净利率</th><th>特种电子布进展</th></tr></thead>
+  <tbody>
+    <tr><td><b>中国巨石</b></td><td>170 万吨（<span class="up">+7.5%</span>）</td><td>42.1%</td><td>26%</td><td>电子纱及电子布收入 29.5 亿，占总收入 <b>26.9%</b>（2023-24 低点仅 17%）</td></tr>
+    <tr><td><b>宏和科技</b></td><td>—（以电子布为主）</td><td class="up"><b>59.3%</b></td><td class="up"><b>39.6%</b></td><td>毛利率 / 净利率<b>均已超越 2017、2021 两轮周期高点</b>；26H1 收入 <span class="up">+90%</span>，海外收入 15.8 亿 <span class="up">+95%</span></td></tr>
+    <tr><td><b>中材科技</b></td><td>75 万吨（<span class="up">+15%</span>）</td><td>约 22-23%</td><td>约 7%</td><td>子公司泰山玻纤 26H1 特种布销量约 1,350 万米</td></tr>
+    <tr><td><b>国际复材</b></td><td>60 万吨（<span class="up">+8%</span>）</td><td>31.1%（26Q2）</td><td>约 12%</td><td>26H1 特种布销量约 1,100 万米；26Q2 毛利率由 23.3% 跳升至 31.1%</td></tr>
+    <tr><td><b>山东玻纤</b></td><td>35 万吨（<span class="up">+40%</span>）</td><td>约 18%</td><td>约 2%</td><td><span class="tag t-alt">无电子业务</span>纯粗纱弹性，ASP 提升明显滞后</td></tr>
+    <tr><td><b>长海股份</b></td><td>20 万吨（<span class="up">+5%</span>）</td><td>约 25%</td><td>约 10%</td><td><span class="tag t-alt">无电子业务</span>受上游纱涨价挤压，盈利增速靠后</td></tr>
+  </tbody>
+</table>
+<p style="font-size:12.5px;color:var(--muted)">六家样本合计：26H1 收入 366 亿元（+23.1%），扣非归母净利 53.5 亿元（<span class="up">+67.7%</span>）；产销量 +7%~8%，ASP +11%~12%——<b>利润弹性主要来自价格而非量</b>。26H1 资本开支：巨石 21.5 亿（+560%）、宏和 15.9 亿（+801%）、中材 20.6 亿（+35%）、国际复材 7.6 亿（+27%），行业在高景气下积极扩张。（华泰证券）</p>
+
+<h4>趋势判断</h4>
+<div class="card ok">
+  <ul>
+    <li><b>普通布：</b>供给仍紧，但需盯下游普通 CCL 需求增速——这是唯一可能证伪的变量。风险在于存储等环节涨价对消费电子需求的压制。</li>
+    <li><b>特种布：</b>Low-Dk2 与 Low-CTE 进入<b>量价齐升</b>阶段，26H2 随织布机到位加速放量，是弹性最大的子方向。三个 adj. 性指标：谁先实现 M9 用 Q 布批量供货、谁的 low-Dk 布良率高、谁的窑炉自给。</li>
+    <li><b>国产替代：</b>26H1 薄型及以上电子布进口量超 1,300 吨、均价高达 <b>117,500 美元/吨</b>（约合人民币 84 万元/吨），主要来自马来西亚、中国台湾、日本、韩国——替代空间清晰。宏和 2025 / 26H1 收入增速 +42% / +90%，已显著超越日东纺织（+20% / +26%）。</li>
+    <li><b>2027 年是关键分水岭：</b>织布端瓶颈缓解 vs 窑炉约束仍强，叠加结果是——<b>布端的超额利润会回落，纱端的稀缺性会凸显</b>。中期配置优先级：纱 + 布一体化 &gt; 纯织布。</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th style="width:14%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>中国巨石</b> <span class="tag t-core">核心</span></td><td>600176</td><td class="num">34.1</td><td class="num">4.66</td><td class="num">9.06%</td><td class="num">1,544 亿</td><td>全球玻纤龙头，纱 + 布一体化最完整；26Q1-Q3 归母 52.65 亿（<span class="up">+105%</span>），Q3 单季 23.32 亿（<span class="up">+165%</span>，环比 <span class="up">+40%</span>）</td></tr>
+    <tr><td><b>宏和科技</b> <span class="tag t-key">高弹性</span></td><td>603256</td><td class="num">215.1</td><td class="num">36.04</td><td class="num">15.28%</td><td class="num">1,063 亿</td><td>A 股最纯的电子布标的；已 H 股上市融资，黄石 80 亿元项目在建。<b>但 PB 36x 意味着极度乐观已被定价</b></td></tr>
+    <tr><td>中材科技</td><td>002080</td><td class="num">42.9</td><td class="num">4.26</td><td class="num">5.92%</td><td class="num">869 亿</td><td>泰山玻纤特种电子布放量；非玻纤业务（风电叶片）占比高导致报表被稀释，PB 是玻纤三家龙头中最低</td></tr>
+    <tr><td>国际复材</td><td>301526</td><td class="num">140.0</td><td class="num">10.89</td><td class="num">7.46%</td><td class="num">953 亿</td><td>26Q2 毛利率环比跳升 7.8pct 显示特种布拐点；海外（巴林）收入同比 -24.1% 仍拖累</td></tr>
+    <tr><td>山东玻纤</td><td>605006</td><td class="num">1,273</td><td class="num">2.91</td><td class="num">1.10%</td><td class="num">90 亿</td><td><span class="tag t-risk">无电子布业务</span>纯粗纱 beta，PB 最低</td></tr>
+  </tbody>
+</table>
+
+<hr class="sep">
+
+<h3>环节② · HVLP 铜箔 —— 良率约束下的国产替代窗口</h3>
+<p>铜箔在 CCL 成本中占比最高（约 <b>42%</b>），是决定高速信号<b>导体损耗</b>的关键。AI 服务器对表面粗糙度的要求把铜箔从「大宗电解铜加工品」变成了「精密电子材料」。</p>
+
+<table>
+  <thead><tr><th style="width:16%">代际</th><th style="width:22%">价格（万元/吨）</th><th style="width:22%">应用</th><th>供应格局</th></tr></thead>
+  <tbody>
+    <tr><td>HTE 标箔</td><td>1.7 - 1.9</td><td>普通 FR-4</td><td>充分竞争，国产化率高</td></tr>
+    <tr><td>RTF（反转处理）</td><td>2.5 - 3.7</td><td>中低阶高速板</td><td>国产基本实现</td></tr>
+    <tr><td><b>HVLP3</b></td><td>—</td><td>M6 / M7 级</td><td>三井高端份额约 50%，国产已批量</td></tr>
+    <tr><td><b>HVLP4</b> <span class="tag t-hot">Rubin 主力</span></td><td><b>≈ 18</b></td><td>M8 / M9 级高速 CCL</td><td><b>全球仅能供三家：CircuitFoil、三井、SK Nexilis</b>；国内铜冠铜箔已批量出货，德福科技在验证</td></tr>
+    <tr><td>HVLP5</td><td>研发中</td><td>M10 / Feynman 前瞻</td><td>尚未量产</td></tr>
+    <tr><td>3μm 超薄载体铜箔</td><td>—</td><td>类载板 / mSAP</td><td><b>三井垄断</b></td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <b>关键认知（Prismark 专家电话会）：</b>高端 HVLP 铜箔的供给约束<b>不在于铭牌产能公告，而在于良率与品质爬坡</b>。这意味着新玩家宣布扩产 ≠ 有效供给释放，国产替代的实际节奏会<b>慢于市场预期</b>，反过来延长现有领先者的超额盈利窗口。
+</div>
+
+<h4>趋势判断</h4>
+<ul class="plain">
+  <li><b>HVLP4 是当前价值量核心。</b>Rubin / Rubin Ultra 全面采用，2027 年高阶 CCL 高强度扩产将进一步放大需求。18 万元/吨 vs 标箔 1.8 万元/吨 = <b>10 倍价差</b>，是全链条单位增益最夸张的单品之一。</li>
+  <li><b>国产替代是真实的 alpha，但要按「良率曲线」而非「产能公告」定价。</b>铜冠已进入批量出货、德福在客户验证中——两家 26H1 ROE 仍只有 3.91% / 6.31%，说明<b>高端占比仍低</b>，业绩弹性尚未兑现。</li>
+  <li><b>警惕转产冲击：</b>锂电铜箔近年严重过剩，行业存在向电子铜箔转产的动机。但 HVLP 等级不是简单转产能即可做到，主要冲击会在中低端 RTF 而非 HVLP4。</li>
+</ul>
+
+<table>
+  <thead><tr><th style="width:14%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>状态与卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>铜冠铜箔</b> <span class="tag t-key">国产替代</span></td><td>301217</td><td class="num">323.3</td><td class="num">13.98</td><td class="num">3.91%</td><td class="num">784 亿</td><td><b>HVLP4 已批量出货</b>，国内进度最靠前；26H1 净利同比 +514.7%（低基数）</td></tr>
+    <tr><td>德福科技</td><td>301511</td><td class="num">162.6</td><td class="num">12.98</td><td class="num">6.31%</td><td class="num">548 亿</td><td>HVLP 在客户验证阶段；26H1 营收 +73.5%、净利 +580.7%（低基数）</td></tr>
+    <tr><td>诺德股份</td><td>600110</td><td class="num">亏损</td><td class="num">3.13</td><td class="num">1.77%</td><td class="num">188 亿</td><td><span class="tag t-risk">尚未扭亏</span>2025 年 ROE -5.28%；PB 3.13x 为三家最低，属深度反转期权</td></tr>
+  </tbody>
+</table>
+<div class="danger">
+  <b>估值纪律提示：</b>铜冠铜箔 PE(TTM) 323x、德福科技 163x，PB 均接近 13-14x。<b>两家 26H1 净利润同比 +500% 以上是典型的低基数失真</b>（去年同期几乎不赚钱），不能据此线性外推。当前股价隐含的假设是「HVLP4 大规模放量 + 单吨盈利维持」；若验证进度延后 1-2 个季度，估值杀伤会非常剧烈。这是本报告中最需要谨慎对待的一组标的。
+</div>
+
+<hr class="sep">
+
+<h3>环节③ · 高频高速树脂与填料 —— 被低估的下一个差异化赛道</h3>
+<p>如果说 2025-2026 年的主角是玻纤布，那么 Prismark、ZX 化工等多方观点共同指向同一结论：<b>树脂将成为 CCL 的下一个差异化赛道</b>。理由是树脂配方属于专利技术，树脂与填料之间的相互作用决定了介电性能的持续优化空间。</p>
+
+<h4>树脂路线之争：不是二选一，而是按等级分工</h4>
+<table>
+  <thead><tr><th style="width:14%">CCL 等级</th><th style="width:22%">PPO : 碳氢配比</th><th style="width:26%">主流路线</th><th>代表玩家</th></tr></thead>
+  <tbody>
+    <tr><td>M6 / M7</td><td>环氧 / 改性 PPO 为主</td><td>PPO（聚苯醚）</td><td>SABIC、旭化成、圣泉、东材、呈和</td></tr>
+    <tr><td><b>M8</b></td><td><b>≈ 2 : 1</b></td><td>PPO 主导 + 碳氢补充</td><td>—</td></tr>
+    <tr><td><b>M9</b></td><td><b>≈ 1 : 2（逆转）</b></td><td><b>碳氢（含 BCB 型）主导</b></td><td>圣泉集团 BCB 已小批量出货</td></tr>
+    <tr><td>M9+ / M10</td><td>碳氢 vs PTFE <b>共存互补</b></td><td>BCB 型高端碳氢 或 PTFE</td><td>Df 目标 &lt; 0.0008 / &lt; 0.0005</td></tr>
+  </tbody>
+</table>
+<p style="font-size:13px">BCB（苯并环丁烯）是 M9 以上<b>最关键的新材料</b>：商用 CYCLOTENE BCB 聚合物平均介电常数约 2.49，特定体系在 1MHz 下 Dk ≈ 2.65、Df ≈ 0.0008；更重要的是它<b>加工性能优于 PTFE</b>——这正是当前 PTFE 尚未量产的症结所在。</p>
+<div class="note">
+  <b>PTFE：被过度炒作的一条路线。</b>Prismark 专家给出明确结论——<b>材料「通过认证」并不代表可以实现规模化制造</b>。PTFE 尚未扫清稳定量产所需的实际障碍（压合窗口、工艺一致性、可靠性），应视为<b>仍在演进中的技术路线，而非即可替代现有方案的落地方案</b>；&gt;100 层背板材料选择仍未定案。我们建议对以 PTFE 为核心叙事的标的降级——BofA 提到 PTFE 贡献或达相关厂商营收 10%（毛利率约 50%），这是<b>长期期权而非 2027 年前的业绩驱动</b>。
+</div>
+
+<h4>填料（硅微粉）：从辅料跃迁为卡位材料 —— 本报告新识别的最重要环节</h4>
+<div class="card hl">
+  <h5>为什么填料突然变重要了？</h5>
+  <p>M9 / M10 级别为追求极限介电性能，<b>硅微粉添加量会持续提升</b>，且其形貌、粒径、表面处理直接决定 CCL 的<b>热膨胀系数（CTE）、介电损耗与导热</b>三个核心指标。球形硅微粉已从「按吨卖的通用辅料」变为「按性能卖的关键材料」，价值量在 M8→M9 之间显著跃升。</p>
+  <ul>
+    <li><b>格局：</b>高端亚微米球硅由 Admatechs（日本）、Denka（日本）、Resonac（日本）垄断<b>六成以上</b>份额——这是一个替代空间与集中度双高的细分。</li>
+    <li><b>技术下一步：</b>若 CCL 向 M10 演进，<b>化学法（中空、包覆等结构可设计）硅微粉</b>是必由之路，介电性能有望进一步突破。</li>
+    <li><b>产业验证：</b>ZX 化工（2026-10-08）明确提到国内头部上市公司化学法硅微粉逐步起量，龙头硅微粉企业处于扩产 / 上市阶段。</li>
+  </ul>
+</div>
+
+<h4>趋势判断</h4>
+<ul class="plain">
+  <li><b>树脂端的兑现在时间轴上比玻纤更靠后但更持久。</b>M9 全面普及要到 Rubin Ultra（2027），届时碳氢需求相对 M8 时代是翻倍级增长。树脂环节的业绩兑现在 2027 年而非 2026 年。</li>
+  <li><b>填料是当前信息效率最低的隐蔽赛道。</b>相比电子布（PB 36x）和铜箔（PB 13x），填料的国产替代逻辑同样清晰，且国内玩家少、卡位明确。</li>
+  <li><b>风险：</b>树脂与填料的验证周期长于布和铜箔，且 CCL 厂切换供应商的成本更高（配方专利 + 一致性）——一旦切入则粘性强，但切入速度慢。</li>
+</ul>
+
+<table>
+  <thead><tr><th style="width:14%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>圣泉集团</b> <span class="tag t-core">首选</span></td><td>605589</td><td class="num"><b>30.2</b></td><td class="num"><b>2.67</b></td><td class="num">4.18%</td><td class="num">288 亿</td><td><b>布局最全 + 估值最低</b>：26H1 PPO/OPE 基本满产满销并通过多家头部 CCL 及 PCB 认证批量出货；<b>BCB 树脂小批量供货，深度绑定龙头 CCL 客户并向上游单体延伸</b>；2,000 吨/年 PPO/OPE 共线项目 2026 年 9 月投产，规划 1,000 吨/年高端碳氢扩产</td></tr>
+    <tr><td><b>东材科技</b> <span class="tag t-key">平台型</span></td><td>601208</td><td class="num">120.4</td><td class="num">7.87</td><td class="num">5.05%</td><td class="num">490 亿</td><td>自研<b>双马来酰亚胺 / 活性酯 / 碳氢 / 聚苯醚</b>四大系列齐备，已通过国内外一线 CCL 厂认证，配套英伟达、华为、苹果、英特尔体系；在建「年产 2 万吨高速通信基板用电子材料」项目</td></tr>
+    <tr><td><b>联瑞新材</b> <span class="tag t-new">填料卡位</span></td><td>688300</td><td class="num">108.8</td><td class="num">19.02</td><td class="num">8.26%</td><td class="num">330 亿</td><td>国内<b>球形硅微粉龙头</b>，直接对标 Admatechs / Denka / Resonac 垄断的高端份额；10/09 板块大跌日仅收跌 2.06%，明显抗跌</td></tr>
+    <tr><td>呈和科技</td><td>688625</td><td class="num">61.9</td><td class="num">9.69</td><td class="num">8.24%</td><td class="num">159 亿</td><td>电子级聚苯醚树脂 + 电子级阻燃剂向头部 CCL 厂稳定供货；一期技改 6 月底完成，<b>26Q3 起产能与出货逐步放量</b>。体量最小、弹性最大</td></tr>
+  </tbody>
+</table>
+
+<hr class="sep">
+
+<h3>环节④ · 覆铜板 CCL —— 全链条价值分配的枢纽</h3>
+<p>CCL 是「把三种上游主材变成一张有规定介电性能的板」的中间环节，其议价能力决定了涨价利润在上下游之间的分配。这也是本轮分歧最大、最需要辨析的环节。</p>
+
+<h4>全球格局与需求侧验证</h4>
+<div class="fig">
+<svg viewBox="0 0 1120 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+  <text x="14" y="22" font-size="13.5" font-weight="700" fill="#161a20">全球 CCL 竞争格局（按收入份额，2024）与台系厂商经营验证</text>
+  <g font-size="12">
+    <text x="20" y="52">建滔</text><rect x="90" y="40" width="290" height="16" fill="#0b4f7c"/><text x="388" y="53" font-weight="700" fill="#0b4f7c">14%</text>
+    <text x="20" y="74">生益科技</text><rect x="90" y="62" width="290" height="16" fill="#d32b2f"/><text x="388" y="75" font-weight="700" fill="#d32b2f">14%</text>
+    <text x="20" y="96">台光电子 EMC</text><rect x="90" y="84" width="269" height="16" fill="#0f7a8a"/><text x="367" y="97" font-weight="700" fill="#0f7a8a">13%</text>
+    <text x="20" y="118">南亚塑胶</text><rect x="90" y="106" width="186" height="16" fill="#9a5000"/><text x="284" y="119" font-weight="700" fill="#9a5000">9%</text>
+    <text x="20" y="140">松下</text><rect x="90" y="128" width="124" height="16" fill="#5b4b8a"/><text x="222" y="141" font-weight="700" fill="#5b4b8a">6%</text>
+  </g>
+  <g font-size="12">
+    <text x="480" y="52">联茂 ITEQ</text><rect x="550" y="40" width="124" height="16" fill="#12855c"/><text x="682" y="53" font-weight="700" fill="#12855c">6%</text>
+    <text x="480" y="74">台耀 TUC</text><rect x="550" y="62" width="103" height="16" fill="#c0620a"/><text x="661" y="75" font-weight="700" fill="#c0620a">5%</text>
+    <text x="480" y="96">斗山 Doosan</text><rect x="550" y="84" width="83" height="16" fill="#77808d"/><text x="641" y="97" font-weight="700" fill="#77808d">4%</text>
+    <text x="480" y="118">金安国纪</text><rect x="550" y="106" width="62" height="16" fill="#a3232b"/><text x="620" y="119" font-weight="700" fill="#a3232b">3%</text>
+  </g>
+  <text x="750" y="58" font-size="12.5" font-weight="700" fill="#0b4f7c">26 年 9 月台系三家营收同比</text>
+  <text x="750" y="82" font-size="12" fill="#3d4551">台光电子 (EMC)：<tspan font-weight="700" fill="#d32b2f">+169%</tspan></text>
+  <text x="750" y="104" font-size="12" fill="#3d4551">台耀 (TUC)：<tspan font-weight="700" fill="#d32b2f">+115%</tspan></text>
+  <text x="750" y="126" font-size="12" fill="#3d4551">联茂 (ITEQ)：<tspan font-weight="700" fill="#d32b2f">+122%</tspan></text>
+  <text x="750" y="152" font-size="11.5" fill="#77808d">—— 且三者同比增速仍在持续提升</text>
+  <text x="750" y="174" font-size="11.5" fill="#9a5000">高阶 CCL 需求侧最硬的月度证据</text>
+</svg>
+<div class="cap">图 3｜全球 CCL 竞争格局与台系厂商月度经营数据（Prismark / 源达证券 / ZX 化工 2026-10-08，本报告整理）</div>
+</div>
+
+<h4>需求量测算（全链条最硬的需求锚）</h4>
+<table>
+  <thead><tr><th style="width:22%">指标</th><th class="num">2025</th><th class="num">2026E</th><th class="num">2027E</th><th style="width:36%">含义</th></tr></thead>
+  <tbody>
+    <tr><td><b>高频高速 CCL 需求量</b></td><td class="num">2,256 万张</td><td class="num">5,665 万张</td><td class="num">11,899 万张</td><td rowspan="2">连续两年三位数增长，这是给整条产业链定价的锚点</td></tr>
+    <tr><td>同比增速</td><td class="num">—</td><td class="num up">+151%</td><td class="num up">+110%</td></tr>
+  </tbody>
+</table>
+
+<h4>趋势判断</h4>
+<ul class="plain">
+  <li><b>M8 是当前盈利主力，M9 决定 2027 排名。</b>谁能在 M9（含 Q 布）上拿到 Rubin 平台的份额，谁就锁定了未来两年的价值量。</li>
+  <li><b>强者恒强在 CCL 比 PCB 更明显。</b>高端 CCL 需要同时解决树脂配方、低损耗布、HVLP 铜箔三者的一致性组合，切换成本高、认证周期长，格局比 PCB 更稳。</li>
+  <li><b>CCL 是利润分配的受益者而非受害者。</b>在上下游两头受压时，具备高端产能的 CCL 厂可以向下游传导涨价（江西某 CCL 厂已宣布出厂价上调 10%），这是它相对 PCB 厂的结构性优势。</li>
+</ul>
+
+<table>
+  <thead><tr><th style="width:14%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>生益科技</b> <span class="tag t-core">核心</span></td><td>600183</td><td class="num">58.0</td><td class="num">16.30</td><td class="num">18.17%</td><td class="num">3,015 亿</td><td>A 股唯一大规模高阶 CCL 龙头 + 控股生益电子；详见第五章竞争力解剖</td></tr>
+    <tr><td><b>金安国纪</b> <span class="tag t-key">弹性</span></td><td>002636</td><td class="num">52.4</td><td class="num">12.17</td><td class="num up"><b>19.39%</b></td><td class="num">522 亿</td><td>传统中低阶 CCL 龙头，全球份额第 9；26H1 ROE 由 2.09% 反转至 19.39%，充分享受普通布涨价红利</td></tr>
+    <tr><td><b>南亚新材</b> <span class="tag t-key">高阶弹性</span></td><td>688519</td><td class="num">98.6</td><td class="num">18.51</td><td class="num up"><b>15.24%</b></td><td class="num">606 亿</td><td>国内高阶高速 CCL 的主要挑战者，ROE 由 3.50% 反转至 15.24%；PB 18.5x 已充分定价</td></tr>
+  </tbody>
+</table>
+
+<hr class="sep">
+
+<h3>环节⑤ · 钻针与专用设备 —— 被 Q 布「意外」放大的确定性 beta</h3>
+<p>这是全链条中<b>商业模式最优雅</b>的一环：Q 布极高的硬度让钻针寿命从 12,000 孔骤降到 200-300 孔，相当于<b>耗材消耗量被同一个技术升级事件放大了 40-60 倍</b>。上游产品升级越激进，钻针用量增长越快——这是一个与技术路线选择无关的确定性受益。</p>
+
+<h4>格局（2025 年全球）与工艺约束</h4>
+<div class="grid2">
+  <div>
+    <table style="margin-top:0">
+      <thead><tr><th style="width:36%">厂商</th><th class="num" style="width:20%">销量份额</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td><b>鼎泰高科</b></td><td class="num"><b>29.2%</b></td><td>全球第一；2025 年出货 11.3 亿支；收入份额 22.9%（结构偏中低端）</td></tr>
+        <tr><td><b>金洲精工</b><br><span style="font-size:11.5px;color:var(--muted)">中钨高新持股 75%</span></td><td class="num">21.0%</td><td>国企背景 + 上游钨资源协同</td></tr>
+        <tr><td>佑能 Union Tool</td><td class="num">10.4%</td><td>日系</td></tr>
+        <tr><td>尖点 Topoint</td><td class="num">9.9%</td><td>中国台湾</td></tr>
+        <tr><td colspan="3"><b>CR5 = 75.7%</b>；中国占全球钻针市场 <b>63.0%</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card warn">
+    <h5>工艺：Q 布把加工难度推到极限</h5>
+    <ul>
+      <li>正交背板：78 层（3 块 26 层子板压合），板厚 1.8-2cm。</li>
+      <li>微孔孔径 0.076-0.1mm，<b>深径比 &gt; 100:1</b>。</li>
+      <li><b>Q 布极高硬度致单支钻针寿命由约 12,000 孔骤降至 200-300 孔</b>——用量弹性远超市场此前预期。</li>
+      <li>设备端同步受益：钻孔机、成型机、曝光（LDI）、检测设备需求加速放量。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <h5>量：AI PCB 钻针是全链条最陡的增长曲线</h5>
+  <ul>
+    <li>浙商证券测算：AI PCB 钻针 2026-2028 年 <b>CAGR ≈ 138%</b>；PCB 钻针整体 CAGR ≈ 99%。</li>
+    <li>整体市场规模：2025 年 60 亿元 → 2026E / 27E / 28E 为 69 / 77 / 84 亿元。</li>
+    <li>PCB 厂资本开支验证：国内主要 PCB 厂 2025 年资本开支 <b>+108.8%</b>，2026H1 进一步 <b>+158.2%</b>；头部厂 2025 年资本开支合计 267 亿元（+111%）。</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th style="width:14%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>鼎泰高科</b> <span class="tag t-core">全球第一</span></td><td>301377</td><td class="num">137.7</td><td class="num up"><b>42.02</b></td><td class="num up"><b>23.27%</b></td><td class="num">1,312 亿</td><td>销量份额 29.2% 全球第一；ROE 是全链条最高的一档。<b>但 PB 42x 为本报告最高估值，隐含极高的持续增长假设</b></td></tr>
+    <tr><td><b>中钨高新</b> <span class="tag t-key">性价比</span></td><td>000657</td><td class="num"><b>41.4</b></td><td class="num">10.33</td><td class="num up">19.29%</td><td class="num">1,165 亿</td><td>持股 75% 的金洲精工销量份额 21.0%，<b>同样的钻针资产但 PB 仅为鼎泰的 1/4</b>；叠加钨资源属性。本报告认为是钻针环节最优风险收益比</td></tr>
+    <tr><td>大族数控</td><td>301200</td><td class="num">68.4</td><td class="num">8.62</td><td class="num">9.73%</td><td class="num">1,039 亿</td><td>PCB 专用设备（钻孔 / 曝光 / 成型 / 检测）平台龙头，直接受益板厂资本开支 +158.2%</td></tr>
+  </tbody>
+</table>
+
+<hr class="sep">
+
+<h3>环节⑥ · PCB 制造 —— 从「增收不增利」到「提价修复」的切换点</h3>
+<p>这是 2026 年上半年最难受的环节：订单饱满、收入高增，但毛利率被上游三种主材涨价连续挤压。国金证券判断——<b>26H1 的剪刀差有望随提价落地在下半年修复</b>。这个判断能否兑现，是配置 PCB 还是配置材料的关键分野。</p>
+
+<h4>价值量：AI 服务器为何让 PCB 脱胎换骨</h4>
+<table>
+  <thead><tr><th style="width:24%">对比维度</th><th style="width:24%">传统 / 消费级</th><th style="width:26%">AI 服务器</th><th>倍数</th></tr></thead>
+  <tbody>
+    <tr><td>单片 GPU 板价值</td><td>普通 6 层显卡板 80-150 美元</td><td><b>3,000 - 15,000+ 美元</b></td><td class="up">数十倍</td></tr>
+    <tr><td>单机 PCB 价值量</td><td>传统服务器</td><td>AI 服务器</td><td class="up">≈ 8 倍</td></tr>
+    <tr><td>层数</td><td>12 - 16 层</td><td>20 - 78 层</td><td class="up">2-5 倍</td></tr>
+    <tr><td>PCB 使用面积</td><td>GB300</td><td>VR NVL72</td><td class="up">+2.3 倍</td></tr>
+    <tr><td>线宽线距</td><td>减成法 ≥ 50μm</td><td><b>mSAP 15 - 25μm</b>（对标类载板）</td><td class="up">精度 2-3 倍</td></tr>
+  </tbody>
+</table>
+
+<h4>四大工艺主线（决定谁能拿到下一代订单）</h4>
+<div class="grid2">
+  <div class="card"><h5>① 高多层化</h5><p>正交背板以 78 层 M9 级 PCB 替代数万根铜缆，PCB 首次跃升为<b>机架级核心互联载体</b>。要求极高的翘曲控制与厚板压合能力，直接抬高准入门槛。</p></div>
+  <div class="card"><h5>② 高阶 HDI / mSAP</h5><p>mSAP 把线宽线距压缩至 15-25μm，精度对标类载板。景旺电子已备产 80 万㎡高阶 HDI。</p></div>
+  <div class="card"><h5>③ 载板化 CoWoP</h5><p><b>去掉 ABF 封装基板，由强化 PCB 承接先进封装功能</b>，单 GPU 价值量约 <b>600 美元，达 GB200 方案的 3 倍</b>。这是价值量最大的期权。</p></div>
+  <div class="card"><h5>④ 精细线路 / 嵌埋</h5><p>M9 / M10 + 嵌埋器件 + 陶瓷基板，推动 AI PCB 向高密度、低损耗、载板化升级，单芯片 PCB 价值量持续提升。</p></div>
+</div>
+
+<div class="card ok">
+  <h5>供给与外溢：二三线厂商的红利</h5>
+  <p>头部厂商 2025 年资本开支 267 亿元（+111%）全面锁定高端产能，<b>中高层数供给缺口导致订单外溢</b>：世运电路年内三度提价、景旺电子 80 万㎡高阶 HDI 备战，年内 <b>13 家 PCB 厂近 590 亿元扩产</b>，印证景气正向二三线传导。这意味着 2026 年下半年到 2027 年，二三线 PCB 厂的产能利用率会显著上行。</p>
+</div>
+
+<table>
+  <thead><tr><th style="width:13%">标的</th><th style="width:9%">代码</th><th class="num">PE(TTM)</th><th class="num">PB</th><th class="num">ROE(26H1)</th><th class="num">总市值</th><th>卡位</th></tr></thead>
+  <tbody>
+    <tr><td><b>沪电股份</b> <span class="tag t-core">核心</span></td><td>002463</td><td class="num">42.7</td><td class="num">12.01</td><td class="num">17.38%</td><td class="num">2,161 亿</td><td>AI 服务器 + 800G/1.6T 交换机 PCB 双主线；议价力最强的板厂之一</td></tr>
+    <tr><td><b>深南电路</b> <span class="tag t-core">核心</span></td><td>002916</td><td class="num">56.8</td><td class="num">13.12</td><td class="num">12.43%</td><td class="num">2,365 亿</td><td>PCB + 封装基板 + 电子装联三线；载板能力使其在 CoWoP 路线上具备稀缺身位</td></tr>
+    <tr><td><b>生益电子</b> <span class="tag t-key">弹性</span></td><td>688183</td><td class="num">42.4</td><td class="num">13.37</td><td class="num">17.95%</td><td class="num">871 亿</td><td>生益科技控股子公司，纯 AI 高多层 PCB；26H1 PCB 收入 55.19 亿（+52.03%），毛利率 31.20%</td></tr>
+    <tr><td><b>广合科技</b> <span class="tag t-cheap">低 PB</span></td><td>001389</td><td class="num">49.4</td><td class="num"><b>9.21</b></td><td class="num">16.05%</td><td class="num">730 亿</td><td>服务器板专家；ROE 16.05% 与 PB 9.21x 的组合在 PCB 组中<b>性价比最高</b>；A+H 两地上市</td></tr>
+    <tr><td>胜宏科技</td><td>300476</td><td class="num">39.6</td><td class="num"><b>5.25</b></td><td class="num">11.80%</td><td class="num">1,992 亿</td><td>HDI / 高多层，深度绑定头部 GPU 客户；<b>PB 5.25x 是 PCB 大市值标的中最低</b></td></tr>
+    <tr><td>东山精密</td><td>002384</td><td class="num">74.3</td><td class="num">10.94</td><td class="num">12.88%</td><td class="num">2,665 亿</td><td>PCB + 光电显示 + 精密制造；消费电子基本盘 + AI PCB 增量</td></tr>
+    <tr><td>景旺电子</td><td>603228</td><td class="num">88.2</td><td class="num">7.91</td><td class="num"><b>4.55%</b></td><td class="num">1,043 亿</td><td>ROE 仅 4.55%，典型「增收不增利」；80 万㎡高阶 HDI 备产是 26H2 关键变量——<b>修复弹性最大，也最需等待验证</b></td></tr>
+    <tr><td>鹏鼎控股</td><td>002938</td><td class="num">45.7</td><td class="num"><b>5.03</b></td><td class="num"><b>3.71%</b></td><td class="num">1,730 亿</td><td>消费电子 PCB 全球龙头，AI 占比仍低导致 ROE 仅 3.71%；<b>属于「AI 期权」而非「AI 受益」</b></td></tr>
+    <tr><td>兴森科技</td><td>002436</td><td class="num">302.2</td><td class="num">11.61</td><td class="num">2.03%</td><td class="num">655 亿</td><td>PCB 样板 + IC 载板；ROE 仍低，属长期国产替代期权而非当期业绩</td></tr>
+    <tr><td>奥士康</td><td>002913</td><td class="num">146.0</td><td class="num">6.46</td><td class="num"><b>1.85%</b></td><td class="num">284 亿</td><td><span class="tag t-risk">业绩尚未兑现</span>26H1 ROE 仅 1.85%，需等待拐点</td></tr>
+  </tbody>
+</table>
+
+<h2 class="sec">四、各环节发展趋势与未来判断（时间轴汇总）</h2>
+<p class="sec-sub">按「已发生 → 正在发生 → 关键验证窗口 → 尚未确定」四段时间窗排列。</p>
+
+<table>
+  <thead><tr><th style="width:12%">时间窗</th><th style="width:15%">环节</th><th style="width:33%">趋势 / 判断</th><th>验证信号与备注</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="3"><b>已发生</b><br><span class="tag t-alt">2025Q4-26Q3</span></td><td>电子布 / 电子纱</td><td>涨价五连击，7628 累计 +216%，G75 同比 +167%</td><td>已在报表兑现：巨石 26Q3 单季归母 +165%、环比 +40%</td></tr>
+    <tr><td>CCL</td><td>台系三家 9 月收入同比 +169% / +115% / +122%，且增速仍在提升</td><td>需求侧最硬的证据；江西某 CCL 厂宣布出厂价 +10%</td></tr>
+    <tr><td>PCB</td><td>「增收不增利」剪刀差：景旺 ROE 4.55%、鹏鼎 3.71%</td><td>材料涨价快于板厂提价传导</td></tr>
+    <tr><td rowspan="3"><b>正在发生</b><br><span class="tag t-hot">2026Q4</span></td><td>电子布</td><td>10 月新一轮提价落地（7628 +1.5 元/米、薄布 +2.5 元/米、G75 +3,000 元/吨）；预计年末 7628 ≥ 15 元/米</td><td>关注 11-12 月是否再有提价函</td></tr>
+    <tr><td>PCB</td><td>提价向终端传导，剪刀差开始修复（世运电路年内三度提价）</td><td>看 Q4 毛利率环比是否回升</td></tr>
+    <tr><td>CCL</td><td>Rubin 平台 M8（Switch 板 M9 + Q 布）放量启动</td><td>看生益、南亚的高阶出货占比</td></tr>
+    <tr><td rowspan="4"><b>关键验证窗口</b><br><span class="tag t-hot">2027</span></td><td>电子布</td><td><b>织布机瓶颈有望大幅缓解</b>（国产设备突破），但窑炉端约束仍在 → 布端超额利润回落，纱端稀缺性凸显</td><td><b>本报告最明确的拐点判断：优先纱 + 布一体化</b></td></tr>
+    <tr><td>CCL</td><td>Rubin Ultra 正交背板 78 层 M9 量产；2027 高阶 CCL 高强度扩产</td><td>Q 布、球形硅微粉、M9 碳氢树脂同步放量</td></tr>
+    <tr><td>树脂 / 填料</td><td>M9 全面普及带动碳氢需求翻倍级增长；化学法硅微粉开始渗透</td><td>看联瑞新材等化学法产能进度</td></tr>
+    <tr><td>钻针</td><td>AI PCB 钻针 CAGR 138% 进入主升段</td><td>看 Q 布渗透率 → 钻针单耗</td></tr>
+    <tr><td rowspan="3"><b>尚未确定</b><br><span class="tag t-risk">2028+</span></td><td>树脂</td><td><b>PTFE vs BCB 型碳氢</b>：PTFE 尚未扫清量产障碍，「通过认证 ≠ 可规模化制造」</td><td>不要以 PTFE 为核心叙事定价</td></tr>
+    <tr><td>CCL 架构</td><td><b>行业已在探索「无玻璃布覆铜板」方案</b>——一旦落地将催生全新 PCB 制造工艺，是电子布的长期路线风险</td><td>率先完成产线革新的公司获先发优势</td></tr>
+    <tr><td>终端架构</td><td>CPO 渗透：M7 及以上等级仍会被采用（系统仍需高性能材料支持供电与板上剩余通信），影响大概率可控；CPO 预计 2026 年率先在交换机领域规模化落地</td><td>Prismark 专家结论——这是被市场过度担忧的一条风险</td></tr>
+  </tbody>
+</table>
+
+<h2 class="sec">五、核心标的竞争力解剖</h2>
+<p class="sec-sub">只写护城河、产能与风险，不重复前面已列出的表格数据。</p>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">生益科技</span><span class="cd">600183.SH</span>
+      <div class="pos">环节④ CCL ｜ 全球份额 14%，与建滔并列第一</div></div>
+    <div class="rt"><div class="big">58.0x / 16.30x</div>PE(TTM) / PB ｜ ROE 18.17% ｜ 3,015 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>国内唯一进入全球第一梯队：</b>14% 全球份额与建滔并列第一，且高等级产品占比远高于建滔。</li>
+        <li><b>CCL + PCB 双吃 AI 价值量：</b>控股生益电子，同一轮 AI 硬件升级同时获得「材料 + 板级」双重收益——A 股 PCB 链唯一的纵向一体化结构。</li>
+        <li><b>已实现 M9 突破：</b>据公开产业链信息，<b>M9 级高频基材已实现北美 N 客户 Vera Rubin 架构相关料号突破</b>——直接反驳「生益做不了最高端」的说法。</li>
+        <li><b>盈利已被验证：</b>26H1 覆铜板及粘结片收入 123.57 亿（+47.74%），毛利率升至 29.16%（+5.47pct）；收入增速明显高于出货量增速 = <b>高端占比提升带来的 ASP 弹性正在兑现</b>。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">产能与弹药</div>
+      <ul>
+        <li>江西生益二期 26H1 全面投产；泰国 CCL 项目 9 月投产，月产能约 40 万张。</li>
+        <li><b>松山湖第二工厂总投资约 52 亿元，规划年产 4,800 万平方米高性能覆铜板，一期预计 2027H2 陆续释放</b>——2027-2028 年的主要增量。</li>
+        <li>26H1 归母净利 32.87 亿（+130.42%）。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>M8 / M9 客户认证失败或延后；松山湖产能爬坡不及预期；PB 16.30x 已隐含较高预期——见下节<b>与美银的正面分歧</b>。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>PCB 产业链最完整的 AI 受益标的。但当前估值已不由当期利润决定，而由 2027 年 M9 出货量决定。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">沪电股份</span><span class="cd">002463.SZ</span>
+      <div class="pos">环节⑥ PCB ｜ AI 服务器 + 高速交换机双主线</div></div>
+    <div class="rt"><div class="big">42.7x / 12.01x</div>PE(TTM) / PB ｜ ROE 17.38% ｜ 2,161 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>ROE 17.38% 在 PCB 大市值标的中最高</b>，而且是在 26H1 上游涨价最凶的时候做出来的——说明议价力与产品结构确实优于同业。</li>
+        <li>AI 服务器与 800G / 1.6T 交换机<b>两条需求曲线同时向上</b>；CPO 率先在交换机落地，但 M7 以上材料仍会被采用（Prismark），交换机板需求不受 CPO 负面冲击。</li>
+        <li>高多层、高速材料工艺积累深厚，与北美头部客户绑定周期长。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">为什么是进可攻退可守的选择</div>
+      <ul>
+        <li>相比上游材料，不承担技术路线风险——无论 PTFE 还是碳氢，板厂都要用。</li>
+        <li>相比二三线板厂，有确定的 AI 订单与高 ROE。</li>
+        <li>PE 42.7x 在 PCB 核心标的中属于中位偏低。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>上游成本继续上行而传导滞后；1.6T 交换机放量节奏低于预期。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>PCB 环节的首选。风险收益比优于任何一个 PB &gt; 15x 的上游标的。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">中国巨石</span><span class="cd">600176.SH</span>
+      <div class="pos">环节① 电子纱 / 电子布 ｜ 全球玻纤龙头，纱 + 布一体化</div></div>
+    <div class="rt"><div class="big">34.1x / 4.66x</div>PE(TTM) / PB ｜ ROE 9.06% ｜ 1,544 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>全链条估值最便宜的核心标的：</b>PE 34.1x、PB 4.66x，在本报告覆盖的所有「AI 直接受益」标的中最低——而这个位置恰恰处在涨价源头。</li>
+        <li><b>纱 + 布一体化：</b>华泰明确指出 26H2 起供给约束由织布机向窑炉端转移，一体化企业结构性受益。26H1 已新增点火 10 万吨电子纱线。</li>
+        <li><b>盈利已经兑现：</b>26Q1-Q3 归母 52.65 亿（+105%），26Q3 单季 23.32 亿（+165%、环比 +40%）。26H1 电子纱及电子布收入占比升至 26.9%（低点仅 17%）。</li>
+        <li>规模效应 + 自主冷修调节供给（8 月公告拟冷修桐乡 5 线 18 万吨）。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">盈利预测（国金证券，2026-10-09）</div>
+      <ul>
+        <li>2026E 归母 <b>78.98 亿</b>（+140.38%），2027E <b>120.87 亿</b>（+53.04%），2028E 128.4 亿。</li>
+        <li>2026E / 27E / 28E 摊薄 EPS 1.973 / 3.019 / 3.208 元。</li>
+        <li>2027E PE 约 <b>12.8x</b>、PB 3.54x；ROE 预计由 2025 年 10.57% 升至 2027 年 <b>27.73%</b>。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul>
+        <li>AI 电子布：低介电系列仍在<b>研发、客户认证及送样</b>阶段——尚未在高端布上建立先发优势。</li>
+        <li>粗纱（占大头）受淡季与库存累积影响（26M8 行业库存约 90.5 万吨，环比 +4.1 万吨）。</li>
+        <li>26H1 汇兑损失 1.3 亿元。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>本报告在电子布环节的<b>首选</b>。不是因为弹性最大，而是因为「确定性 × 估值」的乘积最大——宏和 PB 36x vs 巨石 PB 4.66x，同样的涨价却相差 7.7 倍估值。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">广合科技</span><span class="cd">001389.SZ</span>
+      <div class="pos">环节⑥ PCB ｜ 服务器板专家</div></div>
+    <div class="rt"><div class="big">49.4x / 9.21x</div>PE(TTM) / PB ｜ ROE 16.05% ｜ 730 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>ROE 16.05% 配 PB 9.21x，是 PCB 组中单位 ROE 估值最低的标的之一</b>——对比深南 PB 13.12x / ROE 12.43%、生益电子 PB 13.37x / ROE 17.95%。</li>
+        <li>服务器 PCB 起家，产品结构聚焦，AI 服务器 / 高多层占比高，纯度好于多元化 PCB 厂。</li>
+        <li>已实现 A+H 两地上市（01989.HK），10/08 港股 PCB 反弹日涨 4.06%，海外资金关注度高。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">成长逻辑</div>
+      <ul>
+        <li>服务器板是本轮量价齐升最直接受益的 PCB 品类（单机 PCB 价值量 ≈ 传统服务器 8 倍）。</li>
+        <li>市值仅 730 亿，在 PCB 核心标的中体量最小，订单弹性最大。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>客户集中度较高；服务器平台迭代若延后，订单能见度下降。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>PCB 组中的攻守兼备标的，尤其适合不愿承担上游技术路线风险的资金。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">中钨高新</span><span class="cd">000657.SZ</span>
+      <div class="pos">环节⑤ 钻针（持股 75% 金洲精工）｜ 全球销量份额 21.0%</div></div>
+    <div class="rt"><div class="big">41.4x / 10.33x</div>PE(TTM) / PB ｜ ROE 19.29% ｜ 1,165 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>同样的钻针资产，1/4 的估值：</b>金洲销量份额 21.0% vs 鼎泰 29.2%，二者销量份额差距 1.39 倍，PB 差距却达 <b>4.07 倍</b>（鼎泰 42.02x）。</li>
+        <li><b>产业链安全垫：</b>上游钨资源 + 硬质合金一体化，在钨价上行周期中反而受益（硬质合金是钻针基材）。</li>
+        <li>ROE 19.29%，仅次于鼎泰的 23.27%。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">为什么本报告把它排在鼎泰之前</div>
+      <ul>
+        <li>钻针逻辑本身成立（Q 布致寿命 12,000 → 200-300 孔，AI PCB 钻针 CAGR 138%），不必质疑。</li>
+        <li>但当同一个逻辑有两个载体时，便宜的那个在回撤中的损失会小得多——而当前正是板块估值高位、10/09 单日大跌的环境。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>国企体制下决策与激励效率；钻针只是子公司业务之一，合并报表存在稀释。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>本报告在钻针环节的<b>首选</b>，理由纯粹是估值纪律而非基本面优劣。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">圣泉集团</span><span class="cd">605589.SH</span>
+      <div class="pos">环节③ 树脂 ｜ PPO/OPE 满产满销，BCB 小批量供货</div></div>
+    <div class="rt"><div class="big">30.2x / 2.67x</div>PE(TTM) / PB ｜ ROE 4.18% ｜ 288 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>全报告 PB 最低的 AI 材料标的（2.67x）</b>，且 PE(TTM) 30.2x——唯一同时具备「营收体量 + 低估值 + AI 弹性」的组合。</li>
+        <li><b>产品矩阵最全：</b>26H1 PPO/OPE 基本满产满销并通过多家头部 CCL 及 PCB 认证批量出货；<b>ODV 通过多家国内外头部覆铜板厂性能认证并批量出货；BCB 树脂处于小批量供货阶段</b>。BCB 是 M9 及以上最核心的材料。</li>
+        <li><b>深度绑定 + 向上游延伸：</b>已深度绑定龙头 CCL 客户，并逐步向上游<b>单体</b>布局延长产业链——成本控制与供应安全的双重优势。</li>
+        <li>产能：2,000 吨/年 PPO/OPE 共线项目 2026 年 9 月建成投产；规划 1,000 吨/年高端碳氢扩产。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">为什么 PB 只有 2.67x</div>
+      <ul>
+        <li>公司<b>非电子业务占比高</b>（酚醛树脂、铸造材料等），26H1 营收 60.85 亿、归母仅 4.47 亿，ROE 4.18%——传统业务拖累整体盈利能力。</li>
+        <li>这既是缺点也是机会：市场按「化工股」给它 2.67x PB，但电子级树脂业务的边际改善会<b>非线性地抬升盈利中枢</b>。</li>
+        <li>26H1 经营活动现金流净额 -9.75 亿元，需关注营运资金压力。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>传统业务周期下行；电子级树脂收入占比提升慢于预期；BCB 客户验证延后。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>树脂环节的<b>首选</b>，也是整份报告中认知差最大的标的：一家做 BCB 的公司，正按传统化工被定价。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">联瑞新材</span><span class="cd">688300.SH</span>
+      <div class="pos">环节③ 填料 ｜ 球形硅微粉国产替代核心卡位</div></div>
+    <div class="rt"><div class="big">108.8x / 19.02x</div>PE(TTM) / PB ｜ ROE 8.26% ｜ 330 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>卡位稀缺：</b>A 股唯一的球形硅微粉纯正标的。高端亚微米球硅由 Admatechs、Denka、Resonac 垄断<b>六成以上</b>份额，替代空间清晰。</li>
+        <li><b>受益逻辑被低估：</b>M8 → M9 硅微粉添加量持续提升且价值量显著跃升；若 CCL 走向 M10，<b>化学法（中空、包覆等可做结构设计）硅微粉是必由之路</b>。</li>
+        <li>10/09 板块大跌日仅收跌 2.06%（同期生益 -5.85%、呈和 -7.86%），抗跌性说明筹码结构较好。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">短板</div>
+      <ul>
+        <li>26H1 营收仅 6.29 亿、归母 1.49 亿，<b>体量小</b>；PE 108.8x / PB 19.02x 并不便宜。</li>
+        <li>ROE 8.26%，低于同为材料环节的鼎泰（23.27%）、中钨（19.29%）。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>国产替代节奏受制于 CCL 厂认证周期；若 M10 推迟，化学法放量窗口后移。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>环节稀缺性最高，但估值已部分反映。适合作为小仓位卫星品种。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">深南电路</span><span class="cd">002916.SZ</span>
+      <div class="pos">环节⑥ PCB + 封装基板 ｜ CoWoP 路线的稀缺身位</div></div>
+    <div class="rt"><div class="big">56.8x / 13.12x</div>PE(TTM) / PB ｜ ROE 12.43% ｜ 2,365 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>唯一在 CoWoP 路线上具备现成身位的 A 股标的。</b>CoWoP 去掉 ABF 封装基板、由强化 PCB 承接先进封装功能，单 GPU 价值量约 600 美元（GB200 方案的 3 倍）——而深南同时拥有 PCB 与<b>封装基板</b>两块能力。</li>
+        <li>PCB + 封装基板 + 电子装联三线协同，是少有的「类载板 + 载板」双能力厂商。</li>
+        <li>国企背景、客户结构稳定，在国产算力链条中的位置稳固。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">短板与分歧</div>
+      <ul>
+        <li>ROE 12.43%、PE 56.8x、PB 13.12x，在 PCB 组中估值偏贵而盈利能力中等。</li>
+        <li>CoWoP 是 2027+ 的期权而非当期业绩，短期看不到兑现路径。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>封装基板国产替代进度慢于预期；BT 载板价格波动。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>买它不是买当期业绩，而是买 CoWoP 的落地概率。属于「技术路线期权」。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">铜冠铜箔</span><span class="cd">301217.SZ</span>
+      <div class="pos">环节② HVLP 铜箔 ｜ 国产 HVLP4 进度最靠前</div></div>
+    <div class="rt"><div class="big">323.3x / 13.98x</div>PE(TTM) / PB ｜ ROE 3.91% ｜ 784 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>HVLP4 已实现批量出货</b>，是国内唯一明确进入批量阶段的厂商。HVLP4 国内报价约 18 万元/吨 vs 标箔 1.7-1.9 万元/吨。</li>
+        <li>背靠铜陵有色，铜原料供应与资金实力有支撑。</li>
+        <li>26H1 净利同比 +514.7%，从亏损边缘转入盈利。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">必须直说的三个问题</div>
+      <ul>
+        <li><b>+514.7% 是典型的低基数失真</b>（去年同期几乎不赚钱），不能线性外推。</li>
+        <li><b>PE(TTM) 323.3x、PB 13.98x，而 ROE 仅 3.91%</b>——当前实际盈利能力远撑不起这个估值，一切押在 HVLP4 放量假设上。</li>
+        <li>Prismark 明确：HVLP 的约束是<b>良率与品质爬坡</b>而非产能。国产验证节奏大概率慢于当前股价隐含的假设。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>HVLP4 客户认证延后；高端占比提升缓慢导致 ROE 长期徘徊。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>产业地位真实，但当前价格已把 2028 年的成功提前贴现。建议仅在验证性事件（HVLP4 大额订单公告）落地后再考虑。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">东材科技</span><span class="cd">601208.SH</span>
+      <div class="pos">环节③ 树脂 ｜ 四大电子级树脂系列齐备的平台型供应商</div></div>
+    <div class="rt"><div class="big">120.4x / 7.87x</div>PE(TTM) / PB ｜ ROE 5.05% ｜ 490 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>树脂系列最齐全的平台：</b>自研<b>双马来酰亚胺 / 活性酯 / 碳氢 / 聚苯醚</b>四大品类全覆盖，能同时服务多条路线——在路线未定的环境下这是稀缺的「不押注」能力。</li>
+        <li>已通过国内外一线 CCL 厂商认证，配套应用于<b>英伟达、华为、苹果、英特尔</b>等主流服务器体系。</li>
+        <li>在建「年产 2 万吨高速通信基板用电子材料」项目，产能储备充分。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">短板</div>
+      <ul>
+        <li>26H1 营收 30.95 亿、归母 3.12 亿，ROE 5.05%——<b>电子树脂收入占比仍不高</b>，光学膜、绝缘材料等传统业务占大头。</li>
+        <li>PE 120.4x 明显偏高，PB 7.87x 相对温和；10/09 单日跌 4.81%。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>2 万吨项目建设与爬坡节奏；传统业务盈利下滑拖累。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>如果担心 PTFE vs 碳氢的路线之争，东材是天然的对冲型标的。但估值相对圣泉没有优势，属于次选。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">胜宏科技</span><span class="cd">300476.SZ</span>
+      <div class="pos">环节⑥ PCB ｜ HDI / 高多层，深度绑定头部 GPU 客户</div></div>
+    <div class="rt"><div class="big">39.6x / 5.25x</div>PE(TTM) / PB ｜ ROE 11.80% ｜ 1,992 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">护城河</div>
+      <ul>
+        <li><b>PCB 大市值标的中 PB 最低（5.25x）</b>，PE 39.6x 也是最低的一档——而它是明确的头部 GPU 客户核心供应商。</li>
+        <li>HDI + 高多层双能力，在 GB 系列到 Rubin 的迭代中处于受益位置。</li>
+        <li>在 A / H 两地均有融资平台，资金来源相对充裕。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">为什么 PB 比同业低这么多</div>
+      <ul>
+        <li>ROE 11.80% 低于沪电（17.38%）、生益电子（17.95%）、广合（16.05%）——市场对其盈利质量存在折价，这正是 PB 5.25x 的原因。</li>
+        <li>10/09 全板块普遍回调（生益 -5.85%、东材 -4.81%、圣泉 -5.00%、呈和 -7.86%），反映估值高位下的压力测试仍在进行。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>客户集中度高；HDI 产能竞争加剧。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>「便宜版沪电」。若相信头部客户订单持续，它提供最高的安全边际；若担心议价力，则应回避。</span></div>
+</div>
+
+<div class="co">
+  <div class="co-head">
+    <div><span class="nm">景旺电子</span><span class="cd">603228.SH</span>
+      <div class="pos">环节⑥ PCB ｜ 剪刀差修复的最大赔率标的</div></div>
+    <div class="rt"><div class="big">88.2x / 7.91x</div>PE(TTM) / PB ｜ ROE 4.55% ｜ 1,043 亿</div>
+  </div>
+  <div class="co-body">
+    <div>
+      <div class="lb">投资逻辑</div>
+      <ul>
+        <li><b>ROE 仅 4.55%，是 PCB 组中唯一「还没赚到钱」的标的</b>——这正是弹性来源。若 26H2 提价传导兑现，ROE 修复至 10% 意味着利润翻倍以上。</li>
+        <li>已备战 <b>80 万㎡高阶 HDI</b> 产能，直接瞄准外溢订单。</li>
+        <li>PB 7.91x，低于深南（13.12x）、生益电子（13.37x）、沪电（12.01x）。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lb">为什么本报告只把它放在观察名单</div>
+      <ul>
+        <li>PE(TTM) 88.2x——<b>分母（利润）太小导致 PE 失真</b>，典型的低基数陷阱。</li>
+        <li>修复尚未被验证：需要看到 Q4 / 27Q1 毛利率环比回升的证据。</li>
+      </ul>
+      <div class="lb" style="margin-top:12px">核心风险</div>
+      <ul><li>若提价传导失败，则是「高 PE + 低 ROE」的最差组合。</li></ul>
+    </div>
+  </div>
+  <div class="co-foot"><span><b>观点：</b>典型的高赔率尚未兑现选项。建议等待三季报 / 年报毛利率数据验证后再决策，不宜提前建仓。</span></div>
+</div>
+
+<h2 class="sec">六、关键分歧：本报告与市场的三处分歧</h2>
+<p class="sec-sub">研究的价值不在于重复共识，而在于明确说出「我和谁不一样，以及我可能错在哪」。</p>
+
+<div class="danger">
+  <h4 style="margin-top:0">分歧一 · 生益科技：本报告正面反驳美银的「跑输大市」</h4>
+  <p>BofA（2026-10-05）给生益科技<b>跑输大市</b>评级，<b>目标价 99 元</b>——较现价 124.14 元低 20%。核心空头论据是：<b>生益 M6 及以上产能占比仅约 10%</b>，江西二期满产后进一步扩张依赖泰国与松山湖 M7-M9 项目；其 2027E EPS 预测 4.14 元，比市场一致预期 4.82 元<b>低 14%</b>；2028E 5.52 元比 6.79 元<b>低 19%</b>。同时美银给 EMC / TUC / 斗山 / 建滔「买入」。</p>
+  <p><b>本报告的看法：认可其论据的事实部分，但不认可其推论。</b></p>
+  <ul style="margin:0;padding-left:20px">
+    <li><b>「M6+ 占比仅 10%」是静态快照，而市场定价的是斜率。</b>26H1 覆铜板及粘结片收入 +47.74%、毛利率 +5.47pct 至 29.16%，且收入增速明显高于出货量增速——高端占比<b>正在快速上行</b>，这是可以量化的证据。</li>
+    <li><b>M9 料号突破是对「做不了最高端」这一隐含假设的直接证伪。</b>已实现北美 N 客户 Vera Rubin 架构相关 M9 料号突破。</li>
+    <li><b>产能路径清晰且有时间表：</b>泰国 9 月投产（月产能约 40 万张）+ 松山湖二厂 52 亿元（年产 4,800 万㎡，一期 2027H2 释放）。这恰好对应美银质疑的「江西二期之后靠什么」。</li>
+    <li><b>需要承认的：</b>PB 16.30x 确实处于历史高位；若松山湖爬坡延后或 M9 客户认证转弱，本报告的判断会被证伪。<b>我们把生益定位为「增持」而非「买入」，且明确要求以 2027 年 M9 出货占比为跟踪指标。</b></li>
+  </ul>
+</div>
+
+<div class="danger">
+  <h4 style="margin-top:0">分歧二 · 电子布：本报告不认可按当前 PB 给纯布标的定价</h4>
+  <p>市场把宏和科技推到 <b>PB 36.04x / PE(TTM) 215x</b>，隐含「特种布超额盈利永续」的假设。<b>本报告认为 2027 年就是分水岭</b>：华泰明确指出中低端电子布的织布端瓶颈<b>有望在 2027 年大幅缓解</b>，届时「设备稀缺」这一支撑高 PB 的核心叙事将被削弱；而窑炉端对电子纱的约束仍在。</p>
+  <p>结论：<b>在「纱 + 布一体化」的标的上承担同样的产业 beta，只需支付 4.66x PB（中国巨石）而非 36x。</b>这不是否定宏和的基本面（其 26H1 毛利率 59.3%、扣非净利率 39.6% 确实超越了历史两轮周期高点），而是认为<b>支付的溢价与可获得的风险补偿不匹配</b>。</p>
+  <p><b>我可能错在哪：</b>若国产织布机突破显著慢于预期、或 Q 布在 2027 年前就成为主流，则纯布玩家的稀缺性会延续更久。</p>
+</div>
+
+<div class="danger">
+  <h4 style="margin-top:0">分歧三 · PTFE：本报告对以 PTFE 为核心叙事的标的降级</h4>
+  <p>市场对 PTFE 的关注度高，部分投资者把它当成 M10 的默认答案。<b>Prismark 专家的表述非常克制：材料「通过认证」并不代表可以实现规模化制造</b>，压合窗口、工艺一致性与可靠性问题尚未扫清；&gt;100 层背板材料选择仍未定案。</p>
+  <p>相对地，<b>BCB 型高端碳氢在电性能优异的同时具备更好的加工性能</b>，是 M9 的核心材料，且添加量随 CCL 等级提升还会继续增长——这条路线在 2027 年就能看到业绩，而 PTFE 大概率是长期期权。BofA 提到 PTFE 贡献或达相关厂商营收 10%（毛利率约 50%），我们认同这是有价值的期权，但<b>不应进入当期盈利假设</b>。</p>
+</div>
+
+<h2 class="sec">七、配置矩阵</h2>
+<p class="sec-sub">按「确定性 / 性价比 / 赔率」三类划分，不含仓位建议，仅表达研究观点。</p>
+
+<table>
+  <thead><tr><th style="width:12%">定位</th><th style="width:16%">标的</th><th style="width:10%">环节</th><th class="num">PB</th><th class="num">ROE</th><th>配置理由</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="3"><b>核心底仓</b><br><span class="tag t-core">确定性</span></td><td>中国巨石</td><td>① 电子布</td><td class="num">4.66</td><td class="num">9.06%</td><td>涨价源头 + 全链条最低估值 + 纱布一体化受益 2027 瓶颈转移</td></tr>
+    <tr><td>沪电股份</td><td>⑥ PCB</td><td class="num">12.01</td><td class="num">17.38%</td><td>不承担技术路线风险 + PCB 组最高 ROE + 双需求曲线</td></tr>
+    <tr><td>生益科技</td><td>④ CCL</td><td class="num">16.30</td><td class="num">18.17%</td><td>唯一 CCL+PCB 纵向一体化 + M9 料号已突破（但需承受美银分歧）</td></tr>
+    <tr><td rowspan="4"><b>性价比仓位</b><br><span class="tag t-cheap">推荐</span></td><td>圣泉集团</td><td>③ 树脂</td><td class="num"><b>2.67</b></td><td class="num">4.18%</td><td>全报告最低 PB + BCB 小批量供货 + M9 核心材料卡位</td></tr>
+    <tr><td>中钨高新</td><td>⑤ 钻针</td><td class="num">10.33</td><td class="num">19.29%</td><td>同资产 1/4 估值 + 钨资源安全垫</td></tr>
+    <tr><td>广合科技</td><td>⑥ PCB</td><td class="num">9.21</td><td class="num">16.05%</td><td>PCB 组单位 ROE 估值最低 + 服务器板纯度高</td></tr>
+    <tr><td>胜宏科技</td><td>⑥ PCB</td><td class="num"><b>5.25</b></td><td class="num">11.80%</td><td>PCB 大市值最低 PB + 头部 GPU 客户</td></tr>
+    <tr><td rowspan="3"><b>高赔率 / 观察</b><br><span class="tag t-risk">待验证</span></td><td>联瑞新材</td><td>③ 填料</td><td class="num">19.02</td><td class="num">8.26%</td><td>稀缺卡位但体量小、估值不便宜，建议小仓位</td></tr>
+    <tr><td>景旺电子</td><td>⑥ PCB</td><td class="num">7.91</td><td class="num">4.55%</td><td>剪刀差修复赔率最高，但须等 Q4 毛利率数据验证</td></tr>
+    <tr><td>铜冠铜箔</td><td>② 铜箔</td><td class="num">13.98</td><td class="num">3.91%</td><td>产业地位真实但估值透支，等 HVLP4 大额订单公告</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <b>跨环节配置的一条主线：</b>如果只选一条配置逻辑，本报告选择「<b>避险顺着产业链往外走</b>」——当整个板块在 10/09 普遍单日下跌 5-8%（生益 -5.85%、东材 -4.81%、圣泉 -5.00%、呈和 -7.86%）时，PB 越高的标的回撤压力越大。因此在材料股内部，估值纪律比故事强度更重要；而在材料 vs 板厂之间，板厂提供了「不押注技术路线」的天然期权价值。
+</div>
+
+<h2 class="sec">八、风险提示</h2>
+<div class="grid2">
+  <div class="card warn">
+    <h5>产业与技术风险</h5>
+    <ul>
+      <li><b>技术路线变更：</b>PTFE 尚未量产；<b>行业已在探索「无玻璃布覆铜板」方案</b>，一旦落地将催生全新 PCB 工艺并对电子布构成长期路线风险。</li>
+      <li><b>供给释放超预期：</b>国产织布机 2027 年突破、仿纱 / 仿布研发成功、锂电铜箔转产，都可能缓解瓶颈。</li>
+      <li><b>需求不及预期：</b>AI 资本开支若放缓，高多层 / 高阶 HDI 订单外溢逻辑将逆转。存储涨价对消费电子需求的压制是普通布的隐忧。</li>
+      <li><b>CPO 的二阶效应：</b>虽然 Prismark 认为影响可控（2026 年率先在交换机落地，M7+ 仍会被采用），但如果出现规格降级，高速 CCL 需求会受损。</li>
+    </ul>
+  </div>
+  <div class="card warn">
+    <h5>估值与财务风险</h5>
+    <ul>
+      <li><b>低基数失真：</b>铜冠铜箔 +514.7%、德福科技 +580.7%、国际复材、景旺等的高增速均不可线性外推——本报告已在正文逐一标注。</li>
+      <li><b>PB 高位：</b>宏和 36.04x、鼎泰 42.02x、联瑞 19.02x、南亚 18.51x——极端的 PB 意味着任何业绩miss都会被放大。</li>
+      <li><b>汇兑与现金流：</b>巨石 26H1 汇兑损失 1.3 亿；圣泉 26H1 经营现金流 -9.75 亿。</li>
+      <li><b>宏观：</b>美联储 9 月加息、多数官员预计年底前再次加息（12 月加息概率约 85%），10 年期美债收益率一度触及 5.365%（2002 年以来最高）。高久期成长股承压。</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="sec">九、辅助材料来源</h2>
+<div class="sourcebox">
+  <b>ima 投研知识库（智汇研）研报：</b><br>
+  1. 浙商证券《AI 浪潮驱动 PCB 景气，上游刀具迎量价齐升——PCB 钻针行业深度报告》2026-09-23<br>
+  2. BofA《PCB 用 CCL：规格升级正按计划推进》2026-10-05（含对生益科技的「跑输大市」评级与目标价 99 元）<br>
+  3. 源达证券《AI 驱动 CCL 量价双升，供给瓶颈强化涨价弹性——PCB 行业专题研究二》2026-09-28<br>
+  4. 华泰证券《玻纤 26H1 综述：电子布三个加速趋势》2026-09-21<br>
+  5. 国金证券《中国巨石三季报预告点评：业绩如期释放，10 月电子布涨价落地》2026-10-09<br>
+  6. 天风证券《AI 促进电子级树脂升级迭代，相关公司有望受益》2026-09-28<br>
+  7. 大摩《Greater China Technology: China Advanced Packaging, CCL and AI copper foil》2026-09-21（本报告仅引用其已核对的封装产业规模口径）<br>
+  <br>
+  <b>知识星球（浑水调研 Plus / 短评 &amp; 信息）：</b><br>
+  8. Prismark 高级顾问 Terry Wang 专家电话会纪要《PCB、覆铜板与载板》2026-09-23<br>
+  9. ZX 化工《AI 材料观点更新》2026-10-08（台系 CCL 月度收入、BCB 与硅微粉观点）<br>
+  10. 《电子布高端需求挤压普通供给》2026-09-26（五个产业判断）<br>
+  11. 《生益科技：AI 基材龙头地位再确认》2026-09-10（M9 料号突破、松山湖二厂、泰国项目）<br>
+  <br>
+  <b>市场数据与资讯：</b>通达信（行情、PE(TTM) / PB(MRQ) / ROE 加权 / 总市值，交易日 2026-10-09；财务报告期 2026 中报）；金吾财讯 / 广发证券 / 东吴证券 / 国金证券 2026-10-01 至 10-09 板块资讯。<br>
+  <br>
+  <b>免责说明：</b>本报告为研究与信息整理用途，所有观点、目标价与配置矩阵均为基于公开材料与上述辅助材料的研究举例，<b>不构成任何投资建议</b>。文中引用的第三方机构观点归原作者所有，可能存在与本报告不一致之处（已在第六章明确标注分歧）。市场有风险，决策需独立判断。
+</div>
+
+<p style="margin-top:34px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted);text-align:center">
+  PCB 全产业链深度图谱 · 各环节趋势与核心标的竞争力 ｜ 数据截止 2026-10-09 收盘 ｜ 生成于 2026-10-09
+</p>
+
+</div>
+</body>
+</html>

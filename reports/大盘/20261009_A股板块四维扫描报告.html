@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="趋势·量价·产业周期·估值四维扫描：电池 / 锂电储能为唯一四维共振板块列首选，油气开采为核心配置；煤炭、贵金属、证券、创新药为卫星配置。">
+<title>A股主流板块四维扫描报告 | 趋势·量价·产业周期·估值 | 2026-10-09</title>
+<style>
+:root{
+  --bg:#f7f8fa;
+  --surface:#ffffff;
+  --ink:#1a1d21;
+  --ink-2:#4a5057;
+  --ink-3:#7d848c;
+  --line:#e3e6ea;
+  --line-2:#eef0f3;
+  --accent:#8a1f2b;
+  --accent-soft:#f5ecec;
+  --gold:#9a7b2f;
+  --up:#c0392b;
+  --down:#0f7b52;
+  --warn:#b8860b;
+  --neutral:#5b6470;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+header{padding:56px 0 32px;border-bottom:2px solid var(--ink);margin-bottom:36px}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:14px}
+h1{font-size:34px;line-height:1.3;font-weight:700;letter-spacing:-.4px;margin-bottom:14px}
+.sub{font-size:15px;color:var(--ink-2);max-width:760px}
+.meta{margin-top:20px;font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:18px}
+.meta span{white-space:nowrap}
+h2{font-size:22px;font-weight:700;margin:52px 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line);letter-spacing:-.2px}
+h2 .num{color:var(--accent);font-size:13px;letter-spacing:.1em;margin-right:10px;font-weight:600}
+h3{font-size:16.5px;font-weight:650;margin:30px 0 12px}
+h4{font-size:14.5px;font-weight:650;margin:22px 0 8px;color:var(--ink-2)}
+p{margin-bottom:12px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:650}
+.lead{font-size:16px;color:var(--ink-2);margin-bottom:20px}
+ul,ol{margin:0 0 16px 22px;color:var(--ink-2)}
+li{margin-bottom:7px}
+code{background:var(--line-2);padding:1px 5px;border-radius:3px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* callout */
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0}
+.callout.warn{border-color:var(--warn);background:#fdf8ec}
+.callout.neutral{border-color:var(--ink-3);background:#f2f4f6}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.callout .tag{display:inline-block;font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--accent);margin-bottom:6px}
+
+/* table */
+.tblwrap{overflow-x:auto;margin:18px 0 22px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th{background:#f0f2f4;text-align:left;padding:11px 12px;font-weight:650;color:var(--ink);font-size:12.5px;letter-spacing:.02em;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line-2);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+td.name,th.name{color:var(--ink);font-weight:600;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.flat{color:var(--ink-3)}
+.tblnote{font-size:12px;color:var(--ink-3);margin-top:-14px;margin-bottom:22px}
+
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:22px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card .k{font-size:11.5px;letter-spacing:.12em;color:var(--ink-3);font-weight:600;margin-bottom:8px}
+.card .v{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.card .d{font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+/* tier blocks */
+.tier{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:18px 0;overflow:hidden}
+.tier-hd{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.tier-hd .lv{font-size:12px;font-weight:700;letter-spacing:.1em;padding:3px 9px;border-radius:4px}
+.lv-core{background:#8a1f2b;color:#fff}
+.lv-sat{background:#9a7b2f;color:#fff}
+.lv-watch{background:#5a6570;color:#fff}
+.lv-avoid{background:#0f7b52;color:#fff}
+.tier-hd .desc{font-size:13px;color:var(--ink-3)}
+.tier-bd{padding:16px 20px}
+.sector{padding:14px 0;border-bottom:1px dashed var(--line)}
+.sector:last-child{border-bottom:none;padding-bottom:2px}
+.sector:first-child{padding-top:0}
+.sector .sh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.sector .sh .nm{font-size:15.5px;font-weight:650;color:var(--ink)}
+.sector .sh .cd{font-size:12px;color:var(--ink-3);font-family:ui-monospace,Menlo,monospace}
+.sector .sh .sc{margin-left:auto;font-size:13px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.bars{display:flex;gap:10px;margin:8px 0;flex-wrap:wrap}
+.bar{font-size:11.5px;color:var(--ink-3)}
+.bar b{color:var(--ink-2);font-weight:600}
+.bartrack{display:inline-block;width:64px;height:5px;background:var(--line);border-radius:3px;vertical-align:middle;margin-right:6px;overflow:hidden}
+.barfill{display:block;height:100%;background:var(--accent);border-radius:3px}
+.sector ul{margin:6px 0 0 20px;font-size:13.5px}
+.sector li{margin-bottom:4px}
+
+/* debate */
+.debate{border:1px solid var(--line);border-radius:8px;margin:16px 0;background:var(--surface)}
+.debate .q{padding:12px 18px;background:#f0f2f4;font-weight:650;font-size:14px;border-bottom:1px solid var(--line)}
+.debate .bd{padding:14px 18px}
+.side{margin-bottom:10px;font-size:13.5px}
+.side:last-child{margin-bottom:0}
+.side .lbl{font-weight:650;display:inline-block;min-width:52px}
+.side .lbl.b{color:var(--up)}
+.side .lbl.s{color:var(--down)}
+.verdict{margin-top:12px;padding:11px 14px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;color:var(--ink)}
+.verdict b{color:var(--accent)}
+
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3)}
+footer p{margin-bottom:8px;color:var(--ink-3)}
+
+@media (max-width:640px){
+  .wrap{padding:0 14px 50px}
+  header{padding:36px 0 22px}
+  h1{font-size:25px}
+  h2{font-size:19px;margin-top:40px}
+  .card .v{font-size:22px}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{max-width:none;padding:0}
+  h2{page-break-after:avoid}
+  .tier,.debate,.tblwrap{page-break-inside:avoid}
+  footer{page-break-before:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Sector Research · Four-Dimension Scan</div>
+  <h1>A股主流板块四维扫描<br>趋势 · 量价 · 产业周期 · 估值</h1>
+  <p class="sub">以 2026-10-09 收盘数据为基准，对主流行业板块做四维交叉验证：先把"看起来在涨"的和"真的在被买、且值得买"的分开，再按<strong>赔率×胜率</strong>排序给出配置榜。</p>
+  <div class="meta">
+    <span>数据基准：2026-10-09 收盘</span>
+    <span>数据源：通达信 MCP（行情/K线/资金/财务）</span>
+    <span>分析师：技术·基本面·资讯·情绪 四维并行</span>
+    <span>报告类型：板块配置研究</span>
+  </div>
+</header>
+
+<div class="callout">
+  <div class="tag">核心结论</div>
+  <p style="color:var(--ink)"><strong>当前不是"选强势板块"的时点，而是"选跌透且资金开始回补的板块"的时点。</strong>上证指数 60 日 -5.52%、当日主力仍净流出 65.7 亿，指数处在中期回调中；近 5 日涨幅榜前列（房产服务 +6.40%、数字媒体 +6.32%、种植业 +5.67%）几乎全部<strong>估值泡沫或亏损</strong>（PE 234.58 / 98.54 / 109.50），是典型的题材脉冲而非资金共识。</p>
+  <p style="color:var(--ink);margin-bottom:0">四维交叉后，<strong>唯一实现四维共振的是电池/锂电储能（881262）</strong>：60 日跌 15.38%、今日放量 2.18 倍、主力净流入 45.81 亿居全市场前列、PE 22.11 已低于静态 PE 29.03（盈利拐点被确认）、储能排产连创新高。<strong>第二梯队是油气开采、煤炭开采、贵金属、证券</strong>——共同特征是"低估值 + 真实利润 + 股价尚未透支"。<strong>半导体/存储是最大认知偏差</strong>：产业景气最强（9.5 分），但股价 60 日 -35.27%、主力净流出 42.28 亿、PB 8.51 配 ROE 3.16%，属"故事正确、价格错误"，降级为左侧观察。</p>
+</div>
+
+<h2><span class="num">01</span>大盘锚点：先看环境，再选方向</h2>
+
+<div class="grid">
+  <div class="card"><div class="k">上证指数</div><div class="v">3813.79</div><div class="d">当日 +0.05%，1341 涨 / 956 跌</div></div>
+  <div class="card"><div class="k">5 日 / 20 日</div><div class="v" style="color:var(--down)">-1.92% / -3.26%</div><div class="d">短期反弹力度弱于回调幅度</div></div>
+  <div class="card"><div class="k">60 日 / 年初至今</div><div class="v" style="color:var(--down)">-5.52% / -3.91%</div><div class="d">中期处于回调通道</div></div>
+  <div class="card"><div class="k">当日主力资金</div><div class="v" style="color:var(--down)">-65.7 亿</div><div class="d">指数收红但资金净流出</div></div>
+</div>
+
+<p>这条基准非常重要：<strong>在一个 60 日下跌 5.52%、且当日资金仍净流出的市场里，任何板块的"涨幅第一"都只能证明情绪，不能证明趋势。</strong>因此本次扫描给所有板块加了一道硬约束——必须同时满足「中期位置不危险」+「今日有真实主力净流入」才会进入配置榜。涨停家数 72 家、最高连板 9 板，说明题材活跃度尚可、但未进入过热（无 20 板以上妖股、无百股涨停），属于"结构性回暖"。</p>
+
+<h2><span class="num">02</span>维度一：趋势与量价（实测数据）</h2>
+
+<p>我把候选板块逐一拉了通达信板块指数快照（含 5/10/20/60 日及年初至今涨幅、当日主力资金、涨跌家数），并对第一候选电池板块拉了 45 根日线做均线与量能测算。以下全部为接口实测值。</p>
+
+<h3>2.1 多周期收益率与资金对照表</h3>
+<div class="tblwrap">
+<table>
+<thead><tr>
+<th class="name">板块</th><th>代码</th><th>今日</th><th>5日</th><th>10日</th><th>20日</th><th>60日</th><th>年初至今</th><th>今日主力净流入</th><th>PE</th><th>PB</th><th>涨/跌家数</th>
+</tr></thead>
+<tbody>
+<tr><td class="name">油气开采</td><td class="num">881007</td><td class="num flat">+0.04%</td><td class="num up">+5.68%</td><td class="num up">+8.71%</td><td class="num up">+5.45%</td><td class="num up">+25.38%</td><td class="num up">+16.75%</td><td class="num flat">+0.02 亿</td><td class="num">11.99</td><td class="num">0.80</td><td class="num">2 / 5</td></tr>
+<tr><td class="name">煤炭开采</td><td class="num">881002</td><td class="num up">+1.72%</td><td class="num up">+2.03%</td><td class="num up">+3.89%</td><td class="num flat">+0.11%</td><td class="num up">+16.95%</td><td class="num up">+26.69%</td><td class="num up">+1.61 亿</td><td class="num">18.33</td><td class="num">1.54</td><td class="num">21 / 4</td></tr>
+<tr><td class="name">贵金属</td><td class="num">881075</td><td class="num up">+5.54%</td><td class="num flat">+0.01%</td><td class="num down">-7.83%</td><td class="num down">-16.31%</td><td class="num up">+17.23%</td><td class="num flat">-0.13%</td><td class="num up">+13.42 亿</td><td class="num">21.57</td><td class="num">3.47</td><td class="num">12 / 0</td></tr>
+<tr><td class="name">证　券</td><td class="num">881394</td><td class="num up">+2.09%</td><td class="num down">-1.01%</td><td class="num down">-0.70%</td><td class="num down">-5.97%</td><td class="num down">-8.74%</td><td class="num down">-14.12%</td><td class="num up">+14.46 亿</td><td class="num">11.96</td><td class="num">0.94</td><td class="num">48 / 0</td></tr>
+<tr><td class="name">电　池</td><td class="num">881262</td><td class="num up">+2.40%</td><td class="num up">+2.48%</td><td class="num flat">+0.34%</td><td class="num down">-7.40%</td><td class="num down">-15.38%</td><td class="num down">-17.03%</td><td class="num up">+45.81 亿</td><td class="num">22.63</td><td class="num">2.77</td><td class="num">71 / 28</td></tr>
+<tr><td class="name">保　险</td><td class="num">881395</td><td class="num flat">+0.35%</td><td class="num down">-2.01%</td><td class="num down">-1.43%</td><td class="num down">-7.11%</td><td class="num up">+3.50%</td><td class="num down">-18.16%</td><td class="num flat">+0.43 亿</td><td class="num">4.96</td><td class="num">0.78</td><td class="num">4 / 1</td></tr>
+<tr><td class="name">半导体</td><td class="num">881319</td><td class="num down">-0.64%</td><td class="num down">-11.97%</td><td class="num down">-9.79%</td><td class="num down">-9.36%</td><td class="num down">-35.27%</td><td class="num up">+27.63%</td><td class="num down">-42.28 亿</td><td class="num">72.40</td><td class="num">8.51</td><td class="num">41 / 145</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tblnote">注：PE/PB 为 2026-10-09 板块指数实时快照值，与财务口径横截面值（如电池静态 PE 29.03）略有差异，方向一致。</p>
+
+<h3>2.2 三类价格结构分组</h3>
+
+<h4>A. 趋势向上、中期未透支（顺周期资源）</h4>
+<ul>
+<li><strong>油气开采</strong>：60 日 +25.38%、10 日 +8.71%、年初至今 +16.75%，是唯一"短期加速 + 中期强势 + 年内正收益"三项全正的板块。但今日<strong>滞涨</strong>：+0.04%、涨跌家数 2 涨 5 跌、主力净流入仅 180 万元 —— 这是<strong>高位缩量整理</strong>，趋势未破但短期不宜追。</li>
+<li><strong>煤炭开采</strong>：60 日 +16.95%、年初至今 +26.69%（全场最高之一），今日 +1.72%、21 涨 4 跌、主力 +1.61 亿，20 日仅 +0.11% —— <strong>高位平台整理，量价平稳</strong>，属慢牛型。</li>
+</ul>
+
+<h4>B. 深度回调后放量反攻（右侧启动型）</h4>
+<ul>
+<li><strong>电池（核心发现）</strong>：详见 2.3 量价剖解。</li>
+<li><strong>贵金属</strong>：20 日 -16.31%、10 日 -7.83% 深度回调，今日单日 +5.54%、12 家全涨、主力 +13.42 亿 —— <strong>超跌后单日反击</strong>。但 5 日涨幅仅 +0.01%，意味着今天一天才刚刚把近一周的坑填平，反弹确认需再看 2-3 日能否站稳。</li>
+<li><strong>证券</strong>：60 日 -8.74%、年初至今 -14.12%，今日 +2.09%、<strong>48 家全涨无一下跌</strong>、主力 +14.46 亿、资金净流入 31.00 亿 —— <strong>低位集体反攻 + 资金厚度兼具</strong>，是"跌透 + 资金回补"的教科书形态。</li>
+</ul>
+
+<h4>C. 仍在下跌通道（回避）</h4>
+<ul>
+<li><strong>半导体</strong>：60 日 -35.27%、5 日 -11.97%、今日 41 涨 145 跌、主力<strong>净流出 42.28 亿</strong>。虽然年初至今仍 +27.63%，但中期跌幅深、资金持续撤离，属<strong>下跌趋势中的反抽</strong>，不是底部。</li>
+</ul>
+
+<h3>2.3 电池板块量价剖解（45 根日线实测，2026-07-31 → 10-09）</h3>
+
+<div class="grid">
+  <div class="card"><div class="k">收盘 / MA20</div><div class="v" style="color:var(--down)">600.60</div><div class="d">低于 MA20（607.81）-1.19%，未收复中期均线</div></div>
+  <div class="card"><div class="k">5日均量 / 20日均量</div><div class="v" style="color:var(--up)">1.37 倍</div><div class="d">5日均量/45日均量 = 1.32 倍，持续放量</div></div>
+  <div class="card"><div class="k">今日量 / 前20日均量</div><div class="v" style="color:var(--up)">2.18 倍</div><div class="d">今日 3165.5 万手，前 20 日均 1547.8 万手</div></div>
+  <div class="card"><div class="k">距 45 日高点</div><div class="v" style="color:var(--down)">-17.24%</div><div class="d">高点 727.25（8/18），低点 574.50（9/28）</div></div>
+</div>
+
+<p><strong>量能阶梯验证</strong>（近 3 日成交量）：9/30 的 1775 万手 → 10/08 的 2502 万手 → 10/09 的 3166 万手，<strong>连续三日逐级放大，且价格同步抬升（584.34 → 586.52 → 600.60）</strong>，这是标准的「量价齐升」三连阳，不是脉冲一日游。</p>
+
+<p><strong>均线结构</strong>：收盘 600.60 站上 MA5（584.60，+2.74%）与 MA10（590.99，+1.63%），但仍<strong>压在 MA20（607.81，-1.19%）之下</strong>，MA45（655.84，-8.42%）更在上方。定性为：<strong>下跌趋势末端的放量反攻，右侧信号已现但尚未确认中期反转</strong>。技术上最好的跟进点是——<u>有效站上 MA20（607.81）并伴随量能维持 1.2 倍以上</u>，届时才是从"反弹"升级为"反转"的信号。</p>
+
+<h2><span class="num">03</span>维度二：产业趋势周期</h2>
+
+<p>产业催化梳理覆盖近 3 个月（2026-07-01 → 10-09）政策、事件与产业数据，每条均可溯源。</p>
+
+<h3>3.1 产业周期定位矩阵</h3>
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">板块</th><th>生命周期</th><th>库存/资本开支周期</th><th>核心催化（带日期）</th><th>周期评分</th></tr></thead>
+<tbody>
+<tr><td class="name">半导体 / 存储 / 算力</td><td>成长期中段</td><td>被动去库→主动补库；全球扩产上行</td><td>SEMI 预测 2026 设备销售 1659 亿美元 +23.2%（07-21）；MLCC/PCB 大幅涨价（09-02）</td><td class="num up">9.5</td></tr>
+<tr><td class="name">油运 / 航运港口</td><td>成熟 + 强周期</td><td>原油去库转补库；VLCC 订单 2027-29 才交付</td><td>TD3C TCE 涨至 134.7 万美元/天（10-06）；马士基上调燃油附加费（10-08）</td><td class="num up">9.0</td></tr>
+<tr><td class="name">锂电 / 储能</td><td>成长期</td><td>主动补库，排产连创新高</td><td>8 月排产 304GWh +7.4%（08-26）；H1 储能电芯出货 +94%；宁德 H1 净利 +41.98%</td><td class="num up">8.8</td></tr>
+<tr><td class="name">有色 / 贵金属 / 铜</td><td>成熟期</td><td>全球显性库存去化；矿山资本开支长期不足</td><td>金价破 4120 美元（07-22）；铜精矿 TC 探至 -159.7 美元/干吨</td><td class="num up">8.5</td></tr>
+<tr><td class="name">创新药 / CXO</td><td>导入→成长</td><td>CXO 供给出清完成</td><td>H1 License-out 总额 943 亿美元；医保谈判启动（09-05）</td><td class="num up">8.3</td></tr>
+<tr><td class="name">人形机器人</td><td>导入→成长初期</td><td>订单驱动，无库存压力</td><td>H1 全球出货 1.91 万台 +近 3 倍，中国占 97%（08-11）；宇树 IPO 市值 610 亿</td><td class="num up">8.0</td></tr>
+<tr><td class="name">电力 / 核电</td><td>成熟期</td><td>核电 2027 起投产高峰；十五五电网 5 万亿</td><td>国常会核准 8 台机组（07-31）；《新型电力系统十五五规划》（08-03）</td><td class="num up">7.8</td></tr>
+<tr><td class="name">AI 安全 / 网安</td><td>导入期</td><td>资本开支刚起步</td><td>网安周发布《AI 安全治理框架》3.0（09-14）；美股网安 ETF 单日 +10.66%（09-15）</td><td class="num up">7.2</td></tr>
+<tr><td class="name">地产链（备选）</td><td>衰退→底部反转</td><td>待售库存下降，行业缩表</td><td>政治局会议"稳定房地产"（07-30）；国常会部署增量政策（09-28）</td><td class="num flat">7.0</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3.2 未来 1-2 季度催化时间表</h3>
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">时间</th><th>事件</th><th>确定性</th></tr></thead>
+<tbody>
+<tr><td class="name">10 月下旬</td><td>三季报密集披露（油运、储能排产、存储涨价兑现）</td><td class="num">高</td></tr>
+<tr><td class="name">10-23 ~ 10-27</td><td>ESMO 欧洲肿瘤内科学会年会（创新药）</td><td class="num">高</td></tr>
+<tr><td class="name">11-12 月</td><td>中央经济工作会议 / 十五五规划细化（地产、军工、电力）</td><td class="num">高</td></tr>
+<tr><td class="name">12-07 ~ 12-13</td><td>第十六届珠海航展（军工订单 / 军贸）</td><td class="num">高</td></tr>
+<tr><td class="name">Q4</td><td>VLCC 冬季旺季 + 中国战略补库启动</td><td class="num">中</td></tr>
+<tr><td class="name">Q4 ~ 明年初</td><td>锂电抢装（2027 出口退税退坡、IRA 退坡）</td><td class="num">中</td></tr>
+<tr><td class="name">2027-01-01</td><td>光伏三项强制能耗国标实施（出清验证点）</td><td class="num">中</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <div class="tag">产业面风险提示</div>
+  <p style="margin-bottom:0">① 09-15 费城半导体指数单日跌 5.86%，提示<strong>AI 硬件交易拥挤度已高</strong>；② 宏观经济先行指数自 2025-09 的 98.4 持续回落至 97.5，<strong>本轮复苏未获前瞻指标确认</strong>；③ 光伏、白酒属"强预期弱现实"；④ 油运对地缘缓和高度敏感（反向风险）。</p>
+</div>
+
+<h2><span class="num">04</span>维度三：估值与盈利景气</h2>
+
+<p>估值基准（2026-10-08 快照）：<strong>沪深300 PE(TTM) 10.53 / 静态 PE 11.34 / PB 1.03</strong>；<strong>全市场平均 PE(TTM) 18.27 / PB 1.47</strong>。</p>
+
+<h3>4.1 估值 × 业绩匹配度（关键判定）</h3>
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">板块</th><th>PE</th><th>PB</th><th>行业净利增速</th><th>ROE</th><th>匹配结论</th></tr></thead>
+<tbody>
+<tr><td class="name">保　险</td><td class="num">4.94</td><td class="num">0.78</td><td class="num up">+70.50%</td><td class="num up">13.24%</td><td><strong>低估值 + 业绩高增 → 戴维斯双击首选</strong></td></tr>
+<tr><td class="name">油气开采</td><td class="num">12.04</td><td class="num">0.80</td><td class="num up">+21.81%</td><td class="num">7.59%</td><td>低估值 + 业绩改善 → 双击候选</td></tr>
+<tr><td class="name">证　券</td><td class="num">11.72</td><td class="num">0.92</td><td class="num up">+47.94%</td><td class="num">5.34%</td><td>低 PB + 高增 → 双击候选</td></tr>
+<tr><td class="name">电　池</td><td class="num">22.11</td><td class="num">2.78</td><td class="num up">+59.14%</td><td class="num">9.15%</td><td>PE(TTM) &lt; 静态 PE 29.03 → 盈利拐点已被数据确认</td></tr>
+<tr><td class="name">贵金属</td><td class="num">20.46</td><td class="num">3.29</td><td class="num up">+69.43%</td><td class="num up">16.21%</td><td>ROE 全场最高，对冲 PB 偏高</td></tr>
+<tr><td class="name">煤炭开采</td><td class="num">18.01</td><td class="num">1.51</td><td class="num up">+21.69%</td><td class="num">6.49%</td><td>利润重回正增长</td></tr>
+<tr><td class="name">电　力</td><td class="num">21.29</td><td class="num">1.48</td><td class="num up">+10.34%</td><td class="num">5.54%</td><td>净利率 30.24%，现金流型防御</td></tr>
+<tr><td class="name">全国性银行</td><td class="num">7.65</td><td class="num">0.42</td><td class="num">+5.07%</td><td class="num">4.23%</td><td>极低 PB + 低增速 → 类债防守，非双击</td></tr>
+<tr><td class="name">酿　酒</td><td class="num">19.79</td><td class="num">3.60</td><td class="num down">-8.30%</td><td class="num">12.11%</td><td><strong>低 PE + 业绩负增 → 价值陷阱倾向</strong></td></tr>
+<tr><td class="name">房地产开发</td><td class="num down">-4.85</td><td class="num">0.83</td><td class="num down">-9.56%</td><td class="num down">-2.81%</td><td><strong>亏损 + 低 PB → 典型价值陷阱</strong></td></tr>
+<tr><td class="name">光伏设备</td><td class="num down">-30.45</td><td class="num">1.56</td><td class="num down">-2.12%</td><td class="num down">-6.18%</td><td>亏损 + 负 ROE → 仍在探底</td></tr>
+<tr><td class="name">半导体</td><td class="num">72.42</td><td class="num">8.51</td><td class="num up">+371.01%</td><td class="num down">3.16%</td><td><strong>PB 全场最高 + ROE 仅 3.16% → 泡沫风险</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tblnote">业绩口径说明：行业净利增速/ROE/净利率取自行业平均值（龙头股所属行业映射），非板块加权值，方向可信、绝对值有偏差。板块股息率与历史估值分位<strong>数据未获取</strong>，本报告为横截面比较。</p>
+
+<div class="callout">
+  <div class="tag">最重要的交叉发现</div>
+  <p style="margin-bottom:0">近 5 日涨幅榜前列，估值几乎全部处于泡沫或亏损区：<strong>房产服务 PE 234.58</strong>（涨幅榜第 1）、数字媒体 PE 98.54、种植业 PE 109.50、影视院线 PE -58.10（亏损）。<strong>涨幅榜与估值性价比榜完全背离</strong>，切勿把 5 日强势板块直接当作配置方向。真正有性价比的藏在涨幅榜后半段。</p>
+</div>
+
+<h2><span class="num">05</span>维度四：资金与情绪</h2>
+
+<h3>5.1 板块级主力资金聚合排行（当日）</h3>
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">排名</th><th class="name">板块</th><th>聚合主力净额</th><th>代表个股（主力净额）</th><th>连续性</th><th>量能验证</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td class="name">锂电池 / 新能源材料</td><td class="num up">≈57.7 亿</td><td>宁德 22.63 亿、天赐材料 13.38 亿、比亚迪 3.15 亿、多氟多 2.84 亿</td><td class="num up">9 只连续 3 日</td><td class="up">天赐 5日/20日量能 1.77 倍</td></tr>
+<tr><td class="num">2</td><td class="name">有色 / 黄金</td><td class="num up">≈18.7 亿</td><td>紫金 8.22 亿、洛阳钼业 3.47 亿、赤峰黄金 3.41 亿</td><td class="num">赤峰连续 3 日</td><td class="flat">机构慢牛型</td></tr>
+<tr><td class="num">3</td><td class="name">传媒 / 出版 / AI 影视</td><td class="num up">≈17.0 亿</td><td>中文在线 4.33 亿、芒果超媒 3.21 亿、捷成 2.31 亿</td><td class="num down">仅 1 只</td><td class="down">中证传媒 5日/20日 0.83 倍（缩量）</td></tr>
+<tr><td class="num">4</td><td class="name">农业 / 种植业</td><td class="num up">≈12.8 亿</td><td>金健米业 5.84 亿、万向德农 2.34 亿</td><td class="num">仅 1 只</td><td class="flat">龙虎榜内部分歧</td></tr>
+<tr><td class="num">5</td><td class="name">AI 算力硬件</td><td class="num up">≈11.1 亿</td><td>联特科技 3.76 亿、有研新材 2.26 亿、澜起科技 2.00 亿</td><td class="num">3 只连续 3 日</td><td class="flat">联特 +12.86% 放量</td></tr>
+<tr><td class="num">6</td><td class="name">AI 软件 / 信创 / 网安</td><td class="num up">≈9.6 亿</td><td>绿盟 2.56 亿、天融信 2.42 亿、深信服 2.32 亿</td><td class="num down">0 只连续 3 日</td><td class="down">偏游资一日游</td></tr>
+<tr><td class="num">7</td><td class="name">医药 / 创新药</td><td class="num up">≈8.5 亿</td><td>美年健康 2.33 亿、众生药业 2.30 亿、沃森生物 1.74 亿</td><td class="num">2 只连续 3 日</td><td class="flat">稳健配置盘</td></tr>
+<tr><td class="num">8</td><td class="name">化学制品 / 有机硅</td><td class="num up">≈6.5 亿</td><td>东岳硅材 6.49 亿（中报预增 904%-952%）</td><td class="num down">0 只</td><td class="flat">个股逻辑强于板块</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5.2 赚钱效应与情绪温度</h3>
+<p>涨停 <strong>72 家</strong>（取得 60 家明细）：传媒/出版/短剧 13 家、零售新消费 9 家、电池/固态 7 家、AI 软件 7 家、医药 6 家、种植业 5 家、化学制品 3 家。最高连板为新华传媒 9 天 9 板（封单 14.21 亿）、新华文轩 10 天 7 板。全市场主力净流入 5563 只 vs 净流出 3052 只，多头占优。<strong>情绪温度：结构性回暖偏活跃，未过热</strong>（无 20 板以上妖股、无百股涨停）。</p>
+
+<div class="callout warn">
+  <div class="tag">必须知道的两个分歧信号</div>
+  <p>① <strong>宁德时代：主力买、杠杆撤。</strong>当日主力净流入 22.63 亿排全市场第一，但融资余额从 09-24 的 243.71 亿降至 10-08 的 233.03 亿（5 日净减 10.68 亿，-4.38%），同期融券余量由 509,574 股飙升至 1,429,296 股（<strong>+180%</strong>）。这意味着锂电的资金共识并不牢固。</p>
+  <p style="margin-bottom:0">② <strong>传媒：涨停最多、量能最小。</strong>13 家涨停最热闹，但中证传媒 5 日均量仅为 20 日均量的 0.83 倍、60 日均量的 0.63 倍，属<strong>缩量反弹</strong>，资金没跟上。</p>
+</div>
+
+<h3>5.3 「指数涨但资金没跟上」的诱多板块</h3>
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">板块</th><th>近 5 日涨幅</th><th>资金实证</th><th>结论</th></tr></thead>
+<tbody>
+<tr><td class="name">房产服务</td><td class="num up">+6.40%（第 1）</td><td>Top40 中地产股仅万科 A 且当日涨幅 0.00%</td><td class="down">涨幅第一但零资金跟进，纯情绪脉冲</td></tr>
+<tr><td class="name">油气开采</td><td class="num up">+5.68%</td><td>今日主力净流入仅 180 万元，2 涨 5 跌</td><td class="down">趋势在，但今日无主力承接，滞涨</td></tr>
+<tr><td class="name">电信服务</td><td class="num up">+4.41%</td><td>Top40 中零相关标的</td><td class="down">权重护盘式上涨</td></tr>
+<tr><td class="name">中药 / 医药商业</td><td class="num up">+3.29% / +3.18%</td><td>Top40 中零中药、零医药商业标的</td><td class="down">医药资金只在创新药，中药是搭车</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="num">06</span>多空辩论与裁决</h2>
+
+<p>四位分析师给出的数据之间有真实冲突。以下是对四个关键分歧的裁决。</p>
+
+<div class="debate">
+  <div class="q">分歧一：半导体 / 存储 / 算力 —— 产业周期最强 9.5 分，但股价 60 日 -35.27%</div>
+  <div class="bd">
+    <div class="side"><span class="lbl b">多方</span>SEMI 预测 2026 全球设备销售 +23.2%、MLCC/PCB 涨价、长鑫扩产，行业净利增速 +371.01%，这是全球 AI 资本开支上修最确定的"卖铲人"。</div>
+    <div class="side"><span class="lbl s">空方</span>价格从不说谎：60 日 -35.27%、5 日 -11.97%、今日 41 涨 145 跌、主力净流出 42.28 亿。更要命的是 PB 8.51 是全场最高，而 ROE 只有 3.16% —— 高 PB 配低 ROE 是最危险的组合。09-15 费半单日跌 5.86% 已提示拥挤。</div>
+    <div class="verdict"><b>裁决：降级为左侧观察，不进配置榜。</b>产业逻辑与股价趋势的背离，历史上通常由股价向下找基本面支撑来解决，但靠拢过程可能再跌 20-30%。当前属于"故事正确、价格错误"。观察触发条件：① 板块站上 MA20 且 60 日跌幅收窄至 -15% 以内；② PB 回落至 6 倍以下或 ROE 修复至 8% 以上；③ 主力资金由净流出转为连续净流入。在此之前，任何抄底都是逆势交易。</div>
+  </div>
+</div>
+
+<div class="debate">
+  <div class="q">分歧二：油气 / 航运 —— 产业 9.0 分、估值 8.3 分，但情绪面判"零主力资金"</div>
+  <div class="bd">
+    <div class="side"><span class="lbl b">多方</span>60 日 +25.38%、10 日 +8.71%、年初至今 +16.75%，多周期全正；PE 12.04 / PB 0.80、净利 +21.81%；TD3C TCE 运价 134.7 万美元/天；技术上已放量创阶段新高（航运港口量能约 20 日均量 1.28 倍）。</div>
+    <div class="side"><span class="lbl s">空方</span>今日板块内 2 涨 5 跌、主力净流入仅 180 万元，指数收平，属高位缩量滞涨；且运价对地缘缓和极度敏感，一旦霍尔木兹通航恢复，逻辑瞬间反转。</div>
+    <div class="verdict"><b>裁决：维持配置但不追高，等回踩。</b>情绪面"零资金"的判定偏严（未进入 Top40 样本不等于无资金），但今日滞涨是事实。定性为「趋势完好的高位整理」，<u>回踩不破 20 日均线则可介入</u>，破位则出。估值安全垫（PB 0.80）是本板块最大的底气。</div>
+  </div>
+</div>
+
+<div class="debate">
+  <div class="q">分歧三：传媒 / 出版 —— 情绪面 7.5 分（13 家涨停最热），产业面 3.0 分</div>
+  <div class="bd">
+    <div class="side"><span class="lbl b">多方</span>涨停家数全市场第一、新华传媒 9 天 9 板封单 14.21 亿，主力聚合净流入 17.0 亿排第三，题材广度最强。</div>
+    <div class="side"><span class="lbl s">空方</span>截至 08-31 票房 282 亿同比 -28%、观影人次 -21%，H1 出版收入 -10.82%、净利 -18.43%；板块 PE 为负（影视院线 -58.10）；中证传媒 5 日均量/20 日均量仅 0.83 倍，是缩量反弹。</div>
+    <div class="verdict"><b>裁决：回避。</b>这是典型的「资金博弈 vs 产业趋势背离」——涨停家数多说明游资在做题材，但缩量、亏损、产业数据下滑三重证据表明没有基本面承接。此类行情通常以连续跌停收场。题材参与者请自设严格止损。</div>
+  </div>
+</div>
+
+<div class="debate">
+  <div class="q">分歧四：电池 / 锂电 —— 四维是否真的共振？</div>
+  <div class="bd">
+    <div class="side"><span class="lbl b">多方</span>四维全正：① 趋势量价：三日量能阶梯放大（1775→2502→3166 万手）伴随价格三连阳，5日/20日量能 1.37 倍；② 资金：主力 +45.81 亿居前列，天赐材料连续 3 日净流入 13.38 亿、量能 1.77 倍；③ 估值：PE(TTM) 22.11 &lt; 静态 PE 29.03，行业净利 +59.14%；④ 产业：8 月排产 304GWh、H1 储能出货 +94%。</div>
+    <div class="side"><span class="lbl s">空方</span>① 板块仍低于 MA20（-1.19%）、远低于 45 日线（-8.42%），距高点 -17.24%，反弹≠反转；② 龙头宁德融资余额 5 日净减 10.68 亿、融券余量 +180%，杠杆资金在撤；③ PB 2.77 不算便宜；④ 60 日仍 -15.38%。</div>
+    <div class="verdict"><b>裁决：列为首选，但必须分批建仓并设硬止损。</b>四维共振在本次扫描中是唯一的，但"共振的方向是底部反转的第一阶段"，不是已经走出来的趋势。<u>建议首仓 1/3，站稳 MA20（607.81）且量能维持 1.2 倍以上加至 2/3，跌破 9/28 低点 574.50 无条件离场</u>。优先材料端（天赐材料等量能持续放大的标的），其次才是电池龙头。</div>
+  </div>
+</div>
+
+<h2><span class="num">07</span>最终配置榜</h2>
+
+<p class="lead">综合四维加权（趋势量价 30% · 产业周期 25% · 估值盈利 25% · 资金情绪 20%），并叠加"指数 60 日下跌"的环境折价。</p>
+
+<div class="tier">
+  <div class="tier-hd"><span class="lv lv-core">核心配置</span><span class="desc">四维共振或接近共振，可作为主仓方向</span></div>
+  <div class="tier-bd">
+    <div class="sector">
+      <div class="sh"><span class="nm">电池 / 锂电储能</span><span class="cd">881262</span><span class="sc">8.5 分</span></div>
+      <div class="bars">
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:76%"></span></span><b>趋势量价</b> 7.6</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:88%"></span></span><b>产业周期</b> 8.8</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:76%"></span></span><b>估值盈利</b> 7.6</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:95%"></span></span><b>资金情绪</b> 9.5</span>
+      </div>
+      <ul>
+        <li><strong>逻辑</strong>：唯一实现四维共振的板块。储能已取代动力成为第一增长引擎，8 月排产 304GWh（+7.4%）连续创新高，H1 储能电芯出货 +94%；盈利拐点被数据确认（PE(TTM) 22.11 &lt; 静态 29.03）；今日主力净流入 45.81 亿。</li>
+        <li><strong>买点</strong>：首仓 1/3（现价区域）；站稳 MA20 = 607.81 且量能维持 1.2 倍以上加至 2/3。</li>
+        <li><strong>止损</strong>：跌破 9/28 低点 574.50 离场（-4.3%）。</li>
+        <li><strong>风险</strong>：宁德融资余额 5 日净减 10.68 亿、融券余量 +180%，龙头分歧信号明确，不宜重仓单一龙头，优先材料端。</li>
+      </ul>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">油气开采</span><span class="cd">881007</span><span class="sc">7.8 分</span></div>
+      <div class="bars">
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:80%"></span></span><b>趋势量价</b> 8.0</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:90%"></span></span><b>产业周期</b> 9.0</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:83%"></span></span><b>估值盈利</b> 8.3</span>
+        <span class="bar"><span class="bartrack"><span class="barfill" style="width:45%"></span></span><b>资金情绪</b> 4.5</span>
+      </div>
+      <ul>
+        <li><strong>逻辑</strong>：多周期收益率唯一"全正"（60 日 +25.38%、10 日 +8.71%、年初至今 +16.75%）；PE 12.04 / PB 0.80、净利 +21.81%，估值在全市场均值一半以下。</li>
+        <li><strong>买点</strong>：不追高，等回踩 20 日均线且缩量企稳。</li>
+        <li><strong>风险</strong>：今日 2 涨 5 跌、主力净流入仅 180 万，高位滞涨；运价与油价对地缘高度敏感。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-hd"><span class="lv lv-sat">卫星配置</span><span class="desc">低估值 + 真实利润 + 股价未透支，作为组合增强</span></div>
+  <div class="tier-bd">
+    <div class="sector">
+      <div class="sh"><span class="nm">煤炭开采</span><span class="cd">881002</span><span class="sc">7.4 分</span></div>
+      <p style="margin:4px 0 6px">年初至今 +26.69%（全场最高一档）、60 日 +16.95%、PE 18.01 / PB 1.51、净利 +21.69%。今日 21 涨 4 跌、主力 +1.61 亿。<strong>高位平台整理，慢牛型</strong>，适合底仓持有，回踩不破 20 日均线继续持有。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">贵金属</span><span class="cd">881075</span><span class="sc">7.2 分</span></div>
+      <p style="margin:4px 0 6px">今日 +5.54%、12 家全涨、主力 +13.42 亿；<strong>ROE 16.21% 为全场最高</strong>、净利 +69.43%，对冲了 PB 3.47 的偏高。但 20 日 -16.31% 说明是超跌反击，<strong>需再看 2-3 日能否站稳才算反弹确认</strong>。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">证　券</span><span class="cd">881394</span><span class="sc">7.0 分</span></div>
+      <p style="margin:4px 0 6px">今日 48 家全涨无一下跌、主力 +14.46 亿、资金净流入 31.00 亿；PB 0.94（接近净资产）、PE 11.96、净利 +47.94%。60 日 -8.74% 意味着<strong>位置仍在底部</strong>，这是"跌透 + 资金回补"的标准形态。缺点是没有自己独立的产业催化，依赖成交量与市场情绪。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">创新药 / CXO</span><span class="sc">6.8 分</span></div>
+      <p style="margin:4px 0 6px">概念层面集体走强：近 20 日 CXO +8.43%、免疫治疗 +7.70%、生物疫苗 +4.13%、基因概念 +3.73%、减肥药 +2.97%、创新药 +1.94%，是近 20 日最强的概念集群。产业面 H1 License-out 943 亿美元、10-23~27 ESMO 年会临近。<strong>数据缺口</strong>：本轮未取到创新药板块的实时行情与主力资金，资金维度暂按 6.5 分估算，建议下轮补充。</p>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-hd"><span class="lv lv-watch">观察 / 防守</span><span class="desc">逻辑成立但缺资金或仍在下跌，暂不作为进攻方向</span></div>
+  <div class="tier-bd">
+    <div class="sector">
+      <div class="sh"><span class="nm">半导体 / 存储 / 算力</span><span class="cd">881319</span><span class="sc">5.5 分（降级）</span></div>
+      <p style="margin:4px 0 6px">产业评分全场最高 9.5，但价格与资金全面背离：60 日 -35.27%、主力净流出 42.28 亿、PB 8.51 配 ROE 3.16%。<strong>观察触发条件</strong>：站上 MA20 且 60 日跌幅收窄至 -15% 内 / PB 回落至 6 倍以下 / 主力连续净流入。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">保　险</span><span class="cd">881395</span><span class="sc">6.6 分</span></div>
+      <p style="margin:4px 0 6px">估值维度第一：<strong>PE 4.94 / PB 0.78 / 净利 +70.50% / ROE 13.24%</strong>，教科书级双击赔率。但今日主力净流入仅 0.43 亿、20 日 -7.11%、年初至今 -18.16%，<strong>没有资金验证</strong>，只能算防守型底仓，无启动时点。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">电力 / 核电</span><span class="cd">881459</span><span class="sc">6.5 分</span></div>
+      <p style="margin:4px 0 6px">PE 21.29 / PB 1.48、净利率 30.24%，十五五电网投资 5 万亿 + 核电投产高峰构成长期逻辑，类公用事业成长化。<strong>数据缺口</strong>：本轮未取到实时行情与资金数据。</p>
+    </div>
+  </div>
+</div>
+
+<div class="tier">
+  <div class="tier-hd"><span class="lv lv-avoid">明确回避</span><span class="desc">涨幅诱人但四维至少一维致命</span></div>
+  <div class="tier-bd">
+    <div class="sector">
+      <div class="sh"><span class="nm">房产服务 / 房地产开发</span><span class="cd">881422 / 881418</span><span class="sc">2.5 分</span></div>
+      <p style="margin:4px 0 6px">房产服务近 5 日涨幅榜第 1（+6.40%）但 PE 234.58、今日零主力资金跟进；房地产开发 PE -4.85、ROE -2.81%、净利 -9.56%，1-8 月开发投资仍 -19.9%。<strong>政策底已现、基本面未验</strong>，属典型价值陷阱 + 情绪脉冲。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">影视院线 / 出版 / 数字媒体</span><span class="cd">881373 / 881380 / 881376</span><span class="sc">3.0 分</span></div>
+      <p style="margin:4px 0 6px">截至 08-31 票房 282 亿同比 -28%、观影人次 -21%；H1 出版收入 -10.82%、净利 -18.43%；影视院线 PE -58.10（亏损）、数字媒体 PE 98.54。中证传媒 5 日均量仅 20 日均量的 0.83 倍 —— <strong>缩量 + 亏损 + 产业下滑</strong>，涨停家数最多但最危险。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">光伏主链</span><span class="cd">881275</span><span class="sc">3.0 分</span></div>
+      <p style="margin:4px 0 6px">1-7 月新增装机 86.15GW 同比 -61%；全线亏损（PE -30.45、ROE -6.18%、净利率 -8.03%）；硅料产量反增至 10.46 万吨、全链库存 65-70 万吨。涨价属"强预期弱现实"，实质出清要等 2027-01-01 能耗国标生效。</p>
+    </div>
+    <div class="sector">
+      <div class="sh"><span class="nm">航天装备 / 元器件 / 通信设备</span><span class="cd">881289 / 881333 / 881338</span><span class="sc">3.5 分</span></div>
+      <p style="margin:4px 0 6px">航天装备 PE 459.65 + PB 5.47（泡沫区）、元器件 PE 65.12 / PB 8.40、通信设备 PE 62.34 / PB 7.92。军工传统航空航天赛道利润仍同比下滑，全面复苏待十五五规模化订单。</p>
+    </div>
+  </div>
+</div>
+
+<h2><span class="num">08</span>执行纪律</h2>
+
+<div class="tblwrap">
+<table>
+<thead><tr><th class="name">项目</th><th>规则</th></tr></thead>
+<tbody>
+<tr><td class="name">总仓位</td><td>上证 60 日 -5.52%、当日主力净流出 65.7 亿，指数处于中期回调通道，<strong>建议总仓位不超过 5-6 成</strong>，保留现金应对二次探底。</td></tr>
+<tr><td class="name">单板块上限</td><td>不超过总仓位 25%，核心（电池）不超过 20%。</td></tr>
+<tr><td class="name">买入原则</td><td>① 必须看到<strong>量价齐升</strong>（价格上涨且 5 日均量 ≥ 20 日均量 1.2 倍）；② 分批首仓 1/3，站稳 MA20 加仓；③ 不在缩量反弹中买入。</td></tr>
+<tr><td class="name">止损原则</td><td>跌破介入日前低无条件离场；单一标的 -7% 强制减半。</td></tr>
+<tr><td class="name">跟踪清单</td><td>电池 MA20 = 607.81（站上即加仓）；电池 9/28 低点 574.50（跌破即止损）；半导体 MA20 与 PB 是否回落至 6 倍；贵金属能否连续 3 日站稳；10 月下旬三季报（油运/储能/存储兑现度）；10-23~27 ESMO。</td></tr>
+<tr><td class="name">再平衡触发</td><td>若指数跌破 60 日新低且连续 3 日主力净流出，总仓位降至 3 成以下。</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="num">09</span>数据缺口与免责声明</h2>
+
+<div class="callout neutral">
+  <p><strong>本轮未能获取的数据（不做估算填充）：</strong></p>
+  <ul style="margin-bottom:0">
+    <li><strong>板块股息率</strong>：接口未返回股息率字段，数据未获取。</li>
+    <li><strong>历史估值分位</strong>：板块估值接口仅返回单日快照（2026-10-08），无历史序列，本报告全部为<strong>横截面比较而非历史分位</strong>。个别板块引用的历史分位（如黄金/铝处于 2020 年以来 3-4% 分位）来自第三方研报观点，非本数据源验证。</li>
+    <li><strong>北向资金</strong>：接口返回 0 条，本次不做北向结论。</li>
+    <li><strong>部分板块实时数据</strong>：创新药、电力、军工、白酒等未取到 10-09 实时行情与主力资金，其评分中的资金维度为估算值或标注缺失。</li>
+    <li>涨停 72 家仅取得 60 家明细，分布统计基于此样本。</li>
+    <li>行业净利增速/ROE 取自行业平均值（龙头股映射），非板块加权，方向可信、绝对值有偏差。</li>
+  </ul>
+</div>
+
+<footer>
+  <p><strong>A股主流板块四维扫描报告 · 2026-10-09 收盘数据</strong></p>
+  <p>数据源：通达信 MCP（实时行情 / 日K / 板块指数 / 行业财务 / 资金流 / 龙虎榜 / 资讯检索）。分析框架：技术趋势量价 · 产业趋势周期 · 估值盈利景气 · 资金情绪热度 四维交叉验证 + 多空辩论裁决。</p>
+  <p>本报告为投研分析记录，所有数据均来自公开行情接口实时返回，不构成任何投资建议。市场有风险，决策需自主。</p>
+</footer>
+
+</div>
+</body>
+</html>
