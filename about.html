@@ -30,7 +30,7 @@
 ├── update-index.bat      双击更新报告清单（Windows）
 ├── update-index.command  双击更新报告清单（macOS）
 ├── reports/              所有研究报告
-│   ├── 大盘/             group=market → 首页「趋势」
+│   ├── 趋势-结构-信号/   group=market → 首页「趋势」
 │   ├── 半导体材料/       group=sector → 首页「板块」（默认）
 │   │   ├── _sector.json  板块简介 + group（可选）
 │   │   └── 20261010_行业整体估值水平诊断.html
@@ -62,7 +62,7 @@
     <h2>首页四个区块</h2>
     <p>首页按板块文件夹里 <code>_sector.json</code> 的 <code>"group"</code> 值，把报告分到四个区块：</p>
     <ul>
-      <li><code>"group": "market"</code> → <b>趋势</b>：大盘与行业趋势类（如 <code>reports/大盘/</code>），按报告列表展示</li>
+      <li><code>"group": "market"</code> → <b>趋势</b>：大盘与行业趋势类（如 <code>reports/趋势-结构-信号/</code>），按报告列表展示</li>
       <li><code>"group": "sector"</code> → <b>板块</b>：默认值，以板块卡片展示，点击进入该板块报告列表</li>
       <li><code>"group": "stock"</code> → <b>个股</b>：个股首次覆盖 / 深度跟踪（如 <code>reports/个股/</code>）</li>
       <li><code>"group": "other"</code> → <b>其他</b>：未归入以上三类的资料（如 <code>reports/其他/</code>）</li>
