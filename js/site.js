@@ -26,6 +26,34 @@
     return e;
   }
 
+  // 入场动画错峰
+  function stagger(container) {
+    if (!container) return;
+    var kids = container.children;
+    for (var i = 0; i < kids.length; i++) {
+      kids[i].style.animationDelay = (i * 0.045) + 's';
+    }
+  }
+
+  // 首页 Hero 统计
+  function renderHeroStats() {
+    var el = document.getElementById('hero-stats');
+    if (!el) return;
+    var total = 0, stocks = 0;
+    all.forEach(function (s) {
+      var n = (s.reports || []).length;
+      total += n;
+      if (s.group === 'stock') stocks += n;
+    });
+    var chips = [[total, '份报告'], [all.length, '个板块'], [stocks, '份个股']];
+    chips.forEach(function (c) {
+      var span = make('span', 'stat');
+      span.appendChild(make('b', null, String(c[0])));
+      span.appendChild(make('span', null, c[1]));
+      el.appendChild(span);
+    });
+  }
+
   function sectorUrl(s) {
     return 'sector.html?s=' + encodeURIComponent(s.name);
   }
@@ -90,6 +118,7 @@
       return;
     }
     shown.forEach(function (r) { el.appendChild(reportItem(r, findSectorName(r))); });
+    stagger(el);
 
     var more = o.more && document.getElementById(o.more);
     if (more && shown.length < res.reports.length && res.sectors.length === 1) {
@@ -125,6 +154,7 @@
 
       grid.appendChild(card);
     });
+    stagger(grid);
     if (!sectors.length) {
       grid.appendChild(make('p', 'muted', '暂无板块报告，请运行 update-index 生成清单。'));
     }
@@ -252,6 +282,7 @@
     preview: PREVIEW, empty: '暂无内容，后续补充。'
   });
   renderWatchlist();
+  renderHeroStats();
 
   var list = document.getElementById('report-list');
   if (list) {
@@ -266,6 +297,9 @@
     document.title = sector.name + ' - MLF 投研报告库';
     document.getElementById('sector-name').textContent = sector.name;
     document.getElementById('sector-desc').textContent = sector.desc || '';
+    var countEl = document.getElementById('sector-count');
+    if (countEl) countEl.textContent = sector.reports.length + ' 份报告';
     sector.reports.forEach(function (r) { list.appendChild(reportItem(r, sector.name)); });
+    stagger(list);
   }
 })();
