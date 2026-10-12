@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腾讯控股（00700.HK）趋势结构分析报告</title>
+<meta name="description" content="熊市反弹·谨慎：板块(港股科技)处下降趋势已破前低，个股反弹属独立行情，多头信号按×0.6降级；综合 S=+0.42 偏多但仅试探。加仓位 436.00(收盘站上中枢下沿+量能确认)，止损 405.55(幅度4.76%)；目标 T1 462.20 / T2 497.80；时间止损入场后5根日K未站上436或411.00破位离场。">
+<meta name="report-type" content="趋势结构信号">
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.high{color:var(--down); border-color:var(--down)}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.badge.warn{color:var(--up); border-color:var(--up); background:#fdf3f2}
+
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>腾讯控股（00700.HK）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-12</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>周线 120 根 + 日线 250 根 + 60 分钟 500 根</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir up">偏多（熊市反弹）</span>
+    <span class="score">加权总分 S = +0.42（调节前 +0.70）（区间 −1 ~ +1）</span>
+    <span class="badge mid">置信度：中</span>
+    <span class="score">板块基调：板块下降趋势，个股多头信号 ×0.6 打折</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>3 多 · 1 空 · 0 中性</dd></div>
+    <div><dt>板块调节</dt><dd>板块（恒生科技）空头 → 个股总分 ×0.6</dd></div>
+    <div><dt>当前阶段</dt><dd>吸筹期 Phase C（ST 成功，待 Phase D 确认）</dd></div>
+    <div><dt>缠论买卖点</dt><dd>一买（底背驰）成立，10-08 @411.20</dd></div>
+  </div>
+  <div class="note ">
+    <b>置信度扣分理由：</b>① 板块不共振：恒生科技已跌破 6 月低点 4229.94 创出新低，个股尚未与板块同向；② 存在冲突信号：道氏（-1）与威科夫/缠论/波浪（+1）方向相反，且个股未破位而板块已破位；③ 10-08 低点 411.20 尚缺右侧 5 根 K 线确认（约 10-15），目前为潜在摆动点。<br>已满足：数据充足（日线 250 根 / 周线 120 根 / 60 分钟 500 根）、四套中 3 套同号、缠论 4 种画法结论一致。
+  </div>
+</div>
+
+<div class="strat">
+  <h2>买卖策略速览<span class="muted" style="font-size:12px;font-weight:400;margin-left:8px">缠论买卖点 × 威科夫阶段</span></h2>
+  <div class="cols">
+    <section>
+      <h3>已持有<span>加仓 · 减仓 · 失效位</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>持有依据</td><td>一买成立（10-08 底背驰 @411.20）；威科夫吸筹期 Phase C 结构未破坏；411.00 双底未破，价格仍在 411.00–497.80 区间内运行</td></tr>
+        <tr><td>加仓触发</td><td>收盘站上 <b>436.00</b>（日线中枢下沿，跌破后转压力），需同时满足：量比 ≥ 1.5×MA5、幅度 ≥ 1×ATR（10.90）、3 根内不回落</td></tr>
+        <tr><td>减仓 / 离场触发</td><td>① 触及 462.20–463.40 且量比 &lt; 1.0 收阴（UT 重现）→ 减半；② 收盘跌破 419.00（9-18 低点）→ 减仓；③ 收盘跌破 405.55 → 全部离场</td></tr>
+        <tr><td>移动止盈</td><td>站上 436.00 后止损上移至 419.00；站上 462.20 后再上移至 436.00</td></tr>
+        <tr><td>结构失效位</td><td class="num"><b>405.55</b>（411.00 双底 − 0.5×ATR）</td></tr>
+      </table>
+    </section>
+    <section>
+      <h3>空仓<span>入场 · 止损 · 目标</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>入场触发</td><td>试探位 <b>425.80</b>（现价，一买已确认）；更稳妥为回踩 419.00 附近止跌，或收盘站上 436.00 确认三买。<br>确认条件逐条：收盘站上 ✓ / 幅度 ≥1×ATR ✓ / 量比 ≥1.5× <b>（当前 0.80× ✗）</b> / 3 根内不回落 ✓ → <b>量能未达标，属试探性质</b></td></tr>
+        <tr><td>加仓位</td><td class="num"><b>436.00</b>（收盘站上中枢下沿 + 量能确认后加主力仓）</td></tr>
+        <tr><td>止损价</td><td class="num"><b>405.55</b>（幅度 4.76% @425.80 入场；6.98% @436.00 加仓）</td></tr>
+        <tr><td>目标 T1 / T2 / T3</td><td class="num"><b>462.20</b> / 497.80 / 551.44</td></tr>
+        <tr><td>风险收益比</td><td class="num">T1 <b>1.80</b>（边际）· T2 3.56 · T3 6.20</td></tr>
+        <tr><td>时间止损</td><td>入场后 5 根日 K 线内未站上 436.00，或 411.00 被跌破 → 减仓离场</td></tr>
+      </table>
+    </section>
+  </div>
+  <div class="gate"><b>策略闸门校验：</b>① RRR(T1) = 1.80 ≥ 1 <span class="up">通过</span>（&lt; 2，标注边际，需更严格确认）；② 止损幅度 4.76% &lt; 8% <span class="up">通过</span>；③ 板块处于下降趋势，但个股已出现底背驰（10-08）与 ST 成功（411.20 未破 411.00）<span class="up">通过</span>；④ 适用性检查全部通过 <span class="up">通过</span>；⑤ 综合结论偏多（S = +0.42）→ 输出策略，标注试探性质。</div>
+  <div class="note"><b>声明：</b>以上为基于缠论买卖点与威科夫阶段的结构价位推演，仅标注触发与失效条件，非投资建议，不构成任何买卖指令，不涉及仓位与资金管理。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">250 根（2025-10-06 ~ 2026-10-12）</td><td>ATR14</td><td class="num">10.90（2.56%）</td></tr>
+  <tr><td>周线样本</td><td class="num">120（2024-07-05 起） 根</td><td>60分钟样本</td><td class="num">500（2026-06-12 起） 根</td></tr>
+  <tr><td>期间最高</td><td class="num">677.20</td><td>期间最低</td><td class="num">411.00</td></tr>
+  <tr><td>MA 排列</td><td class="num">MA5 422.16 &lt; MA10 425.78 &lt; MA20 430.16 &lt; MA60 445.78（空头排列）</td><td>MA20 vs MA60</td><td class="num">MA20 &lt; MA60，MA20 下行</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>根数 250、起止日期、区间极值（677.20 / 411.00）与通达信返回值完全一致；末根收盘 425.80 与实时价一致。日期跳空仅 1 处（2026-04-02 → 04-08，6 天，清明+复活节假期，属正常休市）；零成交 0 天。
+  <br><b>适用性检查：</b>全部通过 —— 非 ST、上市远超 60 个交易日、无连续一字板、无长期停牌、日线样本 250 根 ≥ 60。港股无涨跌停限制，flags 中 limit_days=1 系按 10% 阈值误判，不影响结论。
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>港股互联网 / 恒生科技 / AI 应用 · 游戏 · 金融科技</td><td class="muted">板块指数 HZ5017（恒生科技指数，setcode=27）</td></tr>
+  <tr><td>板块趋势（道氏）</td><td>下降</td><td class="ev">周线高点 6715.46(2025-10-03) → 6001.02 → 5258.56 → 4948.50 持续降低；低点 5348.31 → 4619.67 → 4229.94 持续降低（LH+LL）。周线 MA20 4541.32 &lt; MA60 5162.48，均下行。</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td>下跌期（末段，疑似构筑再吸筹）</td><td class="ev">2026-06-26 低 4229.94 量比 0.98× | 2026-09-22 冲高量比 1.34× 后回落 | 2026-10-08 收 4073.38 量比 1.74× 放量破位 | 现价 4169.57 已低于 6 月低点 4229.94</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b>板块处于下降趋势且已跌破前低创新低。按板块—个股矩阵：板块下降 + 个股反弹 = 个股独立行情，基调为<b>谨慎</b>，多头信号按 ×0.6 降级处理。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="down">下降</td><td class="ev">高点 633.70 → 521.20 → 497.80 降低；低点 586.70 → 470.70 → 411.00 降低（LH+LL）。MA20 443.06 下行，现价 425.80 低于 MA20。</td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="flat">下降趋势末段 / 筑底</td><td class="ev">高点 497.80(08-05) → 462.20(08-28) → 430.40(10-12) 降低；低点 436.00 → 419.00 → 411.20 降低（LH+LL）。但 411.20 未跌破 6-26 前低 411.00，构成双底。</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="up">上升（反弹）</td><td class="ev">摆动点 10-08 L 411.20 → 10-12 H 430.20（+4.62%）；MACD DIF 1.11 &gt; DEA 0.11，柱 +2.00 水上金叉；MA20 421.33 上行；量比 1.46×。</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线空 + 日线（下降末段·底背驰）+ 60 分钟多 → 定性为<b>熊市反弹</b>：短周期可参与，但属逆大趋势操作，须严格止损、不追高。（矩阵定位：周空 / 日下降末段 / 60分多）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 −1</span><span class="wt">权重 0.15</span></div>
+  <p>周线与日线均为 LH+LL 排列，均线空头排列且 MA20 下行，趋势方向判定为下降。10-08 未跌破 411.00 前低，双底成立使下降趋势未获确认破坏，但亦未出现反转所需的「突破前一个 LH 高点」（需站上 463.40）。</p>
+  <div class="ev">周线 2026-06-26 低 411.00 → 2026-08-07 高 497.80 → 2026-10-08 低 411.20<br>日线 2026-08-05 高 497.80 → 08-14 低 436.00 → 08-28 高 462.20 → 09-18 低 419.00 → 10-08 低 411.20<br>MA20 430.16 下行，现价 425.80 位于 MA20 下方</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 +1</span><span class="wt">权重 0.30</span></div>
+  <p>自 2025-10 高点 677.70 下跌 39% 后，2026-06 起于 411.00–497.80 区间横盘 4 个月，符合长期下跌后的吸筹结构。9-22 巨量冲高失败（UT），10-08 放量下探 411.20 未破前低后快速拉回（ST 成功），判定为<b>吸筹期 Phase C</b>，进入 Phase D 需放量站上 463.40。</p>
+  <table><tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr><tr><td>2026-06-26</td><td>PS 初步支撑（跌势止住）</td><td class='num'>411.80</td><td class='num'>0.90×</td></tr><tr><td>2026-09-18</td><td>放量下探（二次测试前奏）</td><td class='num'>419.00</td><td class='num'>1.59×</td></tr><tr><td>2026-09-22</td><td>UT 上冲回落（冲高 463.40 后 3 日跌回）</td><td class='num'>451.60</td><td class='num'>2.39×</td></tr><tr><td>2026-10-08</td><td>ST 二次测试（下探 411.20 未破 411.00）</td><td class='num'>411.40</td><td class='num'>1.88×</td></tr><tr><td>2026-10-09</td><td>Spring 后拉回（+3.25%）</td><td class='num'>424.80</td><td class='num'>1.25×</td></tr></table>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 +1</span><span class="wt">权重 0.40</span></div>
+  <p>日线 10-08 创 411.20 低点并出现<b>底背驰</b>，构成第一类买点（一买）。当前价格 425.80 仍在中枢（436.00–462.20）下方，三卖形态未解除；需站上 436.00 回到中枢内才能确认反转。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    <tr><td>画法 A</td><td>4</td><td>0.5×ATR</td><td class='num'>436.00 – 462.20</td><td>LH+LL 下降</td></tr><tr><td>画法 B</td><td>5（默认）</td><td>0.5×ATR</td><td class='num'>436.00 – 462.20</td><td>LH+LL 下降</td></tr><tr><td>画法 C</td><td>6</td><td>0.5×ATR</td><td class='num'>436.00 – 462.20</td><td>LH+LL 下降</td></tr><tr><td>画法 D</td><td>7</td><td>0.5×ATR</td><td class='num'>436.00 – 462.20</td><td>LH+LL 下降</td></tr>
+  </table>
+  <div class="ev">下跌段 08-28(462.20)→09-18(419.00) 绿柱面积 29.40；下跌段 09-22(463.40)→10-08(411.20) 绿柱面积 <b>5.64</b>，创更低价格但面积骤降<br>主跌段 04-24→06-26 面积 80.40 → 回撤段 09-22→10-08 面积 5.64<br>DIF：06-26 = −10.399 → 09-18 = −7.326 → 10-08 = <b>−6.020</b>（未随价格创新低）<br>三法（面积法 ✓ / DIF 法 ✓ / 峰值法 ✓）一致 → 底背驰成立</div>
+  <div class="note"><b>画法投票：</b>摆动点窗口 n = 4 / 5 / 6 / 7 四种画法，中枢区间均为 436.00–462.20、趋势判定均为 LH+LL 下降，<b>结论完全一致</b>，置信度不扣分。局限：10-08 低点 411.20 因右侧确认不足（仅 2 根 K 线）未被任何画法识别为摆动点，系人工补充判定。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 +1</span><span class="wt">权重 0.15</span></div>
+  <p>首选数法为自 677.70 以来的下跌 5 浪已完成于 10-08（第 5 浪未破第 3 浪低点，属失败 5 浪，暗示下跌动能衰竭）；次选数法为 ABC 调整完成于 411.00、当前处新推动浪第 2 浪回撤末端。两套数法均指向<b>下跌接近尾声</b>，但目标位差异较大。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    <tr><td>首选（下跌 5 浪完成）</td><td>5 浪终点 411.20（失败第 5 浪）</td><td class='num'>463.40 / 497.80</td><td class='num'>跌破 411.00</td></tr><tr><td>次选（ABC 后第 2 浪）</td><td>第 2 浪回撤末端</td><td class='num'>497.80 → 551.50（1.618 扩展）</td><td class='num'>跌破 411.00</td></tr>
+  </table>
+  <div class="note "><b>铁律校验：</b>首选数法三条铁律全部通过：① 第 2 浪反弹高点 635.70 未突破第 1 浪起点 677.70 ✓；② 第 3 浪（635.70→411.00，−224.70）为 1/3/5 中最长，非最短 ✓；③ 第 4 浪反弹至 497.80，未进入第 1 浪区间（677.70–597.20）✓。次选数法第 2 浪回撤达 99.8%，虽未跌破起点但极为勉强，故列为次选。</div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  <tr><td>压力</td><td class='num'>430.40</td><td>10-12 盘中高点，60 分钟摆动高点</td><td>中</td></tr><tr><td>压力</td><td class='num'>436.00</td><td>日线中枢下沿（跌破后转为压力）</td><td>强</td></tr><tr><td>压力</td><td class='num'>462.20 / 463.40</td><td>日线中枢上沿 / 9-22 UT 高点</td><td>强</td></tr><tr><td>压力</td><td class='num'>467.97</td><td>黄金分割 0.786 回撤位（677.20→411.00）</td><td>中</td></tr><tr><td>压力</td><td class='num'>497.80</td><td>8-05 高点，震荡区间上沿</td><td>强</td></tr><tr><td>支撑</td><td class='num'>419.00</td><td>9-18 摆动低点</td><td>中</td></tr><tr><td>支撑</td><td class='num'>411.20 / 411.00</td><td>双底（10-08 + 06-26），区间下沿</td><td>强</td></tr>
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td>底背驰成立（日线级别）</td><td class="ev">面积法 5.64 &lt;&lt; 29.40 / 80.40 ✓；DIF −6.020 &gt; −10.399 未创新低 ✓；柱峰值同步收敛 ✓。三法取二，判定成立。日线背驰对应日线级别反弹，非周线级别反转。</td></tr>
+  <tr><td>量价配合</td><td>偏弱，需补量</td><td class="ev">10-08 下探量比 1.88× → 10-09 反弹量比 1.25× → 10-12 缩量 0.80×。反弹段量能未放大至 1.5× 以上，属缩量反弹，持续性待验证。</td></tr>
+  <tr><td>突破有效性</td><td>待确认（3/4 条）</td><td class="ev">以 10-08→10-09 反弹突破 419.00 判定：收盘站上 ✓ | 幅度 1.23×ATR ✓ | 量比 1.25× &lt; 1.5× ✗ | 3 根内未跌回 ✓。<br>关键位 436.00（中枢下沿）尚未触及，现价 425.80 距该位尚有 2.4%。</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">+0.42（调节前 +0.70） → 偏多</td></tr>
+  <tr><td>方向判断</td><td>震荡筑底，短周期偏多；大周期仍为下降趋势中的反弹</td></tr>
+  <tr><td>操作基调</td><td>结构性偏多但属逆势操作 —— 观察能否放量站上 436.00 确认反转；在 411.00 未破之前，回调至 411–419 区间的止跌信号更具参考价值；不追高、不重仓。</td></tr>
+  <tr><td>关键冲突</td><td>① 道氏（-1）vs 威科夫/缠论/波浪（+1）：按场景权重处理，转折区以缠论背驰（0.40）与威科夫量价（0.30）为主导，道氏因滞后性权重仅 0.15；② 缠论一买 vs 三卖形态未解除：以背驰为主，但要求站上 436.00 作为确认条件；③ 个股未破位 vs 板块已创新低：按 ×0.6 系数降级。</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul><li><b>板块拖累</b>：恒生科技（HZ5017）现价 4169.57 已跌破 6 月低点 4229.94 创出新低，板块下降趋势未见止跌信号，个股缺乏贝塔支撑。</li><li><b>趋势未反转</b>：日线均线仍为空头排列（MA5&lt;MA10&lt;MA20&lt;MA60），MA20 下行，现价位于 MA20 下方，道氏趋势判定仍为下降。</li><li><b>反弹量能不足</b>：10-09 反弹量比仅 1.25×，10-12 缩量至 0.80×，未达有效突破所需的 1.5× 门槛。</li><li><b>关键位未收复</b>：现价 425.80 仍在日线中枢下沿 436.00 下方，三卖形态未解除。</li><li><b>破位风险</b>：若跌破 411.00 双底，底背驰与吸筹结构同时失效，须重新评估。</li><li><b>信号待确认</b>：10-08 低点 411.20 尚缺右侧 5 根 K 线（约 10-15）确认，目前为潜在摆动点。</li></ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>本分析基于以下假设：① 缠论以摆动点窗口 n=5 为主，n=4/6/7 三套画法已交叉验证且结论一致，但 10-08 低点系人工补充判定；② 波浪首选「下跌 5 浪完成（失败第 5 浪）」，次选「ABC 后第 2 浪回撤」，两套数法的中期目标位分别为 497.80 与 551.50，差异较大；③ 板块代理采用恒生科技指数（HZ5017），通达信无港股行业板块指数可用；④ 60 分钟线实为 1 小时线（period=3），通达信无独立 60 分钟周期。缠论画法与波浪数法均具主观性，请以次选情形作为对照。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅提供结构与风险判断，不构成任何投资建议。生成时间 2026-10-12 16:45。
+</div>
+
+</div>
+</body>
+</html>
