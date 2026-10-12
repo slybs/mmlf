@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>炬芯科技 688049 · 单票深度分析与量价评判</title>
+<meta name="description" content="评级「暂时回避（技术面派发确认）/ 列入观察名单（基本面未变坏、估值回落合理区）」：空仓者不抄底，持仓者执行止损纪律。首道止损 38.60、2.0×ATR 机械止损 35.67；满足三个再进场信号之一才试探建仓。数据基准 2026-10-12 盘中，10/09 放量反抽被证伪、10/12 放量下跌确认派发。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>炬芯科技 688049 · 深度分析与量价评判</h1>
+    <div class="sub">低功耗端侧 AI 音频 SoC · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12 盘中（14:13 前后）</span>
+      <span>评分 55/165 · 暂时回避</span>
+      <span>威科夫阶段：派发确认后进入下跌初段</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="s0">
+<h2 class="sec"><span class="no">00</span>核心结论</h2>
+
+<div class="verdict">
+  <h2>评级：暂时回避（技术面派发确认）／列入观察名单（基本面未变坏、估值已回落至合理区）</h2>
+  <div class="rate">
+    <div><div class="k">最新价（10/12 盘中）</div><div class="v down">40.15 <span style="font-size:13px">−6.2%</span></div><div class="hint" style="font-size:11px;color:var(--ink3)">盘中价，收盘前可能变动</div></div>
+    <div><div class="k">12 项梯度评分</div><div class="v">55 / 165</div><div class="hint" style="font-size:11px;color:var(--ink3)">较 10/09 的 86 分骤降 31 分</div></div>
+    <div><div class="k">威科夫阶段</div><div class="v sm">派发确认 → 下跌（Markdown）初段</div></div>
+    <div><div class="k">操作建议</div><div class="v sm">空仓者不抄底；持仓者执行止损纪律</div></div>
+  </div>
+  <p style="margin-bottom:8px"><strong>一句话：<em>10/09 那根「放量 2 倍却只涨 1%」的反抽，今天（10/12）被证明是派发结构里的 UT（上冲回落），而非突破——放量下跌跌破 10/08 低点，SOW（熊市初显）确认，此时正确的动作是等，不是买。</em></strong></p>
+  <p>但必须同时说清另一面：<strong>基本面没有任何变坏的证据</strong>（26H1 业绩创历史同期新高、端侧 AI 收入占比超 25%、客户为哈曼/大疆/影石创新/雷蛇等），且股价从 47.10 回落到 40.15（−14.6%）后，估值已降至 <strong>PE(TTM) 31.8x、PB 3.35x、总市值 70.7 亿</strong>——若采信中邮证券预测（2026E 归母净利 2.9 亿），对应 2026E PE 约 24.4x、2027E 约 17.7x，PEG 已低于 0.7。<em>这构成「技术面回避、估值面进入观察区」的张力：正确的处理是把仓位决策完全交给右侧信号，而不是左侧猜底。</em></p>
+</div>
+
+<div class="grid3">
+  <div class="tile down"><div class="lb">近 20 日最高收盘 → 现价</div><div class="vl">47.10 → 40.15</div><div class="hint">回撤 −14.8%，距 60 日高 48.19 −16.7%</div></div>
+  <div class="tile navy"><div class="lb">分支对照（13 只）</div><div class="vl">−4.06%</div><div class="hint">10/12 等权跌幅；炬芯 −6.2% 跑输 2.2pct</div></div>
+  <div class="tile gold"><div class="lb">估值（10/12 盘中）</div><div class="vl">PE 31.8x</div><div class="hint">PB 3.35x · 市值 70.7 亿 · 2026E PE≈24.4x</div></div>
+</div>
+
+<div class="note bad">
+  <div class="hd">与 10/10 分支报告结论的衔接</div>
+  10/10 的分支报告中，炬芯科技评分 86、列为「观察」，并写下两条警示：①「炬芯放量 1.93x 却只涨 1.06%，属『努力不小、结果一般』，需再观察」；②「仓位 0%」。今天这两条警示都兑现了——<em>10/09 的放量反抽被证伪，10/12 放量下跌确认派发。原报告「不给仓位」的决策被市场验证为正确。</em>
+</div>
+</section>
+
+<section id="s1">
+<h2 class="sec"><span class="no">01</span>公司画像：它到底是做什么生意的</h2>
+
+<p>炬芯科技是低功耗 AIoT 芯片设计厂商（Fabless），主业正从<strong>中高端音频 SoC 向端侧 AI 处理器延伸</strong>。按 2025 年报，主营构成为：蓝牙音频 SoC 系列 <strong>73.98%</strong>、端侧 AI 处理器芯片 <strong>17.07%</strong>、便携音视频 SoC 系列 8.85%。到 2026 年中报，<strong>存内计算与端侧 AI 处理器收入占比已超过 25%</strong>——占比提升的速度，就是这只股票估值叙事的核心。</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">客户与产品卡位</h4>
+    <ul style="margin-bottom:0">
+      <li><strong>音频基本盘：</strong>蓝牙音箱、无线麦克风、家庭影院、游戏/电竞耳机；客户含小米、传音、联想，以及哈曼、索尼等专业音频品牌</li>
+      <li><strong>端侧 AI 新品：</strong>第一代 ATS323X / ATS362X 系列（存内计算 NPU）已进入<strong>哈曼、大疆、猛玛、影石创新、雷蛇</strong>供应链，落地于高端音箱、Party 音箱、无线领夹麦、无线电竞耳机</li>
+      <li><strong>场景延伸：</strong>智能手表、手环、AI 眼镜、AI Note、桌面助理机器人——从音频向穿戴与办公扩张</li>
+      <li><strong>技术指标：</strong>一代存内计算 NPU 能效比 6.4TOPS/W@INT8，<strong>二代将提升至 7.8TOPS/W@INT8</strong>；自研 ANDT 工具链降低客户模型适配门槛</li>
+      <li><strong>生态：</strong>多款搭载其芯片的终端已接入腾讯 WorkBuddy 云端生态（端云协同落地）</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">财务画像</h4>
+    <table style="margin:6px 0 0">
+      <thead><tr><th>报告期</th><th class="num">营收</th><th class="num">同比</th><th class="num">归母净利</th><th class="num">同比</th></tr></thead>
+      <tbody>
+        <tr><td>2025 全年</td><td class="num">9.22 亿</td><td class="num up">+41.5%</td><td class="num">2.05 亿</td><td class="num up">+92.0%</td></tr>
+        <tr><td>2026Q1</td><td class="num">2.38 亿</td><td class="num up">+23.7%</td><td class="num">0.49 亿</td><td class="num up">+17.5%</td></tr>
+        <tr><td>2026H1</td><td class="num" colspan="4">创历史同期新高（东吴证券 2026-08-26 点评口径）</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;margin-bottom:0"><strong>卖方盈利预测（中邮证券，2026-05-09，「买入」）：</strong>2026/2027/2028 营收 12.2 / 16.2 / 21.1 亿元，归母净利 <strong>2.9 / 4.0 / 5.4 亿元</strong>。按 10/12 盘中市值 70.7 亿折算，对应 PE <strong>24.4x / 17.7x / 13.1x</strong>，2026–2028 净利 CAGR 约 38%，<strong>2026E 口径 PEG≈0.64</strong>。<span class="tag t-src">[卖方预测，非公司指引]</span></p>
+  </div>
+</div>
+
+<div class="note">
+  <div class="hd">一句话概括它的投资叙事</div>
+  <strong>「音频 SoC 的现金流 + 端侧 AI 的期权」。</strong>蓝牙音频基本盘贡献 74% 收入与稳定利润；端侧 AI 处理器占比从 17%（2025）升到 25%+（26H1）是估值弹性的来源。7 月 22 日它曾单日 +15.09% 登龙虎榜（沪股通买一 6315 万），正是这条叙事被资金追认的结果。<em>当前的问题不是叙事失效，而是股价此前把「占比提升」的预期打得太满。</em>
+</div>
+</section>
+
+<section id="s2">
+<h2 class="sec"><span class="no">02</span>最新 12 项梯度评分：86 → 55，发生了什么</h2>
+
+<table>
+<thead><tr>
+<th style="width:30px">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th class="num">vs 10/09</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="bold">趋势 1：价 / MA20</td><td class="num">2</td><td class="num">15</td><td>40.15 / 42.27 = <span class="down">0.952</span>，跌回均线下方 4.8%</td><td class="num down">13→2</td></tr>
+<tr><td>2</td><td class="bold">趋势 2：MA20 斜率</td><td class="num">2</td><td class="num">10</td><td><span class="down">−0.06%</span>，均线由升转平、开始下弯</td><td class="num down">6→2</td></tr>
+<tr><td>3</td><td class="bold">MACD</td><td class="num down">0</td><td class="num">20</td><td>DIF +0.548 / DEA +0.709，<span class="down">死叉</span>（10/09 时为 20/20 金叉）</td><td class="num down">20→0</td></tr>
+<tr><td>4</td><td class="bold">区间位置（60 日）</td><td class="num">15</td><td class="num">20</td><td>44%（高 48.19 / 低 34.00），回落已较充分</td><td class="num down">10→15</td></tr>
+<tr><td>5</td><td class="bold">ATR 收缩 + 稳定</td><td class="num">0</td><td class="num">15</td><td>ATR 1.65 → 2.28，<span class="down">扩张 +38%</span>，波动率加速放大</td><td class="num flat">0→0</td></tr>
+<tr><td>6</td><td class="bold">低波动（ATR%）</td><td class="num">4</td><td class="num">10</td><td><span class="down">5.67%</span>，已越过 5% 阈值（10/09 为 5.01%）</td><td class="num down">4→4</td></tr>
+<tr><td>7</td><td class="bold">涨幅安全性</td><td class="num up">15</td><td class="num">15</td><td>60 日 −10.1%，无透支</td><td class="num flat">15→15</td></tr>
+<tr><td>8</td><td class="bold">量价关系（威科夫）</td><td class="num">7</td><td class="num">15</td><td>−6.22% 量 1.19x——放量下跌（但未达 1.5x 重度标准，记中性偏弱）</td><td class="num down">13→7</td></tr>
+<tr><td>9</td><td class="bold">Spring 弹簧</td><td class="num">0</td><td class="num">15</td><td>无（10/09 曾有，破位后失效）</td><td class="num down">15→0</td></tr>
+<tr><td>10</td><td class="bold">回调质量</td><td class="num up">10</td><td class="num">10</td><td>缩量回调 0.41x——唯一的大分项；但注意它统计的是过去 10 日阴线均量，10/12 当日放量未完全计入</td><td class="num flat">10→10</td></tr>
+<tr><td>11</td><td class="bold">底背离</td><td class="num">0</td><td class="num">20</td><td>无</td><td class="num flat">0→0</td></tr>
+<tr><td>12</td><td class="bold">顶背离</td><td class="num">0</td><td class="num">−30</td><td>无（未触发一票否决）</td><td class="num flat">—</td></tr>
+<tr style="background:#f0f4fa"><td colspan="2" class="bold">合计</td><td class="num bold" style="font-size:15px">55</td><td class="num">165</td><td class="bold">判定：❌ 暂时回避（40–64 档）</td><td class="num bold down">86→55</td></tr>
+</tbody>
+</table>
+<div class="src">数据：腾讯财经日线接口（前复权，200 根），截至 2026-10-12 盘中；评分由本地脚本计算。<strong>注意：当日为盘中数据，收盘后第 1、2、3、8 项可能小幅变化，但不足以改变「暂时回避」的档位判定。</strong></div>
+
+<div class="note warn">
+  <div class="hd">31 分降幅从哪来</div>
+  降幅的 78%（24 分）来自三项：<strong>价/MA20（−11）、Spring 失效（−15）、MACD 死叉（−20）</strong>，合计 −46，同时区间位置改善 +5、涨幅安全不变。也就是说，<em>掉的全部是「趋势与结构」分，保留的恰好是「位置与安全」分。</em>这正是「趋势刚刚破坏、但还没跌透」的典型中间态。
+</div>
+
+<h3>近 40 日量价叙事：派发结构的完整拼图</h3>
+
+<div class="svgbox">
+<svg viewBox="0 0 900 405" role="img" aria-label="炬芯科技近40日收盘价与关键量价事件">
+  <text x="18" y="20" font-size="14" font-weight="700" fill="#1a3a6b">炬芯科技 688049 · 近 40 个交易日收盘价（2026-08-10 至 2026-10-12 盘中）</text>
+  <g stroke="#eef1f5" stroke-width="1">
+    <line x1="60" y1="50" x2="880" y2="50"/><line x1="60" y1="112.5" x2="880" y2="112.5"/>
+    <line x1="60" y1="187.5" x2="880" y2="187.5"/><line x1="60" y1="262.5" x2="880" y2="262.5"/>
+  </g>
+  <line x1="60" y1="337.5" x2="880" y2="337.5" stroke="#4a5568" stroke-width="1.3"/>
+  <g font-size="10" fill="#9aa5b1" text-anchor="end">
+    <text x="54" y="54">49</text><text x="54" y="116">46</text><text x="54" y="191">43</text><text x="54" y="266">40</text><text x="54" y="341">37</text>
+  </g>
+  <!-- MA20 marker -->
+  <line x1="700" y1="218.3" x2="880" y2="218.3" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="6,4" opacity=".8"/>
+  <text x="876" y="232" font-size="10.5" fill="#b8860b" text-anchor="end" font-weight="600">MA20 = 42.27</text>
+  <!-- price line -->
+  <polyline fill="none" stroke="#1a3a6b" stroke-width="2" points="60.0,231.8 81.0,215.0 102.1,212.3 123.1,243.8 144.1,243.8 165.2,210.0 186.2,223.5 207.2,280.5 228.3,283.3 249.3,295.8 270.3,313.3 291.4,283.0 312.4,297.5 333.4,260.3 354.5,263.0 375.5,130.5 396.5,161.3 417.6,192.8 438.6,192.0 459.7,227.8 480.7,229.0 501.7,262.5 522.8,262.0 543.8,277.3 564.8,299.0 585.9,298.8 606.9,302.8 627.9,275.3 649.0,274.8 670.0,205.0 691.0,204.5 712.1,125.5 733.1,97.3 754.1,72.5 775.1,113.8 796.2,75.0 817.2,130.5 838.2,213.8 859.3,202.5 880.3,271.3"/>
+  <!-- annotations -->
+  <g>
+    <circle cx="375.5" cy="130.5" r="5" fill="#2c5ba0"/>
+    <text x="375.5" y="112" font-size="11" fill="#2c5ba0" text-anchor="middle" font-weight="600">8/31 巨量 JOC</text>
+    <text x="375.5" y="100" font-size="10" fill="#7b8494" text-anchor="middle">+13.8% · 量 15.7M（约 4 倍均量）</text>
+
+    <circle cx="754.1" cy="72.5" r="5" fill="#c0392b"/>
+    <text x="748" y="58" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">9/24 头部 47.10</text>
+    <text x="748" y="46" font-size="10" fill="#7b8494" text-anchor="middle">量 12.4M 天量</text>
+
+    <circle cx="796.2" cy="75.0" r="5" fill="#c0392b"/>
+    <text x="802" y="60" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">9/29 二次冲高 47.00</text>
+    <text x="802" y="48" font-size="10" fill="#7b8494" text-anchor="middle">量仅 8.1M＝努力减弱</text>
+
+    <circle cx="838.2" cy="213.8" r="5" fill="#12864b"/>
+    <text x="826" y="238" font-size="11" fill="#12864b" text-anchor="middle" font-weight="600">10/8 SOW −7.3%</text>
+
+    <circle cx="859.3" cy="202.5" r="5" fill="#b8860b"/>
+    <text x="845" y="188" font-size="11" fill="#b8860b" text-anchor="middle" font-weight="600">10/9 反抽 +1.1%</text>
+    <text x="845" y="176" font-size="10" fill="#b8860b" text-anchor="middle" font-weight="600">量 13.9M 天量＝UT 滞涨</text>
+
+    <circle cx="880.3" cy="271.3" r="5" fill="#12864b"/>
+    <text x="872" y="292" font-size="11" fill="#12864b" text-anchor="middle" font-weight="600">10/12 −6.2%</text>
+    <text x="872" y="304" font-size="10" fill="#12864b" text-anchor="middle">跌破 10/8 低点</text>
+  </g>
+  <g font-size="10" fill="#9aa5b1" text-anchor="middle">
+    <text x="60" y="356">8/10</text><text x="396" y="356">9/1</text><text x="700" y="356">9/21</text><text x="880" y="356">10/12</text>
+  </g>
+</svg>
+</div>
+
+<h3>逐段解读（对照量价验证框架）</h3>
+
+<table>
+<thead><tr><th style="width:104px">阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+<tbody>
+<tr>
+  <td class="bold">8/10 – 8/28<br><span style="font-size:11px;color:var(--ink3)">吸筹 / 震荡</span></td>
+  <td>38.47 – 42.60 窄幅震荡，8/24 探 37.50 后收复</td>
+  <td>日均量 500–650 万，温和</td>
+  <td>底部震荡区，供应逐步枯竭</td>
+</tr>
+<tr>
+  <td class="bold">8/31<br><span style="font-size:11px;color:var(--ink3)">JOC 跳离</span></td>
+  <td class="up">+13.8% 单日跳升，收 45.78</td>
+  <td class="up">1,572 万手，约为前期均量 <strong>4 倍</strong></td>
+  <td><span class="tag t-buy">有效上涨</span>：价涨 + 显著放量，标准 JOC</td>
+</tr>
+<tr>
+  <td class="bold">9/01 – 9/17<br><span style="font-size:11px;color:var(--ink3)">回踩测试</span></td>
+  <td>回落至 38.89 – 44.55，未破 JOC 起点下方</td>
+  <td>持续缩量至 300–500 万</td>
+  <td><span class="tag t-buy">缩量回踩＝LPS 雏形</span>，结构健康</td>
+</tr>
+<tr>
+  <td class="bold">9/18 – 9/24<br><span style="font-size:11px;color:var(--ink3)">主升</span></td>
+  <td class="up">9/22 +7.6%，9/24 冲 48.19 收 47.10（60 日高）</td>
+  <td class="up">9/22 天量 1,822 万手</td>
+  <td>SOS 主升段，需求最强</td>
+</tr>
+<tr>
+  <td class="bold">9/28 – 9/29<br><span style="font-size:11px;color:var(--ink3)">二次冲高</span></td>
+  <td>9/28 −3.5%，9/29 收 47.00——<strong>几乎复刻前高但未创新高</strong></td>
+  <td class="down">量能从 1,239 万降至 <strong>807 万（−35%）</strong></td>
+  <td><span class="tag t-wait">二次测试量能不足</span>：价格回到前高、力量却萎缩，努力与结果开始背离</td>
+</tr>
+<tr>
+  <td class="bold">10/08<br><span style="font-size:11px;color:var(--ink3)">SOW 破位</span></td>
+  <td class="down">−7.27%，收 42.45，一根阴线吞掉一周涨幅</td>
+  <td class="up">979 万手放量（1.32x）</td>
+  <td><span class="tag t-avoid">SOW 熊市初显</span>：放量跌破支撑</td>
+</tr>
+<tr>
+  <td class="bold">10/09<br><span style="font-size:11px;color:var(--ink3)">反抽（关键一日）</span></td>
+  <td>盘中冲 45.25、收 42.90，<strong>仅 +1.06%</strong></td>
+  <td class="up">1,394 万手——<strong>超过 10/08 破位日的量</strong>（滚动口径约 2.0x）</td>
+  <td><span class="tag t-avoid">UT 上冲回落 / 放量滞涨</span>：买方投入破位日更大的量，只推动 1% 涨幅——努力与结果严重背离，上方供应沉重。<em>当日按框架只能给「需再观察」，事后看这就是 LPSY（最后派发点）</em></td>
+</tr>
+<tr>
+  <td class="bold">10/12<br><span style="font-size:11px;color:var(--ink3)">确认（当前）</span></td>
+  <td class="down">−6.2% 至 40.15，<strong>跌破 10/08 低点 42.45</strong></td>
+  <td>885 万手（1.19x），温和放量</td>
+  <td><span class="tag t-avoid">派发确认，Markdown 初段</span>：反抽失败 + 创新低 + 放量，三要素齐备</td>
+</tr>
+</tbody>
+</table>
+
+<h3>量价关系验证：三个直接回答</h3>
+
+<div class="grid3">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">问题 ①：10/09 的放量是「有效上涨」吗？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>不是。</strong>框架对有效上涨的定义是「价格创新高 + 成交量放大 30% 以上」。10/09 放量确实超过 30%（约 2.0x），但价格<strong>没有创新高</strong>——只反弹 1.06%，远低于 9/24 高点，甚至低于 9/23 收盘。量能达标而价格不达标＝<em>需求被上方的供应全部吸收</em>。这正是「放量滞涨 0/15」的定义。</p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--down)">问题 ②：10/12 的下跌是「有效下跌」还是「诱空」？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>偏有效下跌。</strong>诱空的定义是「价格创新低 + 成交量萎缩」。10/12 确实创了调整新低（跌破 10/08 低点），但量能 1.19x 是<strong>温和放大而非萎缩</strong>——放量下跌说明仍有资金在主动离场。不过 1.19x 未达恐慌级（&gt;1.5x），<em>更像「有序派发」而非「恐慌踩踏」，这意味着下跌可能以阴跌方式延续，而不是一次跌完。</em></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">问题 ③：现在是「底部反转」吗？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>远未到。</strong>框架对底部反转的定义是「价格企稳 + 成交量连续 3 日温和放大」。当前是「价格下行 + 波动率扩张」（ATR +38%），两者方向相反。底部反转需要先看到：<em>① 量能萎缩至 0.8x 以下的止跌；② 或一次 Spring（快速砸破 38–39 后放量收回）。</em>目前两者都未出现。</p>
+  </div>
+</div>
+
+<h3>系统性 vs 个股性：10/12 的下跌有多少是「大盘给的」</h3>
+
+<table>
+<thead><tr><th>标的</th><th class="num">10/12 涨跌</th><th class="num">量比</th><th>标的</th><th class="num">10/12 涨跌</th><th class="num">量比</th></tr></thead>
+<tbody>
+<tr><td>恒玄科技</td><td class="num down">−8.74%</td><td class="num up">1.49x</td><td>星宸科技</td><td class="num down">−3.39%</td><td class="num">0.83x</td></tr>
+<tr><td class="bold">炬芯科技</td><td class="num down bold">−6.25%</td><td class="num up bold">1.23x</td><td>中科蓝讯</td><td class="num down">−3.39%</td><td class="num">0.62x</td></tr>
+<tr><td>国科微</td><td class="num down">−5.20%</td><td class="num">0.58x</td><td>泰凌微</td><td class="num down">−3.70%</td><td class="num">0.91x</td></tr>
+<tr><td>北京君正</td><td class="num down">−4.88%</td><td class="num">0.64x</td><td>全志科技</td><td class="num down">−3.17%</td><td class="num">0.78x</td></tr>
+<tr><td>乐鑫科技</td><td class="num down">−4.27%</td><td class="num">0.87x</td><td>晶晨股份</td><td class="num down">−3.27%</td><td class="num up">1.59x</td></tr>
+<tr><td>翱捷科技</td><td class="num down">−3.94%</td><td class="num">0.68x</td><td>富瀚微</td><td class="num down">−1.04%</td><td class="num">0.84x</td></tr>
+<tr><td colspan="3"></td><td class="bold">瑞芯微</td><td class="num down">−1.61%</td><td class="num">0.61x</td></tr>
+<tr style="background:#f0f4fa"><td colspan="6" class="bold">分支 13 只等权 −4.06%，全部收跌</td></tr>
+</tbody>
+</table>
+
+<div class="note warn">
+  <div class="hd">这张对照表的读法</div>
+  ① <strong>10/12 是分支系统性回调</strong>——13 只全部下跌，等权 −4.06%，说明主因是端侧 AI / 半导体设计的整体风险偏好收缩，而非炬芯的个股利空（检索期内未发现公司层面的负面公告）。<br>
+  ② <strong>但炬芯是「跌幅跑输 + 放量」的组合</strong>：−6.25% 比等权多跌 2.2pct，量比 1.23x 而多数同业在 0.6–0.9x 缩量。<em>系统性下跌里缩量的（如瑞芯微 0.61x）属于被动跟随；放量且跑输的（炬芯、恒玄）说明有主动性卖压叠加。</em>恒玄同为音频/可穿戴 SoC，与其最可比——两者同时放量领跌，暗示资金正在对「端侧 AI 音频」这条支线做集中性减仓。
+</div>
+</section>
+
+<section id="s3">
+<h2 class="sec"><span class="no">03</span>操作计划：分三种持仓状态给出纪律</h2>
+
+<div class="grid3">
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--up)">若你已持仓</h4>
+    <p style="font-size:13.5px"><strong>执行止损，不等反弹。</strong>10/10 报告给出的首道止损为 38.60（2.0×ATR 口径），现价 40.15 距其仅 −3.9%。破位结构确认后，框架不允许「再等一天」：跌至 38.60 无条件减半，跌破 37.50（8 月震荡区下沿）清零。唯一例外：若明日出现放量长下影收回 42 上方（Spring 形态），可暂停执行一次。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--down)">若你空仓想买</h4>
+    <p style="font-size:13.5px"><strong>现在不是买点，但可以把触发条件写好。</strong>三个再进场信号（满足其一即可试探性建仓，满足两个才可给到目标仓位）：<br>
+    ① <strong>缩量止跌</strong>：连续 2 日量比 &lt; 0.8x 且不再创新低；<br>
+    ② <strong>Spring</strong>：快速砸破 38.5 后当日放量收回 40 上方；<br>
+    ③ <strong>右侧确认</strong>：放量站回 MA20 = 42.27 且 MACD 重新金叉。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--warn)">若你按估值做长线</h4>
+    <p style="font-size:13.5px">估值已进入观察区但<strong>未到显著低估</strong>。以中邮 2026E 净利 2.9 亿计：现价对应 <strong>24.4x</strong>；若跌至 60 日低点 34.00 附近，对应 <strong>20.6x</strong>（PEG≈0.54），才是「显著低估 + 技术强支撑」的重合位。<span class="tag t-src">[依赖卖方预测实现]</span>可将 34 附近设为分批接计划的下沿，但仓位必须为「长线仓」单独核算，不与本报告的战术仓位混用。</p>
+  </div>
+</div>
+
+<h3>关键价位地图</h3>
+
+<table>
+<thead><tr><th class="num">价位</th><th>性质</th><th>操作含义</th></tr></thead>
+<tbody>
+<tr><td class="num">48.19</td><td>60 日最高（9/24 盘中）</td><td>本轮周期顶，中期不再作为目标参照</td></tr>
+<tr><td class="num">47.10 / 47.00</td><td>双头（9/24 收盘 / 9/29 收盘）</td><td>派发区，未来若重返需天量才可信</td></tr>
+<tr><td class="num">42.27</td><td><strong>MA20（第一压力）</strong></td><td>右侧确认线：放量站回是再进场信号 ③</td></tr>
+<tr><td class="num">42.45</td><td>10/08 破位低点</td><td>已跌破，角色反转：反弹至此先看阻力</td></tr>
+<tr><td class="num bold">40.15</td><td class="bold">现价（10/12 盘中）</td><td class="bold">评分 55 · 暂时回避</td></tr>
+<tr><td class="num">38.60</td><td>原首道止损（10/10 报告口径）</td><td><strong>持仓者纪律线</strong>：触及减半</td></tr>
+<tr><td class="num">38.50 – 37.50</td><td>8 月震荡区下沿 + 8/24 低点</td><td>结构支撑带；快速破位后收回＝Spring 信号 ②</td></tr>
+<tr><td class="num">35.67</td><td>2.0×ATR 机械止损（现口径）</td><td>ATR 已扩张，此线仅作底线参考</td></tr>
+<tr><td class="num">34.00</td><td>60 日最低 + 2026E PE≈20.6x</td><td>估值与技术双重支撑，长线资金观察位</td></tr>
+</tbody>
+</table>
+
+<h3>风险清单</h3>
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">交易层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>本报告基于盘中数据</strong>（10/12 14:13 前后），收盘价可能变动；若收盘拉回 42 上方，评分将回升至 65–75 区间、判定升为「关注等待」，但 MACD 死叉与破位形态仍在，仍不构成买点。</li>
+      <li><strong>波动率正在加速放大</strong>（ATR 1.65→2.28，+38%）。ATR% 5.67% 意味着日均振幅近 6%，任何止损都需预留足够宽度，仓位必须相应缩小。</li>
+      <li><strong>与恒玄科技的联动减仓风险</strong>：两者同为「端侧 AI 音频/可穿戴 SoC」，10/12 同时放量领跌分支。若该支线遭机构集中减仓，个股独立企稳的难度会显著加大。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">基本面层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>卖方预测实现风险：</strong>「2026E 24.4x、PEG 0.64」的估值吸引力完全建立在⸺中邮证券 2026E 净利 2.9 亿（+41%）的预测上；若 Q3 财报低于该轨道，估值锚整体失效。<span class="tag t-src">[卖方预测]</span></li>
+      <li><strong>收入结构仍以蓝牙音频为主（73.98%）</strong>，端侧 AI 占比 25%+ 虽在快速提升，但基绝对值仍小；若 AI 眼镜/AI 玩具等新品类放量节奏低于预期，估值弹性叙事会先于业绩证伪。</li>
+      <li><strong>消费电子需求与客户集中度：</strong>下游为音箱、耳机、穿戴等消费类终端，对旺季需求与头部客户订单敏感。</li>
+      <li><strong>H 股发行摊薄</strong>：公司已于 2025-11-15 公告筹划发行 H 股并在港交所上市，若推进将带来股本摊薄与两地估值差压力。<span class="tag t-src">[公司公告]</span></li>
+    </ol>
+  </div>
+</div>
+
+<div class="note good">
+  <div class="hd">最后一句总结</div>
+  <strong>这只股票的基本面故事没有变坏，变坏的是筹码结构。</strong>9 月下旬天量冲顶 → 二次冲高量能不足 → 破位 → 放量滞涨 → 再破位，这是一个教科书式的派发序列；而估值（PE-TTM 31.8x / 2026E 24.4x）经过 −14.6% 回撤后已经回到「可以开始认真看」的位置。<em>正确的姿势是：把 38.5–34.0 的支撑带和「缩量止跌 / Spring / 站回 MA20」三个右侧信号写进计划，然后等——市场会自己告诉你答案。</em>
+</div>
+</section>
+
+<section id="s4">
+<h2 class="sec"><span class="no">04</span>数据来源</h2>
+<ul style="font-size:13.5px">
+  <li>行情与评分：腾讯财经日线接口（前复权，200 根，截至 2026-10-12 盘中），本地脚本计算；分支对照 13 只同源</li>
+  <li>估值：通达信 MCP <code>tdx_indicator_select</code>（PE-TTM 31.84 / PB-MRQ 3.3460 / 总市值 70.69 亿，交易日 20261012）</li>
+  <li>基本面：21 世纪经济报道《上半年业绩创历史同期新高，这家 AIoT 芯片厂商端侧 AI 芯片持续放量丨机构调研》（2026-09-21，含东吴证券 2026-08-26 半年报点评、申万宏源 2026-02-05 深度、公司 2026-09-16 投资者关系活动记录）；同壁财经龙虎榜数据（2026-07-22，含 2025 年报与 2026Q1 财务）；证券之星（2026-07-31，含中邮证券 2026-05-09 盈利预测）</li>
+  <li>方法论：A股择时分析（威科夫 12 项梯度评分）、A股量价关系验证（有效上涨/诱多/底部反转/有效下跌/诱空五规则）</li>
+</ul>
+</section>
+
+<div class="foot">
+  <strong>免责声明：</strong>本报告仅供研究参考，不构成个人投资建议。技术评分基于历史量价数据统计生成，不预示未来走势；盘中数据存在变动的可能；盈利预测为卖方观点而非公司指引，标注 [卖方预测] / [公司公告] / [调研口径] 的项目未经独立审计核实。市场有风险，投资需谨慎。<br>
+  <span style="font-size:11.5px">生成时间：2026-10-12 14:30 前后　|　数据基准：2026-10-12 盘中</span>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晶晨股份 688099 · 单票深度分析与量价评判</title>
+<meta name="description" content="评级「可以买入（维持，但降档观察）」：结构未坏、当日量价亮红灯，执行「等回踩缩量」原计划；评分 93/165（较 10/09 的 103 降 10 分，仍处「可以买入」档）。操作建议不追不慌，守住 96.8/90.3 观察回踩质量；止损上移至突破结构位 90.32（原 91.29，2.0×ATR 机械止损 87.46）。数据基准 2026-10-12 盘中，与炬芯同日却反向——晶晨趋势项全好仅掉当日信号分。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>晶晨股份 688099 · 深度分析与量价评判</h1>
+    <div class="sub">智能终端 SoC（家庭智能终端全球第二）· 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12 盘中（14:26 前后）</span>
+      <span>评分 93/165 · 可以买入（降档观察）</span>
+      <span>威科夫阶段：突破后回踩（分水岭确认中）</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="s0">
+<h2 class="sec"><span class="no">00</span>核心结论</h2>
+
+<div class="verdict">
+  <h2>评级：可以买入（维持，但降档观察）——结构未坏，当日量价亮红灯，执行「等回踩缩量」的原计划</h2>
+  <div class="rate">
+    <div><div class="k">最新价（10/12 盘中）</div><div class="v down">96.35 <span style="font-size:13px">−3.47%</span></div><div class="hint" style="font-size:11px;color:var(--ink3)">盘中价，收盘前可能变动</div></div>
+    <div><div class="k">12 项梯度评分</div><div class="v">93 / 165</div><div class="hint" style="font-size:11px;color:var(--ink3)">较 10/09 的 103 分降 10 分，仍处「可以买入」档</div></div>
+    <div><div class="k">威科夫阶段</div><div class="v sm">9/30 + 10/09 两次突破后的回踩确认中</div></div>
+    <div><div class="k">操作建议</div><div class="v sm">不追不慌：守住 96.8/90.3 观察回踩质量</div></div>
+  </div>
+  <p style="margin-bottom:8px"><strong>一句话：<em>晶晨与炬芯是同一个分支里方向相反的两张答卷——炬芯今天跌破了趋势结构（MACD 死叉、跌回均线下方），晶晨的均线斜率反而在加速向上（+0.45%）、价格仍守在 MA20 上方 6.9%；但晶晨今天同样出现了「放量下跌 1.57x」（供应进场 3/15），所以正确动作不是趁跌买入，而是等回踩变成缩量。</em></strong></p>
+  <p>基本面的强度在 13 只分支标的中属于第一梯队：26H1 营收 <span class="up">43.91 亿（+31.9%）</span>、Q2 归母净利环比 <span class="up">+152.6%</span>；家庭智能终端 SoC <strong>中国第一、全球第二（份额 17.7%）</strong>；6nm 芯片 2026 年出货指引 3000 万颗（2025 年约 900 万颗，3.3 倍）；多款适配谷歌 Gemini 的端侧大模型终端已面市。9/30 港股 IPO 获证监会备案正是当天 +7.17% 放量突破的消息催化。当前 PE(TTM) 41.3x、PB 5.12x、市值 407.9 亿。</p>
+</div>
+
+<div class="grid3">
+  <div class="tile navy"><div class="lb">10/09 天量突破</div><div class="vl">+5.44%</div><div class="hint">量 3,905 万手＝历史天量（分支唯一有效突破）</div></div>
+  <div class="tile down"><div class="lb">10/12 放量回吐</div><div class="vl">−3.47%</div><div class="hint">量 1.57x，收盘恰好回到 9/30 突破日收盘附近</div></div>
+  <div class="tile gold"><div class="lb">估值（10/12 盘中）</div><div class="vl">PE 41.3x</div><div class="hint">PB 5.12x · 市值 407.9 亿 · 26H1 ROE 7.97%</div></div>
+</div>
+
+<div class="note good">
+  <div class="hd">与 10/10 分支报告结论的衔接</div>
+  10/10 的分支报告中，晶晨评分 103、列「战略仓 1.0%」，且明确写下：<strong>「不追 3.86x 天量当日，等回踩 MA20 = 89.74 附近缩量企稳」。</strong>今天的走势是对这条纪律的一次检验：回踩发生了（−3.47%），但它是<strong>放量（1.57x）而非缩量</strong>——<em>按纪律，触发条件尚未满足，继续等待，不提前动手。</em>
+</div>
+</section>
+
+<section id="s1">
+<h2 class="sec"><span class="no">01</span>公司画像：家庭智能终端 SoC 的全球二当家</h2>
+
+<p>晶晨半导体是系统级 SoC 设计厂商（Fabless），产品覆盖<strong>智能多媒体与显示 SoC、AIoT SoC、通信与连接芯片、智能汽车 SoC</strong> 四条线，落地于智慧家庭、智慧办公、智慧出行、娱乐教育、工业生产五类场景。按弗若斯特沙利文口径（2024 年收入），<strong>公司在专注智能终端 SoC 的厂商中位列全球第四；在家庭智能终端 SoC 领域位列中国内地第一、全球第二（全球份额 17.7%）</strong>——机顶盒与智能电视主控是它的基本盘。</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">财务画像（公开披露）</h4>
+    <table style="margin:6px 0 0">
+      <thead><tr><th>报告期</th><th class="num">营收</th><th class="num">同比</th><th class="num">归母净利</th><th class="num">同比</th></tr></thead>
+      <tbody>
+        <tr><td>2024 全年</td><td class="num">59.26 亿</td><td class="num up">+10.3%</td><td class="num">8.22 亿</td><td class="num up">+65.0%</td></tr>
+        <tr><td>2025 全年</td><td class="num">67.93 亿</td><td class="num up">+14.6%</td><td class="num">8.73 亿</td><td class="num up">+6.2%</td></tr>
+        <tr><td>2026H1</td><td class="num">43.91 亿</td><td class="num up">+31.9%</td><td class="num">6.11 亿</td><td class="num up">+23.0%</td></tr>
+        <tr><td>　└ 26Q2 单季</td><td class="num">24.96 亿</td><td class="num up">+38.6%</td><td class="num">4.38 亿</td><td class="num up">+41.9%<br><span style="font-size:11px">环比 <span class="up">+152.6%</span></span></td></tr>
+      </tbody>
+    </table>
+    <ul style="margin-bottom:0">
+      <li>26H1 毛利率 <strong>38.73%（+1.93pct）</strong>，Q2 单季 39.65%（+2.36pct）——<em>量价齐增</em></li>
+      <li>公司归因：电视 SoC 国内外客户份额稳步增长、高端产品导入加速、<strong>为应对成本上涨对全线产品售价进行合理调整</strong></li>
+      <li>26H1 经营现金流 <span class="down">−5.02 亿</span>（同比改善 1.3 亿，仍为负——备货扩张特征）</li>
+      <li>26H1 境外收入占比 <strong>90.1%</strong>，全球化收入结构</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">增长引擎与产业卡位</h4>
+    <ul style="margin-bottom:0">
+      <li><strong>6nm 主力芯片：</strong>2025 年出货近 900 万颗，<strong>2026 年有望突破 3,000 万颗</strong>（3.3 倍放量，公司投资者关系口径）</li>
+      <li><strong>Wi-Fi 6 连接芯片：</strong>2025 年销量超 700 万颗，2026 年有望破 1,000 万颗</li>
+      <li><strong>端侧 AI 落地：</strong>CES 2026 全场景 SoC 亮相，<strong>多款适配谷歌 Gemini 等端侧大模型的终端产品已陆续面市</strong>；高端电视 SoC T966D5 获多家全球知名电视品牌采用，2026Q1 起全球上市</li>
+      <li><strong>卖方点名：</strong>中银证券 2026-09-30 端侧算力芯片关注名单将晶晨列入；卖方一致预测其「两年净利增速均超 30%」（证券时报 2026-04-23 汇总口径）<span class="tag t-src">[卖方预测]</span></li>
+    </ul>
+    <div class="note warn" style="margin:12px 0 0;padding:10px 13px">
+      <div class="hd">H 股发行：重要的股本变量</div>
+      公司 2025-09-25 递交港股上市申请，<strong>2026-08-31 获中国证监会备案，拟发行不超过 5,381.55 万股 H 股</strong>（约占总股本 12%–13% [推算]）。<em>这解释了 9/30 的放量突破（备案通知书 9/30 公开发布），也构成后续的两面性：国际化融资平台 vs 股本摊薄与 A/H 两地估值差压力。</em>炬芯同样在筹划 H 股，这是本分支的共性变量。
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <div class="hd">与炬芯的产业位置对比（为什么两者走势不同步）</div>
+  炬芯是<strong>音频/可穿戴</strong>的端侧 AI 新锐（端侧 AI 收入占比 25%+ 但绝对值小，市值 71 亿）；晶晨是<strong>家庭智能终端</strong>的成熟龙头（电视/机顶盒基本盘 + AIoT 第二曲线，市值 408 亿）。<em>前者是「小市值 + 高叙事弹性」，后者是「大市值 + 业绩兑现型」。</em>10/12 的分化（炬芯 −6.25% 放量领跌 vs 晶晨 −3.47% 跑赢等权）正是这两种属性的差价表现：资金撤离高叙事小票时，业绩兑现型龙头相对抗跌。
+</div>
+</section>
+
+<section id="s2">
+<h2 class="sec"><span class="no">02</span>最新 12 项梯度评分：103 → 93，掉分掉在哪</h2>
+
+<table>
+<thead><tr>
+<th style="width:30px">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th class="num">vs 10/09</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="bold">趋势 1：价 / MA20</td><td class="num up">13</td><td class="num">15</td><td>96.35 / 90.01 = <span class="up">1.069</span>，仍站上均线 6.9%</td><td class="num down">15→13</td></tr>
+<tr><td>2</td><td class="bold">趋势 2：MA20 斜率</td><td class="num up">6</td><td class="num">10</td><td><span class="up">+0.45%</span>，<strong>均线由平转升且在加速</strong>（10/09 时 +0.07%）</td><td class="num up">4→6</td></tr>
+<tr><td>3</td><td class="bold">MACD</td><td class="num">15</td><td class="num">20</td><td>DIF +1.067 / DEA −0.191，<strong>DIF 已上穿零轴、多头结构完好</strong></td><td class="num flat">15→15</td></tr>
+<tr><td>4</td><td class="bold">区间位置（60 日）</td><td class="num">10</td><td class="num">20</td><td>59%（高 106.88 / 低 81.10），仍偏上半区</td><td class="num up">10→10</td></tr>
+<tr><td>5</td><td class="bold">ATR 收缩 + 稳定</td><td class="num">0</td><td class="num">15</td><td>ATR 3.16 → 4.40，<span class="down">扩张 +39%</span>，天量突破后波动率放大</td><td class="num flat">0→0</td></tr>
+<tr><td>6</td><td class="bold">低波动（ATR%）</td><td class="num">6</td><td class="num">10</td><td><span class="down">4.57%</span>（10/09 为 4.22%）</td><td class="num flat">6→6</td></tr>
+<tr><td>7</td><td class="bold">涨幅安全性</td><td class="num up">15</td><td class="num">15</td><td>60 日 −5.0%，无透支</td><td class="num flat">15→15</td></tr>
+<tr><td>8</td><td class="bold">量价关系（威科夫）</td><td class="num down">3</td><td class="num">15</td><td><span class="down">−3.47% 放量 1.57x＝供应进场</span>——本项从 13/15 直落至 3/15，是全部 10 分降幅的来源</td><td class="num down">13→3</td></tr>
+<tr><td>9</td><td class="bold">Spring 弹簧</td><td class="num">15</td><td class="num">15</td><td>近 20 日跌破后快速收回（8 月末 88.2 → 9 月回升）</td><td class="num flat">15→15</td></tr>
+<tr><td>10</td><td class="bold">回调质量</td><td class="num up">10</td><td class="num">10</td><td>过去 10 日阴线均量 0.47x，历史回调健康；<strong>但 10/12 当日 1.57x 未计入该项，是滞后指标</strong></td><td class="num flat">10→10</td></tr>
+<tr><td>11</td><td class="bold">底背离</td><td class="num">0</td><td class="num">20</td><td>无</td><td class="num flat">0→0</td></tr>
+<tr><td>12</td><td class="bold">顶背离</td><td class="num">0</td><td class="num">−30</td><td>无（未触发一票否决）</td><td class="num flat">—</td></tr>
+<tr style="background:#f0f4fa"><td colspan="2" class="bold">合计</td><td class="num bold" style="font-size:15px">93</td><td class="num">165</td><td class="bold">判定：✅ 可以买入（90–119 档下沿，需等 LPS）</td><td class="num down">103→93</td></tr>
+</tbody>
+</table>
+<div class="src">数据：腾讯财经日线接口（前复权，200 根），截至 2026-10-12 盘中；评分由本地脚本计算。<strong>注意：当日为盘中数据，收盘后第 1、8 项可能变化；若收盘缩量收回 97 上方，评分将回到 100 附近。</strong></div>
+
+<div class="note warn">
+  <div class="hd">评分解读的关键：结构与信号的分离</div>
+  93 分的构成非常不对称——<strong>结构项（1/2/3/9）依然完好甚至改善</strong>（MA20 斜率加速、DIF 上穿零轴），<strong>只有当日信号项（8）亮红灯</strong>。这意味着：框架说「可以买入」指的是趋势结构具备买入资格，但<em>当日 1.57x 的放量下跌说明回踩还未完成——「可以买」与「现在买」是两回事。</em>这与炬芯的情况本质不同：炬芯是结构本身被破坏（死叉+跌回线下），评分掉到 55 的「暂时回避」档。
+</div>
+
+<h3>近 40 日量价叙事：两次突破与一次回踩</h3>
+
+<div class="svgbox">
+<svg viewBox="0 0 900 405" role="img" aria-label="晶晨股份近40日收盘价与关键量价事件">
+  <text x="18" y="20" font-size="14" font-weight="700" fill="#1a3a6b">晶晨股份 688099 · 近 40 个交易日收盘价（2026-08-10 至 2026-10-12 盘中）</text>
+  <g stroke="#eef1f5" stroke-width="1">
+    <line x1="60" y1="116.7" x2="880" y2="116.7"/><line x1="60" y1="183.3" x2="880" y2="183.3"/>
+    <line x1="60" y1="250" x2="880" y2="250"/><line x1="60" y1="316.7" x2="880" y2="316.7"/>
+  </g>
+  <line x1="60" y1="350" x2="880" y2="350" stroke="#4a5568" stroke-width="1.3"/>
+  <g font-size="10" fill="#9aa5b1" text-anchor="end">
+    <text x="54" y="54">101</text><text x="54" y="120">97</text><text x="54" y="187">93</text><text x="54" y="254">89</text><text x="54" y="320">85</text>
+  </g>
+  <line x1="620" y1="233.2" x2="880" y2="233.2" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="6,4" opacity=".8"/>
+  <text x="876" y="247" font-size="10.5" fill="#b8860b" text-anchor="end" font-weight="600">MA20 = 90.01（斜率 +0.45% 向上）</text>
+  <polyline fill="none" stroke="#1a3a6b" stroke-width="2" points="60.0,109.8 81.0,81.7 102.1,62.7 123.1,115.0 144.1,123.3 165.2,61.3 186.2,92.5 207.2,175.3 228.3,177.5 249.3,199.7 270.3,240.0 291.4,209.2 312.4,221.2 333.4,204.8 354.5,236.7 375.5,111.8 396.5,128.3 417.6,196.0 438.6,197.5 459.7,223.0 480.7,216.7 501.7,253.3 522.8,258.2 543.8,284.8 564.8,306.2 585.9,321.3 606.9,311.8 627.9,261.8 649.0,297.3 670.0,245.8 691.0,234.3 712.1,141.5 733.1,170.8 754.1,227.0 775.1,247.8 796.2,213.7 817.2,123.3 838.2,160.5 859.3,74.8 880.3,131.0"/>
+  <g>
+    <circle cx="102.1" cy="62.7" r="5" fill="#7b8494"/>
+    <text x="108" y="52" font-size="11" fill="#7b8494" text-anchor="middle" font-weight="600">8/12 平台顶 100.14</text>
+
+    <circle cx="375.5" cy="111.8" r="5" fill="#2c5ba0"/>
+    <text x="375.5" y="94" font-size="11" fill="#2c5ba0" text-anchor="middle" font-weight="600">8/31 放量 JOC +8.7%</text>
+    <text x="375.5" y="82" font-size="10" fill="#7b8494" text-anchor="middle">量 1,592 万 ≈ 2 倍均量</text>
+
+    <circle cx="585.9" cy="321.3" r="5" fill="#12864b"/>
+    <text x="585.9" y="338" font-size="11" fill="#12864b" text-anchor="middle" font-weight="600">9/14 回调低 83.98</text>
+
+    <circle cx="817.2" cy="123.3" r="5" fill="#c0392b"/>
+    <text x="800" y="106" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">9/30 +7.2% 量 1,781 万</text>
+    <text x="800" y="94" font-size="10" fill="#c0392b" text-anchor="middle" font-weight="600">H 股备案公告日 = 消息催化</text>
+
+    <circle cx="859.3" cy="74.8" r="5" fill="#c0392b"/>
+    <text x="848" y="58" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">10/9 天量 +5.4%</text>
+    <text x="848" y="46" font-size="10" fill="#7b8494" text-anchor="middle">3,905 万手＝历史天量</text>
+
+    <circle cx="880.3" cy="131.0" r="5" fill="#12864b"/>
+    <text x="868" y="152" font-size="11" fill="#12864b" text-anchor="middle" font-weight="600">10/12 −3.5%</text>
+    <text x="868" y="164" font-size="10" fill="#7b8494" text-anchor="middle">放量回踩 1.57x</text>
+  </g>
+  <g font-size="10" fill="#9aa5b1" text-anchor="middle">
+    <text x="60" y="366">8/10</text><text x="396" y="366">9/1</text><text x="700" y="366">9/21</text><text x="880" y="366">10/12</text>
+  </g>
+</svg>
+</div>
+
+<h3>量价关系验证：三个直接回答</h3>
+
+<div class="grid3">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">问题 ①：10/09 的天量突破还有效吗？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>仍然有效，但正在接受检验。</strong>有效突破的定义是「价创新高 + 放量 30% 以上」，10/09 两条都满足（3,905 万手历史天量、收 99.71 逼近前高）。突破后允许回踩，威科夫称其为 LPS（最后支撑）。<em>关键是回踩的质量：合格回踩应缩量（&lt;0.8x）且不破突破起点；今天的 1.57x 放量回踩暂时不合格。</em></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">问题 ②：10/12 的放量下跌是洗盘还是出货？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>证据两可，偏向「系统性回吐 + 摊薄定价」。</strong>看跌证据：量 1.57x 放量下跌（供应进场 3/15）；看平证据：−3.47% <strong>跑赢分支等权（−4.06%）</strong>，且收盘 96.35 恰好回到 9/30 突破日收盘 96.80 附近——这是突破平台上沿的正常回测位；叠加当日 13 只全线下跌的系统性背景与 H 股摊薄预期。<em>一句话：今天更像「突破后的第一次放量洗盘」，但需要明天用缩量来证明。</em></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--down)">问题 ③：什么情况下判定「突破失败」？</h4>
+    <p style="font-size:13.5px;margin-bottom:0">两个位置：<strong>① 收盘跌破 96.80（9/30 突破日收盘）且次日仍放量</strong>——回踩退化为派发；<strong>② 收盘跌破 90.32（9/29 突破前平台）</strong>——突破结构完全失败，届时评分将掉入 70 以下区间，止损 87.46（2.0×ATR）同步生效。<em>在两个位置都没破之前，天量突破仍是有效状态。</em></p>
+  </div>
+</div>
+
+<h3>系统性 vs 个股性：与炬芯的对照</h3>
+
+<table>
+<thead><tr><th>维度</th><th>晶晨股份 688099</th><th>炬芯科技 688049</th><th>含义</th></tr></thead>
+<tbody>
+<tr><td>10/12 涨跌</td><td class="num down">−3.47%</td><td class="num down">−6.25%</td><td>分支等权 −4.06%：晶晨跑赢 0.6pct，炬芯跑输 2.2pct</td></tr>
+<tr><td>当日量比</td><td class="num">1.57x（放量）</td><td class="num up">1.23x（放量）</td><td>两者都放量，但晶晨有 10/09 天量突破作对照，炬芯则是破位后第二根放量阴</td></tr>
+<tr><td>价 / MA20</td><td class="num up">1.069（上方 6.9%）</td><td class="num down">0.952（下方 4.8%）</td><td>晶晨结构完好，炬芯结构已破坏</td></tr>
+<tr><td>MA20 斜率</td><td class="num up">+0.45%（加速向上）</td><td class="num down">−0.06%（转平下弯）</td><td>同一份系统性回调，两条均线的反应完全相反</td></tr>
+<tr><td>MACD</td><td class="num up">DIF +1.07 上穿零轴，多头</td><td class="num down">死叉（DIF &lt; DEA）</td><td>动量方向相反</td></tr>
+<tr><td>12 项评分</td><td class="num up">93 可以买入</td><td class="num down">55 暂时回避</td><td>38 分的差距，全部来自趋势与结构项</td></tr>
+<tr><td>评分操作含义</td><td><span class="tag t-buy">等缩量回踩后执行</span></td><td><span class="tag t-avoid">执行止损纪律</span></td><td class="bold">同一个分支、同一天，两种相反的动作</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <div class="hd">为什么会有 38 分差距——这正是 12 项评分体系的价值</div>
+  两只票 10/12 都在跌、都放量，若只看当日涨跌幅会得出「差不多」的结论。但评分体系拆开看：晶晨的<strong>趋势项（均线、MACD）全是好的，只掉了当日信号分</strong>；炬芯的<strong>趋势项全坏了（死叉、跌回线下、Spring 失效）</strong>。这 38 分差距的实质是：<em>晶晨处于「上升趋势的回调」，炬芯处于「下降趋势的确认」——前者回调是买点的酝酿，后者的下跌是风险的释放。</em>
+</div>
+</section>
+
+<section id="s3">
+<h2 class="sec"><span class="no">03</span>操作计划：分三种持仓状态给出纪律</h2>
+
+<div class="grid3">
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--up)">若你已持仓（低成本）</h4>
+    <p style="font-size:13.5px"><strong>持有，止损上移。</strong>10/09 天量突破后，框架允许把止损从原 91.29 上移至<strong>突破结构位 90.32（9/29 平台）与 2.0×ATR = 87.46 之间取高者</strong>，即 90.32。收盘跌破 90.32 减半、跌破 87.46 清零。在 96.8 上方不折腾。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--warn)">若你空仓想买（执行原计划）</h4>
+    <p style="font-size:13.5px"><strong>维持 10/10 报告的原触发条件，今天尚不满足：</strong>① 回踩 <strong>90–92 区间（MA20 = 90.01 附近）</strong>且<strong>量比缩至 0.8x 以下</strong>企稳 → 建仓 1.0%；② 或连续 2 日站稳 96.80 上方且当日缩量 → 视为回踩结束的替代信号。两个条件都不满足时不动手。<em>今天 −3.47% 是放量回踩，不是买点本身。</em></p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--down)">若你看跌破做空方向</h4>
+    <p style="font-size:13.5px">跌破结构位后的处理：收盘 <strong>&lt; 96.80 且次日继续放量</strong> → 观察降级；收盘 <strong>&lt; 90.32</strong> → 突破失败确认，所有多单离场，下一支撑看 85.4（9/17 低点区）与 83.98（9/14 低点）。<em>不要在 96.8 与 90.3 之间的「模糊区」做方向性重仓。</em></p>
+  </div>
+</div>
+
+<h3>关键价位地图</h3>
+
+<table>
+<thead><tr><th class="num">价位</th><th>性质</th><th>操作含义</th></tr></thead>
+<tbody>
+<tr><td class="num">106.88</td><td>60 日最高（更早周期）</td><td>中期压力，本轮暂不作为目标</td></tr>
+<tr><td class="num">100.22 / 100.14</td><td>8 月平台顶（8/12、8/17）</td><td>10/09 收 99.71 逼近未破，上方第一压力带</td></tr>
+<tr><td class="num">99.71</td><td>10/09 天量突破收盘</td><td>本轮结构的锚，站稳则打开前高空间</td></tr>
+<tr><td class="num bold">96.80</td><td class="bold">9/30 突破日收盘（分水岭 ①）</td><td class="bold">现价 96.35 正在其下方——守住房 = 回踩确认；连续失守 = 回踩退化</td></tr>
+<tr><td class="num">90.32</td><td>9/29 突破前平台（分水岭 ②）</td><td>结构底线：跌破＝突破失败，多单离场</td></tr>
+<tr><td class="num">90.01</td><td><strong>MA20（原计划的建仓区）</strong></td><td>回踩 90–92 + 缩量 0.8x 以下 = 建仓触发 ①</td></tr>
+<tr><td class="num">87.46</td><td>2.0×ATR 机械止损</td><td>与 90.32 取高者作为持仓止损（即 90.32）</td></tr>
+<tr><td class="num">85.42 / 83.98</td><td>9/17、9/14 回调低点</td><td>突破失败后的下一支撑带</td></tr>
+<tr><td class="num">81.10</td><td>60 日最低</td><td>极端位，当前情景不作主要参照</td></tr>
+</tbody>
+</table>
+
+<h3>风险清单</h3>
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">交易层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>本报告基于盘中数据</strong>（10/12 14:26 前后）。若收盘缩量收回 97 上方，回踩确认即告完成、评分回到 100 附近；若放量收在 94 下方，则明日起按「回踩退化」处理。</li>
+      <li><strong>波动率仍在放大</strong>（ATR 3.16→4.40，+39%）。天量突破后的高波动期，日内振幅可达 5%–8%，仓位与止损宽度必须匹配。</li>
+      <li><strong>天量之后的量能萎缩节奏是核心观察项</strong>：历史经验中，突破后天量若 3–5 日内不能转为温和缩量，突破的可靠性会随时间衰减。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">基本面层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>H 股发行摊薄</strong>：拟发行不超 5,381.55 万股（约占总股本 12%–13% [推算]），摊薄 EPS 与 A/H 两地估值差是中期压制项；但也是全球化扩张的资金平台。<span class="tag t-src">[公司公告]</span></li>
+      <li><strong>经营现金流为负</strong>：26H1 −5.02 亿（营收 43.91 亿），存货与应收扩张是旺季备货特征，但若 Q3 现金流不收敛，需警惕渠道压货风险。<span class="tag t-src">[定期报告]</span></li>
+      <li><strong>2026E 净利约 10.7 亿为推算值</strong>（按 H1 占 2025 全年 57% 的季节比例外推），对应 2026E PE≈38x [推算]；若 Q3 旺季不旺，估值锚将上移。<span class="tag t-src">[推算]</span></li>
+      <li><strong>成本传导依赖提价能力</strong>：26H1 的量价齐增部分来自「为应对成本上涨对全线产品售价进行调整」（公司业绩预告原话）；若上游代工涨价（台积电 2027/1 起 3%–6%）而终端不接受提价，毛利率承压。<span class="tag t-src">[公司公告]</span></li>
+      <li><strong>境外收入占比 90.1%</strong>：汇率、海外关税与地缘政策（此前 10/08 市场曾因 FCC 消息面抛售科技股）对估值的传导直接。</li>
+    </ol>
+  </div>
+</div>
+
+<div class="note good">
+  <div class="hd">最后一句总结</div>
+  <strong>晶晨是本分支里唯一「结构未坏 + 当日信号转弱」的标的</strong>——均线加速向上、DIF 上穿零轴、天量突破仍然有效，而今天的放量回踩只是把「可以买入」从资格变成了「等待触发」。96.80 与 90.32 两个分水岭会替你做完所有的判断：<em>守住前者等缩量建仓，跌破后者承认失败离场，两者之间的拉锯不需要你表态。</em>
+</div>
+</section>
+
+<section id="s4">
+<h2 class="sec"><span class="no">04</span>数据来源</h2>
+<ul style="font-size:13.5px">
+  <li>行情与评分：腾讯财经日线接口（前复权，200 根，截至 2026-10-12 盘中），本地脚本计算；分支对照 13 只同源</li>
+  <li>估值：通达信 MCP <code>tdx_indicator_select</code>（PE-TTM 41.32 / PB-MRQ 5.1158 / 总市值 407.87 亿，交易日 20261012）</li>
+  <li>财务：公司 2026 年半年度报告（2026-08-20 披露，中证网汇总）；2026 半年度业绩预告自愿性披露公告（上交所，2026-07-24）；2025 年报业绩快报（2026-02-11、2026-03-30 公告）</li>
+  <li>产业与增长：公司投资者关系活动记录表（2026-03-11，6nm 出货量与 Wi-Fi 6 指引）；晶晨官方微信 CES 2026 站点（2026-01-07）；港股 IPO 备案通知书（智通财经 2026-09-30、格隆汇 2026-08-31）；弗若斯特沙利文行业地位（H 股招股书口径）；证券时报（2026-04-23，卖方一致预测汇总）</li>
+  <li>方法论：A股择时分析（威科夫 12 项梯度评分）、A股量价关系验证（有效上涨/诱多/底部反转/有效下跌/诱空五规则）</li>
+</ul>
+</section>
+
+<div class="foot">
+  <strong>免责声明：</strong>本报告仅供研究参考，不构成个人投资建议。技术评分基于历史量价数据统计生成，不预示未来走势；盘中数据存在变动的可能；2026E 盈利为按季节比例外推的推算值，非公司指引或卖方一致预期；标注 [推算] / [卖方预测] / [公司公告] 的项目未经独立审计核实。市场有风险，投资需谨慎。<br>
+  <span style="font-size:11.5px">生成时间：2026-10-12 14:40 前后　|　数据基准：2026-10-12 盘中</span>
+</div>
+
+</div>
+</body>
+</html>
