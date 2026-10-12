@@ -17,39 +17,54 @@
     <button id="theme-toggle" class="icon-btn" title="切换主题">🌓</button>
   </header>
 
-  <main class="container">
-    <section class="block">
-      <div class="block-head">
-        <h2>趋势-结构-信号</h2>
-        <a id="trend-more" class="more" hidden>查看全部 →</a>
-      </div>
-      <ul id="trend-list" class="report-list"></ul>
-    </section>
+<main class="container">
+  <div class="home-layout">
+    <div class="main-col">
+      <section class="block">
+        <div class="block-head">
+          <h2>趋势-结构-信号</h2>
+          <a id="trend-more" class="more" hidden>查看全部 →</a>
+        </div>
+        <ul id="trend-list" class="report-list"></ul>
+      </section>
 
-    <section class="block">
-      <div class="block-head">
-        <h2>板块</h2>
-        <span class="muted">点击板块查看该板块下的全部研究报告</span>
-      </div>
-      <div id="sector-grid" class="grid"></div>
-    </section>
+      <section class="block">
+        <div class="block-head">
+          <h2>板块</h2>
+          <span class="muted">点击板块查看该板块下的全部研究报告</span>
+        </div>
+        <div id="sector-grid" class="grid"></div>
+      </section>
 
-    <section class="block">
-      <div class="block-head">
-        <h2>个股</h2>
-        <a id="stock-more" class="more" hidden>查看全部 →</a>
-      </div>
-      <ul id="stock-list" class="report-list"></ul>
-    </section>
+      <section class="block">
+        <div class="block-head">
+          <h2>个股</h2>
+          <a id="stock-more" class="more" hidden>查看全部 →</a>
+        </div>
+        <ul id="stock-list" class="report-list"></ul>
+      </section>
 
-    <section class="block">
-      <div class="block-head">
-        <h2>其他</h2>
-        <a id="other-more" class="more" hidden>查看全部 →</a>
-      </div>
-      <ul id="other-list" class="report-list"></ul>
-    </section>
-  </main>
+      <section class="block">
+        <div class="block-head">
+          <h2>其他</h2>
+          <a id="other-more" class="more" hidden>查看全部 →</a>
+        </div>
+        <ul id="other-list" class="report-list"></ul>
+      </section>
+    </div>
+
+    <aside class="side-col">
+      <section class="watch-block">
+        <div class="block-head">
+          <h2>每日重点监控</h2>
+          <button id="clear-watch" class="more" hidden>清空</button>
+        </div>
+        <ul id="watch-list" class="watch-list"></ul>
+        <p id="watch-empty" class="muted small">暂无监控项，点击个股/板块旁的「+」添加。</p>
+      </section>
+    </aside>
+  </div>
+</main>
 
   <footer class="site-footer">© <span id="year"></span> MLF · 仅供研究参考，不构成投资建议</footer>
 

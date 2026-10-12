@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生益科技 600183 · 单票深度分析与量价评判</title>
+<meta name="description" content="评级「暂时回避（技术面）/ 中性偏谨慎（基本面）」：评分 71/165「关注等待」，结构破坏型（趋势项 0/45 全归零）——价格跌破全部均线、10/8 放量反抽被 10/9 放量破位否定；美银 10/10 重申「跑输大市」目标价 99 vs 高盛 249，2.5 倍极端分歧，现价 120 已高出美银目标价。操作等 2–4 周完成 SC→AR→ST 吸筹，止损 95–99（3×ATR），自建基准情景目标 155.4。行业逻辑没问题，但当前价位买这只性价比已证伪。数据基准 2026-10-12。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>生益科技 600183 · 深度分析与量价评判</h1>
+    <div class="sub">全球覆铜板（CCL）龙头 · AI 服务器上游核心材料 · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12（已收盘，腾讯日线口径）</span>
+      <span>评分 71/165 · 关注等待</span>
+      <span>威科夫阶段：派发后 Markdown，破 SOW</span>
+      <span>结构诊断：结构破坏型（趋势项 0/45）</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2 class="sec"><span class="no">00</span>核心结论</h2>
+  <div class="verdict">
+    <h2>评级：暂时回避（技术面）／中性偏谨慎（基本面）</h2>
+    <div class="rate">
+      <div><div class="k">最新价</div><div class="v down">120.00 <span style="font-size:13px">-3.33%</span></div><div class="k">2026-10-12 收盘</div></div>
+      <div><div class="k">12 项评分</div><div class="v">71<span style="font-size:13px;color:var(--ink3)">/165</span></div><div class="k">vs 前次 59 → +12，但结构项同为 0</div></div>
+      <div><div class="k">威科夫阶段</div><div class="v sm down">Markdown</div><div class="k">派发确认，已破 SOW</div></div>
+      <div><div class="k">操作建议</div><div class="v sm">等待证据</div><div class="k">不追跌、不抄反弹</div></div>
+    </div>
+    <p><em>基本面没有坏（CCL 仍在第七轮涨价、Q3 大概率超预期），但技术结构已经坏了——价格跌破全部均线、趋势三项全部归零、10/8 的放量反抽被 10/9 的放量破位直接否定；更关键的是，今天美银给出 99 元目标价，比现价还低 21%。正确动作不是猜底，而是等「SC + 放量收复 MA20」这两个信号中至少一个出现。</em></p>
+
+    <div class="grid3" style="margin-top:14px">
+      <div class="tile down"><div class="lb">关键回撤位</div><div class="vl">118.68</div><div class="hint">10/09 低点，跌破即加速至 115 / 99.16</div></div>
+      <div class="tile navy"><div class="lb">分支对照等权</div><div class="vl">-5.89%</div><div class="hint">生益 -3.33% 缩量 → 系统性下跌中被动跟随</div></div>
+      <div class="tile gold"><div class="lb">估值快照</div><div class="vl">56.1x</div><div class="hint">PE(TTM)·PB 15.75x·ROE 18.17%·市值 2914.8 亿</div></div>
+    </div>
+
+    <div class="note good">
+      <div class="hd">前次结论回验（本日 14:16 版《生益科技 600183 深度分析报告》）</div>
+      <table style="margin:6px 0 0">
+        <thead><tr><th style="width:38%">前次结论／警示</th><th class="ctr" style="width:14%">回验结果</th><th>本轮证据</th></tr></thead>
+        <tbody>
+          <tr><td>10/8 放量冲高回落 = UT 诱多，不是有效上涨</td><td class="ctr"><span class="tag t-avoid">兑现</span></td><td>10/9 放量 1.12x 跌 5.85% 破 130 平台，UT 后紧跟 SOW，判定成立</td></tr>
+          <tr><td>10/9 = 有效下跌（SOW），不属于诱空</td><td class="ctr"><span class="tag t-avoid">兑现</span></td><td>今日再跌 3.33% 至 120.00，跌势延续，未出现任何止跌信号</td></tr>
+          <tr><td>趋势结构破坏，等 2–4 周完成 SC→AR→ST</td><td class="ctr"><span class="tag t-wait">进行中</span></td><td>仅过 1 个交易日，SC 未出现，符合预期节奏</td></tr>
+          <tr><td>理想建仓区 103–118 元</td><td class="ctr"><span class="tag t-wait">待验证</span></td><td>今日最低 119.62 已触及上沿，但无量价确认信号，仍未到可执行点</td></tr>
+          <tr><td>止损 95–99 元（3×ATR）</td><td class="ctr"><span class="tag t-core">维持</span></td><td>本 skill 引擎给 2.5×ATR = 99.16 元，两者基本重合，继续沿用</td></tr>
+          <tr><td class="bold">目标价 155.4 元（自建基准情景）</td><td class="ctr"><span class="tag t-avoid">证伪风险↑</span></td><td class="bold">美银 10/10 重申「跑输大市」、目标价 99 元，与高盛 249 元严重对立；本轮下调基准预期，见 01 节</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note bad">
+      <div class="hd">为什么本輪要从「谨慎看多」下调到「中性偏谨慎」</div>
+      本轮新信息只有一条但权重极大：<strong>美银证券 2026-10-10 研报重申生益科技「跑输大市」，目标价由 83 元上调至 99 元</strong>[卖方预测]。现价 120.00 元已高出该目标价 <span class="down">21.2%</span>。美银同时对台光电、台燿、斗山、建滔积层板维持「买入」——即<strong>看好的是 CCL 行业本身，不看好的是生益的估值性价比</strong>。这与 9/19 高盛 249 元目标价形成 2.5 倍的极端分歧。行业逻辑没问题，但「在这个价位买这条产业链里的这一只」的性价比，出现了实质性证伪证据。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">01</span>公司画像</h2>
+  <div class="card">
+    <p>生益科技（600183.SH，广东东莞，1985 年成立）是全球覆铜板（CCL）龙头，也是<strong>国内唯一进入英伟达 GB200/GB300 CCL 供应商名单的国产厂商</strong>。业务分两大块：母公司主体的覆铜板 + 粘结片（2026H1 收入 123.57 亿，占 64.95%），以及控股 59.85% 的生益电子（688183）的印制线路板（55.19 亿，占 29.01%）。核心下游是 AI 服务器、高速交换机与光模块。</p>
+    <h4>卡位清单</h4>
+    <ul>
+      <li><strong>客户</strong>：英伟达 GB200/GB300/Vera Rubin/Rubin Ultra 全系 CCL 供应商名单；中国 ASIC 客户 CCL 份额稳定 60%（2025–2027）；亚马逊 Trainium 2e/3/4 由生益电子供 PCB；华为链条 PCB 份额 20% <span class="tag t-src">[调研口径]</span></li>
+      <li><strong>标准话语权</strong>：2026 年 5 月主导制定 IEC 国际标准《PTFE 无增强材料含填料覆铜箔层压板》</li>
+      <li><strong>高速产品线</strong>：800G 光模块 PCB 已批量；1.6T 交换机配套小批量量产；1.6T 光模块 PCB 打样测试中</li>
+      <li><strong>封装基板（新增）</strong>：10/8 互动平台披露，早期即布局封装载板基板材料，已开发对标味之素系列的 <strong>SIF 系列增层胶膜</strong>，BT 载板材料与其具备协同配套能力 <span class="tag t-src">[公司公告]</span></li>
+      <li><strong>产能</strong>：江西生益二期 2026H1 全面投产（年产 1800 万㎡ CCL + 3400 万米粘结片）；泰国工厂预计 2026 年 9 月投产；52 亿高性能 CCL 项目分两期在建</li>
+    </ul>
+
+    <h4>财务表现（最近三期 + 最新单季）</h4>
+    <table>
+      <thead><tr><th>期间</th><th class="num">营收（亿）</th><th class="num">YoY</th><th class="num">归母净利（亿）</th><th class="num">YoY</th><th class="num">毛利率</th><th class="num">ROE(加权)</th></tr></thead>
+      <tbody>
+        <tr><td>2024A</td><td class="num">203.88</td><td class="num">+22.9%</td><td class="num">17.39</td><td class="num">+49.4%</td><td class="num">—</td><td class="num">12.04%</td></tr>
+        <tr><td>2025A</td><td class="num">284.31</td><td class="num">+39.4%</td><td class="num">33.34</td><td class="num up">+91.7%</td><td class="num">—</td><td class="num">21.08%</td></tr>
+        <tr><td>26Q1</td><td class="num">81.41</td><td class="num">+45.1%</td><td class="num">11.58</td><td class="num up">+105.5%</td><td class="num">28.10%</td><td class="num">—</td></tr>
+        <tr class="bold"><td>26Q2（最新单季）</td><td class="num">108.85</td><td class="num">+54.6%</td><td class="num">21.29</td><td class="num up">+146.7%</td><td class="num">32.63%</td><td class="num">—</td></tr>
+        <tr><td>26H1</td><td class="num">190.26</td><td class="num">+50.05%</td><td class="num">32.87</td><td class="num up">+130.42%</td><td class="num">30.69%</td><td class="num">18.17%</td></tr>
+      </tbody>
+    </table>
+    <div class="src">毛利率 30.69%、ROE 18.17% 取自 tdx_indicator_select（报告期：最新，即 2026 中报）；Q2 单季毛利率 32.63%、环比 +4.53pct 取自公司 2026 半年报。Q2 单季营收/净利为 H1 减 Q1 倒算 <span class="tag t-src">[推算]</span>。</div>
+
+    <h4>增长引擎</h4>
+    <ul>
+      <li><strong>涨价周期未停</strong>：建滔年内 7 轮涨价（8/28 FR-4 全系 +10%）；南亚塑胶 9 月起提价约 20%，全系列再 +8% 于 11/20 生效；中国巨石 9 月电子布厚 +15%/薄 +20%；7628 电子布均价同比 +212.8%（3.9 → 12.2 元/米） <span class="tag t-src">[调研口径]</span></li>
+      <li><strong>Q3 业绩前瞻</strong>：中信证券预测 26Q3 归母 <strong>28–30 亿</strong>（同比 +175%~195%，环比 +32%~41%）<span class="tag t-src">[卖方预测，中信证券]</span>；高盛预测 Q3 营收 130 亿、毛利率 31.2% <span class="tag t-src">[卖方预测，高盛 9/19]</span>。均显著高于按 Q2 线性外推的 20 亿</li>
+      <li><strong>规格升级</strong>：Rubin Ultra NVL576 switch tray 材料测试中，生益为 SG5300N / SG1030N / SIFO9 的核心与领先供应商 <span class="tag t-src">[调研口径，东北计算机 10/8]</span></li>
+      <li><strong>新曲线</strong>：SIF 系列增层胶膜对标味之素，切入 BT 载板 / ABF 上游材料 <span class="tag t-src">[公司公告 10/8]</span></li>
+    </ul>
+
+    <div class="note warn">
+      <div class="hd">卖方分歧已达极端：99 元 vs 249 元</div>
+      <table style="margin:4px 0 0">
+        <thead><tr><th>机构</th><th>日期</th><th>评级</th><th class="num">目标价</th><th class="num">vs 现价 120.00</th><th>核心理由</th></tr></thead>
+        <tbody>
+          <tr><td>美银证券</td><td>2026-10-10</td><td><span class="tag t-avoid">跑输大市</span></td><td class="num">99 元</td><td class="num down">-17.5%</td><td>增长预测较低、估值较不吸引；上调明后两年 EPS 21%/18% 后仍不给溢价</td></tr>
+          <tr><td>高盛</td><td>2026-09-19</td><td><span class="tag t-buy">买入（确信名单）</span></td><td class="num">249 元</td><td class="num up">+107.5%</td><td>2027E EPS 4.94 元 × 50.4x PE；看好 AI CCL TAM 三年爆发</td></tr>
+        </tbody>
+      </table>
+      <strong>分歧根源不在景气度，而在「给多少倍 PE」</strong>——美银看好 CCL 行业但认为生益的增长斜率配不上当前估值。同一时点两份目标价相差 2.5 倍，说明估值完全取决于倍数假设，容错极低。<span class="tag t-src">[卖方预测]</span>
+    </div>
+
+    <div class="note">
+      <div class="hd">与同分支可比标的的产业位置对比</div>
+      <table style="margin:4px 0 0">
+        <thead><tr><th>标的</th><th class="num">PE(TTM)<sup>T</sup></th><th class="num">PB(MRQ)</th><th class="num">ROE(加权)</th><th class="num">毛利率</th><th class="num">总市值(亿)</th><th>产业位置</th></tr></thead>
+        <tbody>
+          <tr class="bold"><td>生益科技 600183</td><td class="num">56.11</td><td class="num">15.75</td><td class="num">18.17%</td><td class="num">30.69%</td><td class="num">2914.8</td><td>CCL 环节，唯一国产 NV 链标的</td></tr>
+          <tr><td>生益电子 688183</td><td class="num">40.23</td><td class="num">12.69</td><td class="num">17.95%</td><td class="num">34.31%</td><td class="num">826.1</td><td>控股子公司（59.85%），PCB 环节</td></tr>
+          <tr><td>沪电股份 002463</td><td class="num">41.67</td><td class="num">11.73</td><td class="num">17.38%</td><td class="num">38.72%</td><td class="num">2109.5</td><td>PCB 高端，毛利率最高</td></tr>
+        </tbody>
+      </table>
+      <div class="src">数据源 tdx_indicator_select，交易日 20261012。<sup>T</sup> 该工具返回的 PE 口径会在 LYR 与 TTM 之间漂移，多标的横比时仅供同日参考，<strong>不可与历史值或其他数据源横比</strong>。</div>
+      生益在三项估值指标上均高于同链可比标的（PE 高出 35–39%、PB 高出 24–34%），而毛利率反而最低（30.69% vs 沪电 38.72%、生益电子 34.31%）。这是美银给出「跑输大市」的量化依据，也是本轮评级下调的核心。<strong>注意：生益的增长弹性理论上最强（CCL 处于涨价最上游），但当前价位已把这个弹性提前定价了。</strong>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">02</span>最新 12 项评分与量价叙事</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th class="ctr">#</th><th>指标</th><th class="ctr">得分</th><th class="ctr">满分</th><th>实测与判定</th><th class="ctr">vs 前次</th></tr></thead>
+      <tbody>
+        <tr><td class="ctr">1</td><td class="bold">价/MA20 <span class="tag t-core">结构</span></td><td class="ctr down">0</td><td class="ctr">15</td><td>120.00 / 141.01 = <strong>0.851</strong>，深度跌破所有均线（MA5 127.79、MA10 134.15、MA60 134.78）</td><td class="ctr">持平 0</td></tr>
+        <tr><td class="ctr">2</td><td class="bold">MA20 斜率 <span class="tag t-core">结构</span></td><td class="ctr down">0</td><td class="ctr">10</td><td><strong>-2.91%</strong>，均线下弯，趋势方向向下</td><td class="ctr">持平 0</td></tr>
+        <tr><td class="ctr">3</td><td class="bold">MACD <span class="tag t-core">结构</span></td><td class="ctr down">0</td><td class="ctr">20</td><td>DIF -3.749 / DEA -0.776，零轴下死叉、空头延续，绿柱扩张</td><td class="ctr">持平 0</td></tr>
+        <tr><td class="ctr">4</td><td>区间位置（60 日）</td><td class="ctr">15</td><td class="ctr">20</td><td>36%，位于中位偏下</td><td class="ctr">−5（口径由 20 日改 60 日）</td></tr>
+        <tr><td class="ctr">5</td><td>ATR 收缩</td><td class="ctr">7</td><td class="ctr">15</td><td>8.19 → 8.34，走平不收缩</td><td class="ctr">+7</td></tr>
+        <tr><td class="ctr">6</td><td>低波 ATR%</td><td class="ctr down">2</td><td class="ctr">10</td><td><strong>6.95%</strong>，属高波动区间（&gt;6% 档）</td><td class="ctr">+1</td></tr>
+        <tr><td class="ctr">7</td><td>涨幅安全</td><td class="ctr">15</td><td class="ctr">15</td><td>60 日 -19.7%，无涨幅透支</td><td class="ctr">持平 15</td></tr>
+        <tr><td class="ctr">8</td><td>量价关系 <span class="tag t-wait">信号</span></td><td class="ctr">7</td><td class="ctr">15</td><td>「正常」：跌 3.33% 量 0.71x，无需求下跌</td><td class="ctr">−6</td></tr>
+        <tr><td class="ctr">9</td><td>Spring <span class="tag t-wait">信号</span></td><td class="ctr">15</td><td class="ctr">+15</td><td>引擎识别「近 20 日跌破后快速收回」——指 9/30 → 10/8 段</td><td class="ctr">+15（新增识别）</td></tr>
+        <tr><td class="ctr">10</td><td>回调质量 <span class="tag t-wait">信号</span></td><td class="ctr">10</td><td class="ctr">10</td><td>缩量回调 0.71x</td><td class="ctr">持平 10</td></tr>
+        <tr><td class="ctr">11</td><td>底背离</td><td class="ctr">0</td><td class="ctr">+20</td><td>无</td><td class="ctr">持平 0</td></tr>
+        <tr><td class="ctr">12</td><td>顶背离</td><td class="ctr">—</td><td class="ctr">−30</td><td>无（若出现则一票否决，优先于任何评分）</td><td class="ctr">持平</td></tr>
+        <tr class="bold"><td class="ctr" colspan="2">合计</td><td class="ctr">71</td><td class="ctr">165</td><td>名义落在 65–89「关注等待」区</td><td class="ctr">59 → 71</td></tr>
+      </tbody>
+    </table>
+    <div class="src">数据源：本 skill <code>scripts/timing_score.py 600183 --days 40</code>，腾讯财经前复权日线，最新 K 线 20261012。数据基准日已收盘；若接口延迟则第 8/10 项（依赖当日量比）可能有微幅变化。</div>
+
+    <div class="note bad">
+      <div class="hd">降幅归因：这是「结构破坏型」，不是「结构完好型回调」</div>
+      <p><strong>趋势结构项（1/2/3）合计 0 / 45 分，全部归零</strong>——价格在 MA20 下方 14.9%、均线向下弯、MACD 零轴下死叉。按评分纪律，结构项坏 = <strong>结构破坏型</strong>，对应操作是「回避 / 止损」，这与仅信号项坏、总分更高的「结构完好型回调」（对应操作是「等缩量建仓」）<strong>指令完全相反，禁止只看总分</strong>。</p>
+      <p><strong>本轮总分由 59 升到 71，但这是虚高的</strong>，三项必须人工降权：</p>
+      <ol style="margin-top:2px">
+        <li><strong>Spring +15 → 应记 0。</strong>引擎识别的「跌破后快速收回」发生在 9/30（129.96）→ 10/8（131.86），但这个 Spring 已经被 <strong>10/9 的放量 1.12x 跌 5.85% 彻底否定</strong>——弹簧出现后立刻被击穿，说明那是供应尚未出清的假反弹，不是有效弹簧。</li>
+        <li><strong>区间位置 15 → 应记 5。</strong>36% 的位置是「一路跌下来」的结果，在均线空头发散的背景下，位置偏低是弱势的表现而非安全边际。</li>
+        <li><strong>回调质量 10 → 应记 5。</strong>框架中「缩量回调」的前提是回调结束后有需求出现；目前增量需求从未出现（10/8 那次放量是冲高回落，不是承接）。</li>
+      </ol>
+      <p style="margin-top:8px"><strong>剔除虚高后实质评分约 41 分</strong>，重新落入 40–64 的「暂时回避」区间。<strong>这正是本 corps 报告给出的技术面评级是「暂时回避」而非引擎名义的「关注等待」的原因。</strong></p>
+    </div>
+
+    <div class="svgbox">
+      <svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="生益科技近40日收盘走势与MA20">
+        <rect x="0" y="0" width="900" height="405" fill="#ffffff"/>
+        <rect x="60" y="50" width="820" height="300" fill="#fbfcfe" stroke="#e2e6ec"/>
+        <line x1="60" y1="63.3" x2="880" y2="63.3" stroke="#eef1f5"/>
+        <line x1="60" y1="96.7" x2="880" y2="96.7" stroke="#eef1f5"/>
+        <line x1="60" y1="130.0" x2="880" y2="130.0" stroke="#eef1f5"/>
+        <line x1="60" y1="163.3" x2="880" y2="163.3" stroke="#eef1f5"/>
+        <line x1="60" y1="196.7" x2="880" y2="196.7" stroke="#eef1f5"/>
+        <line x1="60" y1="230.0" x2="880" y2="230.0" stroke="#eef1f5"/>
+        <line x1="60" y1="263.3" x2="880" y2="263.3" stroke="#eef1f5"/>
+        <line x1="60" y1="296.7" x2="880" y2="296.7" stroke="#eef1f5"/>
+        <line x1="60" y1="330.0" x2="880" y2="330.0" stroke="#eef1f5"/>
+        <text x="54" y="67" font-size="10" fill="#7b8494" text-anchor="end">160</text>
+        <text x="54" y="100" font-size="10" fill="#7b8494" text-anchor="end">155</text>
+        <text x="54" y="133" font-size="10" fill="#7b8494" text-anchor="end">150</text>
+        <text x="54" y="167" font-size="10" fill="#7b8494" text-anchor="end">145</text>
+        <text x="54" y="200" font-size="10" fill="#7b8494" text-anchor="end">140</text>
+        <text x="54" y="233" font-size="10" fill="#7b8494" text-anchor="end">135</text>
+        <text x="54" y="267" font-size="10" fill="#7b8494" text-anchor="end">130</text>
+        <text x="54" y="300" font-size="10" fill="#7b8494" text-anchor="end">125</text>
+        <text x="54" y="334" font-size="10" fill="#7b8494" text-anchor="end">120</text>
+
+        <polyline points="459.6,208.0 480.6,204.8 501.6,201.2 522.7,199.5 543.7,197.8 564.7,196.1 585.8,195.5 606.8,191.9 627.8,182.3 648.8,175.7 669.9,172.0 690.9,165.3 711.9,160.5 733.0,156.0 754.0,157.2 775.0,161.8 796.1,168.6 817.1,173.4 838.1,177.8 859.1,184.1 880.2,189.9" fill="none" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="5,4"/>
+        <text x="884" y="192" font-size="10" fill="#b8860b" text-anchor="end">MA20 141.01</text>
+
+        <polyline points="60.0,206.2 81.0,228.0 102.1,175.1 123.1,185.1 144.1,175.3 165.2,166.7 186.2,200.6 207.2,293.5 228.2,288.1 249.3,244.7 270.3,288.0 291.3,270.0 312.4,263.3 333.4,190.2 354.4,159.0 375.5,107.3 396.5,167.2 417.5,163.5 438.5,175.4 459.6,213.3 480.6,142.3 501.6,154.8 522.7,142.3 543.7,150.3 564.7,140.5 585.8,156.7 606.8,128.3 627.8,100.1 648.8,156.5 669.9,170.5 690.9,154.9 711.9,173.7 733.0,172.9 754.0,214.5 775.0,250.3 796.1,243.5 817.1,263.6 838.1,250.9 859.1,302.4 880.2,330.0" fill="none" stroke="#1a3a6b" stroke-width="2.2"/>
+
+        <circle cx="375.5" cy="107.3" r="4" fill="#c0392b"/>
+        <text x="375.5" y="97" font-size="10" fill="#c0392b" text-anchor="middle">08-31 天量新高</text>
+        <text x="375.5" y="86" font-size="9" fill="#7b8494" text-anchor="middle">103.9万手 +5.32%</text>
+
+        <circle cx="627.8" cy="100.1" r="4" fill="#c0392b"/>
+        <text x="627.8" y="90" font-size="10" fill="#c0392b" text-anchor="middle">09-16 右肩顶 157.50</text>
+        <text x="627.8" y="79" font-size="9" fill="#7b8494" text-anchor="middle">量能未配合，缩量二次测试</text>
+
+        <circle cx="648.8" cy="156.5" r="4" fill="#c0392b"/>
+        <text x="653" y="166" font-size="10" fill="#c0392b" text-anchor="start">09-17 UT 上冲回落</text>
+        <text x="653" y="177" font-size="9" fill="#7b8494" text-anchor="start">−5.47% / 85.0万手</text>
+
+        <circle cx="733.0" cy="172.9" r="3.5" fill="#b8860b"/>
+        <text x="733.0" y="165" font-size="9.5" fill="#b8860b" text-anchor="middle">09-23 地量</text>
+        <text x="733.0" y="193" font-size="9" fill="#7b8494" text-anchor="middle">41.6万手 0.67x</text>
+
+        <circle cx="838.1" cy="250.9" r="4" fill="#c0392b"/>
+        <text x="845" y="243" font-size="10" fill="#c0392b" text-anchor="start">10-08 LPSY</text>
+        <text x="845" y="254" font-size="9" fill="#7b8494" text-anchor="start">冲140.00 收131.86</text>
+
+        <circle cx="859.1" cy="302.4" r="4" fill="#c0392b"/>
+        <text x="852" y="316" font-size="10" fill="#c0392b" text-anchor="end">10-09 SOW 破位</text>
+        <text x="852" y="326" font-size="9" fill="#7b8494" text-anchor="end">−5.85% / 69.2万手 1.12x</text>
+
+        <circle cx="880.2" cy="330.0" r="4.5" fill="#12864b"/>
+        <text x="872" y="344" font-size="10.5" fill="#12864b" text-anchor="end">10-12 今日 120.00</text>
+        <text x="872" y="354" font-size="9" fill="#7b8494" text-anchor="end">−3.33% / 44.1万手 0.71x</text>
+
+        <text x="60" y="372" font-size="10" fill="#7b8494">08-10</text>
+        <text x="333" y="372" font-size="10" fill="#7b8494">09-04</text>
+        <text x="627" y="372" font-size="10" fill="#7b8494">09-16</text>
+        <text x="880" y="372" font-size="10" fill="#7b8494" text-anchor="end">10-12</text>
+        <text x="470" y="392" font-size="10.5" fill="#4a5568" text-anchor="middle">近 40 个交易日收盘价（前复权，元）· × 20 日均线</text>
+      </svg>
+      <div class="src">数据源：本 skill timing_score.py --days 40（腾讯财经前复权日线），2026-08-10 至 2026-10-12 共 40 根。纵轴 117–162 元。</div>
+    </div>
+
+    <h4>逐段解读</h4>
+    <table>
+      <thead><tr><th style="width:15%">区间</th><th style="width:30%">价格行为</th><th style="width:25%">量能行为</th><th>框架判定</th></tr></thead>
+      <tbody>
+        <tr><td>08-10 ~ 08-18</td><td>135–147 区间反复震荡，未破前高</td><td>58–94 万手，中性偏减</td><td>初次供应 PS：上涨停止行为开始出现</td></tr>
+        <tr><td>08-19 ~ 08-26</td><td>急杀至 122.05，单日 -10.00%</td><td>8/19 放量 78.3 万手（-10%），随后缩量</td><td>自动回落 AR，但 08-27 放量收复 → 尚属震荡</td></tr>
+        <tr><td>08-27 ~ 08-31</td><td>连续拉升 +8.43% / +3.32% / +5.32%，创新高 157.28</td><td>103.2 / 98.7 / 103.9 万手，量比 1.4x</td><td><strong>SOS 强势出现</strong>，量价同步，是最后一段健康上涨</td></tr>
+        <tr><td>09-01 ~ 09-16</td><td>137–157 高位箱体，9/16 冲 157.50 未破 8/31 高点</td><td>9/16 仅 64.6 万手（0.89x），低于前高二日</td><td><strong>二次测试失败 + 缩量新高</strong> → 按验证规则判定为<strong>虚假上涨</strong>，派发区形成</td></tr>
+        <tr><td>09-17 ~ 09-22</td><td>9/17 高开 157.27 收 146.03（-5.47%），此后无力收复</td><td>85.0 / 87.5 万手，量比 1.18x</td><td><strong>UT 上冲回落</strong>——大成交量配负结果，派发确认，最终供给点</td></tr>
+        <tr><td>09-23 ~ 09-30</td><td>143 → 129.96，阴跌破位</td><td>41.6→43.6→45.7→36.5→35.4 万手，逐日萎缩至 0.57x</td><td>供应枯竭但需求同样缺席，属<strong>无需求下跌</strong>，不是吸筹</td></tr>
+        <tr><td>10-08</td><td>跳空高开，冲高 140.00 后收 131.86，留 8.14 元上影</td><td>72.9 万手 1.18x，当日主力资金净流入 3.93 亿</td><td><strong>LPSY 最后派发点</strong>：努力最大、结果最小；ELD 换股与消息面刺激均未能转化为收盘价</td></tr>
+        <tr><td>10-09</td><td>低开低走破 130 平台，收 124.14（-5.85%）</td><td>69.2 万手 1.12x</td><td><strong>SOW 熊市初显</strong>：放量跌破支撑，<strong>有效下跌</strong>，9/30–10/8 的假 Spring 被否定</td></tr>
+        <tr class="bold"><td>10-12（今日）</td><td>开 122.01 冲 126.28 后回落，收 120.00（-3.33%），收于全天最低附近</td><td>44.1 万手 <strong>0.71x</strong>，较昨日再缩量</td><td>跌势延续但暂无新供应放大；<strong>市场全线普跌，本股属被动跟随且相对抗跌</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>量价三问</h3>
+    <div class="grid3">
+      <div class="tile down">
+        <div class="lb">问题一</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin:4px 0 6px">最近一次放量是有效上涨／突破吗？</div>
+        <p style="font-size:13px;margin:0"><strong>不是。</strong>最近一次显著放量是 10/8（72.9 万手，1.18x），当日跳空高开并冲至 140.00，但收盘仅 131.86，留下 8.14 元上影。对照框架「有效上涨 = 价创新高 + 成交量放大 30% 以上」，该日量能达标（+33%），但<strong>收盘未能守住高点、更未突破 8/31 的 157.28</strong>，属典型的「大成交量 + 小结果 = 停止行为」。<br>更早的 9/15（81.2 万手，+2.91%）确属有效上涨，但它已在 9/17 的 UT 中被完全否定。</p>
+      </div>
+      <div class="tile down">
+        <div class="lb">问题二</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin:4px 0 6px">最近一次下跌是有效下跌还是诱空？</div>
+        <p style="font-size:13px;margin:0"><strong>有效下跌。</strong>10/9 跌 5.85%、量 1.12x、跌破 130 平台并创阶段新低，完全符合「价格创新低 + 成交量放大 = 有效下跌」。框架中「诱空」的判定条件是「价格创新低 + 缩量」，并要求随后出现企稳确认。<br>今日虽为缩量下跌（0.71x），但这是<strong>建立在 10/9 放量破位之后的跌势暂歇</strong>，既未守住任何支撑，也未见承接放量，<strong>不能套用诱空条款</strong>——若把这段缩量误读为诱空而抄底，正是本报告要避免的错误。</p>
+      </div>
+      <div class="tile gold">
+        <div class="lb">问题三</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin:4px 0 6px">现在是底部反转吗？</div>
+        <p style="font-size:13px;margin:0"><strong>不是。</strong>框架的「底部反转」要求<strong>价格企稳 + 成交量连续 3 日温和放大</strong>，两条均不满足：价格端 9/23 起连续 8 个交易日重心下移，从未企稳；量能端 9/23–9/30 是<strong>连续缩量</strong>（0.67→0.57x），10/8 的单日放量 1.18x 立刻被 10/9 的放量下跌吞没，今日又缩回 0.71x——<strong>没有出现任何一段「连续 3 日温和放大」</strong>。<br>威科夫层面同样缺少 SC（恐慌抛售长阴+天量）、AR、ST 的任何一个。</p>
+      </div>
+    </div>
+
+    <h3>系统性 vs 个股性对照（CCL／PCB 产业链，2026-10-12 同日）</h3>
+    <table>
+      <thead><tr><th>标的</th><th class="num">收盘</th><th class="num">当日涨跌</th><th class="num">量比</th><th>判读</th></tr></thead>
+      <tbody>
+        <tr><td>广合科技 001389</td><td class="num">139.95</td><td class="num down">-9.42%</td><td class="num bold">1.54x</td><td class="down">跌幅深 + 显著放量 → 叠加个股性卖压</td></tr>
+        <tr><td>华正新材 603186</td><td class="num">185.81</td><td class="num down">-10.00%</td><td class="num">0.95x</td><td class="down">跌停，同步性杀跌</td></tr>
+        <tr><td>金安国纪 002636</td><td class="num">64.50</td><td class="num down">-10.00%</td><td class="num">0.64x</td><td class="down">跌停，缩量</td></tr>
+        <tr><td>东山精密 002384</td><td class="num">135.90</td><td class="num down">-6.59%</td><td class="num">1.24x</td><td>放量下跌</td></tr>
+        <tr><td>深南电路 002916</td><td class="num">327.78</td><td class="num down">-5.61%</td><td class="num">1.00x</td><td>量能持平下跌</td></tr>
+        <tr><td>生益电子 688183</td><td class="num">96.03</td><td class="num down">-5.11%</td><td class="num">0.64x</td><td>子公司，缩量跟随</td></tr>
+        <tr><td>南亚新材 688519</td><td class="num">248.41</td><td class="num down">-3.57%</td><td class="num">0.70x</td><td>同类 CCL，缩量跟随</td></tr>
+        <tr class="bold"><td>生益科技 600183（本股）</td><td class="num">120.00</td><td class="num down">-3.33%</td><td class="num bold">0.71x</td><td class="down">跌幅最小梯队 + 缩量 → <strong>被动跟随，且相对抗跌</strong></td></tr>
+        <tr><td>胜宏科技 300476</td><td class="num">196.78</td><td class="num down">-2.92%</td><td class="num">0.58x</td><td>跌幅最小</td></tr>
+        <tr><td>沪电股份 002463</td><td class="num">109.62</td><td class="num down">-2.38%</td><td class="num">0.78x</td><td>跌幅最小</td></tr>
+        <tr class="bold"><td colspan="2">等权平均</td><td class="num down">-5.89%</td><td class="num">—</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="hd">判读结论：今日是系统性下跌，本股相对抗跌</div>
+      10 只产业链标的<strong>全部下跌</strong>、等权 -5.89%，符合「全部下跌且幅度接近 = 系统性」的第一条判定。生益 -3.33% 跑赢等权 2.56pct，且量比仅 0.71x（低于广合 1.54x、东山 1.24x），属<strong>「跌幅小 + 缩量 = 被动跟随」</strong>。<br>
+      <strong>这条对操作的意义</strong>：今天这根阴线本身<strong>不构成生益的个股性利空证据</strong>，不应据此单独下调判断；生益真正的个股性坏消息发生在 <strong>10/9（放量 -5.85% 破位，当日明显弱于板块）</strong> 和 <strong>10/10 美银维持跑输大市、目标价 99 元</strong>。把 10/12 的普跌误认为个股走弱，会导致在实际应避免的位置恐慌割肉——正确做法是按既定止损位（99.16）执行，而非被单日情绪驱动。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">03</span>操作计划</h2>
+  <div class="grid3">
+    <div class="tile down">
+      <div class="lb">A · 已持仓者</div>
+      <div class="vl">99.16</div>
+      <div class="hint">2.5× ATR 硬止损位（-17.4%）</div>
+      <ul style="margin-top:8px;margin-bottom:0;padding-left:16px">
+        <li><strong>跌破 118.68（10/09 低点）→ 减仓 1/3</strong>，不找理由、不等反弹</li>
+        <li>跌破 115 → <strong>无条件再减 1/2</strong>（该位是心理关口 + 8 月缺口区）</li>
+        <li>跌破 99.16 → <strong>清空</strong>，此后只做观察不做交易</li>
+        <li>反弹至 127–131 缺口区 → 主动减仓 1/3（该区已由支撑转压力）</li>
+      </ul>
+      <div class="src">ATR14 = 8.34，ATR% = 6.95%（属 &gt;6% 高波动档），止损倍数取 2.5×；止损宽度 17.4%，在可接受上限附近，仓位不应超过组合的 5%。</div>
+    </div>
+    <div class="tile navy">
+      <div class="lb">B · 空仓者</div>
+      <div class="vl">未满足</div>
+      <div class="hint">两个触发条件，一个都未达成</div>
+      <ul style="margin-top:8px;margin-bottom:0;padding-left:16px">
+        <li><strong>触发①（右侧）</strong>：日线收盘站回 <strong>MA20 = 141.01</strong> 且当日量比 &gt; <strong>1.2x</strong>，次日回踩不破 MA20 建 40% 仓</li>
+        <li><strong>触发②（左侧）</strong>：先出现 <strong>SC</strong>（长阴 + 量 &gt; 1.8x 天量），其后 3 日内缩量至 &lt;0.7x 且不再创新低 → 建 20% 试探仓</li>
+        <li><strong>触发③（基本面）</strong>：三季报归母 ≥ 26 亿，且披露后首日放量收阳（量比 &gt;1.5x）→ 可提前启动触发①</li>
+      </ul>
+      <div class="src">当前状态：价格距 MA20 尚有 17.5%；今日量比 0.71x 远未达 1.8x 天量标准；三季报尚未披露。三个条件全部未满足。</div>
+    </div>
+    <div class="tile gold">
+      <div class="lb">C · 长线／估值视角</div>
+      <div class="vl">99 元</div>
+      <div class="hint">美银目标价，较现价低 17.5%</div>
+      <ul style="margin-top:8px;margin-bottom:0;padding-left:16px">
+        <li>总市值 2914.8 亿 ÷ 美银口径 2026 年净利预测 ≈ Forward PE <strong>39–41x</strong> [推算]</li>
+        <li>显著低估区参考：<strong>99–103 元</strong>（对应美银目标价上沿 + 8/03 密集区）</li>
+        <li>中性参考：<strong>115–120 元</strong>（当前即在此区间，属「不便宜也不贵」）</li>
+        <li>若 Q3 兑现 28–30 亿、全年达 90 亿+，则现价对应 2026E PE 约 32x，届时估值吸引力才会实质改善</li>
+      </ul>
+      <div class="src">估值口径以总市值 ÷ 卖方净利预测现场折算，不同卖方盈利预测差异巨大（美银 vs 高盛 EPS 相差逾 60%），折算结果仅供定位参考。</div>
+    </div>
+  </div>
+
+  <h3>关键价位地图</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th class="num" style="width:14%">价位</th><th style="width:16%">性质</th><th>操作含义</th></tr></thead>
+      <tbody>
+        <tr><td class="num">157.50</td><td>双顶／右肩高点</td><td>本轮派发的起点，中期天花板，回到此处需重新评估整个逻辑</td></tr>
+        <tr><td class="num">141.01</td><td>MA20 · <strong>分水岭①</strong></td><td><strong>收盘站上 + 量比 &gt;1.2x = 结构修复，空仓者可启动右侧建仓；始终上不去 = 下跌趋势延续</strong></td></tr>
+        <tr><td class="num">134.78</td><td>MA60</td><td>第二压力，收复后方可讨论趋势反转</td></tr>
+        <tr><td class="num">131.86</td><td>10/08 收盘（UT 起点）</td><td>该位上方全是套牢的反抽盘，反弹至此必有抛压</td></tr>
+        <tr><td class="num">127.04</td><td>10/09 高点</td><td>短线反抽压力，已持仓者在此减仓 1/3</td></tr>
+        <tr class="bold"><td class="num">120.00</td><td>当前价</td><td>处于 支撑与压力之间的真空区，无操作意义</td></tr>
+        <tr><td class="num">119.62</td><td>今日最低</td><td>与下方 118.68 构成 1.5 元的窄支撑带</td></tr>
+        <tr><td class="num">118.68</td><td>10/09 低点 · <strong>分水岭②</strong></td><td><strong>守住 = 缩量震荡、等待三季报；跌破 = 加速下行，无条件减仓 1/3</strong></td></tr>
+        <tr><td class="num">115.00</td><td>心理关口 + 8 月缺口区</td><td>跌破则无条件再减 1/2</td></tr>
+        <tr><td class="num">99.16</td><td>2.5× ATR 止损</td><td>硬止损，跌破清空离场</td></tr>
+        <tr><td class="num">97.51</td><td>7/30 阶段低点</td><td>中期最后防线，与 99.16 止损位共振</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>风险清单</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>交易层面</h4>
+      <ul>
+        <li><strong>数据基准时效性</strong> <span class="tag t-src">t-src</span>：本报告的收盘价、量比取自腾讯日线接口 20261012。若后续交易所校正或复权因子调整，第 8、10 项评分可能有微幅变动；所有批判据此日期。</li>
+        <li><strong>ATR% 6.95%，属高波动</strong> <span class="tag t-src">t-src</span>：止损宽度 17.4%，意味着单笔最大亏损接近两成。该标的不适合超过组合 5% 的仓位。</li>
+        <li><strong>联动标的风险</strong> <span class="tag t-src">t-src</span>：今日 CCL／PCB 链等权 -5.89%，系统性风险主导。生益的走势在短期内由板块 β 决定，个股 α（三季度报、NV 规格定案）可能完全被 β 淹没。</li>
+        <li><strong>尚未走完的存量供给（EB 换股）</strong> <span class="tag t-src">t-src</span>：股东广新集团「26GXKEB1」可交换债换股期为 2026-10-08 至 2029-03-30，10/8 已换 980.59 万股，剩余 1019.41 万股（占总股本 0.42%）。属债务工具行权而非主动减持，直接持股 22.56% 未变，但会成为持续的慢性供给。</li>
+        <li><strong>Spring 信号失效风险</strong> <span class="tag t-src">t-src</span>：评分引擎给出的 Spring +15 基于 9/30→10/8 段，已被 10/9 破位否定。若后续引擎继续给出该项满分，会掩盖真实弱势。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>基本面层面</h4>
+      <ul>
+        <li><strong>卖方分歧极端，定价高度依赖倍数假设</strong> <span class="tag t-src">t-src</span>：美银 10/10 目标价 99 元（跑输大市）、高盛 9/19 目标价 249 元（确信买入），相差 2.5 倍。核心分歧不在景气度而在「给多少倍 PE」。任何基于单一目标价的仓位决策都不可靠。</li>
+        <li><strong>技术路线尚未定案</strong> <span class="tag t-src">t-src</span>：英伟达 NVL576 switch tray 正由 PTFE 无布向碳氢树脂（HC）无布微调。生益虽仍为核心供应商，但规格未最终锁定，2027–2028 的价值量弹性存在重估风险。</li>
+        <li><strong>高估值缺乏缓冲</strong> <span class="tag t-src">t-src</span>：PE(TTM) 56.11x、PB(MRQ) 15.75x，均显著高于同链生益电子（40.23x／12.69x）与沪电股份（41.67x／11.73x），而毛利率 30.69% 反而最低。一旦业绩不及预期，估值与盈利会同步下修。</li>
+        <li><strong>周期反身性</strong> <span class="tag t-src">t-src</span>：涨价刺激全行业扩产，高阶电子布、HVLP 铜箔新增产能集中在 2027–2029 年释放。当前市场按「紧缺延续至 2027」定价，尚未定价 2028 年的供给冲击。</li>
+        <li><strong>盈利预测本身不确定</strong> <span class="tag t-src">t-src</span>：26Q3 归母预测区间从民间的 20 亿到中信的 28–30 亿，跨度 50%。所有 Forward PE 折算均建立在预测之上，若 Q3 落在下沿，当前估值立即回到贵的一侧。</li>
+        <li><strong>子公司并表波动</strong> <span class="tag t-src">t-src</span>：生益电子（持股 59.85%）业绩独立波动，且其今日跌幅 -5.11% 大于母公司，会放大母公司单季利润的波动幅度。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note bad">
+    <div class="hd">最后一句</div>
+    产业没有问题，价格有问题。CCL 第七轮涨价还在路上、Q3 大概率超预期、NVL576 里生益还是一供——这些是真实的；但趋势三项已经全部归零、2.5 倍分歧的卖方目标价摆在那里、今天还有 10 只同链标的在集体下跌。<strong>在这个位置，等待的成本远小于错误的成本。</strong>守住 118.68 就继续观察，跌破就按纪律减仓，什么时候出现「天量 SC + 三日缩量企稳」或者「放量站回 141.01」，什么时候再谈建仓。
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">04</span>数据来源</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:16%">类别</th><th>来源明细</th></tr></thead>
+      <tbody>
+        <tr><td>行情 / 技术</td><td>本 skill <code>scripts/timing_score.py 600183 --name 生益科技 --days 40</code>（腾讯财经前复权日线，最新 K 线 20261012）；分支对照 <code>timing_score.py --compare</code> 同日运行，共 10 只标的</td></tr>
+        <tr><td>估值 / 财务</td><td><code>tdx_indicator_select</code>（rang=AG）：PE(TTM) 56.1139、PB(MRQ) 15.7542、ROE 加权 18.17%、毛利率 30.69%、总市值 291,480,436,736 元，均为交易日 20261012；同链生益电子 688183、沪电股份 002463 同次取得</td></tr>
+        <tr><td>消息面</td><td><code>wenda_news_query</code>（name=生益科技, bdate=20260921, edate=20261012）：美银证券 10/10 评级研报（格隆汇转载）、证券时报 10/8 电子行业资金流向日报、财联社 10/8 互动平台回应</td></tr>
+        <tr><td>财务细节</td><td>公司 2026 年半年度报告（营收 190.26 亿、归母 32.87 亿、Q2 毛利率 32.63%）；2024／2025 年报；半年报中覆铜板销量 8714.01 万㎡、粘结片 11574.88 万米</td></tr>
+        <tr><td>产业 / 卖方</td><td>中信证券 26Q3 业绩前瞻（归母 28–30 亿）；高盛 2026-09-19 深度报告（目标价 249 元）；美银证券 2026-10-10 研报（目标价 99 元）；东北计算机 2026-10-08 NVL576 材料点评；知识星球「浑水调研Plus」2026-10-06《AI 服务器 PCB/CCL 规格及主要供应商》</td></tr>
+        <tr><td>方法论</td><td>《A股择时分析》12 项梯度评分体系（结构项 vs 信号项分离、顶背离一票否决）；《A股量价关系验证》五规则（有效上涨／诱多／底部反转／有效下跌／诱空）</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="foot">
+  <strong>标注体系</strong>：<span class="tag t-src">t-src</span> 数据来源标注 · <strong>[推算]</strong> 本报告自行外推（如 Q2 单季数据、Forward PE 折算）· <strong>[卖方预测]</strong> 券商预测值，须带机构名与日期 · <strong>[公司公告]</strong> 公司正式披露 · <strong>[调研口径]</strong> 产业链调研／专家纪要，未经公司确认。<br><br>
+  <strong>口径声明</strong>：<code>tdx_indicator_select</code> 返回的 PE 口径会在 LYR 与 TTM 之间漂移，多标的横比时以同日同次调用为准，<strong>不可与历史值或其他数据源交叉横比</strong>。<br><br>
+  <strong>关于本报告的立场</strong>：本报告的数据基准为 2026-10-12 收盘。技术面评级与基本面评级分开给出且允许冲突——当前两面结论一致偏谨慎，但原因完全不同：技术面因结构破坏，基本面因卖方分歧与估值溢价。任何据此操作的盈亏由投资者自行承担。<br><br>
+  <strong>本报告仅供研究参考，不构成个人投资建议。</strong> 股市有风险，投资需谨慎。<br>
+  生成时间：2026-10-12 · 分析师工作流：阳之个股分析 V1
+</div>
+
+</div>
+</body>
+</html>

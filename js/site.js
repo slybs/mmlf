@@ -1,6 +1,7 @@
 (function () {
   var all = window.SECTORS || [];
   var PREVIEW = 3;
+  var WATCH_KEY = 'mlf-watchlist';
 
   var TYPE_RULES = [
     [/四维|扫描/, '四维扫描'],
@@ -29,8 +30,19 @@
     return 'sector.html?s=' + encodeURIComponent(s.name);
   }
 
-  function reportItem(r) {
-    var li = make('li');
+  function findSectorName(r) {
+    for (var i = 0; i < all.length; i++) {
+      var reports = all[i].reports || [];
+      for (var j = 0; j < reports.length; j++) {
+        if (reports[j].file === r.file) return all[i].name;
+      }
+    }
+    return '';
+  }
+
+  function reportItem(r, sectorName) {
+    var li = make('li', 'report-item-wrap');
+
     var a = make('a', 'card report-item');
     a.href = encodeURI(r.file);
     a.target = '_blank';
@@ -43,6 +55,17 @@
     if (r.summary) a.appendChild(make('p', 'muted', r.summary));
 
     li.appendChild(a);
+
+    var addBtn = make('button', 'watch-add', '加入重点监控');
+    addBtn.title = '加入每日重点监控';
+    addBtn.setAttribute('data-kind', 'report');
+    addBtn.setAttribute('data-title', r.title);
+    addBtn.setAttribute('data-file', r.file);
+    addBtn.setAttribute('data-date', r.date);
+    addBtn.setAttribute('data-type', reportType(r));
+    addBtn.setAttribute('data-sector', sectorName || findSectorName(r));
+    li.appendChild(addBtn);
+
     return li;
   }
 
@@ -66,7 +89,7 @@
       el.appendChild(make('p', 'muted', o.empty || '暂无内容。'));
       return;
     }
-    shown.forEach(function (r) { el.appendChild(reportItem(r)); });
+    shown.forEach(function (r) { el.appendChild(reportItem(r, findSectorName(r))); });
 
     var more = o.more && document.getElementById(o.more);
     if (more && shown.length < res.reports.length && res.sectors.length === 1) {
@@ -82,17 +105,137 @@
 
     var sectors = all.filter(function (s) { return s.group === group; });
     sectors.forEach(function (s) {
-      var card = make('a', 'card sector-card');
-      card.href = sectorUrl(s);
-      card.appendChild(make('h2', null, s.name));
-      if (s.desc) card.appendChild(make('p', 'muted', s.desc));
-      card.appendChild(make('div', 'meta',
+      var card = make('div', 'card sector-card');
+
+      var link = make('a', 'sector-link');
+      link.href = sectorUrl(s);
+      link.appendChild(make('h2', null, s.name));
+      if (s.desc) link.appendChild(make('p', 'muted', s.desc));
+      link.appendChild(make('div', 'meta',
         s.reports.length + ' 份报告 · 最近更新 ' + (s.latest || '—')));
+      card.appendChild(link);
+
+      var add = make('button', 'watch-add-sector', '加入监控');
+      add.title = '加入每日重点监控';
+      add.setAttribute('data-kind', 'sector');
+      add.setAttribute('data-sector', s.name);
+      add.setAttribute('data-desc', s.desc || '');
+      add.setAttribute('data-latest', s.latest || '');
+      card.appendChild(add);
+
       grid.appendChild(card);
     });
     if (!sectors.length) {
       grid.appendChild(make('p', 'muted', '暂无板块报告，请运行 update-index 生成清单。'));
     }
+  }
+
+  // 每日重点监控
+  function getWatch() {
+    try { return JSON.parse(localStorage.getItem(WATCH_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function setWatch(list) {
+    localStorage.setItem(WATCH_KEY, JSON.stringify(list));
+  }
+  function watchId(item) {
+    return item.kind === 'report' ? 'r:' + item.file : 's:' + item.sector;
+  }
+  function addWatchItem(item) {
+    var list = getWatch();
+    var id = watchId(item);
+    if (list.some(function (x) { return x.id === id; })) return;
+    item.id = id;
+    item.addedAt = Date.now();
+    list.unshift(item);
+    setWatch(list);
+    renderWatchlist();
+  }
+  function removeWatchItem(id) {
+    var list = getWatch().filter(function (x) { return x.id !== id; });
+    setWatch(list);
+    renderWatchlist();
+  }
+  function clearWatch() {
+    setWatch([]);
+    renderWatchlist();
+  }
+
+  function renderWatchlist() {
+    var el = document.getElementById('watch-list');
+    if (!el) return;
+    var empty = document.getElementById('watch-empty');
+    var clear = document.getElementById('clear-watch');
+    var list = getWatch();
+
+    el.innerHTML = '';
+    if (!list.length) {
+      if (empty) empty.hidden = false;
+      if (clear) clear.hidden = true;
+      return;
+    }
+    if (empty) empty.hidden = true;
+    if (clear) clear.hidden = false;
+
+    list.forEach(function (item) {
+      var li = make('li', 'watch-item');
+      var link = make('a', 'watch-link');
+
+      if (item.kind === 'report') {
+        link.href = encodeURI(item.file);
+        link.target = '_blank';
+        link.appendChild(make('span', 'watch-title', item.title));
+        link.appendChild(make('span', 'watch-meta',
+          (item.sector || '报告') + ' · ' + item.date));
+      } else {
+        link.href = 'sector.html?s=' + encodeURIComponent(item.sector);
+        link.appendChild(make('span', 'watch-title', item.sector));
+        if (item.desc) link.appendChild(make('span', 'watch-meta', item.desc));
+      }
+      li.appendChild(link);
+
+      var del = make('button', 'watch-del', '×');
+      del.title = '移除';
+      del.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeWatchItem(item.id);
+      });
+      li.appendChild(del);
+
+      el.appendChild(li);
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.watch-add, .watch-add-sector');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var kind = btn.getAttribute('data-kind');
+    if (kind === 'report') {
+      addWatchItem({
+        kind: 'report',
+        title: btn.getAttribute('data-title'),
+        file: btn.getAttribute('data-file'),
+        date: btn.getAttribute('data-date'),
+        type: btn.getAttribute('data-type'),
+        sector: btn.getAttribute('data-sector')
+      });
+    } else if (kind === 'sector') {
+      addWatchItem({
+        kind: 'sector',
+        sector: btn.getAttribute('data-sector'),
+        desc: btn.getAttribute('data-desc'),
+        latest: btn.getAttribute('data-latest')
+      });
+    }
+  });
+
+  var clearBtn = document.getElementById('clear-watch');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      if (confirm('确定清空每日重点监控列表？')) clearWatch();
+    });
   }
 
   renderList({
@@ -108,6 +251,7 @@
     list: 'other-list', more: 'other-more', group: 'other',
     preview: PREVIEW, empty: '暂无内容，后续补充。'
   });
+  renderWatchlist();
 
   var list = document.getElementById('report-list');
   if (list) {
@@ -122,6 +266,6 @@
     document.title = sector.name + ' - MLF 投研报告库';
     document.getElementById('sector-name').textContent = sector.name;
     document.getElementById('sector-desc').textContent = sector.desc || '';
-    sector.reports.forEach(function (r) { list.appendChild(reportItem(r)); });
+    sector.reports.forEach(function (r) { list.appendChild(reportItem(r, sector.name)); });
   }
 })();

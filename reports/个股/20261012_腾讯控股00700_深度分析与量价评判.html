@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>腾讯控股 00700 · 单票深度分析与量价评判</title>
+<meta name="description" content="评级「可以买入（分批）」：评分 92/165「可以买入」档下沿，基本面 AI 投入期+业绩中坚、技术面回调末段+底背离左侧确认。止损 408.59（1.5×ATR，ATR% 仅 2.67%），反弹至 430 上方（MA20）上移止损 411；底背离+17% 位置+14.7x PE 左侧赔率。港股 T+0 做空便利、量价噪声高，92 分须配右侧触发（放量站回 430）不宜直接满仓左侧，建议三批分批。数据基准 2026-10-12 港股收盘。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE · HK-ADAPTED</div>
+    <h1>腾讯控股 00700.HK · 深度分析与量价评判</h1>
+    <div class="sub">互联网平台 / AI 三层重构（智能·应用·基础设施）· 阳之个股分析V1（港股适配版）</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12 收盘（港股）</span>
+      <span>评分 92/165 · 可以买入</span>
+      <span>威科夫阶段：回调末段 · 底背离形成</span>
+      <span>估值：PE 14.7x · 市值 3.86 万亿港元</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="s0">
+<h2 class="sec"><span class="no">00</span>核心结论</h2>
+
+<div class="verdict">
+  <h2>评级：可以买入（分批）——基本面处于「AI 投入期 + 业绩中坚」的组合，技术面处于「回调末段 + 底背离」的左侧确认区</h2>
+  <div class="rate">
+    <div><div class="k">最新收盘（10/12）</div><div class="v">425.60 <span style="font-size:13px" class="up">+0.19%</span></div><div class="hint" style="font-size:11px;color:var(--ink3)">HKD · 当日量比仅 0.58x</div></div>
+    <div><div class="k">12 项梯度评分</div><div class="v">92 / 165</div><div class="hint" style="font-size:11px;color:var(--ink3)">可以买入（90–119 档下沿）</div></div>
+    <div><div class="k">威科夫阶段</div><div class="v sm">从 497.8 回撤 −14.5% 后的回调末段，底背离已形成</div></div>
+    <div><div class="k">估值</div><div class="v">PE 14.7x</div><div class="hint" style="font-size:11px;color:var(--ink3)">PB 2.95x · 市值 3.86 万亿港元</div></div>
+  </div>
+  <p style="margin-bottom:8px"><strong>一句话：<em>市场在用「自由现金流转负」给腾讯的 AI 资本开支定价，而公司用「剔除新 AI 产品后利润 +19%、算力可外租的下行保护、每年数百亿回购」在对抗这个折价——14.7 倍 PE 与底背离同时出现，意味着悲观定价已经相当充分，缺的只是一个右侧确认信号。</em></strong></p>
+  <p>三面证据：① <strong>基本面</strong>，2Q2026 营收 2,048 亿（+11%）、Non-IFRS 权益持有人盈利 684 亿（+9%），本土游戏 +17%、营销服务 +22%、云受 AI 需求驱动，微信 MAU 14.39 亿；代价是资本开支 528 亿（<span class="down">+176%</span>）、自由现金流转负 −138 亿（剔除算力预付款为 +376 亿）。② <strong>技术面</strong>，60 日位置仅 17%（满分项）、底背离 +20、ATR% 2.67%（满分项）、涨幅安全 15/15；拖累全部来自趋势项（价/MA20 = 0.989、斜率 −0.59%、MACD 空头延续）。③ <strong>对照面</strong>，港股互联网六只 10/12 等权 −0.82%，腾讯 +0.19% 跑赢；60 日 −7.8% 的回撤幅度居中（快手 −32.5%、美团 −14.3% 才是重灾区）。</p>
+</div>
+
+<div class="grid3">
+  <div class="tile navy"><div class="lb">60 日区间位置</div><div class="vl">17%</div><div class="hint">区间 411.20 – 497.80，评分满分项</div></div>
+  <div class="tile up"><div class="lb">底背离</div><div class="vl">有 +20</div><div class="hint">价格新低而 DIF 抬高</div></div>
+  <div class="tile gold"><div class="lb">季度回购</div><div class="vl">169 亿港元</div><div class="hint">2Q2026 回购 3,738 万股（公司公告）</div></div>
+</div>
+
+<div class="note warn">
+  <div class="hd">港股适配说明（相对 A 股版本的差异）</div>
+  本报告沿用阳之个股分析 V1 的评分引擎，但数据源切换为港股接口（hkfqkline，前 6 字段与 A 股一致，评分无需改动）；对照池改为港股互联网六巨头。三点口径差异需注意：<strong>① 港股无涨跌停，量比仅代表股数活跃度，不含 A 股「封板/炸板」语义；② 港股为 T+0 交易且做空机制完善，量价信号的噪声高于 A 股；③ 南向资金与港元汇率是 A 股标的不存在的两个变量。</strong>
+</div>
+</section>
+
+<section id="s1">
+<h2 class="sec"><span class="no">01</span>公司画像：AI 三层重构下的「旧现金牛 + 新期权」</h2>
+
+<p>腾讯 2Q2026 的管理层叙事是「在智能、应用、基础设施三个层面构建一个全新的 AI 赋能的腾讯」。这个三层结构正好对应财报里的三组数字：<strong>智能层</strong>——Hy3 正式版（7 月发布）按 OpenRouter token 消耗量持续位列全球前三，混元 4 更大参数版本训练中、年内发布；<strong>应用层</strong>——WorkBuddy（AI 办公）与 CodeBuddy（AI 编程）实现突破性用户增长，微信内 AI 智能体「小微」（WeLM 驱动）已启动小范围灰度；<strong>基础设施层</strong>——Q2 资本开支 528 亿（+176%），大幅增加算力采购。</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0">2Q2026 分业务（公司财报口径）</h4>
+    <table style="margin:6px 0 0">
+      <thead><tr><th>板块</th><th class="num">收入</th><th class="num">同比</th><th>要点</th></tr></thead>
+      <tbody>
+        <tr><td>增值服务</td><td class="num">984 亿</td><td class="num up">+8%</td><td>—</td></tr>
+        <tr><td>　└ 本土游戏</td><td class="num">473 亿</td><td class="num up">+17%</td><td>《三角洲行动》《无畏契约》DAU 创新高；《洛克王国：世界》新游第一</td></tr>
+        <tr><td>　└ 国际游戏</td><td class="num">186 亿</td><td class="num down">−0.8%</td><td>固定汇率 +4%；汇率是主要拖累</td></tr>
+        <tr><td>　└ 社交网络</td><td class="num">325 亿</td><td class="num up">+0.8%</td><td>视频号使用时长 +20%+</td></tr>
+        <tr><td class="bold">营销服务</td><td class="num">436 亿</td><td class="num up">+22%</td><td>AI 广告推荐模型 + AIM+ + 微信闭环生态</td></tr>
+        <tr><td>金融科技及企业服务</td><td class="num">603 亿</td><td class="num up">9%</td><td>云受 AI 相关需求驱动、定价环境改善</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;margin-bottom:0">微信及 WeChat 合并 MAU <strong>14.39 亿（+2%）</strong>。上半年研发开支 498 亿（+27%），Q2 单季 273 亿（+35%）。</p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0">AI 投入的资产负债表视角</h4>
+    <ul style="margin-bottom:0">
+      <li>Q2 资本开支 <strong>528 亿（+176% YoY / +65% QoQ）</strong>，上半年合计 847 亿</li>
+      <li>净现金 582 亿，较 3 月末 1,469 亿<strong>下降 60%</strong>（资本开支 593 亿 + 股息 416 亿）</li>
+      <li><strong>自由现金流转负 −138 亿</strong>；剔除算力采购预付款为 +376 亿</li>
+      <li>上市投资公允价值 <strong>4,872 亿</strong> + 非上市账面 3,879 亿（合计约 8,751 亿人民币的资产组合缓冲）</li>
+      <li>Q2 回购 169 亿港元（3,738 万股）——回购未因 AI 开支收缩</li>
+    </ul>
+    <div class="note good" style="margin:10px 0 0;padding:10px 13px">
+      <div class="hd">刘炽平的「下行保护」逻辑（业绩电话会）</div>
+      AI 投资集中在基础设施，<strong>最坏情况下可通过腾讯云把算力租出去</strong>——「几个月前支付的预付款和相关订单，今天能以超过 30% 的利润出售」；资本开支是「集中在今年和明年」的一次性投入，不应假设每年都有；年底将拥有充足 GPU/ASIC 储备，加大裸 GPU 出租与 MaaS。
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <div class="hd">财报里最重要的一个数字差：11 个百分点</div>
+  Non-IFRS 经营盈利含新 AI 产品为 <strong>+9%</strong>（利润率 38%→37%），剔除后为 <strong>+19%</strong>（利润率 39%→42%）。这 11 个百分点就是市场分歧的全部：旧业务（游戏+广告+金融科技）在加速，新 AI 产品（混元、元宝、CodeBuddy、WorkBuddy、小微）在吃掉利润。<em>看多者读「剔除后 +19%」——主业强劲、AI 是暂时的费用；看空者读「+9% 且 FCF 转负」——AI 变现未被证明。</em>当前 14.7 倍 PE 处于两者之间的悲观侧。
+</div>
+</section>
+
+<section id="s2">
+<h2 class="sec"><span class="no">02</span>最新 12 项梯度评分：92 分的成色拆解</h2>
+
+<table>
+<thead><tr>
+<th style="width:30px">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td class="bold">趋势 1：价 / MA20</td><td class="num">5</td><td class="num">15</td><td>425.60 / 430.15 = <span class="down">0.989</span>，在均线下方 1.1%</td></tr>
+<tr><td>2</td><td class="bold">趋势 2：MA20 斜率</td><td class="num">0</td><td class="num">10</td><td><span class="down">−0.59%</span>，均线下弯但斜率已趋缓</td></tr>
+<tr><td>3</td><td class="bold">MACD</td><td class="num">5</td><td class="num">20</td><td>DIF −5.363 / DEA −4.960，空头延续但 DIF−DEA 差距已收窄（接近水下金叉）</td></tr>
+<tr><td>4</td><td class="bold">区间位置（60 日）</td><td class="num up">20</td><td class="num">20</td><td><span class="up">17%</span>（高 497.80 / 低 411.20）——满分项，回调充分</td></tr>
+<tr><td>5</td><td class="bold">ATR 收缩 + 稳定</td><td class="num up">12</td><td class="num">15</td><td>ATR 12.04 → 11.34，略降</td></tr>
+<tr><td>6</td><td class="bold">低波动（ATR%）</td><td class="num up">10</td><td class="num">10</td><td><span class="up">2.67%</span> 满分——大盘蓝筹的低波特征</td></tr>
+<tr><td>7</td><td class="bold">涨幅安全性</td><td class="num up">15</td><td class="num">15</td><td>60 日 −7.8%，无透支</td></tr>
+<tr><td>8</td><td class="bold">量价关系（威科夫）</td><td class="num">5</td><td class="num">15</td><td>+0.19% 量 0.58x——<span class="down">缩量上涨需求枯竭</span>（当日信号最弱项）</td></tr>
+<tr><td>9</td><td class="bold">Spring 弹簧</td><td class="num">0</td><td class="num">15</td><td>无（10/08 探 411.40 后次日反弹 +3.26%，已接近 Spring 但未按定义触发）</td></tr>
+<tr><td>10</td><td class="bold">回调质量</td><td class="num down">0</td><td class="num">10</td><td>近 20 日最低收盘日（10/08）量比 1.53x——<span class="down">放量探底</span>，属警告项</td></tr>
+<tr><td>11</td><td class="bold">底背离</td><td class="num up">20</td><td class="num">20</td><td><span class="up">有</span>：价格创新低而 DIF 抬高——左侧最强加分项</td></tr>
+<tr><td>12</td><td class="bold">顶背离</td><td class="num">0</td><td class="num">−30</td><td>无（未触发一票否决）</td></tr>
+<tr style="background:#f0f4fa"><td colspan="2" class="bold">合计</td><td class="num bold" style="font-size:15px">92</td><td class="num">165</td><td class="bold">判定：✅ 可以买入（90–119 档下沿，需等确认信号）</td></tr>
+</tbody>
+</table>
+<div class="src">数据：腾讯财经港股日线接口（hkfqkline，前复权 200 根，截至 2026-10-12 收盘）；评分由阳之个股分析 V1 引擎（<code>timing_score.py</code>）计算。</div>
+
+<div class="note">
+  <div class="hd">92 分的结构：左侧分满、右侧分缺</div>
+  拿到分的四项（区间位置 20 + 底背离 20 + 低波 10 + 涨幅安全 15 + 回调质量以外全部）几乎全是「位置与结构」分；缺的（价/MA20、斜率、MACD、量价、Spring）全是「方向与动量」分。<em>这是典型的「下跌进入末段但反转未确认」形态：它告诉你「在这里再恐慌卖出赔率很差」，但不告诉你「明天就涨」。</em>港股无涨跌停、T+0 且做空便利，量价噪声高于 A 股，因此 92 分的「可以买入」必须配右侧触发条件，不宜直接满仓左侧。
+</div>
+
+<h3>近 40 日量价叙事：从「AI 预期升温」到「FCF 焦虑」</h3>
+
+<div class="svgbox">
+<svg viewBox="0 0 900 405" role="img" aria-label="腾讯控股近40日收盘价与关键量价事件">
+  <text x="18" y="20" font-size="14" font-weight="700" fill="#1a3a6b">腾讯控股 00700.HK · 近 40 个交易日收盘价（HKD，2026-08-17 至 2026-10-12）</text>
+  <g stroke="#eef1f5" stroke-width="1">
+    <line x1="60" y1="113.2" x2="880" y2="113.2"/><line x1="60" y1="176.3" x2="880" y2="176.3"/>
+    <line x1="60" y1="239.5" x2="880" y2="239.5"/><line x1="60" y1="302.6" x2="880" y2="302.6"/>
+  </g>
+  <line x1="60" y1="350" x2="880" y2="350" stroke="#4a5568" stroke-width="1.3"/>
+  <g font-size="10" fill="#9aa5b1" text-anchor="end">
+    <text x="54" y="54">500</text><text x="54" y="117">480</text><text x="54" y="180">460</text><text x="54" y="243">440</text><text x="54" y="306">420</text>
+  </g>
+  <line x1="560" y1="250.8" x2="880" y2="250.8" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="6,4" opacity=".8"/>
+  <text x="876" y="265" font-size="10.5" fill="#b8860b" text-anchor="end" font-weight="600">MA20 = 430.15（斜率 −0.59%）</text>
+  <polyline fill="none" stroke="#1a3a6b" stroke-width="2" points="60.0,219.3 81.0,231.9 102.1,216.8 123.1,203.5 144.1,185.9 165.2,239.5 186.2,233.2 207.2,222.4 228.3,214.8 249.3,191.4 270.3,198.4 291.4,230.3 312.4,240.4 333.4,256.9 354.5,226.0 375.5,239.8 396.5,249.3 417.6,253.7 438.6,280.2 459.7,271.4 480.7,264.4 501.7,238.5 522.8,255.6 543.8,278.9 564.8,301.0 585.9,264.4 606.9,196.2 627.9,229.7 649.0,237.9 670.0,243.6 691.0,233.5 712.1,258.1 733.1,261.3 754.1,292.2 775.1,286.5 796.2,270.1 817.2,294.1 838.2,323.1 859.3,283.4 880.3,280.9"/>
+  <g>
+    <circle cx="144.1" cy="185.9" r="5" fill="#7b8494"/>
+    <text x="144.1" y="170" font-size="11" fill="#7b8494" text-anchor="middle" font-weight="600">8/21 反弹高点 457.0</text>
+
+    <circle cx="606.9" cy="196.2" r="5" fill="#c0392b"/>
+    <text x="596" y="180" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">9/22 天量脉冲 451.6</text>
+    <text x="596" y="168" font-size="10" fill="#7b8494" text-anchor="middle">量 7,072 万手 ≈ 3.4 倍均量（60 日最高收盘）</text>
+
+    <circle cx="838.2" cy="323.1" r="5" fill="#12864b"/>
+    <text x="826" y="339" font-size="11" fill="#12864b" text-anchor="middle" font-weight="600">10/8 放量探底 411.4</text>
+    <text x="826" y="351" font-size="10" fill="#12864b" text-anchor="middle">量 3,020 万手 · 距 60 日低 411.2 仅 0.2</text>
+
+    <circle cx="859.3" cy="283.4" r="5" fill="#c0392b"/>
+    <text x="846" y="270" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="600">10/9 +3.26%</text>
+
+    <circle cx="880.3" cy="280.9" r="5" fill="#7b8494"/>
+    <text x="872" y="262" font-size="11" fill="#7b8494" text-anchor="middle" font-weight="600">10/12 +0.19%</text>
+    <text x="872" y="250" font-size="10" fill="#7b8494" text-anchor="middle">量 0.58x 极度缩量整理</text>
+  </g>
+  <g font-size="10" fill="#9aa5b1" text-anchor="middle">
+    <text x="60" y="366">8/17</text><text x="396" y="366">9/8</text><text x="691" y="366">9/29</text><text x="880" y="366">10/12</text>
+  </g>
+</svg>
+</div>
+
+<h3>逐段解读</h3>
+
+<table>
+<thead><tr><th style="width:104px">阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+<tbody>
+<tr><td class="bold">8/17 – 9/5<br><span style="font-size:11px;color:var(--ink3)">高位震荡</span></td><td>433 – 457 区间反复，8/21 触 457.0 未过前高</td><td>日均 2,000 万上下，8/24、8/28 两次放量震荡（2,900 万/2,770 万）</td><td>高位派发与吸筹拉锯，方向未选择</td></tr>
+<tr><td class="bold">9/07 – 9/19<br><span style="font-size:11px;color:var(--ink3)">阴跌段</span></td><td>438 → 419，9/10 单日破 425.6</td><td>阴线日放量（9/18 2,880 万手 −1.6%）</td><td>供应主导，AI 资本开支焦虑开始定价</td></tr>
+<tr><td class="bold">9/22<br><span style="font-size:11px;color:var(--ink3)">天量脉冲</span></td><td class="up">+4.9% 冲 451.60，收于 60 日最高收盘</td><td class="up">7,072 万手 ≈ 3.4 倍均量（40 日最大量）</td><td><span class="tag t-wait">放量长阳</span>，但未突破 8 月平台 457–498 区，属「脉冲未突破」——次日即回落</td></tr>
+<tr><td class="bold">9/23 – 9/30<br><span style="font-size:11px;color:var(--ink3)">回落整理</span></td><td>451.6 → 431.0，回吐全部脉冲涨幅</td><td>量能快速萎缩至 1,400–2,200 万</td><td><span class="tag t-avoid">努力无结果</span>：天量未能改变方向，上方供应沉重</td></tr>
+<tr><td class="bold">10/02 – 10/08<br><span style="font-size:11px;color:var(--ink3)">探底</span></td><td>421.2 → 411.4，10/08 距 60 日低 411.20 仅 0.2 港元</td><td>10/08 放量 3,020 万手（1.53x）</td><td><span class="tag t-wait">放量探底 + 春季条件接近</span>：深度、位置、背离三要素齐备，独缺「快速收回」</td></tr>
+<tr><td class="bold">10/09 – 10/12<br><span style="font-size:11px;color:var(--ink3)">当前</span></td><td>+3.26% → +0.19%，收 425.6 仍低于 MA20</td><td>10/12 量 0.58x 极度缩量</td><td><span class="tag t-wait">缩量整理</span>：底背离 + 极缩量，等待方向选择；量价关系项的「需求枯竭」即指此——没人卖也没人买</td></tr>
+</tbody>
+</table>
+
+<h3>量价关系验证：三个直接回答</h3>
+
+<div class="grid3">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">问题 ①：9/22 的天量脉冲是有效突破吗？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>不是，且已被证伪。</strong>有效突破要求「价创新高 + 量放大 30% 以上」且<strong>站稳</strong>。9/22 量能达标（3.4x）但价格只到 451.6——低于 8 月平台 457–498；随后五个交易日回吐全部涨幅，属威科夫「努力无结果」。它更可能是空头回补或事件性资金的一次脉冲，<em>不构成趋势证据。</em></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--down)">问题 ②：10/08 的放量下跌是有效下跌还是恐慌出清？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>更接近恐慌出清的尾声。</strong>10/08 −2.19% 放量 1.53x 探至 411.4，距 60 日低 411.20 仅 0.2 港元——按 A 股口径这是「放量探底」警告项（回调质量 0/10 的来源）；但次日 +3.26% 反弹收复，构成事实上的「下影试探」。A股量价框架的 Spring 定义（跌破支撑后快速收回）在港股 T+0 环境下常以「单日长下影 + 次日确认」的形式出现，<em>10/08–10/09 的组合已具备 Spring 的实质，只差一次对 411 附近的双底确认。</em></p>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">问题 ③：现在是底部反转吗？</h4>
+    <p style="font-size:13.5px;margin-bottom:0"><strong>是「底部区域的概率显著升高」，但反转未确认。</strong>支持项：60 日位置 17% + 底背离 + ATR 收缩 + 10/12 极度缩量（0.58x，卖压枯竭）。缺项：价格未站回 MA20（430.15）、MACD 未金叉、无放量长阳。按框架，<em>92 分对应的动作是「可以开始分批」，而不是「满仓押注反转」。</em></p>
+  </div>
+</div>
+
+<h3>同业对照：港股互联网六巨头的位置分层</h3>
+
+<table>
+<thead><tr><th>标的</th><th class="num">收盘(HKD)</th><th class="num">10/12</th><th class="num">量比</th><th class="num">20 日</th><th class="num">60 日</th><th class="num">60 日位置</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td class="bold">网易-S</td><td class="num">198.80</td><td class="num up">+2.74%</td><td class="num">1.24x</td><td class="num up">+9.2%</td><td class="num down">−1.6%</td><td class="num">60%</td><td><span class="tag t-buy">六强最强</span>：唯一 20 日为正且位置过半</td></tr>
+<tr><td class="bold">阿里巴巴-W</td><td class="num">108.10</td><td class="num up">+1.03%</td><td class="num">0.71x</td><td class="num up">+0.6%</td><td class="num down">−4.0%</td><td class="num">20%</td><td>回调充分，与腾讯同处「左侧确认区」</td></tr>
+<tr style="background:#f0f4fa"><td class="bold">腾讯控股</td><td class="num">425.60</td><td class="num up">+0.19%</td><td class="num">0.58x</td><td class="num down">−0.7%</td><td class="num down">−7.8%</td><td class="num">17%</td><td class="bold">本票：位置低 + 底背离 + 极缩量</td></tr>
+<tr><td class="bold">美团-W</td><td class="num">71.65</td><td class="num up">+0.21%</td><td class="num">0.51x</td><td class="num down">−4.6%</td><td class="num down">−14.3%</td><td class="num">10%</td><td>深跌但无背离确认</td></tr>
+<tr><td class="bold">小米集团-W</td><td class="num">24.38</td><td class="num down">−6.09%</td><td class="num up">1.35x</td><td class="num down">−7.5%</td><td class="num down">−9.3%</td><td class="num">9%</td><td><span class="tag t-avoid">放量领跌</span>：六强中唯一「跌+放量」</td></tr>
+<tr><td class="bold">快手-W</td><td class="num">29.20</td><td class="num down">−2.99%</td><td class="num">0.80x</td><td class="num down">−6.6%</td><td class="num down">−32.5%</td><td class="num">4%</td><td>60 日回撤最深，无止跌信号</td></tr>
+<tr style="background:#f0f4fa"><td colspan="7" class="bold">六只等权 10/12：−0.82%</td><td>腾讯 +0.19% 跑赢等权 1.0pct</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <div class="hd">对照的三个结论</div>
+  ① <strong>10/12 港股互联网无系统性下跌</strong>（等权仅 −0.82%，四涨二跌），与 A 股端侧 SoC 当日 −4.06% 的系统性回调不同——腾讯当日的表现是个股性的、且偏正面（跑赢等权）。<br>
+  ② <strong>业务属性分层清晰</strong>：游戏/内容（网易 60%、腾讯 17%）明显强于本地生活（美团 10%）、硬件（小米放量领跌）、短视频（快手 4%）——<em>本轮 AI 与消费叙事下，利润率高、现金流模式好的平台率先企稳。</em><br>
+  ③ <strong>腾讯与阿里同处 17–20% 位置区 + 缩量</strong>，是六强中「左侧确认区」的代表组合；网易则是右侧趋势已成的对照样本（站上 MA20 + 20 日 +9.2%）。
+</div>
+</section>
+
+<section id="s3">
+<h2 class="sec"><span class="no">03</span>操作计划：分三种持仓状态给出纪律</h2>
+
+<div class="grid3">
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--up)">若你已持仓</h4>
+    <p style="font-size:13.5px"><strong>持有，止损 408.59（1.5×ATR）。</strong>ATR% 仅 2.67%，适用 1.5 倍档；现价距止损 −4.0%。底背离 + 极缩量的组合下不主张主动减仓，但 408.59 之下纪律无条件生效——那意味着双底结构失败。反弹至 430 上方（MA20）后可把止损上移至 411（60 日低）。</p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--warn)">若你空仓想买（分批计划）</h4>
+    <p style="font-size:13.5px">92 分档位允许开始分批，建议三批：<br>
+    ① <strong>首批 1/3（现在）</strong>：425 附近，对应底背离 + 17% 位置 + 14.7x PE 的左侧赔率；<br>
+    ② <strong>第二批 1/3（Spring 确认）</strong>：回踩 411–415 缩量后放量收回 420 上方（双底确认）；<br>
+    ③ <strong>第三批 1/3（右侧确认）</strong>：放量站回 MA20 = 430.15 且 MACD 水下金叉。<br>
+    <em>三批合计不超过组合的既定单票上限；港股 T+0，不适用 A 股的仓位摊薄习惯。</em></p>
+  </div>
+  <div class="card" style="margin:0">
+    <h4 style="margin-top:0;color:var(--down)">若你按估值做长线</h4>
+    <p style="font-size:13.5px">PE 14.7x（通达信口径 [口径未标注]）已处于腾讯历史低位区；按 H1 Non-IFRS 权益盈利 1,363 亿年化（约 2,700–2,800 亿 RMB）与市值 38,625 亿 HKD（≈3.54 万亿 RMB [推算汇率]）折算，<strong>Non-IFRS PE ≈ 12.7–13.1x [推算]</strong>，且未计入 8,751 亿人民币投资组合与净现金。若跌破 <strong>400 港元（对应 Non-IFRS PE ≈ 12x [推算]）</strong>，进入「显著低估 + 心理关口」的重合区，可提高长线批次的频率。</p>
+  </div>
+</div>
+
+<h3>关键价位地图</h3>
+
+<table>
+<thead><tr><th class="num">价位(HKD)</th><th>性质</th><th>操作含义</th></tr></thead>
+<tbody>
+<tr><td class="num">497.80</td><td>60 日最高</td><td>本轮周期顶；重返需先收复 8 月平台</td></tr>
+<tr><td class="num">457.0 – 498</td><td>8 月震荡平台（8/21 高点 457 与其上方套牢区）</td><td>中期压力带，趋势恢复的最终确认位</td></tr>
+<tr><td class="num">451.60</td><td>9/22 天量脉冲收盘（60 日最高收盘）</td><td><strong>右侧确认位 ③</strong>：放量站回则趋势反转成立</td></tr>
+<tr><td class="num">430.15</td><td><strong>MA20（右侧确认位 ②）</strong></td><td>放量站回 + MACD 水下金叉 = 第三批触发</td></tr>
+<tr><td class="num bold">425.60</td><td class="bold">现价（10/12 收盘）</td><td class="bold">评分 92 · 可以买入（分批）</td></tr>
+<tr><td class="num">415 – 411</td><td>双底候选区（60 日低 411.20 / 10/8 低 411.40）</td><td><strong>Spring/双底确认区 ②</strong>：缩量回踩后放量收回 420 = 第二批触发</td></tr>
+<tr><td class="num">408.59</td><td>1.5×ATR 止损</td><td><strong>持仓者纪律线</strong>：收盘跌破减半，其后破 400 清零</td></tr>
+<tr><td class="num">400</td><td>心理关口 + Non-IFRS PE ≈ 12x [推算]</td><td>长线资金的显著低估区，提高建仓频率</td></tr>
+</tbody>
+</table>
+
+<h3>催化剂日历</h3>
+<table>
+<thead><tr><th style="width:130px">时间</th><th>事件</th><th>观察点</th></tr></thead>
+<tbody>
+<tr><td>2026 年 11 月中旬</td><td class="bold">3Q2026 财报</td><td>本土游戏增速能否维持 +17% 档；新 AI 产品对利润率的拖累是否收敛（37%→回升）；资本开支环比是否见顶</td></tr>
+<tr><td>年内（管理层指引）</td><td class="bold">混元 4 更大参数版本发布</td><td>OpenRouter token 消耗排名能否维持全球前三；对标国际一线模型的 benchmark 表现</td></tr>
+<tr><td>未来数周至数月</td><td class="bold">微信 AI 智能体「小微」灰度扩量</td><td>从「小范围灰度」到全量的节奏——微信 14.39 亿 MAU 的 AI 入口价值是最大的期权项</td></tr>
+<tr><td>持续</td><td class="bold">季度回购执行</td><td>2Q 为 169 亿港元；AI 开支加码下回购是否维持，是管理层资本承诺的信号</td></tr>
+<tr><td>持续</td><td class="bold">WorkBuddy / CodeBuddy 商业化数据</td><td>订阅与 token 付费收入首次单独披露的时点</td></tr>
+</tbody>
+</table>
+
+<h3>风险清单</h3>
+<div class="grid2">
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--up)">交易与估值层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>止损纪律</strong>：408.59 破位即双底结构失败，港股 T+0 无涨跌停、跳空风险大于 A 股，隔夜（美股联动）跳空可能直接穿越止损位，需接受滑点。</li>
+      <li><strong>FCF 转负的持续期</strong>：若 3Q/4Q 自由现金流持续为负且净现金继续下降，市场对「下行保护」叙事的信任会衰减，估值锚下移。</li>
+      <li><strong>口径提示</strong>：通达信返回的 PE 14.70 未标注 TTM/LYR 口径 [口径未标注]；本报告的 Non-IFRS PE 12.7–13.1x 为自行折算 [推算]，与卖方口径可能有差。</li>
+      <li><strong>汇率</strong>：国际游戏收入已因汇率 −0.8%（固定汇率 +4%）；港元资产折算与港股通资金流向均受汇率影响。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h4 style="margin-top:0;color:var(--warn)">基本面层面</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>AI 变现节奏</strong>：新 AI 产品目前是利润拖累项（剔除后 +19% vs 含 AI +9%）。若 WorkBuddy/CodeBuddy/小微的商业化（订阅、token 付费、广告加载）在 2–3 个季度内看不到规模化收入，「AI 三层重构」叙事将退化为纯成本故事。</li>
+      <li><strong>游戏高基数</strong>：本土游戏 +17% 建立在《三角洲行动》《无畏契约》DAU 新高之上；4Q 起高基数效应显现，增速回落本身不是利空，但会触发估值端的过度反应。</li>
+      <li><strong>平台监管</strong>：微信 AI 智能体、小游戏/小店闭环广告均处在强监管视野内，政策边际变化对估值的影响不成比例。</li>
+      <li><strong>宏观与南向资金</strong>：港股定价权部分取决于南向资金风险偏好；科技股整体风险偏好收缩时（如 10/08 A/H 同步调整），个股基本面无法对冲 β。</li>
+    </ol>
+  </div>
+</div>
+
+<div class="note good">
+  <div class="hd">最后一句总结</div>
+  <strong>腾讯是这批标的里罕见的「估值在历史低位 + 股价在 60 日低位 17% + 底背离 + 每季 169 亿回购」的组合，而它的核心矛盾——AI 资本开支——管理层已经给出了可证伪的答辩（算力可外租、投入集中在两年）。</strong>技术面只欠一个右侧确认：411–415 的双底或 430 的均线收复。<em>左侧分批的赔率已经足够好，但让市场先证明 411 站得住，再让子弹飞一会儿。</em>
+</div>
+</section>
+
+<section id="s4">
+<h2 class="sec"><span class="no">04</span>数据来源</h2>
+<ul style="font-size:13.5px">
+  <li>行情与评分：腾讯财经港股日线接口（hkfqkline，前复权 200 根，截至 2026-10-12 收盘）；阳之个股分析 V1 引擎 <code>timing_score.py</code>（港股适配版取数）；同业对照六只同源</li>
+  <li>估值：通达信 MCP <code>tdx_indicator_select</code>（PE 14.70 / PB 2.9536 / 总市值 38,625 亿港元，交易日 20261009）</li>
+  <li>财务：腾讯 2Q2026 业绩公告（公司官网 PDF，2026-08-12）；腾讯新闻官方通稿；证券时报《腾讯最新业绩出炉！二季度资本开支大增 176%》（2026-08-12，含业绩电话会刘炽平「下行保护」表述与混元 4 指引）</li>
+  <li>方法论：阳之个股分析 V1（single-stock workflow）+ A股择时分析（威科夫 12 项梯度评分）+ A股量价关系验证（五规则）</li>
+</ul>
+</section>
+
+<div class="foot">
+  <strong>免责声明：</strong>本报告仅供研究参考，不构成个人投资建议。技术评分基于历史量价数据统计生成，不预示未来走势；估值中的 Non-IFRS PE 为自行折算 [推算]，通达信 PE 口径未标注 [口径未标注]；财务数据以公司公告为准。港股无涨跌停且 T+0 交易，跳空与流动性风险高于 A 股。市场有风险，投资需谨慎。<br>
+  <span style="font-size:11.5px">生成时间：2026-10-12 15:30 前后　|　数据基准：2026-10-12 收盘（港股）</span>
+</div>
+
+</div>
+</body>
+</html>
