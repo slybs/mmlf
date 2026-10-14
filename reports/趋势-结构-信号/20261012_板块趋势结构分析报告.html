@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="数据基准 2026-10-12，覆盖 28 个板块：14 个下跌末端（建仓/加仓区）、4 个上升末端（减仓/离场）、4 个上升途中、2 个下跌途中、4 个震荡；下跌末端占比过半，结构性机会在左侧二买回踩与右侧三买突破。">
+<meta name="report-type" content="大盘扫描">
+<title>板块趋势结构分析报告 · 2026-10-12</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1f2933;background:#f5f7fa;margin:0;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+header{background:linear-gradient(135deg,#1f2a44,#2d3e63);color:#fff;border-radius:14px;padding:26px 30px;margin-bottom:22px}
+header h1{margin:0 0 6px;font-size:24px}
+header .meta{opacity:.85;font-size:13px}
+header .summary{margin-top:14px;font-size:13px;background:rgba(255,255,255,.1);padding:12px 14px;border-radius:8px}
+h2{font-size:18px;margin:30px 0 6px;padding-left:12px}
+.cnt{font-size:13px;color:#6b7280;font-weight:400}
+.sec-desc{color:#52606d;font-size:13.5px;margin:4px 0 16px;background:#fff;padding:12px 14px;border-radius:8px;border:1px solid #e4e9f0}
+.cards{display:grid;grid-template-columns:1fr;gap:14px}
+.card{background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-h{font-size:15px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px}
+.card-h .code{font-size:12px;color:#8a94a6}
+.card-sub{font-size:12.5px;color:#667085;margin-bottom:8px}
+.conf{font-size:12px;font-weight:600}
+.badge{color:#fff;font-size:11px;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.badge.sm{font-size:10.5px;padding:1px 7px}
+.sig{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0}
+.sig th{background:#f0f3f8;text-align:left;padding:6px 8px;color:#52606d;border:1px solid #e4e9f0}
+.sig td{padding:6px 8px;border:1px solid #e4e9f0;vertical-align:top}
+.sig td.num{font-weight:600}
+.stop{color:#e5484d}
+.tgt{color:#1f9d55}
+.add{font-size:12.5px;color:#3a4a5a;background:#f7fafc;border-left:3px solid #2563eb;padding:8px 10px;border-radius:0 6px 6px 0;margin-top:8px}
+.warn{color:#e5484d}
+section{margin-bottom:10px}
+.ov{background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:6px;overflow-x:auto;margin-bottom:10px}
+table.ovt{width:100%;border-collapse:collapse;font-size:12px;min-width:920px}
+table.ovt th{background:#f0f3f8;padding:7px 6px;color:#52606d;border:1px solid #e4e9f0;position:sticky;top:0}
+table.ovt td{padding:6px 6px;border:1px solid #e4e9f0}
+.up{color:#e5484d;font-weight:600}
+.down{color:#1f9d55;font-weight:600}
+.flat{color:#8a94a6}
+.code{font-family:ui-monospace,Menlo,monospace}
+.disclaimer{background:#fff8e6;border:1px solid #f3d98b;border-radius:10px;padding:14px 16px;font-size:12.5px;color:#6b5b1f;margin-top:26px}
+.legend{font-size:12px;color:#52606d;background:#fff;border:1px solid #e4e9f0;border-radius:8px;padding:10px 14px;margin:8px 0 0}
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.kpi{flex:1;min-width:150px;background:#fff;border:1px solid #e4e9f0;border-radius:10px;padding:14px;text-align:center}
+.kpi .n{font-size:26px;font-weight:700}
+.kpi .l{font-size:12px;color:#667085;margin-top:2px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>板块趋势结构分析报告</h1>
+  <div class="meta">数据基准日 2026-10-12 · 通达信板块指数（88xxxx） · 方法论：趋势结构信号（道氏/威科夫/缠论/波浪）+ 阳之 12 项威科夫梯度评分</div>
+  <div class="summary">本报告覆盖 <b>28</b> 个一级/主题板块。通过四方法论交叉验证与加权打分，将板块划分为五类状态，并针对「上升末端（减仓/离场）」与「下跌末端（建仓/加仓）」给出具体买卖信号点（入场/加仓/止损/目标位/RRR，缠论买卖点 × 威科夫阶段映射）。</div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="n" style="color:#e5484d">4</div><div class="l">上升末端 · 减仓/离场</div></div>
+  <div class="kpi"><div class="n" style="color:#1f9d55">14</div><div class="l">下跌末端 · 建仓/加仓</div></div>
+  <div class="kpi"><div class="n" style="color:#2563eb">4</div><div class="l">上升途中 · 持有</div></div>
+  <div class="kpi"><div class="n" style="color:#6b7280">2</div><div class="l">下跌途中 · 回避</div></div>
+  <div class="kpi"><div class="n" style="color:#d97706">4</div><div class="l">震荡 · 观察</div></div>
+</div>
+
+
+      <section>
+        <h2 style="border-left:6px solid red">上升末端 · 减仓/离场区 <span class="cnt">(4)</span></h2>
+        <p class="sec-desc">处于趋势高位，出现顶背离、极端超买或加速末段特征。策略以「兑现利润、控制回撤」为主，新仓禁入，持仓者分批止盈。</p>
+        <div class="cards">
+        <div class="card">
+          <div class="card-h"><b>家居用品</b> <span class="code">881177</span>
+            <span class="badge" style="background:#e5484d">上升末端</span>
+            <span class="conf" style="color:#d97706">风险度：中（顶背离/动能放缓）</span>
+          </div>
+          <div class="card-sub">阳之 39（观望/空仓） · 60位 67% · 价/MA20 0.99 · 道氏(日) RANGE · 周M20&gt;MA60 否 · 顶背 有 · MACD柱 <span class="down">-3.2</span></div>
+          <table class="sig">
+            <tr><th>动作</th><th>价位/信号</th><th>说明</th></tr>
+            <tr><td><b>减仓信号</b></td><td>顶背离确认，一票否决继续持有</td><td>出现顶背离或价格跌破 MA20（851.23）且 MA20 走平，立即减仓 1/2~2/3。</td></tr>
+            <tr><td><b>离场信号</b></td><td class="stop">≤ 745.08</td><td>跌破前低 760.29 或中枢下沿，清仓离场，不抄底。</td></tr>
+            <tr><td><b>止盈参考</b></td><td class="tgt">前高 883.49</td><td>持仓者于前高附近分批止盈，切忌追高新开仓。</td></tr>
+          </table>
+          <div class="add warn">策略核心：兑现利润、控制回撤。新资金禁止追入；已持仓严格按离场位执行。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>地方性银行</b> <span class="code">881389</span>
+            <span class="badge" style="background:#e5484d">上升末端</span>
+            <span class="conf" style="color:#6b7280">风险度：低（60位≥95%）</span>
+          </div>
+          <div class="card-sub">阳之 89（关注等待） · 60位 97% · 价/MA20 1.022 · 道氏(日) UP · 周M20&gt;MA60 是 · 顶背 无 · MACD柱 <span class="up">+1.6</span></div>
+          <table class="sig">
+            <tr><th>动作</th><th>价位/信号</th><th>说明</th></tr>
+            <tr><td><b>减仓信号</b></td><td>高位超买/加速末段</td><td>出现顶背离或价格跌破 MA20（1602.1）且 MA20 走平，立即减仓 1/2~2/3。</td></tr>
+            <tr><td><b>离场信号</b></td><td class="stop">≤ 1332.98</td><td>跌破前低 1360.18 或中枢下沿，清仓离场，不抄底。</td></tr>
+            <tr><td><b>止盈参考</b></td><td class="tgt">前高 1643.72</td><td>持仓者于前高附近分批止盈，切忌追高新开仓。</td></tr>
+          </table>
+          <div class="add warn">策略核心：兑现利润、控制回撤。新资金禁止追入；已持仓严格按离场位执行。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>全国性银行</b> <span class="code">881386</span>
+            <span class="badge" style="background:#e5484d">上升末端</span>
+            <span class="conf" style="color:#d97706">风险度：中（顶背离/60位≥95%）</span>
+          </div>
+          <div class="card-sub">阳之 57（暂时回避） · 60位 100% · 价/MA20 1.039 · 道氏(日) UP · 周M20&gt;MA60 是 · 顶背 有 · MACD柱 <span class="up">+7.1</span></div>
+          <table class="sig">
+            <tr><th>动作</th><th>价位/信号</th><th>说明</th></tr>
+            <tr><td><b>减仓信号</b></td><td>顶背离确认，一票否决继续持有</td><td>出现顶背离或价格跌破 MA20（1920.67）且 MA20 走平，立即减仓 1/2~2/3。</td></tr>
+            <tr><td><b>离场信号</b></td><td class="stop">≤ 1604.87</td><td>跌破前低 1637.62 或中枢下沿，清仓离场，不抄底。</td></tr>
+            <tr><td><b>止盈参考</b></td><td class="tgt">前高 1953.86</td><td>持仓者于前高附近分批止盈，切忌追高新开仓。</td></tr>
+          </table>
+          <div class="add warn">策略核心：兑现利润、控制回撤。新资金禁止追入；已持仓严格按离场位执行。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>油气开采</b> <span class="code">881007</span>
+            <span class="badge" style="background:#e5484d">上升末端</span>
+            <span class="conf" style="color:#d97706">风险度：中（60位≥95%/价>MA20·5%）</span>
+          </div>
+          <div class="card-sub">阳之 105（可以买入） · 60位 100% · 价/MA20 1.075 · 道氏(日) UP · 周M20&gt;MA60 是 · 顶背 无 · MACD柱 <span class="up">+48.1</span></div>
+          <table class="sig">
+            <tr><th>动作</th><th>价位/信号</th><th>说明</th></tr>
+            <tr><td><b>减仓信号</b></td><td>高位超买/加速末段</td><td>出现顶背离或价格跌破 MA20（2930.16）且 MA20 走平，立即减仓 1/2~2/3。</td></tr>
+            <tr><td><b>离场信号</b></td><td class="stop">≤ 2206.36</td><td>跌破前低 2251.39 或中枢下沿，清仓离场，不抄底。</td></tr>
+            <tr><td><b>止盈参考</b></td><td class="tgt">前高 3024.25</td><td>持仓者于前高附近分批止盈，切忌追高新开仓。</td></tr>
+          </table>
+          <div class="add warn">策略核心：兑现利润、控制回撤。新资金禁止追入；已持仓严格按离场位执行。</div>
+        </div></div>
+      </section>
+      <section>
+        <h2 style="border-left:6px solid green">下跌末端 · 建仓/加仓区 <span class="cnt">(14)</span></h2>
+        <p class="sec-desc">处于趋势低位，出现 Spring、底背离或 MACD 转正等底部确认信号。策略以「逢低布局、严控止损」为主，采用缠论二买/三买与威科夫 LPS 映射。</p>
+        <div class="cards">
+        <div class="card">
+          <div class="card-h"><b>半导体</b> <span class="code">881319</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 73（关注等待） · 60位 5% · 价/MA20 0.897 · 道氏(日) RANGE · 周M20&gt;MA60 是 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">1519.35</td><td class="num stop">1429.09</td><td class="num tgt">1791.97</td><td class="num tgt">2520.21</td><td>3.02</td><td>前低 1504.31 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">1809.89</td><td class="num stop">1517.59</td><td class="num tgt">2470.79</td><td class="num tgt">2661.34</td><td>2.26</td><td>放量站上中枢上沿 1791.969971（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 2470.79 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>IT设备</b> <span class="code">881352</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 86（关注等待） · 60位 8% · 价/MA20 0.955 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">1069.3</td><td class="num stop">1005.77</td><td class="num tgt">1179.86</td><td class="num tgt">1287.64</td><td>1.74</td><td>前低 1058.71 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">1191.66</td><td class="num stop">1064.38</td><td class="num tgt">1262.39</td><td class="num tgt">1331.3</td><td>0.56</td><td>放量站上中枢上沿 1179.859985（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1262.39 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>光伏设备</b> <span class="code">881275</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 86（关注等待） · 60位 13% · 价/MA20 0.964 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">384.81</td><td class="num stop">361.95</td><td class="num tgt">407.16</td><td class="num tgt">547.88</td><td>0.98</td><td>前低 381.0 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">411.23</td><td class="num stop">375.72</td><td class="num tgt">537.14</td><td class="num tgt">565.49</td><td>3.55</td><td>放量站上中枢上沿 407.160004（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 537.14 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>云服务</b> <span class="code">881359</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 84（关注等待） · 60位 15% · 价/MA20 0.958 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">934.41</td><td class="num stop">878.9</td><td class="num tgt">1017.4</td><td class="num tgt">1120.29</td><td>1.5</td><td>前低 925.16 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">1027.57</td><td class="num stop">927.67</td><td class="num tgt">1098.32</td><td class="num tgt">1171.8</td><td>0.71</td><td>放量站上中枢上沿 1017.400024（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1098.32 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>电池</b> <span class="code">881262</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（MACD转正/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 80（关注等待） · 60位 16% · 价/MA20 0.984 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">576.26</td><td class="num stop">542.02</td><td class="num tgt">727.25</td><td class="num tgt">928.87</td><td>4.41</td><td>前低 570.55 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">734.52</td><td class="num stop">630.26</td><td class="num tgt">910.66</td><td class="num tgt">957.4</td><td>1.69</td><td>放量站上中枢上沿 727.25（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 910.66 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>国防军工</b> <span class="code">881286</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#6b7280">置信度：低（Spring）</span>
+          </div>
+          <div class="card-sub">阳之 84（关注等待） · 60位 19% · 价/MA20 0.933 · 道氏(日) UP · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">828.67</td><td class="num stop">779.45</td><td class="num tgt">938.57</td><td class="num tgt">1066.86</td><td>2.23</td><td>前低 820.47 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">947.96</td><td class="num stop">892.02</td><td class="num tgt">1045.94</td><td class="num tgt">1106.49</td><td>1.75</td><td>放量站上中枢上沿 938.570007（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1045.94 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>乘用车</b> <span class="code">881212</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#1f9d55">置信度：高（Spring/MACD转正/价>MA20/阳之≥90/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 90（可以买入） · 60位 22% · 价/MA20 1.004 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">528.55</td><td class="num stop">497.15</td><td class="num tgt">579.11</td><td class="num tgt">810.23</td><td>1.61</td><td>前低 523.32 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">584.9</td><td class="num stop">546.96</td><td class="num tgt">794.34</td><td class="num tgt">824.77</td><td>5.52</td><td>放量站上中枢上沿 579.109985（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 794.34 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>证券</b> <span class="code">881394</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/阳之≥90/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 94（可以买入） · 60位 22% · 价/MA20 0.985 · 道氏(日) RANGE · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">957.61</td><td class="num stop">900.72</td><td class="num tgt">1016.24</td><td class="num tgt">1107.64</td><td>1.03</td><td>前低 948.13 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">1026.4</td><td class="num stop">945.28</td><td class="num tgt">1085.92</td><td class="num tgt">1129.63</td><td>0.73</td><td>放量站上中枢上沿 1016.23999（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1085.92 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>工业金属</b> <span class="code">881071</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 87（关注等待） · 60位 22% · 价/MA20 0.94 · 道氏(日) DOWN · 周M20&gt;MA60 是 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">1835.59</td><td class="num stop">1726.55</td><td class="num tgt">2233.25</td><td class="num tgt">2315.8</td><td>3.65</td><td>前低 1817.42 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">2255.58</td><td class="num stop">2062.92</td><td class="num tgt">2270.39</td><td class="num tgt">2442.72</td><td>0.08</td><td>放量站上中枢上沿 2233.25（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 2270.39 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>化学制药</b> <span class="code">881231</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#1f9d55">置信度：高（Spring/MACD转正/价>MA20/阳之≥90/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 97（可以买入） · 60位 24% · 价/MA20 1.003 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">866.76</td><td class="num stop">815.27</td><td class="num tgt">952.08</td><td class="num tgt">1082.96</td><td>1.66</td><td>前低 858.18 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">961.6</td><td class="num stop">921.89</td><td class="num tgt">1061.73</td><td class="num tgt">1127.85</td><td>2.52</td><td>放量站上中枢上沿 952.080017（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1061.73 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>航空装备</b> <span class="code">881288</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#6b7280">置信度：低（Spring）</span>
+          </div>
+          <div class="card-sub">阳之 89（关注等待） · 60位 26% · 价/MA20 0.939 · 道氏(日) UP · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">609.34</td><td class="num stop">573.14</td><td class="num tgt">672.38</td><td class="num tgt">735.05</td><td>1.74</td><td>前低 603.31 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">679.1</td><td class="num stop">654.02</td><td class="num tgt">720.64</td><td class="num tgt">766.71</td><td>1.66</td><td>放量站上中枢上沿 672.380005（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 720.64 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>地面兵装</b> <span class="code">881287</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#6b7280">置信度：低（Spring）</span>
+          </div>
+          <div class="card-sub">阳之 87（关注等待） · 60位 38% · 价/MA20 0.913 · 道氏(日) UP · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">834.96</td><td class="num stop">785.36</td><td class="num tgt">1041.18</td><td class="num tgt">1317.62</td><td>4.16</td><td>前低 826.69 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">1051.59</td><td class="num stop">905.03</td><td class="num tgt">1291.78</td><td class="num tgt">1388.26</td><td>1.64</td><td>放量站上中枢上沿 1041.180054（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 1291.78 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>软件服务</b> <span class="code">881355</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#d97706">置信度：中（Spring/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 77（关注等待） · 60位 38% · 价/MA20 0.989 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">744.09</td><td class="num stop">699.88</td><td class="num tgt">854.37</td><td class="num tgt">923.27</td><td>2.49</td><td>前低 736.72 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">862.91</td><td class="num stop">766.22</td><td class="num tgt">905.17</td><td class="num tgt">966.23</td><td>0.44</td><td>放量站上中枢上沿 854.369995（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 905.17 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+           <span class="warn">⚠ RRR&lt;1，风险回报不佳，建议等待更好位置</span>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>风电设备</b> <span class="code">881282</span>
+            <span class="badge" style="background:#1f9d55">下跌末端</span>
+            <span class="conf" style="color:#1f9d55">置信度：高（Spring/MACD转正/价>MA20/阳之≥90/非假突破）</span>
+          </div>
+          <div class="card-sub">阳之 101（可以买入） · 60位 40% · 价/MA20 1.005 · 道氏(日) RANGE · 周M20&gt;MA60 否 · Spring 有 · 顶背 无</div>
+          <table class="sig">
+            <tr><th>方案</th><th>入场点</th><th>止损位</th><th>目标1</th><th>目标2</th><th>RRR</th><th>逻辑（缠论×威科夫）</th></tr>
+            <tr><td><b>A 左侧回踩</b><br>二买/LPS</td><td class="num">547.66</td><td class="num stop">515.13</td><td class="num tgt">604.15</td><td class="num tgt">934.48</td><td>1.74</td><td>前低 542.24 不破，缩量回踩获支撑后介入（威科夫 LPS）；对应缠论类二买。</td></tr>
+            <tr><td><b>B 右侧突破</b><br>三买/确认</td><td class="num">610.19</td><td class="num stop">557.08</td><td class="num tgt">916.16</td><td class="num tgt">966.23</td><td>5.76</td><td>放量站上中枢上沿 604.150024（中枢 有效），对应缠论类三买/趋势确认。</td></tr>
+          </table>
+          <div class="add">加仓：方案A 于价格重回 MA20 / 站上中枢上沿加仓；方案B 于突破前高 916.16 后回踩不破再加仓。止损纪律：收盘价跌破止损位即离场，单笔风险控制在 2% 以内。</div>
+          
+        </div></div>
+      </section>
+      <section>
+        <h2 style="border-left:6px solid blue">上升途中 · 强势持有区 <span class="cnt">(4)</span></h2>
+        <p class="sec-desc">周线多头结构完好，趋势上行未结束。策略以「持有 + 回踩均线加仓」为主，止损参考 MA60。</p>
+        <div class="cards">
+        <div class="card">
+          <div class="card-h"><b>电力</b> <span class="code">881459</span> <span class="badge" style="background:#2563eb">上升途中</span></div>
+          <div class="card-sub">阳之 89（关注等待） · 60位 53% · 价/MA20 1.012 · 道氏(日) RANGE · 周M20&gt;MA60 是 · Spring 无</div>
+          <div class="add">持有为主，回踩 MA20（1372）/ MA60（1376）不破可加仓，止损参考 MA60 下破。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>白色家电</b> <span class="code">881184</span> <span class="badge" style="background:#2563eb">上升途中</span></div>
+          <div class="card-sub">阳之 75（关注等待） · 60位 53% · 价/MA20 1.004 · 道氏(日) RANGE · 周M20&gt;MA60 是 · Spring 有</div>
+          <div class="add">持有为主，回踩 MA20（1411）/ MA60（1421）不破可加仓，止损参考 MA60 下破。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>医疗服务</b> <span class="code">881247</span> <span class="badge" style="background:#2563eb">上升途中</span></div>
+          <div class="card-sub">阳之 68（关注等待） · 60位 68% · 价/MA20 0.999 · 道氏(日) RANGE · 周M20&gt;MA60 是 · Spring 无</div>
+          <div class="add">持有为主，回踩 MA20（648）/ MA60（622）不破可加仓，止损参考 MA60 下破。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>煤炭开采</b> <span class="code">881002</span> <span class="badge" style="background:#2563eb">上升途中</span></div>
+          <div class="card-sub">阳之 92（可以买入） · 60位 74% · 价/MA20 1.022 · 道氏(日) UP · 周M20&gt;MA60 是 · Spring 有</div>
+          <div class="add">持有为主，回踩 MA20（2556）/ MA60（2509）不破可加仓，止损参考 MA60 下破。</div>
+        </div></div>
+      </section>
+      <section>
+        <h2 style="border-left:6px solid gray">下跌途中 · 回避/观望区 <span class="cnt">(2)</span></h2>
+        <p class="sec-desc">日线空头且缺乏量价底部确认（无 Spring/底背），结构破坏。策略以「空仓观望、等待企稳信号」为主。</p>
+        <div class="cards">
+        <div class="card">
+          <div class="card-h"><b>工程机械</b> <span class="code">881310</span> <span class="badge" style="background:#6b7280">下跌途中</span></div>
+          <div class="card-sub">阳之 74（关注等待） · 60位 10% · 价/MA20 0.949 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">空仓观望。需等待 Spring/底背离或放量站上 MA20 的企稳信号方可介入；前低 1060 仍可能被测试。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>水泥</b> <span class="code">881091</span> <span class="badge" style="background:#6b7280">下跌途中</span></div>
+          <div class="card-sub">阳之 71（关注等待） · 60位 38% · 价/MA20 0.985 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">空仓观望。需等待 Spring/底背离或放量站上 MA20 的企稳信号方可介入；前低 656 仍可能被测试。</div>
+        </div></div>
+      </section>
+      <section>
+        <h2 style="border-left:6px solid amber">震荡整理 · 观察区 <span class="cnt">(4)</span></h2>
+        <p class="sec-desc">多空均衡或下跌中反弹，方向未明。策略以「高抛低吸或观望」为主，等待突破/破位再定方向。</p>
+        <div class="cards">
+        <div class="card">
+          <div class="card-h"><b>保险</b> <span class="code">881395</span> <span class="badge" style="background:#d97706">震荡整理</span></div>
+          <div class="card-sub">阳之 72（关注等待） · 60位 39% · 价/MA20 0.982 · 道氏(日) UP · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">高抛低吸或观望。上方压力前高 1568，下方支撑前低 1298；突破/破位后再定方向。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>普钢</b> <span class="code">881065</span> <span class="badge" style="background:#d97706">震荡整理</span></div>
+          <div class="card-sub">阳之 54（暂时回避） · 60位 45% · 价/MA20 0.999 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">高抛低吸或观望。上方压力前高 1036，下方支撑前低 782；突破/破位后再定方向。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>酿酒</b> <span class="code">881130</span> <span class="badge" style="background:#d97706">震荡整理</span></div>
+          <div class="card-sub">阳之 77（关注等待） · 60位 50% · 价/MA20 1.013 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">高抛低吸或观望。上方压力前高 614，下方支撑前低 517；突破/破位后再定方向。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><b>饮料乳品</b> <span class="code">881136</span> <span class="badge" style="background:#d97706">震荡整理</span></div>
+          <div class="card-sub">阳之 77（关注等待） · 60位 64% · 价/MA20 1.01 · 道氏(日) DOWN · 周M20&gt;MA60 否 · Spring 无</div>
+          <div class="add">高抛低吸或观望。上方压力前高 958，下方支撑前低 857；突破/破位后再定方向。</div>
+        </div></div>
+      </section>
+
+<h2 style="border-left:6px solid #2d3e63">全市场 28 板块总览</h2>
+<p class="legend">颜色说明：分类徽标为<b>语义色</b>（红=减仓风险 / 绿=建仓机会 / 蓝=持有 / 灰=回避 / 橙=观察），非价格涨跌色。数值列遵循 A 股惯例：<span class="up">红=涨</span> / <span class="down">绿=跌</span>。Spring=威科夫弹簧信号；顶背=顶背离（一票否决顶部）。</p>
+<div class="ov"><table class="ovt">
+  <tr><th>板块</th><th>代码</th><th>状态</th><th>道氏(日)</th><th>周M20&gt;60</th><th>日M20&gt;60</th><th>阳之</th><th>档位</th><th>60位</th><th>60涨</th><th>价/MA20</th><th>Spring</th><th>顶背</th><th>MACD柱</th></tr>
+  <tr>
+          <td><b>半导体</b></td><td class="code">881319</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>RANGE</td>
+          <td>是</td>
+          <td>否</td>
+          <td class="num">73</td>
+          <td>关注等待</td>
+          <td class="num">5%</td>
+          <td><span class="down">-33%</span></td>
+          <td class="num">0.897</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-39.4</span></td>
+        </tr>
+<tr>
+          <td><b>IT设备</b></td><td class="code">881352</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">86</td>
+          <td>关注等待</td>
+          <td class="num">8%</td>
+          <td><span class="down">-16%</span></td>
+          <td class="num">0.955</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-8.2</span></td>
+        </tr>
+<tr>
+          <td><b>工程机械</b></td><td class="code">881310</td>
+          <td><span class="badge sm" style="background:#6b7280">下跌途中</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">74</td>
+          <td>关注等待</td>
+          <td class="num">10%</td>
+          <td><span class="down">-13%</span></td>
+          <td class="num">0.949</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="down">-8.0</span></td>
+        </tr>
+<tr>
+          <td><b>光伏设备</b></td><td class="code">881275</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">86</td>
+          <td>关注等待</td>
+          <td class="num">13%</td>
+          <td><span class="down">-17%</span></td>
+          <td class="num">0.964</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-1.0</span></td>
+        </tr>
+<tr>
+          <td><b>云服务</b></td><td class="code">881359</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">84</td>
+          <td>关注等待</td>
+          <td class="num">15%</td>
+          <td><span class="down">-14%</span></td>
+          <td class="num">0.958</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-6.4</span></td>
+        </tr>
+<tr>
+          <td><b>电池</b></td><td class="code">881262</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">80</td>
+          <td>关注等待</td>
+          <td class="num">16%</td>
+          <td><span class="down">-12%</span></td>
+          <td class="num">0.984</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="up">+5.0</span></td>
+        </tr>
+<tr>
+          <td><b>国防军工</b></td><td class="code">881286</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>UP</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">84</td>
+          <td>关注等待</td>
+          <td class="num">19%</td>
+          <td><span class="down">-15%</span></td>
+          <td class="num">0.933</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-15.9</span></td>
+        </tr>
+<tr>
+          <td><b>乘用车</b></td><td class="code">881212</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">90</td>
+          <td>可以买入</td>
+          <td class="num">22%</td>
+          <td><span class="down">-3%</span></td>
+          <td class="num">1.004</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="up">+1.7</span></td>
+        </tr>
+<tr>
+          <td><b>证券</b></td><td class="code">881394</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>RANGE</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">94</td>
+          <td>可以买入</td>
+          <td class="num">22%</td>
+          <td><span class="down">-6%</span></td>
+          <td class="num">0.985</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-3.2</span></td>
+        </tr>
+<tr>
+          <td><b>工业金属</b></td><td class="code">881071</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>是</td>
+          <td>否</td>
+          <td class="num">87</td>
+          <td>关注等待</td>
+          <td class="num">22%</td>
+          <td><span class="up">+0%</span></td>
+          <td class="num">0.94</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-26.0</span></td>
+        </tr>
+<tr>
+          <td><b>化学制药</b></td><td class="code">881231</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">97</td>
+          <td>可以买入</td>
+          <td class="num">24%</td>
+          <td><span class="down">-7%</span></td>
+          <td class="num">1.003</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="up">+7.2</span></td>
+        </tr>
+<tr>
+          <td><b>航空装备</b></td><td class="code">881288</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>UP</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">89</td>
+          <td>关注等待</td>
+          <td class="num">26%</td>
+          <td><span class="down">-4%</span></td>
+          <td class="num">0.939</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-11.6</span></td>
+        </tr>
+<tr>
+          <td><b>水泥</b></td><td class="code">881091</td>
+          <td><span class="badge sm" style="background:#6b7280">下跌途中</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">71</td>
+          <td>关注等待</td>
+          <td class="num">38%</td>
+          <td><span class="up">+1%</span></td>
+          <td class="num">0.985</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="down">-1.3</span></td>
+        </tr>
+<tr>
+          <td><b>地面兵装</b></td><td class="code">881287</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>UP</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">87</td>
+          <td>关注等待</td>
+          <td class="num">38%</td>
+          <td><span class="down">-4%</span></td>
+          <td class="num">0.913</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-27.5</span></td>
+        </tr>
+<tr>
+          <td><b>软件服务</b></td><td class="code">881355</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">77</td>
+          <td>关注等待</td>
+          <td class="num">38%</td>
+          <td><span class="down">-5%</span></td>
+          <td class="num">0.989</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-2.4</span></td>
+        </tr>
+<tr>
+          <td><b>保险</b></td><td class="code">881395</td>
+          <td><span class="badge sm" style="background:#d97706">震荡整理</span></td>
+          <td>UP</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">72</td>
+          <td>关注等待</td>
+          <td class="num">39%</td>
+          <td><span class="up">+4%</span></td>
+          <td class="num">0.982</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="down">-12.4</span></td>
+        </tr>
+<tr>
+          <td><b>风电设备</b></td><td class="code">881282</td>
+          <td><span class="badge sm" style="background:#1f9d55">下跌末端</span></td>
+          <td>RANGE</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">101</td>
+          <td>可以买入</td>
+          <td class="num">40%</td>
+          <td><span class="down">-11%</span></td>
+          <td class="num">1.005</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="up">+2.7</span></td>
+        </tr>
+<tr>
+          <td><b>普钢</b></td><td class="code">881065</td>
+          <td><span class="badge sm" style="background:#d97706">震荡整理</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">54</td>
+          <td>暂时回避</td>
+          <td class="num">45%</td>
+          <td><span class="up">+4%</span></td>
+          <td class="num">0.999</td>
+          <td>—</td>
+          <td>⚠</td>
+          <td><span class="up">+1.5</span></td>
+        </tr>
+<tr>
+          <td><b>酿酒</b></td><td class="code">881130</td>
+          <td><span class="badge sm" style="background:#d97706">震荡整理</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>否</td>
+          <td class="num">77</td>
+          <td>关注等待</td>
+          <td class="num">50%</td>
+          <td><span class="up">+6%</span></td>
+          <td class="num">1.013</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="up">+2.9</span></td>
+        </tr>
+<tr>
+          <td><b>电力</b></td><td class="code">881459</td>
+          <td><span class="badge sm" style="background:#2563eb">上升途中</span></td>
+          <td>RANGE</td>
+          <td>是</td>
+          <td>否</td>
+          <td class="num">89</td>
+          <td>关注等待</td>
+          <td class="num">53%</td>
+          <td><span class="up">+4%</span></td>
+          <td class="num">1.012</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="up">+5.7</span></td>
+        </tr>
+<tr>
+          <td><b>白色家电</b></td><td class="code">881184</td>
+          <td><span class="badge sm" style="background:#2563eb">上升途中</span></td>
+          <td>RANGE</td>
+          <td>是</td>
+          <td>否</td>
+          <td class="num">75</td>
+          <td>关注等待</td>
+          <td class="num">53%</td>
+          <td><span class="up">+6%</span></td>
+          <td class="num">1.004</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="down">-1.1</span></td>
+        </tr>
+<tr>
+          <td><b>饮料乳品</b></td><td class="code">881136</td>
+          <td><span class="badge sm" style="background:#d97706">震荡整理</span></td>
+          <td>DOWN</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">77</td>
+          <td>关注等待</td>
+          <td class="num">64%</td>
+          <td><span class="up">+6%</span></td>
+          <td class="num">1.01</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="up">+3.8</span></td>
+        </tr>
+<tr>
+          <td><b>家居用品</b></td><td class="code">881177</td>
+          <td><span class="badge sm" style="background:#e5484d">上升末端</span></td>
+          <td>RANGE</td>
+          <td>否</td>
+          <td>是</td>
+          <td class="num">39</td>
+          <td>观望/空仓</td>
+          <td class="num">67%</td>
+          <td><span class="down">-0%</span></td>
+          <td class="num">0.99</td>
+          <td>✅</td>
+          <td>⚠</td>
+          <td><span class="down">-3.2</span></td>
+        </tr>
+<tr>
+          <td><b>医疗服务</b></td><td class="code">881247</td>
+          <td><span class="badge sm" style="background:#2563eb">上升途中</span></td>
+          <td>RANGE</td>
+          <td>是</td>
+          <td>是</td>
+          <td class="num">68</td>
+          <td>关注等待</td>
+          <td class="num">68%</td>
+          <td><span class="up">+18%</span></td>
+          <td class="num">0.999</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="down">-2.8</span></td>
+        </tr>
+<tr>
+          <td><b>煤炭开采</b></td><td class="code">881002</td>
+          <td><span class="badge sm" style="background:#2563eb">上升途中</span></td>
+          <td>UP</td>
+          <td>是</td>
+          <td>是</td>
+          <td class="num">92</td>
+          <td>可以买入</td>
+          <td class="num">74%</td>
+          <td><span class="up">+17%</span></td>
+          <td class="num">1.022</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="up">+7.0</span></td>
+        </tr>
+<tr>
+          <td><b>地方性银行</b></td><td class="code">881389</td>
+          <td><span class="badge sm" style="background:#e5484d">上升末端</span></td>
+          <td>UP</td>
+          <td>是</td>
+          <td>是</td>
+          <td class="num">89</td>
+          <td>关注等待</td>
+          <td class="num">97%</td>
+          <td><span class="up">+15%</span></td>
+          <td class="num">1.022</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="up">+1.6</span></td>
+        </tr>
+<tr>
+          <td><b>全国性银行</b></td><td class="code">881386</td>
+          <td><span class="badge sm" style="background:#e5484d">上升末端</span></td>
+          <td>UP</td>
+          <td>是</td>
+          <td>是</td>
+          <td class="num">57</td>
+          <td>暂时回避</td>
+          <td class="num">100%</td>
+          <td><span class="up">+16%</span></td>
+          <td class="num">1.039</td>
+          <td>—</td>
+          <td>⚠</td>
+          <td><span class="up">+7.1</span></td>
+        </tr>
+<tr>
+          <td><b>油气开采</b></td><td class="code">881007</td>
+          <td><span class="badge sm" style="background:#e5484d">上升末端</span></td>
+          <td>UP</td>
+          <td>是</td>
+          <td>是</td>
+          <td class="num">105</td>
+          <td>可以买入</td>
+          <td class="num">100%</td>
+          <td><span class="up">+30%</span></td>
+          <td class="num">1.075</td>
+          <td>✅</td>
+          <td>—</td>
+          <td><span class="up">+48.1</span></td>
+        </tr>
+</table></div>
+
+<div class="disclaimer">
+  <b>风险提示与免责声明：</b>本报告由量化模型基于历史行情数据自动生成，所用「趋势结构信号」「阳之 12 项评分」均为技术分析框架，存在滞后性与失效可能。文中所涉板块分类、买卖信号点、目标位与 RRR 均为<b>方法论推演示例</b>，<b>不构成任何投资建议或买卖要约</b>。市场有风险，投资须谨慎；实际操作请结合自身风险承受能力，并以实时行情与基本面为准。
+</div>
+</div></body></html>

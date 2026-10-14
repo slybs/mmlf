@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="数据基准 2026-10-14（收 41.51，+1.12%）。威科夫重新吸筹后 LPS 回踩获支撑，路径 A 止损 38.71（40.06−0.5×ATR）、路径 B 突破 47.10 后回踩 45 入场止损 43.05；板块逆风，等右侧确认，不直接追涨。">
+<meta name="report-type" content="趋势结构信号">
+<title>博通集成（603068.SH）趋势结构分析报告</title>
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+.strat{border:1px solid var(--line-2); border-radius:3px; padding:18px 22px 20px;
+  margin:14px 0 4px; background:var(--bg)}
+.strat>h2{margin:0 0 14px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-size:16px}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.cols section h3{margin:0 0 8px; font-size:14px}
+.cols section h3 span{font-size:12px; color:var(--ink-3); font-weight:400; margin-left:6px}
+.gate{font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line);
+  padding-top:10px; margin-top:12px}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+  .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>博通集成（603068.SH）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-14（收盘，收 41.51 CNY，当日 +1.12%）</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>周线 / 日线 / 60分钟</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir up">偏多（上升趋势回调期，试探性质）</span>
+    <span class="score">加权总分 S = +0.42（原始 +0.70 × 板块系数 0.6）</span>
+    <span class="badge mid">置信度：中</span>
+    <span class="score">板块基调：主跌段（中证半导体 H30184）</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>偏多占优：道氏 +1 / 威科夫 +1 / 缠论 0 / 波浪 0</dd></div>
+    <div><dt>板块调节</dt><dd>k = 0.6：板块主跌段，个股多头信号打折</dd></div>
+    <div><dt>当前阶段</dt><dd>威科夫 Phase D–E 加价期，三连板后缩量回踩 = LPS 性质</dd></div>
+    <div><dt>缠论买卖点</dt><dd>9-24 三买后回踩过深跌回中枢（34.72–44.40），三买失效待重建</dd></div>
+  </div>
+  <div class="note warn">
+    <b>置信度扣分理由：</b>
+    ① 四法中 2 套多头、2 套中性，共振度不足强多门槛；
+    ② 波浪铁律校验冲突重数一次，两套数法（浪 4 回调 vs A 浪调整）并存，信号置 0；
+    ③ 周线脚本样本 55 根不足 60 根（由日线合成）；
+    ④ 9-24 高点 49.98 当日放量滞涨（量比 1.36× 冲高回落），存在 BC/派发嫌疑——已被后续缩量回调基本排除，但未 100% 证伪。
+  </div>
+</div>
+
+<div class="strat">
+  <h2>买卖策略速览<span class="muted" style="font-size:12px;font-weight:400;margin-left:8px">试探性质 · 须满足确认条件 · 缠论买卖点 × 威科夫阶段</span></h2>
+  <div class="cols">
+    <section>
+      <h3>已持有<span>加仓 · 减仓 · 失效位</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>持有依据</td><td>日线 HH＋HL 上升趋势未破坏（未破前 HL 34.72，甚至未破 Fib 0.5＝40.06）；回调段缩量（量比 0.55–0.77×）＋D4 绿柱面积极小（0.36 vs 前段 8.7）＋DIF 未破零轴——多头格局完好，当前为 markup 中的回踩</td></tr>
+        <tr><td>加仓触发</td><td class="ev">日线收盘 ≥47.10（中枢上沿 44.40＋1×ATR）＋量比 ≥1.5×MA5 量（≥21.3 万手）＋3 根不回落 → 突破有效后回踩 44.4–45 不破时加仓</td></tr>
+        <tr><td>减仓 / 离场触发</td><td class="ev">①反弹至 46.7–50.0 压力带放量滞涨（长上影）→ 减仓；②收盘放量跌破 40.06（Fib 0.5）→ 减仓警戒；③收盘跌破 36.37 → 全部离场</td></tr>
+        <tr><td>移动止盈</td><td>有效升破 49.98 前高后，以 10 日均线（现 44.07，随行上移）为移动止盈参考</td></tr>
+        <tr><td>结构失效位</td><td class="num">36.37（Fib 0.618＝37.72 − 0.5×ATR14 2.70）；收盘跌破＝上升趋势证伪</td></tr>
+      </table>
+    </section>
+    <section>
+      <h3>空仓<span>入场 · 止损 · 目标</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>入场触发（路径 A 回踩）</td><td class="ev">回踩 40.0–40.6（Fib 0.5＝40.06＋10-14 低点 40.53）缩量企稳：收盘守 40 上方＋回踩量 ≤0.8×MA5＋企稳阳线 → 试探建仓，锚定价 41.0</td></tr>
+        <tr><td>入场触发（路径 B 突破）</td><td class="ev">收盘 ≥47.10 有效突破后回踩 44.4–45 收盘不破 → 入场锚 45.0（直接追涨 47.1 止损幅度 8.6%＞8%，按闸门不予采纳，改为等回踩确认）</td></tr>
+        <tr><td>止损价</td><td class="num">路径 A：38.71（40.06−0.5×ATR），幅度 5.6%；路径 B：43.05（44.40−0.5×ATR），幅度 4.3%</td></tr>
+        <tr><td>目标 T1 / T2 / T3</td><td class="num">T1 44.40（中枢 ZG）/ T2 46.68（10-9 高点）/ T3 49.98（9-24 前高）</td></tr>
+        <tr><td>风险收益比</td><td class="num">路径 A：T1 RRR 1.48（边际，需更严确认）/ T2 2.40 / T3 3.91；路径 B：T1 RRR 2.55</td></tr>
+        <tr><td>时间止损</td><td>入场后 5 根日 K 未向 44.4 一带展开 → 减仓退出</td></tr>
+      </table>
+    </section>
+  </div>
+  <div class="gate"><b>策略闸门校验：</b>
+    ① 路径 A 的 T1 RRR＝1.48，落于 1≤RRR&lt;2 区间 → <b>标注「风险收益比边际，需更严格的确认条件」</b>（T2/T3 的 RRR 2.40/3.91 达标，实际盈亏比取决于持有耐心）；② 止损幅度 5.6%/4.3% 均 ≤8%，通过；③ 板块主跌段＋个股无底背驰/Spring：本策略锚定的是威科夫 markup 回踩（LPS）后的右侧确认，非左侧抄底，按「偏多档试探性质」输出，板块逆风已由 k=0.6 与试探标注体现；④ 适用性检查通过。声明：以上为基于结构的价位推演，非投资建议，不构成任何买卖指令，不涉及仓位与资金管理。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">250 根（20250925–20261014）</td><td>ATR14</td><td class="num">2.70（6.51%）</td></tr>
+  <tr><td>周线样本</td><td class="num">55 根（脚本，日线合成）</td><td>60分钟样本</td><td class="num">120 根（20260826–20261014）</td></tr>
+  <tr><td>期间最高</td><td class="num">49.98（2026-09-24）</td><td>期间最低</td><td class="num">30.14（2026-04-03）</td></tr>
+  <tr><td>MA 排列</td><td class="num">MA5 42.07 / MA10 44.07 / MA20 41.25 / MA60 39.32——价 41.51 居 MA20/MA60 之上、MA5/MA10 之下（回调位）</td><td>MA20 vs MA60</td><td class="num">MA20 ＞ MA60，MA20 斜率向上（中期多头）</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>起止与根数符合预期；区间高低点与已知行情吻合（9 月中旬三连板后 49.98 高点）；日期缺口最大 11 天（春节），均 &lt; 20 天；无零成交；涨停日 8 天（主板 10% 阈值）但无一字板（9-18/21/22 连板均为放量非一字）。自检通过。
+  <br><b>适用性检查：</b>非 ST、非次新（2017 年上市）、无一字板、无长停牌缺口——四项通过。风险等级：高（ATR 6.51%、9 月三连板后的高波动区）。
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>半导体—无线连接芯片（WiFi/蓝牙/ETC/音频 SoC，端侧 SoC 卡位公司）</td><td class="muted">中证半导体指数 H30184（setcode=62）代理</td></tr>
+  <tr><td>板块趋势（道氏）</td><td class="down">下降（主跌段）</td><td class="ev">周线自 10562（0703）高点 −43%；周线 MACD 绿柱扩大（−676→−852）；日线三卖后创新低（10-14 电子产业同步 -2.8%）</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td class="down">下跌中（无止跌结构）</td><td class="ev">日线中枢 11790–13616 跌破成三卖；下跌段绿柱面积重新放大（H-D2 328 → H-D3 864）</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b>板块主跌段 → 个股多头信号 ×0.6、空头信号 ×1.0。博通集成 9 月三连板（+33%）走独立行情、10 月随板块回调后率先在 MA20/Fib 0.5 获得支撑并反弹——与晶晨（支撑测试中）、乐鑫（+14% 领涨）共同构成端侧 SoC 子板块的独立分化，但板块β仍是最大外部风险。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="up">多（趋势确立）</td><td class="ev">MA5 43.6＞MA10 40.9＞MA20 38.9 多头排列；MACD 金叉后红柱 1.17（收敛仍正）；摆动点 HH＋HL（H 44.4＞41.4，L 34.72＞31.5）；价格站上周线中枢上沿 39.0</td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="up">多（回调中）</td><td class="ev">HH＋HL 上升趋势（H 49.98＞44.40＞41.21，L 34.72＞30.70）；MA20＞MA60 且斜率向上；MACD 绿柱 4 日扩大但 D4 段面积仅 0.36、DIF 1.19 未破零轴——回调动能极弱</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="flat">底部修复初现</td><td class="ev">60m 中枢 45.18–46.68（0922–1013）被跌破后，10-13 低 39.40 出现 60m 底背驰修复（MACD 绿柱 −0.48→＋0.05 刚转正）；反弹至 43.66 受阻于中枢下沿区</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线多＋日线多＝「主升段中回调」矩阵，操作基调「回踩做多」；但 60 分钟级别仍处 45.18–46.68 中枢下方（反弹未收复），短线需先修复 43.7–45.2 压力带。板块主跌段使信号打 6 折降为偏多。（矩阵定位：周多/日多＝主升段，叠加板块折扣与 60m 短线压制修正）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 +1</span><span class="wt">权重 0.35（趋势运行中场景）</span></div>
+  <p>日线<b>上升趋势确立且未被破坏</b>：最近两个摆动高点 44.40（08-17）→49.98（09-24）创高（HH），两个摆动低点 30.70（07-21）→34.72（09-11）抬升（HL）。当前回调自 49.98 起 8 个交易日最大回撤 −18%，但仍高于前 HL 34.72 达 19.5%，甚至未触及 Fib 0.5（40.06）——10-14 低点 40.53 恰在其上获得支撑，属健康回调。趋势破坏预警线＝前 HL 34.72。</p>
+  <div class="ev">
+2026-07-21 | L 30.70 | 前低（HL 序列第 1 点）<br>
+2026-08-17 | H 44.40 | 高点创出（量比 1.29×）<br>
+2026-09-11 | L 34.72 | 低点抬高（HL 确认，量比 0.91× 缩量）<br>
+2026-09-24 | H 49.98 | 再创新高（HH 确认）→ 上升趋势成立<br>
+2026-10-14 | L 40.53 / 收 41.51 | 回踩 Fib 0.5（40.06）上方获支撑，量比 1.07× 温和反弹<br>
+均线：MA20 41.25 ＞ MA60 39.32 且斜率向上——中期多头排列完好
+  </div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 +1</span><span class="wt">权重 0.35（趋势运行中场景）</span></div>
+  <p>判定：<b>Phase D–E 加价期，当前为 markup 中的缩量回踩（LPS 性质）</b>。9 月中旬三连板放量突破（SOS）完成筹码快速换手，回调段量能萎缩至拉升高峰的 1/4–1/3、MACD 绿柱面积极小——典型的强势整理而非派发；49.98 冲高日的放量滞涨嫌疑已被缩量回调基本排除（未 100% 证伪，列为监测项）。</p>
+  <table>
+    <tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr>
+    <tr><td class="num">2026-09-11</td><td>二次测试（缩量下探回升）</td><td class="num">低 34.72，收 35.36</td><td class="num">0.91×（卖压枯竭）</td></tr>
+    <tr><td class="num">2026-09-18</td><td>SOS：放量首板</td><td class="num">收 39.81（＋10%）</td><td class="num">2.16×</td></tr>
+    <tr><td class="num">2026-09-21</td><td>SOS：二板</td><td class="num">收 43.79（＋10%）</td><td class="num">2.86×</td></tr>
+    <tr><td class="num">2026-09-22</td><td>SOS：三板（高开秒板）</td><td class="num">收 48.17（＋10%）</td><td class="num">2.77×</td></tr>
+    <tr><td class="num">2026-09-24</td><td>冲高 49.98 滞涨（BC 嫌疑待排除）</td><td class="num">高 49.98，收 48.51</td><td class="num">1.36×</td></tr>
+    <tr><td class="num">2026-10-08~13</td><td>缩量回调（LPS 性质验证）</td><td class="num">42.44→41.05</td><td class="num">0.55× / 0.77× / 0.75×</td></tr>
+    <tr><td class="num">2026-10-14</td><td>MA20/Fib 0.5 支撑反弹</td><td class="num">收 41.51（＋1.12%）</td><td class="num">1.07×（温和）</td></tr>
+  </table>
+  <div class="note">证据链 7 条（≥3）→ 阶段判定成立。监测项：若后续放量（≥1.5×）跌破 40.06，LPS 定性作废、转为派发处理。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 0</span><span class="wt">权重 0.20（趋势运行中场景）</span></div>
+  <p>日线中枢 34.72–44.40（0721–0924，脚本候选＋人工确认）。9-24 收盘 48.99 突破中枢上沿（幅度 4.59＞1×ATR 2.70，量比 1.36×，其后 3 根收盘 46+ 未回中枢内）——<b>三买当时成立</b>；但 10 月回调跌破 44.40 深入中枢内部（最低 41.05）→ <b>三买失效</b>，结构回到「中枢震荡」定性，当前 41.51 处中枢中上部。收复 44.40 才能重建三买/突破结构。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    <tr>
+      <td>A（默认）</td><td class="num">n=5</td><td class="num">0.5×ATR14（≈1.35）</td>
+      <td class="num">34.72–44.40（0721–0924）</td>
+      <td>9-24 三买成立后失效（回踩跌回中枢内）；当前中枢震荡，等收复 44.40 重建</td>
+    </tr>
+    <tr>
+      <td>B（60分钟）</td><td class="num">n=4（60m）</td><td class="num">0.5×60m ATR（≈0.65）</td>
+      <td class="num">45.18–46.68（60m，0922–1013）</td>
+      <td>60m 跌破中枢后 10-13 出现底背驰修复（绿柱转正），反抽 43.66 受阻——60m 三卖后的一买修复进行中</td>
+    </tr>
+  </table>
+  <div class="ev">
+日线 MACD：DIF ＋1.01 ＜ DEA ＋1.30，绿柱 −0.58 连续 4 日扩大——短线调整未完成，但 D4 段绿柱面积仅 0.36（vs D3 段 8.70）且 DIF 全程未破零轴（最低 ＋1.19 vs D2/D3 段均曾转负）→ 回调动能衰竭迹象明显<br>
+背驰检查：上涨段红柱面积 U2 8.08 ≈ U3 7.35（动能持平，无顶背驰）；DIF 09-29 高点 ＋2.01 创新高<br>
+周线 MACD：金叉后红柱 1.17（收敛仍正），DIF ＋1.72 ＞ DEA ＋1.13 零轴上——周线级别多头结构完好<br>
+60 分钟：中枢 45.18–46.68 下方修复，反抽 43.66 未及中枢下沿，短线压力带 43.7–45.2
+  </div>
+  <div class="note"><b>画法投票：</b>日线中枢与 60m 中枢两级画法自洽（日线中枢内震荡＝60m 中枢下方修复），结论一致 → 不扣分。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 0</span><span class="wt">权重 0.10（趋势运行中场景）</span></div>
+  <p>两套数法并存、含义分歧，信号保守取 0，目标位仅作参考。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    <tr>
+      <td>首选：浪 4 回调（重数后）</td>
+      <td>浪1＝30.14→44.40（0403→0817）；浪2＝44.40→34.72（−22%，HL）；浪3＝34.72→49.98（＋44%）；当前浪4 回调（49.98→41.51，−17%）——初数时浪 4 低于 44.40 进入浪 1 价格区违反铁律，重数后浪 1 起点改标 34.72、以 Fib 回撤位界定浪 4 支撑</td>
+      <td class="num">浪4 支撑带 40.06–40.53（Fib 0.5＋10-14 低点）；浪5 目标＝1.0×浪3 ≈ 34.72＋15.26×1.0 → 55~57.6（Fib 1.382 扩展 57.56）</td>
+      <td class="num">40.06（浪 4 支撑下界）；37.72（Fib 0.618）为浪 4 极限</td>
+    </tr>
+    <tr>
+      <td>次选：A 浪调整</td>
+      <td>30.14→49.98 完成一轮推动（5 浪），49.98 起为 A 浪回调；当前 41.51 为 A-a 或 a-b 反弹，后续仍有 A-c 下探</td>
+      <td class="num">反弹压力 44.4–46.7；A-c 目标 37.7–38（Fib 0.618 一带）</td>
+      <td class="num">36.37（Fib 0.618−缓冲）</td>
+    </tr>
+  </table>
+  <div class="note warn"><b>铁律校验：</b>初数「浪4（41.51）进入浪1（30.14→44.40）价格区」违反铁律 → 重数一次 → 首选改以 0911 低点为浪 2 终点口径，通过校验；次选亦通过。两套数法对「40.06 一带为关键支撑」一致，但对反弹高度分歧（浪 5 vs A-b）→ 波浪不参与方向投票。</div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  <tr><td class="up">压力</td><td class="num">43.66–44.40</td><td>10-14 盘中高点＋日线中枢 ZG（脚本候选）＋MA10 44.07</td><td>短线第一压力带，收复则结构重建</td></tr>
+  <tr><td class="up">压力</td><td class="num">45.18–46.68</td><td>60m 中枢 ZD–ZG＋10-9 反弹高点</td><td>60m 级别修复目标区</td></tr>
+  <tr><td class="up">压力</td><td class="num">47.10</td><td>44.40＋1×ATR（有效突破确认位）</td><td>加仓触发线</td></tr>
+  <tr><td class="up">压力</td><td class="num">49.98</td><td>09-24 前高（HH，摆动点）</td><td>核心压力：突破则打开新上升空间</td></tr>
+  <tr><td class="up">压力</td><td class="num">55~57.6</td><td>波浪浪 5 目标 / Fib 1.382 扩展（脚本计算）</td><td>延伸目标（乐观情形）</td></tr>
+  <tr><td class="down">支撑</td><td class="num">40.06–40.53</td><td>Fib 0.5（49.98→30.14，脚本计算）＋10-14 低点</td><td><b>当前支撑带</b>：回踩入场观察区</td></tr>
+  <tr><td class="down">支撑</td><td class="num">41.25</td><td>MA20</td><td>短线多空参考（10-14 收盘已站回）</td></tr>
+  <tr><td class="down">支撑</td><td class="num">37.72</td><td>Fib 0.618</td><td>回调极限位（跌破转弱）</td></tr>
+  <tr><td class="down">支撑</td><td class="num">36.37</td><td>37.72−0.5×ATR14（结构失效位）</td><td>收盘跌破＝上升趋势证伪，全部离场</td></tr>
+  <tr><td class="down">支撑</td><td class="num">34.72</td><td>09-11 摆动低点（前 HL，道氏趋势线）</td><td>趋势生命线</td></tr>
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td class="flat">无顶背驰；回调动能衰竭迹象明显</td><td class="ev">U2/U3 红柱面积 8.08/7.35 持平、DIF 创新高（＋2.01）；D4 回调段绿柱面积仅 0.36（vs D3 8.70）、DIF 未破零轴——量价结构健康</td></tr>
+  <tr><td>量价配合</td><td class="up">攻量足、跌量缩，回调属良性</td><td class="ev">拉升段量比 2.16×/2.86×/2.77×；回调段 0.55×/0.77×/0.75×（萎缩至峰值的 1/4–1/3）；10-14 支撑反弹 1.07× 温和放量</td></tr>
+  <tr><td>突破有效性</td><td class="flat">9-24 三买突破后失效；当前无有效突破</td><td class="ev">对 44.40 的重新突破需：收盘 ≥47.10（44.40＋1×ATR）＋量 ≥21.3 万手（1.5×MA5 量）＋3 根不回落——现价 41.51，三条均未满足</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">原始 +0.70 × 板块系数 0.6 = <b>+0.42</b> → 偏多（＋0.2 ~ ＋0.5）</td></tr>
+  <tr><td>方向判断</td><td>周线/日线上升趋势确立且回调未破坏结构：HH＋HL 完整、回调缩量、DIF 未破零轴、MA20/Fib 0.5 支撑有效——当前为「强趋势中的健康回踩」</td></tr>
+  <tr><td>操作基调</td><td><b>试探性做多，两条入场路径二选一</b>：A＝回踩 40.0–40.6 缩量企稳（锚 41.0）；B＝收盘 ≥47.10 突破确认后回踩 44.4–45 参与（锚 45.0）；不追 43.7 以下的盘中反弹</td></tr>
+  <tr><td>关键冲突</td><td>道氏/威科夫（＋1）与缠论（0）分歧：缠论口径下 9-24 三买已失效、当前仅中枢震荡——调和点在 44.40：收复＝结构重建（道氏/威科夫口径被确认），跌破 40.06＝威科夫 LPS 定性作废转向次选波浪（A 浪调整）</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul>
+    <li>板块 β 逆风：半导体主跌段未止跌（10-14 电子产业续创新低），个股独立行情随时可能被拉回；</li>
+    <li>9-24 高点放量滞涨的派发嫌疑未 100% 排除——若放量跌破 40.06，回调性质从「LPS」改判「派发」，威科夫多头信号作废；</li>
+    <li>9 月三连板＋8 个涨停日的高波动历史：ATR 6.51%，涨停板开盘的跳空风险会使止损位失效；</li>
+    <li>日线 MACD 绿柱仍在扩大（−0.58），短线调整未确认结束，10-14 反弹幅度有限（13:00 冲 43.66 即回落）；</li>
+    <li>波浪次选（A 浪调整）未被排除：若 44.4–46.7 反弹滞涨，仍有 A-c 下探 37.7–38 的风险路径。</li>
+  </ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>缠论日线中枢（34.72–44.40）与 60m 中枢（45.18–46.68）画法自洽；波浪经一次重数后首选/次选并存且含义分歧，信号置 0、分歧点已纳入价位体系；周线脚本样本 55 根不足 60 根，以日线合成计算并与 250 根日线大级别结构互证；49.98 高点为摆动点确认状态（右侧已 5 根以上，确认有效）。本股 9 月三连板显示强资金属性，结构分析的噪音水平高于常规标的。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算（MA / ATR / MACD 面积 / 量比 / 摆动点 / 笔 / 中枢候选 / 黄金分割）。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅供研究参考，不构成个人投资建议，不构成任何买卖指令，不涉及仓位与资金管理。生成时间 2026-10-14 16:00（价格数据截至当日收盘）。
+</div>
+
+</div>
+</body>
+</html>

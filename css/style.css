@@ -78,6 +78,8 @@ pre code { border: 0; padding: 0; }
 .site-header nav a { color: var(--muted); padding: 4px 2px; position: relative; transition: color .2s; }
 .site-header nav a:hover { color: var(--text); }
 .site-header nav a.active { color: var(--text); }
+.site-header nav a.nav-hot { color: var(--up); font-weight: 600; }
+.site-header nav a.nav-hot:hover { color: var(--up); opacity: .85; }
 .site-header nav a.active::after {
   content: "";
   position: absolute;

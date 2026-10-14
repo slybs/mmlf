@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小米集团-W 01810.HK · 单票深度分析与量价评判</title>
+<meta name="description" content="评级：暂时回避（技术面）／关注等待（基本面）；操作回避·等LPS，硬止损22.46（-8.4%）；首次覆盖且属结构破坏型（技术面项7/60+信号项8/45双坏）；13家投行买入目标均价38.42港元与现价裂口明显，市场正用价格投票。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>小米集团-W 01810.HK · 深度分析与量价评判</h1>
+    <div class="sub">港股 · 电子制造 · 智能手机＋IoT＋智能电动汽车 · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12（盘中）</span>
+      <span>评分 56/165 · 暂时回避</span>
+      <span>威科夫阶段：下跌期（Markdown）</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+<h2 class="sec"><span class="no">00</span>核心结论</h2>
+<div class="verdict">
+<h2>评级：暂时回避（技术面）／关注等待（基本面）</h2>
+<div class="rate">
+<div><div class="k">最新价（盘中）</div><div class="v">24.52 <span style="font-size:13px">HKD</span></div><div class="k">10-12 −5.55%｜量比 1.66x</div></div>
+<div><div class="k">12 项评分</div><div class="v">56<span style="font-size:13px">/165</span></div><div class="k">首版基线，无前次对比</div></div>
+<div><div class="k">威科夫阶段</div><div class="v sm">下跌期（Markdown）</div><div class="k">未出现 Spring／底背离</div></div>
+<div><div class="k">操作建议</div><div class="v sm" style="color:#a32a22">回避 · 等 LPS</div><div class="k">止损 22.46（−8.4%）</div></div>
+</div>
+<p><em>小米被澎程锁单破 7 万辆的消息推出一根 +9.72% 巨量长阳，次日即放量回吐 −5.55% 全部吞没——这是一次典型的"消息诱多"，在 MA20 下方、MACD 空头延续、无底背驰的结构里，正确动作是不追、等缩量回踩确认。</em></p>
+<div class="grid3">
+<div class="tile down"><div class="lb">关键回撤位</div><div class="vl">23.58</div><div class="hint">10-08 低点／60日低；破位看 21.30</div></div>
+<div class="tile gold"><div class="lb">分支等权当日</div><div class="vl">−1.58%</div><div class="hint">小米 −5.55% 跑输 3.97pct 且放量 → 叠加个股卖压</div></div>
+<div class="tile navy"><div class="lb">估值快照</div><div class="vl">17.9×</div><div class="hint">PE-TTM｜PB 2.04｜市值 6325 亿港元</div></div>
+</div>
+<div class="note warn"><div class="hd">前次结论回验</div>本报告为小米集团-W 的<strong>首次覆盖</strong>，无前次报告可回验，本版评分 56 与关键价位（23.58／25.63／26.92）作为后续版本的回验基线。</div>
+<div class="note"><div class="hd">与框架的衔接逻辑</div>12 项中<strong>结构项（1/2/3/9）合计仅 7/60</strong>，信号项（8/10/11/12）合计 8/45，两者同时坏 → 属<strong>结构破坏型</strong>而非"结构完好型回调"，按纪律执行回避而非等缩量建仓。顶背离 −30 一票否决<strong>未触发</strong>，故评分未被打穿。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">01</span>公司画像</h2>
+<div class="card">
+<p><strong>小米集团-W（01810.HK）</strong>，2018-07-09 于港交所上市，每手 200 股，总市值 6324.87 亿港元，在电子制造行业市值排名第 1。业务由四条腿构成：<strong>智能手机</strong>（基本盘）、<strong>IoT 与生活消费产品</strong>、<strong>互联网服务</strong>（高毛利）、<strong>智能电动汽车</strong>（2024 年起放量，当前是股价的核心变量）。</p>
+<h4>卡位清单</h4>
+<ul>
+<li>汽车：9 月交付逾 <strong>4 万辆</strong>（约 3 万辆 SU7＋YU7、逾 1 万辆 SkyNomad），年初至今累计 <strong>28.6 万辆</strong>；公司全年目标 <strong>43 万辆</strong>，花旗预测 45 万辆 <span class="tag t-src">[卖方预测]</span></li>
+<li>SkyNomad（澎程）N70/N90 于 2026-09-07 上市，<strong>首月锁单破 7 万辆</strong>，需求集中于高端 N70 Max/N90 Max，产品组合优于大华继显先前预期 <span class="tag t-src">[卖方预测]</span></li>
+<li>交付周期：N70 Pro/Max 6–8 周，N90 Max 超 12 周；SU7 基础/Pro/Max 5–8 周，Ultra 仅 12 月交付 <span class="tag t-src">[卖方预测]</span></li>
+<li>资本动作：2026-09-29 以 2517.86 万港元回购 100 万股，<strong>回购均价 25.18 港元</strong>，高于当前 24.52 <span class="tag t-src">[公司公告]</span></li>
+</ul>
+<h4>财务与估值</h4>
+<table>
+<thead><tr><th>指标</th><th class="num">数值</th><th>口径与来源</th></tr></thead>
+<tbody>
+<tr><td>PE（TTM）</td><td class="num">17.90×</td><td>tdx ProInfo.PETTM</td></tr>
+<tr><td>PE（静态）</td><td class="num">20.50×</td><td>tdx ProInfo.PEStatic，<strong>与 TTM 口径不同，不可横比</strong></td></tr>
+<tr><td>每股收益 EPS</td><td class="num">0.6332 HKD</td><td>tdx MGSY</td></tr>
+<tr><td>每股净资产 BPS</td><td class="num">12.042 HKD</td><td>tdx MGJZC</td></tr>
+<tr><td>PB</td><td class="num">2.04×</td><td><span class="tag t-src">[推算]</span> 24.52 ÷ 12.042</td></tr>
+<tr><td>ROE</td><td class="num">5.26%</td><td><span class="tag t-src">[推算]</span> 0.6332 ÷ 12.042，单期口径，非年化</td></tr>
+<tr><td>总市值</td><td class="num">6324.87 亿 HKD</td><td>tdx ZSZ</td></tr>
+<tr><td>总资产／净资产</td><td class="num">5160.41／2697.00 亿</td><td>tdx ZZC／JZC</td></tr>
+<tr><td>净利润</td><td class="num">—</td><td><span class="tag t-src">[口径存疑]</span> tdx JLY=141.86 亿与"市值÷PE-TTM"反推的 353 亿不一致，疑为单期数据，本报告不采用</td></tr>
+</tbody>
+</table>
+<div class="note warn"><div class="hd">机构目标价与现价的裂口</div>近 90 天 13 家投行给出买入评级，<strong>目标均价 38.42 港元</strong>，较现价 24.52 有 56.7% 空间 <span class="tag t-src">[卖方预测]</span>；但个股最新评级分布为"持有"（大华继显 27.6）、"增持"（兴证国际）与"买入"（花旗 34）并存。<strong>卖方目标价与二级市场定价出现明显裂口，是当前最需要警惕的信号——市场在用价格投票。</strong></div>
+<div class="note"><div class="hd">与同分支可比标的的产业位置</div>小米位于消费电子链的<strong>品牌终端</strong>位置，向上采购光学（舜宇）、声学（瑞声）、结构件与组装（比亚迪电子），向下自建整车。因此它同时承受"手机需求周期"与"汽车交付爬坡"两条曲线，这也是它当日跌幅显著跑输纯零部件标的的原因——终端定价权受制于需求端，弹性与脆弱性同源。</div>
+</div>
+</section>
+<!-- 01 核心结论：verdict 卡（评级/最新价/评分/阶段/操作建议 + 一句话 + 三 tile + 前次结论回验 note） -->
+<!-- 02 公司画像：业务/客户/财务表/增长引擎 + 与同分支标的的产业位置对比 note -->
+
+<section>
+<h2 class="sec"><span class="no">02</span>12 项评分与量价叙事</h2>
+<div class="card">
+<table>
+<thead><tr><th class="ctr">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th class="ctr">类型</th></tr></thead>
+<tbody>
+<tr><td class="ctr">1</td><td>价/MA20</td><td class="num">2</td><td class="num">15</td><td>0.957（价在 MA20 下方 4.3%）</td><td class="ctr"><span class="tag t-core">结构</span></td></tr>
+<tr><td class="ctr">2</td><td>MA20 斜率</td><td class="num">0</td><td class="num">10</td><td>−2.05%（5 日内下行）</td><td class="ctr"><span class="tag t-core">结构</span></td></tr>
+<tr><td class="ctr">3</td><td>MACD</td><td class="num">5</td><td class="num">20</td><td>DIF −0.680／DEA −0.619，空头延续</td><td class="ctr"><span class="tag t-core">结构</span></td></tr>
+<tr><td class="ctr">4</td><td>区间位置 60 日</td><td class="num">20</td><td class="num">20</td><td>11%（贴近 60 日低点 23.58）</td><td class="ctr"><span class="tag t-src">位置</span></td></tr>
+<tr><td class="ctr">5</td><td>ATR 收缩</td><td class="num">0</td><td class="num">15</td><td>0.91→1.03，扩张</td><td class="ctr"><span class="tag t-src">波动</span></td></tr>
+<tr><td class="ctr">6</td><td>低波 ATR%</td><td class="num">6</td><td class="num">10</td><td>4.20%（高波动档，止损倍数取 2.0×）</td><td class="ctr"><span class="tag t-src">波动</span></td></tr>
+<tr><td class="ctr">7</td><td>涨幅安全</td><td class="num">15</td><td class="num">15</td><td>60 日 −8.8%／均振合计 234% = −0.04</td><td class="ctr"><span class="tag t-src">位置</span></td></tr>
+<tr><td class="ctr">8</td><td>量价关系</td><td class="num">3</td><td class="num">15</td><td>供应进场：−5.55%、量 1.61x</td><td class="ctr"><span class="tag t-wait">信号</span></td></tr>
+<tr><td class="ctr">9</td><td>Spring</td><td class="num">0</td><td class="num">15</td><td>近 20 日无"跌破后快速收回"</td><td class="ctr"><span class="tag t-core">结构</span></td></tr>
+<tr><td class="ctr">10</td><td>回调质量</td><td class="num">5</td><td class="num">10</td><td>中性 0.86x</td><td class="ctr"><span class="tag t-wait">信号</span></td></tr>
+<tr><td class="ctr">11</td><td>底背离</td><td class="num">0</td><td class="num">20</td><td>无</td><td class="ctr"><span class="tag t-wait">信号</span></td></tr>
+<tr><td class="ctr">12</td><td>顶背离</td><td class="num">0</td><td class="num">0</td><td>无（一票否决未触发）</td><td class="ctr"><span class="tag t-wait">信号</span></td></tr>
+<tr><td colspan="2"><strong>合计</strong></td><td class="num"><strong>56</strong></td><td class="num"><strong>165</strong></td><td><strong>暂时回避</strong>｜结构项 7/60 · 信号项 8/45</td><td class="ctr">—</td></tr>
+</tbody>
+</table>
+<div class="src">数据源：腾讯财经日线（前复权 200 根，口径与通达信实时行情交叉验证一致：现价均 24.52）＋ tdx_quotes（01810／setcode=31）。<strong>盘中数据</strong>，2026-10-12 收盘后第 3、5、8、10 项可能变化。</div>
+<div class="note bad"><div class="hd">降幅归因：结构破坏型，非结构完好型回调</div>四项结构指标（1/2/3/9）合计仅 <strong>7/60</strong>：价在 MA20 下方、MA20 斜率 −2.05%、MACD 空头延续、近 20 日无 Spring。<strong>四项全坏</strong>，说明不是"上升趋势中的健康回调"，而是趋势本身已被破坏。<br>对照炬芯模式（86→55，结构项坏 → 执行止损）与晶晨模式（103→93，仅信号项坏 → 等缩量建仓），本标的落在前者：<strong>纪律是回避与设止损，不是抄底。</strong><br>唯一的两项高分来自<strong>位置类</strong>指标（第 4 项 20/20、第 7 项 15/15）：股价已落在 60 日区间 11% 分位、60 日跌幅仅 −8.8% 远小于波动幅度。这意味着"位置已经不贵，但结构还没转好"——正是"关注等待"而非"买入"的典型形态。</div>
+</div>
+
+<div class="svgbox"><svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>小米集团-W 近40日收盘价与MA20走势</title>
+<rect x="0" y="0" width="900" height="405" fill="#ffffff"/>
+<line x1="60" y1="50.0" x2="880" y2="50.0" stroke="#e2e6ec" stroke-width="1"/><text x="52" y="54.0" font-size="10" fill="#7b8494" text-anchor="end">30.0</text><line x1="60" y1="114.3" x2="880" y2="114.3" stroke="#e2e6ec" stroke-width="1"/><text x="52" y="118.3" font-size="10" fill="#7b8494" text-anchor="end">28.5</text><line x1="60" y1="178.6" x2="880" y2="178.6" stroke="#e2e6ec" stroke-width="1"/><text x="52" y="182.6" font-size="10" fill="#7b8494" text-anchor="end">27.0</text><line x1="60" y1="242.9" x2="880" y2="242.9" stroke="#e2e6ec" stroke-width="1"/><text x="52" y="246.9" font-size="10" fill="#7b8494" text-anchor="end">25.5</text><line x1="60" y1="307.1" x2="880" y2="307.1" stroke="#e2e6ec" stroke-width="1"/><text x="52" y="311.1" font-size="10" fill="#7b8494" text-anchor="end">24.0</text>
+<line x1="60" y1="50" x2="60" y2="350" stroke="#7b8494" stroke-width="1"/>
+<polyline points="60.0,226.6 81.0,213.7 102.1,159.7 123.1,146.0 144.1,92.0 165.2,143.4 186.2,146.0 207.2,116.0 228.2,158.0 249.3,143.4 270.3,152.0 291.3,154.6 312.4,133.1 333.4,159.7 354.4,116.9 375.5,157.1 396.5,182.0 417.5,205.1 438.5,224.9 459.6,206.0 480.6,171.7 501.6,200.0 522.7,213.7 543.7,215.4 564.7,204.3 585.8,153.7 606.8,170.0 627.8,213.7 648.8,196.6 669.9,225.7 690.9,227.4 711.9,255.7 733.0,254.0 754.0,296.9 775.0,312.3 796.1,296.0 817.1,309.7 838.1,321.7 859.1,223.1 880.2,284.9" fill="none" stroke="#1a3a6b" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="60.0,150.5 81.0,153.2 102.1,151.5 123.1,150.2 144.1,145.3 165.2,147.1 186.2,150.3 207.2,157.7 228.2,165.3 249.3,167.3 270.3,168.1 291.3,168.9 312.4,168.0 333.4,166.8 354.4,163.8 375.5,164.1 396.5,163.5 417.5,163.5 438.5,163.4 459.6,161.8 480.6,159.1 501.6,158.4 522.7,161.1 543.7,164.6 564.7,170.2 585.8,170.7 606.8,171.9 627.8,176.8 648.8,178.7 669.9,182.8 690.9,186.6 711.9,191.6 733.0,197.7 754.0,204.5 775.0,214.3 796.1,221.3 817.1,227.6 838.1,233.5 859.1,233.4 880.2,237.3" fill="none" stroke="#b8860b" stroke-width="1.8" stroke-dasharray="6 4"/>
+<circle cx="144.1" cy="92.0" r="4.5" fill="#a32a22" stroke="#fff" stroke-width="1.5"/><text x="144.1" y="78.0" font-size="11" fill="#a32a22" text-anchor="middle" font-weight="600">08-21 高29.10</text><circle cx="585.8" cy="153.7" r="4.5" fill="#a32a22" stroke="#fff" stroke-width="1.5"/><text x="585.8" y="139.7" font-size="11" fill="#a32a22" text-anchor="middle" font-weight="600">09-21 收27.58</text><circle cx="754.0" cy="296.9" r="4.5" fill="#a32a22" stroke="#fff" stroke-width="1.5"/><text x="754.0" y="316.9" font-size="11" fill="#a32a22" text-anchor="middle" font-weight="600">10-02 破位-3.96%</text><circle cx="838.1" cy="321.7" r="4.5" fill="#a32a22" stroke="#fff" stroke-width="1.5"/><text x="838.1" y="343.7" font-size="11" fill="#a32a22" text-anchor="middle" font-weight="600">10-08 60日低23.58</text><circle cx="859.1" cy="223.1" r="4.5" fill="#0f6b3c" stroke="#fff" stroke-width="1.5"/><text x="845.1" y="209.1" font-size="11" fill="#0f6b3c" text-anchor="end" font-weight="600">10-09 +9.72% 2.25x</text><circle cx="880.2" cy="284.9" r="4.5" fill="#a32a22" stroke="#fff" stroke-width="1.5"/><text x="874.2" y="302.9" font-size="11" fill="#a32a22" text-anchor="end" font-weight="600">10-12 -5.55%</text>
+<text x="884" y="229.3" font-size="10" fill="#b8860b" text-anchor="end" font-weight="600">MA20 25.63</text>
+<line x1="60.0" y1="350" x2="60.0" y2="354" stroke="#7b8494"/><text x="60.0" y="368" font-size="10" fill="#7b8494" text-anchor="middle">08-17</text><line x1="291.3" y1="350" x2="291.3" y2="354" stroke="#7b8494"/><text x="291.3" y="368" font-size="10" fill="#7b8494" text-anchor="middle">09-01</text><line x1="585.8" y1="350" x2="585.8" y2="354" stroke="#7b8494"/><text x="585.8" y="368" font-size="10" fill="#7b8494" text-anchor="middle">09-21</text><line x1="880.2" y1="350" x2="880.2" y2="354" stroke="#7b8494"/><text x="880.2" y="368" font-size="10" fill="#7b8494" text-anchor="middle">10-12</text>
+<text x="60" y="392" font-size="10" fill="#7b8494">纵轴：收盘价（港元）｜蓝线：收盘价｜金虚线：MA20｜2026-08-17 至 2026-10-12（盘中）</text>
+</svg></div>
+<div class="src">上图 40 根收盘价 + MA20；事件点标注见下。蓝线 08-21 见高 29.10 后单边回落，10-09 消息脉冲后次日全部回吐。</div>
+
+<h3>逐段解读</h3>
+<table>
+<thead><tr><th>区间</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+<tbody>
+<tr><td>08-17 ~ 08-21</td><td>25.88 → 29.02，创 40 日高 29.10</td><td>08-19 放量 3.4 亿股（区间最大）</td><td>急拉后见顶，量能峰值即价格峰值</td></tr>
+<tr><td>08-24 ~ 09-18</td><td>27–28 区间横盘，09-21 反抽 27.58</td><td>量能递减至 0.74–1.1 亿股</td><td>高位派发：价格不跌但买盘萎缩</td></tr>
+<tr><td>09-21 ~ 09-30</td><td>27.58 → 25.24，跌破 MA20 后加速</td><td>09-29 放量 1.46 亿股</td><td>有效下跌，MA20 由支撑转压力</td></tr>
+<tr><td>10-02 ~ 10-08</td><td>24.24 → 23.66，10-02 单日 −3.96%</td><td>量能萎缩至 0.46–1.29 亿股</td><td>缩量阴跌，供应未枯竭、需求更弱</td></tr>
+<tr><td>10-09</td><td>+9.72% 收 25.96，盘中最高即收盘</td><td><strong>2.56 亿股，量比 2.25x</strong></td><td>消息驱动单日脉冲，未突破 09-21 的 27.58</td></tr>
+<tr><td><strong>10-12（当日）</strong></td><td><strong>−5.55% 收 24.52，吞没 10-09 全部涨幅</strong></td><td><strong>1.83 亿股，量比 1.61x</strong></td><td><strong>供应进场＋消息诱多被证伪</strong></td></tr>
+</tbody>
+</table>
+
+<h3>消息面事件时间轴（消息日 ↔ K 线放量日对应）</h3>
+<table>
+<thead><tr><th>日期</th><th>事件</th><th>来源</th><th>当日 K 线对应</th></tr></thead>
+<tbody>
+<tr><td>09-07</td><td>小米正式推出 SkyNomad（澎程）N70/N90 系列</td><td><span class="tag t-src">[卖方预测]</span> 花旗研报转述</td><td>09-08 ~ 09-15 在 26–27 横盘，量能平稳，消息未在股价端发酵</td></tr>
+<tr><td>09-29</td><td>回购 100 万股，耗资 2517.86 万港元，<strong>均价 25.18</strong></td><td><span class="tag t-src">[公司公告]</span></td><td>当日收 25.20（−2.05%），放量 1.46 亿股；<strong>回购未能托住股价</strong></td></tr>
+<tr><td>10-02</td><td>花旗：9 月交付超 4 万辆，维持买入目标 34 港元；同时指出三季度"料为今年最弱一季"，业绩前股价或受压</td><td><span class="tag t-src">[卖方预测]</span> 智通财经</td><td><strong>当日 −3.96% 破位加速</strong>——利空表述压过交付利好</td></tr>
+<tr><td>10-07</td><td>澎程上市满一个月，累计锁单破 7 万辆</td><td><span class="tag t-src">[公司口径]</span> 金吾财讯</td><td>10-07 收 23.94，量比仅 <strong>0.41x</strong>（区间地量）——消息当日未发酵</td></tr>
+<tr><td>10-09</td><td>锁单消息集中兑现，早盘涨超 6%，收 <strong>+9.72%</strong> 报 25.96</td><td>证券之星／金吾财讯</td><td><strong>量比 2.25x、2.56 亿股，为 40 日最大量</strong>——"为什么是这天放量"的答案</td></tr>
+<tr><td><strong>10-12</strong></td><td>大华继显上调目标价 26.2→27.6，维持<strong>"持有"</strong>；预期 Q4 SkyNomad 交付逾 5 万辆</td><td><span class="tag t-src">[卖方预测]</span> 智通财经</td><td><strong>当日 −5.55%</strong>，放量 1.83 亿股吞没 10-09 全部涨幅——利好评级也止不住跌</td></tr>
+</tbody>
+</table>
+<div class="note"><div class="hd">时间轴给出的核心判断</div>三条独立利好（回购、锁单破 7 万、投行上调目标价）分别落在 09-29、10-07、10-12，<strong>股价对三者全部给出负向或中性反应</strong>；唯一一次显著上涨（10-09）发生在锁单消息从公司口径扩散到财经媒体的时点，且次日即被回吐。<strong>这不是"没有利好"，而是"利好已无法推动价格"——供应结构占据主导的直接证据，也是把评级压在"回避"而非"买入"的关键依据。</strong></div>
+
+<h3>量价三问</h3>
+<div class="grid3">
+<div class="card"><h4>① 最近一次放量是有效突破吗？</h4><p><strong class="up">否。</strong>10-09 放量 2.25x 涨 +9.72%，但高点 25.96 既未突破 09-21 的 27.58，也未站上 MA20（25.63）与 MA60（26.92）。对照"价创新高 + 量放大 30%"定义，<strong>量够、价不够</strong>；且次日即被放量吞没，属消息驱动的 UT／诱多。</p></div>
+<div class="card"><h4>② 最近一次下跌是有效下跌还是诱空？</h4><p><strong class="up">有效下跌（供应主导）。</strong>10-12 放量 1.61x 下跌，且跌破了 10-09 的整个实体。对照"创新低 + 缩量"的诱空定义：既未创新低（最低 24.30 &gt; 23.58），也未缩量，<strong>两个条件都不满足</strong>，不能按诱空抄底。</p></div>
+<div class="card"><h4>③ 现在是底部反转吗？</h4><p><strong class="down">否。</strong>底部反转需"企稳 + 连续 3 日温和放大"。实际序列是 10-05~10-08 缩量阴跌（0.78/0.72/0.41/0.86x）→ 10-09 单日 2.25x 脉冲 → 10-12 1.61x 回落，<strong>既不企稳也不连续</strong>，且无 Spring、无底背离（第 9、11 项均为 0）。</p></div>
+</div>
+
+<h3>系统性 vs 个股性对照</h3>
+<table>
+<thead><tr><th>标的</th><th>代码</th><th class="num">12 项评分</th><th class="num">价/MA20</th><th>MACD</th><th class="num">当日量比</th><th class="num">当日涨跌</th></tr></thead>
+<tbody>
+<tr><td><strong>小米集团-W</strong></td><td>01810</td><td class="num"><strong>56</strong></td><td class="num">0.957</td><td>空头延续 DIF−0.680</td><td class="num">1.66x</td><td class="num down">−5.55%</td></tr>
+<tr><td>比亚迪电子</td><td>02888</td><td class="num">56</td><td class="num">0.948</td><td>空头延续 DIF−3.283</td><td class="num">1.37x</td><td class="num up">+1.54%</td></tr>
+<tr><td>舜宇光学</td><td>02382</td><td class="num">53</td><td class="num">0.913</td><td>空头延续 DIF−1.283</td><td class="num">0.92x</td><td class="num down">−2.81%</td></tr>
+<tr><td colspan="3"><strong>7 只等权平均（含瑞声/比亚迪股份/理想/小鹏）</strong></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><strong>−1.58%</strong></td></tr>
+</tbody>
+</table>
+<div class="note warn"><div class="hd">判读：系统性走弱 × 个股性卖压叠加</div>三只可比标的<strong>评分全部落在 53–56 区间、价/MA20 全部低于 1.0、MACD 全部空头延续</strong>——这是消费电子／港股科技链的系统性调整，不是小米一家的问题。<br>但小米当日 −5.55% <strong>跑输等权平均 3.97 个百分点</strong>，且量比 1.66x 为三只中最高：按"跌幅跑输 + 放量 = 叠加个股/支线卖压"的判读规则，<strong>在系统性下跌之上还叠加了个股层面的获利回吐</strong>（10-09 消息脉冲的解套盘与获利盘集中在 10-12 出货，当日资金净流入仅 1.78 亿、主力净占比 −3.59%）。</div>
+</section>
+<!-- 03 最新12项评分：逐项表（含 vs 前次列）+ 降幅归因 note + 近40日量价叙事 SVG + 逐段解读表 + 量价三问三卡 + 系统性 vs 个股性对照表 -->
+
+<section>
+<h2 class="sec"><span class="no">03</span>操作计划</h2>
+<div class="grid3">
+<div class="card"><h4>已持仓者</h4>
+<ul>
+<li><strong>止损 22.46</strong>（2.0×ATR，−8.4%）。<span class="up">无条件执行，不做任何"再等等"。</span>ATR% 4.20% 属高波动档，止损宽度 8.4% 尚在 20% 排除线内，可持有但不加码。</li>
+<li><strong>反抽 25.63–26.92（MA20–MA60）且量比 &lt;1.0 → 减半。</strong>这是 10-09 被套盘的解套区，缩量反抽即是出货窗口，不是加仓窗口。</li>
+<li>跌破 23.58（10-08 低）→ 直接看 21.30（年内低），中间无明确支撑。</li>
+</ul></div>
+<div class="card"><h4>空仓者</h4>
+<ul>
+<li><strong>当前不满足任何再进场条件</strong>：价/MA20 0.957、MA20 斜率 −2.05%、MACD 空头延续、量比 1.66x 但方向向下。</li>
+<li>再进场需<strong>同时</strong>满足三条：① 收盘站上 25.63（MA20）且量比 ≥1.5×；② 回踩不破 25.63 且缩量至 ≤0.8×（LPS）；③ 60 日区间位置回升至 30% 以上。</li>
+<li>在此之前，10-09 式的消息脉冲<strong>一律不追</strong>——本次已被证伪一次。</li>
+</ul></div>
+<div class="card"><h4>长线／估值视角</h4>
+<ul>
+<li>PE-TTM 17.90×、PB 2.04×、ROE 5.26% <span class="tag t-src">[推算]</span>，绝对估值不贵，年内已跌 37.61%。</li>
+<li>卖方目标均价 38.42 港元（+56.7%）<span class="tag t-src">[卖方预测]</span>，但<strong>已有多家下调至持有/增持</strong>，目标价裂口需基本面兑现才能收敛。</li>
+<li>显著低估区参考：以 1.5×PB 折算约 <strong>18.06 港元</strong> <span class="tag t-src">[推算]</span>；但当前无盈利下修数据支撑，仅作极端情形刻度，不作为买入依据。</li>
+</ul></div>
+</div>
+
+<h3>关键价位地图</h3>
+<table>
+<thead><tr><th class="num">价位</th><th>性质</th><th>操作含义</th></tr></thead>
+<tbody>
+<tr><td class="num">27.58</td><td>近 20 日最高收盘（09-21）</td><td>反抽第一目标；站上才谈得上趋势修复</td></tr>
+<tr><td class="num">26.92</td><td>MA60</td><td>中期趋势分水岭①</td></tr>
+<tr><td class="num"><strong>25.63</strong></td><td><strong>MA20（当前价下方）</strong></td><td><strong>分水岭②：守住 X=25.63 → 短线修复；跌破则继续寻底</strong></td></tr>
+<tr><td class="num">25.18</td><td>09-29 回购均价</td><td>公司自身成本线，具心理支撑意义</td></tr>
+<tr><td class="num"><strong>24.52</strong></td><td><strong>当前价（盘中）</strong></td><td>10-09 脉冲全部回吐后的位置</td></tr>
+<tr><td class="num">23.58</td><td>10-08 低点／60 日低</td><td><strong>分水岭③：守住 X=23.58 → 双底待确认；跌破 Z=23.58 → W=看 21.30</strong></td></tr>
+<tr><td class="num">22.46</td><td>2.0×ATR 止损位</td><td>已持仓者的无条件离场线</td></tr>
+<tr><td class="num">21.30</td><td>年内低</td><td>破位后的下一目标，至此年初至今跌幅将达 −58%</td></tr>
+</tbody>
+</table>
+
+<h3>风险清单</h3>
+<div class="grid2">
+<div class="card"><h4>交易层面</h4>
+<ul>
+<li><span class="tag t-src">盘中数据</span>本报告基于 2026-10-12 盘中数据，收盘后第 3、5、8、10 项评分可能变化，关键价位以收盘确认为准。</li>
+<li><span class="tag t-src">高波动</span>ATR% 4.20%，Volatility 44.04，止损倍数 2.0×，单日波动常达 5% 以上。</li>
+<li><span class="tag t-src">分支联动</span>比亚迪电子、舜宇光学 MACD 均空头延续，若板块继续走弱，个股难以独立修复。</li>
+</ul></div>
+<div class="card"><h4>基本面层面</h4>
+<ul>
+<li><span class="tag t-src">业绩风险</span>花旗明确指出三季度"料为今年最弱一季"，业绩公布前股价或受压 <span class="tag t-src">[卖方预测]</span>。</li>
+<li><span class="tag t-src">交付依赖</span>全年 43 万辆目标需 Q4 交付约 14 万辆（SkyNomad 逾 5 万 + 旧款约 9 万），N90 Max 交期已超 12 周，产能与订单转化存在不确定性。</li>
+<li><span class="tag t-src">估值口径</span>PE 静态 20.50 与 PE-TTM 17.90 口径不同，跨标的横比须加标区分；净利润绝对值口径存疑，本报告未采用。</li>
+<li><span class="tag t-src">资金面</span>主力净占比 −3.59%，5 日资金净流入 17.83 亿但当日骤降至 1.78 亿，资金持续性待观察。</li>
+</ul></div>
+</div>
+<div class="note bad"><div class="hd">最后一句</div>小米的问题是<strong>结构坏了但位置不贵</strong>——这决定了它值得放进观察名单，却不值得现在伸手。等 MA20 走平、出现缩量回踩（LPS）或 Spring 三者其一，再按 25.63／23.58 两个分水岭执行。</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">04</span>数据来源</h2>
+<div class="card"><ul>
+<li><strong>行情</strong>：腾讯财经日线接口（前复权 200 根，timing_score.py 取数，2026-08-17 ~ 2026-10-12，40 根绘图区间）；与通达信 tdx_quotes（code=01810, setcode=31, hasCwInfo=1）交叉验证，现价均为 24.52、当日涨跌均为 −5.55%。</li>
+<li><strong>估值</strong>：tdx_quotes ProInfo／CwInfo／ExtInfo（PE-TTM 17.90、PE 静态 20.50、每股收益 0.6332、每股净资产 12.042、总市值 6324.87 亿港元、年内至今 −37.61%）。PB 与 ROE 为 <span class="tag t-src">[推算]</span>。</li>
+<li><strong>消息面</strong>：tdx_connector wenda_news_query（name=小米集团, symbol=01810, 2026-09-26 ~ 2026-10-12）——智通财经（大华继显 10-12、花旗 10-02）、金吾财讯（10-09 澎程锁单）、证券之星（10-09 早盘、09-29 回购）。</li>
+<li><strong>分支对照</strong>：timing_score.py --compare，01810／02888／02382／02018／01211／02015／09868 共 7 只，2026-10-12 同日数据。</li>
+<li><strong>评分解读口径</strong>：威科夫 12 项梯度评分体系（基础 105 + 威科夫 40 + 背离 ±30，上限 165）；A股量价关系验证五规则。</li>
+</ul></div>
+</section>
+
+<div class="foot">
+<strong>免责声明</strong>　本报告由阳之个股分析 V1 工作流自动生成，仅供研究参考，<strong>不构成个人投资建议</strong>，不对任何投资决策承担责任。<br>
+<strong>盘中数据声明</strong>：本报告基于 2026-10-12 盘中数据（港股未收盘），收盘价、涨跌幅、量比及第 3／5／8／10 项评分均可能变化，关键价位请以收盘确认。<br>
+<strong>标注体系</strong>：[卖方预测] 机构观点，非事实；[公司公告] 公司披露；[推算] 本报告自行外推；[口径存疑] 数据源内部不一致，未采用。<br>
+<strong>方法论边界</strong>：12 项评分为概率性判断，威科夫阶段与量价结构存在主观性；本报告不含仓位与资金管理建议。<br>
+生成时间：2026-10-12 17:20　|　数据基准日：2026-10-12（盘中）
+</div>
+<!-- 04 操作计划：三种持仓状态三卡 + 关键价位地图表 + 风险清单 grid2 + 最后一句总结 note -->
+<!-- 05 数据来源清单 -->
+<!-- foot 免责声明（含盘中数据与标注声明） -->
+
+</div>
+</body>
+</html>

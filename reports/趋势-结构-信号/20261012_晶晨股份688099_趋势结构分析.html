@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>晶晨股份（688099.SH）趋势结构分析报告</title>
+<meta name="description" content="结论谨慎，置信度仅「低」；多重冲突信号：周线均线仍多头 vs 日线LH+LL、10-09首次突破前高 vs 同日巨量UT派发；板块（半导体）处下降趋势且创新低，与个股偏空同向不打折。">
+<meta name="report-type" content="趋势结构信号">
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.high{color:var(--down); border-color:var(--down)}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.badge.warn{color:var(--up); border-color:var(--up); background:#fdf3f2}
+
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+
+.strat{border:1px solid var(--line-2); border-radius:3px; padding:18px 22px 20px;
+  margin:14px 0 4px; background:var(--bg)}
+.strat>h2{margin:0 0 14px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-size:16px}
+.strat.off{background:var(--bg-soft)}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.cols section h3{margin:0 0 8px; font-size:14px}
+.cols section h3 span{font-size:12px; color:var(--ink-3); font-weight:400; margin-left:6px}
+.gate{font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line);
+  padding-top:10px; margin-top:12px}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+  .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>晶晨股份（688099.SH）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-12</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>周线 151 根 + 日线 700 根 + 60 分钟 700 根</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir down">偏空（中枢内待方向）</span>
+    <span class="score">加权总分 S = −0.30（区间 −1 ~ +1）</span>
+    <span class="badge low">置信度：低</span>
+    <span class="score">板块基调：板块下降趋势且已创新低，与个股偏空同向（不打折）</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>0 多 · 2 空 · 2 中性</dd></div>
+    <div><dt>板块调节</dt><dd>板块空头 + 个股偏空 = 同向共振，不打折（×1.0）</dd></div>
+    <div><dt>当前阶段</dt><dd>派发期 Phase C（UT 已现，未确认）</dd></div>
+    <div><dt>缠论买卖点</dt><dd>无（中枢内）；10-09 假突破</dd></div>
+  </div>
+  <div class="note warn">
+    <b>置信度扣分理由：</b>① <b>四套未达 3 套同号</b>：仅道氏与威科夫给 −1，缠论与波浪均给 0；② <b>缠论画法不一致</b>：n=6 判混合震荡，n=4/5/7 判 LH+LL，中枢上沿分歧从 95.98 到 108.55，跨度 13%；③ <b>多重冲突信号</b>：周线均线仍多头排列 vs 日线 LH+LL；10-09 首次突破前高（道氏破坏预警）vs 同日巨量 UT（威科夫派发信号）；波浪首选与次选数法结论相反。<br>已满足：数据充足（日线 700 根 / 周线 151 根 / 60 分钟 700 根）、板块与个股同向共振。
+  </div>
+</div>
+
+<!-- 观望块：结论为震荡/偏空/强空，或未通过 9.1 闸门时使用。使用上方策略块时必须删除本块。 -->
+<div class="strat off">
+  <h2>观望说明</h2>
+  <div class="note warn"><b>为何不给出买卖策略：</b>综合总分 S = −0.30 判定为<b>偏空</b>，且置信度仅「低」（四套未达 3 套同号、缠论画法不一致、多重冲突信号）。同时触发 SKILL §9.1 硬闸门第三条——<b>板块处于下降趋势且个股未出现底背驰/Spring</b>，故<b>不给出任何买入策略</b>，仅保留持有者的减仓/离场参考与重新评估触发条件。</div>
+  <table>
+    <tr><th>观察项</th><th>触发条件</th><th>触发后动作</th></tr>
+    <tr><td><b>持有者</b> · 反抽减仓</td><td>反抽至 98.27–103.50（中枢上沿／前高）且量比 &lt; 1.0</td><td>减仓，不补仓</td></tr><tr><td><b>持有者</b> · 破位减仓</td><td>收盘跌破 88.00（中枢下沿 ZD）</td><td>减至底仓，三卖风险</td></tr><tr><td><b>持有者</b> · 加速离场</td><td>收盘跌破 83.11（09-11 低点）</td><td>清仓，下方看 81.10</td></tr><tr><td><b>持有者</b> · 结构失效</td><td>放量跌破 81.10（07-20 低点，区间双底全破）</td><td>全部离场，中期结构破坏</td></tr><tr><td><b>空仓者</b></td><td>当前无任何买入触发条件</td><td><b>回避，不参与</b></td></tr><tr><td>重新评估 · Spring</td><td>放量假跌破 88.00 或 83.11 后快速收回（量比 ≥1.5×）</td><td>吸筹结构成立，可评估一买</td></tr><tr><td>重新评估 · 底背驰</td><td>日线绿柱面积收敛 + DIF 不创新低</td><td>一买候选，配合 95.88 位</td></tr><tr><td>重新评估 · 二次确认</td><td>突破 98.27 后回踩不破 98.27 且缩量 ≤0.8×（LPS）</td><td>道氏破坏二次确认，转观望偏多</td></tr><tr><td>重新评估 · 板块</td><td>中证半导体站回 11600.19 之上</td><td>板块拖累缓解</td></tr>
+  </table>
+  <div class="gate"><b>重新评估条件：</b>需<b>同时</b>满足三项方可重新评估：① 中证半导体止跌并站回 11600.19；② 个股出现 Spring（放量假跌破 88.00 后收回）或日线底背驰，或放量站稳 98.27 后缩量回踩确认；③ 60 分钟 MACD 维持零轴上方且柱转正。在此之前维持观望。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">700 根（2023-11-17 ~ 2026-10-12）</td><td>ATR14</td><td class="num">4.50（4.68%）</td></tr>
+  <tr><td>周线样本</td><td class="num">151（由日线合成） 根</td><td>60分钟样本</td><td class="num">700（2026-01-16 起） 根</td></tr>
+  <tr><td>期间最高</td><td class="num">123.00</td><td>期间最低</td><td class="num">39.70</td></tr>
+  <tr><td>MA 排列</td><td class="num">MA5 95.52 &gt; MA10 93.21 &gt; MA20 90.01；MA60 93.08（短多中空）</td><td>MA20 vs MA60</td><td class="num">MA20 90.01 &lt; MA60 93.08，但 MA20 已转上行</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>根数 700、起止日期、区间极值（123.00 / 39.70）与通达信返回值一致；末根收盘 96.18 与实时价一致。日期跳空 5 处（2026-02 春节 11 天、2026-09/10 国庆 8 天等）均为法定休市；零成交 0 天。
+  <br><b>适用性检查：</b>全部通过 —— 非 ST、科创板上市远超 60 个交易日、无连续一字板（one_word_limit_days=1，仅单日且非连续）、无长期停牌、样本充足。flags 中 limit_days=2 按科创板 20% 阈值统计，属历史正常波动。
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>半导体 / SoC 设计 / 端侧 AI · 智能机顶盒 · 汽车电子</td><td class="muted">板块指数 H30184（中证半导体，setcode=62）</td></tr>
+  <tr><td>板块趋势（道氏）</td><td>下降</td><td class="ev">周线高点 19594.87(07-03) → 13616.39(09-24) 持续降低（LH）；低点 11600.19(08-07) → 11789.89(09-11) → <b>11209.46 已跌破前低</b>（LL）。日线 MA5 11737 &lt; MA10 12360 &lt; MA20 12405 &lt; MA60 13141，空头排列且 MA20 下行。</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td>派发后下跌期</td><td class="ev">2026-07-01 高 19594.87 | 2026-08-03 低 11600.19 | 2026-09-22 反弹 13616.39（未创新高）| 2026-10-12 收 11209.46 破位，创调整新低</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b>板块已跌破 8-07 低点创新低，均线空头排列，MACD 死叉且绿柱扩张。按板块—个股矩阵：板块下降 + 个股反弹 = 个股独立行情，基调为<b>谨慎</b>。本轮个股信号同向偏空，故不打折。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="flat">上升趋势中的高位震荡</td><td class="ev">高点 123.00(05-22) → 108.55(07-10) 降低（LH）；低点 75.50(04-03) → 83.11(09-11) 抬高（HL）→ 混合。MA5 94.14 &gt; MA10 92.48 &gt; MA20 93.99 &gt; MA60 93.20，<b>均线仍为多头排列</b>；MACD DIF 0.21 &gt; DEA 0.09 微金叉。</td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="flat">下降趋势中的反弹（破坏预警一次）</td><td class="ev">已确认摆动点：高 108.55(07-10) → 103.50(08-12) → 98.27(09-01) 降低；低 81.10(07-20) → 88.00(08-25) → 83.11(09-11) 降低（LH+LL）。但 10-09 收 99.71 <b>首次突破前高 98.27</b>，构成道氏破坏预警一次，需二次确认。</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="up">上升（反弹）</td><td class="ev">摆动点 09-30 H 98.00 → 10-08 L 93.28 → 10-09 H 103.78；MA20 95.08 上行且 MA20 &gt; MA60 90.67；MACD DIF 1.91 vs DEA 1.94，柱 −0.07 微死叉。</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线（高位震荡/均线多头）+ 日线（下降趋势中反弹）+ 60 分钟（上升）→ 定性为<b>大级别上升趋势内的中期调整</b>，短端偏多但中期未转多。（矩阵定位：周震荡/上升回调 + 日下降反弹 + 60分多）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 0</span><span class="wt">权重 0.15</span></div>
+  <p>已确认摆动点为 LH+LL，判下降趋势；但 10-09 收盘 99.71 已首次突破前一个 LH 高点 98.27，按道氏规则「一次只是预警、需第二次确认」，故不直接给 −1。10-12 收 96.18 又跌回 98.27 下方，二次确认尚未发生。</p>
+  <div class="ev">日线摆动点：07-10 H 108.55 → 07-20 L 81.10 → 08-12 H 103.50 → 08-25 L 88.00 → 09-01 H 98.27 → 09-11 L 83.11<br>10-09 收 99.71 &gt; 98.27（首次突破前高，破坏预警 ×1）<br>10-12 收 96.18 &lt; 98.27（跌回，二次确认未发生）<br>MA5 95.52 &gt; MA10 93.21 &gt; MA20 90.01，但 MA20 &lt; MA60</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 −1</span><span class="wt">权重 0.30</span></div>
+  <p>自 2026-05-22 历史高点 123.00 回落后，于 83.11–108.55 区间震荡四个月，高点持续降低、低点小幅抬高，构成收敛结构。10-09 放量 2.27x 冲高 103.78 后收 99.71、次日跌回 96.18，是典型的 <b>UT 上冲回落</b>；结合 5-22 与 8-12 两个反弹高点均缩量，判定为<b>派发期 Phase C</b>。</p>
+  <table><tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr><tr><td>2026-05-22</td><td>缩量见顶（该涨不涨）</td><td class='num'>115.21</td><td class='num'>0.76×</td></tr><tr><td>2026-08-12</td><td>反弹高点缩量（供应未耗尽）</td><td class='num'>100.14</td><td class='num'>0.83×</td></tr><tr><td>2026-09-11</td><td>缩量测试区间低点，无 Spring</td><td class='num'>84.89</td><td class='num'>1.01×</td></tr><tr><td>2026-09-30</td><td>放量冲高 98.00 未过前高</td><td class='num'>96.80</td><td class='num'>1.76×</td></tr><tr><td><b>2026-10-09</b></td><td><b>UT 上冲回落（冲 103.78 收 99.71）</b></td><td class='num'><b>99.71</b></td><td class='num'><b>2.27×</b></td></tr><tr><td>2026-10-12</td><td>缩量续跌，UT 后回落</td><td class='num'>96.18</td><td class='num'>0.97×</td></tr></table>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 0</span><span class="wt">权重 0.40</span></div>
+  <p>日线中枢 88.00–98.27（n=5 默认），现价 96.18 位于<b>中枢内偏上</b>，按定义中枢内无有效买卖点。10-09 冲高 103.78 突破中枢上沿，但收盘 99.71 仅站上 98.27、次日即跌回 96.18，构成<b>假突破</b>，三买不成立；若后续跌破中枢下沿 88.00 则转为三卖。无底背驰。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    <tr><td>画法 A</td><td>4</td><td>0.5×ATR</td><td class='num'>95.98 – 88.00</td><td>LH+LL</td></tr><tr><td>画法 B</td><td>5（默认）</td><td>0.5×ATR</td><td class='num'><b>98.27 – 88.00</b></td><td>LH+LL</td></tr><tr><td>画法 C</td><td>6</td><td>0.5×ATR</td><td class='num'>103.50 – 83.11</td><td><b>混合/震荡</b></td></tr><tr><td>画法 D</td><td>7</td><td>0.5×ATR</td><td class='num'>108.55 – 86.60</td><td>LH+LL</td></tr>
+  </table>
+  <div class="ev">下跌段 07-10→07-20（101.35→85.00）绿柱面积 <b>3.47</b>；下跌段 09-01→09-11（96.50→84.89）绿柱面积 <b>5.12</b> → 价格未创新低（83.11 &gt; 81.10）而面积<b>放大</b><br>DIF：07-20 = −2.003 → 09-11 = <b>−2.249</b> → DIF 创新低<br>三法均不支持底背驰 → <b>底背驰不成立</b><br>（注：因 09-11 低点 83.11 未破 07-20 低点 81.10，严格说不构成背驰比较对象；但面积与 DIF 双双走弱，提示下跌动能未衰竭）</div>
+  <div class="note"><b>画法投票：</b>n=5/6/7 的中枢下沿均含 83.11–88.00 区间，但<b>上沿分歧极大</b>（95.98 / 98.27 / 103.50 / 108.55，跨度 13%）；趋势判定 3 套为 LH+LL、1 套（n=6）为混合震荡。<b>判定为画法不一致</b>，置信度扣分，中枢取多数一致的 n=5（88.00–98.27）。另：10-09 高 103.78 与 10-08 低 93.28 若被确认为摆动点，日线将转为 HH+HL，与当前 LH+LL 判定相反，此点计入冲突扣分。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 0</span><span class="wt">权重 0.15</span></div>
+  <p>两套数法结论<b>相反</b>，按规则置 0 并同时列出。首选：123.00 以来的 ABC 调整已于 83.11 完成，当前处新推动浪第 2 浪回撤，现价 96.18 距 2 浪 38.2% 回撤位 95.88 仅 <b>+0.31%</b>，是潜在买点。次选：83.11→103.78 仅是 ABC 中的 B 浪反弹，C 浪下跌尚未展开。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    <tr><td>首选（ABC 完成）</td><td>新推动浪第 2 浪回撤</td><td class='num'>95.88（38.2%）→ 108.55 → 123.00</td><td class='num'>跌破 83.11</td></tr><tr><td>次选（B 浪反弹）</td><td>ABC 之 B 浪，C 浪待展开</td><td class='num'>91.65 / 79.13（C=0.618A）</td><td class='num'>涨破 108.55</td></tr>
+  </table>
+  <div class="note warn"><b>铁律校验：</b>首选数法：A 浪 123.00→86.60，B 浪 86.60→108.55（未破 A 浪起点 ✓），C 浪 108.55→83.11（跌破 A 浪低点 ✓，C/A = 0.70 属常见区间），ABC 结构成立。次选数法将 83.11→103.78 判为 B 浪，需 103.78 不超前高 123.00（✓）但无法进一步验证。<b>两套数法的下一步动作完全相反（买点 vs 卖点），这是本次置信度只给「低」的核心原因之一。</b></div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  <tr><td>压力</td><td class='num'>98.27</td><td>09-01 高点 / 日线中枢上沿 ZG</td><td>强</td></tr><tr><td>压力</td><td class='num'>98.35</td><td>黄金分割 0.618 回撤位（123.00→83.11）</td><td>中</td></tr><tr><td>压力</td><td class='num'>103.50 / 103.78</td><td>08-12 高点 / 10-09 盘中高点</td><td>强</td></tr><tr><td>压力</td><td class='num'>108.55</td><td>07-10 高点，区间上沿</td><td>强</td></tr><tr><td>支撑</td><td class='num'>95.88</td><td>2 浪 38.2% 回撤位（首选数法）</td><td>中</td></tr><tr><td>支撑</td><td class='num'>93.28</td><td>10-08 低点（60 分钟摆动低点）</td><td>中</td></tr><tr><td>支撑</td><td class='num'><b>88.00</b></td><td>日线中枢下沿 ZD / 08-25 摆动低点</td><td>强</td></tr><tr><td>支撑</td><td class='num'><b>83.11 / 81.10</b></td><td>09-11 低点 / 07-20 低点（区间双底）</td><td>强</td></tr>
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td>水上金叉但动能未确认背驰</td><td class="ev">日线 DIF 1.061 &gt; DEA −0.192，柱 +2.51 位于零轴上方，属短线偏多信号；但下跌段绿柱面积由 3.47 放大至 5.12、DIF 由 −2.003 降至 −2.249，<b>下跌动能未见衰竭</b>，与短线的金叉方向矛盾。</td></tr>
+  <tr><td>量价配合</td><td>10-09 巨量长上影，属 UT</td><td class="ev">10-09 量 39.05 万股、量比 MA5 = <b>2.27×</b>（区间最大），冲高 103.78 后收 99.71，上影线 4.07 元；10-12 缩量至 0.97× 续跌 3.54%。放量上冲 + 缩量回落，是典型的供应进场特征。</td></tr>
+  <tr><td>突破有效性</td><td>假突破（2/4 条）</td><td class="ev">以 10-09 突破 98.27（09-01 高点）判定：收盘站上 ✓（收 99.71）| 幅度 0.32×ATR <b>✗</b> | 量比 2.27× ✓ | 3 根内不跌回 <b>✗</b>（次日 10-12 即收 96.18 跌回）→ 满足 2/4，判<b>待确认偏假突破</b>。<br>盘中 103.78 虽突破 103.50，但收盘未站上，按规则不计有效突破。</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">−0.30 → 偏空</td></tr>
+  <tr><td>方向判断</td><td>大级别上升趋势内的中期调整；短端偏多、中期未转多，中枢内等待方向</td></tr>
+  <tr><td>操作基调</td><td><b>观望</b>。空仓者不参与；持有者可在反抽 98.27–103.50 时减仓，跌破 88.00 减至底仓、跌破 83.11 清仓。若出现 Spring（放量假跌破 88.00 后快速收回）或日线底背驰，再重新评估一买。</td></tr>
+  <tr><td>关键冲突</td><td>① 周线均线多头 vs 日线 LH+LL：以日线（短端）定操作、周线定「下方 81.10 为强支撑」的风控参考；② 10-09 道氏破坏预警 vs 威科夫 UT：以量价结构（UT）为主，因巨量长上影的供应证据更直接；③ 波浪首选（2浪买点）vs 次选（C浪卖点）方向相反：两套并列输出，按规则波浪权重虽在但信号置 0；④ 缠论 n=6 与其他画法不一致：取多数一致的 n=5 中枢，并降置信度。</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul><li><b>板块拖累</b>：中证半导体现价 11209.46 已跌破 8-07 低点 11600.19 创调整新低，均线空头排列，MACD 死叉且绿柱扩张，板块无止跌信号。</li><li><b>10-09 假突破</b>：巨量 2.27× 冲高 103.78 收 99.71，次日即缩量跌回 96.18，突破有效性 4 条仅满足 2 条，UT 形态成立概率高。</li><li><b>无底背驰</b>：下跌段绿柱面积由 3.47 放大至 5.12、DIF 创新低，下跌动能未见衰竭。</li><li><b>缠论画法不一致</b>：中枢上沿在 95.98–108.55 间分歧达 13%，n=6 甚至判为震荡，结构判定本身不稳。</li><li><b>波浪两套数法结论相反</b>：首选指向 2 浪买点（95.88），次选指向 C 浪未完（91.65/79.13），操作方向完全对立。</li><li><b>高波动</b>：ATR14 占比 4.68%，单日波动常达 5% 以上（10-09 +10.97%、10-12 −3.54%）。</li><li><b>唯一多头线索</b>：晶晨 09-11 低点 83.11 未破 07-20 低点 81.10，而板块已创新低——个股相对强度占优，若板块止跌可能率先反弹，这是需要持续跟踪的变量。</li></ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>本分析基于以下假设：① 缠论取 n=5/6/7 多数一致的中枢 88.00–98.27，但 n=6 给出 103.50–83.11 且趋势判定为震荡，已在置信度扣分；② 10-09 高 103.78 与 10-08 低 93.28 尚缺右侧 5 根确认，系人工补充判定，若确认将使日线摆动点转为 HH+HL，与当前 LH+LL 相反；③ 波浪首选「ABC 完成 + 2 浪回撤」与次选「B 浪反弹、C 浪未完」结论相反，两者并列输出；④ 板块代理为中证半导体（H30184，setcode=62），通达信无 SoC 设计专项指数；⑤ 周线由日线重采样合成（151 根）。缠论画法与波浪数法均具主观性，请以次选情形作为对照。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅提供结构与风险判断，不构成任何投资建议。生成时间 2026-10-12 18:20。
+</div>
+
+</div>
+</body>
+</html>

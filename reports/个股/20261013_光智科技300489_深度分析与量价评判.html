@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="数据基准 2026-10-13（收 301.22）。评级「可以买入·执行受限」：技术面 12 项评分 98/165，题材驱动（InP 衬底+锗提纯，远期 2028E PE≈8.9x 依赖兑现）；但 ATR 9.54%、2.5×ATR 止损 229.41（-23.8%）超组合 20% 上限，按纪律不得标准仓位。回踩 255–260 或站稳 313 再进场，失效位 244、止损参考 229.4。">
+<meta name="report-type" content="个股深度">
+<title>光智科技 300489 · 单票深度分析与量价评判</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>光智科技 300489 · 深度分析与量价评判</h1>
+    <div class="sub">红外光学全产业链 + 磷化铟衬底 + 锗资源提纯 · 申万电子-光学光电子-光学元件 · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-13（收盘数据，17:06 取数）</span>
+      <span>评分 98/165 · 可以买入（执行受限）</span>
+      <span>威科夫阶段：拉升期（Markup）高位强动量段</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+
+
+<section>
+  <h2 class="sec"><span class="no">00</span>核心结论</h2>
+  <div class="verdict">
+    <h2>评级：可以买入 · 执行受限（技术面）／题材定价、无传统估值锚（基本面）</h2>
+    <div class="rate">
+      <div><div class="k">最新收盘价（10-13）</div><div class="v up">301.22 <span style="font-size:13px">+14.07%</span></div></div>
+      <div><div class="k">12 项评分</div><div class="v">98/165 · 可以买入档</div></div>
+      <div><div class="k">威科夫阶段</div><div class="v sm">拉升期高位动量段</div></div>
+      <div><div class="k">操作建议</div><div class="v sm">持仓守纪律 · 空仓等回踩 · 禁追高</div></div>
+    </div>
+    <p><em>锗价年内接近翻倍叠加磷化铟衬底海外头部订单，把一家归母亏损、市销率约 18.6 倍[推算]的公司推上 419 亿市值：技术结构完好但波动率已到极端（ATR% 9.54%）——正确动作是持有者守移动止盈纪律、空仓者等缩量回踩 LPS，绝不追买 300 上方的新高。</em></p>
+    <div class="grid3">
+      <div class="tile down"><div class="lb">关键回撤位（2.5×ATR 止损）</div><div class="vl">229.41（-23.8%）</div><div class="hint">止损宽度超 20% 组合上限，按纪律不得按标准仓位参与</div></div>
+      <div class="tile navy"><div class="lb">分支对照（10-13）</div><div class="vl">+14.07% vs 等权 +2.26%</div><div class="hint">大幅跑赢且放量 1.44x → 个股性驱动</div></div>
+      <div class="tile gold"><div class="lb">估值快照（10-13）</div><div class="vl">PE-TTM -631 · PB 53.88</div><div class="hint">总市值 419.17 亿 · ROE(加权) -1.36%</div></div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <div class="hd">前次结论回验</div>
+      本报告为该标的首次覆盖，无前次结论可回验；后续报告将以本份"评分 98 · 等回踩 · 禁追高"的结论作为回验基准。
+    </div>
+    <div class="note bad">
+      <div class="hd">与框架的衔接：为什么 98 分还不能直接买</div>
+      ① 评分 98 落入「可以买入」档（90–119），但框架纪律明确：90 分档的买入必须等待 <strong>LPS（缩量回踩）或 Spring 确认</strong>——10-13 是放量新高日（量比 1.44x），属突破日而非回踩确认日；② ATR% 9.54% ＞ 6%，止损倍数取 2.5×ATR 后止损宽度达 <strong>23.8%，超过「止损宽度＞20% 应直接排除出组合」的组合纪律</strong>；③ 位置项（区间位置 94%）、波动项（ATR 扩张）全部零分，与趋势项满分并存，是典型的「高位动量型」得分形态——支持持有，不支持追涨。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">01</span>公司画像</h2>
+  <div class="card">
+    <p><strong>光智科技股份有限公司</strong>（原中飞股份，2015 年上市，先导科技集团入主后转型），定位「全光谱光电感知 + AI 光通信材料平台」：以 13N 超高纯锗单晶为材料底座，向下打通红外镜头、探测器、机芯与整机系统，同时以控股先锐科技（50.0832%）切入磷化铟（InP）衬底，集团层面另握乌兰图嘎锗煤矿 20 年产品销售权并设立内蒙古光智矿业承接锗提纯。原主业高性能铝合金（核电燃料加工设备用材起家）保留为第二业务（占 2026H1 营收 11.05%）。</p>
+    <ul>
+      <li><strong>卡位</strong>：国内少数具备「锗资源—13N 高纯锗单晶—红外材料—探测器—整机」全链路的公司；InP 衬底已迭代至 6 英寸（2″→4″→6″ 三代），为国内首批 6 英寸批量供货商。</li>
+      <li><strong>客户</strong>：6 英寸 InP 衬底已获某全球头部客户订单，已向 Coherent、源杰科技等批量供货，Lumentum 产品测试进展顺利 [卖方调研口径·华福证券 2026-10-08·雪球转述]；公司互动平台 10-09 确认海外已向光通信龙头批量出货 [公司公告·互动易]。</li>
+      <li><strong>技术指标</strong>：13N（9 个 9）超高纯锗单晶国内首家规模化量产；6 英寸 InP 衬底 4/6 英寸平均良率约 50% [调研口径]。</li>
+      <li><strong>集团资源</strong>：乌兰图嘎锗煤矿 20 年销售权（该区域锗储量约 3500 吨，占全国约 68%、全球约 38% [卖方/媒体口径，存疑标注：权属在集团，上市公司通过子公司承接提纯]）。</li>
+    </ul>
+    <h4>财务表（来源：公司 2026 半年报及历史年报）</h4>
+    <table>
+      <thead><tr><th>指标</th><th class="num">2026H1</th><th class="num">2026Q2</th><th class="num">2025FY</th><th class="num">2024FY</th></tr></thead>
+      <tbody>
+        <tr><td>营业收入（亿元）</td><td class="num">11.93（+16.97%）</td><td class="num">6.25（+13.95%）</td><td class="num">20.80（+42.96%）</td><td class="num">14.55（+43.82%）</td></tr>
+        <tr><td>归母净利润（万元）</td><td class="num down">-921.3（-138.4%）</td><td class="num down">-2,459.6（-270.4%）</td><td class="num down">-3,320.0（-370.9%）</td><td class="num up">+1,225.7（+105.1%）</td></tr>
+        <tr><td>扣非净利润（万元）</td><td class="num up">+3,295.5（+181.7%）</td><td class="num up">+1,760.1（+231.4%）</td><td class="num down">-1,591.0</td><td class="num down">-3,715.6</td></tr>
+        <tr><td>销售毛利率</td><td class="num">29.82%（+3.59pct）</td><td class="num">29.54%</td><td class="num">25.89%</td><td class="num">27.57%</td></tr>
+        <tr><td>加权 ROE</td><td class="num down">-1.36%</td><td class="num">—</td><td class="num down">-5.11%</td><td class="num up">+3.24%</td></tr>
+      </tbody>
+    </table>
+    <p class="src">2026Q2 环比：营收 +10.02%、归母 -259.9%、扣非 +14.64%。2026H1 经营现金流 6,436 万（+53.39%）。</p>
+    <h4>增长引擎</h4>
+    <ul>
+      <li><strong>红外主业（基本盘）</strong>：2026H1 红外光学收入 10.61 亿（+17.69%，占 88.95%），毛利率 32.67%（+4.25pct）；探测器+机芯模组收入占比由 7.49% 跃升至 29.13%（向高毛利下游迁徙）；公司口径 2026 年红外营收目标 30 亿、2027 年 50 亿、净利率目标 9%–10% [公司口径·卖方调研纪要]。</li>
+      <li><strong>磷化铟衬底（弹性引擎一）</strong>：先锐科技已完成增资交割并表；清远 40 吨/年晶片项目 + 50 亿元化合物半导体衬底扩建项目（规划 100 万片/6 英寸·年）；华福证券测算 2027/2028 年 InP 业务归母净利 5 / 28.7 亿元 [卖方预测·华福证券 2026-10-08·雪球转述，兑现依赖良率与扩产]。</li>
+      <li><strong>锗提纯（弹性引擎二）</strong>：内蒙古光智矿业 2026-08 成立承接褐煤灰锗提纯，满产 80–110 吨/年（全球单体最大锗项目，媒体口径）；华福证券测算 2027/2028 年归母净利 8.3 / 18.4 亿元 [卖方预测·同上]。锗锭年内涨幅 +98.53%（9-29 报 2.7 万元/千克，上海钢联）。</li>
+      <li><strong>事件催化</strong>：9-28 公告与智造安合、光启芯联合资 13 亿元设立衢州光智，投建「高性能红外探测器产业化项目」（公司出资 6.37 亿占 49%）[公司公告]。</li>
+    </ul>
+    <div class="note warn">
+      <div class="hd">股本与报表结构变量（对估值有实质影响）</div>
+      ① 先锐科技以增资方式并表（持股 50.0832%），少数股东损益对归母利润影响显著（2026H1 少数股东权益影响 +1,296.9 万）；② 2025 年报资产负债率 78.45%、有息负债 15.16 亿、自由现金流 -5.61 亿，扩产期杠杆偏高；③ 每股未分配利润 -2.12 元（存在未弥补亏损），短期无分红能力；④ 2026H1 归母亏损主因营业外支出 -6,517.7 万（非经常性损益 -4,216.8 万），「归母亏损」与「扣非改善」并存，口径必须分开看。
+    </div>
+    <div class="note">
+      <div class="hd">与同分支标的的产业位置对比</div>
+      睿创微纳、高德红外、大立科技是「探测器/整机」标的，盈利与军品民用订单直接挂钩；云南锗业、驰宏锌锗是「资源冶炼」标的，业绩锚定锗价。光智横跨「资源（集团锗矿）—材料（13N 锗/InP）—器件—整机」，其股价弹性主要来自<strong>锗资源重估 + 远期利润故事</strong>而非当期盈利——这解释了 10-13 它（+14.07%）弹性远大于盈利标的（睿创 +3.07%、高德 +0.35%）的走势差异。
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2 class="sec"><span class="no">02</span>评分与量价叙事</h2>
+  <div class="card">
+    <h3>12 项梯度评分（2026-10-13 收盘）</h3>
+    <table>
+      <thead><tr><th class="ctr">#</th><th>指标</th><th class="ctr">得分</th><th class="ctr">满分</th><th>实测与判定</th><th class="ctr">vs 前次</th></tr></thead>
+      <tbody>
+        <tr><td class="ctr">1</td><td>趋势1：价/MA20</td><td class="ctr up">15</td><td class="ctr">15</td><td>1.244（301.22 / 242.13），深居 MA20 上方</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">2</td><td>趋势2：MA20 斜率</td><td class="ctr up">10</td><td class="ctr">10</td><td>+5.40%，均线陡峭向上</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">3</td><td>MACD</td><td class="ctr up">20</td><td class="ctr">20</td><td>DIF +16.312 / DEA +11.463，零轴上强多头延续</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">4</td><td>区间位置（60 日）</td><td class="ctr down">0</td><td class="ctr">20</td><td>94%，处于 60 日区间顶部（低 124.27 / 高 313.00）</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">5</td><td>ATR 收缩</td><td class="ctr down">0</td><td class="ctr">15</td><td>18.88 → 28.73，波动显著扩张</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">6</td><td>低波（ATR%）</td><td class="ctr down">0</td><td class="ctr">10</td><td>9.54%，远超 8% 上限，高波动板块</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">7</td><td>涨幅安全</td><td class="ctr up">15</td><td class="ctr">15</td><td>60 日涨幅 +31% / 均振合计 657% = 0.05，单位波动换手充分</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">8</td><td>量价关系</td><td class="ctr up">13</td><td class="ctr">15</td><td>当日 +14.07% / 量比 1.44x，量价健康（有效上涨定义满足）</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">9</td><td>Spring 弹簧</td><td class="ctr up">15</td><td class="ctr">15</td><td>近 20 日 9-14~9-15 跌破 205 一线后快速收回（缩量挖坑）</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">10</td><td>回调质量</td><td class="ctr up">10</td><td class="ctr">10</td><td>缩量回调 0.53x，健康</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">11</td><td>底背离</td><td class="ctr">0</td><td class="ctr">20</td><td>无</td><td class="ctr">首次覆盖</td></tr>
+        <tr><td class="ctr">12</td><td>顶背离</td><td class="ctr">0</td><td class="ctr">0</td><td>无（-30 一票否决未触发）</td><td class="ctr">首次覆盖</td></tr>
+      </tbody>
+    </table>
+    <p class="src">数据源：timing_score.py（腾讯财经前复权日线，2026-10-13 收盘数据，17:06 取数；收盘后不存在待变项）。总分 98/165。</p>
+    <div class="note">
+      <div class="hd">分项结构归因：高位动量型，而非结构破坏型</div>
+      本份为首次覆盖，无「vs 前次降幅」可归因，但分项结构本身就是判读核心：趋势结构项 1/2/3 全部满分 + 信号项 8/9/10 高分（合计 +38/40），而位置/波动项 4/5/6 全部零分——这是<strong>「结构完好 + 位置极端」的高位动量形态</strong>（类似晶晨模式而非炬芯模式）：趋势没有被破坏，扣分全部来自「贵、高、抖」。对应的操作指令是<strong>持有但不追高、等待回踩确认</strong>，与「结构破坏型 → 执行止损」的指令相反。
+    </div>
+  </div>
+
+  <div class="svgbox">
+    <svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="光智科技近40日量价叙事">
+      <rect x="0" y="0" width="900" height="405" fill="#ffffff"/>
+      <g stroke="#eef1f5" stroke-width="1">
+        <line x1="60" y1="72.2" x2="880" y2="72.2"/>
+        <line x1="60" y1="161.1" x2="880" y2="161.1"/>
+        <line x1="60" y1="250" x2="880" y2="250"/>
+        <line x1="60" y1="338.9" x2="880" y2="338.9"/>
+      </g>
+      <g font-size="10.5" fill="#7b8494" text-anchor="end">
+        <text x="54" y="76">310</text>
+        <text x="54" y="165">270</text>
+        <text x="54" y="254">230</text>
+        <text x="54" y="343">190</text>
+      </g>
+      <line x1="60" y1="350" x2="880" y2="350" stroke="#e2e6ec"/>
+      <polyline fill="none" stroke="#1a3a6b" stroke-width="2.2" points="60.0,267.8 81.03,210.0 102.05,221.9 123.08,201.1 144.1,186.8 165.13,207.0 186.15,266.6 207.18,253.0 228.21,279.9 249.23,311.9 270.26,278.2 291.28,298.2 312.31,223.2 333.33,240.9 354.36,228.3 375.38,242.4 396.41,251.4 417.44,248.2 438.46,284.8 459.49,250.9 480.51,272.2 501.54,270.5 522.56,290.7 543.59,303.1 564.62,308.6 585.64,319.8 606.67,293.4 627.69,264.2 648.72,262.0 669.74,230.4 690.77,207.8 711.79,174.4 732.82,158.6 753.85,188.0 774.87,190.2 795.9,142.6 816.92,176.7 837.95,141.5 858.97,174.3 880.0,91.7"/>
+      <polyline fill="none" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="5 4" points="60.0,350.0 81.03,350.2 102.05,349.1 123.08,342.4 144.1,332.9 165.13,326.3 186.15,321.5 207.18,315.7 228.21,311.5 249.23,308.1 270.26,300.3 291.28,293.8 312.31,280.9 333.33,270.5 354.36,259.5 375.38,252.4 396.41,247.2 417.44,244.0 438.46,246.8 459.49,247.6 480.51,247.9 501.54,250.9 522.56,254.3 543.59,259.4 564.62,265.5 585.64,271.2 606.67,272.5 627.69,273.1 648.72,272.2 669.74,268.1 690.77,264.6 711.79,258.4 732.82,255.1 753.85,252.5 774.87,250.6 795.9,245.6 816.92,241.9 837.95,236.5 858.97,231.0 880.0,223.0"/>
+      <text x="876" y="212" font-size="10.5" fill="#b8860b" text-anchor="end" font-weight="600">MA20 242.13 ↑</text>
+      <g fill="#c0392b">
+        <circle cx="81.03" cy="210.0" r="3.4"/>
+        <circle cx="186.15" cy="266.6" r="3.4"/>
+        <circle cx="312.31" cy="223.2" r="3.4"/>
+        <circle cx="585.64" cy="319.8" r="3.4"/>
+        <circle cx="669.74" cy="230.4" r="3.4"/>
+        <circle cx="880.0" cy="91.7" r="3.8"/>
+      </g>
+      <g font-size="10" fill="#4a5568">
+        <text x="81" y="197" text-anchor="start">08-12 放量长阳248 量1.19x</text>
+        <text x="186" y="284" text-anchor="middle">08-19 放量-10.8% 阶段天量</text>
+        <text x="312" y="209" text-anchor="middle">08-27 放量反转+16.2%</text>
+        <text x="585" y="336" text-anchor="middle">09-15 缩量探底198.57 量0.6x（Spring区）</text>
+        <text x="669" y="216" text-anchor="middle">09-24 冲288.88滞涨</text>
+        <text x="872" y="80" text-anchor="end">10-13 +14.07% 新高313 量1.44x 换手13.57%</text>
+      </g>
+      <g font-size="10.5" fill="#7b8494" text-anchor="middle">
+        <text x="60" y="368">08-11</text>
+        <text x="375" y="368">09-01</text>
+        <text x="670" y="368">09-24</text>
+        <text x="880" y="368">10-13</text>
+      </g>
+      <text x="60" y="392" font-size="10.5" fill="#7b8494">收盘价（前复权） · 蓝线：日收盘 · 金虚线：MA20 · 红点：关键事件</text>
+    </svg>
+    <p class="src">区间 2026-08-11 → 2026-10-13，40 根；数据源 timing_score.py 导出（腾讯财经前复权）。</p>
+  </div>
+
+  <div class="card">
+    <h3>近 40 日逐段解读</h3>
+    <table>
+      <thead><tr><th>阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">08-11 ~ 08-19 冲高回吐</td><td>08-12 冲 256.18 收 248，随后回吐，08-19 收 222.53（-10.8%）</td><td>08-19 放量 21.2 万手（阶段天量）</td><td>放量长阴=供应进场预警（框架卖出信号首条）</td></tr>
+        <tr><td class="bold">08-20 ~ 08-27 挖坑与反转</td><td>08-24 低点 202.15，08-27 大阳 +16.2% 收 242.04</td><td>08-27 放量 19.2 万手</td><td>需求接管，SOS 雏形；8/19 长阴构成历史供应区</td></tr>
+        <tr><td class="bold">08-28 ~ 09-11 缩量整理</td><td>区间 206–240 震荡收敛</td><td>量能降至 8–11 万手</td><td>努力与结果：价稳量缩=供应逐步枯竭</td></tr>
+        <tr><td class="bold">09-14 ~ 09-16 缩量挖坑</td><td>09-15 低 198.57 收 198.57，未破 8/24 低点结构</td><td>缩至 6.8 万手（≈0.6x）</td><td>跌破后快速收回=Spring 变体（脚本项 9 计 15 分）</td></tr>
+        <tr><td class="bold">09-17 ~ 09-30 放量拉升</td><td>09-17 +6.2% 启动 → 09-24 盘中 288.88 → 09-30 收 278.35</td><td>09-17 18.5 万手放量，其后温和</td><td>进入拉升期（Markup）；09-24 冲高滞涨提示短期供应</td></tr>
+        <tr><td class="bold">10-08 ~ 10-13 震荡洗盘后新高</td><td>10-08 -5.51%、10-12 -5.29% 回踩，10-13 +14.07% 收 301.22，盘中 313 创新高</td><td>10-08 行业大跌日主力逆势净流入 3.95 亿；10-13 量 1.44x、换手 13.57%</td><td>10-13 满足「有效上涨」（价新高+量放大30%+）；但单日 ATR 级波动，追价风险同步放大</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>量价三问</h3>
+    <div class="grid3">
+      <div class="tile">
+        <div class="lb">① 最近一次放量是有效上涨吗？</div>
+        <p style="font-size:13px">是。<strong>10-13 收 301.22（+14.07%），盘中 313 创 60 日新高，量比 1.44x（较 20 日均量放大 44%＞30%）</strong>，完整满足「价创新高+量放大30%」的有效上涨定义，技术面可跟进。保留项：收盘较盘中高点回落 11.8 元（≈0.4×ATR），上影线提示 310 一线存在即时供应，跟进须等次日缩量确认而非追价。</p>
+      </div>
+      <div class="tile">
+        <div class="lb">② 最近一次下跌是有效下跌还是诱空？</div>
+        <p style="font-size:13px">两者都不是，属「被动跟随+承接」。<strong>10-12 -5.29% 量 1.18x，低点 244.26 远高于 9-15 低点 198.57，未创新低</strong>，不构成有效下跌；10-08 -5.51% 发生在电子行业 -4.25% 的系统性下跌日，当日主力资金逆势净流入 3.95 亿、次日 +6.02% 收复，属缩幅跟随而非趋势破坏。框架「创新低+缩量=诱空」的前提（创新低）在本段未出现。</p>
+      </div>
+      <div class="tile">
+        <div class="lb">③ 现在是底部反转吗？</div>
+        <p style="font-size:13px">不是。<strong>现价位于 60 日区间 94% 分位、MA20 在下方 242 且向上，当前是拉升期延续而非底部</strong>。本段真正符合「企稳+连续温和放大」底部反转定义的是 9-15~9-17（缩量探底→温和企稳→9-17 放量 +6.2%），该反转已兑现 51% 涨幅（198.57→301.22）。「现在是底部」的提问在当前位置不成立。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>系统性 vs 个股性对照（2026-10-13）</h3>
+    <table>
+      <thead><tr><th>标的</th><th class="ctr">代码</th><th class="num">收盘</th><th class="num">当日涨跌</th><th class="num">量比</th><th>判读</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">光智科技</td><td class="ctr">300489</td><td class="num">301.22</td><td class="num up">+14.07%</td><td class="num">1.44x</td><td class="up">大幅跑赢分支</td></tr>
+        <tr><td>云南锗业</td><td class="ctr">002428</td><td class="num">85.62</td><td class="num up">+6.10%</td><td class="num">1.35x</td><td>锗价主线共振</td></tr>
+        <tr><td>睿创微纳</td><td class="ctr">688002</td><td class="num">167.29</td><td class="num up">+3.07%</td><td class="num">1.57x</td><td>红外整机跟随</td></tr>
+        <tr><td>大立科技</td><td class="ctr">002214</td><td class="num">16.76</td><td class="num up">+1.21%</td><td class="num">0.80x</td><td>缩量温和</td></tr>
+        <tr><td>驰宏锌锗</td><td class="ctr">600497</td><td class="num">8.61</td><td class="num up">+0.58%</td><td class="num">0.65x</td><td>缩量跟随</td></tr>
+        <tr><td>高德红外</td><td class="ctr">002414</td><td class="num">11.33</td><td class="num up">+0.35%</td><td class="num">0.88x</td><td>缩量跟随</td></tr>
+        <tr><td class="bold" colspan="3">分支等权平均</td><td class="num bold">+2.26%</td><td class="num">—</td><td>光智跑赢 +11.8pct</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="hd">判读</div>
+      分支全部上涨但幅度温和（等权 +2.26%，锗镓概念指数当日 +4.43%），光智 +14.07% 放量 1.44x 显著跑赢——<strong>属「分支共振之上的个股性上涨」</strong>：锗价主线提供贝塔，InP 订单确认 + 卖方 27/28 年远期利润测算传播（10-08 华福观点）提供个股阿尔法。个股性上涨的兑现依赖题材情绪延续，回撤时同样按个股弹性放大。
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2 class="sec"><span class="no">03</span>操作计划</h2>
+  <div class="grid3">
+    <div class="card" style="margin-bottom:0">
+      <h3>已持仓者</h3>
+      <ul>
+        <li><strong>持有依据</strong>：趋势结构项 1/2/3 满分（价/MA20 1.244、MA20 斜率 +5.40%、MACD 零轴上强多头），无顶背离一票否决，拉升期结构未破坏。</li>
+        <li><strong>止盈纪律（梯度收紧）</strong>：止盈线 = 期间最高收盘 − ATR14×倍数（ATR=28.73）。参考：浮盈 0–10% 用 2.5×（≈229.4）；10–20% 用 2.0×；20–30% 用 1.5×（以 10-13 盘中高 313 计 ≈ 269.9）；＞30% 用 1.0×（≈284.3）。逐日更新基准。</li>
+        <li><strong>硬纪律</strong>：单日再放巨量（量比＞2x）但收阴或长上影 = UT 上冲回落嫌疑，<strong>无条件减半</strong>；收盘放量跌破 MA20（242.13）<strong>无条件减半</strong>；收盘跌破 229.41（2.5×ATR）<strong>全部离场</strong>。</li>
+        <li><strong>不加仓</strong>：位置项零分（94% 分位）+ 止损宽度超限，当前位置禁止加仓摊高。</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <h3>空仓者</h3>
+      <ul>
+        <li><strong>当前不满足进场条件</strong>：90 分档须等 LPS（缩量回踩）——10-13 是放量新高日，不是回踩确认日，<strong>禁止追买 300–313 区</strong>。</li>
+        <li><strong>再进场触发（二选一）</strong>：A. 缩量（量比 ≤0.8x）回踩 <strong>255–260</strong>（筹码平均成本 255.75 一线）或 MA20 附近（242），且不有效跌破 244（10-12 低点区）；回踩后首根放量阳线（量比 ≥1.2x）为进场确认。B. 放量收盘站稳 <strong>313</strong> 上方（新高突破确认）——但注意止损宽度纪律（见风险清单）。</li>
+        <li><strong>止损</strong>：进场后止损 = 结构失效位 − 0.5×ATR 缓冲；回踩 255 进场者失效位 244 → 止损参考 229.4 附近（-10.2%[推算]），仍宽于常规标的，须以更小头寸适配。</li>
+        <li><strong>时间止损</strong>：进场后 5 根 K 线未按预期展开（未创新高且量能萎缩）→ 减仓。</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <h3>长线 / 估值视角</h3>
+      <ul>
+        <li><strong>无 PE 锚</strong>：PE-TTM -631（归母亏损），传统估值定价失效；PS-TTM ≈ 18.6× [推算：市值 419.17 亿 ÷ TTM 营收约 22.5 亿]。</li>
+        <li><strong>远期锚</strong>：若华福证券 2028 年 InP+锗提纯合计归母净利约 47.1 亿兑现 [卖方预测·华福证券 2026-10-08·雪球转述]，现市值对应 2028E PE ≈ 8.9× [推算]——兑现前提是 InP 良率 50%→规模化爬坡、锗矿 2026 年投产、锗价维持高位，<strong>2026–2027 年是证伪/证实窗口</strong>。</li>
+        <li><strong>显著低估区</strong>：不适用（现价较 2026 年初已数倍，无历史估值锚可参照）；长线参与唯一合理方式是「远期兑现跟踪表」逐季验证扣非利润与产能数据，而非价位抄底。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>关键价位地图（自上而下）</h3>
+    <table>
+      <thead><tr><th class="num">价位</th><th>性质</th><th>操作含义</th></tr></thead>
+      <tbody>
+        <tr><td class="num bold">313.00</td><td>10-13 盘中高点 / 60 日高</td><td>放量收盘站稳 = 新高空间打开；冲高滞涨 = UT 警戒</td></tr>
+        <tr><td class="num bold up">301.22</td><td>现价（10-13 收盘）</td><td>—</td></tr>
+        <tr><td class="num">292.96</td><td>09-30 盘中高</td><td>短线压力一</td></tr>
+        <tr><td class="num">284.00</td><td>10-09 高 / 08-28 高</td><td>密集成交区上沿，回踩第一道支撑</td></tr>
+        <tr><td class="num">271.15 ~ 278.82</td><td>09-24 收 ~ 10-09 收密集带</td><td><strong>分水岭②</strong>：守住 = 强势整理；失守 = 回踩加深</td></tr>
+        <tr><td class="num">255.75</td><td>筹码平均成本 [新浪测算]</td><td><strong>分水岭①</strong>：守住 = 健康回踩（LPS 观察）；跌破 = 回踩升级</td></tr>
+        <tr><td class="num">250.00 / 244.26</td><td>10-13 低 / 10-12 低</td><td>短线支撑，有效跌破则回踩至 MA20</td></tr>
+        <tr><td class="num">242.13</td><td>MA20</td><td><strong>分水岭③</strong>：放量跌破 = 趋势预警，无条件减半</td></tr>
+        <tr><td class="num">229.41</td><td>2.5×ATR 止损线</td><td><strong>结构失效位</strong>：收盘跌破全部离场</td></tr>
+        <tr><td class="num">220.09</td><td>MA60</td><td>中期趋势底线（跌破 = 拉升期证伪）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>风险清单</h3>
+    <div class="grid2">
+      <div>
+        <h4>交易层面</h4>
+        <ul>
+          <li><span class="tag t-src">波动</span>ATR% 9.54%（＞6% 档），单日 ±10% 属常态，10-13 单日振幅 21%（250→313），止损宽度 -23.8% 超出组合 20% 上限——按纪律<strong>该标的不得按标准仓位参与组合</strong>，参与须降杠杆降头寸。</li>
+          <li><span class="tag t-src">筹码</span>10-13 换手 13.57%、成交 52.91 亿，高位高换手意味着短线筹码不稳定；10-12 机构大宗平价接 3,195 万为中性信号。</li>
+          <li><span class="tag t-src">联动</span>与锗镓概念（当日 +4.43%）、InP 光通信链高度联动，板块回撤时按个股弹性放大回撤。</li>
+          <li><span class="tag t-src">数据</span>本报告基于 10-13 收盘数据；次日开盘若大幅跳空，评分中量价类分项（8/9/10）需重算。</li>
+        </ul>
+      </div>
+      <div>
+        <h4>基本面层面</h4>
+        <ul>
+          <li><span class="tag t-src">盈利口径</span>归母亏损（-921 万）与扣非盈利（+3,295 万）并存，主因营业外支出 -6,517.7 万；后续跟踪以扣非口径为准，警惕非经常项目反向波动。</li>
+          <li><span class="tag t-src">预测依赖</span>远期估值锚几乎全部依赖卖方 27/28 年测算（InP 28.7 亿 + 锗 18.4 亿）[卖方预测·华福证券 2026-10-08·雪球转述]，良率（当前约 50%）、扩产与锗价任一环节不及预期即证伪。</li>
+          <li><span class="tag t-src">资产负债</span>2025 年报资产负债率 78.45%、有息负债 15.16 亿、自由现金流 -5.61 亿、每股未分配利润 -2.12 元，扩产期财务弹性有限。</li>
+          <li><span class="tag t-src">资源权属</span>锗矿 20 年销售权在集团（先导科技集团），上市公司通过子公司承接提纯，「0 对价注入」的权属与定价安排存在不确定性 [口径存疑]；锗价受出口管制与战略矿产政策双向影响。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="hd">一句话收束</div>
+    结构完好 + 位置极端 + 波动极端：这是「持有者的市场、纪律者的市场、追高者的陷阱」。守住 242/229 两道线之前，一切回调都按强势整理处理；跌破 229.41，拉升期叙事即证伪。
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">04</span>数据来源</h2>
+  <div class="card">
+    <ul>
+      <li><strong>行情/评分</strong>：timing_score.py（腾讯财经前复权日线 200 根导出，近 40/80 根用于叙事与绘图），2026-10-13 收盘数据，17:06 取数。</li>
+      <li><strong>估值</strong>：tdx_indicator_select，2026-10-13：PE-TTM -631.17、PB(MRQ) 53.88、ROE(加权最新) -1.36%、总市值 419.17 亿；PS-TTM 为自行折算 [推算]。注：PE 为亏损状态负值，不可与其他标的横比。</li>
+      <li><strong>财务</strong>：公司《2026 年半年度报告》（2026-08-29，巨潮资讯）；2024/2025 年报及单季指标（腾讯财经财务接口）；中证网 2026-08-29 半年报点评。</li>
+      <li><strong>消息/产业</strong>：wenda_news_query（2026-09-25 → 10-13 窗口）：格隆汇/财联社 09-28 衢州合资公告；证券时报 10-12 大宗交易、10-08 电子行业资金流向；新浪财经 10-13 异动与筹码数据；上海证券报 10-09 锗产业报道（锗价年内 +98.53%）；公司互动易 10-09 InP 订单回复；华福证券观点经雪球转述（2026-10-08）[卖方预测]。</li>
+      <li><strong>分支对照</strong>：timing_score.py --compare（睿创微纳/高德红外/云南锗业/驰宏锌锗/大立科技），2026-10-13 收盘。</li>
+    </ul>
+  </div>
+</section>
+
+<div class="foot">
+  <strong>免责声明</strong>：本报告仅供研究参考，不构成个人投资建议，亦不构成任何买卖指令。报告基于 2026-10-13 收盘数据生成，若次日出现大幅跳空或新的公告事件，评分与价位判断需重新校准。文中 [推算] 为基于公开数据的自行折算，[卖方预测] 为注明券商与日期的第三方观点（部分经雪球等渠道转述，未经原文核对），[公司公告]/[调研口径]/[口径存疑] 分别对应不同可靠等级的信息来源，请按标注甄别。股市有风险，投资需谨慎。
+</div>
+
+</div>
+</body>
+</html>

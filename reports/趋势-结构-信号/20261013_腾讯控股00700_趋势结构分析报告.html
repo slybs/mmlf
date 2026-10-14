@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="数据基准 2026-10-13（盘中 422.6 HKD）。周线下跌末段/日线底部构筑期：411.0 双底+日线底背驰提供反弹条件，但趋势与板块未转多。操作基调观望，右侧收复 436 且放量方参与；底线 405.7（收盘跌破双底失效，下看 400），中期反弹目标 543.4。">
+<meta name="report-type" content="趋势结构信号">
+<title>腾讯控股（00700.HK）趋势结构分析报告</title>
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.high{color:var(--down); border-color:var(--down)}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.badge.warn{color:var(--up); border-color:var(--up); background:#fdf3f2}
+
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+
+.strat{border:1px solid var(--line-2); border-radius:3px; padding:18px 22px 20px;
+  margin:14px 0 4px; background:var(--bg)}
+.strat>h2{margin:0 0 14px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-size:16px}
+.strat.off{background:var(--bg-soft)}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.cols section h3{margin:0 0 8px; font-size:14px}
+.cols section h3 span{font-size:12px; color:var(--ink-3); font-weight:400; margin-left:6px}
+.gate{font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line);
+  padding-top:10px; margin-top:12px}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+  .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>腾讯控股（00700.HK）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-13（盘中 14:31，现价 422.6 HKD）</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>周线 / 日线 / 60分钟</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir flat">震荡（底部构筑）</span>
+    <span class="score">加权总分 S = +0.15（原始 +0.25 × 板块系数 0.6）</span>
+    <span class="badge mid">置信度：中</span>
+    <span class="score">板块基调：下降（恒生科技代理）</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>分歧大：道氏 −1 / 威科夫 0 / 缠论 +1 / 波浪 0</dd></div>
+    <div><dt>板块调节</dt><dd>k = 0.6：板块下降趋势，个股多头信号打折</dd></div>
+    <div><dt>当前阶段</dt><dd>疑似吸筹 Phase C–D（无 SOS，未确认）</dd></div>
+    <div><dt>缠论买卖点</dt><dd>日线一买成立（底背驰，试探性质）</dd></div>
+  </div>
+  <div class="note warn">
+    <b>置信度扣分理由：</b>
+    ① 四法中仅 1 套（缠论）给出明确多头信号，道氏与缠论方向相反，属「下跌末段一买」的过渡形态；
+    ② 波浪铁律校验冲突，重数一次后仍存在两套数法，信号置 0；
+    ③ 周线脚本样本 54 根不足 60 根（由 250 根日线合成），方向已用 120 周原始序列人工核对补充。
+  </div>
+</div>
+
+<div class="strat off">
+  <h2>观望说明</h2>
+  <div class="note warn"><b>为何不给出买卖策略：</b>
+    原始加权总分 +0.25（偏多）经板块调节后降至 +0.15，落入震荡区间（−0.2 ~ +0.2）：
+    恒生科技指数处于下降趋势且日线已跌破自身中枢（4251–4510），对个股多头信号按规则打 0.6 折；
+    同时腾讯日线反弹尚未收复中枢下沿 436.0，量能持续萎缩（10-13 量比仅 0.51×），
+    一买只支持「日线级别反弹」假设，右侧确认不足。按 9.1 闸门，震荡结论不输出买卖策略。
+  </div>
+  <table>
+    <tr><th>观察项</th><th>触发条件</th><th>触发后动作</th></tr>
+    <tr>
+      <td>一买右侧确认</td>
+      <td class="ev">日线收盘站上 436.0（中枢 ZD）＋ 突破幅度≥1×ATR（收盘≥446.6）＋ 量比≥1.5×MA5 量（≥2577 万股）＋ 3 根不回落</td>
+      <td>一买升级为有效信号，转「回踩 430 一带不破则确认二买」的参与框架</td>
+    </tr>
+    <tr>
+      <td>短线反弹延续</td>
+      <td class="ev">60 分钟回踩 416.4–419.0（60m 中枢 ZD / 9-18 低点）缩量不破，随后放量收复 430.2</td>
+      <td>60 分钟级别反弹延续，目标看 436–447</td>
+    </tr>
+    <tr>
+      <td>双底失效（风险）</td>
+      <td class="ev">日线收盘跌破 405.7（双底 411.0 − 0.5×ATR14）</td>
+      <td>一买证伪、观望转回避，下看 400 整数关口；等候新底背驰</td>
+    </tr>
+    <tr>
+      <td>板块企稳</td>
+      <td class="ev">恒生科技日线收盘收复 4251（板块中枢 ZD），或周线 MACD 绿柱持续收敛 2 周以上</td>
+      <td>板块系数 k 由 0.6 回升至 0.8–1.0，重算综合分</td>
+    </tr>
+  </table>
+  <div class="gate"><b>重新评估条件：</b>上述任一观察项触发即重评；若 5 个交易日内价格持续在 411–436 箱体窄幅整理且无量，则维持观望并顺延观察窗口。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">250 根（20251008–20261013）</td><td>ATR14</td><td class="num">10.55（2.5%）</td></tr>
+  <tr><td>周线样本</td><td class="num">54 根（脚本，日线合成）＋120 根原始序列</td><td>60分钟样本</td><td class="num">119 根（20260914–20261013）</td></tr>
+  <tr><td>期间最高</td><td class="num">675.70（2025-10）</td><td>期间最低</td><td class="num">411.00（2026-06-26 与 2026-10-08 双底）</td></tr>
+  <tr><td>MA 排列</td><td class="num">MA5 421.0 &lt; MA10 424.1 &lt; MA20 429.8 &lt; MA60 444.9，空头排列</td><td>MA20 vs MA60</td><td class="num">MA20 &lt; MA60，MA20 斜率向下</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>起止日期与根数符合预期；区间高低点与已知行情吻合；flags 显示无零成交日、无一字板（limit_days=1 为 9-22 放量长阳标记）；唯一日期缺口 2026-04-02→04-08 共 6 天，为清明＋复活节港股正常休市，不构成分段条件。自检通过。
+  <br><b>适用性检查：</b>非 ST、非次新、无一字板、无 &gt;20 交易日缺口、样本充足（250 根日线）——四项全部通过，本框架适用。
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>港股无行业板块指数，按技能规则以恒生系列指数代理</td><td class="muted">恒生科技指数 HZ5017（setcode=27）</td></tr>
+  <tr><td>板块趋势（道氏）</td><td class="down">下降</td><td class="ev">周线 LH：H 6001(0116)→H 5258(0515)→H 4948(0807)；LL：L 5348→L 4619→L 4229；收 4112 全均线之下（MA5 4237&lt;MA10 4415&lt;MA20 4538）</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td class="down">下跌末段（疑似）</td><td class="ev">日线中枢 4250.8–4510.1（0626–0922）收盘跌破 ZD，构成三卖；下跌段绿柱面积 898.5(0805→0911)→86.1(0922→1009) 大幅缩减，但 DIF −101.25 创新低（&lt; −94.07），两法不一致，底背驰未确认</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b>板块下降趋势中，腾讯相对板块偏强（10-08 腾讯 411.0 与 6-26 低点持平未创新低，而板块同日创新低 4050.9）。按第 7 节调节规则：个股多头信号 ×0.6，个股空头信号不折扣（×1.0）。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="down">空（动能衰减中）</td><td class="ev">LH＋LL 排列；DIF −20.3 深处零轴下；但 MACD 柱连续 5 周为正且收敛（4.73→3.13），周线下行动能已明显衰减</td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="down">空＋底背驰</td><td class="ev">均线空头排列、价格处于日线中枢 436–462 下方；但 10-08 新低段绿柱面积 5.64 ≪ 上一段 29.40，DIF 不创新低，底背驰成立</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="flat">震荡</td><td class="ev">中枢 416.4–429.2（1005–1012），现价 422.8 居中枢内；DIF 转正（+0.41）但红柱收敛（2.00→0.13），在 430.2 受阻</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线空＋日线空为「主跌段」矩阵格，但日线底背驰与周线柱状图收敛共同指示下跌动能衰竭——当前定性为<b>下跌末段的底部构筑期</b>，日线一买只支持数周级别的反弹假设，不支持周线趋势反转。（矩阵定位：周空/日空，叠加日线底背驰修正）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 −1</span><span class="wt">权重 0.15（转折区场景）</span></div>
+  <p>日线仍处<b>下降趋势</b>，趋势未被破坏：最近两个摆动高点 497.8（08-05）→462.2（08-28）递降（LH），两个摆动低点 436.0（08-14）→419.0（09-18）递降（LL），且 10-08 下探 411.0 再度触及区间低点。转多条件：收盘突破前 LH 463.4 且幅度 ≥1×ATR（即 ≥474）才有趋势破坏的第一次预警。</p>
+  <div class="ev">
+2026-08-05 | H 497.8 | 前高（LH 序列第 1 点）<br>
+2026-08-28 | H 462.2 | LH 确认，量比 1.2× 冲高回落<br>
+2026-09-18 | L 419.0 | LL 确认<br>
+2026-10-08 | L 411.0 | 与 06-26 低点持平（双底雏形，待右侧 5 根确认）<br>
+均线：MA20 429.8 &lt; MA60 444.9，MA20 斜率向下——空头排列确认下降趋势
+  </div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 0</span><span class="wt">权重 0.30（转折区场景）</span></div>
+  <p>判定：<b>疑似吸筹期 Phase C–D 之间</b>。411.0 一带出现两次测试（06-26、10-08），第二次为放量下探快速收复，具备 Spring/ST（二次测试）特征；但其后反弹缩量、未出现放量突破 436–446 的 SOS，阶段无法升级为「确认吸筹」，故信号取中性。</p>
+  <table>
+    <tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr>
+    <tr><td class="num">2026-06-26</td><td>首次探底（潜在 SC）</td><td class="num">低 411.0，收 413.0</td><td class="num">0.91×（缩量试探）</td></tr>
+    <tr><td class="num">2026-09-22</td><td>AR 放量冲高（空头陷阱后急拉）</td><td class="num">高 463.4，收 451.6</td><td class="num">3.57×（7,100 万股）</td></tr>
+    <tr><td class="num">2026-10-08</td><td>二次测试 / Spring：下探 411.2 快速收复</td><td class="num">低 411.2，收 411.4</td><td class="num">2.07×（承接良好）</td></tr>
+    <tr><td class="num">2026-10-12~13</td><td>回踩缩量企稳（该跌不跌）</td><td class="num">422.6</td><td class="num">0.86× / 0.51×（卖压衰竭迹象）</td></tr>
+  </table>
+  <div class="note">证据链 4 条（≥3），可判「疑似吸筹」；但无 SOS（放量收复 436+）之前，阶段定性置信度上限为「中」。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 +1</span><span class="wt">权重 0.40（转折区场景）</span></div>
+  <p>日线在 411.0 一带形成<b>一买（趋势底背驰）</b>，为当前唯一明确的多头信号，属试探性质。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    <tr>
+      <td>A（默认）</td><td class="num">n=5</td><td class="num">0.5×ATR14（≈5.3）</td>
+      <td class="num">436.0–462.2（0805–0918，脚本候选＋人工确认）</td>
+      <td>价格跌回中枢下方并创新低 → 日线<b>趋势底背驰 → 一买</b>（411.0）</td>
+    </tr>
+    <tr>
+      <td>B（大级别）</td><td class="num">n=5，放宽笔阈值至 1×ATR</td>
+      <td class="num">1×ATR14（≈10.6）</td>
+      <td class="num">432.0–497.8（0724–0805 区间震荡）</td>
+      <td>0626 与 1008 构成 411.0 <b>双底 → 大级别盘整背驰</b>，同指 411 为底部区</td>
+    </tr>
+  </table>
+  <div class="ev">
+背驰主判据（MACD 柱面积法，macd_area 脚本计算，sign=−1）：<br>
+D3 段 08-28→09-18（462.2→419.0）：绿柱面积 <b>29.40</b><br>
+D4 段 09-22→10-08（463.4→411.0）：绿柱面积 <b>5.64</b>（缩减 81%，价格创新低而动能大减）<br>
+辅助判据（DIF 不创新低）：D3 段 DIF 最低 <b>−7.33</b>（09-18） vs D4 段最低 <b>−6.02</b>（10-08）→ 未创新低<br>
+→ 两法一致，<b>日线底背驰成立</b>。级别：日线背驰 → 日线级别反弹（数周量级），不指向周线反转。<br>
+60 分钟：反弹笔（1008→1012，411.2→430.2，+4.62%）后于 430.2 受阻，红柱 2.00→0.13 收敛，短线在 429–432 有回调压力。
+  </div>
+  <div class="note"><b>画法投票：</b>画法 A 与画法 B 虽中枢区间不同，但对「411.0 为底部区、底背驰成立」的结论一致 → 画法唯一性不扣分。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 0</span><span class="wt">权重 0.15（转折区场景）</span></div>
+  <p>自 675.7（2025-10）起为大型调整。首选与次选两套数法并存，方向含义分歧，故信号取中性。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    <tr>
+      <td>首选：A-B-C 不规则平台</td>
+      <td>A：675.7→411.0（06-26）；B：411.0→497.8（08-05，扩顶平台）；C：497.8 起，C5 于 411.0 与 A 浪低点等长处完成</td>
+      <td class="num">调整已终，C 浪目标 411（=A 等长）已达成；若有效反弹，Fib 0.382 回撤 574.6 / 0.5 回撤 543.4 为中期目标</td>
+      <td class="num">405.7（411.0−0.5×ATR）</td>
+    </tr>
+    <tr>
+      <td>次选：09-22 高点为 C4</td>
+      <td>C1 497.8→432.0；C2 432.0→463.4；C3 463.4→411.0；C4/C5 待演化——若 411 不破则为失败 5 浪，调整提前结束</td>
+      <td class="num">若 C5 成立，目标 &lt;411（风险路径）</td>
+      <td class="num">405.7 同上；若收盘 &lt;405.7 则次选数法生效</td>
+    </tr>
+  </table>
+  <div class="note warn"><b>铁律校验：</b>初次数法中「09-22 反弹高点 463.4 进入前一下跌段（497.8→432.0）价格区」违反浪 4 不入浪 1 区的铁律 → 重数一次 → 仍存两套可行数法。按技能规则波浪不参与方向投票（信号 0），仅用于目标位参考。</div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  <tr><td class="up">压力</td><td class="num">429.8 / 430.2</td><td>MA20 ＋ 10-12 60 分钟反弹高点</td><td>近端第一压力，无量难破</td></tr>
+  <tr><td class="up">压力</td><td class="num">436.0</td><td>日线中枢 ZD（脚本候选，人工确认）</td><td>多空分界：收复则一买右侧确认</td></tr>
+  <tr><td class="up">压力</td><td class="num">444.9</td><td>MA60</td><td>中期趋势分水岭</td></tr>
+  <tr><td class="up">压力</td><td class="num">462.2–463.4</td><td>中枢 ZG ＋ 09-22 AR 高点（前 LH）</td><td>周线趋势转多需突破此区</td></tr>
+  <tr><td class="up">压力</td><td class="num">467.6 / 512.1 / 543.4</td><td>Fib 0.786 / 0.618 / 0.5（675.7→411.0，脚本计算）</td><td>中期反弹目标阶梯</td></tr>
+  <tr><td class="down">支撑</td><td class="num">419.0</td><td>09-18 摆动低点</td><td>近端支撑</td></tr>
+  <tr><td class="down">支撑</td><td class="num">411.0–411.2</td><td>06-26 / 10-08 双底（摆动低点）</td><td>核心结构位</td></tr>
+  <tr><td class="down">支撑</td><td class="num">405.7</td><td>双底失效位（411.0 − 0.5×ATR14）</td><td>收盘跌破 → 结构证伪</td></tr>
+  <tr><td class="down">支撑</td><td class="num">400</td><td>整数关口 / 心理位</td><td>失效后第一目标</td></tr>
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td class="up">日线底背驰成立（两法一致）</td><td class="ev">绿柱面积 D3 29.40 → D4 5.64（新低段缩减 81%）＋ DIF −7.33→−6.02 不创新低；60 分钟红柱收敛（2.00→0.13）提示反弹短线乏力</td></tr>
+  <tr><td>量价配合</td><td class="flat">承接尚可、上攻无量</td><td class="ev">10-08 二次测试放量 2.07× 收复（承接良好）；但 10-09→10-13 反弹量比 1.27×→0.86×→0.51× 逐日递减，属缩量修复</td></tr>
+  <tr><td>突破有效性</td><td class="flat">当前无任何有效突破</td><td class="ev">对 436.0 的有效突破需同时满足：收盘≥446.6（436＋1×ATR）、量≥2577 万股（1.5×MA5 量 1718 万）、3 根不回落——现价 422.6，四条均未满足</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">原始 +0.25 × 板块系数 0.6 = <b>+0.15</b> → 震荡（−0.2 ~ +0.2）</td></tr>
+  <tr><td>方向判断</td><td>周线级别下跌末段、日线级别底部构筑期：411.0 双底＋日线底背驰提供反弹条件，但趋势与板块均未转多</td></tr>
+  <tr><td>操作基调</td><td><b>观望</b>——底背驰一买仅为试探性信号，右侧确认（收复 436＋量能）出现前不参与；持有者以 405.7 为底线等待确认</td></tr>
+  <tr><td>关键冲突</td><td>道氏（−1）与缠论（+1）方向相反：按「下跌末段一买」处理——一买只支持日线级别反弹，周线趋势反转需突破 463.4 前高并获板块配合</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul>
+    <li>板块（恒生科技）日线已跌破自身中枢构成三卖，若板块续创新低，腾讯 411 双底存在被拖破风险（届时 405.7 失效，下看 400）；</li>
+    <li>日线底背驰只保证「日线级别」反弹，60 分钟红柱已在 430 一带收敛，短线随时可能回踩 416–419；</li>
+    <li>反弹量能连续萎缩（0.51×），无量状态下冲击 436 中枢下沿大概率失败；</li>
+    <li>10-08 低点 411.0 属摆动点未确认区，需右侧 5 根 K 线确认，此前双底结构为「待验证」状态。</li>
+  </ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>缠论给出 A/B 两套画法且结论一致（画法不唯一性已消除）；波浪经一次重数后仍存两套数法，信号置 0、仅保留目标位参考；周线脚本样本 54 根不足 60 根，方向判断已用 120 周原始序列（2024-07 起，区间高 677.7 / 低 339.2）人工核对——长周期视角下 2024-08 至 2025-10 为上升趋势、此后转为调整，与脚本 54 根样本的方向结论一致。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算（MA / ATR / MACD 面积 / 量比 / 摆动点 / 笔 / 中枢候选 / 黄金分割）。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅提供结构与风险判断，不构成任何投资建议。生成时间 2026-10-13 14:50（价格数据截至当日 14:31 盘中）。
+</div>
+
+</div>
+</body>
+</html>

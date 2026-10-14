@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="数据基准 2026-10-14。乐鑫+14%但评分53最低（回避·不追高）、晶晨73（观察·估值首选，PB 5.04 最低）、瑞芯微62（观察·结构首选）；涨幅与质量排序相反，三家均不给买入，只给观察顺序与触发条件。">
+<meta name="report-type" content="板块对比">
+<title>乐鑫科技 / 晶晨股份 / 瑞芯微 · 三家对比与投资策略</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b; --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:38px 0 32px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:28px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:15px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+  padding:4px 12px;border-radius:18px;font-size:12px}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;
+  border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;
+  margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.hd3{background:#eef3fa!important;color:var(--navy)!important;font-weight:700}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;
+  border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;
+  font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · PEER COMPARISON</div>
+    <h1>乐鑫科技 · 晶晨股份 · 瑞芯微　端侧AI SoC 三家对比</h1>
+    <div class="sub">yangzhi 12项择时评分 × 趋势结构信号四方法论　交叉验证与投资策略</div>
+    <div class="meta">
+      <span>数据基准：2026-10-14 收盘</span>
+      <span>评分 53 / 73 / 62</span>
+      <span>趋势结构 S：−0.45 / −0.60 / +0.30</span>
+      <span>结论：涨幅排序与质量排序完全相反</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+<h2 class="sec"><span class="no">01</span>核心结论</h2>
+<div class="card">
+<p><em>今天涨得最猛的乐鑫科技（+14.00%）恰恰是质量最差的一家——评分最低（53）、主力资金净流出、结构仍为下降；而今天没涨的瑞芯微反而是三家里面唯一结构向上的。涨幅排序与质量排序完全相反，这是本轮最重要的结论。</em></p>
+<table>
+<thead><tr><th>维度</th><th class="ctr">乐鑫科技 688018</th><th class="ctr">晶晨股份 688099</th><th class="ctr">瑞芯微 603893</th></tr></thead>
+<tbody>
+<tr><td><b>今日涨跌</b></td><td class="ctr up">+14.00%</td><td class="ctr down">下跌</td><td class="ctr down">下跌</td></tr>
+<tr><td><b>量比</b></td><td class="ctr up">2.27x</td><td class="ctr">0.75x</td><td class="ctr">0.51x</td></tr>
+<tr><td><b>12项择时评分</b></td><td class="ctr"><b>53</b> <span class="tag t-avoid">暂时回避</span></td><td class="ctr"><b>73</b> <span class="tag t-wait">关注等待</span></td><td class="ctr"><b>62</b> <span class="tag t-wait">关注等待</span></td></tr>
+<tr><td><b>趋势结构 S</b></td><td class="ctr down">−0.45 偏空</td><td class="ctr down"><b>−0.60 强空</b></td><td class="ctr up"><b>+0.30 偏多</b>（板块折后 +0.18 震荡）</td></tr>
+<tr><td><b>道氏摆动点</b></td><td class="ctr down">LH+LL 下降</td><td class="ctr down">LH+LL 下降</td><td class="ctr up">HH+HL 上升</td></tr>
+<tr><td><b>主力资金</b></td><td class="ctr down">−0.29亿</td><td class="ctr down">−0.54亿</td><td class="ctr up"><b>+0.76亿</b></td></tr>
+<tr><td><b>PB / PE-TTM</b></td><td class="ctr">6.10 / 50.28</td><td class="ctr"><b>5.04 / 40.72（最低）</b></td><td class="ctr">17.08 / 61.55（最高）</td></tr>
+<tr><td><b>隐含EPS变动</b></td><td class="ctr up">+14.66%</td><td class="ctr up">+13.08%</td><td class="ctr up"><b>+31.53%（最强）</b></td></tr>
+<tr><td><b>综合评级</b></td><td class="ctr"><span class="tag t-avoid">回避 · 不追高</span></td><td class="ctr"><span class="tag t-wait">观察 · 估值首选</span></td><td class="ctr"><span class="tag t-wait">观察 · 结构首选</span></td></tr>
+<tr><td><b>优先级</b></td><td class="ctr">③</td><td class="ctr">②</td><td class="ctr"><b>①</b></td></tr>
+</tbody>
+</table>
+<div class="note warn"><div class="hd">为什么三家里没有一家给"买入"</div>
+SoC 板块正处于<b>波动率扩张 + 量价转弱</b>的阶段性问题（11 只成分股在 ATR 收缩项 11/11 全部失分、量价关系 10/11 失分、无一突破 20 日高点）。按流程原则，一批票集体失分说明是市场状态而非个股问题，<b>结论应落在仓位与节奏上</b>。因此三家均不给买入触发，只给观察顺序、触发条件与止损位。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">02</span>公司定位与基本面对比</h2>
+<div class="card">
+<h3>业务定位</h3>
+<table>
+<thead><tr><th>标的</th><th>核心定位</th><th>主力产品线</th><th>关键客户/生态</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td>物联网 Wi-Fi MCU 龙头</td><td>ESP32 系列（Wi-Fi+蓝牙+MCU SoC）、ESP32-P4 等；AI 玩具、智能家居为主要场景</td><td>开发者生态壁垒强，开源社区驱动；字节等智能硬件客户 <span class="tag t-src">[研报]</span></td></tr>
+<tr><td><b>晶晨股份</b></td><td>多媒体智能终端 SoC</td><td>S 系列（机顶盒/运营商）、T 系列（智能电视）、A 系列（AIoT，集成 NPU/DSP）、W 系列（Wi-Fi）；6nm 端侧AI平台 A311Y3(A9)、视觉芯片 C5</td><td>国内运营商招标最大份额；Google Home Gemini built-in 项目；海外电视生态深度合作</td></tr>
+<tr><td><b>瑞芯微</b></td><td>AIoT SoC 平台型设计商</td><td>RK3588 旗舰、RK3572 中阶（2026-05 推出）、RK3538 流媒体；RK182X 协处理器；RK36 系列（RK3688/RK3668，4-5nm）储备</td><td>比亚迪、百度、宇树科技；机器人/机器视觉/智能车载 <span class="tag t-src">[华创证券]</span></td></tr>
+</tbody>
+</table>
+<h3>财务对比（2026 半年报）</h3>
+<table>
+<thead><tr><th>标的</th><th class="num">营收</th><th class="num">毛利率</th><th class="num">营业利润</th><th class="num">净利润</th><th class="num">净利率</th><th class="num">总市值</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td class="num">14.81亿</td><td class="num up"><b>49.3%</b></td><td class="num">3.42亿</td><td class="num">3.34亿</td><td class="num">22.6%</td><td class="num">287亿</td><td>规模最小但<b>毛利率最高</b>，生态溢价明显</td></tr>
+<tr><td><b>晶晨股份</b></td><td class="num"><b>43.91亿</b></td><td class="num">38.7%</td><td class="num">5.98亿</td><td class="num">6.11亿</td><td class="num">13.9%</td><td class="num">402亿</td><td><b>营收规模最大</b>（同比 +31.86%），但毛利与净利率最低</td></tr>
+<tr><td><b>瑞芯微</b></td><td class="num">28.77亿</td><td class="num">45.8%</td><td class="num"><b>9.43亿</b></td><td class="num"><b>8.59亿</b></td><td class="num up"><b>29.9%</b></td><td class="num"><b>842亿</b></td><td><b>盈利质量最优</b>：净利率 29.9% 远超同业，利润规模最大</td></tr>
+</tbody>
+</table>
+<div class="note"><div class="hd">财务层面的关键分化</div>
+三家的商业模式差异清晰：<b>乐鑫</b>靠生态与高毛利（49.3%）但规模小；<b>晶晨</b>靠规模（43.91亿营收、Q2 归母 +41.89%）但毛利仅 38.7%、净利率 13.9%；<b>瑞芯微</b>是唯一"规模+盈利"兼顾的——营收 28.77亿排第二，净利润 8.59亿排第一，净利率 29.9% 为三家最高。<br>
+这也解释了市场给瑞芯微最高估值（PB 17.08、市值 842亿）:<b>买的不是营收规模，而是盈利质量与平台化能力。</b></div>
+<h3>业绩动能对比</h3>
+<table>
+<thead><tr><th>标的</th><th>已披露业绩</th><th>券商最新观点</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td>2026H1 营收 14.81亿、净利 3.34亿</td><td>民生电子曾指 25H1 收入历史新高、利润超预期 <span class="tag t-src">[研报]</span>；浙商、华创列入 SoC 关注名单 <span class="tag t-src">[研报]</span></td></tr>
+<tr><td><b>晶晨股份</b></td><td>2026H1 营收 43.91亿(+31.86%)、归母 6.11亿(+23.00%)；<b>Q2 归母 4.38亿(+41.89%、环比 +152.63%)</b></td><td>长江证券维持"买入"，预计 26-28 归母 15.05/19.08/24.14亿 <span class="tag t-src">[长江证券 2026-09-29]</span></td></tr>
+<tr><td><b>瑞芯微</b></td><td>2026H1 营收 28.77亿、净利 8.59亿</td><td>华创证券首次覆盖"强推"，2027年 45xPE，<b>目标价 277.22 元</b>；预计 26-28 归母 19.26/26.07/32.11亿 <span class="tag t-src">[华创证券 2026-09-27]</span></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">03</span>估值与资金对比</h2>
+<div class="card">
+<table>
+<thead><tr><th>标的</th><th class="num">收盘</th><th class="num">PB</th><th class="num">PE静态</th><th class="num">PE-TTM</th><th class="num">隐含EPS变动</th><th class="num">主力净流入</th><th class="num">总净流入</th><th>资金结构解读</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td class="num">122.46</td><td class="num">6.10</td><td class="num">57.65</td><td class="num">50.28</td><td class="num up">+14.66%</td><td class="num down">−0.29亿</td><td class="num up">+1.64亿</td><td><b>严重背离</b>：总流入 1.64亿 vs 主力流出 0.29亿 → 散户/游资接盘、主力派发</td></tr>
+<tr><td><b>晶晨股份</b></td><td class="num">93.04</td><td class="num"><b>5.04</b></td><td class="num">46.05</td><td class="num"><b>40.72</b></td><td class="num up">+13.08%</td><td class="num down">−0.54亿</td><td class="num up">+0.38亿</td><td>背离：总流入、主力流出；但<b>PB/PE 三家最低，估值安全垫最厚</b></td></tr>
+<tr><td><b>瑞芯微</b></td><td class="num">195.50</td><td class="num">17.08</td><td class="num">80.96</td><td class="num">61.55</td><td class="num up"><b>+31.53%</b></td><td class="num up"><b>+0.76亿</b></td><td class="num up">+0.20亿</td><td><b>唯一主力净流入</b>且主力流入 &gt; 总流入 → 主力主导承接</td></tr>
+</tbody>
+</table>
+<div class="src">隐含EPS变动 = 静态PE / TTM PE − 1；PB = 现价 / 每股净资产。数据源 tdx_quotes(hasCwInfo=1)，2026-10-14 收盘。</div>
+<div class="note bad"><div class="hd">乐鑫科技的资金背离是本轮最危险的信号</div>
+今日 +14.00% 大涨、成交额 18.19亿、换手率 6.50%、量比 2.27x，看似强势；但<b>主力资金净流出 0.29亿，而总资金净流入 1.64亿</b>——典型的"散户与游资抬轿、主力借机派发"。叠加委比 −100（卖盘挂单压力）、盘中最高 124.61 未能触及涨停价 128.90，<b>这根大阳线的质量远不如涨幅看起来那么好。</b></div>
+<div class="note"><div class="hd">隐含盈利趋势排序</div>
+按"低PB + 正隐含EPS变动 = 双击候选"原则：<b>晶晨股份</b>（PB 5.04 最低 + 变动 +13.08%）是估值端最优；<b>瑞芯微</b>（+31.53%）是盈利动能最优但 PB 17.08 已充分定价；乐鑫（+14.66%、PB 6.10）居中，但资金结构最差。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">04</span>趋势结构信号 · 四方法论对比</h2>
+<div class="card">
+<p>场景判定为<b>转折区</b>（判断底部/方向），权重：道氏 0.15 / 威科夫 0.30 / 缠论 0.40 / 波浪 0.15。</p>
+<table>
+<thead><tr><th>方法论</th><th>乐鑫科技</th><th>晶晨股份</th><th>瑞芯微</th></tr></thead>
+<tbody>
+<tr><td><b>① 道氏</b>（摆动点）</td><td class="down"><b>−1</b>　LH+LL 下降<br>高 127.17→125.85、低 106.11→101.05（3/4 画法一致）</td><td class="down"><b>−1</b>　LH+LL 下降<br>高 103.50→98.27、低 88.00→83.11（3/4 画法一致）</td><td class="up"><b>0</b>　HH+HL 上升但破位<br>高 210.94→228.74、低 170.88→175.60（2/4，另 2 套判混合）；现价 195.50 已跌破 MA20 197.47</td></tr>
+<tr><td><b>② 威科夫</b></td><td class="down"><b>−1</b>　供应进场<br>放量 2.27x 但主力净流出 0.29亿，派发特征</td><td class="down"><b>−1</b>　供应进场<br>主力净流出 0.54亿；上涨段红柱 10.87→8.64 缩小、下跌段绿柱 3.47→5.12 放大</td><td class="up"><b>+1</b>　量价健康<br>缩量回调、主力净流入 0.76亿；上涨段红柱 15.02→<b>49.17</b> 大幅放大</td></tr>
+<tr><td><b>③ 缠论</b></td><td><b>0</b>　中枢 106.11–125.85 内<br>今日最高 124.61 未破上沿，无有效买卖点</td><td><b>0</b>　中枢 88.00–98.27 内<br>无底背驰（绿柱放大、DIF 创新低）</td><td><b>0</b>　中枢 175.60–210.94 内<br>中枢内无买卖点</td></tr>
+<tr><td><b>④ 波浪</b></td><td><b>0</b>　宽幅震荡（89–133），浪型不清</td><td class="down"><b>−1</b>　自 123.00 回调，C 浪/2 浪回撤未完</td><td><b>0</b>　首选 ABC 完成 vs 次选 B 浪，两套冲突</td></tr>
+<tr class="hd3"><td><b>加权总分 S</b></td><td class="down"><b>−0.45</b>　偏空</td><td class="down"><b>−0.60</b>　强空</td><td class="up"><b>+0.30</b>　偏多</td></tr>
+<tr><td><b>板块调节</b></td><td>×1.0（同向）</td><td>×1.0（同向）</td><td>×0.6（板块空头，个股多头打折）→ <b>+0.18 震荡</b></td></tr>
+</tbody>
+</table>
+<div class="note warn"><div class="hd">结构对比的核心发现</div>
+<b>瑞芯微是三家里唯一结构向上的</b>：摆动点 HH+HL、上涨段 MACD 红柱面积从 15.02 放大到 49.17（需求强劲）、下跌段几乎无绿柱、主力资金净流入。<br>
+<b>晶晨与乐鑫同为 LH+LL 下降结构</b>，但性质不同：晶晨是"下降趋势中的缩量整理"（评分 73、估值最低），乐鑫是"下降趋势中的放量脉冲"（评分 53、主力派发）。<br>
+瑞芯微虽结构最好，但<b>经板块折后 S = +0.18 落入震荡区间</b>，未达"偏多（≥+0.2）"门槛，因此同样不给买入触发——这体现了板块阶段性问题对个股的压制。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">05</span>量价验证与择时评分</h2>
+<div class="card">
+<h3>量价四型判别（2026-10-14 收盘）</h3>
+<table>
+<thead><tr><th>标的</th><th class="num">收盘</th><th class="num">涨跌</th><th class="num">量比</th><th class="num">价/MA20</th><th class="ctr">破20日高</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td class="num">122.46</td><td class="num up">+14.00%</td><td class="num up">2.27x</td><td class="num">1.092</td><td class="ctr">否</td><td>价涨+显著放量，但<b>未破前高（125.85 中枢上沿/60日高 129.50）</b> → 不构成有效上涨；叠加主力净流出，判<b>放量诱多</b></td></tr>
+<tr><td><b>晶晨股份</b></td><td class="num">93.04</td><td class="num down">下跌</td><td class="num">0.75x</td><td class="num">1.028</td><td class="ctr">否</td><td>价跌+缩量，站上 MA20 但位于 MA60 附近 → <b>缩量整理</b>，方向未定</td></tr>
+<tr><td><b>瑞芯微</b></td><td class="num">195.50</td><td class="num down">下跌</td><td class="num">0.51x</td><td class="num">0.990</td><td class="ctr">否</td><td>价跌+明显缩量（0.51x），跌破 MA20 → <b>缩量回调</b>（回调质量项得 10/10，健康）</td></tr>
+</tbody>
+</table>
+<h3>12 项择时评分对比</h3>
+<table>
+<thead><tr><th>评分项</th><th class="num">满分</th><th class="num">乐鑫</th><th class="num">晶晨</th><th class="num">瑞芯微</th><th>差异解读</th></tr></thead>
+<tbody>
+<tr><td>趋势1（价/MA20）</td><td class="num">15</td><td class="num">13</td><td class="num">11</td><td class="num">8</td><td>乐鑫站上 MA20 幅度最大（+9.2%）；瑞芯微已跌破但幅度小（−1.0%）</td></tr>
+<tr><td>趋势2（MA20斜率）</td><td class="num">10</td><td class="num">4</td><td class="num">8</td><td class="num">8</td><td>乐鑫均线刚转平，晶晨/瑞芯微斜率更好</td></tr>
+<tr><td>MACD</td><td class="num">20</td><td class="num">15</td><td class="num">20</td><td class="num">0</td><td><b>晶晨满分（水上金叉）；瑞芯微 0 分（死叉）是最大拖累</b></td></tr>
+<tr><td>位置（60日区间）</td><td class="num">20</td><td class="num">5</td><td class="num">10</td><td class="num">15</td><td>乐鑫已在区间<b>高位</b>（5/20）→ 追高风险；瑞芯微位置最优</td></tr>
+<tr><td>ATR收缩</td><td class="num">15</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><b>三家全部失分</b>——与板块 11/11 失分一致，属阶段性问题</td></tr>
+<tr><td>低波（ATR%）</td><td class="num">10</td><td class="num">4</td><td class="num">6</td><td class="num">4</td><td>三家 ATR% 均在 5-5.6%，波动偏高</td></tr>
+<tr><td>涨幅安全</td><td class="num">15</td><td class="num">4</td><td class="num">15</td><td class="num">15</td><td><b>乐鑫仅 4/15</b>——短期涨幅已透支；晶晨/瑞芯微满分</td></tr>
+<tr><td>量价关系</td><td class="num">15</td><td class="num">3</td><td class="num">3</td><td class="num">13</td><td><b>乐鑫/晶晨均为"供应进场"（3/15）；瑞芯微"量价健康"（13/15）</b></td></tr>
+<tr><td>回调质量</td><td class="num">10</td><td class="num">10</td><td class="num">10</td><td class="num">10</td><td>三家均为缩量回调，健康</td></tr>
+<tr class="hd3"><td><b>合计</b></td><td class="num"><b>165</b></td><td class="num"><b>53</b></td><td class="num"><b>73</b></td><td class="num"><b>62</b></td><td>—</td></tr>
+</tbody>
+</table>
+<div class="note bad"><div class="hd">评分拆解揭示的真相</div>
+乐鑫科技的两项致命短板：<b>涨幅安全仅 4/15</b>（短期涨幅透支）与<b>位置仅 5/20</b>（已在 60 日区间高位）——这正是"追高"的定义。它的总分被趋势1（13/15）和 MACD（15/20）撑着，但那是<b>今天这根大阳线本身造成的</b>，属于结果而非原因。<br>
+晶晨股份靠<b>MACD 满分 + 涨幅安全满分 + 位置适中</b>拿到 73 分，是评分口径下质量最好的；瑞芯微则因 MACD 死叉被扣 20 分，否则本应更高——<b>评分与结构在这里再次出现分歧（晶晨评分高但结构差、瑞芯微评分低但结构好）</b>。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">06</span>投资策略</h2>
+<div class="card">
+<div class="note warn"><div class="hd">总原则：三家均不给买入触发</div>
+SoC 板块处于 ATR 普遍扩张、量价转弱的阶段性问题中（11/11 成分股 ATR 失分）。此时正确动作是<b>控制仓位、等待缩量止跌或放量站稳前高的确认信号</b>，而不是在单日大涨中追入。以下为观察顺序、触发条件与止损位。</div>
+<div class="grid3">
+<div class="card"><h3>① 瑞芯微 <span class="tag t-core">结构首选</span></h3>
+<ul>
+<li><b>为何优先</b>：唯一结构向上（HH+HL）、上涨段红柱 15.02→49.17、主力净流入 +0.76亿、净利率 29.9% 最优、隐含EPS +31.53% 最强</li>
+<li><b>止损参考 174.30</b>（2×ATR，−10.8%）</li>
+<li><b>再评估触发</b>：MACD 柱由负转正，或缩量（≤0.8x）回踩 MA20 197.47 / 中枢下沿 175.60 不破</li>
+<li><b>当前是否满足</b>：<span class="tag t-wait">否</span>（MACD 死叉、已跌破 MA20）</li>
+<li><b>风险</b>：PB 17.08 为三家最高，估值已充分定价；华创目标价 277.22 <span class="tag t-src">[卖方预测]</span>需业绩兑现</li>
+</ul></div>
+<div class="card"><h3>② 晶晨股份 <span class="tag t-wait">估值首选</span></h3>
+<ul>
+<li><b>为何次选</b>：PB 5.04 / PE-TTM 40.72 三家最低、评分 73 最高、Q2 归母 +41.89% 已兑现、MACD 水上金叉</li>
+<li><b>止损参考 83.67</b>（2×ATR，−10.1%）</li>
+<li><b>再评估触发</b>：放量站上中枢上沿 <b>98.27</b>（量比 ≥1.5×、幅度 ≥1×ATR、3 根内不回落）</li>
+<li><b>当前是否满足</b>：<span class="tag t-wait">否</span>（93.04 仍在中枢内，主力净流出 0.54亿）</li>
+<li><b>风险</b>：结构为 LH+LL 下降，反弹性质未改；毛利 38.7% 为三家最低</li>
+</ul></div>
+<div class="card"><h3>③ 乐鑫科技 <span class="tag t-avoid">明确回避</span></h3>
+<ul>
+<li><b>为何回避</b>：今日 +14% 但主力净流出 0.29亿（总流入 1.64亿背离）、涨幅安全仅 4/15、位置 5/20 已在区间高位、结构 LH+LL 下降</li>
+<li><b>止损参考 108.66</b>（2×ATR，−11.3%）</li>
+<li><b>若已持有</b>：<span class="tag t-avoid">今日大涨是减仓窗口，不是加仓机会</span>；可借量能兑现部分</li>
+<li><b>仅在何种情况下重评</b>：放量<b>收盘站上 129.50</b>（60日高）且主力资金转为净流入</li>
+<li><b>唯一优点</b>：毛利率 49.3% 三家最高，生态壁垒真实</li>
+</ul></div>
+</div>
+<h3>关键价位地图</h3>
+<table>
+<thead><tr><th>标的</th><th class="num">压力位</th><th class="num">现价</th><th class="num">支撑位</th><th class="num">止损(2×ATR)</th><th>分水岭</th></tr></thead>
+<tbody>
+<tr><td><b>乐鑫科技</b></td><td class="num">125.85（中枢上沿）/ 129.50（60日高）</td><td class="num"><b>122.46</b></td><td class="num">112.17（MA20）/ 106.11（中枢下沿）</td><td class="num"><b>108.66</b></td><td>站上 129.50 = 趋势扭转；跌破 106.11 = 回到区间下沿</td></tr>
+<tr><td><b>晶晨股份</b></td><td class="num">98.27（中枢上沿）/ 103.78（60日高）</td><td class="num"><b>93.04</b></td><td class="num">90.48（MA20）/ 88.00（中枢下沿）</td><td class="num"><b>83.67</b></td><td>站上 98.27 = 三买；跌破 88.00 = 三卖</td></tr>
+<tr><td><b>瑞芯微</b></td><td class="num">210.94（中枢上沿）/ 232.68（60日高）</td><td class="num"><b>195.50</b></td><td class="num">175.60（中枢下沿）/ 170.88（60日低）</td><td class="num"><b>174.30</b></td><td>站回 197.47（MA20）= 回调结束；跌破 175.60 = 结构转弱</td></tr>
+</tbody>
+</table>
+<div class="note good"><div class="hd">一句话总结</div>
+<b>三家都不急：瑞芯微等 MACD 转正或缩量回踩，晶晨等站上 98.27，乐鑫借大涨减仓。</b>板块的 ATR 与量价问题没解决之前，任何一只的单独强势都难以持续——今天乐鑫 +14% 而主力净流出，就是最直接的提醒。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">07</span>数据缺口如实披露</h2>
+<div class="card">
+<ul>
+<li><b>评分随收盘更新而变化</b>：乐鑫 60→53、晶晨 83→73、瑞芯微 73→62（上午盘中 vs 收盘）。本报告采用<b>收盘值</b>；若与盘中数据对照需注意时点差异。</li>
+<li><b>板块层面统计来自 11 只 SoC 成分股</b>（2026-10-14 盘中），收盘后 ATR/量价等集体失分统计可能微调。</li>
+<li><b>净利润为 2026 半年报口径</b>：CwInfo 的 <code>JLY</code> 字段单位为万元，已与长江证券研报（晶晨 H1 归母 6.11 亿）交叉验证一致，<b>非全年数</b>，不可年化外推。</li>
+<li><b>PE 静态与 PE-TTM 口径不同</b>，跨标的横比须区分；隐含EPS变动由两者比值推算，属<span class="tag t-src">[推算]</span>而非披露值。</li>
+<li><b>乐鑫科技的机构覆盖信息较旧</b>：民生电子"25H1 收入历史新高"为知识星球 2025-07 口径，距今约 15 个月；本轮未检索到 2026-09 以后的乐鑫专项深度研报，其最新业绩指引标 <span class="tag t-src">[MISSING]</span>。</li>
+<li><b>知识星球时效缺口</b>：SoC 相关讨论最新停在 2025-08，本期仅用于产业链脉络（乐鑫生态、瑞芯微协处理器），不用于当期业绩判断。</li>
+<li><b>IMA 知识库为空</b>：<code>get_knowledge_base_list</code> 返回 <code>{"results":[]}</code>，本次无一条信息来自 IMA。</li>
+<li><b>趋势结构信号局限</b>：摆动点需右侧 n 根确认，三家最近 1-3 根 K 线的高低点（如乐鑫今日 124.61）均未被自动收录，相关判定为人工补充，须待后续确认；缠论中枢边界在不同画法下存在分歧（乐鑫 n=7 为 117.77–101.05，其余为 125.85–106.11）。</li>
+</ul>
+</div>
+</section>
+
+<div class="foot">
+<strong>免责声明</strong>　本报告由 yangzhi-stock-analysis-v1 与趋势结构信号双技能交叉生成，仅供研究参考，<strong>不构成个人投资建议</strong>，不对任何投资决策承担责任。<br>
+<strong>标注体系</strong>：[卖方预测] 机构观点非事实；[研报] 券商研究；[推算] 自行外推；[MISSING] 未取到数据。<br>
+<strong>方法论边界</strong>：12 项择时评分与趋势结构（道氏/威科夫/缠论/波浪）均为概率性判断，两者出现分歧时已在正文显式说明；本报告不含仓位比例与资金管理建议。<br>
+数据来源：通达信 MCP（tdx_quotes / wenda_report_query）、腾讯财经日线（前复权）、知识星球 CLI。<br>
+生成时间：2026-10-14 15:20　|　数据基准日：2026-10-14 收盘
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="数据基准 2026-10-14（行情截至）。2026H1 营收 14.81亿（+18.88%）、归母净利 3.34亿（+27.93%），Q2 营收/毛利/净利三重新高；风险：存货 8.42亿（+34.1%）异动、芯片收入仅+6.62% 增速失速，需 H2 验证。">
+<meta name="report-type" content="个股深度">
+<title>乐鑫科技(688018) 2026H1 财务拆解报告</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f7f8fa; --card:#ffffff; --line:#e3e6ec; --line2:#eef0f4;
+  --tx:#1a1d24; --tx2:#4b5261; --tx3:#828a99;
+  --up:#d63b30; --down:#128a5a; --accent:#1f5fd8; --accent2:#e8f0fe;
+  --warn:#b7791f; --warnbg:#fdf6e3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;line-height:1.65;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header{background:linear-gradient(135deg,#1f5fd8 0%,#3d7ae8 100%);color:#fff;border-radius:14px;padding:30px 34px;margin-bottom:22px}
+header h1{font-size:27px;font-weight:700;letter-spacing:-.3px;margin-bottom:8px}
+header .sub{font-size:14px;opacity:.92;font-weight:400}
+.tagrow{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);padding:4px 12px;border-radius:20px;font-size:12.5px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 28px;margin-bottom:20px}
+h2{font-size:19px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+h2 .num{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex:none}
+.h2sub{color:var(--tx3);font-size:13px;margin:0 0 18px 36px}
+h3{font-size:15px;font-weight:650;margin:22px 0 10px;color:var(--tx);border-left:3px solid var(--accent);padding-left:9px}
+h3:first-of-type{margin-top:6px}
+p{font-size:14px;color:var(--tx2);margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:13.2px;margin:6px 0 14px}
+th{background:#f2f4f8;color:var(--tx2);font-weight:600;text-align:right;padding:9px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+th:first-child{text-align:left}
+td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line2);font-variant-numeric:tabular-nums;white-space:nowrap}
+td:first-child{text-align:left;color:var(--tx);font-weight:500}
+tbody tr:hover{background:#fafbfd}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.mut{color:var(--tx3)}
+.hl{background:var(--accent2)!important}
+.hl td{font-weight:600}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.kpi{background:#fbfcfe;border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+.kpi .k{font-size:12px;color:var(--tx3);margin-bottom:5px}
+.kpi .v{font-size:23px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.kpi .d{font-size:12.5px;margin-top:4px;font-weight:600}
+.kpi .n{font-size:11.5px;color:var(--tx3);margin-top:5px;line-height:1.45}
+.box{border-radius:9px;padding:14px 17px;margin:12px 0;font-size:13.5px;line-height:1.7}
+.box-ok{background:#eef7f2;border-left:4px solid var(--down);color:#1c4a37}
+.box-warn{background:var(--warnbg);border-left:4px solid var(--warn);color:#6b4c0c}
+.box-info{background:var(--accent2);border-left:4px solid var(--accent);color:#1a3a72}
+.box b{font-weight:700}
+.chartbox{background:#fbfcfe;border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0}
+.chartbox .ct{font-size:13px;font-weight:600;color:var(--tx2);margin-bottom:10px}
+.cw{position:relative;height:290px}
+.cw-sm{position:relative;height:250px}
+ul{margin:8px 0 12px 20px;font-size:13.6px;color:var(--tx2)}
+li{margin-bottom:6px}
+.bridge{margin:14px 0}
+.brow{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.brow .bl{width:190px;font-size:13.2px;color:var(--tx2);flex:none}
+.bbar{flex:1;height:22px;position:relative;background:#f2f4f8;border-radius:3px;overflow:hidden}
+.bbar span{position:absolute;top:0;height:100%;border-radius:3px}
+.bpos{background:linear-gradient(90deg,#e8665c,#d63b30)}
+.bneg{background:linear-gradient(90deg,#4bbd93,#128a5a)}
+.brow .bv{width:88px;text-align:right;font-size:13px;font-variant-numeric:tabular-nums;font-weight:600;flex:none}
+.brow .bc{width:74px;text-align:right;font-size:12.8px;font-variant-numeric:tabular-nums;color:var(--tx3);flex:none}
+.foot{text-align:center;color:var(--tx3);font-size:12px;padding:18px 0}
+@media(max-width:860px){.g4,.g3,.g2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}.brow .bl{width:120px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>乐鑫科技（688018）财务拆解报告</h1>
+  <div class="sub">2026 年中报 · 收入 / 毛利 / 费用 / 利润 同比环比归因　|　数据来源：通达信 F10　|　行情截至 2026-10-14</div>
+  <div class="tagrow">
+    <span class="tag">科创板 · AIoT Wi-Fi MCU</span>
+    <span class="tag">总市值 287.0 亿</span>
+    <span class="tag">PE(TTM) 42.9x</span>
+    <span class="tag">PB 6.10x</span>
+    <span class="tag">报告期 2026H1</span>
+  </div>
+</header>
+
+<!-- 0 结论 -->
+<section>
+  <h2><span class="num">0</span>核心结论</h2>
+  <div class="h2sub">一句话：收入稳健增长 + 毛利率创历史新高 + 研发重投，利润增速跑赢收入；最大瑕疵是存货与营运资本占用显著恶化。</div>
+
+  <div class="grid g4">
+    <div class="kpi"><div class="k">营业收入</div><div class="v">14.81 亿</div><div class="d up">YoY +18.88%</div><div class="n">Q2 单季 8.33 亿，QoQ +28.5% 创新高</div></div>
+    <div class="kpi"><div class="k">毛利率</div><div class="v">49.32%</div><div class="d up">+4.11 pct</div><div class="n">45.20% → 49.32%，上市以来最高</div></div>
+    <div class="kpi"><div class="k">归母净利润</div><div class="v">3.34 亿</div><div class="d up">YoY +27.93%</div><div class="n">扣非 3.12 亿，YoY +30.26%</div></div>
+    <div class="kpi"><div class="k">经营现金流</div><div class="v">0.72 亿</div><div class="d down">YoY −36.69%</div><div class="n">现金含量仅 21.6%，存货拖累</div></div>
+  </div>
+
+  <div class="box box-ok" style="margin-top:18px">
+    <b>三条增长主线：</b>① <b>模组放量</b>——收入 7.53→9.55 亿（+26.8%），贡献 80.8% 的毛利增量；② <b>毛利率扩张</b>——模组 +4.95pct、芯片 +2.81pct，成本增速 9.96% 远低于收入增速 18.88%；③ <b>海外加速</b>——境外收入 +35.8%，占比 28.2%→32.3%，且境外毛利率 50.49% 高于境内。
+  </div>
+  <div class="box box-warn">
+    <b>两个需要盯的风险：</b>① <b>存货异动</b>——半年内存货 6.28→8.42 亿（+34.1%），周转天数 133.6→178.7 天，现金循环周期拉长 29.5 天至 173.7 天；存货/半年营收从 41.3% 升至 56.9%。若为 AI 新品备货属良性，若为需求错配则 H2 存在减值压力。② <b>芯片增速失速</b>——芯片收入仅 +6.62%，明显落后模组，需观察是否为产品周期切换。
+  </div>
+</section>
+
+<!-- 1 收入 -->
+<section>
+  <h2><span class="num">1</span>收入拆解：模组驱动，海外提速，芯片失速</h2>
+  <div class="h2sub">2026H1 营收 14.81 亿，同比 +18.88%（增量 2.35 亿）</div>
+
+  <h3>1.1 分产品：模组是唯一强引擎</h3>
+  <table>
+    <thead><tr><th>产品线</th><th>2025H1 收入</th><th>2026H1 收入</th><th>同比</th><th>收入占比</th><th>占比变动</th><th>2026H1 毛利率</th><th>毛利率变动</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>模组及开发套件</td><td>7.53 亿</td><td>9.55 亿</td><td class="up">+26.78%</td><td>64.5%</td><td class="up">+4.0 pct</td><td>48.55%</td><td class="up">+4.95 pct</td></tr>
+      <tr><td>芯片</td><td>4.84 亿</td><td>5.16 亿</td><td class="up">+6.62%</td><td>34.9%</td><td class="down">−4.0 pct</td><td>50.37%</td><td class="up">+2.81 pct</td></tr>
+      <tr><td>其他</td><td>0.08 亿</td><td>0.09 亿</td><td class="up">+17.68%</td><td>0.6%</td><td class="mut">持平</td><td>69.93%</td><td class="up">+16.12 pct</td></tr>
+    </tbody>
+  </table>
+  <p><b>解读：</b>模组收入增量 2.02 亿，占公司总增量 2.35 亿的 <b>86%</b>。模组占比首次突破 64%，说明公司正从"卖芯片"向"卖模组/解决方案"迁移——单价更高、客户粘性更强，但也意味着对下游需求的直接暴露度上升。芯片收入增速掉到个位数（+6.62%），是本期结构上最值得警惕的信号：可能是客户转向直接采购模组替代自研，也可能是老产品进入生命末期、新品尚未接棒。</p>
+
+  <h3>1.2 分地区：海外是增速最快的一块</h3>
+  <table>
+    <thead><tr><th>地区</th><th>2025H1</th><th>2026H1</th><th>同比</th><th>收入占比</th><th>2026H1 毛利率</th><th>毛利率变动</th><th>毛利增量</th><th>占毛利增量</th></tr></thead>
+    <tbody>
+      <tr><td>境内</td><td>8.94 亿</td><td>10.03 亿</td><td class="up">+12.22%</td><td>67.7%</td><td>48.76%</td><td class="up">+4.58 pct</td><td class="up">+0.94 亿</td><td>56.3%</td></tr>
+      <tr class="hl"><td>境外</td><td>3.52 亿</td><td>4.78 亿</td><td class="up">+35.82%</td><td>32.3%</td><td>50.49%</td><td class="up">+2.69 pct</td><td class="up">+0.73 亿</td><td>43.7%</td></tr>
+    </tbody>
+  </table>
+  <p><b>解读：</b>境外以 32% 的收入占比贡献了 <b>44%</b> 的毛利增量，且毛利率高于境内 1.7pct。海外客户结构（多为品牌客户、开发者生态）对价格敏感度更低，是毛利率上行的重要支撑。这条线如果延续，是估值溢价最扎实的来源。</p>
+
+  <div class="chartbox">
+    <div class="ct">收入结构：分产品收入（亿元）趋势</div>
+    <div class="cw"><canvas id="cProd"></canvas></div>
+  </div>
+</section>
+
+<!-- 2 毛利 -->
+<section>
+  <h2><span class="num">2</span>毛利拆解：量占 64%、率占 36%，毛利率创历史新高</h2>
+  <div class="h2sub">毛利 5.63 → 7.30 亿，同比 +29.70%（增量 1.67 亿）</div>
+
+  <h3>2.1 量价（率）拆分</h3>
+  <div class="grid g2">
+    <div>
+      <table>
+        <thead><tr><th>驱动项</th><th>贡献毛利</th><th>占比</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>量的贡献（收入增量 × 基期毛利率）</td><td class="up">+1.06 亿</td><td>63.6%</td></tr>
+          <tr><td>率的贡献（毛利率提升 × 当期收入）</td><td class="up">+0.61 亿</td><td>36.4%</td></tr>
+          <tr><td>合计毛利增量</td><td class="up">+1.67 亿</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chartbox" style="margin:0">
+      <div class="ct">毛利率演进：累计 vs 单季</div>
+      <div class="cw-sm"><canvas id="cGm"></canvas></div>
+    </div>
+  </div>
+
+  <p style="margin-top:12px"><b>核心驱动：</b>营业成本同比仅 +9.96%，显著低于收入 +18.88%。若成本与收入同速增长，本期成本应为 8.11 亿，实际仅 7.50 亿，<b>节约 0.61 亿</b>——这正是毛利率提升 4.11pct 的绝对值来源。成本端的改善来自三方面：晶圆采购议价力随规模提升、模组自制比例上升带来成本内部化、以及高毛利新品（AI 相关）占比提升。</p>
+
+  <h3>2.2 分产品毛利率：量价齐升的拆解</h3>
+  <table>
+    <thead><tr><th>产品线</th><th>毛利增量</th><th>量的贡献</th><th>率的贡献</th><th>率的贡献占比</th><th>毛利率变化</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>模组</td><td class="up">+1.352 亿</td><td class="up">+0.879 亿</td><td class="up">+0.473 亿</td><td>35.0%</td><td>43.60% → 48.55%</td></tr>
+      <tr><td>芯片</td><td class="up">+0.298 亿</td><td class="up">+0.153 亿</td><td class="up">+0.145 亿</td><td>48.7%</td><td>47.56% → 50.37%</td></tr>
+    </tbody>
+  </table>
+  <p><b>解读：</b>模组的增量以"量"为主（放量驱动），芯片的增量近一半来自"率"（结构升级驱动）。两者毛利率双双上行，说明这不是单纯的会计口径或一次性因素，而是真实的产品力与成本力改善。</p>
+
+  <div class="box box-info">
+    <b>毛利率可持续性判断：</b>49.32% 已是上市以来最高水平，2026Q2 单季进一步升至 49.95%。考虑到模组占比仍在上升（模组毛利率 48.55% 低于芯片 50.37%），产品结构其实是<b>拖累</b>整体毛利率的，但整体毛利率反而上行——意味着<b>各产品线内部毛利率的提升幅度超过了结构劣化</b>，质量较高。向上空间取决于新品定价与晶圆成本，向下有汇率与低端竞争扰动。
+  </div>
+</section>
+
+<!-- 3 费用 -->
+<section>
+  <h2><span class="num">3</span>费用拆解：研发投入是最大增量，费用率抬头 1.4pct</h2>
+  <div class="h2sub">四费合计 3.374 → 4.219 亿（+25.04%），增速快于收入的 18.88%</div>
+
+  <table>
+    <thead><tr><th>项目</th><th>2026H1</th><th>2025H1</th><th>同比</th><th>2026H1 费用率</th><th>2025H1 费用率</th><th>变动</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>研发费用</td><td>3.297 亿</td><td>2.682 亿</td><td class="up">+22.90%</td><td>22.26%</td><td>21.54%</td><td class="up">+0.73 pct</td></tr>
+      <tr><td>销售费用</td><td>0.479 亿</td><td>0.379 亿</td><td class="up">+26.44%</td><td>3.24%</td><td>3.04%</td><td class="up">+0.19 pct</td></tr>
+      <tr><td>管理费用</td><td>0.474 亿</td><td>0.379 亿</td><td class="up">+25.18%</td><td>3.20%</td><td>3.04%</td><td class="up">+0.16 pct</td></tr>
+      <tr><td>财务费用</td><td>−0.031 亿</td><td>−0.067 亿</td><td class="down">−52.80%</td><td>−0.21%</td><td>−0.53%</td><td class="up">+0.32 pct</td></tr>
+      <tr><td><b>四费合计</b></td><td><b>4.219 亿</b></td><td><b>3.374 亿</b></td><td class="up"><b>+25.04%</b></td><td><b>28.49%</b></td><td><b>27.09%</b></td><td class="up"><b>+1.40 pct</b></td></tr>
+      <tr><td>其中三费（销+管+财）</td><td>0.922 亿</td><td>0.691 亿</td><td class="up">+33.37%</td><td>6.23%</td><td>5.55%</td><td class="up">+0.68 pct</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid g3" style="margin:14px 0">
+    <div class="kpi"><div class="k">研发费用绝对增量</div><div class="v" style="color:var(--up)">−0.614 亿</div><div class="n">占四费总增量 0.845 亿的 72.7%，是利润最大的抵扣项</div></div>
+    <div class="kpi"><div class="k">研发费用率</div><div class="v">22.26%</div><div class="n">同业最高梯队，高于收入增速的刚性投入</div></div>
+    <div class="kpi"><div class="k">财务费用</div><div class="v">−0.031 亿</div><div class="n">利息收入收窄 / 汇兑贡献下降，拖累 0.032 亿</div></div>
+  </div>
+
+  <p><b>解读：</b>费用端呈现"研发独大"格局。研发费用率 22.26%，虽同比提升 0.73pct，但绝对投入节奏与收入增长基本匹配（+22.90% vs 收入 +18.88%），属于<b>主动扩张型投入</b>而非失控。三费合计增速 +33.37% 看似偏高，但基数极小（0.69 亿），销售与管理各增约 0.10 亿，主要是人员与市场推广的常规扩张，费用率仅上升 0.35pct，可控。</p>
+
+  <div class="chartbox">
+    <div class="ct">单季度研发费用（亿元）与研发费用率（%）——Q4 为结算高峰</div>
+    <div class="cw"><canvas id="cRd"></canvas></div>
+  </div>
+  <p class="mut" style="font-size:12.5px">注：公司研发费用存在明显季节性，Q4 为年终结算高峰（2025Q4 达 27.57%），Q2 为低点。2026Q2 研发费用率 21.04%，为近 8 个季度次低，是当季净利率冲高至 23.85% 的重要原因之一。</p>
+</section>
+
+<!-- 4 利润桥接 -->
+<section>
+  <h2><span class="num">4</span>利润桥接：从 2.61 亿到 3.34 亿的每一步</h2>
+  <div class="h2sub">2026H1 归母净利 3.342 亿 vs 2025H1 2.613 亿，增量 +0.730 亿（+27.93%）</div>
+
+  <div class="bridge">
+    <div class="brow"><div class="bl"><b>起点：2025H1 归母净利</b></div><div class="bbar"></div><div class="bv">2.613</div><div class="bc"></div></div>
+    <div class="brow"><div class="bl">毛利增加</div><div class="bbar"><span class="bpos" style="left:0;width:100%"></span></div><div class="bv up">+1.672</div><div class="bc">4.285</div></div>
+    <div class="brow"><div class="bl">研发费用增加</div><div class="bbar"><span class="bneg" style="left:0;width:36.7%"></span></div><div class="bv down">−0.614</div><div class="bc">3.671</div></div>
+    <div class="brow"><div class="bl">销售费用增加</div><div class="bbar"><span class="bneg" style="left:0;width:6.0%"></span></div><div class="bv down">−0.100</div><div class="bc">3.571</div></div>
+    <div class="brow"><div class="bl">管理费用增加</div><div class="bbar"><span class="bneg" style="left:0;width:5.7%"></span></div><div class="bv down">−0.095</div><div class="bc">3.476</div></div>
+    <div class="brow"><div class="bl">财务费用（利息收入减少）</div><div class="bbar"><span class="bneg" style="left:0;width:2.1%"></span></div><div class="bv down">−0.035</div><div class="bc">3.441</div></div>
+    <div class="brow"><div class="bl">税金及附加</div><div class="bbar"><span class="bneg" style="left:0;width:1.8%"></span></div><div class="bv down">−0.030</div><div class="bc">3.411</div></div>
+    <div class="brow"><div class="bl">其他收益+投资+公允价值</div><div class="bbar"><span class="bpos" style="left:0;width:1.7%"></span></div><div class="bv up">+0.028</div><div class="bc">3.439</div></div>
+    <div class="brow"><div class="bl">资产/信用减值</div><div class="bbar"><span class="bneg" style="left:0;width:0.4%"></span></div><div class="bv down">−0.007</div><div class="bc">3.432</div></div>
+    <div class="brow" style="border-bottom:2px solid var(--line)"><div class="bl"><b>桥接合计（营业利润口径）</b></div><div class="bbar"></div><div class="bv"><b>3.432</b></div><div class="bc"></div></div>
+    <div class="brow"><div class="bl">营业外 / 所得税 / 少数股东</div><div class="bbar"><span class="bneg" style="left:0;width:5.3%"></span></div><div class="bv down">−0.088</div><div class="bc"></div></div>
+    <div class="brow" style="border-bottom:none;background:var(--accent2);border-radius:6px;padding:9px 8px"><div class="bl"><b>终点：2026H1 归母净利</b></div><div class="bbar"></div><div class="bv up"><b>3.342</b></div><div class="bc up">+27.93%</div></div>
+  </div>
+
+  <div class="box box-ok">
+    <b>桥接结论：</b>毛利扩张贡献 <b>+1.672 亿</b>，费用端合计吞掉 <b>−0.844 亿</b>（其中研发独占 −0.614 亿），净额 <b>+0.818 亿</b>，再经税项与少数股东损益调整后落在 +0.730 亿。<b>本质是一次"毛利率扩张 vs 研发加码"的赛跑，本期前者跑赢。</b>由于研发是刚性且前瞻的投入，判断后续利润率的关键不是研发是否会降（大概率不会），而是毛利率能否维持在高位。
+  </div>
+</section>
+
+<!-- 5 单季度 -->
+<section>
+  <h2><span class="num">5</span>单季度趋势：Q2 明显加速</h2>
+  <div class="h2sub">近 10 个季度核心指标环比 / 同比全景</div>
+
+  <table>
+    <thead><tr><th>季度</th><th>营收(亿)</th><th>QoQ</th><th>YoY</th><th>毛利率</th><th>环比变动</th><th>归母净利(亿)</th><th>QoQ</th><th>YoY</th><th>净利率</th></tr></thead>
+    <tbody>
+      <tr><td>2024Q1</td><td>3.87</td><td class="mut">—</td><td class="mut">—</td><td>41.93%</td><td class="mut">—</td><td>0.54</td><td class="mut">—</td><td class="mut">—</td><td>13.92%</td></tr>
+      <tr><td>2024Q2</td><td>5.33</td><td class="up">+37.66%</td><td class="mut">—</td><td>44.11%</td><td class="up">+2.18pct</td><td>0.98</td><td class="up">+81.26%</td><td class="mut">—</td><td>18.33%</td></tr>
+      <tr><td>2024Q3</td><td>5.40</td><td class="up">+1.27%</td><td class="mut">—</td><td>42.14%</td><td class="down">−1.97pct</td><td>0.99</td><td class="up">+1.79%</td><td class="mut">—</td><td>18.43%</td></tr>
+      <tr><td>2024Q4</td><td>5.47</td><td class="up">+1.32%</td><td class="mut">—</td><td>46.85%</td><td class="up">+4.71pct</td><td>0.88</td><td class="down">−11.32%</td><td class="mut">—</td><td>16.13%</td></tr>
+      <tr><td>2025Q1</td><td>5.58</td><td class="up">+2.00%</td><td class="up">+44.08%</td><td>43.37%</td><td class="down">−3.48pct</td><td>0.94</td><td class="up">+6.23%</td><td class="up">+73.80%</td><td>16.80%</td></tr>
+      <tr><td>2025Q2</td><td>6.88</td><td class="up">+23.28%</td><td class="up">+29.02%</td><td>46.69%</td><td class="up">+3.32pct</td><td>1.68</td><td class="up">+78.82%</td><td class="up">+71.46%</td><td>24.37%</td></tr>
+      <tr><td>2025Q3</td><td>6.67</td><td class="down">−3.05%</td><td class="up">+23.51%</td><td>47.97%</td><td class="up">+1.28pct</td><td>1.16</td><td class="down">−31.07%</td><td class="up">+16.11%</td><td>17.32%</td></tr>
+      <tr><td>2025Q4</td><td>6.53</td><td class="down">−2.05%</td><td class="up">+19.40%</td><td>47.96%</td><td class="down">−0.01pct</td><td>1.21</td><td class="up">+4.83%</td><td class="up">+37.26%</td><td>18.54%</td></tr>
+      <tr><td>2026Q1</td><td>6.48</td><td class="down">−0.77%</td><td class="up">+16.16%</td><td>48.51%</td><td class="up">+0.55pct</td><td>1.36</td><td class="up">+12.03%</td><td class="up">+44.76%</td><td>20.93%</td></tr>
+      <tr class="hl"><td>2026Q2</td><td>8.33</td><td class="up">+28.51%</td><td class="up">+21.09%</td><td>49.95%</td><td class="up">+1.44pct</td><td>1.99</td><td class="up">+46.40%</td><td class="up">+18.52%</td><td>23.85%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid g3">
+    <div class="box box-ok" style="margin:0"><b>Q2 三重新高</b><br>营收 8.33 亿、毛利率 49.95%、归母净利 1.99 亿，均创单季历史最高。QoQ +28.51% 远超历史同期季节性。</div>
+    <div class="box box-info" style="margin:0"><b>YoY 增速回升</b><br>营收 YoY 从 Q1 的 +16.16% 回升至 Q2 的 +21.09%，扭转了 2025Q2 以来连续四个季度的增速下行。</div>
+    <div class="box box-warn" style="margin:0"><b>利润 YoY 反而放缓</b><br>归母净利 YoY 从 Q1 的 +44.76% 降至 Q2 的 +18.52%，因 2025Q2 净利率基数高达 24.37%（研发费用率仅 20.66%）。扣非口径 +24.55% 更健康。</div>
+  </div>
+
+  <div class="chartbox">
+    <div class="ct">单季度营收（亿元，柱）与毛利率（%，线）</div>
+    <div class="cw"><canvas id="cQ"></canvas></div>
+  </div>
+</section>
+
+<!-- 6 营运资本 -->
+<section>
+  <h2><span class="num">6</span>营运资本与现金流：本期最大的扣分项</h2>
+  <div class="h2sub">利润表亮眼，但资产负债表和现金流量表发出了警告信号</div>
+
+  <table>
+    <thead><tr><th>项目</th><th>2025H1</th><th>2026H1</th><th>变动</th><th>2025H1 周转天数</th><th>2026H1 周转天数</th><th>天数变动</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>存货</td><td>5.14 亿</td><td>8.42 亿</td><td class="up">+34.13%</td><td>133.6 天</td><td>178.7 天</td><td class="up">+45.1 天</td></tr>
+      <tr><td>应收账款</td><td>3.86 亿</td><td>4.03 亿</td><td class="up">+35.06%*</td><td>51.6 天</td><td>43.2 天</td><td class="down">−8.4 天</td></tr>
+      <tr><td>应付账款</td><td>1.46 亿</td><td>2.09 亿</td><td class="up">+11.34%*</td><td>41.0 天</td><td>48.2 天</td><td class="up">+7.2 天</td></tr>
+      <tr><td>现金循环周期 CCC</td><td>—</td><td>—</td><td>—</td><td>144.2 天</td><td>173.7 天</td><td class="up">+29.5 天</td></tr>
+      <tr><td>经营活动现金流</td><td>1.14 亿</td><td>0.72 亿</td><td class="down">−36.69%</td><td colspan="3" style="text-align:left;color:var(--tx3)">现金含量（经营现金流/净利润）= 21.6%</td></tr>
+    </tbody>
+  </table>
+  <p class="mut" style="font-size:12.3px">* 应收/应付的变动幅度为期初期末余额对比口径，周转天数为半年数据年化估算。</p>
+
+  <div class="grid g3" style="margin:14px 0">
+    <div class="kpi"><div class="k">半年内存货新增</div><div class="v" style="color:var(--up)">+2.14 亿</div><div class="n">较 2025 年末 6.28 亿增长 34.1%</div></div>
+    <div class="kpi"><div class="k">存货/半年营收</div><div class="v">56.9%</div><div class="n">2025H1 为 41.3%，提升 15.6pct</div></div>
+    <div class="kpi"><div class="k">净利现金含量</div><div class="v" style="color:var(--down)">21.6%</div><div class="n">利润的 78% 沉淀在营运资本</div></div>
+  </div>
+
+  <div class="box box-warn">
+    <b>这是本次拆解中最需要跟踪的一条线索。</b>存货半年内增加 2.14 亿，几乎吃掉了同期的全部经营现金流。两种解释：
+    <ul style="margin-top:8px">
+      <li><b>乐观情形</b>：为 H2 的 AI 相关新品/大客户订单提前备货，叠加晶圆产能紧张下的战略库存，则 H2 收入有望继续加速，存货将被顺利消化。</li>
+      <li><b>悲观情形</b>：终端需求（尤其芯片线，增速仅 +6.62%）不及备货节奏，则 H2 面临存货跌价减值压力，且经营现金流将持续承压。</li>
+    </ul>
+    <b>验证方法：</b>跟踪 Q3 报告中的存货绝对额是否见顶回落、存货跌价准备计提金额、以及芯片业务收入增速是否回补。若 Q3 存货继续环比大幅增长而收入增速未提速，应下调盈利质量评价。
+  </div>
+
+  <div class="box box-info">
+    <b>另一面：</b>应收账款周转天数从 51.6 天降至 43.2 天，回款质量实际是<b>改善</b>的；应付账款周转天数从 41.0 天升至 48.2 天，对上游的账期拉长，部分对冲了存货的现金占用。公司在产业链中的话语权仍在增强。
+  </div>
+</section>
+
+<!-- 7 同业 -->
+<section>
+  <h2><span class="num">7</span>同业对标：毛利率最高，估值中枢偏高</h2>
+  <div class="h2sub">AIoT / 智能 SoC 可比公司（2026H1，行情截至 2026-10-14）</div>
+
+  <table>
+    <thead><tr><th>公司</th><th>代码</th><th>总市值(亿)</th><th>营收(亿)</th><th>毛利率</th><th>归母净利(亿)</th><th>净利率</th><th>研发费用率</th><th>PE</th><th>PB</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>乐鑫科技</td><td>688018</td><td>287.03</td><td>14.81</td><td class="up"><b>49.32%</b></td><td>3.34</td><td>22.57%</td><td>22.26%</td><td>42.9</td><td>6.10</td></tr>
+      <tr><td>瑞芯微</td><td>603893</td><td>827.74</td><td>28.77</td><td>45.79%</td><td>8.59</td><td>29.86%</td><td class="mut">n/a</td><td>48.2</td><td>16.80</td></tr>
+      <tr><td>晶晨股份</td><td>688099</td><td>393.86</td><td>43.91</td><td>38.73%</td><td>6.11</td><td>13.91%</td><td class="mut">n/a</td><td>32.2</td><td>4.94</td></tr>
+      <tr><td>全志科技</td><td>300458</td><td>275.04</td><td>18.88</td><td>43.12%</td><td>4.90</td><td>25.96%</td><td class="mut">n/a</td><td>28.1</td><td>7.90</td></tr>
+      <tr><td>恒玄科技</td><td>688608</td><td>236.32</td><td>13.51</td><td>42.47%</td><td>1.71</td><td>12.66%</td><td class="mut">n/a</td><td>69.1</td><td>3.36</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid g3">
+    <div class="box box-ok" style="margin:0"><b>毛利率行业第一</b><br>49.32% 显著高于同业 38.7%~45.8% 区间，反映 Wi-Fi MCU 生态型商业模式的定价权优势。</div>
+    <div class="box box-info" style="margin:0"><b>PE 处于中位</b><br>42.9x 低于瑞芯微(48.2)与恒玄(69.1)，高于晶晨(32.2)与全志(28.1)；对应 +27.9% 的利润增速，PEG 约 1.5，不算便宜但也未泡沫化。</div>
+    <div class="box box-warn" style="margin:0"><b>PB 偏高的隐含要求</b><br>PB 6.10x 意味着市场已按"轻资产高 ROE"定价。若存货周转持续恶化、ROE 被资产端拖累，估值中枢有下修风险。</div>
+  </div>
+</section>
+
+<!-- 8 跟踪清单 -->
+<section>
+  <h2><span class="num">8</span>后续跟踪清单</h2>
+  <div class="h2sub">判断本报告结论是否需要修正的关键观测点</div>
+  <table>
+    <thead><tr><th>观测项</th><th>当前状态</th><th>关注阈值 / 判读</th><th>影响方向</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>存货绝对额与周转天数</td><td>8.42 亿 / 178.7 天（半年内 +34.1%）</td><td>Q3 是否见顶回落；跌价准备计提占存货比是否超 3%</td><td>决定盈利质量</td></tr>
+      <tr><td>芯片业务收入增速</td><td>+6.62%（失速）</td><td>Q3 能否回补至双位数；芯片毛利率是否守住 50%</td><td>决定增长可持续性</td></tr>
+      <tr><td>综合毛利率</td><td>49.32%（历史新高）</td><td>Q3/Q4 能否守住 48% 以上</td><td>决定利润弹性</td></tr>
+      <tr><td>境外收入占比</td><td>32.3%（+4.0pct）</td><td>能否突破 35%；境外毛利率能否维持 50%+</td><td>决定估值溢价</td></tr>
+      <tr><td>研发费用率</td><td>22.26%</td><td>全年是否突破 23%（Q4 为结算高峰）</td><td>决定全年利润兑现</td></tr>
+      <tr><td>经营现金流</td><td>0.72 亿（现金含量 21.6%）</td><td>全年能否回到净利润的 60% 以上</td><td>决定估值可信度</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-ok" style="margin-top:16px">
+    <b>一句话总结：</b>乐鑫科技 2026H1 是一份「利润表满分、现金流表扣分」的成绩单。收入端靠模组放量（+26.8%）与海外提速（+35.8%）双轮驱动，毛利端靠成本管控实现 4.11pct 的历史性扩张，费用端则是研发的主动加码（+22.9%）而非失控。2.61 亿到 3.34 亿的利润跨越，本质是毛利率扩张跑赢了研发加码。<b>真正决定这份报告含金量的，是那 2.14 亿的新增存货究竟是订单的前置备货，还是需求的错配库存——Q3 报告会给出答案。</b>
+  </div>
+</section>
+
+<div class="foot">
+  数据来源：通达信 F10 财务数据（利润表 / 资产负债表 / 现金流量表 / 主营构成），行情与估值截至 2026-10-14。<br>
+  本报告为财务拆解与归因分析，不构成任何投资建议。
+</div>
+
+</div>
+
+<script>
+const T={tx:'#4b5261',tx3:'#828a99',grid:'#eef0f4',up:'#d63b30',down:'#128a5a',acc:'#1f5fd8'};
+Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';
+Chart.defaults.font.size=11.5;
+Chart.defaults.color=T.tx;
+const baseOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,boxHeight:12,padding:12,usePointStyle:true,pointStyle:'circle'}}},
+  scales:{x:{grid:{display:false},ticks:{color:T.tx3}},y:{grid:{color:T.grid},ticks:{color:T.tx3}}}};
+
+// 分产品收入
+new Chart(document.getElementById('cProd'),{type:'bar',
+ data:{labels:['2023年报','2024H1','2024年报','2025H1','2025年报','2026H1'],
+  datasets:[
+   {label:'模组',data:[8.71,5.32,12.08,7.53,15.69,9.55],backgroundColor:'#1f5fd8',borderRadius:4},
+   {label:'芯片',data:[5.47,3.81,7.83,4.84,9.80,5.16],backgroundColor:'#7fa9ee',borderRadius:4},
+   {label:'其他',data:[0.15,0.07,0.16,0.08,0.16,0.09],backgroundColor:'#c9d9f5',borderRadius:4}]},
+ options:{...baseOpt,scales:{x:{stacked:true,grid:{display:false},ticks:{color:T.tx3}},y:{stacked:true,grid:{color:T.grid},ticks:{color:T.tx3,callback:v=>v+'亿'}}},
+  plugins:{legend:{labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle'}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(2)+' 亿'}}}}});
+
+// 毛利率演进
+new Chart(document.getElementById('cGm'),{
+ data:{labels:['2024Q1','2024Q2','2024Q3','2024Q4','2025Q1','2025Q2','2025Q3','2025Q4','2026Q1','2026Q2'],
+  datasets:[
+   {type:'line',label:'单季毛利率',data:[41.93,44.11,42.14,46.85,43.37,46.69,47.97,47.96,48.51,49.95],
+    borderColor:T.up,backgroundColor:'rgba(214,59,48,.08)',borderWidth:2.5,tension:.35,fill:true,pointRadius:3,pointBackgroundColor:T.up,yAxisID:'y'},
+   {type:'line',label:'累计毛利率',data:[41.93,43.19,42.83,43.91,43.37,45.20,46.17,46.63,48.51,49.32],
+    borderColor:'#b0b8c6',borderWidth:1.8,borderDash:[5,4],tension:.3,pointRadius:0,fill:false,yAxisID:'y'}]},
+ options:{...baseOpt,plugins:{legend:{labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle'}}},
+  scales:{x:{grid:{display:false},ticks:{color:T.tx3,font:{size:10}}},y:{min:38,max:52,grid:{color:T.grid},ticks:{color:T.tx3,callback:v=>v+'%'}}}}});
+
+// 单季度营收+毛利率
+new Chart(document.getElementById('cQ'),{
+ data:{labels:['2024Q1','2024Q2','2024Q3','2024Q4','2025Q1','2025Q2','2025Q3','2025Q4','2026Q1','2026Q2'],
+  datasets:[
+   {type:'bar',label:'单季营收(亿)',data:[3.87,5.33,5.40,5.47,5.58,6.88,6.67,6.53,6.48,8.33],
+    backgroundColor:'#9dbdea',borderRadius:4,yAxisID:'y'},
+   {type:'line',label:'单季毛利率(%)',data:[41.93,44.11,42.14,46.85,43.37,46.69,47.97,47.96,48.51,49.95],
+    borderColor:T.up,backgroundColor:T.up,borderWidth:2.5,tension:.35,pointRadius:3.5,pointBackgroundColor:T.up,yAxisID:'y1'}]},
+ options:{...baseOpt,
+  scales:{x:{grid:{display:false},ticks:{color:T.tx3,font:{size:10}}},
+   y:{position:'left',grid:{color:T.grid},ticks:{color:T.tx3,callback:v=>v+'亿'}},
+   y1:{position:'right',min:38,max:52,grid:{display:false},ticks:{color:T.up,callback:v=>v+'%'}}}}});
+
+// 研发费用
+new Chart(document.getElementById('cRd'),{
+ data:{labels:['2024Q1','2024Q2','2024Q3','2024Q4','2025Q1','2025Q2','2025Q3','2025Q4','2026Q1','2026Q2'],
+  datasets:[
+   {type:'bar',label:'研发费用(亿)',data:[1.04,1.15,1.22,1.50,1.26,1.42,1.55,1.80,1.54,1.75],
+    backgroundColor:'#7fa9ee',borderRadius:4,yAxisID:'y'},
+   {type:'line',label:'研发费用率(%)',data:[26.82,21.54,22.54,27.42,22.62,20.66,23.27,27.57,23.84,21.04],
+    borderColor:'#b7791f',backgroundColor:'#b7791f',borderWidth:2.5,tension:.35,pointRadius:3.5,yAxisID:'y1'}]},
+ options:{...baseOpt,
+  scales:{x:{grid:{display:false},ticks:{color:T.tx3,font:{size:10}}},
+   y:{position:'left',grid:{color:T.grid},ticks:{color:T.tx3,callback:v=>v+'亿'}},
+   y1:{position:'right',min:18,max:30,grid:{display:false},ticks:{color:'#b7791f',callback:v=>v+'%'}}}}});
+</script>
+</body>
+</html>

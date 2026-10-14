@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小米集团－Ｗ（01810.HK）趋势结构分析报告</title>
+<meta name="description" content="综合结论强空（S=-1.00），不输出买入策略；日线最新价24.52跌破前低区25.22、空头均线排列确认方向；板块（恒生科技）处下降周期与个股共振，任何反弹均属逆Beta须严格止损。">
+<meta name="report-type" content="趋势结构信号">
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.high{color:var(--down); border-color:var(--down)}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.badge.warn{color:var(--up); border-color:var(--up); background:#fdf3f2}
+
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+
+.strat{border:1px solid var(--line-2); border-radius:3px; padding:18px 22px 20px;
+  margin:14px 0 4px; background:var(--bg)}
+.strat.off{background:var(--bg-soft)}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.cols section h3{margin:0 0 8px; font-size:14px}
+.cols section h3 span{font-size:12px; color:var(--ink-3); font-weight:400; margin-left:6px}
+.gate{font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line);
+  padding-top:10px; margin-top:12px}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+  .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>小米集团－Ｗ（01810.HK）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-12</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>日线250 / 周线54 / 60分钟500</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir down">强空</span>
+    <span class="score">加权总分 S = −1.00（区间 −1 ~ +1）</span>
+    <span class="badge low">置信度：低</span>
+    <span class="score">板块基调：下降（恒生科技周线空头，与个股共振，不打折）</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>四套方法论全部 = −1（完全共振）</dd></div>
+    <div><dt>板块调节</dt><dd>个股空头 + 板块下降 → ×1.0（共振看空，不打折）</dd></div>
+    <div><dt>当前阶段</dt><dd>派发 / 下跌延续（Markup 反向）</dd></div>
+    <div><dt>缠论买卖点</dt><dd>三卖雏形（跌破日线中枢 ZD 25.44）</dd></div>
+  </div>
+  <div class="note warn">
+    <b>置信度扣分理由：</b>① 周线样本仅 54 根（&lt;60）→ meta.insufficient=true，触发技能第 0 节，置信度强制不高、结论仅供参考；② 日线最新价 24.52 跌破前低区 25.22 尚待右侧 3 根确认（但空头均线排列已确认方向）；③ 港股无原生行业板块指数，以恒生科技 HZ5017 作代理，板块 Beta 仅近似。
+  </div>
+</div>
+
+<!-- 结论为强空（S ≤ −0.2），按 SKILL.md 9.1 闸门不输出买入策略，改输出观望/减仓说明块 -->
+<div class="strat off">
+  <h2>观望说明<span class="muted" style="font-size:12px;font-weight:400;margin-left:8px">强空结论 · 不输出买入策略</span></h2>
+  <div class="note warn"><b>为何不给出买卖策略：</b>综合结论「强空」（S = −1.00），且板块（恒生科技）处下降周期、个股未出现日线/60 分钟底背驰或 Spring，触发技能 9.1 全部硬闸门，不输出买入策略。当前价 24.52 已跌破日线中枢下沿 ZD 25.44 与前低 25.22，持有者应评估减仓/离场，空仓者回避；任何反弹均属逆 Beta 的短线行为，须严格止损。</div>
+  <table>
+    <tr><th>观察项</th><th>触发条件</th><th>触发后动作</th></tr>
+    <tr><td>重新站回中枢下沿</td><td>收盘站上 25.44 且幅度 ≥ 1×ATR(1.07) + 量 ≥ 1.5×MA5 + 3 根内不回落</td><td>空仓停止回避，转观望</td></tr>
+    <tr><td>日线底背驰</td><td>MACD 绿柱面积缩小且新低不破（或 60 分钟底背驰确认）</td><td>关注一买（背驰低点上 0.5×ATR）</td></tr>
+    <tr><td>恒生科技周线转强</td><td>周线 MACD 柱翻红（dif / dea 上穿 0 轴）</td><td>板块托底，个股可跟随</td></tr>
+    <tr><td>放量突破中枢上沿</td><td>收盘站上 ZG 28.22 + 量能达标（量比 ≥ 1.5×MA5）</td><td>下跌结构破坏，重新评估多空</td></tr>
+  </table>
+  <div class="gate"><b>重新评估条件：</b>上述任一触发 + 四套方法论中 ≥ 3 套转向 + 周线样本补足（2026 年后需积累至 ≥ 60 根）后，再评估多空。当前维持减仓 / 回避。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">250 根（20251006–20261012）</td><td>ATR14</td><td class="num">1.0726（4.37%）</td></tr>
+  <tr><td>周线样本</td><td class="num">54 根（20251010–20261012，insufficient）</td><td>60分钟样本</td><td class="num">500 根（20260612–20261012）</td></tr>
+  <tr><td>期间最高</td><td class="num">54.80</td><td>期间最低</td><td class="num">21.30</td></tr>
+  <tr><td>MA 排列</td><td class="num">ma5 24.47 &lt; ma10 24.68 &lt; ma20 25.63 &lt; ma60 26.92</td><td>MA20 vs MA60</td><td class="num">ma20 25.63 &lt; ma60 26.92（空头，ma20_gt_ma60=false）</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>起止日期 / 根数符合预期；期间高 54.80、低 21.30 与已知行情吻合；无长期停牌（date_gaps 仅 20260402→0408 共 6 日，属清明假期，非异常缺口）；无零成交日；limit_days=2（正常涨跌停，非一字板，one_word_limit_days=0，量价未失真）。
+  <br><b>适用性检查：</b>非 ST、非次新（2018 年上市）、无连续一字板（one_word_limit_days=0）、无 &gt;20 日停牌缺口；唯一限制为周线样本 54&lt;60，置信度强制≤低，结论仅供参考。
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>港股通 / 恒生科技（HZ5017 代理）</td><td class="muted">港股无原生行业板块指数，板块代码 HZ5017（setcode=27）</td></tr>
+  <tr><td>板块趋势（道氏）</td><td class="down">下降（周线）</td><td class="ev">周线高点 6001(260116)→5258(260515)→4948(260807) 递降；低点 4619(260402)→4229(260626) 递降（LH+LL）。收盘 4169.57 低于 MA5/10/20（4248/4421/4541），空头排列；周线 MACD hist −47.97，last_5_hist [−13.98,−40.44,−46.46,−47.97] 绿柱持续扩大=下跌加速。</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td>下跌阶段（派发后主跌）</td><td class="ev">周线反弹高 4948(0807) 量比仅 0.84× 缩量，买盘乏力；日线 4250.84(0911)→4510.06(0922) 反弹量比 1.34× 一般；整体为下跌趋势中的弱反弹，未扭转。</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b>恒生科技处下降周期，对小米构成显著 Beta 压制；个股空头信号与板块同向（共振），板块调节 ×1.0 不打折。板块不支持个股反转，任何个股反弹都属逆 Beta 的短线行为，须严格止损。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="flat">震荡（偏空）</td><td class="ev">周线 LH+HL=震荡；价格低于 MA20，MACD 柱转正（dif/dea 仍负）属反弹；高点递降、大结构偏空；样本 54&lt;60 不足。</td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="down">空</td><td class="ev">ma5&lt;ma10&lt;ma20&lt;ma60 完全空头；最新价 24.52 跌破前低 25.22 与中枢 ZD 25.44；近期反弹高 29.14→28.22 递降。</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="flat">震荡</td><td class="ev">60 分钟区间 23.70–24.56，当前 24.52 贴近区间上沿下方；MACD 柱刚转负（dif 0.098/dea 0.152 仍正），短线弱。</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线震荡偏空 + 日线空 → 矩阵格「震荡 × 空 = 反弹结束，减仓」；60 分钟仅定点位（当前处区间下沿弱）。综合操作基调：减仓 / 回避。（矩阵定位：震荡 × 空）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 −1</span><span class="wt">权重 0.35</span></div>
+  <p>下降趋势。最新价 24.52 已跌破 8/18 前低 25.22 与日线中枢下沿 25.44，前一组「更高低点」失效，确认 LH+LL 下跌结构；MA 完全空头排列（ma5 24.47 &lt; ma20 25.63 &lt; ma60 26.92），ma20_gt_ma60=false，ma_slope_20_up=false。</p>
+  <div class="ev">2026-08-18 | 前低 L25.22 | 收 26.18 | 量比 1.51×
+2026-09-22 | 反弹高 H28.22 | 收 27.20 | 量比 1.19×（低于 0826 高 29.14 → LH）
+2026-10-12 | 收 24.52（−5.55%） | 量比 1.38× | 跌破 25.22 前低 + 跌破中枢 ZD 25.44
+均线 | ma5 24.47 &lt; ma10 24.68 &lt; ma20 25.63 &lt; ma60 26.92 | 完全空头排列</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 −1</span><span class="wt">权重 0.35</span></div>
+  <p>派发 / 下跌延续（Markup 反向）。2025 年见顶 54.80 后进入大级别派发，2026 年 3 月高位放量见顶、6 月缩量见底后反弹缩量（买盘不足），8–9 月 25.22–29.14 区间横盘且反弹高点递降，10/12 放量跌破前低 = 下跌延续确认。</p>
+  <table>
+    <tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr>
+    <tr><td>2026-03-19</td><td>高位 H37.18 放量滞涨（派发）</td><td class="num">37.18</td><td class="num">1.72×</td></tr>
+    <tr><td>2026-06-26</td><td>见底 L21.30 缩量</td><td class="num">21.30</td><td class="num">0.89×</td></tr>
+    <tr><td>2026-07-30</td><td>反弹 H32.40 缩量（买盘不足）</td><td class="num">32.40</td><td class="num">0.91×</td></tr>
+    <tr><td>2026-09-22</td><td>区间反弹高 H28.22 量能一般</td><td class="num">28.22</td><td class="num">1.19×</td></tr>
+    <tr><td>2026-10-12</td><td>放量破位 收 24.52（−5.55%）</td><td class="num">24.52</td><td class="num">1.38×</td></tr>
+  </table>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 −1</span><span class="wt">权重 0.20</span></div>
+  <p>日线下跌一笔进行中，且有效跌破日线中枢 ZD 25.44（中枢 ZD 25.44 / ZG 28.22，0818–0922）。跌破中枢后反弹不回中枢 = 三卖雏形（减仓/清仓信号）。当前无买点。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    <tr><td>主画法</td><td>n=5</td><td>突破前笔端点 ≥ 0.5×ATR（0.54）</td><td class="num">25.44–28.22</td><td>三卖雏形（跌破 ZD）</td></tr>
+    <tr><td>备选画法</td><td>n=4</td><td>同上</td><td class="num">25.44–28.22</td><td>一致</td></tr>
+  </table>
+  <div class="ev">日线 MACD 绿柱 last_5_hist [−0.51,−0.51,−0.50,−0.17,−0.12] 收敛但未转正，非底背驰（价格仍创新低 24.52&lt;25.22）；60 分钟中枢 23.70–24.56 内无底背驰。</div>
+  <div class="note"><b>画法投票：</b>n=5 与 n=4 两窗口得到相同日线中枢 25.44–28.22，且 60 分钟中枢 23.70–24.56 独立确认，画法唯一，不扣分。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 −1</span><span class="wt">权重 0.10</span></div>
+  <p>首选 = 大级别下跌推动浪延续（自 54.80 高点进入 (A)-(B)-(C) 调整，21.30 为 (B)/(2) 反弹起点，25.22→28.22 完成 (2) 浪内 c，现处 (3)/(C) 主跌）；次选 = 21.30 以来双底（25.22/25.44）未破、24.52 为假跌破，待收回 25.44 重启上攻（失效位：收盘跌破 21.30）。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    <tr><td>首选</td><td>(3)/(C) 主跌进行中</td><td class="num">目标 前低 21.30；破则看新低</td><td class="num">收盘站回 28.22（中枢 ZG）上方</td></tr>
+    <tr><td>次选</td><td>双底假跌破（2-c 失败）</td><td class="num">反弹看 28.22 → 32.40</td><td class="num">收盘跌破 21.30</td></tr>
+  </table>
+  <div class="note"><b>铁律校验：</b>2 浪不破 1 浪起点（25.22/25.44 &gt; 21.30 ✓）；3 浪非最短（进行中待验证）；4 浪不进 1 浪区（当前远低于 54.80 ✓）。铁律通过，次选数法自洽。</div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  <tr><td>支撑</td><td class="num">23.70</td><td>60 分钟中枢 ZD / 近期 60m 低点（1005/1007）</td><td>中</td></tr>
+  <tr><td>支撑</td><td class="num">23.58</td><td>60 分钟最新低点（1008）</td><td>中</td></tr>
+  <tr><td>支撑</td><td class="num">21.30</td><td>日线前低（0626）/ Fib 1.0 回撤（54.80→21.30）</td><td>强</td></tr>
+  <tr><td>压力</td><td class="num">25.22</td><td>日线前低（0818），跌破后转压力</td><td>中</td></tr>
+  <tr><td>压力</td><td class="num">25.44</td><td>日线中枢 ZD，跌破后转压力</td><td>强</td></tr>
+  <tr><td>压力</td><td class="num">28.22</td><td>日线中枢 ZG / 前高（0922）</td><td>强</td></tr>
+  <tr><td>压力</td><td class="num">28.47</td><td>Fib 0.786 回撤（54.80→21.30，与中枢 ZG 28.22 重合）</td><td>中</td></tr>
+  <tr><td>中枢</td><td class="num">日线 25.44–28.22</td><td>摆动点 / 笔（宽 10.93%）</td><td>—</td></tr>
+  <tr><td>中枢</td><td class="num">60 分钟 23.70–24.56</td><td>60m 笔（宽 3.63%）</td><td>—</td></tr>
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td class="down">无底背驰（日线绿柱收敛未转正，价格创新低）</td><td class="ev">日线 last_5_hist [−0.5148,−0.5066,−0.5011,−0.1672,−0.122] 绿柱收敛；60 分钟 last_5_hist [0.2149,0.0909,0.0001,−0.0753,−0.1089] 由正转负，短线由多转弱。</td></tr>
+  <tr><td>量价配合</td><td class="down">破位放量，反弹缩量</td><td class="ev">10/12 量比 1.38× 跌 5.55%（下跌有量配合，非缩量假破）；反弹 H32.40(0730) 量比 0.91× 缩量（买盘不足）。</td></tr>
+  <tr><td>突破有效性</td><td class="flat">跌破待确认（满足 1/4 条）</td><td class="ev">收盘 24.52 &lt; ZD 25.44 ✓；幅度 0.92 / ATR 1.0726 = 0.86×ATR &lt; 1×ATR ✗；量比 1.38× &lt; 1.5×MA5 ✗；仅 1 根未满足 3 根 ✗ → 跌破待确认。</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">−1.00 → 强空（共振度高）</td></tr>
+  <tr><td>方向判断</td><td class="down">强空 / 下降趋势延续</td></tr>
+  <tr><td>操作基调</td><td>减仓 / 回避（周线震荡偏空 × 日线空 = 反弹结束）</td></tr>
+  <tr><td>关键冲突</td><td>四套方法论全部 = −1，无冲突；板块（恒生科技）下降与个股空头共振，无逆 Beta 矛盾。</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul>
+    <li>周线样本 54&lt;60（insufficient），置信度强制「低」，结论仅供参考，不构成建议。</li>
+    <li>10/12 收盘 24.52 跌破 25.44 仅 1 根，幅度 0.86×ATR&lt;1×ATR、量比 1.38×&lt;1.5×MA5，跌破尚未 4 条全满足，存在假跌破反抽风险（次选波浪双底成立则可能收回）。</li>
+    <li>港股 T+0、无涨跌停，波动与汇率风险高于 A 股；小米受手机/AIoT/电动车竞争格局与财报预期影响大。</li>
+    <li>恒生科技为代理板块（港股无原生行业指数），Beta 仅近似，不代表小米个股全部驱动。</li>
+  </ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>缠论：日线中枢以摆动点自动连线，n=5/n=4 两窗口结果一致（25.44–28.22），60 分钟中枢（23.70–24.56）辅助确认，画法唯一；但最新向下笔端点 24.52 尚待右侧确认。波浪：首选（下跌主推）与次选（双底假跌破）并存，次选失效位 收盘跌破 21.30。威科夫阶段为派发/下跌延续判定，证据 5 条已满足 ≥3 条要求。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅提供结构与风险判断，不构成任何投资建议。生成时间 2026-10-12 17:51 GMT+8。
+</div>
+
+</div>
+</body>
+</html>

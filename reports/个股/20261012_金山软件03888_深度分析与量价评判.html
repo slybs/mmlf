@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金山软件 03888.HK · 单票深度分析与量价评判</title>
+<meta name="description" content="评级：可以买入（技术面94/165）；持仓守25.45·空仓等回踩；硬止损25.45（1.5×ATR14，距现价-4.3%）；放量长阳突破40日区间上沿，但冲高回落长上影+盘后10-12亿基金亏损公告未定价，首次覆盖。">
+<meta name="report-type" content="个股深度">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>金山软件 03888.HK · 深度分析与量价评判</h1>
+    <div class="sub">港股 · 办公软件 + 网络游戏 + 云（AI 办公主线） · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-12 港股收盘后取数（当日放量突破，盘后另有公告见风险提示）</span>
+      <span>评分 94/165 · 可以买入</span>
+      <span>威科夫阶段：吸筹完成 · JOC 突破（拉升初期）</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+<div class="verdict">
+  <h2>核心结论 · 金山软件（03888.HK）</h2>
+  <p><strong>评级一句话：</strong><span class="tag t-buy">可以买入（技术面 94/165）</span>／<span class="tag t-wait">谨慎乐观（基本面：办公 AI 结构性强，游戏拖累 + 利润含投资公允价值波动）</span>——两面刻意保持分歧：技术结构已确认转强，但基本面的利润质量与盘后公告要求执行层面更保守。</p>
+  <div class="rate">
+    <div><div class="k">最新价（收盘）</div><div class="v">26.60 <span style="font-size:13px;color:var(--up)">+3.83%</span></div><div class="k" style="font-size:11px">盘中触 27.40（+7.0%）后回落，留 0.80 上影</div></div>
+    <div><div class="k">12 项评分</div><div class="v">94<span style="font-size:13px;color:var(--ink3)">/165</span></div><div class="k" style="font-size:11px">首次覆盖，无前次对比</div></div>
+    <div><div class="k">威科夫阶段</div><div class="v sm">JOC 突破 · 拉升初期</div><div class="k" style="font-size:11px">40 日区间（23.36–27.40）上沿放量跳出</div></div>
+    <div><div class="k">操作建议</div><div class="v sm">持仓守 25.45 · 空仓等回踩</div><div class="k" style="font-size:11px">不追 26.60 收盘价</div></div>
+  </div>
+  <p><em>一句话总结：今日放量长阳突破 40 日区间上沿、趋势结构完好，但冲高回落的长上影与盘后 10–12 亿元基金投资亏损公告尚未被市场定价——正确动作不是追 26.60，而是等回踩确认。</em></p>
+  <div class="grid3">
+    <div class="tile down"><div class="lb">关键回撤位（硬止损）</div><div class="vl">25.45</div><div class="hint">= 1.5×ATR14（0.77），距现价 -4.3%，低波档止损倍数</div></div>
+    <div class="tile navy"><div class="lb">分支对照 · 当日等权平均</div><div class="vl">+1.22%</div><div class="hint">金山软件 +3.83% 跑赢 2.6pct → 个股性行情，非板块系统性</div></div>
+    <div class="tile gold"><div class="lb">估值快照（10-12）</div><div class="vl">PE-TTM 10.97x · PB 1.13x</div><div class="hint">腾讯 14.47x/2.95x · 网易 16.75x/3.22x，显著折价</div></div>
+  </div>
+  <div class="note"><div class="hd">前次结论回验</div>无前次报告——本报告为金山软件（03888.HK）<strong>首次覆盖</strong>，回验机制自下次报告起启用（逐条标注兑现 / 证伪 / 待验证）。本次报告中的三项可验证预判：① 25.45 硬止损是否被触发；② 25.90–26.10 回踩是否出现缩量确认；③ 盘后基金亏损公告是否导致次日低开。</div>
+  <div class="note warn"><div class="hd">与框架的衔接逻辑</div>评分 94 落在 90–119 档 =「可以买入」，但按评分纪律「可以买」与「现在买」是两回事——90 分档的买入必须等 LPS（缩量回踩）或 Spring 确认。今日是放量突破日而非回踩日，因此<strong>技术面评级（可以买入）与执行动作（等回踩）刻意分离</strong>；报告在操作计划中给出两个可量化的再进场触发条件。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">01</span>公司画像</h2>
+<div class="card">
+<p>金山软件（03888.HK）1988 年创立（求伯君 WPS 1.0），港股上市，当前形成<strong>「办公软件及服务 + 网络游戏及其他 + 云」三板块</strong>：办公板块通过控股子公司金山办公（688111.SH）运营 WPS 产品矩阵；游戏板块主打运营 17 年的《剑网3》与 2026 年新品《鹅鸭杀》手游；云板块通过金山云（03896.HK / KC.US）切 AI 智算。与小米/雷军系生态深度绑定，Q2 末集团现金资源 271.57 亿元人民币。2026 年的股价叙事主线是<strong>AI 办公</strong>——办公收入占比已升至 67.25%，游戏占比降至 32.75%。</p>
+<h4>卡位清单</h4>
+<ul>
+<li>WPS 全球月活设备 <strong>6.76 亿</strong>（+4% YoY）；累计年度付费个人用户 <strong>4,825 万</strong>（+15%）<span class="tag t-src">公司公告 2026-08-19</span></li>
+<li>办公软件及服务 H1 收入 33.13 亿元（+24.7%）；其中 WPS 365 Q2 <strong>+61%</strong>、WPS 软件 Q2 +34%、WPS 个人 Q2 +17% <span class="tag t-src">公司公告</span></li>
+<li><strong>首个办公大模型国家标准 GB/Z 244-2026《人工智能办公大模型系统建设指南》联合牵头研制</strong>（金山办公 + 中国电子技术标准化研究院）；国内 AI 办公行业首个智能体身份码节点，WPS 灵犀 / WPS Comate 获统一身份标识 <span class="tag t-src">智通财经 2026-10-12</span></li>
+<li>《剑网3》运营 17 年+、门派 20+，战略转向「内容深耕」；《鹅鸭杀》手游 2026-01-07 公测，QuestMobile 2026 年 6 月国内新上线手游 MAU 前三 <span class="tag t-src">公司公告 / QuestMobile 转述</span></li>
+<li>Q2 末集团现金资源 <strong>271.57 亿元人民币</strong>（含并表金山云）<span class="tag t-src">公司公告</span></li>
+</ul>
+<h4>财务表（2026 中期报告，人民币）</h4>
+<table>
+<thead><tr><th>指标</th><th class="num">H1'26</th><th class="num">同比</th><th class="num">Q2'26</th><th class="num">同比</th><th class="num">H1'25</th></tr></thead>
+<tbody>
+<tr><td>收益</td><td class="num">49.27 亿</td><td class="num up">+6.1%</td><td class="num">25.10 亿</td><td class="num up">+8.8%</td><td class="num">46.45 亿</td></tr>
+<tr><td>办公软件及服务（占 67.25%）</td><td class="num">33.13 亿</td><td class="num up">+24.7%</td><td class="num">17.00 亿</td><td class="num up">+25.4%</td><td class="num">26.57 亿</td></tr>
+<tr><td>网络游戏及其他（占 32.75%）</td><td class="num">16.14 亿</td><td class="num down">-18.8%</td><td class="num">8.10 亿</td><td class="num down">-14.9%</td><td class="num">19.88 亿</td></tr>
+<tr><td>母公司应占溢利</td><td class="num">16.39 亿</td><td class="num up">+100.8%</td><td class="num">5.48 亿</td><td class="num up">+2.9%</td><td class="num">8.16 亿</td></tr>
+<tr><td>经调整母公司应占净溢利（非 IFRS）</td><td class="num">5.81 亿</td><td class="num down">-12.9%</td><td class="num">3.30 亿</td><td class="num up">+37.3%</td><td class="num">6.66 亿</td></tr>
+<tr><td>毛利率</td><td class="num">79.18%</td><td class="num down">-2.0pct</td><td class="num">—</td><td class="num">—</td><td class="num">81.20%</td></tr>
+<tr><td>经营活动现金流净额</td><td class="num">7.10 亿</td><td class="num up">+6.7%</td><td class="num">—</td><td class="num">—</td><td class="num">6.65 亿</td></tr>
+</tbody></table>
+<p class="src">来源：金山软件 2026 年中期业绩公告（2026-08-19，kingsoft.com）；H1 基本 EPS 1.19 元，平均 ROE 6.29%；Q1 收入 24.17 亿（+3%）、游戏 -22%。<strong>注意报表利润与经调整利润的缺口（16.39 亿 vs 5.81 亿）主要来自投资基金公允价值变动——这正是 10-12 盘后公告披露 Q3 分占亏损 10–12 亿元的同一科目。</strong></p>
+<h4>增长引擎</h4>
+<ul>
+<li><strong>企业级 AI 办公</strong>：WPS 365 Q2 收入 2.53 亿（+61%），探索「席位 + AI 用量」商业模式升级；央国企优势向民企/外资/地方国企扩张 <span class="tag t-src">公司公告</span></li>
+<li><strong>AI 原生产品</strong>：灵犀（个人办公助理）/ WPS Comate（企业级 AI 办公入口），已在 11 大领域落地 26 个专家场景；探索「订阅 + AI 用量」定价 <span class="tag t-src">公司公告</span></li>
+<li><strong>标准与生态卡位</strong>：办公大模型国标联合牵头 + 智能体身份码节点，构成制度性壁垒 <span class="tag t-src">智通财经 2026-10-12</span></li>
+<li><strong>游戏新品</strong>：《鹅鸭杀》手游放量 + 《剑网3》画质升级（自研引擎与商业引擎双线）<span class="tag t-src">公司公告 / 证券时报 2026-08-19</span></li>
+<li><strong>卖方行业观点</strong>：申万宏源 2026-10-12 传媒深度《办公 Agent：下一代工作入口争夺开启》——重点关注金山办公由 AI 功能向 Agent 工作入口升级 <span class="tag t-src">卖方研报，未给出目标价</span></li>
+</ul>
+<div class="note warn"><div class="hd">H/A 双平台股本变量</div>金山办公（688111.SH）为控股子公司、A 股软件 ETF 核心权重（国泰软件 ETF 515230 第 3 大权重 6.36%）。H 股（母公司）与 A 股（子公司）存在联动与定价分歧——<strong>10-12 当日 H 股 +3.83% 放量、A 股 -0.55% 缩量</strong>。中期不派息，股东回报依赖资本增值。</div>
+<div class="note"><div class="hd">与同分支可比标的的产业位置对比</div>国标消息的直接标的其实是 A 股的金山办公，但当日 A 股缩量收跌、H 股放量大涨：一种解释是 A 股已在 10-09 软件板块大涨（软件 ETF +3.93%）中提前定价，H 股当日为事件直接驱动 + 折价修复；H/A 对同一消息的反应存在 1–2 日滞后。<strong>若 A 股持续不跟涨，H 股独舞的持续性存疑</strong>——后续以 A 股是否补涨作为交叉验证信号。</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">02</span>12 项梯度评分 · 逐项拆解</h2>
+<div class="card">
+<table>
+<thead><tr><th class="ctr">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th class="ctr">vs 前次</th></tr></thead>
+<tbody>
+<tr><td class="ctr">1</td><td>价/MA20</td><td class="num">13</td><td class="num">15</td><td>1.069（≥1.05 档：现价高于 MA20 6.9%）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">2</td><td>MA20 斜率</td><td class="num">8</td><td class="num">10</td><td>+0.90%（≥0.8% 档：均线明确向上）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">3</td><td>MACD</td><td class="num">20</td><td class="num">20</td><td>DIF+0.172 / DEA+0.006，零轴上多头延续</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">4</td><td>区间位置 60 日</td><td class="num">10</td><td class="num">20</td><td>55%（50–70% 档：区间中位，未进入高风险区）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">5</td><td>ATR 收缩</td><td class="num">0</td><td class="num">15</td><td>0.70→0.77 扩张（放量突破日的机械结果）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">6</td><td>低波 ATR%</td><td class="num">10</td><td class="num">10</td><td>2.88%（&lt;3% 低波档 → 止损倍数取 1.5×）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">7</td><td>涨幅安全</td><td class="num">15</td><td class="num">15</td><td>60 日 +12.1% / 均振合计 208% = 0.06（&lt;0.5）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">8</td><td>量价关系（威科夫）</td><td class="num">13</td><td class="num">15</td><td>放量长阳 SOS/JOC：+3.83%，量比 2.40x</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">9</td><td>Spring 弹簧</td><td class="num">0</td><td class="num">15</td><td>近 20 日无「跌破支撑后快速收回」形态</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">10</td><td>回调质量</td><td class="num">5</td><td class="num">10</td><td>近 20 日最低量能日量比 0.86x，中性</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">11</td><td>底背离</td><td class="num">0</td><td class="num">20</td><td>无</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="ctr">12</td><td>顶背离</td><td class="num">0</td><td class="num">0</td><td>无（未触发一票否决）</td><td class="ctr">— 首覆</td></tr>
+<tr><td class="bold">合计</td><td class="bold">→ 可以买入</td><td class="num bold">94</td><td class="num">165</td><td class="bold">90–119 档：需求占优 + 结构完好，执行上等回踩确认</td><td class="ctr">—</td></tr>
+</tbody></table>
+<p class="src">数据源：腾讯财经日线接口（前复权 200 根）+ 阳之 V1 评分引擎 timing_score.py，2026-10-12 港股收盘后取数。若接口快照与港交所官方收盘存在微小差异，以官方收盘为准。收盘后可能变化的项：第 8 项（量价关系）、第 10 项（回调质量）随次日量能重算；第 5 项（ATR）将在缩量整理日后自动回落修复。</p>
+<div class="note"><div class="hd">结构 vs 信号归因（首次覆盖，无前次降幅可比）</div>按「结构项 vs 信号项」拆解当前 94 分：<strong>趋势结构项（1/2/3/9）合计 41/60 且全部处于中高位</strong>——MACD 零轴上多头延续拿满 20/20、价/MA20 1.069、MA20 斜率 +0.90% 向上；当日信号项（8/10/11/12）合计 18/45——放量长阳 13/15，但无 Spring、无底背离、回调质量仅中性。<strong>结论：结构完好型强势，不是结构破坏型回调</strong>——对应操作指令为「持有 / 等回踩进场」而非止损离场。唯一重挫的第 5 项（ATR 扩张 0/15）是放量突破日的机械结果，缩量整理后自动修复，不构成看空依据。</div>
+</div>
+
+<h3>近 40 日量价叙事图（2026-08-17 → 2026-10-12）</h3>
+<div class="svgbox">
+<svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+  <text x="60" y="42" font-size="11" fill="#7b8494">收盘价（港元）· 前复权</text>
+  <line x1="60" y1="83.3" x2="880" y2="83.3" stroke="#eef1f5" stroke-width="1"/>
+  <line x1="60" y1="150.0" x2="880" y2="150.0" stroke="#eef1f5" stroke-width="1"/>
+  <line x1="60" y1="216.7" x2="880" y2="216.7" stroke="#eef1f5" stroke-width="1"/>
+  <line x1="60" y1="283.3" x2="880" y2="283.3" stroke="#eef1f5" stroke-width="1"/>
+  <line x1="60" y1="350.0" x2="880" y2="350.0" stroke="#e2e6ec" stroke-width="1.2"/>
+  <text x="52" y="86.8" font-size="10.5" fill="#7b8494" text-anchor="end">27.0</text>
+  <text x="52" y="153.5" font-size="10.5" fill="#7b8494" text-anchor="end">26.0</text>
+  <text x="52" y="220.2" font-size="10.5" fill="#7b8494" text-anchor="end">25.0</text>
+  <text x="52" y="286.8" font-size="10.5" fill="#7b8494" text-anchor="end">24.0</text>
+  <text x="52" y="353.5" font-size="10.5" fill="#7b8494" text-anchor="end">23.0</text>
+  <polygon points="60.0,142.0 81.0,166.0 102.1,179.3 123.1,280.7 144.1,246.0 165.1,304.7 186.2,256.7 207.2,252.7 228.2,256.7 249.2,224.7 270.3,226.0 291.3,211.3 312.3,254.0 333.3,250.0 354.4,176.7 375.4,216.7 396.4,234.0 417.4,280.7 438.5,270.0 459.5,258.0 480.5,266.0 501.5,238.0 522.6,268.7 543.6,280.7 564.6,211.3 585.6,216.7 606.7,202.0 627.7,222.0 648.7,232.7 669.7,248.7 690.8,236.7 711.8,218.0 732.8,228.7 753.8,231.3 774.9,227.3 795.9,215.3 816.9,216.7 837.9,244.7 859.0,175.3 880.0,110.0 880,350 60,350" fill="rgba(26,58,107,0.05)"/>
+  <polyline points="60.0,120.1 81.0,118.3 102.1,114.9 123.1,116.1 144.1,114.2 165.1,117.5 186.2,119.3 207.2,123.3 228.2,126.5 249.2,132.8 270.3,143.7 291.3,155.1 312.3,169.1 333.3,178.5 354.4,185.0 375.4,197.1 396.4,208.4 417.4,219.7 438.5,227.5 459.5,234.3 480.5,240.5 501.5,244.1 522.6,248.6 543.6,248.6 564.6,246.9 585.6,242.5 606.7,239.7 627.7,238.2 648.7,237.0 669.7,238.2 690.8,238.7 711.8,239.1 732.8,237.8 753.8,236.9 774.9,239.4 795.9,239.3 816.9,238.5 837.9,236.7 859.0,231.9 880.0,224.5" fill="none" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <polyline points="60.0,142.0 81.0,166.0 102.1,179.3 123.1,280.7 144.1,246.0 165.1,304.7 186.2,256.7 207.2,252.7 228.2,256.7 249.2,224.7 270.3,226.0 291.3,211.3 312.3,254.0 333.3,250.0 354.4,176.7 375.4,216.7 396.4,234.0 417.4,280.7 438.5,270.0 459.5,258.0 480.5,266.0 501.5,238.0 522.6,268.7 543.6,280.7 564.6,211.3 585.6,216.7 606.7,202.0 627.7,222.0 648.7,232.7 669.7,248.7 690.8,236.7 711.8,218.0 732.8,228.7 753.8,231.3 774.9,227.3 795.9,215.3 816.9,216.7 837.9,244.7 859.0,175.3 880.0,110.0" fill="none" stroke="#1a3a6b" stroke-width="2"/>
+  <circle cx="123.1" cy="280.7" r="4" fill="#12864b" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="165.1" cy="304.7" r="4" fill="#1a3a6b" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="354.4" cy="176.7" r="4" fill="#c0392b" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="564.6" cy="211.3" r="4" fill="#c0392b" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="859.0" cy="175.3" r="4" fill="#c0392b" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="880.0" cy="110.0" r="5" fill="#c0392b" stroke="#fff" stroke-width="1.2"/>
+  <text x="113" y="318" font-size="10.5" fill="#1c2532" text-anchor="end" font-weight="600">08-20 放量长阴</text>
+  <text x="113" y="332" font-size="10.5" fill="#12864b" text-anchor="end">-5.95% · 1.93x 天量</text>
+  <text x="175" y="322" font-size="10.5" fill="#1c2532" font-weight="600">08-24 下探 23.36</text>
+  <text x="175" y="336" font-size="10.5" fill="#4a5568">60 日低点后企稳</text>
+  <text x="354.4" y="152" font-size="10.5" fill="#1c2532" text-anchor="middle" font-weight="600">09-04 放量长阳 +4.49%</text>
+  <text x="354.4" y="166" font-size="10.5" fill="#c0392b" text-anchor="middle">1.89x 触 26.06 未稳</text>
+  <text x="564.6" y="187" font-size="10.5" fill="#1c2532" text-anchor="middle" font-weight="600">09-18 放量长阳 +4.33%</text>
+  <text x="564.6" y="201" font-size="10.5" fill="#c0392b" text-anchor="middle">1.61x 站上 25</text>
+  <text x="851" y="148" font-size="10.5" fill="#1c2532" text-anchor="end" font-weight="600">10-09 +4.23% · 1.13x</text>
+  <text x="851" y="162" font-size="10.5" fill="#4a5568" text-anchor="end">软件板块大涨日</text>
+  <text x="874" y="72" font-size="10.5" fill="#1c2532" text-anchor="end" font-weight="600">10-12 放量突破 +3.83% · 2.40x</text>
+  <text x="874" y="86" font-size="10.5" fill="#c0392b" text-anchor="end">盘中触 27.40 · 盘后公告利空</text>
+  <text x="874" y="214" font-size="11" fill="#b8860b" text-anchor="end" font-weight="600">MA20 = 24.88</text>
+  <text x="874" y="100" font-size="12" fill="#1a3a6b" text-anchor="end" font-weight="700">26.60</text>
+  <text x="60" y="368" font-size="10.5" fill="#7b8494" text-anchor="middle">08-17</text>
+  <text x="291.3" y="368" font-size="10.5" fill="#7b8494" text-anchor="middle">09-01</text>
+  <text x="564.6" y="368" font-size="10.5" fill="#7b8494" text-anchor="middle">09-18</text>
+  <text x="880" y="368" font-size="10.5" fill="#7b8494" text-anchor="end">10-12</text>
+</svg>
+</div>
+<p class="src">蓝线 = 收盘价（40 个交易日）；金色虚线 = MA20；圆点 = 关键事件日（绿 = 放量长阴，红 = 放量长阳，深蓝 = 支撑下探）。量比为当日成交量 / 前 20 日均量（不含当日）。</p>
+
+<h3>逐段解读（40 日切分）</h3>
+<table>
+<thead><tr><th>阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+<tbody>
+<tr><td class="bold">① 8/17–8/21<br>高位跳水</td><td>26.12 → 24.56；8/20 长阴 -5.95%</td><td>8/20 天量 20.68M（1.93x）</td><td><strong>有效下跌</strong>：价创新低 + 放量，供应进场，构成 40 日区间起点</td></tr>
+<tr><td class="bold">② 8/24–9/03<br>筑底震荡</td><td>23.36–25.30 窄幅；8/24 长下影探 23.36</td><td>缩量至 4.7–7.4M（0.43–0.65x）</td><td>抛压枯竭，PS/SC 后企稳，吸筹进行中</td></tr>
+<tr><td class="bold">③ 9/04–9/07<br>首次攻击</td><td>+4.49% 触 26.06 未稳，次日 -2.34%</td><td>9/04 放量 19.61M（1.89x），回踩缩至 0.57x</td><td>SOS 尝试未延续；26.06 成为第一个阻力标记</td></tr>
+<tr><td class="bold">④ 9/08–9/17<br>回测确认</td><td>回落 23.78–25.40；9/09 探 23.78 收回</td><td>9/09 放量下探 1.36x 后迅速缩量</td><td>二次测试成功，低点抬升（23.36→23.78）；Spring 雏形但未达 +15 标准</td></tr>
+<tr><td class="bold">⑤ 9/18–9/25<br>二次突破+枯竭</td><td>+4.33% 站上 25，随后 6 日窄幅整理</td><td>16.26M（1.61x）后递减至 2.50M（0.28x）</td><td>突破后极度缩量整固 = 健康换手，供应枯竭</td></tr>
+<tr><td class="bold">⑥ 9/28–10/08<br>假期地量</td><td>24.58–25.22；10/8 缩量阴 -1.68%</td><td>10/5 地量 1.50M（0.20x）；10/8 为 0.66x</td><td>缩量回调 = 诱空性质，非有效下跌；10/8 低点 24.54 成为最后支撑</td></tr>
+<tr><td class="bold">⑦ 10/09–10/12<br>三击突破（当前）</td><td>+4.23% 后 +3.83%；收盘 26.60 创 40 日收盘新高，盘中触 27.40</td><td>1.13x → 2.40x（14.79M，近 8 日最大）</td><td><strong>放量长阳 JOC 跳离震荡区</strong>；但留 0.80 上影 + 盘后利空公告，突破质量待次日确认</td></tr>
+</tbody></table>
+
+<h3>量价三问</h3>
+<div class="grid3">
+<div class="tile"><div class="lb">① 最近一次放量是有效上涨吗？</div><p style="font-size:13px;margin-top:6px"><strong>是，有效上涨（附两条折扣）。</strong>对照框架定义「价格创新高 + 成交量放大 30% 以上 → 有效突破，可跟进」：10/12 收盘 26.60 创 40 日收盘新高、量比 2.40x（放量 140%），两条同时满足。<strong>折扣一</strong>：盘中 27.40 冲高回落留 0.80 上影（+7.0% → +3.83%）；<strong>折扣二</strong>：盘后披露 Q3 分占基金投资亏损税前 10–12 亿元。「量」真实，「价」的持续性未被验证。</p></div>
+<div class="tile"><div class="lb">② 最近一次下跌是有效下跌还是诱空？</div><p style="font-size:13px;margin-top:6px"><strong>诱空（虚假下跌）。</strong>10/8 下跌 -1.68% 量比仅 0.66x，且未创新低（低点 24.54 &gt; 10/2 的 24.08 &gt; 9/25 的 23.96），对照「创新低 + 缩量 = 空头乏力，可能反转」：缩量下跌 + 低点持续抬升 = 空头乏力。区间内唯一一次有效下跌是 8/20 的天量长阴（1.93x），其后被三次放量长阳逐步化解。</p></div>
+<div class="tile"><div class="lb">③ 现在是底部反转吗？</div><p style="font-size:13px;margin-top:6px"><strong>不是底部反转，是突破延续。</strong>对照「价格企稳 + 成交量连续 3 日温和放大 → 资金进场」：价格早已脱离底部（较 8/24 低点 23.36 已 +13.8%）；当前放量仅连续 2 日（10/9 1.13x、10/12 2.40x），不满足「连续 3 日温和放大」，且 2.40x 属显著放量而非「温和」。框架定性为 <strong>JOC（放量跳离震荡区）</strong>——对应战法是等 LPS 回踩，不是把回踩买入做成追涨。</p></div>
+</div>
+
+<h3>系统性 vs 个股性对照（2026-10-12 同日）</h3>
+<table>
+<thead><tr><th>标的</th><th>代码</th><th class="num">收盘</th><th class="num">当日涨跌</th><th class="num">量比</th><th>判读</th></tr></thead>
+<tbody>
+<tr><td class="bold">金山软件</td><td>03888.HK</td><td class="num">26.60</td><td class="num up">+3.83%</td><td class="num">2.57x</td><td>放量突破，跑赢等权 2.6pct</td></tr>
+<tr><td>网易-S</td><td>09999.HK</td><td class="num">199.10</td><td class="num up">+2.89%</td><td class="num">1.56x</td><td>游戏分支唯一次强</td></tr>
+<tr><td>金山云</td><td>03896.HK</td><td class="num">4.88</td><td class="num up">+0.93%</td><td class="num">1.02x</td><td>生态联动但平淡</td></tr>
+<tr><td>腾讯控股</td><td>00700.HK</td><td class="num">425.80</td><td class="num up">+0.24%</td><td class="num">0.70x</td><td>缩量持平</td></tr>
+<tr><td>美图公司</td><td>01357.HK</td><td class="num">3.77</td><td class="num">0.00%</td><td class="num">1.02x</td><td>AI 应用分支无反应</td></tr>
+<tr><td>金山办公</td><td>688111.SH</td><td class="num">227.70</td><td class="num down">-0.55%</td><td class="num">0.71x</td><td>A 股子公司逆势缩量下跌</td></tr>
+<tr><td class="bold">等权平均</td><td>—</td><td class="num">—</td><td class="num bold">+1.22%</td><td class="num">—</td><td class="bold">个股性行情判定依据</td></tr>
+</tbody></table>
+<div class="note warn"><div class="hd">判读规则</div>全部下跌且幅度接近 = 系统性；跌幅跑输 + 放量 = 叠加个股/支线卖压；跌幅小 + 缩量 = 被动跟随。本次：金山软件<strong>跑赢等权 +2.6pct 且放量 2.57x</strong>（对照表量比口径剔除当日量能，故高于主评分表的 2.40x），同分支内腾讯、美图、金山办公均平淡或缩量下跌——<strong>当日上涨属个股独立行情</strong>，由公司特定事件（办公大模型国标 GB/Z 244-2026、WPS 联合牵头）驱动，而非软件/游戏板块系统性上涨。反常信号：A 股体系内的金山办公逆势收跌，H/A 定价分歧明显（见 01 节产业位置对比）。若次日板块跟涨乏力，本轮上冲的持续性需下修。</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">03</span>操作计划（按持仓状态）</h2>
+<div class="grid3">
+<div class="card"><h4 style="margin-top:0">已持仓者</h4>
+<ul>
+<li><strong>硬止损 25.45</strong>（= 1.5×ATR14 0.77；ATR% 2.88% 属低波档，止损倍数 1.5×）。执行纪律：<span class="up">收盘价跌破 25.45 无条件减半，盘中跌破后 30 分钟内未收回同样减半</span>；收盘跌破 24.88（MA20）清仓离场，不找理由。</li>
+<li><strong>持有观察带 25.45–26.60</strong>：区间内缩量整理（量比 &lt;0.8x）为健康换手，拿住；放量滞涨（量比 &gt;1.5x 但涨幅 &lt;1.5%）预警。</li>
+<li><strong>冲 29.26（60 日高）一线</strong>：出现放量滞涨或长上影（&gt;2%）→ 梯度止盈 1/3；顶背离出现 = 一票否决，直接减仓。</li>
+</ul>
+</div>
+<div class="card"><h4 style="margin-top:0">空仓者</h4>
+<ul>
+<li><strong>不追 26.60</strong>。今日是放量突破日 + 长上影 + 盘后利空，三重追高劣势；90 分档买入按纪律必须等 LPS 或 Spring 确认。</li>
+<li><strong>触发 A（首选 · LPS 回踩）</strong>：回踩 <strong>25.90–26.10</strong>（今日突破点与 9/4 高点 26.06 重合区）且日量比 &lt;0.8x（成交 &lt;8M 股），随后任一交易日收复 26.10 → 进场，止损 25.45。<span class="tag t-wait">当前未触发</span></li>
+<li><strong>触发 B（强势延续）</strong>：次日站稳 <strong>27.00</strong>（今日高点 27.40 下方）且量比 &gt;1.5x → 小仓（1/3）跟进，止损 26.10。<span class="tag t-wait">当前未触发</span></li>
+<li><strong>避坑线</strong>：若明日因盘后公告低开逾 -5%（跌破 25.30），不接飞刀，等缩量企稳重回 25.45 上方再评估。</li>
+</ul>
+</div>
+<div class="card"><h4 style="margin-top:0">长线 / 估值视角</h4>
+<ul>
+<li><strong>表观便宜</strong>：PE-TTM 10.97x / PB 1.13x，对比腾讯 14.47x/2.95x、网易 16.75x/3.22x 折价明显；PS-TTM 约 3.0x（9/22 中证网口径）。<span class="tag t-src">口径提示：通达信 10/12 返回未标 L/T，与中证网 TTM 10.65x 互相印证；跨标的横比仅供参考，不可精确对比</span></li>
+<li><strong>折价有因</strong>：报表利润含投资基金公允价值波动（H1 归母 16.39 亿 vs 经调整 5.81 亿）。按经调整净利年化 11.6 亿、市值约 333 亿元人民币 <span class="tag t-src">[推算：13.8 亿股 × 26.60 HKD × 0.91，股本由 H1 EPS 1.19 元反推]</span> 计，<strong>经调整口径年化 PE ≈ 28.7x [推算]</strong>——表观 11x 与主营口径 29x 的差距，就是「利润含水分」的量化刻度。</li>
+<li><strong>安全垫</strong>：Q2 末集团现金资源 271.57 亿元人民币（含并表金山云，归属需折减）<span class="tag t-src">公司公告</span>，PB 1.13x 有净现金支撑；显著低估区参考 <strong>PB &lt;1.0（约 23.5 HKD）</strong>，与 60 日低 23.36 重合。</li>
+<li><strong>重估条件</strong>（三者有其二再上调估值中枢）：① 游戏收入同比降幅收窄至个位数；② WPS 365 连续两季 +50% 以上且 AI 用量收入开始单列；③ 经调整净利回到年化 15 亿+。</li>
+</ul>
+</div>
+</div>
+
+<h3>关键价位地图</h3>
+<table>
+<thead><tr><th class="num">价位（HKD）</th><th>性质</th><th>操作含义</th></tr></thead>
+<tbody>
+<tr><td class="num">29.26</td><td>60 日最高（7 月，区间外）</td><td>第一目标位；到位后按放量滞涨规则梯度止盈</td></tr>
+<tr><td class="num">27.40</td><td>今日盘中高点（即时阻力）</td><td><strong>分水岭②</strong>：放量站稳 = 攻击延续；反复冲高回落 = 突破失败信号</td></tr>
+<tr><td class="num bold">26.60</td><td class="bold">当前收盘（40 日收盘新高）</td><td class="bold">多空分水岭①：守住 = 突破有效，持多看 29.26；收盘失守 = 突破无效，降级观察</td></tr>
+<tr><td class="num">26.06–26.10</td><td>突破点 / 9-4 高点重合区</td><td>回踩确认位：缩量接回区（空仓者触发 A）</td></tr>
+<tr><td class="num">25.45</td><td>硬止损（1.5×ATR）</td><td>收盘跌破无条件减半；不可下移</td></tr>
+<tr><td class="num">24.88</td><td>MA20（趋势生命线）</td><td>收盘跌破 = 清仓线；线上 = 结构完好</td></tr>
+<tr><td class="num">24.54</td><td>10/8 缩量阴低点</td><td>最后支撑；与 25.45 之间是「最后的健康回踩带」</td></tr>
+<tr><td class="num">24.08</td><td>10/2 低点（假期地量平台）</td><td>次级支撑，跌破则回踩升级</td></tr>
+<tr><td class="num">23.36</td><td>60 日最低（8/24 长下影）</td><td><strong>分水岭③</strong>：跌破 = 40 日突破彻底失败，退回吸筹区下沿，长线视角转入分批买入区</td></tr>
+</tbody></table>
+<p class="src">判别规则预写：「守住 26.60 = 突破有效，看 29.26；跌破 25.45 = 减半；跌破 24.88 = 清仓」——全部交由市场触发，避免临场主观。</p>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">04</span>风险清单</h2>
+<div class="grid2">
+<div class="card"><h4 style="margin-top:0">交易层面</h4>
+<ul>
+<li><span class="tag t-src">盘后数据</span>本报告取数于 2026-10-12 港股收盘后（16:00 收盘，18:00 取数）；评分第 8/10 项随次日量能重算。<strong>盘后 17:08 公告的定价效应将在 10/13 集中体现，报告结论对次日开盘价不构成免疫。</strong></li>
+<li><span class="tag t-src">波动率</span>ATR% 2.88% 属低波档，但今日单日 +3.83% 已是 40 日内第 4 次单日波动超 3.5%；放量突破后波动率抬升是常态，止损位可能被瞬间穿透后收回（按纪律：穿透后 30 分钟未收回同样减半）。</li>
+<li><span class="tag t-src">联动风险</span>与金山办公（A 股）、金山云（H 股）联动：A 股当日逆势缩量下跌，若 H/A 分歧向 H 股收敛，将抵消突破动能；软件 ETF 资金流向可作为情绪代理变量跟踪。</li>
+</ul>
+</div>
+<div class="card"><h4 style="margin-top:0">基本面层面</h4>
+<ul>
+<li><span class="tag t-src">盈利质量</span>H1 归母净利 16.39 亿 vs 经调整 5.81 亿，差额主要为投资基金公允价值变动；Q3 已确认分占合营及联营亏损税前 10–12 亿元 <span class="tag t-src">公司公告 2026-10-12</span>，全年报表利润可能显著低于 H1 年化外推值 <span class="tag t-src">[推算]</span>。</li>
+<li><span class="tag t-src">游戏基本盘</span>游戏收入连续下滑（Q1 -22%、Q2 -15%），占收入 32.75%；《剑网3》IP 老化（17 年）、《鹅鸭杀》长线化未验证，新品尚未完全抵消存量回落 <span class="tag t-src">华尔街见闻 2026-08-19</span>。</li>
+<li><span class="tag t-src">AI 商业化</span>办公 +25% 增速中 AI 贡献未单独列示，不能等同于 AI 商业化收入 <span class="tag t-src">华尔街见闻 2026-08-19</span>；国标牵头是制度性卡位，短期不改变收入结构，警惕主题炒作退潮。</li>
+<li><span class="tag t-src">股东回报</span>中期不派息；271.57 亿现金资源含并表金山云，母公司可支配现金低于表观值。</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="sec"><span class="no">05</span>数据来源</h2>
+<ul>
+<li><strong>行情 / K 线</strong>：腾讯财经日线接口（前复权 200 根），2026-10-12 收盘后取数；评分引擎：阳之个股分析 V1 · timing_score.py（威科夫 12 项梯度）。</li>
+<li><strong>估值</strong>：通达信 MCP · tdx_indicator_select（2026-10-12：PE-TTM 10.97x、PB 1.13x；腾讯控股 / 网易同日对照）；中证网 2026-09-23（PS-TTM 3.02x，9/22 收盘口径）。</li>
+<li><strong>财务 / 公告</strong>：金山软件 2026 年中期业绩公告（2026-08-19，kingsoft.com 官网 PDF）；2026-10-12 内幕消息公告（智通财经 / 21 世纪经济报道转述，原始公告见港交所披露易）。</li>
+<li><strong>消息面</strong>：通达信 MCP · wenda_news_query / wenda_report_query（窗口 2026-09-21 ~ 10-12）；智通财经 2026-10-12（办公大模型国标 GB/Z 244-2026）；证券时报 / 华尔街见闻 2026-08-19（中期业绩解读）；申万宏源晨会 2026-10-12（办公 Agent 行业深度）。</li>
+<li><strong>标注体系</strong>：[公司公告] = 挂牌交易所/官网披露；[卖方研报] = 券商公开研报（须带名+日期）；[推算] = 自行外推值，非事实；[调研口径] = 第三方转述。检索窗口内未见给出明确目标价的个股研报，故本报告不列目标价。</li>
+</ul>
+</section>
+
+<div class="foot">
+<strong>免责声明</strong>：本报告基于 2026-10-12 收盘后公开信息与量化评分框架生成，数据快照存在与官方收盘的微小差异可能，盘后公告效应尚未定价；评分、价位与操作计划仅为框架化研究推演，市场存在不确定性，任何依据本报告的操作风险由操作者自行承担。本报告仅供研究参考，<strong>不构成个人投资建议</strong>。生成时间：2026-10-12 18:00（GMT+8）。
+</div>
+
+</div>
+</body>
+</html>
