@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A股低吸候选池 · 2026-10-14（周三）· 配套主复盘报告">
+<meta name="report-type" content="候选池">
+<title>A股候选池：2026-10-14（周三）· 推演值，非买卖指令</title>
+<style>
+  :root{
+    --ink:#1f2430; --sub:#5b6472; --line:#e3e6ec; --bg:#ffffff; --panel:#f7f8fa;
+    --up:#c0392b; --down:#1e8449; --accent:#8e44ad; --gold:#b7791f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:16px;line-height:1.85;}
+  .wrap{max-width:880px;margin:0 auto;padding:28px 20px 60px;}
+  header.doc{border-bottom:3px double var(--ink);padding-bottom:14px;margin-bottom:8px;}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:.5px;}
+  .meta{color:var(--sub);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .badge{display:inline-block;padding:1px 10px;border:1px solid var(--ink);border-radius:999px;font-size:12px;}
+  .badge.hot{border-color:var(--up);color:var(--up);}
+  .badge.warn{border-color:var(--gold);color:var(--gold);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0;}
+  .card .t{font-weight:700;margin-bottom:6px;}
+  h2{font-size:20px;margin:40px 0 12px;padding-left:12px;border-left:5px solid var(--ink);}
+  h3{font-size:16px;margin:22px 0 8px;}
+  p{margin:10px 0;}
+  ul,ol{padding-left:1.4em;margin:8px 0;}
+  li{margin:6px 0;}
+  strong{font-weight:700;}
+  .up{color:var(--up);font-weight:700;}
+  .down{color:var(--down);font-weight:700;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:#eef0f4;font-weight:700;white-space:nowrap;}
+  tr:nth-child(even) td{background:#fafbfc;}
+  .tag{display:inline-block;padding:0 8px;border-radius:6px;font-size:13px;font-weight:700;}
+  .tag.first{background:#fdecea;color:var(--up);}
+  .tag.cont{background:#fff6e5;color:var(--gold);}
+  .tag.back{background:#e8f6ef;color:var(--down);}
+  .quote{border-left:4px solid var(--accent);background:#faf7fc;padding:10px 14px;margin:14px 0;color:#4a3a57;}
+  .note{color:var(--sub);font-size:13.5px;}
+  .pool{border:1px dashed var(--accent);border-radius:10px;padding:14px 18px;margin:16px 0;background:#fdfbff;}
+  .pool h4{margin:6px 0 2px;}
+  .warnbox{border:2px solid var(--gold);border-radius:10px;padding:14px 18px;margin:18px 0;background:#fffaf0;}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:12px;color:var(--sub);font-size:13px;text-align:center;}
+  @media (max-width:640px){
+    body{font-size:15px}
+    h1{font-size:22px}
+    table{font-size:13px;display:block;overflow-x:auto;}
+    .wrap{padding:18px 14px 40px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <h1>A股候选池：2026-10-14（周三）</h1>
+  <div class="meta">
+    <span>配套主报告：20261014_A股复盘.html</span>
+    <span>数据源：tdx / akshare / 同花顺（当日板块资金）</span>
+    <span>生成：2026-10-14 收盘后</span>
+    <span class="badge warn">推演值 · 非买卖指令</span>
+  </div>
+</header>
+
+<div class="warnbox">
+  <div class="t">⚠️ 必读声明</div>
+  <ul>
+    <li>本页所有<strong>买点、承接位、失效位（止损）均为基于底稿真实价格数据的推演值，非买卖指令</strong>，不构成任何投资建议。</li>
+    <li>标的与板块<strong>全部来自 2026-10-14 复盘底稿中真实出现过的个股/板块</strong>，未使用任何外部或训练知识补充。</li>
+    <li>底稿未采集收盘价的标的，如实标注<strong>"收盘价数据缺失"</strong>，仅保留板块与资金依据，不做价格推演。</li>
+    <li>当前情绪档位<strong>退潮</strong>，主报告明日计划仓位上限<strong>半仓</strong>、退潮期基准<strong>三成</strong>——本池为观察名单，不是满仓清单。</li>
+  </ul>
+</div>
+
+<h2>一、池子怎么分（三条腿）</h2>
+
+<ul>
+  <li><strong>进攻腿</strong>：传媒低位补涨（出版业 / 影视院线 / 数字媒体）——主报告第七段唯一"资金+梯队+量能"三重共振方向。</li>
+  <li><strong>防御腿</strong>：油气 / 电力 / 煤炭红利——20 日维度主力资金最坚定（个股口径近似）。</li>
+  <li><strong>回避腿</strong>：高位 4 板群、一字板、弱封板、破位反抽板块——明日计划明确不参与。</li>
+</ul>
+
+<h2>二、进攻腿 · 传媒低位补涨</h2>
+
+<table>
+  <tr><th>标的 / 板块</th><th>底稿依据（真实数据）</th><th>姿态</th><th>推演承接位</th><th>推演失效位（止损）</th><th>备注</th></tr>
+  <tr>
+    <td><strong>出版业</strong>（881380）</td>
+    <td>近120日回撤 -1.12%、近20日 <span class="up">+14.53%</span>、超额 +22.29pct；量能环比 <strong>2.16</strong>（近5日均额 117.72 亿 vs 前20日 54.67 亿）；近5日涨停 <strong>17</strong> 家；右侧确认第 1</td>
+    <td><span class="tag first">首选方向</span></td>
+    <td>板块指数回踩不破近20日涨幅一半位置（<strong>推演值</strong>）；指数绝对点位<strong>数据缺失</strong></td>
+    <td>板块指数跌回近20日起涨区下方（<strong>推演值</strong>）</td>
+    <td>只做低位首板/承接，不追 4 板高位群</td>
+  </tr>
+  <tr>
+    <td><strong>影视院线</strong>（881373）</td>
+    <td>回撤 -11.99%、近20日 <span class="up">+8.54%</span>、超额 +16.30pct；量能环比 1.69；近5日涨停 <strong>10</strong> 家；同花顺当日 <span class="up">+9.95 亿</span> + 慈文传媒个股口径近20日 <span class="up">+0.52 亿</span>（双口径一致）</td>
+    <td><span class="tag first">首选方向</span></td>
+    <td>同上，回踩承接（<strong>推演值</strong>）；指数绝对点位<strong>数据缺失</strong></td>
+    <td>同上（<strong>推演值</strong>）</td>
+    <td>④双口径一致，是三条传媒线里资金最干净的一条</td>
+  </tr>
+  <tr>
+    <td><strong>数字媒体</strong>（881376）</td>
+    <td>回撤 -4.20%、近20日 <span class="up">+11.89%</span>、超额 +19.65pct；量能环比 1.58；近5日涨停 <strong>7</strong> 家</td>
+    <td><span class="tag cont">次选</span></td>
+    <td>回踩承接（<strong>推演值</strong>）；指数绝对点位<strong>数据缺失</strong></td>
+    <td>同上（<strong>推演值</strong>）</td>
+    <td>个股口径资金<strong>数据缺失</strong>，佐证强度弱于前两条</td>
+  </tr>
+  <tr>
+    <td>电魂网络（1板·AI游戏）<br>引力传媒（1板·字节代理）<br>富春股份（1板·20CM）<br>中国科传（1板·央企出版）</td>
+    <td>短剧/AI传媒主线当日 1 板先锋，主报告第八段点名的低位承接方向</td>
+    <td><span class="tag cont">低位承接观察</span></td>
+    <td><strong>收盘价数据缺失</strong>（底稿未采集），不做价格推演</td>
+    <td><strong>数据缺失</strong></td>
+    <td>触发条件：有承接放量才动手；无量的高开不追</td>
+  </tr>
+</table>
+
+<h2>三、防御腿 · 红利（油气 / 电力 / 煤炭）</h2>
+
+<table>
+  <tr><th>标的 / 板块</th><th>底稿依据（真实数据）</th><th>姿态</th><th>推演承接位</th><th>推演失效位（止损）</th><th>备注</th></tr>
+  <tr>
+    <td><strong>油气开采</strong>（881007）</td>
+    <td>回撤 <strong>-0.09%</strong>，10-14 盘中创 120 日新高 <strong>3323.69</strong>；近20日 <span class="up">+12.61%</span>、超额 +20.37pct；同花顺当日 <span class="up">+8.99 亿</span>，三分类<span class="tag cont">连续流入</span></td>
+    <td><span class="tag first">防御首选</span></td>
+    <td>板块指数回踩 <strong>3323.69</strong> 一线不破（今日盘中高点，真实值；<strong>以此为锚的推演值</strong>）</td>
+    <td>板块指数有效跌破 <strong>3323.69</strong> 且量能环比回落（<strong>推演值</strong>）</td>
+    <td>⑤弱：5 日涨停 0 家，纯权重推动，有资金无梯队</td>
+  </tr>
+  <tr>
+    <td>中国海油 600938</td>
+    <td>tdx 个股口径：当日 <span class="up">+2.41 亿</span>、近5日 <span class="up">+3.76 亿</span>、近20日 <span class="up">+7.66 亿</span>（标注"个股口径近似"）</td>
+    <td><span class="tag first">中期资金最坚定</span></td>
+    <td><strong>收盘价数据缺失</strong>，仅按板块锚定，不做个股价格推演</td>
+    <td><strong>数据缺失</strong></td>
+    <td>20 日维度吸筹明确，退潮期躲红利的逻辑没变</td>
+  </tr>
+  <tr>
+    <td>中国石油 601857</td>
+    <td>tdx 个股口径：当日 <span class="up">+3.15 亿</span>、近5日 <span class="up">+9.50 亿</span>、近20日 <span class="up">+10.81 亿</span>（全场 20 日累计最高，个股口径近似）</td>
+    <td><span class="tag first">中期资金第 1</span></td>
+    <td><strong>收盘价数据缺失</strong>，同上</td>
+    <td><strong>数据缺失</strong></td>
+    <td>石油加工贸易当日 <span class="up">+8.19 亿</span>、当日涨跌 <span class="down">-1.04%</span>（价跌钱进，留意分歧）</td>
+  </tr>
+  <tr>
+    <td><strong>电力</strong>（881459）</td>
+    <td>回撤 -12.28%、近20日 <span class="up">+1.39%</span>、超额 +9.15pct；同花顺当日 <span class="up">+23.01 亿</span>（行业净流入第 1），三分类<span class="tag back">回补</span>；近5日涨停 3 家</td>
+    <td><span class="tag cont">共振但打折</span></td>
+    <td>板块指数绝对点位<strong>数据缺失</strong>，回踩承接为<strong>推演值</strong></td>
+    <td><strong>推演值</strong></td>
+    <td>量能环比 0.90 <strong>缩量</strong>——净流入没放量，强度要打折</td>
+  </tr>
+  <tr>
+    <td>韶能股份 000601</td>
+    <td>今日涨停；tdx 个股口径当日 <span class="up">+3.77 亿</span>（主力净额占比 +35.17%）、近5日 <span class="up">+3.37 亿</span>、近20日 <span class="up">+2.48 亿</span>，与行业口径方向一致</td>
+    <td><span class="tag cont">双口径一致</span></td>
+    <td><strong>收盘价数据缺失</strong>（底稿仅记"今日涨停"），不做价格推演</td>
+    <td><strong>数据缺失</strong></td>
+    <td>五组交叉验证里唯一"行业+个股+涨停"三项全对上的</td>
+  </tr>
+  <tr>
+    <td><strong>煤炭开采</strong>（881002）</td>
+    <td>回撤 -3.71%、近20日 <span class="up">+1.87%</span>、超额 +9.63pct；同花顺当日 <span class="up">+6.32 亿</span>（开采加工合并口径），三分类<span class="tag back">回补</span>；量能环比 0.93 缩量</td>
+    <td><span class="tag cont">弱观察</span></td>
+    <td>指数绝对点位<strong>数据缺失</strong>，<strong>推演值</strong></td>
+    <td><strong>推演值</strong></td>
+    <td>②仅微正、⑤弱（5 日涨停 1 家），强度中等；个股口径资金<strong>数据缺失</strong></td>
+  </tr>
+</table>
+
+<h2>四、回避腿 · 高位与破位（明日计划明确不参与）</h2>
+
+<table>
+  <tr><th>标的</th><th>底稿真实价格</th><th>回避理由（底稿依据）</th><th>推演观察位</th><th>推演失效位</th></tr>
+  <tr>
+    <td>新华文轩 601811（13天9板·空间龙）</td>
+    <td>收 <span class="up">23.25（+9.98%）</span>，盘中最低 <strong>19.20</strong>，打开 22 次后尾盘回封</td>
+    <td>准地天板，振幅巨大，分歧极大；主报告放弃条件点名"集体兑现炸板翻绿则弃传媒高位"</td>
+    <td>23.25（今日收盘，<strong>推演值</strong>）</td>
+    <td>跌破 <strong>19.20</strong>（今日最低，真实价；<strong>推演值</strong>）——视为分歧转空</td>
+  </tr>
+  <tr>
+    <td>慈文传媒 002343（4天4板·连板龙）</td>
+    <td>收 <span class="up">8.10（+10.05%）</span>，09:30 封死全天未开，换手 11.94%，买一封单 27.6 万手</td>
+    <td>封板质量全场最高，但已是 4 板高位；明日计划"不追 4 板高位群"</td>
+    <td>8.10（今日收盘=涨停价，<strong>推演值</strong>）</td>
+    <td>7.29（较收盘 -10%，<strong>推演值</strong>）——梯队瓦解信号</td>
+  </tr>
+  <tr>
+    <td>新经典 603096（4天4板）</td>
+    <td>收 <span class="up">23.07（+10.01%）</span>，打开 3 次回封，封单 0.51 亿</td>
+    <td><strong>明牌警示</strong>：个股口径当日 <span class="down">-1.73 亿</span>、近5日 <span class="down">-0.79 亿</span>、近20日 <span class="down">-0.91 亿</span>——行业进钱、高位出钱</td>
+    <td>—</td>
+    <td>20.76（较收盘 -10%，<strong>推演值</strong>）</td>
+  </tr>
+  <tr>
+    <td>掌阅科技 603533（7天4板）</td>
+    <td>收 <span class="up">29.92（+10.00%）</span>，打开 1 次回封</td>
+    <td>7 天 4 板，高位分歧段，同属不追范围</td>
+    <td>—</td>
+    <td>26.93（较收盘 -10%，<strong>推演值</strong>）</td>
+  </tr>
+  <tr>
+    <td>百洋股份 002696（4天4板·一字）</td>
+    <td><strong>收盘价数据缺失</strong>（一字板，底稿仅记封成比 512、封单 1.66 亿）</td>
+    <td>一字板，明日计划"一字开板的高位股不给接力"</td>
+    <td>—</td>
+    <td><strong>数据缺失</strong></td>
+  </tr>
+  <tr>
+    <td>醋化股份 603968（3天3板·染料）</td>
+    <td>收 <span class="up">15.80（+10.03%）</span>，打开 4 次回封，封单 0.35 亿</td>
+    <td>染料当日仅 1 家涨停，<strong>不足 3 家不参与板块效应</strong>，仅单独跟踪高标</td>
+    <td>15.80（今日收盘，<strong>推演值</strong>）</td>
+    <td>14.22（较收盘 -10%，<strong>推演值</strong>）</td>
+  </tr>
+  <tr>
+    <td>安泰集团 600408（5天3板·焦炭）</td>
+    <td>收 <span class="up">4.06（+10.03%）</span>，打开 <strong>9 次</strong>，弱封</td>
+    <td>弱封板，反复打开，封板质量差</td>
+    <td>—</td>
+    <td>3.65（较收盘 -10%，<strong>推演值</strong>）</td>
+  </tr>
+  <tr>
+    <td>阳光乳业 001318（6天3板）</td>
+    <td>收 <span class="up">15.43（+9.98%）</span>，T字板，打开 4 次</td>
+    <td>消费线非当日主线，T字板反复打开</td>
+    <td>—</td>
+    <td>13.89（较收盘 -10%，<strong>推演值</strong>）</td>
+  </tr>
+  <tr>
+    <td><strong>电池</strong>（881262）</td>
+    <td>回撤 <strong>-38.76%</strong>、近20日 <span class="down">-11.99%</span>、超额 -4.23pct；同花顺当日 <span class="down">-52.21 亿</span>（净流出第 2）；量能环比 1.57 <strong>放量下跌</strong></td>
+    <td><strong>已破位</strong>：近5日涨停 18 家全场最多，但属超跌反抽，硬条件全部证伪</td>
+    <td>—</td>
+    <td>反抽无论多热闹一律不参与</td>
+  </tr>
+  <tr>
+    <td><strong>化学制品</strong>（881034）</td>
+    <td>回撤 -22.12%、近20日 <span class="down">-9.40%</span>、超额 -1.64pct；当日 <span class="down">-26.12 亿</span></td>
+    <td><strong>已破位</strong>：17 家涨停属超跌反抽，资金证伪</td>
+    <td>—</td>
+    <td>同上，不参与</td>
+  </tr>
+  <tr>
+    <td><strong>元器件</strong>（881333）</td>
+    <td>回撤 -34.18%、近20日 <span class="down">-13.85%</span>、超额 -6.09pct（当日同花顺净额<strong>数据缺失</strong>）</td>
+    <td><strong>已破位</strong>：深回撤 + 负超额</td>
+    <td>—</td>
+    <td>同上，不参与</td>
+  </tr>
+  <tr>
+    <td>游戏（881369·短剧近似）/ 页岩气（880553）</td>
+    <td>游戏：回撤 -22.39%、近20日 <span class="down">-7.81%</span>、超额 -0.05pct，概念当日 <span class="up">+19.32 亿</span>；页岩气：近20日 <span class="down">-7.53%</span>、超额 +0.23pct，概念当日 <span class="up">+15.72 亿</span></td>
+    <td><strong>资金与价格背离</strong>：钱进了概念、指数没跟上</td>
+    <td>—</td>
+    <td>观察不参与，等指数转正再看</td>
+  </tr>
+  <tr>
+    <td><strong>白酒</strong>（881135）</td>
+    <td>回撤 -14.86%、近20日 <span class="down">-1.70%</span>、超额 +6.06pct；当日 <span class="up">+7.44 亿</span>；量能环比 0.81 缩量</td>
+    <td><strong>右侧待确认</strong>：②近20日未转正，差临门一脚</td>
+    <td>—</td>
+    <td>观察点，转正前不动手</td>
+  </tr>
+</table>
+
+<h2>五、执行口径（与主报告第八段一致）</h2>
+
+<ul>
+  <li><strong>仓位</strong>：上限<strong>半仓</strong>，退潮期基准<strong>三成</strong>；传媒低位批量首板承接且溢价不转负才可加到半仓；溢价转负直接降到<strong>一成以下</strong>。</li>
+  <li><strong>触发</strong>：先看两个数——昨日涨停溢价是否转负（今日 <strong>+0.28%</strong>，akshare 全样本 69 只）、涨停家数是否止跌回稳（今日 tdx <strong>39</strong> / akshare <strong>36</strong>）。</li>
+  <li><strong>放弃（系统性）</strong>：涨停家数滑向 <strong>20 家</strong> + 溢价转负 + 跌停扩散（今日跌停 <strong>11</strong> 家）→ 空仓观望。</li>
+  <li><strong>放弃（结构性）</strong>：新华文轩 / 新经典集体兑现炸板翻绿 → 弃传媒高位，只留油气/电力红利腿。</li>
+</ul>
+
+<div class="quote">
+小肉小面都是肉。这份池子的意义不是"明天买哪只"，而是"明天哪些能看、哪些坚决不看"。推演值归推演值，真到了盘口，先想好止损再想肉。
+</div>
+
+<p class="note">口径备注：板块当日资金为<strong>同花顺口径</strong>；5日/20日累计为 <strong>tdx 个股口径近似</strong>，两者不可混在同一列比较。所有标注"推演值"的数字均由底稿真实价格/资金数据推导，非买卖指令。</p>
+
+<footer>框架化复盘/推演，不构成投资建议。</footer>
+
+</div>
+</body>
+</html>

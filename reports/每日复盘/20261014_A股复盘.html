@@ -21,12 +21,13 @@
   .meta{color:var(--sub);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 18px;}
   .badge{display:inline-block;padding:1px 10px;border:1px solid var(--ink);border-radius:999px;font-size:12px;}
   .badge.hot{border-color:var(--up);color:var(--up);}
+  .badge.warn{border-color:var(--gold);color:var(--gold);}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0;}
   .card .t{font-weight:700;margin-bottom:6px;}
   h2{font-size:20px;margin:40px 0 12px;padding-left:12px;border-left:5px solid var(--ink);}
   h3{font-size:16px;margin:22px 0 8px;}
   p{margin:10px 0;}
-  ul{padding-left:1.4em;margin:8px 0;}
+  ul,ol{padding-left:1.4em;margin:8px 0;}
   li{margin:6px 0;}
   strong{font-weight:700;}
   .up{color:var(--up);font-weight:700;}
@@ -41,21 +42,19 @@
   .tag.back{background:#e8f6ef;color:var(--down);}
   .quote{border-left:4px solid var(--accent);background:#faf7fc;padding:10px 14px;margin:14px 0;color:#4a3a57;}
   .note{color:var(--sub);font-size:13.5px;}
-  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:12px;color:var(--sub);font-size:13px;text-align:center;}
+  .kpi{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .kpi .box{flex:1 1 150px;background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;padding:10px 14px;}
+  .kpi .k{font-size:12.5px;color:var(--sub);}
+  .kpi .v{font-size:19px;font-weight:700;}
   .pool{border:1px dashed var(--accent);border-radius:10px;padding:14px 18px;margin:16px 0;background:#fdfbff;}
   .pool h4{margin:6px 0 2px;}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:12px;color:var(--sub);font-size:13px;text-align:center;}
   @media (max-width:640px){
     body{font-size:15px}
     h1{font-size:22px}
     table{font-size:13px;display:block;overflow-x:auto;}
     .wrap{padding:18px 14px 40px;}
-  }
-  @media print{
-    body{font-size:12.5px}
-    .wrap{max-width:none;padding:0}
-    h2{page-break-after:avoid}
-    table{page-break-inside:avoid}
-    .card{break-inside:avoid}
   }
 </style>
 </head>
@@ -65,167 +64,328 @@
 <header class="doc">
   <h1>A股复盘：2026-10-14（周三）</h1>
   <div class="meta">
+    <span>主源：通达信 tdx</span>
+    <span>梯队源：akshare（东财）</span>
+    <span>资金口径：板块当日为<strong>同花顺口径</strong>（westock 不可用，降级）；5日/20日累计为 <strong>tdx 个股口径近似</strong></span>
+    <span>生成：2026-10-14 收盘后（同日重跑·全量重生成）</span>
     <span class="badge hot">情绪档位：退潮</span>
-    <span>爱在冰川 · 短线情绪周期框架</span>
-    <span>数据源：通达信（收盘正式口径）</span>
-    <span>生成：2026-10-14 收盘后</span>
   </div>
 </header>
 
 <div class="card">
-  <div class="t">核心结论速览</div>
+  <div class="t">今日速读</div>
   <ul>
-    <li>情绪：<strong>退潮档位</strong>——普跌缩量，但双龙封死、龙头还活着。</li>
-    <li>主线：短剧 / AI传媒IP（<span class="up">8 家涨停</span>，全场唯一完整梯队）。</li>
-    <li>资金：全市场净流出 <span class="down">300.61 亿</span>，权重/基金重仓失血最大。</li>
-    <li>三分类：连续流入＝元器件 / 游戏 / 油气；回补＝电力 / 煤炭；首次流入＝无。</li>
-    <li>明日：三成为主、上限<strong>半仓</strong>，只碰梯队最硬与资金最真两条线。</li>
+    <li>情绪：<strong>退潮</strong>——高潮次日快速降温，普跌缩量，但龙头还没倒。</li>
+    <li>涨跌停：<strong>涨停 39 家 / 跌停 11 家</strong>，封板率 <strong>60%</strong>，昨日涨停溢价 <strong>+0.28%</strong></li>
+    <li>资金：当日净流入前 3（同花顺口径）——<strong>电力 +23.01 亿、文化传媒 +14.69 亿、影视院线 +9.95 亿</strong></li>
+    <li>明日：仓位上限<strong>半仓</strong>，退潮期基准<strong>三成</strong>；只做传媒低位补涨 + 油气/电力红利腿。</li>
   </ul>
 </div>
 
 <h2>一、大盘情绪</h2>
-<p>今天这盘面，一句话定调：<strong>退潮档位，缩量普跌，但龙头还活着</strong>。</p>
-<ul>
-  <li><strong>上涨家数 978 家 / 下跌家数 4496 家</strong>，下跌是上涨的 4.6 倍，标准普跌。</li>
-  <li><strong>涨停 39 家 / 跌停 11 家</strong>，涨跌停比约 3.5:1，跌停面不算重，亏钱效应有限。</li>
-  <li><strong>连板 15 家，最高板 4 板</strong>（慈文传媒 / 百洋股份 / 新经典，均 4天4板）；<strong>3 板只有醋化股份 1 只</strong>，2 板 11 只，<strong>5 板以上断层</strong>。</li>
-  <li><strong>两市成交 14144.02 亿，环比缩 2615.15 亿（-15.6%）</strong>。上证收 <strong>3767.23（<span class="down">-0.88%</span>）</strong>，深成指收 <strong>12110.59（<span class="down">-1.97%</span>）</strong>。</li>
-  <li><strong>昨日涨停溢价 +2.6%</strong>——注意口径：这是可见 50 只样本的平均值（共 70 只，接口只返回前 50 只明细）。结构上极度分化：50 只里 27 涨（含 14 只再涨停）、22 跌，高标集体再板，中低位一批跌 4% 上下。</li>
-</ul>
-<p>这量能、这普跌加龙头抱团的组合，像 2024 年那几波缩量退潮——指数不吓人，但中低位接力开始吃面，钱收缩到最硬的那几只票上。缩量下跌不怕，怕的是放量崩，今天还只是缩。</p>
-<p>知易行难：退潮期最忌讳的就是拿"指数没事"当"情绪没事"。</p>
 
-<h2>二、次日回头看验证</h2>
-<p>无前日复盘记录，跳过回头看。</p>
-<p class="note">（首次运行流水线，2026-10-13 无复盘文件。明天这段就有得看了，昨天说错没说错，摆桌面上。）</p>
+<p>今天一句话定调：<strong>退潮档位</strong>——高潮次日快速降温，普跌缩量，但龙头还站着。</p>
 
-<h2>三、板块效应</h2>
-<p>按"≥3 家涨停才算板块效应"逐个过：</p>
-<ul>
-  <li><strong>短剧 / AI传媒 / IP</strong>：<span class="up">8 家涨停</span>。驱动：字节 PineDrama 海外下载破 1 亿、日活约 700 万；微信小程序低调上线"绿泡泡短剧"对标红果（红果日活 1.68 亿）；机构预计 2026 年微短剧+AI剧+漫剧市场规模突破 1210 亿。全场唯一强主线。</li>
-  <li><strong>储能（标签口径）</strong>：<strong>6 家涨停</strong>。但各股驱动混杂（业绩/冰雪/收购），板块效应偏弱，只算观察项。</li>
-  <li><strong>机器人</strong>：<strong>4 家涨停</strong>。题材驱动分散，弱效应。</li>
-  <li><strong>PCB概念</strong>：<strong>3 家涨停</strong>（均 2 板）。驱动：覆铜板涨价（建滔 10/13 宣布 PP 售价上调 15%）+ 高盛预计 2028 年 AI 服务器 PCB 市场达 840 亿美元。</li>
-  <li><strong>冰雪经济 / 黑龙江文旅</strong>：<strong>3 家涨停</strong>（均 2 板）。事件驱动：冰雪大世界联名迪士尼打造《冰雪奇缘》主题区 + 黑龙江冰雪季推介会。</li>
-  <li>染料仅 1 家涨停（醋化股份），不参与板块效应，但有 <strong>3 板高标</strong>，单独跟踪（分散染料 2 个月涨超 30%）。</li>
-</ul>
-<p class="note">说明：冰雪、染料的前日梯队个股（晶雪节能、长白山、建新股份等）今日均未涨停，梯队明细数据不全。</p>
-
-<h2>四、龙头与梯队</h2>
-<ul>
-  <li><strong>空间板</strong>：新华文轩（<strong>13天9板</strong>）——出版/短剧IP，换手板，盘中打开 22 次、最低杀到 19.20，"准地天板"尾盘回封，收盘封死，振幅巨大，分歧转一致。这个位置还能拉回来，短线的魂没散。</li>
-  <li><strong>3板+梯队</strong>：
-    <ul>
-      <li>慈文传媒（<strong>4天4板</strong>，连板龙，短剧/影视IP）——09:30 封死全天未开，封单 27.6 万手，封板质量高；</li>
-      <li>百洋股份（<strong>4天4板</strong>，农业/大消费）——一字板，封成比 512；</li>
-      <li>新经典（<strong>4天4板</strong>，出版/短剧IP）——换手板，打开 3 次回封；</li>
-      <li>掌阅科技（<strong>7天4板</strong>，短剧出海/数字阅读）——打开 1 次回封；</li>
-      <li>醋化股份（<strong>3天3板</strong>，染料涨价）——打开 4 次回封；</li>
-      <li>安泰集团（<strong>5天3板</strong>，焦炭）——打开 9 次，弱封；</li>
-      <li>阳光乳业（<strong>6天3板</strong>，乳业/大消费）——T字板，打开 4 次。</li>
-    </ul>
-  </li>
-  <li><strong>2板梯队</strong>（11 只代表）：冰山冷热、超声电子、星帅尔、航发科技、龙江交通、哈空调、路畅科技、金奥博、万里股份、荣丰控股、阳光乳业。</li>
-  <li><strong>1板先锋</strong>：短剧线电魂网络、引力传媒、富春股份（20CM）、中国科传；PCB 无当日首板；冰雪无当日首板。</li>
-</ul>
-<p>梯队叙事：<strong>高度没拓展、也没崩</strong>——5 板以上连续连板断档，4 板群（慈文/百洋/新经典/掌阅）撑住高位，空间靠新华文轩断续板吊着。核心主线短剧是全场唯一"高标+中军+低位补涨"完整梯队，双龙（新华文轩/慈文传媒）收盘均封死，无炸板翻绿，短线情绪未崩，但中位股在掉队。</p>
-
-<h2>五、主力资金流向分析</h2>
-<ul>
-  <li><strong>全市场净流向：净流出 300.61 亿</strong>（上证 -140.02 亿 + 深市 -160.59 亿）。沪深300 流出 170.37 亿、基金重仓 -191.19 亿、大盘股 -164.86 亿——<strong>权重/机构重仓是流出主力</strong>。</li>
-  <li><strong>当日净流入前5板块</strong>：</li>
-</ul>
-<table>
-  <tr><th>#</th><th>板块</th><th>当日净流入</th><th>代表个股</th><th>三分类</th></tr>
-  <tr><td>1</td><td>元器件</td><td class="up">+14.66 亿</td><td>沪电股份 3.59 亿</td><td><span class="tag cont">连续流入</span></td></tr>
-  <tr><td>2</td><td>电力</td><td class="up">+8.57 亿</td><td>韶能股份 3.77 亿</td><td><span class="tag back">前期流出后回补</span></td></tr>
-  <tr><td>3</td><td>游戏</td><td class="up">+7.63 亿</td><td>富春股份 3.35 亿</td><td><span class="tag cont">连续流入</span></td></tr>
-  <tr><td>4</td><td>煤炭开采</td><td class="up">+6.70 亿</td><td>郑州煤电 5.80 亿</td><td><span class="tag back">前期流出后回补</span></td></tr>
-  <tr><td>5</td><td>油气开采</td><td class="up">+5.89 亿</td><td>中国石油 3.15 亿</td><td><span class="tag cont">连续流入</span></td></tr>
-</table>
-<ul>
-  <li><strong>当日净流出</strong>：行业级流出榜完整名单缺失，唯一行业口径为<strong>半导体 -68.13 亿</strong>，大幅失血；其余为宽基/风格口径（中证A500 -205.86 亿、非周期股 -213.48 亿等），已如实标注。</li>
-  <li><strong>近5日资金趋势</strong>（代表个股口径近似）：油气持续流入最强（近5日累计 +6.18 亿）；元器件震荡流入、近 2 日连续为正；游戏由流出转流入；电力震荡偏弱；煤炭近两日转负、注意口径差异（板块榜当日仍显示净流入）。</li>
-  <li><strong>三分类结论</strong>：<span class="tag first">首次流入：无</span> <span class="tag cont">连续流入：元器件、游戏、油气开采</span> <span class="tag back">前期流出后回补：电力、煤炭开采</span></li>
-</ul>
-<p class="note">备注：逐日序列为"个股口径近似"（F10 序列截至 10-13，不含当日），板块级当日结论以快照表为准。</p>
-<p>退潮日资金往哪躲？往电力、煤炭、油气这些低波红利躲，顺带在元器件里做 AI 硬件的结构。方向感很清楚，就是没人愿意抬轿。</p>
-
-<h2>六、板块低位右侧机会识别</h2>
-<p class="note">12 个方向完成核验（概念方向如传媒/AI应用/机器人等 lookup 未返回 880 系代码，数据缺失，不编造）。基准用上证指数近似（880 系未确认沪深300 对应指数）。</p>
-<table>
-  <tr><th>板块</th><th>近120日回撤</th><th>近20日涨幅</th><th>超额(对上证)</th><th>量能变化</th><th>近5日新低?</th><th>结论</th></tr>
-  <tr><td><strong>银行</strong></td><td>-0.4%（距高点极近）</td><td>+4.5%</td><td class="up">+9.2%</td><td>-9.2%（量稳）</td><td>否</td><td><strong>右侧待确认/候选</strong></td></tr>
-  <tr><td><strong>煤炭</strong></td><td>-2.5%（近新高）</td><td>+1.6%</td><td class="up">+6.3%</td><td>-15.7%（临界，近5日回升）</td><td>否</td><td><strong>右侧待确认/候选</strong></td></tr>
-  <tr><td><strong>电力</strong></td><td>-11.5%</td><td>+1.7%</td><td class="up">+6.3%</td><td>-5.9%（量稳）</td><td>否</td><td><strong>右侧待确认/候选</strong>（今日+1.53%放量反包）</td></tr>
-  <tr><td><strong>酿酒/白酒</strong></td><td>-14.2%</td><td>-1.4%</td><td class="up">+3.3%</td><td>-10.2%（量稳）</td><td>否</td><td><strong>右侧待确认/候选</strong></td></tr>
-  <tr><td>半导体</td><td>-41.0%</td><td>-13.1%</td><td class="down">-8.4%</td><td>-21.8%</td><td>是</td><td>已破位/左侧</td></tr>
-  <tr><td>医药</td><td>-9.7%</td><td>-1.7%</td><td>+3.0%</td><td>-24.6%</td><td>是</td><td>右侧确认失败（缩量阴跌创新低）</td></tr>
-  <tr><td>航空(军工)</td><td>-27.6%</td><td>-7.7%</td><td>-3.1%</td><td>-8.4%</td><td>否</td><td>左侧待转强</td></tr>
-  <tr><td>有色/化工/钨钼/混合现实/软件服务</td><td>回撤超线+缩量</td><td>负</td><td>负</td><td>大幅缩量</td><td>多数是</td><td>已破位/左侧</td></tr>
-</table>
-<p>要点：普跌日里只有<strong>银行、电力、煤炭、酿酒</strong>四个方向"回撤可控+超额为正+量能不塌"，防御/红利资金抱团特征明显。银行超额 +9.2% 全场最强且贴着 120 日高点走。近5日涨停家数数据缺失（仅中芯国际、中际旭创完成回溯，均无涨停）。</p>
-
-<h2>七、趋势资金与情绪梯队共振背离</h2>
-<p>证据链摆出来：</p>
-<ol>
-  <li><strong>全市场净流出 300.61 亿</strong> + <strong>涨停仅 39 家</strong> + <strong>梯队断层（5板以上无、3板仅1只）</strong>——这是退潮的底色。</li>
-  <li><strong>昨日涨停溢价 +2.6% 为正但极度分化</strong>——高标集体再板、中低位 22 只下跌一批 3%-5%，钱抱团而不是普涨。</li>
-  <li><strong>资金端</strong>：流入集中在元器件（连续）、电力/煤炭（回补）、油气（连续）、游戏（连续）；<strong>情绪端</strong>：梯队全在短剧/IP。</li>
-</ol>
-<ul>
-  <li><strong>共振</strong>：<strong>游戏</strong>是唯一"资金连续流入 + 情绪有涨停梯队"的交集——电魂网络、富春股份、掌阅科技等短剧游戏属性票既吃到资金流入又挂在情绪主线上。<strong>电力/煤炭/油气</strong>则是"资金持续/回补 + 板块今日红盘"的资金面共振（油气 +2.58%、煤炭 +1.79%、电力 +1.45%），但情绪梯队薄，属趋势资金型。</li>
-  <li><strong>背离</strong>：情绪最亢奋的<strong>短剧/传媒主线</strong>，涨停 8 家、双龙封死，但主力流入前 5 里没有传媒板块身影（游戏沾边但金额仅 7.63 亿）——<strong>梯队高亢而资金未大举跟进</strong>，这是本轮最大的背离警示；反过来<strong>电力/煤炭/油气资金进了但梯队只有零星涨停</strong>，若情绪继续退潮，这类资金型方向也难独立走强。</li>
-</ul>
-<div class="quote">对照句收口：资金躲红利、情绪抱短剧，两头都不肯给对方抬轿——像 2024 年退潮期那几段"主线缩容、防御抱团"的走法，这种结构下，谁的票谁知道，别拿主线的坚定去赌防御的补涨。</div>
-
-<h2>八、明日计划</h2>
-<p>仓位上限<strong>半仓</strong>，退潮期再往下压。不预测，只做应对。</p>
-<ul>
-  <li><strong>目标板块</strong>：
-    <ul>
-      <li>主线<strong>短剧/IP</strong>（资金未进但梯队最完整，分歧转一致逻辑延续中，重点看慈文传媒、新华文轩明天是否续强）；</li>
-      <li>资金连续流入的<strong>元器件 / 游戏 / 油气</strong>；</li>
-      <li>回补方向<strong>电力 / 煤炭</strong>，叠加右侧候选的<strong>银行 / 酿酒</strong>作防御对冲。</li>
-    </ul>
-  </li>
-  <li><strong>仓位建议</strong>：<strong>三成为主，最多半仓</strong>——只在主线分歧低吸或资金型方向回踩时给仓位，追高一分不给。</li>
-</ul>
-
-<div class="pool">
-  <h3 style="margin-top:2px">低吸候选池（板块方向与观察逻辑，非买卖指令）</h3>
-  <h4>① 短剧/IP主线</h4>
-  <p>观察：慈文传媒（连板龙，一字区，封单质量高）/ 掌阅科技（4板换手）<br>
-  逻辑：主线唯一完整梯队+双龙封死 ｜ 买点：分歧日低吸、不追一字 ｜ 止损：龙头断板/开盘大幅低开不承接即弃。</p>
-  <h4>② PCB次线</h4>
-  <p>观察：宝鼎科技、超声电子、星帅尔（均 2 板）<br>
-  逻辑：覆铜板涨价+AI服务器需求，业绩催化硬 ｜ 买点：板块回踩 5 日线附近缩量企稳 ｜ 止损：次线集体炸板、梯队塌掉即弃。</p>
-  <h4>③ 资金连续流入方向</h4>
-  <p>观察：元器件（沪电股份）、油气（中国石油）、游戏（富春股份）<br>
-  逻辑：连续流入=有人持续做 ｜ 买点：回踩分时均线/前日低点不破 ｜ 止损：板块单日转为大幅净流出。</p>
-  <h4>④ 回补+右侧候选（防御腿）</h4>
-  <p>观察：电力（韶能股份）、煤炭（郑州煤电）、银行/酿酒（板块/ETF方向）<br>
-  逻辑：回补+右侧确认+量能稳，退潮期红利抱团 ｜ 买点：放量反包次日不破今日收盘 ｜ 止损：跌破 20 日线或量能塌方。</p>
+<div class="kpi">
+  <div class="box"><div class="k">上涨 / 下跌</div><div class="v"><span class="up">978</span> / <span class="down">4496</span></div></div>
+  <div class="box"><div class="k">涨停 / 跌停</div><div class="v"><span class="up">39</span> / <span class="down">11</span></div></div>
+  <div class="box"><div class="k">封板率 / 炸板</div><div class="v">60% / 24 家</div></div>
+  <div class="box"><div class="k">两市成交</div><div class="v">14144.02 亿</div></div>
+  <div class="box"><div class="k">成交环比</div><div class="v"><span class="down">-15.60%</span></div></div>
 </div>
 
 <ul>
-  <li><strong>放弃条件</strong>：
-    <ul>
-      <li>系统性：涨停缩到 30 家以下 + 昨日涨停溢价转负 + 成交继续缩超 15% → <strong>空仓观望</strong>；</li>
-      <li>结构性：短剧双龙（新华文轩/慈文传媒）任一炸板翻绿不回封 → <strong>弃主线追高，只保留防御腿</strong>；</li>
-      <li>今日计划未涉及前日原文（无前日记录），明日开始逐条兑现。</li>
-    </ul>
-  </li>
+  <li>涨跌家数：<strong>上涨 978 家 / 下跌 4496 家 / 平盘 88 家</strong>（tdx screener A股口径），上涨占比仅 <strong>17.58%</strong>，标准普跌。</li>
+  <li>涨停 <strong>39 家</strong>（<span class="note">tdx 口径；akshare 交叉 36 家，差异 7.7%＜10%，ST 口径差异，可用</span>）/ 跌停 <strong>11 家</strong>；炸板 <strong>24 家</strong>、封板率 <strong>60%</strong>——炸板率约四成，接力意愿明显降温。</li>
+  <li>连板 <strong>15 家</strong>，最高板 <strong>4 板</strong>（百洋股份、慈文传媒、新经典，均 4天4板）。5 板以上连续连板<strong>断档</strong>，高度靠新华文轩 13天9板的空间板撑着。</li>
+  <li>两市成交 <strong>14144.02 亿元</strong>，环比 <span class="down">-15.60%</span>（10-13 为 16759.18 亿），显著缩量。</li>
+  <li>指数：上证 <span class="down">3767.23（-0.88%）</span>、深成指 <span class="down">12110.59（-1.97%）</span>、创业板指 <span class="down">2866.76（-3.10%）</span>、深证综指 <span class="down">2286.87（-1.81%）</span>。</li>
+  <li>昨日涨停溢价 <strong>+0.28%</strong>（<span class="note">akshare 全样本 69 只</span>），上涨占比仅 <strong>39.1%</strong>——溢价收敛到接近零，赚钱效应由强转弱。</li>
+  <li>逐日涨停家数序列（旧→新，10-08→10-14）：<strong>43 → 69 → 46 → 67 → 36</strong>，昨日 67 家今天直接腰斩。</li>
+  <li>补充观察：创60日新高 <strong>188 家</strong> / 新低 <strong>246 家</strong>，新低家数反超新高（新高新低比 0.76）。</li>
 </ul>
-<p>先下手为强的前提是想清楚下手对象；主线里吃肉，防御里喝汤，别在别人吃面的板块里找肉。</p>
+
+<p>情绪叙事：涨停家数从昨日 67 家腰斩到 36 家，封板率掉到 60%，溢价收敛到 +0.28% 附近，再叠上缩量 15.6% 和创业板指 -3.10%——这是典型的"高位巨震后的快速降温"。</p>
+
+<p>这走势像历史上情绪高潮次日开始退潮的那批交易日样本。那批样本里，赚钱效应通常先于指数走弱。</p>
+
+<div class="quote">
+边界说清楚：还没到典型冰点。涨停 36 家仍高于冰点常见的 20 家以下水平，跌停 11 家没激增，溢价也还没转负——所以定<strong>退潮</strong>而不是冰点。若明日溢价转负且涨停家数进一步萎缩，则有滑向冰点的可能。这是情景描述，不是预测。
+</div>
+
+<p>知易行难。退潮期最容易犯的错，就是拿"龙头还封着"当"情绪没事"。</p>
+
+<h2>二、次日回头看验证</h2>
+
+<table>
+  <tr><th>前日预判</th><th>实际走势</th><th>结论</th></tr>
+  <tr><td>2026-10-13 无复盘记录</td><td>—</td><td><strong>无前日复盘记录，跳过回头看。</strong></td></tr>
+</table>
+
+<p>背景说明：2026-10-14 当日 16:14 有一份旧版流程生成的同日复盘，本次为<strong>同日重跑、全量重新生成并覆盖</strong>。旧版"明日计划"针对 2026-10-15，与本次报告属同一天预判，不构成跨日验证对象。</p>
+
+<p class="note">口径备注：旧版文件中"昨日涨停溢价 +2.6%"为 tdx 50 只样本口径，本次以 <strong>akshare 全样本 69 只的 +0.28%</strong> 为主口径。不同源数字不混用。</p>
+
+<p>明天这段就有得看了。今天说错没说错，明天摆桌面上。</p>
+
+<h2>三、板块效应</h2>
+
+<p>按"涨停家数 ≥3 家才算板块效应"逐个过。当日涨停共 <strong>39 家</strong>（tdx 口径）。</p>
+
+<h3>1. 短剧/AI传媒/IP —— <strong class="up">8 家</strong></h3>
+<ul>
+  <li>成员：新华文轩（13天9板）、慈文传媒（4天4板）、新经典（4天4板）、掌阅科技（7天4板）、电魂网络（1板）、引力传媒（1板）、富春股份（1板，20CM）、中国科传（1板）。</li>
+  <li>驱动：字节 PineDrama 海外下载破 1 亿、日活约 700 万；微信小程序上线"绿泡泡短剧"对标红果（红果日活 1.68 亿，同比 +107%）；机构预计 2026 年微短剧+AI剧+漫剧市场规模突破 1210 亿元。</li>
+  <li>资金（同花顺当日口径）：文化传媒 <span class="up">+14.69 亿（+1.48%）</span>、影视院线 <span class="up">+9.95 亿（+1.68%）</span>、短剧游戏概念 <span class="up">+19.32 亿（+1.39%）</span>。</li>
+  <li>在有板块效应的板块里，这是唯一具备"高标+中军+低位补涨"完整梯队的核心主线。</li>
+</ul>
+
+<h3>2. 储能（标签口径）—— <strong>6 家</strong></h3>
+<ul>
+  <li>成员：冰山冷热（2板）、星帅尔（2板）、万里股份（2板）、韶能股份（1板）、三维化学（1板）、*ST美丽（1板）。</li>
+  <li>各股驱动混杂（业绩/冰雪/收购），板块效应偏弱，<strong>仅作观察项</strong>。</li>
+</ul>
+
+<h3>3. 机器人 —— <strong>4 家</strong></h3>
+<ul>
+  <li>成员：富春染织（1板）、松霖科技（1板）、金奥博（2板）、泰禾智能（1板）。</li>
+  <li>题材驱动分散，弱效应。</li>
+</ul>
+
+<h3>4. PCB概念 —— <strong>3 家</strong></h3>
+<ul>
+  <li>成员（均 2 板）：宝鼎科技（一字，三季报净利预增 5.3 倍）、超声电子（T字，M7/M8 覆铜板研发中）、星帅尔（一字，收购梵宇科技跨界 PCB 刀具）。</li>
+  <li>驱动：建滔 10/13 宣布 2116 以下薄布板料及 PP 售价上调 15%，覆铜板涨价传导；高盛预计 2028 年 AI 服务器 PCB 市场规模 840 亿美元，中信称设备订单排至 2 年后。</li>
+</ul>
+
+<h3>5. 冰雪经济/黑龙江文旅 —— <strong>3 家</strong></h3>
+<ul>
+  <li>成员（均 2 板）：冰山冷热、龙江交通、哈空调。</li>
+  <li>事件驱动：哈尔滨冰雪大世界联名迪士尼打造《冰雪奇缘》主题区、10/12 黑龙江冰雪季推介会宣布园区扩至 125 万平方米。</li>
+</ul>
+
+<h3>不足 3 家：不参与</h3>
+<ul>
+  <li>创新药 2 家（莱美药业、中恒集团）——不参与。</li>
+  <li>染料 1 家（醋化股份）——不参与板块效应统计，但该股是 <strong>3 板高标</strong>，单独跟踪（三丰化工染料中间体提价，分散染料 2 个月涨超 30%）。</li>
+</ul>
+
+<p class="note">数据说明：冰雪、染料的前日梯队个股（晶雪节能、长白山、建新股份等）今日未出现在涨停名单，盘中跌幅未采集，<strong>梯队明细数据不全</strong>，如实标注。</p>
+
+<h2>四、龙头与梯队</h2>
+
+<h3>空间板 / 连板龙</h3>
+<ul>
+  <li><strong>新华文轩 601811 · 13天9板（空间龙）</strong>——出版/短剧IP。换手板，盘中打开 <strong>22 次</strong>、最低杀到 <strong>19.20</strong>，"准地天板"尾盘回封，收 <span class="up">23.25（+9.98%）</span> 封死，买一封单 1111 手。振幅巨大、分歧转一致，这个位置还能拉回来，短线情绪的魂没散。</li>
+  <li><strong>慈文传媒 002343 · 4天4板（连板龙）</strong>——短剧/影视IP。<strong>09:30 封死、全天未开板</strong>，收 <span class="up">8.10（+10.05%）</span>，换手 11.94%，买一封单 27.6 万手（约 2.23 亿），封板质量全场最高。</li>
+</ul>
+
+<h3>3板+ 梯队</h3>
+<table>
+  <tr><th>股票</th><th>板数</th><th>细分板块</th><th>板型 / 关键数据</th><th>驱动</th></tr>
+  <tr><td>百洋股份 002696</td><td><strong>4天4板</strong></td><td>农业/大消费</td><td>一字板，封成比 512，封单 1.66 亿</td><td>财政部扩内需政策 + 全球罗非鱼龙头</td></tr>
+  <tr><td>新经典 603096</td><td><strong>4天4板</strong></td><td>出版/短剧IP</td><td>换手板（打开 3 次），收 23.07（+10.01%），封单 0.51 亿</td><td>PineDrama 爆火 + bibi动物园 IP 文创</td></tr>
+  <tr><td>掌阅科技 603533</td><td><strong>7天4板</strong></td><td>短剧出海/数字阅读</td><td>换手板（打开 1 次，10:07 回封），收 29.92（+10.00%）</td><td>字节参股 + 海外短剧平台 iDrama + DeepSeek API 调价</td></tr>
+  <tr><td>醋化股份 603968</td><td><strong>3天3板</strong></td><td>染料/精细化工</td><td>换手板（打开 4 次），收 15.80（+10.03%），封单 0.35 亿</td><td>染料中间体提价 + 分散染料 2 个月涨超 30%</td></tr>
+  <tr><td>安泰集团 600408</td><td><strong>5天3板</strong></td><td>焦炭/氢能源</td><td>换手板（打开 9 次，弱封），收 4.06（+10.03%）</td><td>山西焦化龙头，机构持股标签</td></tr>
+  <tr><td>阳光乳业 001318</td><td><strong>6天3板</strong></td><td>乳业/大消费</td><td>T字板（打开 4 次），收 15.43（+9.98%）</td><td>扩内需政策 + 儿童调制乳</td></tr>
+</table>
+
+<h3>2板梯队（11 只，含封单额）</h3>
+<table>
+  <tr><th>股票</th><th>板块归属</th><th>封单额</th><th>股票</th><th>板块归属</th><th>封单额</th></tr>
+  <tr><td>冰山冷热</td><td>通用设备/冰雪</td><td>3.67 亿</td><td>哈空调</td><td>通用设备/冰雪</td><td>0.33 亿</td></tr>
+  <tr><td>超声电子</td><td>元件/PCB</td><td>2.63 亿</td><td>龙江交通</td><td>铁路公路/冰雪</td><td>0.49 亿</td></tr>
+  <tr><td>星帅尔</td><td>家电零部/PCB+储能</td><td>2.45 亿</td><td>金奥博</td><td>化学制品/机器人</td><td>0.41 亿</td></tr>
+  <tr><td>航发科技</td><td>航空装备</td><td>1.56 亿</td><td>万里股份</td><td>电池/储能</td><td>0.37 亿</td></tr>
+  <tr><td>阳光乳业</td><td>饮料乳品（6/3）</td><td>1.06 亿</td><td>路畅科技</td><td>汽车零部件</td><td>0.46 亿</td></tr>
+  <tr><td>荣丰控股</td><td>房地产开发</td><td>0.56 亿</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+
+<h3>1板先锋</h3>
+<ul>
+  <li>短剧线：电魂网络（AI游戏《吾家有女Ai》）、引力传媒（字节代理商+核力AI）、富春股份（20CM，参股留白影视短剧）、中国科传（央企出版+DeepSeek 应用）。</li>
+  <li>PCB、冰雪<strong>均无当日首板</strong>，梯队后继乏力。</li>
+</ul>
+
+<p>梯队叙事：<strong>高度没拓展、也没崩</strong>——5 板以上断档，4 板群（慈文/百洋/新经典/掌阅）撑住高位，空间靠新华文轩断续板吊着。双龙收盘均封死、无炸板翻绿；但 PCB、冰雪全是 2 板无首板接力，中位股在掉队。</p>
+
+<p>这走法像 2024 年那几波主线缩容期：钱收缩到最硬的那几只票上，中低位开始吃面。</p>
+
+<h2>五、主力资金流向分析</h2>
+
+<p>单位：亿元。<strong>板块当日净额为同花顺口径</strong>；<strong>5 日 / 20 日累计为 tdx 个股口径近似</strong>——两口径<strong>不可混在同一列比较</strong>，下文分别标注。</p>
+
+<h3>全市场净流向</h3>
+<p><strong>数据缺失</strong>——无直接接口，同花顺 90 行业完整明细未采集（板块扫描文件仅含前 10），无法加总近似。间接线索（同花顺概念口径）：融资融券 <span class="down">-474.32 亿</span>、深股通 <span class="down">-303.90 亿</span>、沪股通 <span class="down">-172.13 亿</span>，指向全市场主力资金当日大幅净流出（量级参考数百亿），精确值缺失。</p>
+
+<h3>当日净流入前 5（同花顺行业口径）</h3>
+<table>
+  <tr><th>行业</th><th>主力净流入（亿元）</th><th>当日涨跌幅</th></tr>
+  <tr><td>电力</td><td><span class="up">+23.01</span></td><td><span class="up">+0.19%</span></td></tr>
+  <tr><td>文化传媒</td><td><span class="up">+14.69</span></td><td><span class="up">+1.48%</span></td></tr>
+  <tr><td>影视院线</td><td><span class="up">+9.95</span></td><td><span class="up">+1.68%</span></td></tr>
+  <tr><td>油气开采及服务</td><td><span class="up">+8.99</span></td><td><span class="up">+2.92%</span></td></tr>
+  <tr><td>石油加工贸易</td><td><span class="up">+8.19</span></td><td><span class="down">-1.04%</span></td></tr>
+</table>
+<p class="note">其余净流入第 6-10（同花顺口径）：白酒 +7.44（-1.24%）、煤炭开采加工 +6.32（+1.27%）、港口航运 +2.51（+0.46%）、轨交设备 +2.47（-1.52%）、钢铁 +1.76（-0.59%）。</p>
+
+<h3>当日净流出前 5（同花顺行业口径）</h3>
+<table>
+  <tr><th>行业</th><th>主力净流出（亿元）</th><th>当日涨跌幅</th></tr>
+  <tr><td>半导体</td><td><span class="down">-83.54</span></td><td><span class="down">-2.95%</span></td></tr>
+  <tr><td>电池</td><td><span class="down">-52.21</span></td><td><span class="down">-3.09%</span></td></tr>
+  <tr><td>通信设备</td><td><span class="down">-44.46</span></td><td><span class="down">-2.74%</span></td></tr>
+  <tr><td>化学制品</td><td><span class="down">-26.12</span></td><td><span class="down">-2.31%</span></td></tr>
+  <tr><td>光学光电子</td><td><span class="down">-24.89</span></td><td><span class="down">-2.19%</span></td></tr>
+</table>
+
+<h3>概念口径补充（同花顺，当日）</h3>
+<p>净流入前 5：高股息精选 <span class="up">+35.78（+0.32%）</span>、短剧游戏 <span class="up">+19.32（+1.39%）</span>、文化传媒概念 <span class="up">+17.23（+0.32%）</span>、AI视频 <span class="up">+16.94（+0.42%）</span>、页岩气 <span class="up">+15.72（-0.62%）</span>。</p>
+<p>净流出前列：融资融券 <span class="down">-474.32</span>、深股通 <span class="down">-303.90</span>、芯片概念 <span class="down">-227.74</span>、新能源汽车 <span class="down">-199.52</span>、2026中报预增 <span class="down">-175.37</span>。</p>
+
+<h3>5日 / 20日资金趋势（tdx 个股口径近似）</h3>
+<p class="note">样本：tdx zjlx 逐日主力净额序列，2026-09-09 ~ 2026-10-14 完整 20 个交易日。单位亿元，标注"个股口径近似"，<strong>不可与上方同花顺行业口径数字并列比较</strong>。</p>
+<table>
+  <tr><th>行业（同花顺净额）</th><th>代表个股</th><th>当日主力净额</th><th>近5日累计</th><th>近20日累计</th></tr>
+  <tr><td>电力（+23.01）</td><td>韶能股份 000601（今日涨停）</td><td><span class="up">+3.77</span></td><td><span class="up">+3.37</span></td><td><span class="up">+2.48</span></td></tr>
+  <tr><td>文化传媒（+14.69）</td><td>新经典 603096（4板）</td><td><span class="down">-1.73</span></td><td><span class="down">-0.79</span></td><td><span class="down">-0.91</span></td></tr>
+  <tr><td>影视院线（+9.95）</td><td>慈文传媒 002343（4板）</td><td><span class="down">-0.66</span></td><td><span class="up">+0.64</span></td><td><span class="up">+0.52</span></td></tr>
+  <tr><td>油气开采及服务（+8.99）</td><td>中国海油 600938（权重）</td><td><span class="up">+2.41</span></td><td><span class="up">+3.76</span></td><td><span class="up">+7.66</span></td></tr>
+  <tr><td>石油加工贸易（+8.19）</td><td>中国石油 601857（权重）</td><td><span class="up">+3.15</span></td><td><span class="up">+9.50</span></td><td><span class="up">+10.81</span></td></tr>
+</table>
+<ul>
+  <li><strong>能源权重是 20 日维度最坚定的方向</strong>：中国石油近 5 日 <span class="up">+9.50 亿</span>、近 20 日 <span class="up">+10.81 亿</span>；中国海油近 5 日 <span class="up">+3.76 亿</span>、近 20 日 <span class="up">+7.66 亿</span>。</li>
+  <li>电力：韶能股份当日 <span class="up">+3.77 亿</span>（主力净额占比 +35.17%）且今日涨停，与行业口径方向一致，资金佐证有效。</li>
+  <li><strong>注意背离</strong>：新经典当日 <span class="down">-1.73 亿</span>、近 5 日 <span class="down">-0.79 亿</span>、近 20 日 <span class="down">-0.91 亿</span>——行业口径强流入，高位连板股却在持续兑现。</li>
+</ul>
+
+<h3>三分类汇总（同花顺行业口径）</h3>
+<table>
+  <tr><th>分类</th><th>板块</th><th>当日净流入（亿元）</th></tr>
+  <tr><td><span class="tag first">首次流入</span></td><td>文化传媒、影视院线、石油加工贸易、白酒、港口航运、轨交设备、钢铁</td><td>14.69 / 9.95 / 8.19 / 7.44 / 2.51 / 2.47 / 1.76</td></tr>
+  <tr><td><span class="tag cont">连续流入</span></td><td>油气开采（前一日净流入 2.67 亿）</td><td>8.99</td></tr>
+  <tr><td><span class="tag back">前期流出后回补</span></td><td>电力（前一日 -0.36 亿）、煤炭开采（前一日 -0.83 亿）</td><td>23.01 / 6.32</td></tr>
+</table>
+<p class="note">口径说明：三分类的"历史对照"为 tdx 板块口径（每日仅 top5），与今日同花顺行业口径混合，置信度中等；两口径数值不可直接相加比较。名称映射：油气开采及服务→油气开采、煤炭开采加工→煤炭开采。数字媒体/煤炭开采/白酒等的板块多日累计资金 <strong>数据缺失</strong>（未采个股）。</p>
+
+<p>结构一句话：<strong>资金弃"高人口密度赛道"（半导体/电池/通信设备/新能源链），取"红利 + 传媒体裁 + 油气煤炭"。</strong></p>
+
+<h2>六、板块低位右侧机会识别</h2>
+
+<p>候选池 12 个（申万一级 + 热门概念），板块指数一律 tdx 881（行业）/880（概念）系列，日线 120 根（2026-04-16 ~ 2026-10-14）。基准：沪深300（000300）近 20 日 <strong>-7.76%</strong>（4572.60 → 4217.68）——基准本身在下行，"有超额"门槛实质偏宽，解读时注意。</p>
+
+<p class="note">口径：近120日回撤 = 最新收盘/区间最高价-1；近20日涨幅 = 最新收盘/倒数第21根收盘-1。硬条件：①回撤可控 ②近20日涨幅转正 ③对基准有超额；④⑤为佐证强度。</p>
+
+<table>
+  <tr><th>板块（指数代码）</th><th>①近120日回撤</th><th>②近20日涨幅</th><th>③超额(对沪深300 -7.76%)</th><th>④资金佐证：同花顺当日净额(亿元)</th><th>④补充：个股口径近20日(亿元)</th><th>⑤近5日涨停家数</th><th>结论</th></tr>
+  <tr><td>出版业（881380）</td><td>-1.12%</td><td><span class="up">+14.53%</span></td><td>+22.29pct</td><td><span class="up">+14.69</span>（文化传媒合并口径）</td><td><span class="down">-0.91</span>（新经典，个股口径近似）</td><td><strong>17</strong></td><td><strong>右侧确认</strong>（①②③⑤全过，④行业口径佐证、个股口径背离）</td></tr>
+  <tr><td>影视院线（881373）</td><td>-11.99%</td><td><span class="up">+8.54%</span></td><td>+16.30pct</td><td><span class="up">+9.95</span></td><td><span class="up">+0.52</span>（慈文传媒，个股口径近似）</td><td><strong>10</strong></td><td><strong>右侧确认</strong>（①②③⑤全过，④双口径一致）</td></tr>
+  <tr><td>数字媒体（881376）</td><td>-4.20%</td><td><span class="up">+11.89%</span></td><td>+19.65pct</td><td><span class="up">+14.69</span>（文化传媒合并口径）</td><td>数据缺失</td><td><strong>7</strong></td><td><strong>右侧确认</strong>（①②③⑤全过）</td></tr>
+  <tr><td>油气开采（881007）</td><td><strong>-0.09%</strong>（10-14盘中创120日新高 3323.69）</td><td><span class="up">+12.61%</span></td><td>+20.37pct</td><td><span class="up">+8.99</span>（油气开采及服务）</td><td><span class="up">+7.66</span>（中国海油，个股口径近似）</td><td>0</td><td><strong>右侧确认</strong>（①②③全过；⑤弱——权重推动型，无涨停梯队）</td></tr>
+  <tr><td>煤炭开采（881002）</td><td>-3.71%</td><td><span class="up">+1.87%</span></td><td>+9.63pct</td><td><span class="up">+6.32</span>（煤炭开采加工合并口径）</td><td>数据缺失（未采个股）</td><td>1（焦炭加工另有3家）</td><td><strong>右侧确认</strong>（①②③过；②仅微正、⑤弱，确认强度中等）</td></tr>
+  <tr><td>电力（881459）</td><td>-12.28%</td><td><span class="up">+1.39%</span></td><td>+9.15pct</td><td><span class="up">+23.01</span>（行业第1）</td><td><span class="up">+2.48</span>（韶能股份，个股口径近似）</td><td>3</td><td><strong>右侧确认</strong>（①②③⑤全过，④为当日行业净流入第1）</td></tr>
+  <tr><td>白酒（881135）</td><td>-14.86%</td><td><span class="down">-1.70%</span></td><td>+6.06pct</td><td><span class="up">+7.44</span></td><td>数据缺失（未采个股）</td><td>2</td><td><strong>右侧待确认</strong>（①③过，②近20日未转正，差临门一脚）</td></tr>
+  <tr><td>页岩气概念（880553）</td><td>-16.91%</td><td><span class="down">-7.53%</span></td><td>+0.23pct</td><td><span class="up">+15.72</span>（概念净流入第5）</td><td>数据缺失</td><td>0</td><td>未确认（②未转正；③近零；仅④当日概念资金强，或为油气主线的影子方向）</td></tr>
+  <tr><td>游戏（881369，短剧游戏近似）</td><td>-22.39%</td><td><span class="down">-7.81%</span></td><td>-0.05pct</td><td><span class="up">+19.32</span>（短剧游戏概念口径）</td><td>数据缺失</td><td>3（游戏Ⅱ）</td><td>未确认（②未转正、③无超额、①回撤深；概念资金与指数走势背离）</td></tr>
+  <tr><td>化学制品（881034）</td><td>-22.12%</td><td><span class="down">-9.40%</span></td><td>-1.64pct</td><td><span class="down">-26.12</span></td><td>数据缺失（未采个股）</td><td>17</td><td><strong>已破位</strong>（①②③均不过；17家涨停属超跌反抽，当日行业净流出 -26.12 亿为证伪）</td></tr>
+  <tr><td>元器件（881333）</td><td>-34.18%</td><td><span class="down">-13.85%</span></td><td>-6.09pct</td><td>数据缺失（同花顺明细未入前十；近似参考光学光电子 -24.89，口径不完全一致）</td><td>数据缺失（未采个股）</td><td>12</td><td><strong>已破位</strong>（①②③均不过；高位深回撤+负超额）</td></tr>
+  <tr><td>电池（881262）</td><td><strong>-38.76%</strong></td><td><span class="down">-11.99%</span></td><td>-4.23pct</td><td><span class="down">-52.21</span>（行业净流出第2）</td><td>数据缺失（未采个股）</td><td>18</td><td><strong>已破位</strong>（回撤最深+负超额+净流出第2；18家涨停为超跌反抽，量能环比1.57倍属放量下跌）</td></tr>
+</table>
+
+<h3>量能环比补充（近5日均额 / 前20日均额）</h3>
+<table>
+  <tr><th>板块</th><th>量能环比</th><th>解读</th></tr>
+  <tr><td>出版业</td><td><strong>2.16</strong></td><td>显著放量上攻（近5日均额 117.72 亿 vs 前20日 54.67 亿）</td></tr>
+  <tr><td>影视院线</td><td>1.69</td><td>放量</td></tr>
+  <tr><td>数字媒体</td><td>1.58</td><td>放量</td></tr>
+  <tr><td>油气开采</td><td>1.17</td><td>温和放量（权重板块）</td></tr>
+  <tr><td>电力</td><td>0.90</td><td>缩量（净流入但未放量，强度存疑）</td></tr>
+  <tr><td>煤炭开采</td><td>0.93</td><td>缩量（同上）</td></tr>
+  <tr><td>白酒</td><td>0.81</td><td>缩量</td></tr>
+  <tr><td>元器件</td><td>0.85</td><td>缩量下跌</td></tr>
+  <tr><td>化学制品</td><td>0.93</td><td>平量下跌</td></tr>
+  <tr><td>页岩气</td><td>0.78</td><td>缩量</td></tr>
+  <tr><td>游戏</td><td>0.78</td><td>缩量</td></tr>
+  <tr><td>电池</td><td><strong>1.57</strong></td><td><strong>放量下跌</strong>（危险信号，配合 -52.21 亿净流出）</td></tr>
+</table>
+
+<p>右侧确认强度排序：<strong>出版业 &gt; 影视院线 ≈ 数字媒体 &gt; 油气开采 &gt; 电力 ≈ 煤炭开采</strong>（后两者②仅微正）。</p>
+
+<ul>
+  <li><strong>3 条硬条件全过的右侧确认 6 个</strong>：出版业、影视院线、数字媒体、油气开采、煤炭开采、电力。前三个是"资金+涨停梯队+量能"（2.16 / 1.69 / 1.58 显著放量）三重共振的进攻型右侧；油气/煤炭/电力是红利防御型右侧。</li>
+  <li><strong>右侧待确认 1 个</strong>：白酒——回撤可控、有超额，但近 20 日 -1.70% 未转正，观察点。</li>
+  <li><strong>已破位 3 个</strong>：电池、化学制品、元器件——尽管近 5 日涨停家数居前（18/17/12 家），硬条件全部证伪，属超跌反抽而非右侧。</li>
+  <li>出版板块内部警示：当日出版 3 家涨停（新经典、中国科传、新华文轩）为全市场唯一 ≥3 家的板块效应；但龙头新经典个股口径当日 <span class="down">-1.73 亿</span>、近 20 日 <span class="down">-0.91 亿</span>，<strong>板块内部资金高低切换，追高位板风险大于低位补涨</strong>。</li>
+</ul>
+
+<p class="note">数据缺失：数字媒体、煤炭开采、白酒、电池、化学制品、元器件、游戏、页岩气的个股口径资金代表股未采集，<strong>数据缺失</strong>；短剧游戏概念无对应通达信概念指数，以游戏行业指数 881369 近似，成分覆盖存在偏差。</p>
+
+<h2>七、趋势资金与情绪梯队共振背离</h2>
+
+<p>把第五段（资金）和第四段（梯队）摆到一张桌上交叉看。</p>
+
+<h3>共振方向</h3>
+<ol>
+  <li><strong>传媒三兄弟（出版 / 影视院线 / 数字媒体）——<span class="up">三重共振</span></strong>：情绪端，出版 3 家涨停 + 短剧主线 8 家、慈文 4 板未开；资金端，文化传媒 <span class="up">+14.69 亿</span>、影视院线 <span class="up">+9.95 亿</span>、短剧游戏概念 <span class="up">+19.32 亿</span>（均同花顺当日口径）；量能端，量能环比 2.16 / 1.69 / 1.58 放量。资金、梯队、量能三头对上号，全场唯一的三重共振进攻方向。</li>
+  <li><strong>电力——<span class="up">共振</span>（强度打折）</strong>：行业净流入第 1（<span class="up">+23.01 亿</span>，同花顺口径）+ 韶能股份涨停且 tdx 个股口径当日 <span class="up">+3.77 亿</span>，双口径方向一致；但量能环比 0.90 缩量、5 日涨停仅 3 家，共振强度要打个折。</li>
+  <li><strong>油气——<span class="up">共振</span>（有资金无梯队）</strong>：同花顺连续流入（当日 <span class="up">+8.99 亿</span>）+ 中国海油/中国石油近 20 日 <span class="up">+7.66 / +10.81 亿</span>（个股口径近似），是 20 日维度最坚定的趋势资金；但 5 日涨停 0 家，纯权重推动。</li>
+</ol>
+
+<h3>背离警示</h3>
+<ol>
+  <li><strong>出版高位兑现背离——<span class="down">背离</span></strong>：行业当日 <span class="up">+14.69 亿</span>流入，高位 4 板股新经典个股口径却当日 <span class="down">-1.73 亿</span>、近 20 日 <span class="down">-0.91 亿</span>。资金进的是板块低位补涨，出的是高位连板。梯队还在、高位股的钱在撤，追高危险。</li>
+  <li><strong>电池 / 化学制品的梯队假象——<span class="down">背离</span></strong>：近 5 日涨停 18 / 17 家全场最多，当日却分别净流出 <span class="down">-52.21 / -26.12 亿</span>（同花顺口径），电池还是量能环比 1.57 的放量下跌。涨停家数是超跌反抽的果，资金用脚投票是因——破位板块的反抽不是右侧。</li>
+  <li><strong>游戏（短剧近似）资金与价格背离——<span class="down">背离</span></strong>：短剧游戏概念当日 <span class="up">+19.32 亿</span>，但游戏行业指数 20 日 -7.81% 未转正、无超额。钱进了概念、指数没跟上，先列观察不下结论。</li>
+</ol>
+
+<div class="quote">
+对照收口：情绪在传媒，趋势资金在红利 + 传媒低位，两头都对上号的只有"传媒低位补涨"和"油气/电力红利"。最大的两个坑——一个是"行业进钱但高位出钱"的出版 4 板群，一个是"涨停家数最多但资金大幅流出"的电池化学制品。梯队归梯队，资金归资金，别拿涨停家数当右侧通行证。
+</div>
+
+<h2>八、明日计划</h2>
+
+<p>仓位上限<strong>半仓</strong>，退潮期实际以<strong>三成</strong>为基准档。不预测，只做应对。</p>
+
+<h3>目标板块</h3>
+<ol>
+  <li><strong>传媒低位补涨</strong>（出版 / 影视院线 / 数字媒体）——三重共振唯一方向，但只做<strong>低位首板 / 低位承接</strong>，<strong>不追 4 板高位群</strong>（新经典个股口径持续流出是明牌警示）。</li>
+  <li><strong>油气 / 煤炭 / 电力红利防御</strong>——20 日维度资金最坚定（中国石油 <span class="up">+10.81 亿</span>、中国海油 <span class="up">+7.66 亿</span>，个股口径近似），退潮期资金躲红利的逻辑没变。</li>
+  <li><strong>观察不参与</strong>：白酒（右侧差临门一脚）、游戏/页岩气（资金价格背离）、电池/化学制品（破位反抽）。</li>
+</ol>
+
+<h3>仓位档位</h3>
+<ul>
+  <li>基准：<strong>三成</strong>。</li>
+  <li>加仓：传媒低位出现批量首板承接、且溢价不转负 → 最多加到<strong>半仓</strong>（上限，不再突破）。</li>
+  <li>降仓：溢价转负 → 直接降到<strong>一成以下</strong>。</li>
+</ul>
+
+<h3>触发条件</h3>
+<ul>
+  <li>开盘先看两个数：<strong>昨日涨停溢价是否转负</strong>、<strong>涨停家数是否止跌回稳</strong>（今日 36 家，akshare 口径）。</li>
+  <li>传媒低位（当日 1 板群：电魂网络 / 引力传媒 / 富春股份 / 中国科传方向）有承接放量再动手。</li>
+  <li>一字开板的高位股<strong>不给接力</strong>。</li>
+</ul>
+
+<h3>放弃条件</h3>
+<ul>
+  <li><strong>系统性</strong>：涨停家数进一步向 <strong>20 家</strong>滑落 + 昨日涨停溢价转负 + 跌停扩散 → 空仓观望。退潮往冰点走的路，不接飞刀。</li>
+  <li><strong>结构性</strong>：出版高位群（新华文轩 / 新经典）集体兑现炸板翻绿 → 弃传媒高位，只保留油气/电力红利腿；电池 / 化学制品等破位板块的反抽，无论多热闹一律不参与。</li>
+</ul>
+
+<div class="pool">
+  <h4>低吸候选池</h4>
+  <p>已按结构同步落盘至 <code>tmp/A股候选池_2026-10-14.html</code>。标的均来自当日底稿真实个股/板块，买点与止损基于底稿收盘价推演，<strong>已标注"推演值，非买卖指令"</strong>。</p>
+</div>
+
+<p class="note">本段为首次正式预判（无前日计划可引用兑现），自明日起逐条对照。</p>
 
 <h2>九、一句话收尾</h2>
-<div class="quote">退潮第二天，龙还站着、中位股先躺——知易行难，管住手只碰梯队最硬和资金最真的那两条线，小肉小面都是肉，先下手为强，下手之前先想好止损。</div>
 
-<footer>
-  数据来源：通达信 MCP（收盘正式口径）· 三分类由资金库（capital.duckdb）跨日计算<br>
-  框架化复盘/推演，不构成投资建议。
-</footer>
+<p>退潮第一天，龙还站着、溢价先躺——只碰资金和梯队对上号的那两条线，小肉小面都是肉，但破位反抽的肉里有钩子，先下手为强的前提是先想好止损。</p>
+
+<footer>框架化复盘/推演，不构成投资建议。</footer>
 
 </div>
 </body>
