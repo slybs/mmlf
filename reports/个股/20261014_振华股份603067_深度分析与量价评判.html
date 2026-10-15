@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="603067 数据基准 2026-10-14；铬盐龙头（金属铬/铬盐/维生素K3），评分 79/165（暂时回避），威科夫 Markup 后期·高位整固，结构完好型（MA20 上行、MACD 多头）；关键回撤/止损 36.87（-2.5×ATR），只减不加">
+<meta name="report-type" content="个股深度">
+<title>振华股份 603067 · 单票深度分析与量价评判</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>振华股份 603067 · 深度分析与量价评判</h1>
+    <div class="sub">湖北振华化学 · 铬盐龙头（金属铬 / 铬盐 / 维生素K3） · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-14（收盘后数据）</span>
+      <span>评分 79/165 · 暂时回避</span>
+      <span>威科夫阶段：Markup 后期·高位整固</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 01 核心结论 -->
+<section>
+  <div class="verdict">
+    <h2>00 核心结论</h2>
+    <div class="rate">
+      <div><div class="k">评级（技术面）</div><div class="v"><span class="t-avoid" style="padding:3px 12px;border-radius:6px">暂时回避</span></div></div>
+      <div><div class="k">评级（基本面）</div><div class="v sm">观察 / 列入跟踪</div></div>
+      <div><div class="k">最新价</div><div class="v">43.81</div></div>
+      <div><div class="k">12 项评分</div><div class="v">79 <span style="font-size:13px;color:var(--ink3)">/ 165</span></div></div>
+      <div><div class="k">威科夫阶段</div><div class="v sm">上行后期·高位整固</div></div>
+    </div>
+    <p><em>技术面因"高位位置 + 高波动"扣到暂时回避，但趋势结构（MA20 上行、MACD 多头延续）完好，属"结构完好型"——正确动作不是止损离场，而是在防御区大盘背景下只减不加，等缩量回踩 MA20 区域再判断。</em></p>
+    <div class="grid3" style="margin-top:14px">
+      <div class="tile"><div class="lb">关键回撤位 / 止损</div><div class="vl down">36.87</div><div class="hint">2.5×ATR（36.81%下方），破位清仓</div></div>
+      <div class="tile gold"><div class="lb">大盘 gate</div><div class="vl">防御区</div><div class="hint">上证 62 / 创业板 75 → 以最弱为准，只减不加</div></div>
+      <div class="tile navy"><div class="lb">分支对照等权</div><div class="vl down">-2.56%</div><div class="hint">振华 -0.73% 缩量，板块内最强</div></div>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <div class="hd">前次结论回验</div>
+      无历史评分记录，<strong>本次为首次覆盖</strong>。后续复盘将逐条回验今日判断（高位未崩 vs 高位派发、相对强度能否延续）。
+    </div>
+    <div class="note good" style="margin-top:10px">
+      <div class="hd">与框架衔接</div>
+      评分受 ATR% 6.33% 触发 +20 档位上浮（阈值升至 85），79 分落在"暂时回避"而非"关注"。但 1/2/3/9 结构项全满、仅位置与波动项扣分 → 套用 V2"结构完好型"操作框架，与结构破坏型（炬芯 86→55）严格区分。
+    </div>
+  </div>
+</section>
+
+<!-- 02 公司画像 -->
+<section>
+  <h2 class="sec"><span class="no">01</span>公司画像</h2>
+  <div class="card">
+    <p><strong>国内铬盐绝对龙头</strong>：2024 年度铬盐总产量约 26 万吨，金属铬产品在高温合金（燃气轮机主要材料，单质铬添加量 15%~20%）、铜基/铝基特种合金、高端焊接材料、溅射靶材等领域广泛应用。同时具备维生素 K3、超细氢氧化铝等化工产品线。</p>
+    <ul>
+      <li><strong>卡位逻辑（题材驱动）</strong>：SOFC（固体氧化物燃料电池）作为 AI 供电/数据中心备电方案受关注；BE 连接体方案铬粉占连接件总重 85%~95%，1GW SOFC 需求拉动 0.75~1 万吨金属铬。网传纪要（未证实）称公司 2026/7 起向某 BE 连接体供应商交付数百吨金属铬订单。</li>
+      <li><strong>产能规划</strong>：市场传 2027 年底铬盐产能达 40 万吨，按 2 万元/吨铬盐价格测算有望贡献 40~50 亿利润 <span class="tag t-src">推算·网络纪要未证实</span>。</li>
+      <li><strong>可转债</strong>：2026/7/31"振26转债"完成申购，后续转股存在股本摊薄变量。</li>
+    </ul>
+  </div>
+  <div class="kv">
+    <div class="i"><div class="k">PE-TTM（20261014）</div><div class="v">49.45</div></div>
+    <div class="i"><div class="k">PB-MRQ</div><div class="v">7.65</div></div>
+    <div class="i"><div class="k">ROE 加权（最新）</div><div class="v">7.71%</div></div>
+    <div class="i"><div class="k">总市值</div><div class="v">331 亿</div></div>
+    <div class="i"><div class="k">60日区间位置</div><div class="v">91%</div></div>
+    <div class="i"><div class="k">ATR%</div><div class="v">6.33%</div></div>
+  </div>
+  <div class="note warn">
+    <div class="hd">与同分支可比标的的产业位置对比</div>
+    同板块（无机化工 / 铬盐相关）5 只今日全跌，等权 -2.56%；振华仅 <strong>-0.73%</strong> 且缩量（量比 0.81x），为板块内<strong>相对最强</strong>。但估值最贵（PE 49 vs 兄弟科技/安纳达等同业约 20~30 倍），"龙头溢价 + SOFC 叙事"已充分定价——相对强势源于资金抱团而非低估。
+  </div>
+</section>
+
+<!-- 03 评分与量价叙事 -->
+<section>
+  <h2 class="sec"><span class="no">02</span>评分与量价叙事</h2>
+  <h3>威科夫 12 项梯度评分（2026-10-14 收盘）</h3>
+  <table>
+    <thead><tr><th class="ctr">#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th>vs 前次</th></tr></thead>
+    <tbody>
+      <tr><td class="ctr">1</td><td>价 / MA20</td><td class="num">15</td><td class="num">15</td><td>1.137（站上均线 13.7%，强势）</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">2</td><td>MA20 斜率</td><td class="num">10</td><td class="num">10</td><td>+3.92%（均线持续上行）</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">3</td><td>MACD</td><td class="num">20</td><td class="num">20</td><td>DIF +1.936 / DEA +1.368，多头延续</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">4</td><td>区间位置 60日</td><td class="num">0</td><td class="num">20</td><td><span class="down">91%（高位，无底背离/Spring/站稳MA20确认）</span></td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">5</td><td>ATR 收缩</td><td class="num">0</td><td class="num">15</td><td>2.22 → 2.77 <span class="down">扩张</span></td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">6</td><td>低波 ATR%</td><td class="num">2</td><td class="num">10</td><td>6.33%（高波动，触发分层 +20）</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">7</td><td>涨幅安全</td><td class="num">15</td><td class="num">15</td><td>60日 +12% / 均振合计 406% = 0.03（极安全）</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">8</td><td>量价关系</td><td class="num">7</td><td class="num">15</td><td>正常 跌 -0.73% 量 0.81x（缩量小跌）</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">9</td><td>Spring</td><td class="num">0</td><td class="num">15</td><td>无</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">10</td><td>回调质量</td><td class="num">10</td><td class="num">10</td><td>缩量回调 0.77x <span class="up">健康</span></td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">11</td><td>底背离</td><td class="num">0</td><td class="num">20</td><td>无</td><td>首次覆盖</td></tr>
+      <tr><td class="ctr">12</td><td>顶背离</td><td class="num">0</td><td class="num">0</td><td>无（裸背离未触发）</td><td>首次覆盖</td></tr>
+      <tr style="background:#f3f6fb"><td class="ctr"><strong>∑</strong></td><td><strong>合计</strong></td><td class="num"><strong>79</strong></td><td class="num">165</td><td colspan="2">ATR% 6.33% → 判定阈值上浮至 <strong>[140 / 110 / 85 / 60]</strong> → <span class="t-avoid" style="padding:1px 8px;border-radius:4px">暂时回避</span></td></tr>
+    </tbody>
+  </table>
+  <p class="src">数据源：腾讯 ifzq 前复权（脚本 timing_score.py）；收盘后数据，非盘中折算；阈值因 ATR 分层 +20。</p>
+
+  <div class="note">
+    <div class="hd">降幅归因（区分"结构破坏型" vs "结构完好型"）</div>
+    本票<strong>结构项（1/2/3/9）全满或良好</strong>：价站 MA20 上方 13.7%、MA20 斜率 +3.92%、MACD 多头延续、无顶背离——<strong>趋势结构完好</strong>。扣分几乎全部来自<strong>位置（S4=0，60日 91% 高位）</strong>与<strong>波动（S5=0 扩张、S6=2，ATR% 6.33% 触发 +20 档位上浮）</strong>。这是典型的"结构完好型回调"（参照晶晨 103→93），操作指令与炬芯式结构破坏（86→55 直接止损）完全相反：<strong>不急于止损，但高位不追、防御区减仓</strong>。
+  </div>
+
+  <h3>近 40 日量价叙事图</h3>
+  <div class="svgbox">
+    <svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" font-family="PingFang SC,Microsoft YaHei,sans-serif">
+      <rect x="0" y="0" width="900" height="405" fill="#fff"/>
+      <!-- 网格线 -->
+      <line x1="60" y1="60.3" x2="882" y2="60.3" stroke="#eef1f5" stroke-width="1"/>
+      <line x1="60" y1="163.8" x2="882" y2="163.8" stroke="#eef1f5" stroke-width="1"/>
+      <line x1="60" y1="267.2" x2="882" y2="267.2" stroke="#eef1f5" stroke-width="1"/>
+      <line x1="60" y1="350" x2="882" y2="350" stroke="#eef1f5" stroke-width="1"/>
+      <text x="50" y="64" font-size="10" fill="#7b8494" text-anchor="end">45.5</text>
+      <text x="50" y="167" font-size="10" fill="#7b8494" text-anchor="end">40</text>
+      <text x="50" y="271" font-size="10" fill="#7b8494" text-anchor="end">35</text>
+      <text x="50" y="354" font-size="10" fill="#7b8494" text-anchor="end">31</text>
+      <!-- MA20 虚线（金色） -->
+      <polyline fill="none" stroke="#b8860b" stroke-width="1.4" stroke-dasharray="5 4" points="459.57,266.8 480.60,261.9 501.63,260.2 522.66,257.9 543.69,258.8 564.72,260.0 585.75,258.8 606.78,257.5 627.81,256.7 648.84,252.1 669.87,249.5 690.90,244.1 711.93,238.9 732.96,233.7 753.99,229.6 775.02,223.2 796.05,217.4 817.08,210.3 838.11,206.0 859.14,199.8 880.17,193.4"/>
+      <text x="880" y="189" font-size="10" fill="#b8860b" text-anchor="end">MA20 ≈38.5</text>
+      <!-- 价格折线（navy） -->
+      <polyline fill="none" stroke="#1a3a6b" stroke-width="2" points="60,296.8 81.03,277.2 102.06,304.5 123.09,235.8 144.12,206.6 165.15,284.2 186.18,283.8 207.21,284.2 228.24,316.1 249.27,293.7 270.30,271.8 291.33,253.4 312.36,269.9 333.39,254.9 354.42,288.3 375.45,314.8 396.48,257.1 417.51,226.9 438.54,202.1 459.57,213.4 480.60,196.9 501.63,247.4 522.66,256.9 543.69,251.7 564.72,253.2 585.75,258.8 606.78,260.8 627.81,264.3 648.84,226.9 669.87,241.6 690.90,166.7 711.93,145.4 732.96,170.2 753.99,175.2 775.02,158.6 796.05,195.6 817.08,116.0 838.11,137.7 859.14,78.3 880.17,85.0"/>
+      <!-- 事件标注 -->
+      <circle cx="417.51" cy="226.9" r="4" fill="#c0392b"/>
+      <text x="417.51" y="218" font-size="10" fill="#c0392b" text-anchor="middle">0904 最大量JOC 83.8万</text>
+      <circle cx="796.05" cy="195.6" r="4" fill="#12864b"/>
+      <text x="796.05" y="210" font-size="10" fill="#12864b" text-anchor="middle">1008 缩量回调 -4.45%</text>
+      <circle cx="817.08" cy="116.0" r="4" fill="#c0392b"/>
+      <text x="817.08" y="108" font-size="10" fill="#c0392b" text-anchor="middle">1009 涨停反抽</text>
+      <circle cx="859.14" cy="78.3" r="4.5" fill="#1a3a6b"/>
+      <text x="859.14" y="70" font-size="10" fill="#1a3a6b" text-anchor="middle">1013 阶段新高44.13</text>
+      <circle cx="880.17" cy="85.0" r="4.5" fill="#1a3a6b"/>
+      <text x="880.17" y="64" font-size="10" fill="#1a3a6b" text-anchor="end">1014 当日43.81</text>
+      <!-- 日期轴 -->
+      <text x="60" y="372" font-size="10" fill="#7b8494">0820</text>
+      <text x="333" y="372" font-size="10" fill="#7b8494">0901</text>
+      <text x="606" y="372" font-size="10" fill="#7b8494">0920</text>
+      <text x="880" y="372" font-size="10" fill="#7b8494">1014</text>
+      <text x="60" y="392" font-size="10.5" fill="#4a5568">价格（前复权）· 蓝线=收盘 金虚线=MA20</text>
+    </svg>
+  </div>
+
+  <h3>逐段解读（40 日切分）</h3>
+  <table>
+    <thead><tr><th>阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+    <tbody>
+      <tr><td>0812–0831<br>筑底</td><td>33→35.6 横盘</td><td>中等平稳</td><td>底部区间，无方向</td></tr>
+      <tr><td>0903–0904<br>放量突破</td><td>35.5 → 36.95</td><td class="up">巨量（55.5万→83.8万，全段最大）</td><td><strong>SOS/JOC</strong> 有效上涨，价创新高+量放大</td></tr>
+      <tr><td>0907–0924<br>爬升</td><td>38→40.89 阶梯上行</td><td>温和放量</td><td>Markup 主升，量价健康</td></tr>
+      <tr><td>0928–0930<br>小回调</td><td>40.25 小幅回落</td><td>缩量</td><td>正常回踩，非派发</td></tr>
+      <tr><td>1008<br>急调</td><td class="down">-4.45% 至 38.46</td><td class="down">缩量 0.75x</td><td>缩量回调（非有效下跌）</td></tr>
+      <tr><td>1009–1013<br>反抽新高</td><td>42.31涨停 → 44.13</td><td class="up">放量（41.6万→46.2万）</td><td>再创新高，确认上升趋势延续</td></tr>
+      <tr><td>1014<br>当日</td><td class="down">-0.73% 收 43.81</td><td class="down">缩量 0.81x</td><td>高位缩量小跌，结构完好</td></tr>
+    </tbody>
+  </table>
+
+  <h3>量价三问</h3>
+  <div class="grid3">
+    <div class="tile"><div class="lb">① 最近放量=有效上涨?</div><div class="vl" style="font-size:14px">是（JOC 突破）</div><div class="hint">1013 放量 1.39x 涨 6.96% 创新高 44.13；1009 涨停。符合"价创新高+量放大 30%"。但处高位，警惕派发伪装。</div></div>
+    <div class="tile"><div class="lb">② 最近下跌=诱空?</div><div class="vl" style="font-size:14px">否（缩量回调）</div><div class="hint">1008 跌 -4.45% 缩量 0.75x、1014 跌 -0.73% 缩量 0.81x。均非"创新低+缩量"，属正常缩量回调，非诱空定义。</div></div>
+    <div class="tile"><div class="lb">③ 现在底部反转?</div><div class="vl" style="font-size:14px">否</div><div class="hint">60日 91% 高位、价/MA20=1.137，趋势向上。不符合"企稳+连续3日温和放大"底部反转定义。</div></div>
+  </div>
+
+  <h3>系统性 vs 个股性（同分支对照）</h3>
+  <table>
+    <thead><tr><th>标的</th><th class="num">当日涨跌</th><th class="num">量比</th><th>解读</th></tr></thead>
+    <tbody>
+      <tr><td><strong>振华股份</strong></td><td class="num up">-0.73%</td><td class="num">0.81x</td><td><strong>板块内最强，缩量抗跌</strong></td></tr>
+      <tr><td>兄弟科技</td><td class="num down">-3.01%</td><td class="num">1.04x</td><td>放量跟跌</td></tr>
+      <tr><td>红星发展</td><td class="num down">-2.11%</td><td class="num">0.46x</td><td>极度缩量阴跌</td></tr>
+      <tr><td>安纳达</td><td class="num down">-3.33%</td><td class="num">0.87x</td><td>缩量跟跌</td></tr>
+      <tr><td>湘潭电化</td><td class="num down">-3.63%</td><td class="num">1.35x</td><td>放量领跌</td></tr>
+      <tr style="background:#f3f6fb"><td><strong>等权平均</strong></td><td class="num down"><strong>-2.56%</strong></td><td class="num">—</td><td>全板块系统性下跌；振华跌幅最小+缩量 → <strong>被动跟随中的相对强势，无个股性卖压</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="src">对照标的：兄弟科技 002562 / 红星发展 600367 / 安纳达 002136 / 湘潭电化 002125（脚本 --compare，日期 20261014 一致）。</p>
+</section>
+
+<!-- 04 操作计划 -->
+<section>
+  <h2 class="sec"><span class="no">03</span>操作计划</h2>
+  <div class="note warn" style="margin-bottom:14px">
+    <div class="hd">仓位动作对齐大盘 gate（防御区）</div>
+    上证指数评分 62 → <strong>防御区：只减不加，反弹视为减仓机会</strong>；创业板 75（中性）但 gate 以最弱指数为准。故所有"加仓/买入"动作冻结，"减仓/持有"按纪律执行。
+  </div>
+  <div class="grid3">
+    <div class="card" style="margin:0">
+      <h4>已持仓者</h4>
+      <p>防御区 + 高位，不追高、借反弹减仓。</p>
+      <ul>
+        <li><strong>跌破 MA20（38.52）→ 减至半仓</strong>（无条件执行级纪律）</li>
+        <li><strong>破止损 36.87（2.5×ATR）→ 清仓</strong></li>
+        <li>反弹至 44+ 视为减仓窗口，而非加仓</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>空仓者</h4>
+      <p><strong>当前不满足进场条件</strong>（高位 91% + 防御区）。</p>
+      <ul>
+        <li>等 LPS：缩量回踩 <strong>MA20 ≈ 38.5 区域</strong> + 量比 &lt;1</li>
+        <li>且大盘 gate 转中性（上证 ≥65）</li>
+        <li>当前 43.81 不追</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>长线 / 估值视角</h4>
+      <p>PE 49 / PB 7.65 已贵，叙事支撑但多为未证实纪要。</p>
+      <ul>
+        <li>显著低估区：PE&lt;30（≈26元）或 PB&lt;4（≈23元）</li>
+        <li>SOFC 订单、40万吨产能为 <span class="tag t-src">推算·未证实</span>，需财报/公告兑现</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>关键价位地图</h3>
+  <table>
+    <thead><tr><th>价位</th><th>性质</th><th>操作含义</th></tr></thead>
+    <tbody>
+      <tr><td class="num">45.38</td><td>60日高 / 压力</td><td>突破需放量确认，否则视为派发区</td></tr>
+      <tr><td class="num">44.13</td><td>1013 收盘 / 近20日高</td><td>反弹减仓参考上沿</td></tr>
+      <tr><td class="num"><strong>43.81</strong></td><td><strong>当前价</strong></td><td><strong>持仓基准</strong></td></tr>
+      <tr><td class="num">41.26</td><td>1012 收盘 / 支撑</td><td>短期多空分水岭</td></tr>
+      <tr><td class="num">38.52</td><td><strong>MA20（分水岭①）</strong></td><td><span class="down">跌破 → 已持仓者减至半仓</span></td></tr>
+      <tr><td class="num">36.87</td><td><strong>止损（2.5×ATR，分水岭②）</strong></td><td><span class="down">破位 → 清仓</span></td></tr>
+      <tr><td class="num">35.30</td><td>MA60</td><td>中期趋势线</td></tr>
+      <tr><td class="num">31.90</td><td>前支撑（Spring 位）</td><td>缩量跌破后收回才计 Spring</td></tr>
+      <tr><td class="num">28.31</td><td>60日低</td><td>极限风险位</td></tr>
+    </tbody>
+  </table>
+
+  <h3>风险清单</h3>
+  <div class="grid2">
+    <div class="card" style="margin:0">
+      <h4>交易层面</h4>
+      <ul>
+        <li><span class="tag t-src">交易</span> 本数据收盘后生成，非盘中；后续量能变化可能改变 S8/S10</li>
+        <li><span class="tag t-src">交易</span> ATR% 6.33% 高波动，止损宽度 16%（36.87），回撤容忍度低</li>
+        <li><span class="tag t-src">交易</span> SOFC/AI供电题材退潮将直接触发高位派发</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>基本面层面</h4>
+      <ul>
+        <li><span class="tag t-src">基本面</span> SOFC 订单为网传纪要未证实，27年40万吨/2万每吨利润为推算</li>
+        <li><span class="tag t-src">基本面</span> 铬盐价格周期见顶回落风险</li>
+        <li><span class="tag t-src">基本面</span> PE 49 偏高，估值消化压力大；振26转债转股摊薄</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05 数据来源 -->
+<section>
+  <h2 class="sec"><span class="no">04</span>数据来源</h2>
+  <table>
+    <thead><tr><th>类别</th><th>工具 / 文件</th><th>日期 / 说明</th></tr></thead>
+    <tbody>
+      <tr><td>行情 K线</td><td>timing_score.py（腾讯 ifzq 前复权 200 根）</td><td>20261014 收盘</td></tr>
+      <tr><td>大盘 gate</td><td>timing_score.py --market</td><td>上证 62 / 创业板 75</td></tr>
+      <tr><td>分支对照</td><td>timing_score.py --compare</td><td>20261014，5 只同业</td></tr>
+      <tr><td>估值</td><td>tdx_indicator_select</td><td>20261014：PE-TTM 49.45 / PB 7.65 / ROE 7.71% / 市值 331亿 <span class="tag t-src">PE口径TTM</span></td></tr>
+      <tr><td>消息面</td><td>wenda_news_query</td><td>20260815–20261014：SOFC/铬盐涨价叙事、振26转债</td></tr>
+      <tr><td>回验日志</td><td>report-log.json（--log-report 写入）</td><td>本次首次覆盖写入</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="foot">
+  <strong>免责声明</strong>：框架化复盘/推演，不构成投资建议。本报告基于公开行情与资讯数据，标注体系约定：<span class="tag t-src">推算</span> 为自行外推、<span class="tag t-src">卖方预测</span> 为机构预测、<span class="tag t-src">网络纪要未证实</span> 为未经公司公告确认的传闻、<span class="tag t-src">口径存疑</span> 为交叉源不一致。收盘后数据，盘中可能变动。生成时间：2026-10-14 18:30。
+</div>
+
+</div>
+</body>
+</html>

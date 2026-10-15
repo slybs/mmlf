@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="00772 数据基准 2026-10-15；港股在线阅读龙头，威科夫吸筹完成（三重底+底背驰）→ Phase D 突破区间上沿，日线三买结构成立；结构失效 20.36（收盘跌破离场），回踩入场 21.40，目标 22.93/24.18/27.04">
+<meta name="report-type" content="趋势结构信号">
+<title>阅文集团（00772.HK）趋势结构分析报告</title>
+<style>
+:root{
+  --ink:#1a1a1a; --ink-2:#4a4a4a; --ink-3:#767676;
+  --line:#e3e0d8; --line-2:#cfcbc0;
+  --bg:#ffffff; --bg-soft:#faf8f4; --bg-soft-2:#f4f1ea;
+  --up:#c0392b; --down:#1e8449; --flat:#6b6b6b;
+  --amber:#a8641a; --blue:#1c5c85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:32px 20px 64px;
+  background:var(--bg-soft-2); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap{max-width:960px; margin:0 auto; background:var(--bg); padding:40px 44px 48px;
+  border:1px solid var(--line); border-radius:2px}
+h1{font-size:24px; font-weight:600; margin:0 0 6px; letter-spacing:.5px}
+.sub{color:var(--ink-3); font-size:13px; margin:0 0 4px}
+h2{font-size:16px; font-weight:600; margin:36px 0 14px; padding-bottom:8px;
+  border-bottom:2px solid var(--ink); letter-spacing:.5px}
+h3{font-size:14px; font-weight:600; margin:20px 0 8px; color:var(--ink)}
+p{margin:8px 0}
+.meta{display:flex; flex-wrap:wrap; gap:8px 20px; color:var(--ink-3); font-size:12.5px;
+  padding-bottom:20px; border-bottom:1px solid var(--line)}
+.meta span b{color:var(--ink-2); font-weight:500}
+
+.concl{border:1px solid var(--line-2); background:var(--bg-soft); border-radius:3px;
+  padding:20px 22px; margin-top:22px}
+.concl-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-bottom:16px}
+.dir{font-size:28px; font-weight:600; letter-spacing:1px}
+.dir.up{color:var(--up)} .dir.down{color:var(--down)} .dir.flat{color:var(--flat)}
+.score{font-size:13px; color:var(--ink-2)}
+.badge{display:inline-block; font-size:12px; padding:2px 9px; border-radius:10px;
+  border:1px solid; line-height:1.6}
+.badge.high{color:var(--down); border-color:var(--down)}
+.badge.mid{color:var(--amber); border-color:var(--amber)}
+.badge.low{color:var(--up); border-color:var(--up)}
+.badge.warn{color:var(--up); border-color:var(--up); background:#fdf3f2}
+
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px 18px}
+.kv div{border-left:2px solid var(--line-2); padding-left:10px}
+.kv dt{font-size:12px; color:var(--ink-3); margin:0 0 2px}
+.kv dd{margin:0; font-size:14px; font-weight:500}
+
+table{width:100%; border-collapse:collapse; margin:10px 0 6px; font-size:13.5px}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:var(--bg-soft-2); font-weight:600; font-size:13px; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px; line-height:1.9}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+.muted{color:var(--ink-3)}
+
+.method{border:1px solid var(--line); border-radius:3px; padding:14px 16px; margin-bottom:12px}
+.method-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:8px}
+.method-h b{font-size:14.5px}
+.sig{font-size:12px; padding:1px 8px; border:1px solid var(--line-2); border-radius:3px; color:var(--ink-2)}
+.wt{font-size:12px; color:var(--ink-3)}
+
+.note{background:var(--bg-soft); border-left:3px solid var(--line-2);
+  padding:10px 14px; font-size:13px; color:var(--ink-2); margin:10px 0}
+.note.warn{border-left-color:var(--up); background:#fdf3f2}
+
+.chart{margin:22px 0 6px}
+.chart svg{width:100%; height:auto; display:block}
+.chart-cap{font-size:12px; color:var(--ink-3); margin-top:4px}
+
+.strat{border:1px solid var(--line-2); border-radius:3px; padding:18px 22px 20px;
+  margin:14px 0 4px; background:var(--bg)}
+.strat>h2{margin:0 0 14px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-size:16px}
+.strat.off{background:var(--bg-soft)}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.cols section h3{margin:0 0 8px; font-size:14px}
+.cols section h3 span{font-size:12px; color:var(--ink-3); font-weight:400; margin-left:6px}
+.gate{font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line);
+  padding-top:10px; margin-top:12px}
+.disc{font-size:12px; color:var(--ink-3); border-top:1px solid var(--line);
+  padding-top:14px; margin-top:36px; line-height:1.8}
+ul{margin:6px 0 6px 20px; padding:0} li{margin:3px 0}
+
+@media (max-width:640px){
+  body{padding:16px 10px 40px}
+  .wrap{padding:24px 18px 32px}
+  h1{font-size:20px} .dir{font-size:24px}
+  table{font-size:12.5px} th,td{padding:6px 7px}
+  .cols{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff; padding:0}
+  .wrap{border:none; padding:0; max-width:none}
+  h2{page-break-after:avoid} .method,table,.concl{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>阅文集团（00772.HK）趋势结构分析</h1>
+<p class="sub">道氏 · 威科夫 · 缠论 · 波浪 四方法论交叉验证</p>
+<div class="meta">
+  <span>分析日期 <b>2026-10-15</b></span>
+  <span>数据来源 <b>通达信 tdx-connector</b></span>
+  <span>分析周期 <b>周线 / 日线 / 60分钟 三周期 + 恒生科技指数（板块代理）</b></span>
+  <span>指标计算 <b>scripts/indicators.py</b></span>
+</div>
+
+<div class="concl">
+  <div class="concl-top">
+    <span class="dir up">强多（边际）</span>
+    <span class="score">加权总分 S = +0.51（区间 −1 ~ +1）</span>
+    <span class="badge mid">置信度：中</span>
+    <span class="score">板块基调：恒生科技走弱接近前低，与个股背离 → 多头信号打折 ×0.6</span>
+  </div>
+  <div class="kv">
+    <div><dt>四套一致性</dt><dd>威科夫 +1 / 缠论 +1 / 波浪 +1 / 道氏 0（周线主趋势向下，日线已破前 LH 预警）</dd></div>
+    <div><dt>板块调节</dt><dd>板块代理恒生科技日线偏弱（现价 4060.99 距前低 4042.05 仅 0.47%，MA20 4250.07 &lt; MA60 4517.88，n4 投票 down）→ 判为下降/弱势，个股多头 ×0.6 打折。原始 S = +0.85，调整后 S = +0.51，刚过强多阈值，属边际强多。</dd></div>
+    <div><dt>当前阶段</dt><dd>吸筹完成（三重底 + 底背驰）→ Phase D 突破区间上沿</dd></div>
+    <div><dt>缠论买卖点</dt><dd>日线三买结构成立；60 分钟一买（底背驰）→ 二买 → 三买链条完整</dd></div>
+  </div>
+  <div class="note warn">
+    <b>置信度扣分理由：</b>① <b>不满足「板块分析并共振」</b>——港股无行业板块指数，以恒生科技指数（HZ5017）为代理；该指数日线偏弱（接近前低、MA 空头排列、n4 投票 down），与个股走强<b>不共振</b>，已在板块调节中 ×0.6 打折。② <b>不满足「缠论画法唯一」</b>——日线 multi_window 投票 n4=range / n5=down / n6=down（不一致，系分形摆动点对 10 月最新上涨的滞后）；周线 n2 投票 up、n4 投票 down（不一致）。日线中枢 ZG 在 n4/n5 两画法下一致为 <b>20.88</b>（n6 的 22.88 为过度宽化画法，宽达 18.12%，不予采信），故买卖点依据的画法基本唯一，但趋势方向对窗口敏感。③ 已满足：数据充足、≥3 套方法同号（3 套 +1）、无实质冲突信号。按 5 条计分得 3 条 → <b>置信度「中」</b>。
+  </div>
+</div>
+
+<!-- 结构图：scripts/chart.py 生成 SVG 后原样内嵌（保留 viewBox 即自适应）。涨红跌绿。 -->
+<div class="chart">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif">
+<text x="8" y="20" font-size="13" font-weight="500" fill="#1a1a1a">阅文集团(00772.HK) 日线</text>
+<text x="890" y="20" text-anchor="end" font-size="11" fill="#767676">20260424 ~ 20261015 · 120 根 · 涨红跌绿</text>
+<line x1="8" y1="342.8" x2="890" y2="342.8" stroke="#e3e0d8" stroke-width="0.6"/>
+<text x="895" y="346.3" font-size="10" fill="#767676">19.65</text>
+<line x1="8" y1="265.6" x2="890" y2="265.6" stroke="#e3e0d8" stroke-width="0.6"/>
+<text x="895" y="269.1" font-size="10" fill="#767676">21.91</text>
+<line x1="8" y1="188.4" x2="890" y2="188.4" stroke="#e3e0d8" stroke-width="0.6"/>
+<text x="895" y="191.9" font-size="10" fill="#767676">24.17</text>
+<line x1="8" y1="111.2" x2="890" y2="111.2" stroke="#e3e0d8" stroke-width="0.6"/>
+<text x="895" y="114.7" font-size="10" fill="#767676">26.43</text>
+<rect x="202.8" y="300.9" width="610.1" height="51.6" fill="#a8641a" fill-opacity="0.10" stroke="#a8641a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<line x1="202.8" y1="300.9" x2="890" y2="300.9" stroke="#a8641a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text x="886" y="298.9" text-anchor="end" font-size="10" fill="#a8641a">ZG 20.88</text>
+<line x1="202.8" y1="352.5" x2="890" y2="352.5" stroke="#a8641a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text x="886" y="350.5" text-anchor="end" font-size="10" fill="#a8641a">ZD 19.37</text>
+<line x1="8" y1="220.2" x2="890" y2="220.2" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="218.2" font-size="10" fill="#993C1D">前高 23.24</text>
+<line x1="8" y1="230.8" x2="890" y2="230.8" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="228.8" font-size="10" fill="#993C1D">Fib0.382 22.93</text>
+<line x1="8" y1="300.9" x2="890" y2="300.9" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="298.9" font-size="10" fill="#993C1D">ZG 20.88</text>
+<line x1="8" y1="352.5" x2="890" y2="352.5" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="350.5" font-size="10" fill="#993C1D">ZD 19.37</text>
+<line x1="8" y1="399.3" x2="890" y2="399.3" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="397.3" font-size="10" fill="#993C1D">三重底 18</text>
+<line x1="8" y1="188.0" x2="890" y2="188.0" stroke="#993C1D" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text x="12" y="186.0" font-size="10" fill="#993C1D">Fib0.786 24.18</text>
+<line x1="11.7" y1="119.6" x2="11.7" y2="142.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="9.4" y="129.2" width="4.6" height="1.4" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="9.4" y="481.7" width="4.6" height="4.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="19.0" y1="130.6" x2="19.0" y2="156.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="16.7" y="130.6" width="4.6" height="19.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="16.7" y="481.5" width="4.6" height="4.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="26.4" y1="142.9" x2="26.4" y2="181.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="24.1" y="142.9" width="4.6" height="31.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="24.1" y="478.9" width="4.6" height="7.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="33.7" y1="153.1" x2="33.7" y2="173.7" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="31.4" y="154.5" width="4.6" height="2.1" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="31.4" y="483.3" width="4.6" height="2.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="41.1" y1="155.2" x2="41.1" y2="181.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="38.8" y="163.4" width="4.6" height="11.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="38.8" y="481.3" width="4.6" height="4.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="48.4" y1="137.4" x2="48.4" y2="175.0" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="46.1" y="160.0" width="4.6" height="15.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="46.1" y="484.2" width="4.6" height="1.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="55.8" y1="144.3" x2="55.8" y2="172.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="53.5" y="144.3" width="4.6" height="15.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="53.5" y="485.3" width="4.6" height="0.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="63.1" y1="130.6" x2="63.1" y2="158.6" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="60.8" y="144.3" width="4.6" height="6.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="60.8" y="482.1" width="4.6" height="3.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="70.5" y1="82.7" x2="70.5" y2="134.7" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="68.2" y="85.5" width="4.6" height="44.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="68.2" y="477.2" width="4.6" height="8.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="77.8" y1="54.7" x2="77.8" y2="97.8" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="75.5" y="71.1" width="4.6" height="20.5" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="75.5" y="478.4" width="4.6" height="7.6" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="85.2" y1="75.9" x2="85.2" y2="100.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="82.9" y="76.6" width="4.6" height="5.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="82.9" y="479.9" width="4.6" height="6.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="92.5" y1="79.3" x2="92.5" y2="110.1" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="90.2" y="82.0" width="4.6" height="23.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="90.2" y="482.1" width="4.6" height="3.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="99.9" y1="106.0" x2="99.9" y2="143.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="97.6" y="114.9" width="4.6" height="17.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="97.6" y="475.3" width="4.6" height="10.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="107.2" y1="101.2" x2="107.2" y2="138.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="104.9" y="113.5" width="4.6" height="11.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="104.9" y="480.0" width="4.6" height="6.0" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="114.6" y1="125.8" x2="114.6" y2="160.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="112.3" y="125.8" width="4.6" height="20.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="112.3" y="480.8" width="4.6" height="5.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="121.9" y1="142.9" x2="121.9" y2="170.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="119.6" y="142.9" width="4.6" height="9.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="119.6" y="481.6" width="4.6" height="4.4" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="129.3" y1="138.1" x2="129.3" y2="157.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="127.0" y="142.9" width="4.6" height="8.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="127.0" y="481.9" width="4.6" height="4.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="136.6" y1="151.8" x2="136.6" y2="180.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="134.3" y="151.8" width="4.6" height="21.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="134.3" y="479.9" width="4.6" height="6.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="144.0" y1="166.8" x2="144.0" y2="209.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="141.7" y="173.7" width="4.6" height="34.2" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="141.7" y="478.8" width="4.6" height="7.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="151.3" y1="205.8" x2="151.3" y2="232.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="149.0" y="207.9" width="4.6" height="23.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="149.0" y="475.7" width="4.6" height="10.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="158.7" y1="221.5" x2="158.7" y2="262.6" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="156.4" y="233.2" width="4.6" height="14.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="156.4" y="476.6" width="4.6" height="9.4" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="166.0" y1="173.0" x2="166.0" y2="233.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="163.7" y="204.4" width="4.6" height="28.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="163.7" y="473.3" width="4.6" height="12.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="173.4" y1="194.2" x2="173.4" y2="242.0" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="171.1" y="194.2" width="4.6" height="36.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="171.1" y="477.1" width="4.6" height="8.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="180.7" y1="192.1" x2="180.7" y2="240.0" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="178.4" y="225.6" width="4.6" height="6.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="178.4" y="438.0" width="4.6" height="48.0" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="188.1" y1="164.1" x2="188.1" y2="210.6" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="185.8" y="170.9" width="4.6" height="38.3" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="185.8" y="469.1" width="4.6" height="16.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="195.4" y1="129.2" x2="195.4" y2="167.5" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="193.1" y="138.1" width="4.6" height="22.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="193.1" y="472.9" width="4.6" height="13.1" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="202.8" y1="126.5" x2="202.8" y2="175.0" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="200.5" y="127.2" width="4.6" height="40.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="200.5" y="478.3" width="4.6" height="7.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="210.1" y1="197.6" x2="210.1" y2="241.4" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="207.8" y="197.6" width="4.6" height="35.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="207.8" y="470.2" width="4.6" height="15.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="217.5" y1="219.5" x2="217.5" y2="233.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="215.2" y="220.2" width="4.6" height="5.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="215.2" y="480.1" width="4.6" height="5.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="224.8" y1="225.6" x2="224.8" y2="252.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="222.5" y="228.4" width="4.6" height="3.4" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="222.5" y="478.7" width="4.6" height="7.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="232.2" y1="203.8" x2="232.2" y2="235.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="229.9" y="216.7" width="4.6" height="1.0" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="229.9" y="479.4" width="4.6" height="6.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="239.5" y1="186.0" x2="239.5" y2="217.4" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="237.2" y="207.9" width="4.6" height="9.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="237.2" y="477.7" width="4.6" height="8.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="246.9" y1="176.4" x2="246.9" y2="231.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="244.6" y="190.1" width="4.6" height="35.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="244.6" y="477.4" width="4.6" height="8.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="254.2" y1="207.2" x2="254.2" y2="233.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="251.9" y="212.6" width="4.6" height="10.9" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="251.9" y="473.7" width="4.6" height="12.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="261.6" y1="220.2" x2="261.6" y2="275.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="259.3" y="220.2" width="4.6" height="48.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="259.3" y="466.1" width="4.6" height="19.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="268.9" y1="265.3" x2="268.9" y2="309.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="266.6" y="265.3" width="4.6" height="30.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="266.6" y="472.7" width="4.6" height="13.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="276.3" y1="286.5" x2="276.3" y2="306.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="274.0" y="296.7" width="4.6" height="4.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="274.0" y="480.9" width="4.6" height="5.1" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="283.6" y1="303.6" x2="283.6" y2="324.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="281.3" y="303.6" width="4.6" height="13.7" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="281.3" y="477.5" width="4.6" height="8.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="291.0" y1="317.3" x2="291.0" y2="343.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="288.7" y="317.3" width="4.6" height="21.2" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="288.7" y="476.5" width="4.6" height="9.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="298.3" y1="334.0" x2="298.3" y2="350.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="296.0" y="338.5" width="4.6" height="5.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="296.0" y="480.6" width="4.6" height="5.4" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="305.7" y1="328.9" x2="305.7" y2="348.0" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="303.4" y="340.5" width="4.6" height="2.4" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="303.4" y="479.8" width="4.6" height="6.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="313.0" y1="341.5" x2="313.0" y2="376.1" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="310.7" y="341.5" width="4.6" height="22.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="310.7" y="475.3" width="4.6" height="10.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="320.4" y1="364.1" x2="320.4" y2="379.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="318.1" y="366.5" width="4.6" height="10.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="318.1" y="477.5" width="4.6" height="8.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="327.7" y1="345.6" x2="327.7" y2="369.9" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="325.4" y="355.2" width="4.6" height="14.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="325.4" y="477.1" width="4.6" height="8.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="335.1" y1="348.0" x2="335.1" y2="377.1" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="332.8" y="355.2" width="4.6" height="12.7" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="332.8" y="479.0" width="4.6" height="7.0" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="342.4" y1="328.2" x2="342.4" y2="356.6" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="340.1" y="345.6" width="4.6" height="6.5" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="340.1" y="477.1" width="4.6" height="8.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="349.8" y1="326.8" x2="349.8" y2="346.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="347.5" y="333.7" width="4.6" height="12.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="347.5" y="482.0" width="4.6" height="4.0" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="357.1" y1="331.6" x2="357.1" y2="349.4" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="354.8" y="333.7" width="4.6" height="3.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="354.8" y="480.2" width="4.6" height="5.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="364.5" y1="309.7" x2="364.5" y2="343.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="362.2" y="334.4" width="4.6" height="5.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="362.2" y="481.0" width="4.6" height="5.0" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="371.8" y1="304.3" x2="371.8" y2="341.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="369.5" y="307.0" width="4.6" height="23.9" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="369.5" y="478.7" width="4.6" height="7.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="379.2" y1="279.7" x2="379.2" y2="323.4" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="376.9" y="308.4" width="4.6" height="1.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="376.9" y="477.3" width="4.6" height="8.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="386.5" y1="293.3" x2="386.5" y2="325.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="384.2" y="298.8" width="4.6" height="13.7" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="384.2" y="480.4" width="4.6" height="5.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="393.9" y1="307.0" x2="393.9" y2="348.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="391.6" y="311.8" width="4.6" height="26.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="391.6" y="476.5" width="4.6" height="9.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="401.2" y1="338.1" x2="401.2" y2="384.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="398.9" y="338.1" width="4.6" height="12.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="398.9" y="464.2" width="4.6" height="21.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="408.6" y1="339.5" x2="408.6" y2="367.9" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="406.3" y="342.9" width="4.6" height="10.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="406.3" y="479.9" width="4.6" height="6.1" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="415.9" y1="301.5" x2="415.9" y2="337.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="413.6" y="305.0" width="4.6" height="30.1" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="413.6" y="478.6" width="4.6" height="7.4" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="423.3" y1="300.9" x2="423.3" y2="359.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="421.0" y="302.2" width="4.6" height="46.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="421.0" y="480.2" width="4.6" height="5.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="430.6" y1="323.4" x2="430.6" y2="344.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="428.3" y="330.9" width="4.6" height="8.9" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="428.3" y="482.3" width="4.6" height="3.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="438.0" y1="316.6" x2="438.0" y2="341.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="435.7" y="320.7" width="4.6" height="7.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="435.7" y="482.0" width="4.6" height="4.0" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="445.3" y1="328.2" x2="445.3" y2="375.4" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="443.0" y="328.2" width="4.6" height="36.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="443.0" y="473.6" width="4.6" height="12.4" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="452.7" y1="365.1" x2="452.7" y2="395.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="450.4" y="365.1" width="4.6" height="10.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="450.4" y="480.3" width="4.6" height="5.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="460.0" y1="382.2" x2="460.0" y2="398.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="457.7" y="382.2" width="4.6" height="11.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="457.7" y="480.6" width="4.6" height="5.4" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="467.4" y1="376.4" x2="467.4" y2="399.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="465.1" y="378.8" width="4.6" height="14.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="465.1" y="482.2" width="4.6" height="3.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="474.7" y1="359.3" x2="474.7" y2="381.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="472.4" y="370.3" width="4.6" height="8.9" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="472.4" y="481.2" width="4.6" height="4.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="482.1" y1="346.7" x2="482.1" y2="371.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="479.8" y="346.7" width="4.6" height="18.5" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="479.8" y="480.6" width="4.6" height="5.4" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="489.4" y1="335.0" x2="489.4" y2="359.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="487.1" y="344.6" width="4.6" height="6.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="487.1" y="482.5" width="4.6" height="3.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="496.8" y1="306.3" x2="496.8" y2="368.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="494.5" y="323.4" width="4.6" height="28.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="494.5" y="476.0" width="4.6" height="10.0" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="504.1" y1="303.6" x2="504.1" y2="332.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="501.8" y="316.6" width="4.6" height="7.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="501.8" y="481.4" width="4.6" height="4.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="511.5" y1="311.8" x2="511.5" y2="335.0" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="509.2" y="315.9" width="4.6" height="4.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="509.2" y="481.5" width="4.6" height="4.5" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="518.8" y1="300.9" x2="518.8" y2="324.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="516.5" y="314.5" width="4.6" height="1.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="516.5" y="481.5" width="4.6" height="4.5" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="526.2" y1="314.5" x2="526.2" y2="333.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="523.9" y="319.3" width="4.6" height="10.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="523.9" y="482.4" width="4.6" height="3.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="533.5" y1="316.6" x2="533.5" y2="342.9" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="531.2" y="318.6" width="4.6" height="9.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="531.2" y="483.2" width="4.6" height="2.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="540.9" y1="274.9" x2="540.9" y2="328.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="538.6" y="289.9" width="4.6" height="28.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="538.6" y="477.6" width="4.6" height="8.4" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="548.2" y1="283.8" x2="548.2" y2="311.1" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="545.9" y="283.8" width="4.6" height="21.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="545.9" y="480.8" width="4.6" height="5.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="555.6" y1="223.6" x2="555.6" y2="322.7" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="553.3" y="233.8" width="4.6" height="71.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="553.3" y="460.0" width="4.6" height="26.0" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="562.9" y1="230.4" x2="562.9" y2="263.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="560.6" y="242.0" width="4.6" height="6.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="560.6" y="474.4" width="4.6" height="11.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="570.3" y1="242.7" x2="570.3" y2="282.4" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="568.0" y="251.6" width="4.6" height="8.9" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="568.0" y="475.2" width="4.6" height="10.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="577.6" y1="229.7" x2="577.6" y2="281.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="575.3" y="251.6" width="4.6" height="28.7" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="575.3" y="476.8" width="4.6" height="9.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="585.0" y1="283.1" x2="585.0" y2="313.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="582.7" y="283.1" width="4.6" height="15.0" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="582.7" y="479.1" width="4.6" height="6.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="592.3" y1="302.2" x2="592.3" y2="318.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="590.0" y="302.2" width="4.6" height="9.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="590.0" y="481.5" width="4.6" height="4.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="599.7" y1="300.2" x2="599.7" y2="330.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="597.4" y="310.4" width="4.6" height="17.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="597.4" y="478.9" width="4.6" height="7.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="607.0" y1="319.3" x2="607.0" y2="344.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="604.7" y="324.8" width="4.6" height="9.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="604.7" y="477.2" width="4.6" height="8.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="614.4" y1="334.4" x2="614.4" y2="352.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="612.1" y="334.4" width="4.6" height="6.8" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="612.1" y="481.0" width="4.6" height="5.0" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="621.7" y1="296.7" x2="621.7" y2="349.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="619.4" y="305.6" width="4.6" height="30.1" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="619.4" y="469.5" width="4.6" height="16.5" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="629.1" y1="291.3" x2="629.1" y2="320.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="626.8" y="305.6" width="4.6" height="10.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="626.8" y="480.7" width="4.6" height="5.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="636.4" y1="308.4" x2="636.4" y2="326.8" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="634.1" y="316.6" width="4.6" height="4.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="634.1" y="483.1" width="4.6" height="2.9" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="643.8" y1="311.8" x2="643.8" y2="334.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="641.5" y="320.7" width="4.6" height="7.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="641.5" y="479.9" width="4.6" height="6.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="651.1" y1="263.2" x2="651.1" y2="335.4" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="648.8" y="280.3" width="4.6" height="51.3" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="648.8" y="462.7" width="4.6" height="23.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="658.5" y1="252.3" x2="658.5" y2="309.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="656.2" y="266.0" width="4.6" height="11.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="656.2" y="455.4" width="4.6" height="30.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="665.8" y1="285.1" x2="665.8" y2="324.1" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="663.5" y="286.5" width="4.6" height="33.5" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="663.5" y="472.9" width="4.6" height="13.1" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="673.2" y1="289.2" x2="673.2" y2="332.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="670.9" y="315.9" width="4.6" height="11.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="670.9" y="478.4" width="4.6" height="7.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="680.5" y1="232.5" x2="680.5" y2="317.9" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="678.2" y="270.1" width="4.6" height="47.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="678.2" y="457.1" width="4.6" height="28.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="687.9" y1="268.0" x2="687.9" y2="291.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="685.6" y="270.1" width="4.6" height="10.3" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="685.6" y="475.8" width="4.6" height="10.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="695.2" y1="250.2" x2="695.2" y2="289.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="692.9" y="269.4" width="4.6" height="16.4" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="692.9" y="473.4" width="4.6" height="12.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="702.6" y1="286.5" x2="702.6" y2="344.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="700.3" y="289.9" width="4.6" height="37.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="700.3" y="462.0" width="4.6" height="24.0" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="709.9" y1="327.5" x2="709.9" y2="346.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="707.6" y="327.5" width="4.6" height="12.7" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="707.6" y="480.5" width="4.6" height="5.5" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="717.3" y1="333.7" x2="717.3" y2="355.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="715.0" y="341.9" width="4.6" height="4.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="715.0" y="477.4" width="4.6" height="8.6" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="724.6" y1="342.2" x2="724.6" y2="355.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="722.3" y="347.0" width="4.6" height="6.2" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="722.3" y="480.2" width="4.6" height="5.8" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="732.0" y1="348.0" x2="732.0" y2="369.9" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="729.7" y="348.0" width="4.6" height="19.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="729.7" y="480.6" width="4.6" height="5.4" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="739.3" y1="359.7" x2="739.3" y2="373.7" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="737.0" y="362.4" width="4.6" height="5.5" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="737.0" y="481.3" width="4.6" height="4.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="746.7" y1="354.9" x2="746.7" y2="371.3" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="744.4" y="365.1" width="4.6" height="3.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="744.4" y="481.7" width="4.6" height="4.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="754.0" y1="346.7" x2="754.0" y2="374.7" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="751.7" y="347.7" width="4.6" height="21.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="751.7" y="472.8" width="4.6" height="13.2" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="761.4" y1="330.9" x2="761.4" y2="351.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="759.1" y="337.8" width="4.6" height="8.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="759.1" y="480.8" width="4.6" height="5.2" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="768.7" y1="312.5" x2="768.7" y2="339.5" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="766.4" y="337.8" width="4.6" height="1.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="766.4" y="479.9" width="4.6" height="6.1" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="776.1" y1="320.7" x2="776.1" y2="346.0" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="773.8" y="330.3" width="4.6" height="1.0" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="773.8" y="479.1" width="4.6" height="6.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="783.4" y1="327.5" x2="783.4" y2="347.7" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="781.1" y="331.3" width="4.6" height="10.9" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="781.1" y="482.4" width="4.6" height="3.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="790.8" y1="313.8" x2="790.8" y2="369.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="788.5" y="313.8" width="4.6" height="44.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="788.5" y="483.3" width="4.6" height="2.7" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="798.1" y1="341.2" x2="798.1" y2="364.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="795.8" y="349.1" width="4.6" height="9.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="795.8" y="481.2" width="4.6" height="4.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="805.5" y1="324.1" x2="805.5" y2="368.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="803.2" y="330.9" width="4.6" height="18.8" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="803.2" y="479.3" width="4.6" height="6.7" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="812.8" y1="300.9" x2="812.8" y2="341.2" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="810.5" y="306.3" width="4.6" height="24.6" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="810.5" y="478.9" width="4.6" height="7.1" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="820.2" y1="306.3" x2="820.2" y2="341.2" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="817.9" y="306.3" width="4.6" height="22.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="817.9" y="484.7" width="4.6" height="1.3" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="827.5" y1="329.6" x2="827.5" y2="353.5" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="825.2" y="329.6" width="4.6" height="17.1" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="825.2" y="484.4" width="4.6" height="1.6" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="834.9" y1="336.4" x2="834.9" y2="351.5" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="832.6" y="343.6" width="4.6" height="1.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="832.6" y="484.2" width="4.6" height="1.8" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="842.2" y1="346.0" x2="842.2" y2="358.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="839.9" y="346.0" width="4.6" height="2.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="839.9" y="485.1" width="4.6" height="0.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="849.6" y1="312.5" x2="849.6" y2="345.6" stroke="#1e8449" stroke-width="0.9"/>
+<rect x="847.3" y="333.7" width="4.6" height="9.6" fill="#1e8449" fill-opacity="0.85"/>
+<rect x="847.3" y="476.8" width="4.6" height="9.2" fill="#1e8449" fill-opacity="0.45"/>
+<line x1="856.9" y1="289.2" x2="856.9" y2="349.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="854.6" y="302.2" width="4.6" height="42.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="854.6" y="471.7" width="4.6" height="14.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="864.3" y1="253.0" x2="864.3" y2="306.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="862.0" y="282.4" width="4.6" height="13.7" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="862.0" y="465.4" width="4.6" height="20.6" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="871.6" y1="265.3" x2="871.6" y2="291.3" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="869.3" y="272.8" width="4.6" height="14.4" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="869.3" y="473.7" width="4.6" height="12.3" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="879.0" y1="220.2" x2="879.0" y2="276.9" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="876.7" y="238.6" width="4.6" height="33.5" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="876.7" y="455.1" width="4.6" height="30.9" fill="#c0392b" fill-opacity="0.45"/>
+<line x1="886.3" y1="227.7" x2="886.3" y2="272.1" stroke="#c0392b" stroke-width="0.9"/>
+<rect x="884.0" y="256.4" width="4.6" height="6.2" fill="#c0392b" fill-opacity="0.85"/>
+<rect x="884.0" y="453.2" width="4.6" height="32.8" fill="#c0392b" fill-opacity="0.45"/>
+<polyline points="26.4,181.9 77.8,54.7 158.7,262.6 202.8,126.5 320.4,379.5 379.2,279.7 467.4,399.3 555.6,223.6 614.4,352.5 680.5,232.5 754.0,374.7 812.8,300.9" fill="none" stroke="#1c5c85" stroke-width="1.1" stroke-opacity="0.9"/>
+<circle cx="26.4" cy="181.9" r="3" fill="#1c5c85"/>
+<text x="26.4" y="193.9" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="77.8" cy="54.7" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="77.8" y="48.7" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<circle cx="158.7" cy="262.6" r="3" fill="#1c5c85"/>
+<text x="158.7" y="274.6" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="202.8" cy="126.5" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="202.8" y="120.5" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<circle cx="320.4" cy="379.5" r="3" fill="#1c5c85"/>
+<text x="320.4" y="391.5" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="379.2" cy="279.7" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="379.2" y="273.7" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<circle cx="467.4" cy="399.3" r="3" fill="#1c5c85"/>
+<text x="467.4" y="411.3" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="555.6" cy="223.6" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="555.6" y="217.6" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<circle cx="614.4" cy="352.5" r="3" fill="#1c5c85"/>
+<text x="614.4" y="364.5" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="680.5" cy="232.5" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="680.5" y="226.5" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<circle cx="754.0" cy="374.7" r="3" fill="#1c5c85"/>
+<text x="754.0" y="386.7" text-anchor="middle" font-size="9.5" fill="#1c5c85">L</text>
+<circle cx="812.8" cy="300.9" r="3" fill="#ffffff" stroke="#1c5c85" stroke-width="1.2"/>
+<text x="812.8" y="294.9" text-anchor="middle" font-size="9.5" fill="#1c5c85">H</text>
+<line x1="8" y1="256.4" x2="890" y2="256.4" stroke="#767676" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="886" y="254.4" text-anchor="end" font-size="10" fill="#767676">收 22.18</text>
+<text x="11.7" y="494" text-anchor="middle" font-size="10" fill="#767676">260424</text>
+<text x="452.7" y="494" text-anchor="middle" font-size="10" fill="#767676">260723</text>
+<text x="886.3" y="494" text-anchor="middle" font-size="10" fill="#767676">261015</text>
+<text x="890" y="500.0" text-anchor="end" font-size="10" fill="#767676">○ H 摆动高点 ● L 摆动低点 ─ 笔 ▨ 中枢候选；最新 5 根内极值未标注（分形滞后）</text>
+</svg>
+  <div class="chart-cap">K 线结构图：○ H 摆动高点 · ● L 摆动低点 · 折线为笔 · 阴影带为中枢候选（ZG/ZD）。摆动点有分形滞后，最新 swing_n 根内的极值未标注。</div>
+</div>
+
+<!-- 策略块：综合结论为强多/偏多、且通过 SKILL.md 9.1 全部闸门时使用。
+     若结论为震荡/偏空/强空，或风险收益比<1、止损幅度>8%，请删除本块并改用下方「观望块」。 -->
+<div class="strat">
+  <h2>买卖策略速览<span class="muted" style="font-size:12px;font-weight:400;margin-left:8px">缠论买卖点 × 威科夫阶段</span></h2>
+  <div class="cols">
+    <section>
+      <h3>已持有<span>加仓 · 减仓 · 失效位</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>持有依据</td><td>三买结构成立：日线中枢 ZG 20.88（n4/n5 画法一致）于 2026-10-12 被收盘价 21.42 突破，其后 3 根日 K（21.70 / 22.70 / 22.18）最低回踩 21.16，均未跌回中枢内 → 三买有效；威科夫处于 Phase D 突破区间上沿，且 18.00/18.58/18.72 三重底 + 60 分钟底背驰（两法一致）构成吸筹证据链；日线 MACD 红柱连续 5 根放大（0.19→0.35→0.47→0.65→0.66）、周线 MACD 红柱同步连续放大（0.77→0.70→0.77→0.92→1.18）、日线 MA20 斜率转上（ma_slope_20_up = true）且价格站上 MA5/MA10/MA20/MA60 全部四条均线。</td></tr>
+        <tr><td>加仓触发</td><td>回踩至 <b>21.40</b>（三买确认位 = ZG 20.88 + 0.5×ATR14）企稳且当日量比 ≥ 1.5×MA5 → 加仓；若放量（量比 ≥ 2×）突破 <b>23.24</b>（2026-10-14 前高）并 3 根内不回落，可视为三浪展开的第二加仓点。</td></tr>
+        <tr><td>减仓 / 离场触发</td><td>① 触及 <b>22.93</b>（本轮下跌 Fib 0.382 位）滞涨（上冲回落 + 量比 &lt; 1）→ 部分减仓；② 60 分钟若出现 dif_agree = true 的顶背驰（当前 20261012→20261014 候选仅 1/3 法，不成立）→ 减仓；③ 收盘跌回 <b>20.88</b>（中枢内）→ 三买失效，减至底仓。</td></tr>
+        <tr><td>移动止盈</td><td>突破 23.24 后，以最近一个 60 分钟摆动低点上移止盈；日线上涨结构中每形成一个新 HL（需右侧 5 根确认），将止损上移至该 HL − 0.5×ATR14。</td></tr>
+        <tr><td>结构失效位</td><td class="num"><b>20.36</b>（= 中枢上沿 ZG 20.88 − 0.5×ATR14，收盘跌破即全部离场）</td></tr>
+      </table>
+    </section>
+    <section>
+      <h3>空仓<span>入场 · 止损 · 目标</span></h3>
+      <table>
+        <tr><th>项目</th><th>结论</th></tr>
+        <tr><td>入场触发</td><td><b>不追高。</b>现价 22.18 入场经脚本校验：止损幅度 8.21% &gt; 8%、RRR(T1) = 0.41 &lt; 1，双重硬闸门触发。等待回踩至 <b>21.40</b>（三买确认位）附近企稳：当日收盘 ≥ 21.40、量比 ≥ 1.5×MA5、且收盘不破 20.88，三条件同时满足时入场。突破有效性参照（2026-10-12 首次突破 20.88）：① 收盘站上 ✓；② 幅度 0.54 = 0.54×ATR14 ✗（首日未达）；③ 量比 14.72M / 6.68M = 2.20× ✓；④ 3 根不回落 ✓ → 满足 3/4 条，按 4.2 判<b>待确认</b>（第 3 根 20261014 收 22.70 后幅度条件已补足）。</td></tr>
+        <tr><td>加仓位</td><td>放量（量比 ≥ 2×）收盘突破 <b>23.24</b>（前高）后回踩 22.93（Fib 0.382）不破</td></tr>
+        <tr><td>止损价</td><td class="num">20.36（幅度 4.86%）</td></tr>
+        <tr><td>目标 T1 / T2 / T3</td><td class="num">22.93（Fib 0.382 回撤位，10-14 高点 23.24 实际受阻于 22.93 附近） / 24.18（大级别 Fib 0.786 位；亦接近 3 浪 = 1 浪等长目标 23.86） / 27.04（3 浪 = 1.618×1 浪目标）</td></tr>
+        <tr><td>风险收益比</td><td class="num">RRR(T1) = 1.47 / RRR(T2) = 2.67 / RRR(T3) = 5.42（以回踩入场 21.40、止损 20.36 计，脚本输出）</td></tr>
+        <tr><td>时间止损</td><td>入场后 5 根日 K 未按预期展开（未突破 22.93 也未跌破 20.36）→ 减仓观望</td></tr>
+      </table>
+    </section>
+  </div>
+  <div class="gate"><b>策略闸门校验：</b>① RRR：现价入场 0.41（<b>&lt; 1，硬闸门触发 → 不追高</b>）；回踩入场 1.47（1 ≤ RRR &lt; 2 → 标注「风险收益比边际，需更严格确认条件」）✓<br>② 止损幅度：现价入场 8.21%（&gt; 8%，硬闸门触发）；回踩入场 4.86% ✓<br>③ 板块下降且个股无底背驰/Spring：个股已出现 60 分钟底背驰（两法一致）+ 三重底 Spring 结构 → 不触发 ✓<br>④ 适用性检查：全部通过（见数据概况）✓<br>→ <b>结论：现价不追，等待回踩 21.40 附近按确认条件入场。</b></div>
+  <div class="note"><b>声明：</b>以上为基于缠论买卖点与威科夫阶段的结构价位推演，仅标注触发与失效条件，非投资建议，不构成任何买卖指令，不涉及仓位与资金管理。</div>
+</div>
+
+<h2>一、数据概况与自检</h2>
+<table>
+  <tr><th>项目</th><th>数值</th><th>项目</th><th>数值</th></tr>
+  <tr><td>日线样本</td><td class="num">400 根（2025-03-04 ~ 2026-10-15）</td><td>ATR14</td><td class="num">1.0446（4.71%）</td></tr>
+  <tr><td>周线样本</td><td class="num">400 根</td><td>60分钟样本</td><td class="num">400 根</td></tr>
+  <tr><td>期间最高</td><td class="num">46.88</td><td>期间最低</td><td class="num">18.00</td></tr>
+  <tr><td>MA 排列</td><td class="num">MA5 21.77 &lt; 价格 22.18？否——价格 22.18 &gt; MA5 21.77 &gt; MA10 20.73 &gt; MA20 20.22 ≈ MA60 20.30（价格站上全部四条均线，MA20 斜率转上）</td><td>MA20 vs MA60</td><td class="num">日线 MA20 20.22 &lt; MA60 20.30（刚接近金叉，ma_slope_20_up = true）；周线 MA20 20.49 &lt; MA60 29.31（大幅空头，长周期修复尚早）</td></tr>
+</table>
+<div class="note">
+  <b>数据自检：</b>日线 400 根（20250304–20261015）、周线 400 根（20190222–20261015，回溯至上市初）、60 分钟 400 根（20260714–20261015），样本充足。日线期间最高 46.88、最低 18.00，与已知行情吻合；周线 period_high 95.75（2021 年高位）/ period_low 18.00。日线 flags：<b>date_gaps 为空（无长期停牌）、zero_volume_days = 0、one_word_limit_days = 0</b>。<b>flags.limit_days 需说明：</b>日线 6 根、周线 38 根触发「涨停」标记，系脚本沿用 A 股 10% 阈值——<b>港股无涨跌停限制，该字段对港股无意义，不作为任何判定依据。</b>
+  <br><b>适用性检查：</b><b>全部通过。</b>非 ST/退市；非次新（周线样本回溯至 2019-02 上市初期，上市 7 年+）；港股无涨跌停制度，一字板判据不适用（one_word_limit_days = 0）；无长期停牌（日线 date_gaps 为空，最大间隔为正常节假日）；数据充足（meta.insufficient = false）。<b>本标的适用性无受限，结论置信度不受第 0 节约束。</b>
+</div>
+
+<h2>二、板块整体走势</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>所属板块</td><td>传媒 / 文化娱乐（网络文学 + IP 运营） / 港股无行业板块指数，以恒生科技指数（HZ5017，setcode=27）为代理</td><td class="muted">板块指数 HZ5017 恒生科技指数</td></tr>
+  <tr><td>板块趋势（道氏）</td><td>偏弱震荡，接近前低（range，n4 投票 down）</td><td class="ev">日线 swing_highs 20260805 @4948.50 → 20260922 @4510.06（LH）；swing_lows 20260626 @4229.94 → 20260911 @4250.84；现价 4060.99，距期间低点 4042.05 仅 <b>0.47%</b>；MA20 4250.07 &lt; MA60 4517.88（空头排列），ma_slope_20_up = false；multi_window n4=down / n5=range / n6=range，agree = false。</td></tr>
+  <tr><td>板块阶段（威科夫）</td><td>下跌趋势末段的震荡，尚未确认止跌</td><td class="ev">恒生科技自 4948.50 回落近 18%，两次反弹（4948.50→4510.06 为 LH）均失败，价格贴近前低 4042.05；若有效跌破则打开新低空间</td></tr>
+</table>
+<div class="note"><b>板块对个股的基调：</b><b>板块与个股背离：</b>恒生科技日线偏弱、贴近前低，而阅文集团已放量突破日线中枢上沿并走出三买结构。按 SKILL 第 7 节，板块不支持个股方向 → 个股多头信号 <b>×0.6 打折</b>（原始 S = +0.85 → 调整后 S = +0.51）。实操含义：① 个股的上行空间受板块贝塔压制，T1/T2 目标位兑现概率下降；② 若恒生科技有效跌破 4042，阅文的回踩幅度可能加深，届时需重新评估三买是否被击穿；③ 反之，若恒生科技在 4042 附近止跌企稳，个股与板块将形成共振，信号强度回升。</div>
+
+<h2>三、多周期共振矩阵</h2>
+<table>
+  <tr><th>周期</th><th>趋势方向</th><th>关键依据</th><th>职责</th></tr>
+  <tr><td>周线</td><td class="down">空（down），但 MACD 红柱连续放大（底部修复中）</td><td class="ev">swing_highs 20260213 @44.68 → 20260508 @28.08（LH）；swing_lows 20260402 @24.80 → 20260731 @18.00（LL）；MA20 20.49 &lt; MA60 29.31。multi_window n2=<b>up</b> / n3=down / n4=down，agree = false（短窗口已转多，长窗口仍空）。周线 MACD hist 连续 5 根放大：0.77→0.70→0.77→0.92→<b>1.18</b></td><td>定方向</td></tr>
+  <tr><td>日线</td><td class="down">空 → 刚出现趋势破坏预警（已突破前 LH）</td><td class="ev">swing 判定 down（LH 20.88 &lt; 22.88 + LL 18.72 &lt; 19.37），但该判定基于截至 20260930 的摆动点，<b>存在分形滞后</b>：2026-10-12 收盘 21.42 已突破前 LH 20.88，10-14 盘中 23.24 亦突破 22.88 → 按 SKILL 第 4 步，<b>下降趋势突破前一个 LH = 趋势破坏信号（一次只是预警，需第二次确认）</b>。日线 MA20 斜率转上、价格站上全部均线，为下跌以来首次</td><td>定阶段</td></tr>
+  <tr><td>60分钟</td><td class="up">多（up，三窗口一致）</td><td class="ev">swing_highs 20261012 @22.26 → 20261014 @23.24（HH）；swing_lows 20261009 @19.47 → 20261013 @21.16（HL）→ HH + HL = up；multi_window n3/n4/n5 全部 up，<b>agree = true</b>；MA20 22.15 &lt; 现价 22.18，ma20_gt_ma60 = true，ma_slope_20_up = true</td><td>定点位</td></tr>
+</table>
+<div class="note"><b>共振结论：</b>周线空头但 MACD 底部动能积聚，日线空头结构被突破预警打破，60 分钟已确认多头排列——这是一个<b>自下而上的反转尝试</b>：短周期已转多、中周期临界、长周期仍空。三者尚未完全共振，故 S 未达 +0.85 以上的满分强多，且需板块（恒生科技）止跌配合才能升级。（矩阵定位：「周线 空 × 日线 空（破 LH 预警）」名义上为主跌段，但日线已出现趋势破坏信号 + 60 分钟转多 → 实际处于<b>转折区（判断底）</b>，按场景化权重取转折区参数）</div>
+
+<h2>四、四方法论明细</h2>
+
+<div class="method">
+  <div class="method-h"><b>1. 道氏理论</b><span class="sig">信号 0</span><span class="wt">权重 0.15</span></div>
+  <p>周线主要趋势仍为下降（LH + LL 成立，MA20 大幅低于 MA60），但<b>日线已出现明确的趋势破坏预警</b>：2026-10-12 收盘 21.42 突破前一个摆动高点（LH）20.88，10-14 盘中进一步突破 22.88。按 SKILL 第 4 步「下降趋势突破前一个 LH——一次只是预警，需第二次确认」，当前处于<b>预警但未确认</b>状态。同时日线 MA20 斜率转为向上（ma_slope_20_up = true），是 2025-03 以来首次，属道氏框架下的早期转多迹象。周线向下与日线预警相抵，道氏给出中性信号 0，等待二次确认（若回踩不破 20.88 后再度上攻，即为确认）。</p>
+  <div class="ev">周线：LH 28.08 &lt; 44.68，LL 18.00 &lt; 24.80 → down（n2=up / n3=down / n4=down，agree=false）<br>日线：LH 20.88 &lt; 22.88 + LL 18.72 &lt; 19.37 → 脚本判 down；但 <b>20261012 收 21.42 &gt; 20.88（突破前 LH）</b><br>日线均线：MA5 21.77 / MA10 20.73 / MA20 20.22 / MA60 20.30，价格 22.18 站上全部；ma_slope_20_up = <b>true</b>（首次）</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>2. 威科夫</b><span class="sig">信号 +1</span><span class="wt">权重 0.30</span></div>
+  <p>判定为<b>吸筹（Accumulation）完成，进入 Phase D 突破区间上沿</b>。证据链完整（≥3 条）：① 三重底不创新低——18.58（0626）/ 18.00（0727）/ 18.72（0918），第三次高于第一次，构成 Terminal Shakeout / Spring 结构；② 第三次下探（0918）伴随放量（vol_ratio 1.98）却不创新低，且 60 分钟底背驰两法一致（dif_agree = true），为<b>卖压耗尽</b>的量价确认；③ 0812 反弹高点 23.14 放量（vol_ratio 2.83），初步 SOS；④ <b>2026-10-12 放量突破区间上沿</b>（量比 2.20×），价格进入 Phase D 的 Markup 起步段。</p>
+  <table><tr><th>日期</th><th>事件</th><th>价格</th><th>量比 vs MA5</th></tr>
+<tr><td>2026-07-27</td><td>第三次探底前低 18.00，缩量（卖压衰竭）</td><td class="num">18.00</td><td class="num">vol_ratio 0.603</td></tr>
+<tr><td>2026-08-12</td><td>放量反弹（初步 SOS，突破 21.50 前高）</td><td class="num">23.14</td><td class="num">vol_ratio 2.830</td></tr>
+<tr><td>2026-09-18</td><td>放量下探 18.72 <b>不创新低</b>（Spring / Terminal Shakeout）+ 60 分钟底背驰两法一致</td><td class="num">18.72</td><td class="num">vol_ratio 1.980</td></tr>
+<tr><td>2026-10-12</td><td>放量突破日线中枢上沿 20.88（量比 2.20× = 14.72M / 6.68M），Phase D 确认</td><td class="num">收 21.42</td><td class="num">vol_ratio 2.20×</td></tr>
+<tr><td>2026-10-15</td><td>回踩缩量（23.46M 持平前日但价格仅 −2.29%），守住 21.72，无恐慌抛压</td><td class="num">收 22.18</td><td class="num">vol_ratio 1.481</td></tr>
+</table>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>3. 缠论</b><span class="sig">信号 +1</span><span class="wt">权重 0.40</span></div>
+  <p><b>买点链条完整：一买 → 二买 → 三买。</b>① 一买：60 分钟底背驰两法一致（20260916 低 18.75 面积 0.0344 → 20260918 低 18.72 面积 0.0，dif_agree = true），位于 9 月 18 日；② 二买：一买后回调不创新低（0918 之后未再跌破 18.72）；③ <b>三买：日线中枢 ZG 20.88 于 2026-10-12 被收盘 21.42 突破，其后 3 根日 K 最低回踩 21.16（1013），始终未跌回中枢内（20.88 下方）→ 三买结构成立。</b>当前价 22.18 位于中枢上方、三买确认位 21.40 上方。</p>
+  <table>
+    <tr><th>画法</th><th>摆动点窗口</th><th>笔确认阈值</th><th>中枢 ZD–ZG</th><th>买卖点</th></tr>
+    
+<tr><td>画法 A（默认）</td><td>日线 swing-n=5</td><td>max(0.5×1.0446, 3%) = 3.00%</td><td>19.37 – 20.88（宽 7.80%）</td><td><b>三买成立</b></td></tr>
+<tr><td>画法 B（窄窗口）</td><td>日线 swing-n=4</td><td>max(0.5×1.0446, 3%) = 3.00%</td><td>19.20 – 20.88（宽 8.75%）</td><td><b>三买成立</b>（ZG 与画法 A 一致）</td></tr>
+<tr><td>画法 C（宽窗口）</td><td>日线 swing-n=6</td><td>max(0.5×1.0446, 3%) = 3.00%</td><td>19.37 – 22.88（宽 18.12%）</td><td>无（现价 22.18 仍在「中枢」内）</td></tr>
+<tr><td>60 分钟</td><td>60m swing-n=4</td><td>max(0.5×0.4749, 3%) = 3.00%</td><td>21.16 – 22.26（宽 5.20%）</td><td>一买（0918 底背驰）→ 现于 60m 中枢内</td></tr>
+
+  </table>
+  <div class="ev">【60 分钟底背驰·成立（一买）】20260916 低 18.75，macd_area_down = 0.0344 → 20260918 低 18.72，macd_area_down = 0.0；价格微创新低、绿柱面积归零，<b>dif_agree = true</b>（DIF 未创新低）→ 面积法 + DIF 法两法一致 → 一买成立。<br>【日线底背驰候选·成立】20260428 与 20260727 两处底背驰 dif_agree = <b>true</b>（脚本输出），对应 4 月与 7 月两次低点，与三重底结构互证。<br>【60 分钟顶背驰候选·不成立】20261012 高 22.26（面积 1.7881）→ 20261014 高 23.24（面积 0.9133），面积缩小但 <b>dif_agree = false</b> → 仅 1/3 法，判定不成立，不构成减仓依据。<br>【日线顶背驰候选】20260508 处 dif_agree = false → 不成立。</div>
+  <div class="note"><b>画法投票：</b><b>中枢边界：画法 A 与 B 高度一致</b>（ZG 均为 20.88，ZD 19.37 vs 19.20 差 0.85%），三买依据稳健；画法 C 将 20260812 高点 23.14 纳入中枢（宽 18.12%），属过度宽化——标准缠论中枢为次级别走势类型的重叠区，如此宽的区间实为「盘整区」而非中枢，<b>不予采信</b>。→ 买卖点依赖的画法基本唯一。<br><b>趋势方向：对窗口敏感</b>——n4=range / n5=down / n6=down，multi_window agree = false。原因明确：10 月以来的上涨尚未形成新的日线摆动点（分形滞后），脚本仍以 9 月结构判定。一旦右侧 5 根日 K 确认 23.24 为新摆动高点、21.16 为新摆动低点，日线 trend 将翻多。<b>周线分歧更大</b>：n2 投票 up（已捕捉到 18.00 反弹）、n4 投票 down，agree = false，周线级别结论置信度低。</div>
+</div>
+
+<div class="method">
+  <div class="method-h"><b>4. 波浪理论</b><span class="sig">信号 +1</span><span class="wt">权重 0.15</span></div>
+  <p>自 2026-07-27 低点 18.00 起，日线级别呈推动浪结构。首选数法为<b>新的上升 1-2-3 浪</b>，次选为<b>大级别下跌（46.88→18.00）后的 B 浪反弹</b>。两套数法方向均向上，差别在目标深度与可持续性。关键观察：浪 2 回撤 86%（23.14→18.72，回撤浪 1 的 86%），深但未破浪 1 起点（18.72 &gt; 18.00）✓，随后浪 3 展开并已在 10-14 触及 23.24。</p>
+  <table>
+    <tr><th>数法</th><th>当前浪型</th><th>目标位</th><th>失效位</th></tr>
+    
+<tr><td><b>首选</b> 上升 1-2-3</td><td>浪1：18.00 → 23.14（0727→0812，+28.6%）<br>浪2：23.14 → 18.72（0812→0918，−19.1%，回撤 86%）<br><b>浪3：18.72 → 进行中（1014 已至 23.24）</b></td><td>① 3 = 1 浪等长 → <b>23.86</b>（已接近）<br>② 3 = 1.618×1 浪 → <b>27.04</b></td><td>跌破浪 1 起点 18.00 即数法失效</td></tr>
+<tr><td>次选 B 浪反弹</td><td>大级别下跌 46.88 → 18.00（−61.6%）<br><b>B 浪反弹进行中（现 22.18）</b></td><td>① B 至 0.786 回撤位 → <b>24.18</b><br>② B 至 0.618 回撤位 → 29.03</td><td>跌破 18.00 即 B 浪假设失效</td></tr>
+
+  </table>
+  <div class="note "><b>铁律校验：</b>① <b>2 浪不破 1 浪起点</b>：浪 2 低点 18.72 &gt; 浪 1 起点 18.00 ✓<br>② <b>3 浪不是 1/3/5 中最短</b>：浪 3 进行中（已达 23.24，接近等长目标 23.86），暂无法终判，不作为否决项<br>③ <b>4 浪不进 1 浪价格区</b>：尚未走到浪 4，不适用<br>次选 B 浪：B 浪允许不创新高，无铁律冲突 ✓<br><b>两套数法均通过铁律校验，波浪权重维持 0.15。</b>需注意：若按首选数法，浪 3 等长目标 23.86 已近在眼前（1014 高点 23.24 距其仅 2.7%），意味着<b>若 3 浪在此结束，短期上行空间有限</b>，需看到浪 4 回调后再展开浪 5 才能看向 27.04。</div>
+</div>
+
+<h2>五、关键价位</h2>
+<table>
+  <tr><th>类型</th><th>价位</th><th>来源</th><th>强度</th></tr>
+  
+<tr><td>压力（本轮 Fib 0.382）</td><td class="num">22.93</td><td>Fib 回撤（25.98→18.00）0.382 位；10-14 高点 23.24 实际受阻于此附近</td><td><b>强（已验证）</b></td></tr>
+<tr><td>压力（前高）</td><td class="num">23.24</td><td>日线摆动高点 20261014 / 60 分钟 HH</td><td>中</td></tr>
+<tr><td>压力（浪 3 等长）</td><td class="num">23.86</td><td>波浪目标：3 浪 = 1 浪等长（脚本 Fib 参数推算）</td><td>中</td></tr>
+<tr><td>压力（大级别 Fib 0.786）</td><td class="num">24.18</td><td>Fib 回撤（46.88→18.00）0.786 位</td><td>中</td></tr>
+<tr><td>压力（前平台高点）</td><td class="num">25.98</td><td>日线摆动高点 20260603 / 本轮下跌起点</td><td>强</td></tr>
+<tr><td class="muted">── 当前价 ──</td><td class="num"><b>22.18</b></td><td>2026-10-15 收盘（−2.29%）</td><td>—</td></tr>
+<tr><td>支撑（三买确认位）</td><td class="num">21.40</td><td>中枢上沿 ZG 20.88 + 0.5×ATR14（入场锚点）</td><td><b>关键</b></td></tr>
+<tr><td>支撑（60m 摆动低点）</td><td class="num">21.16</td><td>60 分钟摆动低点 20261013（突破后回踩低点）</td><td>中</td></tr>
+<tr><td>支撑（中枢上沿 ZG）</td><td class="num">20.88</td><td>日线中枢 ZG（画法 A/B 一致）；收盘跌回此下方 = 三买失效</td><td><b>强（结构位）</b></td></tr>
+<tr><td>支撑（结构失效位）</td><td class="num">20.36</td><td>ZG 20.88 − 0.5×ATR14（止损锚点）</td><td><b>强</b></td></tr>
+<tr><td>支撑（中枢下沿 ZD）</td><td class="num">19.37 ~ 19.20</td><td>日线中枢 ZD（画法 A / B）</td><td>中</td></tr>
+<tr><td>支撑（三重底 / 周线前低）</td><td class="num">18.00 ~ 18.72</td><td>20260727 低 18.00 / 20260918 低 18.72 / 20260626 低 18.58；周线摆动低点</td><td><b>强（大级别）</b></td></tr>
+
+</table>
+
+<h2>六、量价与信号确认</h2>
+<table>
+  <tr><th>项目</th><th>结论</th><th>依据</th></tr>
+  <tr><td>MACD 背驰</td><td>日线红柱连续 5 根放大、周线同步放大；60 分钟短线绿柱温和（回调不破位）</td><td class="ev">日线：DIF 0.4486 / DEA 0.1186 / hist <b>+0.6599</b>；last_5_hist = 0.1926 → 0.3518 → 0.4708 → 0.6491 → 0.6599，<b>红柱连续 5 根放大</b>，多头动能持续。<br>周线：DIF −1.6329 / DEA −2.2230 / hist <b>+1.1802</b>；last_5_hist = 0.7728 → 0.6982 → 0.7705 → 0.9203 → 1.1802，周线红柱同步放大——<b>日线与周线动能共振向上</b>，这在长期下跌后的底部是较强的修复信号。<br>60 分钟：DIF 0.4085 / DEA 0.5240 / hist −0.2309，last_5_hist = −0.0005 → −0.0472 → −0.1232 → −0.2055 → −0.2309，短线绿柱温和放大（回调整理），未出现顶背驰式衰竭（顶背驰候选 dif_agree = false，仅 1/3 法）。</td></tr>
+  <tr><td>量价配合</td><td>突破放量 + 回调缩量，量价配合健康</td><td class="ev">日线 volume.ratio_vs_ma5 = <b>1.481</b>（今日放量）；10 月量能阶梯：1007 0.64M → 1008 6.57M → 1009 10.18M → <b>1012 14.72M（突破日，量比 2.20×）</b> → 1013 8.76M → 1014 22.07M → 1015 23.46M。突破日 2.20× 放量达标；1014/1015 连续两日 20M+ 高量但价格未破位，1015 收 22.18（−2.29%）属高位换手而非恐慌出逃。<br>60 分钟最后一根量比 0.423（回调缩量）→ <b>放量上涨、缩量回调</b>，结构健康。</td></tr>
+  <tr><td>突破有效性</td><td>突破日线中枢上沿 20.88——<b>待确认（满足 3/4 条，幅度条件首日未达）</b></td><td class="ev">判定对象：日线中枢上沿 ZG = 20.88（画法 A/B 一致），突破日 2026-10-12 收盘 21.42。<br>① 收盘价站上关键位：<b>✓</b>（21.42 &gt; 20.88）<br>② 突破幅度 ≥ 1.0×ATR14（突破日 ATR14 = 0.9928，脚本对截至 20261012 数据单独计算）：<b>✗</b>（幅度 0.54 = 0.54×ATR）——但第 3 根（1014）收 22.70，距 ZG 达 1.82 = 1.83×ATR，幅度条件随后补足<br>③ 成交量 ≥ 1.5×MA5 量：<b>✓</b>（14.72M / 6.68M = 2.20×）<br>④ 突破后 3 根内不跌回：<b>✓</b>（21.70 / 22.70 / 22.18，最低回踩 21.16）<br>→ 满足 3/4 条，按 4.2 判<b>待确认（置信度降一档）</b>；结合第 3 根幅度已达标与威科夫 Phase D 证据，实际突破可信度较高。</td></tr>
+</table>
+
+<h2>七、综合结论</h2>
+<table>
+  <tr><th>维度</th><th>结论</th></tr>
+  <tr><td>加权总分</td><td class="num">+0.51 → 强多（+0.2 ≤ S，且 ≥ +0.5）——但为<b>边际强多</b></td></tr>
+  <tr><td>方向判断</td><td>周线空头尾声 + 日线破前 LH 预警 + 60 分钟确认多头：自下而上的反转尝试，三买结构已成立</td></tr>
+  <tr><td>操作基调</td><td><b>不追高，等回踩。</b>三买结构与威科夫 Phase D 证据扎实，但现价 22.18 追入的 RRR 仅 0.41、止损 8.21%，双重硬闸门否决；且 T1（22.93）距现价仅 3.4%，浪 3 等长目标 23.86 也已近，短期赔率不佳。正确姿势是等待回踩至 21.40（三买确认位）附近按确认条件入场，届时 RRR 升至 1.47~5.42。板块（恒生科技）尚未止跌是最大的外部拖累，已按 ×0.6 打折。</td></tr>
+  <tr><td>关键冲突</td><td>① <b>周线 down vs 日线/60 分钟转多</b>：级别差异 + 转折预警，非矛盾信号。道氏按「主要趋势」本应给 −1，但日线突破前 LH 的破坏预警与 MA20 首次转上使方向暂不可判，取 0，这正是 S 未满分的原因之一。<br>② <b>板块走弱 vs 个股走强</b>：恒生科技贴近前低而阅文放量突破。按 SKILL 第 7 节，板块不支持个股方向 → 多头信号 <b>×0.6 打折</b>（k = 0.6，已在总分中体现：0.85 × 0.6 = 0.51）。<br>③ <b>缠论三买 + 波浪 3 浾接近等长目标</b>：三买成立但浪 3 已至 23.24（等长目标 23.86 仅 2.7% 之外），按 SKILL 第 8 节「缠论三买 + 波浪 5 浪末端」的冲突处理原则——<b>不追，等回调</b>。这与 RRR 闸门的结论一致。</td></tr>
+</table>
+<div class="note warn">
+  <b>风险提示：</b>
+  <ul>
+<li><b>现价追入的赔率已被脚本否决。</b>RRR(T1) = 0.41 &lt; 1、止损幅度 8.21% &gt; 8%，双重硬闸门触发。若无视闸门直接市价买入，需承受接近 1:0.4 的风险收益比。</li>
+<li><b>浪 3 等长目标 23.86 仅剩 2.7% 空间。</b>若 3 浪在 23.86~24.18 区域结束，随后是浪 4 回调（可能回踩 21~21.5），追高者将被直接套在浪 4 里。</li>
+<li><b>板块贝塔压制。</b>恒生科技现价 4060.99 距前低 4042.05 仅 0.47%，若有效跌破则板块打开新低空间，阅文的三买大概率被击穿（回踩将深于 20.88）。</li>
+<li><b>周线级别仍是长期下跌趋势。</b>MA20 20.49 &lt; MA60 29.31，周线从 95.75 到 18.00 跌去 81%。本次反弹无论多强，在周线修复完成前都属于逆大势的结构性行情，T3（27.04）之后的路径高度不确定。</li>
+<li><b>日线趋势判定对画法敏感。</b>multi_window agree = false（n4=range / n5=down / n6=down），当前「破前 LH」的转多信号需第二次确认；若回踩跌破 20.88，脚本 trend 将维持 down，三买失效。</li>
+<li><b>分形摆动点滞后。</b>10 月上涨尚未被 swings 收录，trend = down 是"旧结构"判定；同理，若未来 5 根内出现新低/新高，需人工补判。</li>
+<li><b>港股无涨跌停，波动极端。</b>日线 ATR14 占比 4.71%（A股多数个股 2~3%），止损 20.36 与现价 22.18 之间可能出现跳空穿越，需以收盘价为准执行纪律。</li>
+</ul>
+</div>
+<div class="note">
+  <b>不确定性声明：</b>① 波浪给出首选（上升 1-2-3）与次选（B 浪反弹）两套数法，方向一致但含义不同——首选意味着新上升趋势展开，次选意味着反弹后仍将续跌；两者分水岭在 24.18~25.98 区域能否有效突破。② 缠论中枢画法在 n4/n5 下一致（ZG 20.88），n6 画法不予采信；但趋势方向投票不一致（agree = false），买卖点精度受限。③ 60 分钟顶背驰候选（1012→1014）仅 1/3 法成立，若后续 DIF 转为背离需重新评估减仓。④ 板块代理用恒生科技指数，港股无行业板块指数，代理误差客观存在（阅文属传媒文娱，恒生科技偏硬件与平台）。⑤ flags.limit_days 字段沿用 A 股 10% 阈值，对港股无意义，已在数据概况中声明。
+</div>
+
+<div class="disc">
+  本报告由趋势结构信号技能自动生成，K 线数据来源于通达信（tdx-connector），指标由 scripts/indicators.py 计算。
+  四套方法论均为概率性判断，缠论画法与波浪数法存在主观性，报告已标注假设与备选。
+  本报告仅提供结构与风险判断，不构成任何投资建议。生成时间 2026-10-15 16:40。
+</div>
+
+</div>
+</body>
+</html>
