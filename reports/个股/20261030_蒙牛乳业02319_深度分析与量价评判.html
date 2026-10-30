@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="02319 数据基准 2026-10-30（盘中折算）；乳制品龙头，评分 91/165（可以买入，受大盘 gate 降级约束），威科夫加仓期·高位突破日，引擎止损 18.61；10-30 放量长阳 +7.11% 创 60 日新高，但处 92% 高位追涨位，空仓冻结买入等回踩">
+<meta name="report-type" content="个股深度">
+<title>蒙牛乳业 02319.HK · 单票深度分析与量价评判</title>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#fff; --ink:#1c2532; --ink2:#4a5568; --ink3:#7b8494;
+  --line:#e2e6ec; --line2:#eef1f5;
+  --navy:#1a3a6b; --navy-l:#2c5ba0; --navy-bg:#eef3fa;
+  --up:#c0392b; --down:#12864b;
+  --warn:#b8860b; --warn-bg:#fdf6e3;
+  --good-bg:#eaf5ef; --bad-bg:#fdeceb; --gold:#8a6d3b; --gold-bg:#fbf5e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.hero{background:linear-gradient(135deg,#152c4e,#1a3a6b 45%,#2c5ba0);color:#fff;padding:40px 0 34px;margin-bottom:26px}
+.hero .wrap{padding-bottom:0}
+.hero .eyebrow{font-size:12px;letter-spacing:2.5px;opacity:.72}
+.hero h1{font-size:29px;font-weight:700;margin:8px 0}
+.hero .sub{font-size:14.5px;opacity:.85}
+.hero .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:18px;font-size:12px}
+.verdict{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(20,40,80,.06)}
+.verdict h2{font-size:18px;color:var(--navy);margin-bottom:10px}
+.rate{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.rate div{flex:1;min-width:140px}
+.rate .k{font-size:11px;color:var(--ink3);letter-spacing:.5px}
+.rate .v{font-size:21px;font-weight:700;color:var(--navy);line-height:1.4}
+.rate .v.sm{font-size:16px}
+p{margin-bottom:10px;color:var(--ink2)}
+strong{color:var(--ink);font-weight:600}
+em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600;color:var(--ink)}
+section{margin-bottom:30px}
+h2.sec{font-size:19px;color:var(--navy);padding-bottom:9px;margin-bottom:16px;border-bottom:2px solid var(--navy);display:flex;align-items:baseline;gap:10px}
+h2.sec .no{background:var(--navy);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px;font-weight:600}
+h3{font-size:16px;color:var(--navy-l);margin:20px 0 10px;font-weight:600}
+h4{font-size:14px;color:var(--ink);margin:14px 0 7px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,40,80,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tile .lb{font-size:11px;color:var(--ink3);margin-bottom:4px}
+.tile .vl{font-size:21px;font-weight:700;line-height:1.3}
+.tile .hint{font-size:11px;color:var(--ink3);margin-top:2px}
+.tile.navy .vl{color:var(--navy)}
+.tile.up .vl{color:var(--up)}
+.tile.down .vl{color:var(--down)}
+.tile.gold{background:var(--gold-bg);border-color:#e8d9b8}
+.tile.gold .vl{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px;background:var(--panel)}
+th{background:var(--navy);color:#fff;font-weight:600;padding:8px 9px;text-align:left;font-size:12px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tbody tr:hover{background:#f7f9fc}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ctr,th.ctr{text-align:center}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.bold{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;padding:1.5px 8px;border-radius:4px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-buy{background:var(--good-bg);color:#0f6b3c;border:1px solid #b8e0c8}
+.t-wait{background:var(--warn-bg);color:#8a6508;border:1px solid #ecdcae}
+.t-avoid{background:var(--bad-bg);color:#a32a22;border:1px solid #f0c2bd}
+.t-core{background:var(--navy-bg);color:var(--navy);border:1px solid #c3d4ec}
+.t-src{background:#eef1f5;color:var(--ink3);border:1px solid #dbdfe6;font-weight:500}
+.note{border-left:4px solid var(--navy-l);background:var(--navy-bg);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink2)}
+.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.bad{border-left:4px solid var(--up);background:var(--bad-bg)}
+.good{border-left:4px solid #0f6b3c;background:var(--good-bg)}
+.note .hd{font-weight:700;color:var(--ink);margin-bottom:3px;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:9px;margin:11px 0}
+.kv .i{background:#f8fafc;border:1px solid var(--line2);border-radius:6px;padding:7px 10px}
+.kv .i .k{font-size:10.5px;color:var(--ink3)}
+.kv .i .v{font-size:14.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+ul{margin:7px 0 11px 20px;color:var(--ink2)}
+li{margin-bottom:5px;font-size:13.5px}
+ol{margin:7px 0 11px 22px;color:var(--ink2)}
+ol li{margin-bottom:5px;font-size:13.5px}
+.svgbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0;text-align:center}
+.svgbox svg{max-width:100%;height:auto}
+.src{font-size:11px;color:var(--ink3);margin-top:5px;font-style:italic}
+.foot{margin-top:30px;padding:16px 20px;background:#fffaf0;border:1px solid #f0dfbc;border-radius:8px;font-size:12.5px;color:#7a5c28}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">EQUITY RESEARCH · SINGLE STOCK DEEP DIVE</div>
+    <h1>蒙牛乳业 02319.HK · 深度分析与量价评判</h1>
+    <div class="sub">乳制品龙头（港股双雄之一） · 威科夫 12 项梯度评分 + 量价关系验证</div>
+    <div class="meta">
+      <span>数据基准：2026-10-30 午间（盘中折算数据）</span>
+      <span>评分 91/165 · 可以买入（受大盘 gate 降级约束）</span>
+      <span>威科夫阶段：加仓期·高位突破日</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2 class="sec"><span class="no">00</span>核心结论</h2>
+  <div class="verdict">
+    <h2>评级：技术面「可以买入但今日不追」（受大盘 gate 降级为持有/观察）／基本面「拐点确认·价值成长期」</h2>
+    <div class="rate">
+      <div><div class="k">最新价（盘中折算）</div><div class="v">HK$19.44 <span class="up">+7.11%</span></div><div class="k" style="font-weight:400;color:var(--ink3)">量比 3.57x · 午间快照，收盘或有变化</div></div>
+      <div><div class="k">12 项评分</div><div class="v">91 / 165</div><div class="k" style="font-weight:400;color:var(--ink3)">首次覆盖（无前次对比）</div></div>
+      <div><div class="k">威科夫阶段</div><div class="v sm">加仓期·高位</div><div class="k" style="font-weight:400;color:var(--ink3)">60 日区间位置 92%</div></div>
+      <div><div class="k">操作建议</div><div class="v sm">gate 防御区→只减不加</div><div class="k" style="font-weight:400;color:var(--ink3)">空仓买入计划冻结</div></div>
+    </div>
+    <p><em>一句话总结：10-30 蒙牛放量长阳 +7.11% 创 60 日新高，系华西证券乳业研报催化 + 原奶价格 7 月五年来首次同比转正 + 板块共振（等权 +2.72%）的板块性突破；评分 91 已达「可以买入」档，但当日大盘 gate 处防御区（创业板 44 分）、且个股处 60 日区间 92% 高位的追涨位——正确动作是持有者持股守止损、空仓者冻结买入、等缩量回踩（LPS）或 gate 回升后再执行。</em></p>
+    <div class="kv">
+      <div class="i"><div class="k">60日区间</div><div class="v">16.85 – 19.44</div></div>
+      <div class="i"><div class="k">52周区间</div><div class="v">13.28 – 19.67</div></div>
+      <div class="i"><div class="k">MA20 / 斜率</div><div class="v">18.23 / +0.95%</div></div>
+      <div class="i"><div class="k">引擎止损位</div><div class="v">18.61</div></div>
+      <div class="i"><div class="k">ATR%</div><div class="v">2.86%（低波）</div></div>
+      <div class="i"><div class="k">总市值</div><div class="v">≈752.6 亿港元</div></div>
+    </div>
+    <div class="grid2">
+      <div class="tile navy"><div class="lb">大盘 gate（取最弱指数，操作计划必须对齐）</div><div class="vl">防御区 44 分（创业板）</div><div class="hint">上证 70 分中性区 · 创业板 44 分防御区 → gate 结论：只减不加，反弹视为减仓机会（盘中折算数据）</div></div>
+      <div class="tile up"><div class="lb">分支对照（乳业 7 标的等权，10-30）</div><div class="vl">+2.72% 板块性上涨</div><div class="hint">蒙牛 +7.11% 领涨且放量 3.57x = 板块内最强；澳优为 10-29 数据（近似停牌）已移出等权</div></div>
+      <div class="tile gold"><div class="lb">估值快照</div><div class="vl">2026E PE ≈14x</div><div class="hint">2027E ≈11x [推算：华西 2026-09-01 预测净利 48/61 亿元 + 现市值]；机构目标均价 23.58 港元 [聚合口径存疑]</div></div>
+      <div class="tile navy"><div class="lb">关键回撤位</div><div class="vl">18.23（MA20）</div><div class="hint">收盘跌破 MA20 = 分水岭①，趋势转弱减仓；17.22（60日收盘低）= 分水岭②</div></div>
+    </div>
+    <div class="note good">
+      <div class="hd">前次结论回验</div>
+      首次覆盖：回验日志中仅本次（2026-10-30）评分记录，无历史警示/建议可回验。本次评分 91、止损 18.61、60 日位置 92% 已入档，供下次报告回验——重点跟踪：① 19.67（52周高）能否有效突破；② 18.23（MA20）分水岭①是否守住；③ 盘中 3.57x 量比收盘后是否维持 2x 以上。
+    </div>
+    <div class="note bad">
+      <div class="hd">与评分框架的衔接逻辑</div>
+      评分 91≥90 理论上触发「可以买入」，但框架纪律明确"<strong>可以买</strong>"与"<strong>现在买</strong>"是两回事：90 分档买入必须等 LPS（缩量回踩）或 Spring 确认，且大盘 gate 须在进攻/中性区。当前两个条件均不满足——gate 在防御区、个股刚放量大涨处追涨位。故技术面评级落地为「可以买入但不追」，执行指令以 gate 对齐后的操作计划为准。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">01</span>公司画像</h2>
+  <div class="card">
+    <p>蒙牛乳业（02319.HK）为中国乳业双雄之一，中粮集团为大股东，<strong>2026 年中报收入 447.95 亿元（+7.8%）、经营利润 36.8 亿元创历史新高、归母净利 23.72 亿元（+15.9%）、可比归母净利 +31.5%</strong>[公司公告 2026-08-26]。业务结构（2026H1）：液态奶 75.6%（特仑苏/纯牛奶/低温酸奶/鲜奶）、冰淇淋 9.4%、奶酪 7.0%（控股妙可蓝多）、奶粉及其他。</p>
+    <ul>
+      <li><strong>产品卡位：</strong>常温白奶「压舱石」（特仑苏、母品牌上半年均高个位数增长）；低温液态奶行业第一（低温酸奶份额第一）；鲜奶、奶粉、奶酪三大板块收入增速均超 30% [公司中报]。</li>
+      <li><strong>产业纵深：</strong>联营现代牧业（上游原奶，奶价反转最大受益方之一）、控股妙可蓝多（奶酪深加工，连续三季度增速 &gt;20%）。</li>
+      <li><strong>行业位置：</strong>与伊利（600887.SH）构成双寡头。本轮周期错位：伊利 2026H1 净利 −20%（对澳优计提商誉减值 15.47 亿 + 存货跌价 9.08 亿，一次性），蒙牛无大额减值、盈利提速——<strong>减值出清节奏不同是当日对照中「蒙牛 +7.11% vs 伊利 +0.78%」分化的核心解释</strong>。</li>
+    </ul>
+    <table>
+      <thead><tr><th>报告期</th><th class="num">营业收入</th><th class="num">同比</th><th class="num">归母净利润</th><th class="num">同比</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>2026H1</td><td class="num">447.95 亿元</td><td class="num up">+7.8%</td><td class="num">23.72 亿元</td><td class="num up">+15.9%</td><td>可比口径 +31.5%；毛利率 40.8%（−0.9pct）</td></tr>
+        <tr><td>2025FY</td><td class="num">822.45 亿元</td><td class="num down">−7.25%</td><td class="num">15.45 亿元</td><td class="num">大幅修复</td><td>2024 年净利 1.05 亿（贝拉米等减值砸出低基数）[华西证券 2026-04-01 引用]</td></tr>
+        <tr><td>2024FY</td><td class="num">886.75 亿元</td><td class="num down">−10.09%</td><td class="num">1.05 亿元</td><td class="num down">−97.8%</td><td>减值利空集中出清之年 [华西证券]</td></tr>
+      </tbody>
+    </table>
+    <h3>增长引擎与卖方观点</h3>
+    <ul>
+      <li><strong>奶价周期反转（本轮核心逻辑）：</strong>原奶价格过去 5 年持续下跌，2026 年 7 月首次同比增速转正；伊利 Q3 业绩会确认三季度合同奶价同比小幅上涨、供需趋衡，明年有望温和回升 [银河证券 2026-10-30 / 伊利业绩会转引]。</li>
+      <li><strong>利润弹性路径：</strong>奶价上行期经销商愿意承接库存、促销收窄 → 销售费用率有下降空间；联营现代牧业投资收益随周期反转改善 [华西证券 2026-09-01]。</li>
+      <li><strong>卖方盈利预测 [卖方预测]：</strong>华西证券（2026-09-01，寇星团队）：26-28 年归母净利 48 / 61 / 66 亿元，26-28 年 EPS 1.23 / 1.57 / 1.71 元，维持「买入」；27 家机构目标均价 23.58 港元（最高 27.26 / 最低 21.00），10 月 33 家覆盖机构 97% 给予买入/增持 [第三方聚合数据，口径存疑]。</li>
+      <li><strong>催化日与量价对应：</strong>10-28 华西发布乳业板块研报「可攻可守、看好未来 3 年周期向上」→ 10-30 板块集体大涨、蒙牛放量突破。消息日与放量日（10-30）直接对应。</li>
+    </ul>
+    <div class="note warn">
+      <div class="hd">股本与分红变量（对估值有实质影响）</div>
+      ① 2026 年公司于公开市场回购 741 万股、部分已注销，<strong>不建议派发中期股息</strong>（以回购替代提升 EPS）[公司中报公告]；② FY2025 末期息每股 0.52 元人民币（约 0.5976 港元）已于 2026-06-09 除权。回购注销节奏与派息政策变化直接影响每股指标与股息率锚。
+    </div>
+  </div>
+</section>
+<!-- 01 核心结论：verdict 卡（评级/最新价/评分/阶段/操作建议 + 一句话 + 三 tile + 前次结论回验 note） -->
+<!-- 02 公司画像：业务/客户/财务表/增长引擎 + 与同分支标的的产业位置对比 note -->
+
+<section>
+  <h2 class="sec"><span class="no">02</span>12 项评分与量价叙事</h2>
+  <div class="card">
+    <h3>评分逐项表（首次覆盖，无 vs 前次）</h3>
+    <table>
+      <thead><tr><th>#</th><th>指标</th><th class="num">得分</th><th class="num">满分</th><th>实测与判定</th><th>vs 前次</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>价/MA20</td><td class="num">13</td><td class="num">15</td><td>1.066（价 19.44 / MA20 18.23）</td><td>首次</td></tr>
+        <tr><td>2</td><td>MA20 斜率</td><td class="num">8</td><td class="num">10</td><td>+0.95%，已由负转正</td><td>首次</td></tr>
+        <tr><td>3</td><td>MACD</td><td class="num">20</td><td class="num">20</td><td>DIF +0.168 / DEA +0.118，零轴上方金叉</td><td>首次</td></tr>
+        <tr><td>4</td><td>区间位置 60 日</td><td class="num">0</td><td class="num">20</td><td>92% 高位——非低吸位，位置分归零</td><td>首次</td></tr>
+        <tr><td>5</td><td>ATR 收缩</td><td class="num">7</td><td class="num">15</td><td>0.51→0.56 走平（今日大阳后波动放大）</td><td>首次</td></tr>
+        <tr><td>6</td><td>低波 ATR%</td><td class="num">10</td><td class="num">10</td><td>2.86%，低波动标的</td><td>首次</td></tr>
+        <tr><td>7</td><td>涨幅安全</td><td class="num">15</td><td class="num">15</td><td>60 日 +3.85%，无过热</td><td>首次</td></tr>
+        <tr><td>8</td><td>量价关系</td><td class="num">13</td><td class="num">15</td><td>放量长阳 SOS/JOC：+7.11%、量 3.57x [盘中折算]</td><td>首次</td></tr>
+        <tr><td>9</td><td>Spring</td><td class="num">0</td><td class="num">15</td><td>无（10 月下旬回踩未破前支撑 16.85，未构成缩量假破位）</td><td>首次</td></tr>
+        <tr><td>10</td><td>回调质量</td><td class="num">5</td><td class="num">10</td><td>中性 0.84x（10 月下旬回调末端 10-29 缩至 0.61x）</td><td>首次</td></tr>
+        <tr><td>11</td><td>底背离</td><td class="num">0</td><td class="num">20</td><td>无（高位区无底背离，符合预期）</td><td>首次</td></tr>
+        <tr><td>12</td><td>顶背离</td><td class="num">0</td><td class="num">0</td><td>无（裸背离与确认背离均未出现，不扣分）</td><td>首次</td></tr>
+      </tbody>
+    </table>
+    <p class="src">数据源：腾讯 ifzq 前复权 201 根（timing_score.py，2026-10-30 午间）；判定档阈值 [120/90/65/40]（ATR 分层 ±0，ATR% 2.86% 未触发加档）；<strong>当日为盘中折算数据（港股交易时长 330 分钟按已开盘时长年化），收盘后第 8/10 项量价分项可能变化，建议收盘后复评</strong>。</p>
+    <div class="note">
+      <div class="hd">结构归因（首次覆盖，替代降幅归因）</div>
+      扣分集中在 <strong>位置项 S4（0/20）与 Spring/底背离（0/35）</strong>——这是「高位区」的必然扣分，而非结构破坏；<strong>趋势结构项 1/2/3 全部向好</strong>（价站上 MA20 6.6%、MA20 斜率转正、MACD 金叉），当日信号项 S8 强（放量长阳 SOS）。整体形态属「<strong>结构完好型突破</strong>」而非「结构破坏型回调」：前者的问题只是买点位置高（追涨），不存在止损压力。框架结论：可以买入，但必须等更好的买点（LPS 缩量回踩），且受 gate 防御区约束降级执行。
+    </div>
+  </div>
+
+  <div class="svgbox">
+    <svg viewBox="0 0 900 405" xmlns="http://www.w3.org/2000/svg" font-family="PingFang SC,Microsoft YaHei,sans-serif">
+      <rect x="0" y="0" width="900" height="405" fill="#ffffff"/>
+      <text x="450" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1a3a6b">蒙牛乳业 02319.HK · 近 40 日收盘价与事件叙事（2026-09-03 ~ 10-30，前复权）</text>
+      <g stroke="#eef1f5" stroke-width="1">
+        <line x1="60" y1="50" x2="880" y2="50"/><line x1="60" y1="135.7" x2="880" y2="135.7"/><line x1="60" y1="189.3" x2="880" y2="189.3"/><line x1="60" y1="242.9" x2="880" y2="242.9"/><line x1="60" y1="296.4" x2="880" y2="296.4"/><line x1="60" y1="350" x2="880" y2="350"/>
+      </g>
+      <g font-size="11" fill="#7b8494" text-anchor="end">
+        <text x="55" y="54">19.8</text><text x="55" y="139.7">19.0</text><text x="55" y="193.3">18.5</text><text x="55" y="246.9">18.0</text><text x="55" y="300.4">17.5</text><text x="55" y="354">17.0</text>
+      </g>
+      <polyline fill="none" stroke="#2c5ba0" stroke-width="2.2" points="60,269.6 81,217.1 102.1,218.2 123.1,189.3 144.1,221.4 165.2,232.1 186.2,204.3 207.2,229.9 228.2,246 249.3,244.9 270.3,233.2 291.3,267.5 312.3,244.9 333.4,277.1 354.4,251.4 375.4,272.9 396.4,293.2 417.4,241.7 438.5,255.7 459.5,260 480.5,287.9 501.5,310.4 522.6,326.4 543.6,317.9 564.6,291.1 585.6,217.1 606.6,233.2 627.7,224.6 648.7,154.9 669.7,146.3 690.7,157 711.8,150.6 732.8,229.9 753.8,189.3 774.8,175.6 795.8,175.6 816.9,225.7 837.9,239.6 858.9,226.7 880,88.6"/>
+      <polyline fill="none" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="6,4" points="480.5,243.9 564.6,264.3 669.7,255.7 774.8,236.4 880,218.2"/>
+      <text x="742" y="228" font-size="11" fill="#b8860b" font-weight="600">MA20 = 18.23</text>
+      <line x1="880" y1="88.6" x2="880" y2="60" stroke="#c0392b" stroke-width="1"/>
+      <g font-size="11">
+        <circle cx="396.4" cy="293.2" r="4" fill="#12864b"/><text x="330" y="316" fill="#12864b">09-25 缩量回踩 17.53</text>
+        <circle cx="522.6" cy="326.4" r="4" fill="#12864b"/><text x="448" y="345" fill="#12864b">10-06 阶段低点 17.22（60日最低价16.85）</text>
+        <circle cx="648.7" cy="154.9" r="4" fill="#b8860b"/><text x="548" y="132" fill="#8a6508">10-14 放量长阳 18.82（中报后资金确认）</text>
+        <circle cx="732.8" cy="229.9" r="4" fill="#7b8494"/><text x="640" y="256" fill="#7b8494">10-22 放量下跌 18.12 回踩MA20</text>
+        <circle cx="880" cy="88.6" r="5" fill="#c0392b"/><text x="700" y="72" fill="#c0392b" font-weight="700">10-30 +7.11% 量3.57x[盘中折算] 创60日新高</text>
+      </g>
+      <g font-size="11" fill="#7b8494" text-anchor="middle">
+        <text x="60" y="375">09-03</text><text x="291" y="375">09-18</text><text x="585" y="375">10-09</text><text x="880" y="375">10-30</text>
+      </g>
+      <text x="60" y="396" font-size="10.5" fill="#7b8494">事件：08-26 中报公告（窗口外）→ 10-28 华西乳业研报 → 10-30 原奶转正逻辑发酵+板块共振。蓝色实线=收盘价，金色虚线=MA20。</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h3>逐段解读（40 日切 6 段）</h3>
+    <table>
+      <thead><tr><th>阶段</th><th>价格行为</th><th>量能行为</th><th>框架判定</th></tr></thead>
+      <tbody>
+        <tr><td>09-03 ~ 09-11</td><td>17.75→18.36，高位整理</td><td>1400–2000 万股/日，平稳</td><td>区间上沿震荡，方向待选</td></tr>
+        <tr><td>09-14 ~ 09-25</td><td>18.12→17.53，阴跌 3.3%</td><td>持续缩量（09-21 仅 551 万股）</td><td>缩量回调、未破前支撑，结构未坏</td></tr>
+        <tr><td>09-28 ~ 10-07</td><td>17.53→17.30 磨底，10-05 触 60 日最低价 16.85</td><td>量能萎缩至 600–1300 万股</td><td>筑底观望期，无 Spring（未假破位）</td></tr>
+        <tr><td>10-08 ~ 10-16</td><td>17.55→18.80，+7.1%</td><td>10-14 放量 2418 万股长阳 +3.6%</td><td><strong>SOS：中报（08-26）后基本面修复获资金确认</strong></td></tr>
+        <tr><td>10-20 ~ 10-29</td><td>18.86→18.15 回撤，10-27 −2.5%</td><td>10-22 放量 2898 万股下跌→10-29 缩至 0.61x 止跌</td><td>放量回踩 MA20 后缩量企稳，类 LPS 形态雏形</td></tr>
+        <tr><td>10-30（当前日）</td><td><strong>19.44 +7.11%，创 60 日收盘新高，逼近 52 周高 19.67</strong></td><td><strong>量比 3.57x [盘中折算]</strong></td><td>放量突破日：华西研报（10-28）+ 奶价 7 月转正发酵 + 板块共振（等权 +2.72%）；突破有效性待收盘确认与后续 LPS 验证</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>量价三问（逐条对照框架定义）</h3>
+    <div class="grid3">
+      <div class="tile"><div class="lb">① 最近一次放量是有效上涨/突破吗？</div><p style="font-size:13px"><strong>是（初步成立，待收盘确认）。</strong>10-30 收盘 19.44 创 60 日新高（价创新高）+ 量比 3.57x（远超「放大 30%」阈值）→ 符合「有效上涨/突破」定义，引擎判定 SOS/JOC。但为盘中折算数据，<strong>收盘后需复核量比是否维持 2x 以上</strong>；且同日板块普涨，属板块性突破而非独立个股突破。</p></div>
+      <div class="tile"><div class="lb">② 最近一次下跌是有效下跌还是诱空？</div><p style="font-size:13px"><strong>非有效下跌，偏「缩量回调」性质。</strong>10-22 放量下跌（−2.05%、2898 万股）与 10-27（−2.52%）均未创新低（最低 17.81 远高于 16.85），且末端 10-29 量比缩至 0.61x——不满足「创新低+缩量=有效下跌」定义；回调在 MA20 附近（10-28 低 17.84）获得承接，属结构完好型回调。</p></div>
+      <div class="tile"><div class="lb">③ 现在是底部反转吗？</div><p style="font-size:13px"><strong>不适用「底部反转」框架——当前是高位突破确认问题。</strong>60 日位置 92%，不符合「低位企稳+连续 3 日温和放大」的底部反转前提。正确问题：10-30 突破后能否出现缩量回踩（LPS）确认——出现则加仓期延续，放量反吐长阳则警惕一日游。</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>系统性 vs 个股性对照（乳业分支 8 标的，2026-10-30）</h3>
+    <table>
+      <thead><tr><th>标的</th><th>代码</th><th>最新日期</th><th class="num">收盘</th><th class="num">当日涨跌</th><th class="num">量比</th></tr></thead>
+      <tbody>
+        <tr><td><strong>蒙牛乳业</strong></td><td>02319.HK</td><td>10-30</td><td class="num">19.44</td><td class="num up">+7.11%</td><td class="num">3.57x [盘中]</td></tr>
+        <tr><td>新乳业</td><td>002946.SZ</td><td>10-30</td><td class="num">15.33</td><td class="num up">+6.61%</td><td class="num">2.47x</td></tr>
+        <tr><td>中国飞鹤</td><td>06186.HK</td><td>10-30</td><td class="num">2.55</td><td class="num up">+1.80%</td><td class="num">0.88x</td></tr>
+        <tr><td>妙可蓝多</td><td>600882.SH</td><td>10-30</td><td class="num">18.17</td><td class="num up">+1.51%</td><td class="num">1.16x</td></tr>
+        <tr><td>现代牧业</td><td>01117.HK</td><td>10-30</td><td class="num">1.25</td><td class="num up">+1.21%</td><td class="num">1.86x</td></tr>
+        <tr><td>伊利股份</td><td>600887.SH</td><td>10-30</td><td class="num">29.68</td><td class="num up">+0.78%</td><td class="num">1.95x</td></tr>
+        <tr><td>光明乳业</td><td>600597.SH</td><td>10-30</td><td class="num">6.71</td><td class="num">0.00%</td><td class="num">1.34x</td></tr>
+        <tr><td>澳优</td><td>01717.HK</td><td><span class="down">10-29</span></td><td class="num">1.04</td><td class="num">0.00%</td><td class="num">0.01x</td></tr>
+        <tr><td><strong>等权平均（仅最新日期 7 标的）</strong></td><td colspan="4" class="num"><strong>+2.72%</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn">
+      <div class="hd">判读</div>
+      板块<strong>普涨</strong>（7/7 非负）且幅度分化 → <strong>系统性上涨日（板块性）</strong>，催化为华西 10-28 乳业研报 + 原奶价格 7 月转正的中期逻辑发酵 + 恒指当日 +1.64%。蒙牛<strong>涨幅领先 + 显著放量（3.57x）</strong>= 板块 β 之上叠加个股 α（双雄中无减值包袱 + 基本面拐点最顺 + 港股通标的弹性）。澳优为 10-29 落后日期数据（当日近乎无成交，疑似停牌/异常），已移出等权平均——其 2024 年被伊利计提商誉减值、基本面独立走弱，不具对照意义。
+    </div>
+  </div>
+</section>
+<!-- 03 最新12项评分：逐项表（含 vs 前次列）+ 降幅归因 note + 近40日量价叙事 SVG + 逐段解读表 + 量价三问三卡 + 系统性 vs 个股性对照表 -->
+
+<section>
+  <h2 class="sec"><span class="no">03</span>操作计划（与大盘 gate 防御区对齐）</h2>
+  <div class="note bad" style="margin-top:0">
+    <div class="hd">gate 对齐总纲</div>
+    大盘 gate 取最弱指数 = 创业板指 44 分 <strong>防御区：只减不加，反弹视为减仓机会</strong>。本票评分虽达「可以买入」档（91 分），但<strong>所有买入动作冻结</strong>；已持仓者把今日冲高视为管理仓位的机会而非加仓理由。以下计划中「再进场触发条件」是<strong>预写的执行脚本</strong>，须等 gate 回到中性/进攻区后方可执行。
+  </div>
+  <div class="grid3">
+    <div class="tile"><div class="lb">已持仓者</div>
+      <p style="font-size:13px"><strong>持股，守两条硬纪律：</strong>① 硬止损 18.61（引擎价−1.5×ATR），收盘跌破<strong>无条件减半</strong>；② 分水岭①：收盘跌破 MA20（18.23）= 趋势走弱信号，降回防御仓位。防御区纪律：<strong>今日 +7% 冲高可兑现 1/4~1/3 利润</strong>（反弹视为减仓机会），剩余仓位交由 18.97（今日长阳实体中位 [推算]）保护——收盘跌回实体一半以下视为突破失败，减至半仓以下。</p></div>
+    <div class="tile"><div class="lb">空仓者</div>
+      <p style="font-size:13px"><strong>今日不追（gate 防御区，买入冻结）。</strong>预写再进场触发条件（gate 回中性区后生效）：A. 缩量回踩 18.2–18.5 区间不破、量比 &lt;1.0、收盘站稳 MA20（LPS 确认）；或 B. 放量突破 19.67（52 周高）且收盘站稳。两条满足其一、且当日板块非普跌，方可建首仓（半仓）。<strong>当前状态：两条均未满足（刚放量大涨处追涨位）。</strong></p></div>
+    <div class="tile"><div class="lb">长线 / 估值视角</div>
+      <p style="font-size:13px">估值锚 [推算·基于华西 2026-09-01 预测]：现市值 ≈752.6 亿港元，按华西汇率假设（1 港元=0.8836 元）折 ≈665 亿元 → <strong>2026E PE ≈13.9x（净利 48 亿）、2027E ≈10.9x（61 亿）</strong>。奶价上行 + 费用率下降的利润弹性若兑现，2027E 估值将快速消化。显著低估参考区：<strong>17 港元以下对应 2026E 约 12x 以下</strong>，叠加 60 日低 16.85 支撑，为长线分批区；机构目标均价 23.58 港元 [聚合口径存疑] 仅作参照不作依据。</p></div>
+  </div>
+
+  <h3>关键价位地图（自上而下，交由市场触发）</h3>
+  <table>
+    <thead><tr><th>价位（港元）</th><th>性质</th><th>操作含义</th></tr></thead>
+    <tbody>
+      <tr><td class="num">19.67</td><td>52 周高 / 60 日最高价 19.66</td><td>突破确认位：放量站稳则打开新区间，可视为加仓信号（仍需 gate 非防御区）</td></tr>
+      <tr><td class="num bold">19.44</td><td><strong>当前价（10-30 午间，盘中折算）</strong></td><td><strong>60 日收盘新高，追涨位——今日所有买入动作冻结</strong></td></tr>
+      <tr><td class="num">18.97</td><td>今日长阳实体中位 [推算]（开 18.49 / 收 19.44）</td><td>突破日强度保护线：收盘跌回其下 = 突破失败概率大增</td></tr>
+      <tr><td class="num">18.61</td><td>引擎止损位（价 −1.5×ATR）</td><td>硬止损：收盘跌破<strong>无条件减半</strong></td></tr>
+      <tr><td class="num">18.23</td><td><strong>分水岭①：MA20</strong></td><td>守住 = 加仓期结构完好；收盘跌破 = 趋势转弱，降回防御仓位</td></tr>
+      <tr><td class="num">17.81–17.97</td><td>9-10 月平台下沿 / 10-29 回调低点</td><td>LPS 观察区：缩量回踩不破为最佳再进场触发区</td></tr>
+      <tr><td class="num">17.22</td><td><strong>分水岭②：60 日收盘低（10-06）</strong></td><td>跌破 = 本轮回调升级为结构破坏，清仓观望</td></tr>
+      <tr><td class="num">16.85</td><td>60 日最低价（10-05）/ 长线低估区上沿</td><td>长线分批参考区（对应 2026E 约 12x [推算]）</td></tr>
+      <tr><td class="num">13.28</td><td>52 周最低价</td><td>极端熊市锚，当前框架下无操作含义</td></tr>
+    </tbody>
+  </table>
+
+  <h3>风险清单</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>交易层面</h4>
+      <ul>
+        <li><span class="tag t-src">盘中数据</span> <strong>本报告全部量价数据为盘中折算（午间快照）</strong>：+7.11% 涨幅与 3.57x 量比收盘后均可能变化；第 8/10 项评分需收盘后复评，若尾盘量能萎缩，评分可能降至 90 分档边缘以下。</li>
+        <li><span class="tag t-src">位置风险</span> 60 日位置 92%、距 52 周高仅 1.2%：追涨买点的历史赔率差，突破失败（放量滞涨/长上影反包）概率不低。</li>
+        <li><span class="tag t-src">板块联动</span> 今日上涨为板块性（等权 +2.72%）：若奶价逻辑证伪或板块情绪退潮，β 回撤会掩盖个股差异；伊利 A/H 估值联动亦影响定价。</li>
+        <li><span class="tag t-src">gate 约束</span> 创业板 44 分防御区：全市场风险偏好收缩时，防御区「反弹减仓」纪律与个股看多观点冲突时，<strong>以 gate 为准</strong>。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>基本面层面</h4>
+      <ul>
+        <li><span class="tag t-src">盈利预测依赖</span> 2026E 48 亿净利为卖方预测 [华西证券 2026-09-01]；华西自身提示「下半年奶价回暖后费用率投入程度」是不确定项——奶价回升可能被促销加码对冲。</li>
+        <li><span class="tag t-src">周期证伪风险</span> 原奶「7 月转正」仅 3 个月数据，若 Q4 奶价再度回落，板块逻辑（含今日涨幅）将整体回吐；牧业板块（现代/优然）股价是奶价的先行情绪指标，可跟踪。</li>
+        <li><span class="tag t-src">需求端</span> 液态奶终端需求弱复苏，中报液态奶仅 +5.2% 跑输公司其他板块；生育率下行对奶粉长逻辑的压制未解除。</li>
+        <li><span class="tag t-src">股本/分红变量</span> 中期不派息改回购、末期息 2026-06 已除权：股息率锚下移，部分收益型资金可能流出。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">
+    <div class="hd">最后一句总结</div>
+    蒙牛当前是「基本面拐点确认 + 技术面结构完好 + 位置太高 + 大盘防御」的四因子叠加：评分给了买入资格，gate 收走了买入动作——<strong>把 19.44 的冲动留给纪律，把 18.2–18.5 的缩量回踩留给计划</strong>。
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="no">04</span>数据来源清单</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>类别</th><th>来源</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>行情/评分</td><td>timing_score.py（腾讯 ifzq 前复权 201 根，2026-10-30 午间）</td><td>12 项评分 91 分、K 线、量比、ATR、MA20、止损位；--market 大盘 gate；--compare 分支对照；--history 回验</td></tr>
+        <tr><td>估值快照</td><td>qt.gtimg.cn 实时快照（2026-10-30 午间）</td><td>现价 19.44、总市值 752.56 亿港元、52 周区间 13.28–19.67；PE/PB 字段口径存在歧义未采用 [口径存疑]</td></tr>
+        <tr><td>财务</td><td>公司 2026 中报公告（2026-08-26，经蒙牛官网/同花顺转引）</td><td>收入 447.95 亿 +7.8%、归母净利 23.72 亿 +15.9%、可比 +31.5%、分板块收入、回购 741 万股、不派中期息</td></tr>
+        <tr><td>卖方预测</td><td>华西证券 2026-04-01 / 2026-09-01 点评（寇星团队）</td><td>26-28 年净利 48/61/66 亿元、EPS 1.23/1.57/1.71 元、买入评级、汇率假设 0.8836</td></tr>
+        <tr><td>产业/消息</td><td>新浪港股/智通财经/格隆汇（2026-10-30）、金融界板块页</td><td>10-30 乳业板块异动归因：华西 10-28 研报、银河证券观点、原奶 2026-07 同比转正、伊利 Q3 业绩会奶价表述、新乳业 Q1-3 净利 +13.23%、燕塘 Q3 −57.74%</td></tr>
+        <tr><td>机构观点聚合</td><td>第三方数据聚合页（2026-10-30）</td><td>27 家机构目标均价 23.58 港元、10 月 33 家覆盖 97% 买入/增持 [聚合口径存疑，未独立核实]</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <strong>免责声明：</strong>本报告基于公开信息与量化评分框架（威科夫 12 项梯度评分 + 量价关系验证）生成，仅供研究参考，不构成个人投资建议。<strong>本报告量价数据为 2026-10-30 港股午间盘中折算数据（当日量能按已开盘时长年化），收盘后可能发生变化</strong>；标注 [推算] 为报告作者外推值、[卖方预测] 为券商预测值、[口径存疑] 为未独立核实数据，请区分对待。涨跌配色遵循 A 股惯例（涨红跌绿）。报告生成时间：2026-10-30 午间（恒指午间 +1.64%）。
+  </div>
+</section>
+
+</div>
+</body>
+</html>
