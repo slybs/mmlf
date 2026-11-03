@@ -1,0 +1,28 @@
+{
+  "trade_date": "2026-11-02",
+  "capital_flows": [],
+  "market_snapshot": {
+    "up_count": 4681, "down_count": 816, "limit_up": 131,
+    "limit_down": 8, "connect_count": 0, "amount_yi": 17837.0,
+    "sentiment": "修复转活跃"
+  },
+  "sector_effects": [
+    {"sector": "广告营销", "effect_desc": "9家涨停，板块效应成立"},
+    {"sector": "出版", "effect_desc": "8家涨停，板块效应成立"},
+    {"sector": "游戏Ⅱ", "effect_desc": "7家涨停，板块效应成立"},
+    {"sector": "影视院线", "effect_desc": "7家涨停，板块效应成立"},
+    {"sector": "IT服务Ⅱ", "effect_desc": "6家涨停，板块效应成立"},
+    {"sector": "软件开发", "effect_desc": "6家涨停，板块效应成立"},
+    {"sector": "数字媒体", "effect_desc": "5家涨停，板块效应成立"},
+    {"sector": "一般零售", "effect_desc": "4家涨停，板块效应成立"},
+    {"sector": "汽车零部", "effect_desc": "4家涨停，板块效应成立"},
+    {"sector": "白酒Ⅱ", "effect_desc": "3家涨停（连续第2日）"},
+    {"sector": "化学制品", "effect_desc": "3家涨停"},
+    {"sector": "消费电子", "effect_desc": "3家涨停"},
+    {"sector": "纺织制造", "effect_desc": "3家涨停"},
+    {"sector": "自动化设", "effect_desc": "3家涨停"}
+  ],
+  "abandon_events": [
+    {"trade_date": "2026-11-02", "condition": "上证跌破MA20（10-30触发，连续性条件）", "triggered": true, "validated": true, "note": "11-02收3638.03仍低于MA20≈3726.55，偏离-2.38%，条件延续触发"}
+  ]
+}

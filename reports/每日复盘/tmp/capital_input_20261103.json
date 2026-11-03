@@ -1,0 +1,30 @@
+{
+  "trade_date": "2026-11-03",
+  "capital_flows": [
+    {"sector": "广告营销", "net_inflow_yi": 0.75, "source": "tdx", "note": "代表股口径近似（引力传媒，锚点11-02）"},
+    {"sector": "游戏Ⅱ", "net_inflow_yi": 0.72, "source": "tdx", "note": "代表股口径近似（大晟文化，锚点11-02）"},
+    {"sector": "出版", "net_inflow_yi": 0.72, "source": "tdx", "note": "代表股口径近似（龙版传媒，锚点11-02）"},
+    {"sector": "影视院线", "net_inflow_yi": 1.00, "source": "tdx", "note": "代表股口径近似（博纳影业，锚点11-02）"},
+    {"sector": "一般零售", "net_inflow_yi": 0.23, "source": "tdx", "note": "代表股口径近似（合百集团，锚点11-02）"},
+    {"sector": "白酒Ⅱ", "net_inflow_yi": 1.01, "source": "tdx", "note": "代表股口径近似（水井坊，锚点11-02）"},
+    {"sector": "消费电子", "net_inflow_yi": 0.56, "source": "tdx", "note": "代表股口径近似（国光电器，锚点11-02）"},
+    {"sector": "服装家纺", "net_inflow_yi": 0.21, "source": "tdx", "note": "代表股口径近似（七匹狼，锚点11-02）"},
+    {"sector": "元件", "net_inflow_yi": -4.79, "source": "tdx", "note": "代表股口径近似（金安国纪当日大幅转负，锚点11-02）"},
+    {"sector": "机器人", "net_inflow_yi": -1.43, "source": "tdx", "note": "代表股口径近似（埃斯顿当日转负，锚点11-02）"},
+    {"sector": "电池", "net_inflow_yi": -0.55, "source": "tdx", "note": "代表股口径近似（圣阳股份，锚点11-02）"}
+  ],
+  "market_snapshot": {
+    "up_count": 2108, "down_count": 3308, "limit_up": 52,
+    "limit_down": 17, "connect_count": 0, "amount_yi": 17034.0,
+    "sentiment": "低迷（修复证伪）"
+  },
+  "sector_effects": [
+    {"sector": "电池", "effect_desc": "7家涨停（固态电池+储能+算力），板块效应成立"},
+    {"sector": "一般零售", "effect_desc": "4家涨停（连续第2日，名单换血）"},
+    {"sector": "游戏Ⅱ", "effect_desc": "3家涨停（分化存活，含2只2板）"},
+    {"sector": "服装家纺", "effect_desc": "3家涨停"}
+  ],
+  "abandon_events": [
+    {"trade_date": "2026-11-03", "condition": "上证跌破MA20（10-30触发，连续性条件）", "triggered": true, "validated": true, "note": "11-03收3608.10仍低于MA20≈3715.43，偏离-2.89%，且修复反弹被证伪"}
+  ]
+}
