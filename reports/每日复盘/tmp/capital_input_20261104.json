@@ -1,0 +1,37 @@
+{
+  "trade_date": "2026-11-04",
+  "capital_flows": [
+    {"sector": "半导体", "net_inflow_yi": -0.29, "source": "tdx", "note": "代表股口径近似（北方华创，锚点11-03）；5日累计+6.73"},
+    {"sector": "贵金属", "net_inflow_yi": -0.01, "source": "tdx", "note": "代表股口径近似（赤峰黄金，锚点11-03）；5日-1.92"},
+    {"sector": "元件", "net_inflow_yi": -2.25, "source": "tdx", "note": "代表股口径近似（金安国纪，锚点11-03）；5日+5.19"},
+    {"sector": "汽车零部", "net_inflow_yi": -1.84, "source": "tdx", "note": "代表股口径近似（飞龙股份，锚点11-03）；5日-6.11"},
+    {"sector": "电池", "net_inflow_yi": 4.11, "source": "tdx", "note": "代表股口径近似（圣阳股份，锚点11-03）；5日+3.68，验证点兑现"},
+    {"sector": "白酒Ⅱ", "net_inflow_yi": -0.05, "source": "tdx", "note": "代表股口径近似（水井坊，锚点11-03）；5日+0.97"},
+    {"sector": "游戏Ⅱ", "net_inflow_yi": 0.26, "source": "tdx", "note": "代表股口径近似（大晟文化，锚点11-03）；5日+1.08"},
+    {"sector": "一般零售", "net_inflow_yi": 0.42, "source": "tdx", "note": "代表股口径近似（大连友谊000679，锚点11-03）；5日+0.48"}
+  ],
+  "market_snapshot": {
+    "up_count": 4667, "down_count": 779, "limit_up": 121,
+    "limit_down": 10, "connect_count": 0, "amount_yi": 20377.0,
+    "sentiment": "修复转活跃（放量普涨）"
+  },
+  "sector_effects": [
+    {"sector": "半导体", "effect_desc": "19家涨停，板块效应成立"},
+    {"sector": "贵金属", "effect_desc": "11家涨停（金价重上4000美元+央行购金）"},
+    {"sector": "汽车零部", "effect_desc": "7家涨停"},
+    {"sector": "元件", "effect_desc": "7家涨停（昨日跌停股反包）"},
+    {"sector": "专用设备", "effect_desc": "6家涨停"},
+    {"sector": "自动化设", "effect_desc": "5家涨停"},
+    {"sector": "光学光电", "effect_desc": "5家涨停"},
+    {"sector": "通用设备", "effect_desc": "4家涨停"},
+    {"sector": "医疗服务", "effect_desc": "3家涨停"},
+    {"sector": "小金属", "effect_desc": "3家涨停"},
+    {"sector": "塑料", "effect_desc": "3家涨停"},
+    {"sector": "装修装饰", "effect_desc": "3家涨停"},
+    {"sector": "电网设备", "effect_desc": "3家涨停"},
+    {"sector": "光伏设备", "effect_desc": "3家涨停"}
+  ],
+  "abandon_events": [
+    {"trade_date": "2026-11-04", "condition": "上证跌破MA20（10-30触发，连续性条件）", "triggered": true, "validated": true, "note": "11-04收3686.17仍低于MA20≈3707.63，偏离-0.58%，缺口大幅收窄"}
+  ]
+}

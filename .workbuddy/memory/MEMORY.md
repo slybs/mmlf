@@ -21,7 +21,8 @@
 6. 跑 `python3 tools/build-index.py`，用一段 json.loads 校验 group / date / type 是否符合预期。
 
 ## 已知状态
-- 报告目录：半导体材料(3)、PCB(2)、个股(16)、AI短剧(2)、端侧SoC(8)、传媒(2)、保险(4)、趋势-结构-信号(19)、每日复盘(6)、其他(1)。共 10 板块 63 份。
+- 报告目录：半导体材料(3)、PCB(2)、个股(16)、AI短剧(2)、端侧SoC(8)、传媒(2)、保险(4)、趋势-结构-信号(19)、每日复盘(8)、产业研究(2)、其他(1)。共 11 板块 67 份。
+- 「产业研究」板块：跨行业产业级研究（group=sector），导航栏四个页面在「每日复盘」后有专属入口（.nav-research，主题色高亮）。类型标签「产业研究」。
 - 前端三个脚本加载顺序固定：`data/reports.js` → `js/main.js`（主题切换/导航高亮/年份）→ `js/site.js`（列表渲染）。
 - `js/site.js` 同时服务 index 与 sector 两个页面，靠 `#report-list` 是否存在来分支。
 - 主题切换用 `document.documentElement[data-theme]` + localStorage key `mlf-theme`。

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="物理AI（Physical AI）行业调研（数据截至 2026 年 10 月）：已进入规模化部署前夜但商用未闭环；价值集中在执行系统（执行器/丝杠/减速器/灵巧手，占 BOM 约 45–65%），零部件盈利确定性最高；中国硬件侧全球出货 84.7%，估值现泡沫信号，2026 下半年进入「交付定价」阶段。">
+<meta name="report-type" content="产业研究">
+<title>物理AI（Physical AI）行业调研报告</title>
+<style>
+  :root{
+    --ink:#1a2233; --sub:#5a6478; --line:#e3e7ef; --bg:#f6f7fa; --card:#ffffff;
+    --blue:#1f5eff; --blue-soft:#eef3ff; --red:#c5303e; --green:#0e7a4e;
+    --amber:#b45309; --amber-soft:#fef6e7; --gray-soft:#f0f2f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;font-size:15px;}
+  .page{max-width:960px;margin:0 auto;padding:40px 28px 80px;}
+  .cover{background:linear-gradient(135deg,#10214d 0%,#1f3a7a 60%,#1f5eff 130%);color:#fff;border-radius:16px;padding:48px 44px;margin-bottom:32px;}
+  .cover h1{font-size:30px;letter-spacing:1px;margin-bottom:10px;}
+  .cover .sub{font-size:15px;opacity:.85;margin-bottom:26px;}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13px;opacity:.9;border-top:1px solid rgba(255,255,255,.25);padding-top:18px;}
+  h2{font-size:21px;margin:44px 0 16px;padding-left:12px;border-left:4px solid var(--blue);}
+  h3{font-size:16.5px;margin:26px 0 10px;color:#16305e;}
+  p{margin:8px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0;background:#fff;}
+  th{background:var(--blue-soft);color:#16305e;text-align:left;padding:9px 10px;border:1px solid var(--line);font-weight:600;}
+  td{padding:8px 10px;border:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#fafbfe;}
+  .tag{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:10px;margin-right:6px;white-space:nowrap;vertical-align:1px;}
+  .t-fact{background:#e8f5ee;color:var(--green);border:1px solid #bfe3cf;}
+  .t-infer{background:#eef3ff;color:#1f4fd8;border:1px solid #c9d8ff;}
+  .t-assume{background:var(--amber-soft);color:var(--amber);border:1px solid #f3ddb5;}
+  .conf{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:10px;white-space:nowrap;vertical-align:1px;}
+  .c-high{background:#e8f5ee;color:var(--green);}
+  .c-mid{background:var(--amber-soft);color:var(--amber);}
+  .c-low{background:#fdeaea;color:var(--red);}
+  .note{background:var(--gray-soft);border-left:3px solid #9aa6bd;padding:10px 14px;border-radius:6px;font-size:13px;color:var(--sub);margin:12px 0;}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0;}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .kpi .v{font-size:22px;font-weight:700;color:#16305e;}
+  .kpi .l{font-size:12.5px;color:var(--sub);margin-top:4px;}
+  .kpi .s{font-size:11.5px;color:#8b93a5;margin-top:2px;}
+  ul{margin:8px 0 8px 22px;}
+  li{margin:5px 0;}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 24px;font-size:13.5px;}
+  .toc a{color:#1f4fd8;text-decoration:none;}
+  .toc li{margin:3px 0;}
+  .chain{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+  .chain-row{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;}
+  .chain-box{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:10px;padding:12px 14px;font-size:12.5px;}
+  .chain-box b{display:block;font-size:13.5px;color:#16305e;margin-bottom:4px;}
+  .chain-box .margin{color:var(--amber);font-size:11.5px;}
+  .arrow{text-align:center;color:#9aa6bd;font-size:14px;}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:#8b93a5;}
+  @media print{body{background:#fff;}.page{padding:10px;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="cover">
+  <h1>物理AI（Physical AI）行业调研报告</h1>
+  <div class="sub">投资视角 · 全产业链梳理 —— 从算力与仿真，到具身智能本体与核心零部件</div>
+  <div class="meta">
+    <span>研究类型：行业全景调研（方向性决策参考）</span>
+    <span>完成日期：2026年10月28日</span>
+    <span>数据截至：2026年10月</span>
+    <span>标注体系：事实 / 推断 / 假设 × 置信度（高/中/低）</span>
+  </div>
+</div>
+
+<div class="note" style="margin-bottom:24px;">
+  <b>报告定位说明：</b>本报告为公开案头研究（二手来源为主），未含专家访谈与渠道调研等一手验证，适合作为赛道认知与投资框架搭建的方向性参考；所有关键数字均标注来源与口径，无法核实的数据明确标注「未找到公开可靠数据」。本报告不构成投资建议。
+</div>
+
+<div class="toc">
+  <b>目录</b>
+  <ol>
+    <li><a href="#s1">摘要与核心结论</a></li>
+    <li><a href="#s2">研究问题与方法</a></li>
+    <li><a href="#s3">定义与边界：什么是物理AI</a></li>
+    <li><a href="#s4">市场规模与测算</a></li>
+    <li><a href="#s5">竞争格局</a></li>
+    <li><a href="#s6">产业链与价值分布</a></li>
+    <li><a href="#s7">趋势与驱动因素</a></li>
+    <li><a href="#s8">风险与情景分析</a></li>
+    <li><a href="#s9">结论与投资映射</a></li>
+    <li><a href="#s10">附录：来源清单、假设清单与术语</a></li>
+  </ol>
+</div>
+
+<!-- ============ 1 摘要 ============ -->
+<h2 id="s1">一、摘要与核心结论</h2>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">~$250亿</div><div class="l">2030年人形机器人本体市场（中性）</div><div class="s">区间 $120–420亿 · 本报告测算</div></div>
+  <div class="kpi"><div class="v">$1,383亿</div><div class="l">2035年人形机器人市场（高盛上调后）</div><div class="s">650万台 · 高盛2026.8物理AI报告</div></div>
+  <div class="kpi"><div class="v">¥935亿</div><div class="l">2026H1国内具身智能融资总额</div><div class="s">322笔 · IT桔子/中国信通院</div></div>
+  <div class="kpi"><div class="v">84.7%</div><div class="l">2025年中国占全球人形机器人出货</div><div class="s">1.44万台/1.7万台 · 赛迪</div></div>
+</div>
+
+<div class="card">
+  <h3>核心结论（每条附置信度）</h3>
+  <p><b>结论1：<span class="tag t-fact">事实+推断</span>物理AI已从「运动演示」进入「规模化部署前夜」，但收入质量仍以科研/政府采购为主，工业常态化商用尚未闭环。</b><span class="conf c-high">置信度：高</span><br>
+  依据：高盛2026年8月将2035年全球出货预测由140万台上调至650万台（上调4.6倍）；但2026H1国内218个人形机器人中标项目中，教育科研占55.5%、政府及国资占20.6%，真正工业企业订单仅21.1%且多为试点。<span class="tag t-fact">事实</span></p>
+  <p><b>结论2：<span class="tag t-infer">推断</span>价值当前集中在「执行系统」（执行器/丝杠/减速器/灵巧手，占BOM约45–65%），软件与模型层的商业兑现最晚；零部件环节盈利确定性最高。</b><span class="conf c-high">置信度：高</span><br>
+  依据：麦肯锡、中信建投、TrendForce三家对BOM的拆解口径虽有差异，但均指向执行系统为成本大头；宇树2025年毛利率约60%、已盈利，而整机同行普遍亏损。<span class="tag t-fact">事实</span></p>
+  <p><b>结论3：<span class="tag t-infer">推断</span>中国凭供应链+场景+成本优势在硬件侧全面领先（全球出货84.7%），海外在大模型与资本定价上占优；估值端已出现明显泡沫信号，2026年下半年资本市场进入「交付定价」阶段。</b><span class="conf c-high">置信度：高</span><br>
+  依据：宇树上市首日市值4449亿元后腰斩至约2000亿、梅卡曼德3835倍认购首日破发、智元暂缓IPO。<span class="tag t-fact">事实</span></p>
+  <p><b>结论4：<span class="tag t-assume">假设</span>若灵巧手、行星滚柱丝杠良率与真实数据闭环在未来12–24个月内突破，行业将在2027–2028年迎来工业场景的万台级放量；若不突破，行业将经历一轮出清。</b><span class="conf c-mid">置信度：中</span><br>
+  依据：行星滚柱丝杠国产良率约60%（海外85%+）、2026年灵巧手需求约7万只而量产件不足2万只——供给瓶颈是当前最硬的约束。<span class="tag t-fact">事实</span>（触发条件见第八章情景分析）</p>
+</div>
+
+<!-- ============ 2 研究方法 ============ -->
+<h2 id="s2">二、研究问题与方法</h2>
+<div class="card">
+  <p><b>研究目的：</b>投资视角下判断物理AI赛道是否值得布局、布局哪个环节、以什么节奏布局。</p>
+  <table>
+    <tr><th>子问题</th><th>研究方法</th><th>主要数据来源</th><th>局限</th></tr>
+    <tr><td>物理AI的定义与边界</td><td>案头研究、口径比对</td><td>NVIDIA官方、中国信通院、CCF</td><td>口径分歧大，需分层处理</td></tr>
+    <tr><td>市场规模与增速</td><td>多源交叉验证 + 双方法测算</td><td>高盛、摩根士丹利、赛迪、沙利文、Grand View、IT桔子</td><td>远期预测分歧达数量级，只能给区间</td></tr>
+    <tr><td>竞争格局与集中度</td><td>出货量/融资/上市数据梳理</td><td>赛迪、SAG、格隆汇、公司公告</td><td>海外玩家出货数据不透明</td></tr>
+    <tr><td>产业链价值分布</td><td>BOM拆解比对</td><td>麦肯锡、中信建投、TrendForce、中邮证券</td><td>不同机型口径差异大</td></tr>
+    <tr><td>政策与驱动</td><td>政策文本梳理</td><td>工信部、政府工作报告、地方政府文件</td><td>政策执行力度难以量化</td></tr>
+  </table>
+  <p class="note"><b>方法局限声明：</b>本报告全部为二手公开来源，未经企业访谈与渠道验证；融资数据以IT桔子/睿兽分析/中国信通院三个口径互证；市场规模以高盛×摩根士丹利×赛迪×沙利文四家口径互证，冲突处如实并列。</p>
+</div>
+
+<!-- ============ 3 定义 ============ -->
+<h2 id="s3">三、定义与边界：什么是物理AI</h2>
+<div class="card">
+  <p><span class="tag t-fact">事实</span><b>物理AI（Physical AI）</b>指能感知、理解、推理并与物理世界实时交互的智能系统。NVIDIA CEO黄仁勋2026年3月GTC表态："Physical AI has arrived — every industrial company will become a robotics company."（物理AI已经到来——每家工业公司都将成为机器人公司。）</p>
+  <p><span class="tag t-fact">事实</span>中国计算机学会（CCF）对<b>具身智能（Embodied AI）</b>的定义：基于物理身体进行感知和行动的智能系统，通过与环境的交互获取信息、理解问题、做出决策并实现行动。两者高度重叠，物理AI的外延略大（还包含自动驾驶、工业数字孪生与仿真）。</p>
+  <p><span class="tag t-fact">事实</span>技术闭环五环节：感知 → 世界建模 → 规划 → 控制 → 反馈。当前学界与产业共识：<b>世界模型是核心瓶颈，Sim-to-Real（仿真到现实）鸿沟是最大技术门槛，真实数据闭环是核心竞争力</b>（东吴证券物理AI产业专家交流纪要，2026）。</p>
+  <h3>本报告的三层口径（决定规模测算的分层）</h3>
+  <table>
+    <tr><th>层级</th><th>内容</th><th>代表玩家</th><th>当前商业成熟度</th></tr>
+    <tr><td>L1 软件/模型层</td><td>世界模型、VLA模型、仿真平台、数据服务、端侧芯片</td><td>NVIDIA（Cosmos/GR00T/Isaac/Jetson Thor）、谷歌Gemini Robotics、OpenAI、特斯拉；国内智元、银河通用、它石智航、群核科技、五一视界</td><td>早期，收入以算力与仿真订阅为主</td></tr>
+    <tr><td>L2 本体层</td><td>人形/轮式/四足机器人整机，工业/服务/特种机器人</td><td>特斯拉Optimus、Figure、宇树、智元、优必选、众擎、傅利叶；车企：小鹏、小米、广汽</td><td>万台级出货，但订单以科研/政府为主</td></tr>
+    <tr><td>L3 零部件层</td><td>执行器、丝杠、减速器、电机、灵巧手、传感器、电池结构件</td><td>绿的谐波、三花智控、拓普集团、鸣志电器、贝斯特、奥比中光、柯力传感等（A股超百家概念公司，合计市值约4.69万亿元，2025.5）</td><td>已批量供货，最先兑现利润</td></tr>
+  </table>
+  <p class="note"><b>明确不计入本报告范围：</b>纯数字AI（大语言模型、内容生成）、传统工业自动化中无AI决策的部分、医疗手术机器人的法规准入细节。自动驾驶作为物理AI的关联场景仅在趋势章简述。</p>
+</div>
+
+<!-- ============ 4 市场规模 ============ -->
+<h2 id="s4">四、市场规模与测算</h2>
+
+<div class="card">
+  <h3>4.1 各机构口径并列（存在定义性分歧，须分层看待）</h3>
+  <table>
+    <tr><th>机构/报告</th><th>口径</th><th>规模</th><th>时间</th><th>备注</th></tr>
+    <tr><td>赛迪《2025年人形机器人市场研究报告》（2026.3）</td><td>人形机器人本体（实际出货）</td><td>全球约<b>¥28.8亿</b>，中国¥15.5亿</td><td>2025年实际</td><td>全球出货约1.7万台，隐含均价约¥17万/台，与宇树降价数据自洽</td></tr>
+    <tr><td>高盛《全球物理AI》报告（2026.8）</td><td>人形机器人</td><td>2035年约<b>$1,383亿</b></td><td>预测</td><td>出货2026年7.5万台→2030年89万台→2035年650万台；较旧预测（140万台/$380亿）上调4.6倍</td></tr>
+    <tr><td>摩根士丹利《A $5 Trillion Global Market》（2025.4）</td><td>人形机器人全口径（含供应链与运维）</td><td>2050年约<b>$5万亿</b>；半导体TAM $3,050亿</td><td>预测</td><td>2050年在役约10亿台；2045年前采用缓慢、2030年代末加速</td></tr>
+    <tr><td>沙利文×腾讯云白皮书（2026.7）</td><td>具身智能机器人（含工业/服务机器人）</td><td>2025年¥949亿 → 2030年<b>¥4,084亿</b>（中国¥1,511亿）</td><td>预测</td><td>口径最宽，含非人形具身机器人</td></tr>
+    <tr><td>Grand View Research（2024.12）</td><td>广义物理AI（软硬件+服务）</td><td>2023年$127.7亿 → 2030年<b>$1,247.7亿</b>，CAGR 38.5%</td><td>预测</td><td>含仿真、数字孪生等软件口径</td></tr>
+    <tr><td>Cervicorn Consulting（经上市公司年报引用，2026.4）</td><td>物理AI（窄口径，偏仿真/数字孪生）</td><td>2025年$51.3亿 → 2034年$685.4亿，CAGR 33.5%</td><td>预测</td><td>与Grand View的2025年基数相差约3倍，源于口径不同</td></tr>
+  </table>
+  <p class="note"><b>来源冲突说明：</b>「物理AI」2025年基数在$51亿–$180亿之间浮动（沙利文口径折合约$130亿+），差异主要来自是否包含工业数字孪生、自动驾驶仿真与传统机器人智能化改造。<b>本报告建议投资者放弃追求单一数字，改用分层口径：</b>软件层看Grand View/Cervicorn（$50–180亿量级），具身机器人层看沙利文（¥949亿），人形本体层看赛迪（¥28.8亿）。高盛与摩根士丹利的远期分歧（$1,383亿@2035 vs $5万亿@2050）本质是时间轴不同，2050年口径不可用于10年内的估值锚定。</p>
+
+  <h3>4.2 自下而上测算：2030年人形机器人本体市场</h3>
+  <p><span class="tag t-fact">事实</span>基准输入取自高盛2026年8月报告：2030年出货约89万台；整机均价自2025年$4.18万以年均约6%下降，推得2030年约$2.8万/台。高盛另预计BOM成本年均下降约7%。</p>
+  <p><span class="tag t-infer">推断</span>测算：89万台 × $2.8万/台 ≈ <b>$250亿（约¥1,800亿）</b>。交叉验证：赛迪2025年实际值（1.7万台/¥28.8亿）推算2025→2030年出货CAGR约120%，与智元H1 2026单家8400台（SAG口径，占全球70%+的智元+宇树两家）、宇树单价两年降72%的爬坡斜率方向一致，量级自洽。</p>
+  <h3>4.3 敏感性分析（出货量 ±30% × 均价 ±30%）</h3>
+  <table>
+    <tr><th>情景</th><th>2030出货量</th><th>均价</th><th>市场规模</th><th>触发说明</th></tr>
+    <tr><td>悲观</td><td>62万台</td><td>$2.0万</td><td><b>≈$124亿</b></td><td>灵巧手/丝杠良率瓶颈未解、工业复购未形成、融资收缩</td></tr>
+    <tr><td>中性（基准）</td><td>89万台</td><td>$2.8万</td><td><b>≈$250亿</b></td><td>高盛路径：物流仓储与汽车制造率先规模化</td></tr>
+    <tr><td>乐观</td><td>116万台</td><td>$3.6万</td><td><b>≈$420亿</b></td><td>特斯拉/figure放量超预期+出海加速（2026Q1中国人形机器人出口同比+210%已现苗头）</td></tr>
+  </table>
+  <p><span class="tag t-fact">事实</span>加速期验证锚点（用于滚动校准）：特斯拉弗里蒙特Optimus产线2026年7月建成、Q3财报披露首批量产标准机型下线（原2026年5万台目标未被Q2交付数据证实，应视为意愿而非承诺）；Figure BotQ工厂2026年7月第1000台下线（4月350台→7月1000台）；小鹏IRON计划2026年底量产。</p>
+  <p class="note"><b>测算未包含：</b>运维与租赁服务收入、非人形具身机器人（轮式/四足/机械臂）、仿真软件与算力收入、人形机器人半导体（大摩口径2045年$3,050亿）。对结果最敏感的变量是<b>灵巧手与丝杠的量产良率</b>——它同时决定出货量与均价两条曲线。</p>
+</div>
+
+<!-- ============ 5 竞争格局 ============ -->
+<h2 id="s5">五、竞争格局</h2>
+
+<div class="card">
+  <h3>5.1 集中度与玩家分层</h3>
+  <p><span class="tag t-fact">事实</span>2025年全球人形机器人出货CR6达<b>74.1%</b>，且全部为中国企业（赛迪）；2026H1智元（8400台）+宇树（5900台）两家合计占全球超七成（SAG机构）。海外头部尚未规模化量产：特斯拉Optimus截至2025Q3试产不足1000台，Figure 2025全年出货约150台。</p>
+  <table>
+    <tr><th>梯队</th><th>玩家</th><th>特征</th></tr>
+    <tr><td>整机头部（中国）</td><td>宇树（全球第一，32.4%）、智元（23.5%）、乐聚、加速进化、松延动力、优必选、众擎、星动纪元、傅利叶</td><td>价格战激烈（宇树单价两年降72%至¥16.76万，消费级R1下探至¥2.99万）；商业模式靠出货量+出海</td></tr>
+    <tr><td>整机头部（海外）</td><td>特斯拉Optimus（垂直整合+自有工厂场景）、Figure AI（$390亿估值、自研Helix模型+BotQ工厂）、Agility、Boston Dynamics（现代汽车体系）</td><td>以技术验证与生态协同为主，量产节奏慢于宣传</td></tr>
+    <tr><td>平台/模型层</td><td>NVIDIA（全栈：算力+仿真+模型）、谷歌（Gemini Robotics 2，"只卖大脑不卖本体"路线）、OpenAI（自研机器人大脑）、阿里Qwen-Robot、腾讯混元具身+Tairos</td><td>争夺通用技术底座与生态入口</td></tr>
+    <tr><td>车企跨界</td><td>小鹏（IRON，2026年底量产）、小米（自研模型+本体+自有工厂闭环）、广汽、上汽（投资智元）、比亚迪、蔚来</td><td>自带工厂实训场景与制造能力，从能力外溢转向业务布局（中国信通院《具身智能发展报告2026》）</td></tr>
+    <tr><td>零部件</td><td>绿的谐波（国产谐波减速器市占率超60%）、三花智控/拓普集团（特斯拉执行器Tier1）、鸣志电器、贝斯特等</td><td>A股人形机器人概念公司109家、合计市值约4.69万亿元（2025.5，Wind）</td></tr>
+  </table>
+
+  <h3>5.2 重点公司对比表（统一维度）</h3>
+  <table>
+    <tr><th>维度</th><th>宇树科技（688836.SH）</th><th>智元机器人</th><th>Figure AI（美）</th><th>特斯拉 Optimus（美）</th></tr>
+    <tr><td>定位与目标客户</td><td>极致性价比本体，科研教育→商业服务</td><td>全栈（本体+模型+数据），工业/商业</td><td>通用型人形，先仓储（宝马）后家庭</td><td>自有工厂先用，后对外销售（目标$2–3万）</td></tr>
+    <tr><td>规模指标</td><td><span class="tag t-fact">事实</span>2025营收¥16.99亿、归母净利¥2.78亿（已盈利）；2025出货超5500台全球第一；2026H1营收¥11.52亿（+48.5%）、净利¥2.74亿</td><td><span class="tag t-fact">事实</span>2025营收突破¥10亿（未盈利）；2026H1出货8400台全球第一（SAG口径）；2027年营收目标¥100亿</td><td><span class="tag t-fact">事实</span>2025出货约150台；2026年7月累计第1000台Figure 03下线；宝马Spartanburg工厂部署</td><td><span class="tag t-fact">事实</span>2025试产不足1000台；2026.7弗里蒙特产线建成，Q3首批量产标准机下线；2026年5万台目标未证实</td></tr>
+    <tr><td>资本状态</td><td>2026.8科创板上市，发行价¥150.8、募资¥60.99亿；首日高开629%、市值一度¥4449亿，其后腰斩至约¥2000亿</td><td>2026年新一轮融资估值约¥500亿，IPO暂缓</td><td>2025.9 C轮融资超$10亿，投后$390亿（Parkway领投，NVIDIA/Intel/Brookfield跟投）</td><td>特斯拉体内业务，马斯克称Optimus将构成特斯拉绝大部分价值</td></tr>
+    <tr><td>技术差异化</td><td>垂直整合自研（电机/减速器/灵巧手/激光雷达），G1物料成本约¥4.16万、毛利率约40%，2025主营毛利率60.1%</td><td>VLA+世界模型+多层Agent架构；具身大模型GO系列；7天连续发布数据集/仿真/基座模型成果</td><td>自研Helix VLA端到端控制全身；软性外观+触觉指尖传感面向家庭</td><td>视觉方案复用FSD、自研执行器、Cortex训练设施与汽车产线共用</td></tr>
+    <tr><td>优势与软肋</td><td>优势：成本/供应链/盈利；软肋：高端算法生态与真实作业数据积累待验证</td><td>优势：模型+出货双头部、上汽等产业资本；软肋：亏损、核心元器件外购占比高、IPO暂缓</td><td>优势：模型+估值+资本；软肋：出货量极小、商业收入未证</td><td>优势：制造规模与场景；软肋：无成熟供应链（"人形机器人没有供应链"——马斯克）、灵巧手未定型、爬坡节奏反复推迟</td></tr>
+  </table>
+
+  <h3>5.3 资本市场信号：从「叙事定价」到「交付定价」</h3>
+  <p><span class="tag t-fact">事实</span>一级市场：2026H1国内具身智能融资约¥935亿（IT桔子口径，同比+500%，322笔；睿兽分析口径为390笔/¥1,111亿，口径差异源于统计边界），融资额前20家拿走约59%（¥550亿）；其中本体企业约¥315亿、「大脑」企业约¥145亿、零部件约¥53亿。早期轮（种子/天使/Pre-A）按笔数仍占58.9%，但成长期金额占比已超40%。</p>
+  <p><span class="tag t-fact">事实</span>二级市场：宇树首日市值¥4449亿后腰斩；梅卡曼德港股3835倍认购、上市首日破发；智元暂缓IPO；港股超50家具身智能企业排队。科创板2026年6月修订上市规则，将机器人/具身智能列为重点支持方向同时从严把握财务真实性。港交所拟2027上半年检讨18C特专科技市值门槛。</p>
+  <p><span class="tag t-infer">推断</span><b>估值锚正在切换：</b>评判标尺从样机、Demo、故事转向订单质量、客户复购与商业化成色。上游零部件厂商上市通路相对顺畅（珞石、仙工智能、梅卡曼德、本末科技已挂牌），整机企业闯关阻力明显更大。</p>
+
+  <h3>5.4 需求侧真实成色（投资判断的关键反证）</h3>
+  <p><span class="tag t-fact">事实</span>2026H1国内公开人形机器人中标项目218个、总规模¥17.23亿，其中：<b>教育科研机构占55.5%、政府及国资平台占20.6%、工业企业仅21.1%</b>——且工业订单多为样机测试/展厅/实训试点，非产线常态化商用（人形机器人场景应用联盟统计）。国家电网2026年采购中机器狗数量为人形机器人的10倍，反映各形态技术成熟度的真实排序。</p>
+  <p><span class="tag t-fact">事实</span>标杆效率数据：优必选Walker S1在富士康/顺丰/比亚迪/奥迪工厂实训，经约700小时训练后作业效率达到人工的50–60%，其设定的量产里程碑为80%人效。人形机器人产业当前能力被业内类比于「十年前的自动驾驶」。</p>
+</div>
+
+<!-- ============ 6 产业链 ============ -->
+<h2 id="s6">六、产业链与价值分布</h2>
+
+<div class="card">
+  <h3>6.1 产业链示意（价值流向）</h3>
+  <div class="chain">
+    <div class="chain-row">
+      <div class="chain-box" style="border-top-color:#7a5cff;"><b>L1 软件·模型·算力</b>世界模型（NVIDIA Cosmos 3 / 它石智航）、VLA（GR00T N1.7、Helix）、仿真平台（Isaac、群核SpatialTwin、五一视界Clonova）、数据服务（光轮智能、帕西尼各融资¥10亿）、端侧芯片（Jetson Thor）<br><span class="margin">商业模式：GPU算力+订阅，收入兑现最晚但天花板最高</span></div>
+    </div>
+    <div class="arrow">▼ 定义与拉动</div>
+    <div class="chain-row">
+      <div class="chain-box" style="border-top-color:var(--red);"><b>L2 整机本体</b>宇树/智元/优必选/众擎｜特斯拉/Figure/Agility｜小鹏/小米/广汽<br><span class="margin">多数亏损，是供应链的「需求发动机」；出货量决定上游订单</span></div>
+    </div>
+    <div class="arrow">▼ BOM 约40–65%流向执行系统</div>
+    <div class="chain-row">
+      <div class="chain-box"><b>执行器总成</b>三花智控（旋转执行器，T链独家定点）、拓普集团（线性执行器Tier1）、震裕科技<br><span class="margin">单机价值最高</span></div>
+      <div class="chain-box"><b>丝杠</b>贝斯特、五洲新春、恒立液压、北特科技<br><span class="margin">行星滚柱丝杠：国产良率约60% vs 海外85%+，国产化率仅约30%</span></div>
+      <div class="chain-box"><b>减速器</b>绿的谐波（国产市占率超60%，2026年产能规划500万台）、双环传动、中大力德<br><span class="margin">谐波占整机成本约12–13%；全球58%份额在日本哈默纳科</span></div>
+      <div class="chain-box"><b>电机/灵巧手</b>鸣志电器（空心杯）、兆威机电、江苏雷利、昊志机电<br><span class="margin">2026年灵巧手需求约7万只 vs 量产件不足2万只</span></div>
+      <div class="chain-box"><b>传感器</b>奥比中光（3D视觉）、柯力传感（六维力，国产化率约35%）、汉威科技<br><span class="margin">六维力占传感器成本约2/3</span></div>
+    </div>
+    <div class="arrow">▼ 场景牵引</div>
+    <div class="chain-row">
+      <div class="chain-box" style="border-top-color:var(--green);"><b>L3 下游场景（按规模化先后）</b>仓储物流与汽车制造（高盛判断率先规模化）→ 3C电子/商业服务/巡检安防（众擎智慧交管机器人已多城市上岗）→ 家庭服务（摩根士丹利：2050年家庭仅占约8%，尚需十年）</div>
+    </div>
+  </div>
+
+  <h3>6.2 BOM 成本拆解（多口径并列）</h3>
+  <table>
+    <tr><th>模块</th><th>特斯拉供应链口径</th><th>中信建投口径</th><th>麦肯锡口径</th></tr>
+    <tr><td>执行器+关节模组合计</td><td colspan="3" style="text-align:center;"><b>45%–65%</b>（三家口径方向一致）</td></tr>
+    <tr><td>行星滚柱丝杠</td><td>约18%</td><td>约22%（占线性执行器成本67%）</td><td rowspan="5">执行器40–60%、传感10–20%、计算控制10–15%、结构件/电池各5–10%；TrendForce层级口径：运动层55%/心智层23%/感测层15%/动力层7%</td></tr>
+    <tr><td>无框力矩电机</td><td>约12%</td><td>约18%</td></tr>
+    <tr><td>灵巧手</td><td>约17–20%（运动系统中手部占比超30%）</td><td>约14%（微型电机占灵巧手内部成本38%、触觉传感超25%）</td></tr>
+    <tr><td>谐波减速器</td><td>约15%（含其他减速器）</td><td>约12%（单台Optimus用量约14个）</td></tr>
+    <tr><td>六维力传感器 / AI算力</td><td>传感器及其他约20%</td><td>六维力约10% / 算力芯片约15%</td></tr>
+  </table>
+  <p><span class="tag t-fact">事实</span>宇树G1实例（中邮证券拆解）：整机物料成本约¥4.16万元，核心关节约¥2.75万元（占66%）；基础版毛利率约40%。整机实例锚点：宇树单价从2023年¥59.34万降至2025Q3约¥16.76万（降约72%）；中国供应链物料成本约$4.6万 vs 非中国供应链约$13.1万（相差近3倍）。</p>
+
+  <h3>6.3 壁垒分析（是否可持续）</h3>
+  <table>
+    <tr><th>壁垒</th><th>现状</th><th>可持续性评估</th></tr>
+    <tr><td>精密制造良率（丝杠/灵巧手）</td><td>国产行星滚柱丝杠良率约60% vs 海外85%+；灵巧手供需缺口近4倍</td><td><b>高</b>——批次一致性需长期工艺积累，短期难被资本催熟</td></tr>
+    <tr><td>真实数据闭环</td><td>高质量真机数据是部署最大瓶颈（高盛）；头部企业加速「进厂打工」直播式实训</td><td><b>高</b>——数据飞轮强者愈强，是模型层最深的护城河</td></tr>
+    <tr><td>规模成本优势</td><td>中国供应链物料成本约为海外的1/3</td><td><b>中</b>——可复制但需要量产订单支撑；价格战在侵蚀毛利</td></tr>
+    <tr><td>模型能力（世界模型/VLA）</td><td>技术路线未收敛（端到端vs模块化、VLA vs VLA+世界模型混合）</td><td><b>低-中</b>——路线收敛前领先者可能被架构切换颠覆</td></tr>
+    <tr><td>场景准入与安全标准</td><td>安全标准尚在雏形；海外市场面临准入与合规壁垒</td><td><b>中</b>——标准落地后先入者受益</td></tr>
+  </table>
+</div>
+
+<!-- ============ 7 趋势 ============ -->
+<h2 id="s7">七、趋势与驱动因素</h2>
+<div class="card">
+  <h3>7.1 三侧驱动</h3>
+  <table>
+    <tr><th>侧</th><th>驱动因素</th><th>量化证据</th></tr>
+    <tr><td>需求侧</td><td>劳动力短缺与老龄化、重复性劳动替代刚需；摩根士丹利类比「产业阶段=2018–2020年的新能源汽车，未来五年出货量百倍增长」</td><td>中国制造业普工缺口持续；全球制造业机器人密度2023年达162台/万人（IFR，较2017年74台翻倍）；亚马逊自动化预计2026–2030年累计节约约$720亿（高盛援引）</td></tr>
+    <tr><td>供给侧</td><td>AI模型能力跃迁+成本雪崩式下降</td><td>METR：前沿模型50%成功率可完成任务时长每7个月翻倍；高盛：2025–2035年BOM年均降7%、整机均价年均降6%；宇树整机两年降价72%</td></tr>
+    <tr><td>政策侧（中国）</td><td>从战略引导进入系统部署</td><td><span class="tag t-fact">事实</span>工信部《人形机器人创新发展指导意见》（2023.11）：2025年初步建立创新体系、2027年综合实力世界先进；2025年《政府工作报告》首提「具身智能」；2026.6工信部+国资委实景实训专项行动：2026年底形成「万台级规模落地能力」；10+省市设产业基金（深圳¥20亿+¥50亿两只）；深圳2026.9印发《智能机器人产业三年行动方案》</td></tr>
+  </table>
+
+  <h3>7.2 信号 vs 噪声</h3>
+  <p><span class="tag t-infer">推断</span><b>结构性信号（跨多指标、多时期）：</b>① 出货量与融资额连续多季倍增（2025年1.7万台→2026H1单季头部单家8000+台）；② 均价单调下降且供应链国产化率爬坡；③ 政策从「研发支持」转向「场景部署考核」（万台级）；④ 2026Q1中国人形机器人出口同比+210%。以上互相独立且同向，判定为结构趋势。</p>
+  <p><span class="tag t-infer">推断</span><b>噪声（单指标脉冲、会回归）：</b>① 运动能力热搜（马拉松/运动会成绩提升57%不直接对应商业能力）；② 首日暴涨的上市行情（已回归）；③ 巨头口号式目标（特斯拉5万台目标未获交付数据支持）。宇树王兴兴2026年10月判断「物理AI已看到被击穿的苗头，具身智能的ChatGPT时刻可能在未来1–3年」，其核心论据（模型输入输出与真机对齐）属于技术信号，但时间点属于观点而非数据。</p>
+
+  <h3>7.3 技术路线关键分歧（影响投资标的筛选）</h3>
+  <ul>
+    <li><b>端到端 vs 模块化：</b>特斯拉/Figure走端到端VLA；谷歌走「大脑+伙伴本体」的平台模式（Apptronik、Boston Dynamics）；中国市场从单一VLA向「VLA/VTLA+世界模型+多层Agent」体系演进，模型参数从数十亿向400亿–800亿升级（高盛）。</li>
+    <li><b>通用 vs 专用：</b>专用机器人（轮式、四足、固定臂）变现更快——国网采购结构（机器狗10倍于人形）与优必选效率数据都支持「先专用后人形」的现实排序。</li>
+    <li><b>灵巧手无统一技术路线</b>（高盛认为是最重要硬件瓶颈）：微型丝杠、腱绳、连杆、直驱方案并存，意味着零部件环节格局未定、也意味着赛道内「缩圈」信号（定点公告）比整机发布时间表更有信息含量。</li>
+  </ul>
+</div>
+
+<!-- ============ 8 风险 ============ -->
+<h2 id="s8">八、风险与情景分析</h2>
+<div class="card">
+  <h3>8.1 风险清单</h3>
+  <table>
+    <tr><th>风险</th><th>类型</th><th>观测指标</th><th>影响</th></tr>
+    <tr><td>估值泡沫出清（宇树腰斩、梅卡曼德破发已现）</td><td>市场</td><td>港股18C排队企业过会率、一级融资额环比、整机IPO定价</td><td>高——持仓回撤50%+已发生</td></tr>
+    <tr><td>订单质量风险（科研/政府占比76%）随预算周期波动</td><td>需求</td><td>中标项目中工业企业占比、复购率、单客户收入集中度</td><td>高——直接决定营收可持续性</td></tr>
+    <tr><td>灵巧手/丝杠良率不达标拖累量产</td><td>技术</td><td>国产丝杠良率（现约60%）、灵巧手量产件数（现不足2万只/年）</td><td>高——出货量与均价双杀</td></tr>
+    <tr><td>真实数据瓶颈：Sim-to-Real泛化不足、复杂环境成功率骤降</td><td>技术</td><td>公开基准（MolmoSpaces/RoboArena）成绩、企业部署态运行时长</td><td>中高</td></tr>
+    <tr><td>价格战侵蚀毛利（整机已降价72%）</td><td>竞争</td><td>头部厂商毛利率（宇树60.1%为行业天花板）、BOM降本斜率</td><td>中</td></tr>
+    <tr><td>地缘与出口管制（零部件「几乎没有美国替代品」的镜像风险）</td><td>政策</td><td>美对华机器人零部件/芯片管制清单、海外准入法规</td><td>中高</td></tr>
+    <tr><td>安全与伦理监管滞后（人机共处场景）</td><td>政策</td><td>国标/行标出台节奏、事故舆情</td><td>中</td></tr>
+  </table>
+
+  <h3>8.2 三情景分析（含可观测触发条件）</h3>
+  <table>
+    <tr><th>情景</th><th>触发条件（可观测）</th><th>行业状态</th><th>投资含义</th></tr>
+    <tr><td>乐观（概率约25%<span class="tag t-assume">假设</span>）</td><td>2027年前出现单家整机厂单季万台级交付；头部工厂机器人达到80%人效里程碑；国产丝杠良率突破80%</td><td>工业复购形成，2028年进入业绩驱动主升浪；零部件先行兑现利润</td><td>加大零部件龙头与「数据飞轮已验证」的整机/模型公司配置</td></tr>
+    <tr><td>中性（概率约55%<span class="tag t-assume">假设</span>）</td><td>高盛路径兑现：物流仓储+汽车制造2027–2028年规模化；灵巧手路线2027年初步收敛</td><td>2030年本体市场约$250亿；融资热度回落但产业持续；分化加剧</td><td>「零部件先赚钱、整机先烧钱、软件后兑现」节奏下，按环节分层建仓</td></tr>
+    <tr><td>悲观（概率约20%<span class="tag t-assume">假设</span>）</td><td>2027年中标项目中工业企业占比仍低于30%；头部整机IPO持续受阻；灵巧手供需缺口未收窄</td><td>行业2027–2028年出清，无场景无客户的企业批量淘汰；只余两类幸存者（独特技术方案/真实PMF）</td><td>规避纯概念整机与未证实定点信息的二线零部件；等待出清后底部布局</td></tr>
+  </table>
+</div>
+
+<!-- ============ 9 结论 ============ -->
+<h2 id="s9">九、结论与投资映射</h2>
+<div class="card">
+  <h3>9.1 结论（附置信度与依据强度）</h3>
+  <table>
+    <tr><th>结论</th><th>依据</th><th>置信度</th><th>理由</th></tr>
+    <tr><td>行业处于「量产爬坡期」（2025–2027），不是成熟期也不是纯概念期</td><td>出货倍增+订单结构+资本市场切换定价逻辑（三方独立印证）</td><td><span class="conf c-high">高</span></td><td>多个独立指标同向</td></tr>
+    <tr><td>未来3年利润最先兑现在执行系统零部件，其次整机头部，软件模型层最后</td><td>BOM三口径拆解+宇树已盈利/同行亏损的财务事实</td><td><span class="conf c-high">高</span></td><td>财务数据直接支持</td></tr>
+    <tr><td>中国硬件链全球主导地位短期不可逆，但利润率将被价格战压缩</td><td>出货84.7%、物料成本3倍差、整机降价72%</td><td><span class="conf c-high">高</span></td><td>事实充分，趋势外推稳健</td></tr>
+    <tr><td>2030年人形本体市场约$120–420亿（中性$250亿）</td><td>本报告测算（高盛输入+敏感性）</td><td><span class="conf c-mid">中</span></td><td>依赖出货爬坡假设，需按季度滚动校准</td></tr>
+    <tr><td>具身智能「ChatGPT时刻」在1–3年内到来</td><td>王兴兴观点+METR模型能力数据</td><td><span class="conf c-low">低</span></td><td>属专家观点，无独立验证手段</td></tr>
+  </table>
+
+  <h3>9.2 投资映射（按环节）</h3>
+  <table>
+    <tr><th>环节</th><th>逻辑</th><th>代表观察对象</th><th>前置验证事项</th></tr>
+    <tr><td>① 执行系统零部件（首选）</td><td>价值量最高（BOM 45–65%）+盈利确定性强+上市通路顺畅</td><td>三花智控、拓普集团、绿的谐波、鸣志电器、贝斯特、五洲新春、兆威机电、柯力传感</td><td>核实定点公告真伪与机器人业务营收占比、毛利率；跟踪丝杠良率爬坡</td></tr>
+    <tr><td>② 整机头部双寡头</td><td>出货集中度最高，但估值波动剧烈</td><td>宇树（已上市，关注估值消化进度）、智元（关注IPO重启与订单含金量）</td><td>季度出货量、工业客户复购、海外收入占比（智元目标2026年30%）</td></tr>
+    <tr><td>③ 模型/世界平台层</td><td>天花板最高、兑现最晚、路线未收敛</td><td>NVIDIA（确定性最高，卖铲人）、银河通用、它石智航等一级标的</td><td>世界模型在可量化任务上的落地证据；数据飞轮真实性</td></tr>
+    <tr><td>④ 数据/仿真/测评服务</td><td>所有玩家的共性刚需，卖铲人逻辑</td><td>光轮智能、帕西尼感知、群核科技、五一视界（均已获大额融资或上市）</td><td>付费客户结构、订阅收入占比</td></tr>
+  </table>
+  <p class="note"><b>节奏建议：</b>当前处于「估值从故事向订单切换」的阵痛窗口（宇树腰斩、IPO暂缓），一级估值仍偏贵（投资机构人士：「今天具身智能企业的估值本质上体现的是市场的供需关系，而不是它真正的价值」<span class="tag t-fact">事实·引述</span>）。二级零部件标的业绩兑现路径最清晰；整机建议等待交付数据验证后再介入；模型层通过NVIDIA等「卖铲人」间接暴露，风险收益比更优。</p>
+  <p><b>还需补充验证的事项：</b>① 终端工业客户对「机器人替代人工」回收期的实测数据（建议访谈3–5家已部署工厂）；② 特斯拉Optimus供应链国内定点名单的一手核实（渠道调研）；③ 灵巧手技术路线收敛方向（专家访谈）；④ 海外市场准入法规对出海节奏的实际约束（律所/合规顾问）。</p>
+</div>
+
+<!-- ============ 10 附录 ============ -->
+<h2 id="s10">十、附录</h2>
+
+<div class="card">
+  <h3>附录A 数据来源清单</h3>
+  <table>
+    <tr><th>来源</th><th>类型</th><th>日期</th><th>关键数据</th></tr>
+    <tr><td>高盛《Global Automation: Humanoid Robot — The AI Accelerant》及2026.8全球物理AI报告（经财联社转引）</td><td>卖方研究</td><td>2024.2 / 2026.8</td><td>2035年出货650万台、市场规模$1,383亿；均价$4.18万→$2.13万；BOM年降7%</td></tr>
+    <tr><td>摩根士丹利《A $5 Trillion Global Market》</td><td>卖方研究</td><td>2025.4</td><td>2050年$5万亿、在役约10亿台；中国3.02亿台居首；单价$20万→$5万</td></tr>
+    <tr><td>赛迪出版传媒×中国电子报《2025年人形机器人市场研究报告》</td><td>行业机构</td><td>2026.3</td><td>2025全球出货1.7万台/¥28.8亿；中国占84.7%；CR6=74.1%及各家份额</td></tr>
+    <tr><td>中国信通院《具身智能发展报告（2026年）》</td><td>官方智库</td><td>2026.10</td><td>2026H1融资322笔/¥935亿；科技大厂平台化布局全景</td></tr>
+    <tr><td>IT桔子 / 睿兽分析</td><td>数据库</td><td>2026H1</td><td>融资总额两口径¥935亿/¥1,111亿；独角兽结构（23家具身相关新晋）</td></tr>
+    <tr><td>沙利文×腾讯云《2026年全球具身智能技术创新与应用白皮书》</td><td>咨询机构</td><td>2026.7</td><td>具身智能机器人2025年¥949亿→2030年¥4,084亿</td></tr>
+    <tr><td>Grand View Research（经Articsledge转引）；Cervicorn Consulting（经凡拓数创2025年报引用）</td><td>咨询机构</td><td>2024.12 / 2026.4</td><td>广义物理AI 2030年$1,247.7亿；窄口径2025年$51.3亿</td></tr>
+    <tr><td>NVIDIA GTC 2026新闻稿、Isaac GR00T/Cosmos官方页面</td><td>公司官方</td><td>2026.3</td><td>Cosmos 3、GR00T N1.7/N2、Jetson Thor；合作生态名单</td></tr>
+    <tr><td>格隆汇/每日经济新闻（宇树IPO与财报数据）</td><td>财经媒体</td><td>2026.7–8</td><td>发行价¥150.8、募资¥60.99亿、首日市值¥4449亿；2025营收¥16.99亿/净利¥2.78亿</td></tr>
+    <tr><td>陆玖商业评论（智元IPO暂缓报道）、南方财经（谷歌/Figure/Tesla对比）</td><td>媒体</td><td>2026.10 / 2026.7</td><td>智元估值约¥500亿暂缓IPO、2025营收超¥10亿；Figure $390亿估值与量产数据</td></tr>
+    <tr><td>人形机器人场景应用联盟（经陆玖商业转引）</td><td>行业组织</td><td>2026H1</td><td>中标218个/¥17.23亿；教育科研55.5%/政府20.6%/工业21.1%</td></tr>
+    <tr><td>三个皮匠报告汇总（麦肯锡/中信建投/TrendForce/中邮证券BOM拆解）</td><td>卖方+咨询</td><td>2026.4–5</td><td>执行器+关节占BOM 45–65%；宇树G1成本¥4.16万；中国vs海外物料$4.6万vs$13.1万</td></tr>
+    <tr><td>中国日报网（2026H1人形机器人复盘）、澎湃新闻</td><td>媒体</td><td>2026.7</td><td>宇树单价¥59.34万→¥16.76万；出口+210%；众擎B轮$2亿</td></tr>
+    <tr><td>工信部《人形机器人创新发展指导意见》、2025年《政府工作报告》、深圳市工信局</td><td>政策文件</td><td>2023.11 / 2025.3 / 2026.9</td><td>2025/2027目标；具身智能首入政府工作报告；深圳三年方案</td></tr>
+    <tr><td>光明网/求是网/中国经济网</td><td>媒体/理论</td><td>2025–2026</td><td>政策梳理；A股概念公司109家/市值4.69万亿（2025.5，Wind）</td></tr>
+  </table>
+
+  <h3>附录B 假设清单</h3>
+  <table>
+    <tr><th>假设</th><th>依据</th><th>验证途径</th></tr>
+    <tr><td>2030年人形机器人均价约$2.8万</td><td>高盛均价曲线（年降6%）外推</td><td>季度跟踪头部厂商实际成交价</td></tr>
+    <tr><td>2030年出货89万台（±30%）</td><td>高盛2026.8预测</td><td>季度出货数据、特斯拉/Figure/宇树产能爬坡公告</td></tr>
+    <tr><td>情景概率：乐观25%/中性55%/悲观20%</td><td>主观赋值（基于订单结构与良率现状）</td><td>每半年按8.2节触发条件复核</td></tr>
+    <tr><td>零部件环节未来3年毛利率可维持</td><td>绿的谐波/宇树当前毛利率水平</td><td>上市公司季报中机器人业务毛利率拆分</td></tr>
+  </table>
+
+  <h3>附录C 术语与口径</h3>
+  <ul>
+    <li><b>物理AI / 具身智能：</b>见第三章定义；本报告中「具身智能机器人」含非人形形态，「人形机器人」仅指双足类人形态。</li>
+    <li><b>VLA：</b>视觉-语言-动作模型；<b>WAM/世界模型：</b>同时预测未来画面与动作、内含时空物理先验的模型架构（NVIDIA GR00T N2采用）。</li>
+    <li><b>Sim-to-Real：</b>仿真训练策略向真实机器人的迁移；<b>部署态：</b>智元提出的概念，指机器人真正进入产业工作流持续运行的状态。</li>
+    <li><b>BOM：</b>物料清单成本；本报告金额除标注$为美元外均为人民币。</li>
+    <li><b>「未找到公开可靠数据」事项：</b>全球物理AI软件层分环节（仿真/数据/模型）的收入规模、头部整机企业真实复购率、特斯拉Optimus国内定点供应商的官方确认名单——均建议通过付费报告或一手调研获取。</li>
+  </ul>
+</div>
+
+<footer>
+  本报告由奥利安（Orion）行业研究顾问基于公开信息编制 · 完成于2026年10月28日 · 所有判断仅供研究参考，不构成投资建议。<br>
+  引用规则：事实类数据均可回溯至附录A清单；推断与假设类内容已在正文逐条标注。
+</footer>
+
+</div>
+</body>
+</html>

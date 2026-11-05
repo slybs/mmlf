@@ -1,0 +1,32 @@
+{
+  "trade_date": "2026-11-05",
+  "capital_flows": [
+    {"sector": "半导体", "net_inflow_yi": 10.35, "source": "tdx", "note": "代表股口径近似（北方华创，锚点11-04）；5日累计+15.90"},
+    {"sector": "元件", "net_inflow_yi": 3.39, "source": "tdx", "note": "代表股口径近似（金安国纪，锚点11-04）；5日+2.07，11-03 -2.25→11-04反包"},
+    {"sector": "广告营销", "net_inflow_yi": 2.09, "source": "tdx", "note": "代表股口径近似（引力传媒，锚点11-04）；5日+2.48"},
+    {"sector": "贵金属", "net_inflow_yi": 1.70, "source": "tdx", "note": "代表股口径近似（赤峰黄金，锚点11-04）；5日+0.18"},
+    {"sector": "电网设备", "net_inflow_yi": 0.93, "source": "tdx", "note": "代表股口径近似（中利集团002309，锚点11-04）；5日+0.66"},
+    {"sector": "汽车零部", "net_inflow_yi": 0.68, "source": "tdx", "note": "代表股口径近似（飞龙股份，锚点11-04）；5日-6.44仍大额流出"},
+    {"sector": "光伏设备", "net_inflow_yi": 0.37, "source": "tdx", "note": "代表股口径近似（永臻股份603381，锚点11-04）；备选钧达-0.43分歧"},
+    {"sector": "专用设备", "net_inflow_yi": 0.27, "source": "tdx", "note": "代表股口径近似（南矿集团001360，锚点11-04）；5日+0.29"},
+    {"sector": "电池", "net_inflow_yi": -3.43, "source": "tdx", "note": "代表股口径近似（圣阳股份，锚点11-04）；昨日+4.11转正次日大幅回吐"},
+    {"sector": "白酒Ⅱ", "net_inflow_yi": -0.38, "source": "tdx", "note": "代表股口径近似（水井坊，锚点11-04）；5日+0.62"},
+    {"sector": "一般零售", "net_inflow_yi": -0.00, "source": "tdx", "note": "代表股口径近似（百大集团600865，锚点11-04）≈持平；5日+1.16"}
+  ],
+  "market_snapshot": {
+    "up_count": 4869, "down_count": 625, "limit_up": 86,
+    "limit_down": 0, "connect_count": 0, "amount_yi": 21179.53,
+    "sentiment": "修复档（广度强、高度弱、分歧大）"
+  },
+  "sector_effects": [
+    {"sector": "光伏设备", "effect_desc": "11家涨停（今日新主线，低位反包型）"},
+    {"sector": "半导体", "effect_desc": "4家涨停（昨日19家缩容分化）"},
+    {"sector": "专用设备", "effect_desc": "4家涨停"},
+    {"sector": "电网设备", "effect_desc": "3家涨停"},
+    {"sector": "一般零售", "effect_desc": "3家涨停（名单再换血）"},
+    {"sector": "广告营销", "effect_desc": "3家涨停"}
+  ],
+  "abandon_events": [
+    {"trade_date": "2026-11-05", "condition": "上证跌破MA20（10-30触发，连续性条件）", "triggered": true, "validated": true, "note": "11-05收3689.91仍低于MA20≈3701.53，偏离-0.31%，连续第6日触发且缺口持续收窄"}
+  ]
+}
