@@ -91,6 +91,57 @@ pre code { border: 0; padding: 0; }
   border-radius: 2px;
 }
 
+/* ---- 受保护栏目密码门 ---- */
+.gate-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(10, 14, 22, .45);
+  backdrop-filter: blur(3px);
+  display: flex; align-items: center; justify-content: center;
+  animation: gate-fade .18s ease;
+}
+.gate-dialog {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 24px 20px;
+  width: min(340px, calc(100vw - 48px));
+  box-shadow: var(--shadow-md);
+  animation: gate-pop .18s ease;
+}
+.gate-dialog h3 { margin: 0 0 6px; font-size: 17px; color: var(--text); }
+.gate-dialog p { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+.gate-input {
+  width: 100%; box-sizing: border-box;
+  padding: 10px 12px;
+  font-size: 15px; letter-spacing: .25em;
+  border: 1px solid var(--border); border-radius: 9px;
+  background: var(--bg); color: var(--text);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.gate-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--chip); }
+.gate-err { min-height: 18px; margin: 8px 0 4px; color: var(--up); font-size: 12px; }
+.gate-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 10px; }
+.gate-btn {
+  padding: 8px 18px; border-radius: 9px;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text); cursor: pointer; font-size: 14px;
+  transition: border-color .15s, color .15s, opacity .15s;
+}
+.gate-btn:hover { border-color: var(--primary); color: var(--primary); }
+.gate-btn-ok { background: var(--primary); border-color: var(--primary); color: #fff; }
+.gate-btn-ok:hover { opacity: .88; color: #fff; }
+@keyframes gate-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gate-pop { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes gate-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.gate-dialog.shake { animation: gate-shake .32s ease; }
+
 .icon-btn {
   background: none;
   border: 1px solid var(--border);
